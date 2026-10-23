@@ -1,0 +1,11 @@
+{
+  "mode": "vesicle",
+  "branch": "V0",
+  "initial": "straight",
+  "short_length": 1.0,
+  "bonding": false,
+  "end_attraction": 0,
+  "case": "Vnegative",
+  "seed": 0,
+  "duration": 240.0
+}

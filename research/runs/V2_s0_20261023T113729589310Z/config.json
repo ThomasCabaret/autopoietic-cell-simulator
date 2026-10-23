@@ -1,0 +1,10 @@
+{
+  "mode": "vesicle",
+  "branch": "V2",
+  "initial": "dispersed_fragments",
+  "fragment_size": 4,
+  "short_length": 0.75,
+  "case": "V2",
+  "seed": 0,
+  "duration": 400.0
+}

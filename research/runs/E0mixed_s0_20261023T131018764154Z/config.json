@@ -1,0 +1,20 @@
+{
+  "mode": "copy",
+  "branch": "E0",
+  "activation": true,
+  "release": "cycle",
+  "sequence": "001011",
+  "period": 200,
+  "release_time": 15,
+  "backbone_angle": 20,
+  "box": [
+    8,
+    6
+  ],
+  "free_units": 24,
+  "function_units": 24,
+  "monomer_only_capture": true,
+  "case": "E0mixed",
+  "seed": 0,
+  "duration": 600.0
+}

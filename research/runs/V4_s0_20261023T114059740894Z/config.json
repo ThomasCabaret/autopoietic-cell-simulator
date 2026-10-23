@@ -1,0 +1,10 @@
+{
+  "mode": "vesicle",
+  "branch": "V4",
+  "initial": "straight",
+  "units": 18,
+  "short_length": 0.75,
+  "case": "V4",
+  "seed": 0,
+  "duration": 300.0
+}

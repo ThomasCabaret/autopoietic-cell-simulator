@@ -1,0 +1,30 @@
+{
+  "recipe_version": 1,
+  "run_id": "T4permanent_s0_20261023T113729562854Z",
+  "kind": "local_dynamics",
+  "source_sha256": {
+    "local_dynamics.py": "8274f2edd48c50cd65eb3095030bfd2d316c69b5abf42e45afedf0facf6c202f",
+    "run_local_research.py": "c126a767b30acb6f17889f615a929d43139de260e153ae01ea70432b1dfd1def"
+  },
+  "environment": {
+    "python": "3.12",
+    "numpy": "2.0.2"
+  },
+  "initialization_incident": true,
+  "config": {
+    "mode": "copy",
+    "branch": "T4",
+    "activation": true,
+    "release": "never",
+    "sequence": "001011",
+    "backbone_angle": 20,
+    "box": [
+      8,
+      6
+    ],
+    "free_units": 48,
+    "case": "T4permanent",
+    "seed": 0,
+    "duration": 400.0
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "batch": 2,
+  "dynamic_results": [
+    "research/runs/E0_s0_20261023T130722491439Z/result.json",
+    "research/runs/E0mixed_s0_20261023T131018764154Z/result.json",
+    "research/runs/E0negative_s0_20261023T130722485100Z/result.json",
+    "research/runs/E0sequence_s1_20261023T131417728158Z/result.json",
+    "research/runs/E1alternating_s0_20261023T131308600498Z/result.json",
+    "research/runs/E1alternating_s1_20261023T131613983580Z/result.json",
+    "research/runs/E1alternating_s2_20261023T131616340651Z/result.json",
+    "research/runs/E1control_s0_20261023T131308616127Z/result.json",
+    "research/runs/E1control_s1_20261023T131618607493Z/result.json",
+    "research/runs/E1control_s2_20261023T131620820080Z/result.json",
+    "research/runs/E1express_s1_20261023T131417711329Z/result.json",
+    "research/runs/E1zero_s0_20261023T131018800276Z/result.json",
+    "research/runs/E1zero_s1_20261023T131609598637Z/result.json",
+    "research/runs/E1zero_s2_20261023T131611767227Z/result.json",
+    "research/runs/E2mixed_s0_20261023T131609551621Z/result.json",
+    "research/runs/E2mixed_s1_20261023T131609552622Z/result.json",
+    "research/runs/T4_s0_20261023T131417712329Z/result.json",
+    "research/runs/T7_s0_20261023T130722492438Z/result.json",
+    "research/runs/T7_s1_20261023T130722491439Z/result.json",
+    "research/runs/T7_s2_20261023T131417726979Z/result.json"
+  ],
+  "formal_result": "research/abstract_runs/C0_20261023T131308019594Z/result.json",
+  "new_dynamic_runs": 20,
+  "new_technical_errors": 0,
+  "second_generation_detached_by_seed": [
+    1,
+    0,
+    0
+  ],
+  "native_geometry_control": {
+    "E1zero": {
+      "end_to_end_by_seed": [
+        2.845275608484934,
+        3.381740371401165,
+        3.478185630655505
+      ],
+      "mean": 3.235067203513868,
+      "sample_sd": 0.3409963895330266
+    },
+    "E1alternating": {
+      "end_to_end_by_seed": [
+        4.706406355793297,
+        4.875228763844093,
+        4.681677858860042
+      ],
+      "mean": 4.7544376594991435,
+      "sample_sd": 0.10533633184613322
+    },
+    "E1control": {
+      "end_to_end_by_seed": [
+        4.953510823384123,
+        5.127966615092178,
+        4.949889045543375
+      ],
+      "mean": 5.010455494673226,
+      "sample_sd": 0.10178372603353693
+    }
+  },
+  "maturity": "early partial proof: no demonstrated catalyst construction or causal material closure",
+  "incompatible_recruitment_interfaces": {
+    "E0mixed_seed0": {
+      "occupied_neighbor_observations": 3478,
+      "mixed_incompatible_observations": 2719,
+      "fraction": 0.7817711328349626,
+      "scope": "Repeated correlated snapshots on the original gene, not independent trials"
+    },
+    "E2mixed_seed0": {
+      "occupied_neighbor_observations": 2020,
+      "mixed_incompatible_observations": 0,
+      "fraction": 0.0,
+      "scope": "Repeated correlated snapshots on the original gene, not independent trials"
+    },
+    "E2mixed_seed1": {
+      "occupied_neighbor_observations": 1034,
+      "mixed_incompatible_observations": 0,
+      "fraction": 0.0,
+      "scope": "Repeated correlated snapshots on the original gene, not independent trials"
+    }
+  }
+}

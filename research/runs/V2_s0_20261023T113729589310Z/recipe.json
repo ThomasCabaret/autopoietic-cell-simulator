@@ -1,0 +1,24 @@
+{
+  "recipe_version": 1,
+  "run_id": "V2_s0_20261023T113729589310Z",
+  "kind": "local_dynamics",
+  "source_sha256": {
+    "run_local_research.py": "c126a767b30acb6f17889f615a929d43139de260e153ae01ea70432b1dfd1def",
+    "local_dynamics.py": "8274f2edd48c50cd65eb3095030bfd2d316c69b5abf42e45afedf0facf6c202f"
+  },
+  "environment": {
+    "python": "3.12",
+    "numpy": "2.0.2"
+  },
+  "initialization_incident": false,
+  "config": {
+    "mode": "vesicle",
+    "branch": "V2",
+    "initial": "dispersed_fragments",
+    "fragment_size": 4,
+    "short_length": 0.75,
+    "case": "V2",
+    "seed": 0,
+    "duration": 400.0
+  }
+}

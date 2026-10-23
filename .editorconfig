@@ -1,0 +1,22 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+[*.json]
+indent_size = 2
+
+[*.bat]
+end_of_line = crlf
+
+# Do not silently reformat historical evidence when opening it in an editor.
+[research/{runs,engine_runs,abstract_runs,legacy_reference}/**]
+charset = unset
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset

@@ -1,0 +1,45 @@
+# Simulateur de chimie locale
+
+Un moteur CPU commun pour les campagnes sans fenêtre et les démonstrateurs
+interactifs. Les lois de copie/expression et de membrane sont des modules séparés.
+
+**Sous Windows :** installer Python 3.12, puis exécuter `demonstrators/installer.bat`
+pour préparer les dépendances dans `.venv`. Ouvrir ensuite
+[demonstrators](demonstrators/README.md) et double-cliquer sur `01_copie.bat`,
+`02_membrane.bat` ou `03_traduction.bat`.
+
+Pour une installation manuelle depuis la racine :
+
+```powershell
+py -3.12 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+```
+
+Les commandes Python ci-dessous s'exécutent avec cet environnement activé ou
+avec son interpréteur `.venv\Scripts\python.exe`.
+
+Les démonstrations en direct recalculent la dynamique. Le lanceur de fragments
+indique explicitement une relecture de trajectoire historique.
+
+```powershell
+python -m simulator --config demonstrators/configs/copy.json --gui
+python -m simulator --config demonstrators/configs/copy.json --no-trajectory
+python -m simulator --config demonstrators/configs/membrane.json --spatial brute
+python -m simulator --resume outputs/nom_du_run/checkpoint.npz --gui
+```
+
+Les sorties vont dans `outputs/` : paramètres résolus, code exact et empreintes,
+métriques, trajectoire si demandée et état de reprise complet. Fermer une fenêtre
+conserve aussi l'état partiel. Le mode sans interface n'importe ni Pygame ni Matplotlib.
+Les données restent locales et sont exclues de Git. Le dépôt conserve les entrées
+et le code nécessaires pour les [reconstruire](research/REPRODUCTION.md).
+
+- [Mode d'emploi des démonstrateurs](demonstrators/README.md)
+- [Architecture, format et ajout de lois](SIMULATOR_ARCHITECTURE.md)
+- [Validation de la migration](research/ENGINE_MIGRATION.md)
+- [Méthode et contributions](CONTRIBUTING.md)
+- [Reconstruction des expériences sans données préembarquées](research/REPRODUCTION.md)
+- [Initialisation Git et premier push](GIT_SETUP.md)
+
+Les expériences de chimie restent des preuves de principe : aucune cellule viable,
+catalyse par une chaîne exprimée ou reconstruction de ses outils n'est démontrée.

@@ -1,0 +1,160 @@
+{
+  "captured_at_utc": "2026-10-23T12:28:06.313571+00:00",
+  "source_directory": "temp",
+  "scope": "Selected unmodified reference sources; not integrated or executed",
+  "files": [
+    {
+      "original_path": "temp/src/checkpoint.cpp",
+      "preserved_path": "research/legacy_reference/source/src/checkpoint.cpp",
+      "bytes": 12833,
+      "sha256": "c30cdae83a95c44569d6c793bdc4d3575be01f28f38ac91e4a9b4dc7476db4fc"
+    },
+    {
+      "original_path": "temp/src/experiment.cpp",
+      "preserved_path": "research/legacy_reference/source/src/experiment.cpp",
+      "bytes": 1217,
+      "sha256": "63aee5cbc2e82717aaa634be320b24c682392709b78585c2bff8d05514d25b39"
+    },
+    {
+      "original_path": "temp/src/headless_main.cpp",
+      "preserved_path": "research/legacy_reference/source/src/headless_main.cpp",
+      "bytes": 10098,
+      "sha256": "ec711e1378ec4883ea8586d6b9d7d283bf0b40bb41f20928ed63ea01f12282eb"
+    },
+    {
+      "original_path": "temp/src/interactive_main.cpp",
+      "preserved_path": "research/legacy_reference/source/src/interactive_main.cpp",
+      "bytes": 23288,
+      "sha256": "526f2e65c85095e3bb053d04c7c8c59d8e41123df5256c7bb1fbdb0507b8d68c"
+    },
+    {
+      "original_path": "temp/src/metrics.cpp",
+      "preserved_path": "research/legacy_reference/source/src/metrics.cpp",
+      "bytes": 2067,
+      "sha256": "7cbff1fb5618ce1e60e7d027ac5f553c1c03f29d8a2d72981dd34b968a82e8bc"
+    },
+    {
+      "original_path": "temp/src/runner.cpp",
+      "preserved_path": "research/legacy_reference/source/src/runner.cpp",
+      "bytes": 2122,
+      "sha256": "b0a0051197e2d149905924ec6ab114ade6da9dd140bda9c79d31f7fc4195172d"
+    },
+    {
+      "original_path": "temp/src/simulation.cpp",
+      "preserved_path": "research/legacy_reference/source/src/simulation.cpp",
+      "bytes": 32260,
+      "sha256": "0dd645372f3de02e632989c8244b94edb0ba8fe48bd65a0b82efe114187f6335"
+    },
+    {
+      "original_path": "temp/src/spatial_grid.cpp",
+      "preserved_path": "research/legacy_reference/source/src/spatial_grid.cpp",
+      "bytes": 2041,
+      "sha256": "cc5db312359f1d1edb25c3939ad9e68b4e343c82769d1dd302d9d51d80e83ef9"
+    },
+    {
+      "original_path": "temp/src/spatial_grid_regression_main.cpp",
+      "preserved_path": "research/legacy_reference/source/src/spatial_grid_regression_main.cpp",
+      "bytes": 7365,
+      "sha256": "a3e80ec8768e564a535fb88c0791387aa2d4392ca9d58fedd1b689ab6ee3bba5"
+    },
+    {
+      "original_path": "temp/src/template_copy.cpp",
+      "preserved_path": "research/legacy_reference/source/src/template_copy.cpp",
+      "bytes": 24529,
+      "sha256": "cf6fc4f656519a86f5787de1d152f6f14115846df754501bfb28ca8d0749736f"
+    },
+    {
+      "original_path": "temp/src/template_copy_demo_main.cpp",
+      "preserved_path": "research/legacy_reference/source/src/template_copy_demo_main.cpp",
+      "bytes": 18983,
+      "sha256": "a9c5eb695fafbac7397c57f7b629f7bc96b601d732237ccd207434cb4d236466"
+    },
+    {
+      "original_path": "temp/src/template_copy_headless_main.cpp",
+      "preserved_path": "research/legacy_reference/source/src/template_copy_headless_main.cpp",
+      "bytes": 12575,
+      "sha256": "52bbdc1eba64919ec8f55915f48dd9528a5a73baa9ba35f73d490971620f1b4e"
+    },
+    {
+      "original_path": "temp/src/template_copy_smoke_main.cpp",
+      "preserved_path": "research/legacy_reference/source/src/template_copy_smoke_main.cpp",
+      "bytes": 2436,
+      "sha256": "9898b1bf0fa7fe9b2ae52a41d268b262c8ae66b75b38cfba261d37ee371abc48"
+    },
+    {
+      "original_path": "temp/README.md",
+      "preserved_path": "research/legacy_reference/source/README.md",
+      "bytes": 9358,
+      "sha256": "37725ae0d9a47a88bcff2d6a63eee839195050dfc66075d6b87cfcae12223ce7"
+    },
+    {
+      "original_path": "temp/PATCHY_PARTICLES.md",
+      "preserved_path": "research/legacy_reference/source/PATCHY_PARTICLES.md",
+      "bytes": 3919,
+      "sha256": "92050d808f7b39f8b1ed13b53bc77d4582a3dbfa4c1f9fe9271a2bb8765e613a"
+    },
+    {
+      "original_path": "temp/TEMPLATE_COPY_DEMO.md",
+      "preserved_path": "research/legacy_reference/source/TEMPLATE_COPY_DEMO.md",
+      "bytes": 3227,
+      "sha256": "8fbdfa4f2a1256b857a6baf840ae8e107a3c78d57c1afcf58d0b5084eaa2b4c3"
+    },
+    {
+      "original_path": "temp/TEMPLATE_COPY_BENCHMARK.md",
+      "preserved_path": "research/legacy_reference/source/TEMPLATE_COPY_BENCHMARK.md",
+      "bytes": 966,
+      "sha256": "29383654c3cc351f9142455d13eeb405e64002d34c7c336a29f31662f75cd41f"
+    },
+    {
+      "original_path": "temp/WINDOWS_BUILD.md",
+      "preserved_path": "research/legacy_reference/source/WINDOWS_BUILD.md",
+      "bytes": 1621,
+      "sha256": "52fc4ae94c4598538456ca354259d32d16a9c0bd9e469beb85541b2ecbe7bd5a"
+    },
+    {
+      "original_path": "temp/CMakeLists.txt",
+      "preserved_path": "research/legacy_reference/source/CMakeLists.txt",
+      "bytes": 5336,
+      "sha256": "5ac16eac8ebf56d1c64a20480ecad0c8e6a5f02b362c123670b8c3c600a11a1e"
+    },
+    {
+      "original_path": "temp/CMakePresets.json",
+      "preserved_path": "research/legacy_reference/source/CMakePresets.json",
+      "bytes": 1715,
+      "sha256": "973a134ac05bc0462fc009707dfe894c6fcb409069d1f51bdd7df789b4508981"
+    },
+    {
+      "original_path": "temp/vcpkg.json",
+      "preserved_path": "research/legacy_reference/source/vcpkg.json",
+      "bytes": 540,
+      "sha256": "ea15cb8a016d14cfbb2549d3436a14ffafd73347585ac854183729eece5a7423"
+    },
+    {
+      "original_path": "temp/LICENSE",
+      "preserved_path": "research/legacy_reference/source/LICENSE",
+      "bytes": 1067,
+      "sha256": "71cd9ff08aac6887604e13b4a05653acdb4473fcc2d586cec0741cade43b43bf"
+    },
+    {
+      "original_path": "temp/life-emergence-patchy-particles.patch",
+      "preserved_path": "research/legacy_reference/source/life-emergence-patchy-particles.patch",
+      "bytes": 81122,
+      "sha256": "6696737cf88aace190902fcb40a217c90c9d588fa40d69273852ae04662e1a7c"
+    }
+  ],
+  "not_present_in_supplied_tree": [
+    "include/particle_life",
+    "scripts",
+    "external/vcpkg"
+  ],
+  "not_copied": [
+    "particle_life.checkpoint (parameters extracted separately)",
+    "smoke-test.csv",
+    "imgui.ini",
+    ".gitignore",
+    ".gitmodules",
+    "APPLY_PATCH_WINDOWS.md"
+  ],
+  "build_status": "Not attempted: public headers are missing; patch contains partial header diffs only",
+  "license": "Original MIT LICENSE preserved with source"
+}

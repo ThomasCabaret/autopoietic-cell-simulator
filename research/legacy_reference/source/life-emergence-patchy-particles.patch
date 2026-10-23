@@ -1,0 +1,1859 @@
+diff --git a/PATCHY_PARTICLES.md b/PATCHY_PARTICLES.md
+new file mode 100644
+index 0000000..3c07628
+--- /dev/null
++++ b/PATCHY_PARTICLES.md
+@@ -0,0 +1,79 @@
++# Patch-particle demonstrator
++
++This patch adds a new particle type, `P`, without changing the legacy `S`
++surfactant model.
++
++A `P` particle has one saturable left site and one saturable right site. A right
++site can bind only a free left site on a nearby `P` particle. Existing bonds are
++stored by stable particle identifier, while the spatial grid is used only to
++find new local contacts and non-bonded repulsion contacts.
++
++The model has no vesicle identifier, no loop detector, no inside/outside test
++and no target global shape. Chains and closed loops can only result from local
++association, local bond mechanics and a preferred turn angle between adjacent
++monomers.
++
++## First interactive test
++
++1. Select `Closed reflecting box` or `Periodic wrap` as the boundary mode.
++2. Clear the world with `R`.
++3. Open `Patch monomers P` and click `Spawn P batch`. A few hundred particles
++   are enough for a first test; a denser population associates faster.
++4. Let the simulation run and inspect the bond count and the blue bond lines.
++5. Raise `P temperature` to several units to agitate the particles and increase
++   thermal dissociation.
++6. While the material is dissociated, change `P preferred turn angle`.
++7. Lower `P temperature` again and observe the new assembly regime.
++
++The `P` key spawns one patch monomer. The click source can also be changed to
++`P - patch monomer` in the GUI.
++
++## Main controls
++
++- `P preferred turn angle`: local angular increment along a chain. Larger
++  absolute values generally favor smaller closed loops. Reversing the sign
++  reverses the preferred curvature orientation.
++- `P bond length`: preferred distance between adjacent monomer centers.
++- `P capture radius`: maximum mismatch between two free patch positions when a
++  bond is created.
++- `P capture angle`: angular tolerance for association.
++- `P bond stiffness`: translational spring stiffness of an existing bond.
++- `P bending stiffness`: strength with which a bond approaches the preferred
++  turn angle.
++- `P bond damping`: relative linear and angular damping across a bond.
++- `P break distance`: site separation at which a bond breaks mechanically.
++- `P break angle`: angular error at which a bond breaks mechanically.
++- `P core repulsion radius/strength`: non-bonded exclusion between patch
++  particles. Saturated membranes therefore do not acquire arbitrary extra
++  neighbors when they touch.
++- `P temperature`: random force and torque applied to patch particles.
++- `P thermal break rate`: how strongly temperature causes stochastic bond
++  dissociation.
++
++`Break all P bonds` provides an immediate manual reset. `Reset P defaults`
++restores the demonstrator values.
++
++## Boundary modes
++
++- `Legacy soft containment`: preserves the historical containing-force model.
++- `Destroy outside`: preserves the former open/destructive boundary behavior.
++- `Closed reflecting box`: particles reflect from the walls.
++- `Periodic wrap`: positions and interactions use periodic minimum-image
++  geometry. The spatial grid also searches across periodic seams.
++
++## Scope of the demonstrator
++
++The initial values are only a usable exploration point, not calibrated physical
++constants. They produce reversible polymers and can produce closed cycles, but
++the exact yield depends strongly on density, integration settings and annealing
++history. The point of the GUI is to locate useful regimes before deciding which
++parts of the model deserve a more formal treatment.
++
++Nesting is permitted by the local rules because a monomer whose left and right
++sites are occupied cannot bind a third membrane. This patch does not add a
++special nesting detector or guarantee that nested loops will arise frequently
++from a random initial state.
++
++Checkpoint format version 2 stores particle identifiers, patch bonds, patch
++parameters and boundary mode. Version 1 checkpoints from the clean refactor are
++still accepted; their particles are assigned identifiers when loaded.
+diff --git a/include/particle_life/math.hpp b/include/particle_life/math.hpp
+index ebf913e..07b95e5 100644
+--- a/include/particle_life/math.hpp
++++ b/include/particle_life/math.hpp
+@@ -68,6 +68,10 @@ inline float dot(const Vec2& lhs, const Vec2& rhs) noexcept {
+     return lhs.x * rhs.x + lhs.y * rhs.y;
+ }
+ 
++inline float cross(const Vec2& lhs, const Vec2& rhs) noexcept {
++    return lhs.x * rhs.y - lhs.y * rhs.x;
++}
++
+ inline float normSquared(const Vec2& value) noexcept {
+     return dot(value, value);
+ }
+@@ -87,6 +91,18 @@ inline float angleFromVector(const Vec2& value) noexcept {
+     return std::atan2(value.y, value.x);
+ }
+ 
++inline float wrapAngle(float angle) noexcept {
++    const float pi = static_cast<float>(kPi);
++    const float twoPi = static_cast<float>(2.0 * kPi);
++    while (angle > pi) {
++        angle -= twoPi;
++    }
++    while (angle < -pi) {
++        angle += twoPi;
++    }
++    return angle;
++}
++
+ inline Vec2 unitVectorFromAngle(float angle) noexcept {
+     return {std::cos(angle), std::sin(angle)};
+ }
+diff --git a/include/particle_life/metrics.hpp b/include/particle_life/metrics.hpp
+index 9b7bff0..354744c 100644
+--- a/include/particle_life/metrics.hpp
++++ b/include/particle_life/metrics.hpp
+@@ -13,7 +13,8 @@ namespace particle_life {
+ struct MetricsSample {
+     std::uint64_t step = 0;
+     std::size_t total = 0;
+-    std::array<std::size_t, 5> typeCounts{};
++    std::array<std::size_t, 6> typeCounts{};
++    std::size_t patchBonds = 0;
+     double meanSpeed = 0.0;
+     double maximumSpeed = 0.0;
+     double kineticEnergy = 0.0;
+diff --git a/include/particle_life/particle.hpp b/include/particle_life/particle.hpp
+index dc91c1d..39f4029 100644
+--- a/include/particle_life/particle.hpp
++++ b/include/particle_life/particle.hpp
+@@ -8,12 +8,16 @@
+ 
+ namespace particle_life {
+ 
++using ParticleId = std::uint64_t;
++constexpr ParticleId kInvalidParticleId = 0;
++
+ enum class ParticleType : std::uint8_t {
+     F = 0,
+     A = 1,
+     B = 2,
+     S = 3,
+-    L = 4
++    L = 4,
++    P = 5
+ };
+ 
+ inline char particleTypeCode(ParticleType type) noexcept {
+@@ -28,6 +32,8 @@ inline char particleTypeCode(ParticleType type) noexcept {
+         return 'S';
+     case ParticleType::L:
+         return 'L';
++    case ParticleType::P:
++        return 'P';
+     }
+     return '?';
+ }
+@@ -49,12 +55,16 @@ inline ParticleType particleTypeFromCode(char code) {
+     case 'L':
+     case 'l':
+         return ParticleType::L;
++    case 'P':
++    case 'p':
++        return ParticleType::P;
+     default:
+         throw std::invalid_argument(std::string("Unknown particle type: ") + code);
+     }
+ }
+ 
+ struct Particle {
++    ParticleId id = kInvalidParticleId;
+     Vec2 position;
+     Vec2 velocity;
+     float orientation = 0.0f;
+@@ -63,6 +73,12 @@ struct Particle {
+     float torque = 0.0f;
+     ParticleType type = ParticleType::F;
+     std::uint64_t spawnStep = 0;
++
++    // Patch particle chemistry. A P particle has one saturable left site and
++    // one saturable right site. A right site always binds a partner's left
++    // site, so the partner side does not need to be stored separately.
++    ParticleId leftBond = kInvalidParticleId;
++    ParticleId rightBond = kInvalidParticleId;
+ };
+ 
+ } // namespace particle_life
+diff --git a/include/particle_life/simulation.hpp b/include/particle_life/simulation.hpp
+index ff257f6..34e36b9 100644
+--- a/include/particle_life/simulation.hpp
++++ b/include/particle_life/simulation.hpp
+@@ -16,13 +16,45 @@ enum class NeighborSearchMode : std::uint8_t {
+     SpatialGrid = 1
+ };
+ 
++enum class BoundaryMode : std::uint8_t {
++    LegacyContainment = 0,
++    Destroy = 1,
++    Reflect = 2,
++    Wrap = 3
++};
++
++struct PatchParticleConfig {
++    // Geometry and reversible association.
++    float bondLength = 5.0f;
++    float captureRadius = 3.0f;
++    float captureAngle = 1.2f;
++    float preferredTurnAngle = 0.40f;
++
++    // Mechanical stability of an existing bond.
++    float bondStiffness = 3.0f;
++    float bendingStiffness = 0.7f;
++    float bondDamping = 0.25f;
++    float breakDistance = 4.0f;
++    float breakAngle = 1.8f;
++
++    // Non-bonded P-P contact. This is what keeps two already saturated
++    // membranes from simply occupying the same space.
++    float coreRepulsionRadius = 4.0f;
++    float coreRepulsionStrength = 10.0f;
++
++    // Deliberately simple laboratory "temperature" control. It injects random
++    // force/torque into P particles and can also break bonds stochastically.
++    float temperature = 0.30f;
++    float thermalBreakRate = 0.20f;
++};
++
+ struct SimulationConfig {
+     int worldWidth = 480;
+     int worldHeight = 270;
+     float dotSize = 2.0f;
+ 
+     bool centerize = false;
+-    bool destroyAtBoundary = false;
++    BoundaryMode boundaryMode = BoundaryMode::LegacyContainment;
+ 
+     float interactionRadius = 13.0f;
+     float brownianSpeed = 0.2f;
+@@ -39,6 +71,7 @@ struct SimulationConfig {
+     float oppositionThreshold = 1.426f;
+     float centerForce = 0.0001f;
+ 
++    PatchParticleConfig patch;
+     NeighborSearchMode neighborSearchMode = NeighborSearchMode::SpatialGrid;
+ };
+ 
+@@ -46,6 +79,7 @@ struct SimulationSnapshot {
+     SimulationConfig config;
+     std::uint32_t seed = 0;
+     std::uint64_t step = 0;
++    ParticleId nextParticleId = 1;
+     std::string randomEngineState;
+     std::vector<Particle> particles;
+ };
+@@ -71,6 +105,9 @@ public:
+     std::size_t spawn(ParticleType type, Vec2 origin = {});
+     void spawnMany(ParticleType type, std::size_t count, Vec2 origin = {});
+ 
++    std::size_t patchBondCount() const noexcept;
++    void breakAllPatchBonds() noexcept;
++
+     void step();
+     void runSteps(std::uint64_t count);
+ 
+@@ -86,13 +123,23 @@ private:
+         Vec2& outputForce,
+         float& outputTorque);
+ 
+-    void collectCandidates(std::size_t particleIndex, std::vector<std::size_t>& output) const;
++    Vec2 displacementBetween(const Vec2& from, const Vec2& to) const noexcept;
++    void collectCandidates(
++        std::size_t particleIndex,
++        float searchRadius,
++        std::vector<std::size_t>& output) const;
+     void compactActiveParticles(const std::vector<std::uint8_t>& active);
++    void repairPatchBondConsistency();
++    void updatePatchBonds();
++    void applyPatchBondForces();
++    void applyPatchCoreRepulsion();
++    void applyPostIntegrationBoundary(Particle& particle) const noexcept;
+ 
+     SimulationConfig config_;
+     std::uint32_t seed_ = 0;
+     std::mt19937 randomEngine_;
+     std::uint64_t step_ = 0;
++    ParticleId nextParticleId_ = 1;
+     std::vector<Particle> particles_;
+     SpatialGrid spatialGrid_;
+ };
+diff --git a/src/checkpoint.cpp b/src/checkpoint.cpp
+index 8735fd2..bc3146d 100644
+--- a/src/checkpoint.cpp
++++ b/src/checkpoint.cpp
+@@ -1,15 +1,17 @@
+ #include "particle_life/checkpoint.hpp"
+ 
++#include <algorithm>
+ #include <fstream>
+ #include <iomanip>
+ #include <limits>
++#include <locale>
+ #include <stdexcept>
+ #include <string>
+ 
+ namespace particle_life {
+ namespace {
+ 
+-constexpr int kCheckpointVersion = 1;
++constexpr int kCheckpointVersion = 2;
+ 
+ void requireKey(std::istream& input, const char* expected) {
+     std::string actual;
+@@ -24,7 +26,7 @@ void writeConfig(std::ostream& output, const SimulationConfig& config) {
+     output << "world_height " << config.worldHeight << '\n';
+     output << "dot_size " << config.dotSize << '\n';
+     output << "centerize " << config.centerize << '\n';
+-    output << "destroy_at_boundary " << config.destroyAtBoundary << '\n';
++    output << "boundary_mode " << static_cast<int>(config.boundaryMode) << '\n';
+     output << "interaction_radius " << config.interactionRadius << '\n';
+     output << "brownian_speed " << config.brownianSpeed << '\n';
+     output << "dt " << config.dt << '\n';
+@@ -39,11 +41,27 @@ void writeConfig(std::ostream& output, const SimulationConfig& config) {
+     output << "surfactant_torque_viscosity " << config.surfactantTorqueViscosity << '\n';
+     output << "opposition_threshold " << config.oppositionThreshold << '\n';
+     output << "center_force " << config.centerForce << '\n';
++
++    output << "patch_bond_length " << config.patch.bondLength << '\n';
++    output << "patch_capture_radius " << config.patch.captureRadius << '\n';
++    output << "patch_capture_angle " << config.patch.captureAngle << '\n';
++    output << "patch_preferred_turn_angle " << config.patch.preferredTurnAngle << '\n';
++    output << "patch_bond_stiffness " << config.patch.bondStiffness << '\n';
++    output << "patch_bending_stiffness " << config.patch.bendingStiffness << '\n';
++    output << "patch_bond_damping " << config.patch.bondDamping << '\n';
++    output << "patch_break_distance " << config.patch.breakDistance << '\n';
++    output << "patch_break_angle " << config.patch.breakAngle << '\n';
++    output << "patch_core_repulsion_radius " << config.patch.coreRepulsionRadius << '\n';
++    output << "patch_core_repulsion_strength " << config.patch.coreRepulsionStrength << '\n';
++    output << "patch_temperature " << config.patch.temperature << '\n';
++    output << "patch_thermal_break_rate " << config.patch.thermalBreakRate << '\n';
++
+     output << "neighbor_search_mode " << static_cast<int>(config.neighborSearchMode) << '\n';
+ }
+ 
+-SimulationConfig readConfig(std::istream& input) {
++SimulationConfig readConfigV1(std::istream& input) {
+     SimulationConfig config;
++    bool destroyAtBoundary = false;
+     int neighborSearchMode = 0;
+ 
+     requireKey(input, "world_width");
+@@ -55,7 +73,10 @@ SimulationConfig readConfig(std::istream& input) {
+     requireKey(input, "centerize");
+     input >> config.centerize;
+     requireKey(input, "destroy_at_boundary");
+-    input >> config.destroyAtBoundary;
++    input >> destroyAtBoundary;
++    config.boundaryMode = destroyAtBoundary
++        ? BoundaryMode::Destroy
++        : BoundaryMode::LegacyContainment;
+     requireKey(input, "interaction_radius");
+     input >> config.interactionRadius;
+     requireKey(input, "brownian_speed");
+@@ -87,12 +108,93 @@ SimulationConfig readConfig(std::istream& input) {
+     requireKey(input, "neighbor_search_mode");
+     input >> neighborSearchMode;
+ 
+-    if (!input) {
++    if (!input || neighborSearchMode < 0 || neighborSearchMode > 1) {
+         throw std::runtime_error("Invalid simulation configuration in checkpoint");
+     }
+-    if (neighborSearchMode < 0 || neighborSearchMode > 1) {
+-        throw std::runtime_error("Invalid neighbor search mode in checkpoint");
++    config.neighborSearchMode = static_cast<NeighborSearchMode>(neighborSearchMode);
++    return config;
++}
++
++SimulationConfig readConfigV2(std::istream& input) {
++    SimulationConfig config;
++    int boundaryMode = 0;
++    int neighborSearchMode = 0;
++
++    requireKey(input, "world_width");
++    input >> config.worldWidth;
++    requireKey(input, "world_height");
++    input >> config.worldHeight;
++    requireKey(input, "dot_size");
++    input >> config.dotSize;
++    requireKey(input, "centerize");
++    input >> config.centerize;
++    requireKey(input, "boundary_mode");
++    input >> boundaryMode;
++    requireKey(input, "interaction_radius");
++    input >> config.interactionRadius;
++    requireKey(input, "brownian_speed");
++    input >> config.brownianSpeed;
++    requireKey(input, "dt");
++    input >> config.dt;
++    requireKey(input, "void_viscosity");
++    input >> config.voidViscosity;
++    requireKey(input, "void_torque_viscosity");
++    input >> config.voidTorqueViscosity;
++    requireKey(input, "containing_force");
++    input >> config.containingForce;
++    requireKey(input, "division_angle");
++    input >> config.divisionAngle;
++    requireKey(input, "surfactant_force_strength");
++    input >> config.surfactantForceStrength;
++    requireKey(input, "surfactant_torque_strength");
++    input >> config.surfactantTorqueStrength;
++    requireKey(input, "surfactant_force_exponent");
++    input >> config.surfactantForceExponent;
++    requireKey(input, "surfactant_force_viscosity");
++    input >> config.surfactantForceViscosity;
++    requireKey(input, "surfactant_torque_viscosity");
++    input >> config.surfactantTorqueViscosity;
++    requireKey(input, "opposition_threshold");
++    input >> config.oppositionThreshold;
++    requireKey(input, "center_force");
++    input >> config.centerForce;
++
++    requireKey(input, "patch_bond_length");
++    input >> config.patch.bondLength;
++    requireKey(input, "patch_capture_radius");
++    input >> config.patch.captureRadius;
++    requireKey(input, "patch_capture_angle");
++    input >> config.patch.captureAngle;
++    requireKey(input, "patch_preferred_turn_angle");
++    input >> config.patch.preferredTurnAngle;
++    requireKey(input, "patch_bond_stiffness");
++    input >> config.patch.bondStiffness;
++    requireKey(input, "patch_bending_stiffness");
++    input >> config.patch.bendingStiffness;
++    requireKey(input, "patch_bond_damping");
++    input >> config.patch.bondDamping;
++    requireKey(input, "patch_break_distance");
++    input >> config.patch.breakDistance;
++    requireKey(input, "patch_break_angle");
++    input >> config.patch.breakAngle;
++    requireKey(input, "patch_core_repulsion_radius");
++    input >> config.patch.coreRepulsionRadius;
++    requireKey(input, "patch_core_repulsion_strength");
++    input >> config.patch.coreRepulsionStrength;
++    requireKey(input, "patch_temperature");
++    input >> config.patch.temperature;
++    requireKey(input, "patch_thermal_break_rate");
++    input >> config.patch.thermalBreakRate;
++
++    requireKey(input, "neighbor_search_mode");
++    input >> neighborSearchMode;
++
++    if (
++        !input || boundaryMode < 0 || boundaryMode > 3 ||
++        neighborSearchMode < 0 || neighborSearchMode > 1) {
++        throw std::runtime_error("Invalid simulation configuration in checkpoint");
+     }
++    config.boundaryMode = static_cast<BoundaryMode>(boundaryMode);
+     config.neighborSearchMode = static_cast<NeighborSearchMode>(neighborSearchMode);
+     return config;
+ }
+@@ -112,17 +214,20 @@ void CheckpointIO::save(const std::filesystem::path& path, const Simulation& sim
+     output << "PARTICLE_LIFE_CHECKPOINT " << kCheckpointVersion << '\n';
+     output << "seed " << snapshot.seed << '\n';
+     output << "step " << snapshot.step << '\n';
++    output << "next_particle_id " << snapshot.nextParticleId << '\n';
+     writeConfig(output, snapshot.config);
+     output << "rng_state " << std::quoted(snapshot.randomEngineState) << '\n';
+     output << "particles " << snapshot.particles.size() << '\n';
+ 
+     for (const Particle& particle : snapshot.particles) {
+-        output << particle.position.x << ' ' << particle.position.y << ' '
++        output << particle.id << ' '
++               << particle.position.x << ' ' << particle.position.y << ' '
+                << particle.velocity.x << ' ' << particle.velocity.y << ' '
+                << particle.orientation << ' ' << particle.angularVelocity << ' '
+                << particle.force.x << ' ' << particle.force.y << ' '
+                << particle.torque << ' ' << static_cast<int>(particle.type) << ' '
+-               << particle.spawnStep << '\n';
++               << particle.spawnStep << ' '
++               << particle.leftBond << ' ' << particle.rightBond << '\n';
+     }
+ 
+     if (!output) {
+@@ -140,7 +245,7 @@ SimulationSnapshot CheckpointIO::load(const std::filesystem::path& path) {
+     std::string magic;
+     int version = 0;
+     input >> magic >> version;
+-    if (magic != "PARTICLE_LIFE_CHECKPOINT" || version != kCheckpointVersion) {
++    if (magic != "PARTICLE_LIFE_CHECKPOINT" || (version != 1 && version != 2)) {
+         throw std::runtime_error("Unsupported checkpoint format: " + path.string());
+     }
+ 
+@@ -149,7 +254,13 @@ SimulationSnapshot CheckpointIO::load(const std::filesystem::path& path) {
+     input >> snapshot.seed;
+     requireKey(input, "step");
+     input >> snapshot.step;
+-    snapshot.config = readConfig(input);
++    if (version == 2) {
++        requireKey(input, "next_particle_id");
++        input >> snapshot.nextParticleId;
++        snapshot.config = readConfigV2(input);
++    } else {
++        snapshot.config = readConfigV1(input);
++    }
+     requireKey(input, "rng_state");
+     input >> std::quoted(snapshot.randomEngineState);
+ 
+@@ -158,19 +269,37 @@ SimulationSnapshot CheckpointIO::load(const std::filesystem::path& path) {
+     input >> particleCount;
+     snapshot.particles.resize(particleCount);
+ 
++    ParticleId assignedId = 1;
+     for (Particle& particle : snapshot.particles) {
+         int particleType = 0;
+-        input >> particle.position.x >> particle.position.y
+-              >> particle.velocity.x >> particle.velocity.y
+-              >> particle.orientation >> particle.angularVelocity
+-              >> particle.force.x >> particle.force.y
+-              >> particle.torque >> particleType >> particle.spawnStep;
+-        if (!input || particleType < 0 || particleType > 4) {
++        if (version == 2) {
++            input >> particle.id
++                  >> particle.position.x >> particle.position.y
++                  >> particle.velocity.x >> particle.velocity.y
++                  >> particle.orientation >> particle.angularVelocity
++                  >> particle.force.x >> particle.force.y
++                  >> particle.torque >> particleType >> particle.spawnStep
++                  >> particle.leftBond >> particle.rightBond;
++        } else {
++            particle.id = assignedId++;
++            input >> particle.position.x >> particle.position.y
++                  >> particle.velocity.x >> particle.velocity.y
++                  >> particle.orientation >> particle.angularVelocity
++                  >> particle.force.x >> particle.force.y
++                  >> particle.torque >> particleType >> particle.spawnStep;
++            particle.leftBond = kInvalidParticleId;
++            particle.rightBond = kInvalidParticleId;
++        }
++
++        const int maximumParticleType = version == 2 ? 5 : 4;
++        if (!input || particleType < 0 || particleType > maximumParticleType) {
+             throw std::runtime_error("Invalid particle record in checkpoint");
+         }
+         particle.type = static_cast<ParticleType>(particleType);
++        snapshot.nextParticleId = std::max(snapshot.nextParticleId, particle.id + 1U);
+     }
+ 
++    snapshot.nextParticleId = std::max<ParticleId>(snapshot.nextParticleId, 1U);
+     return snapshot;
+ }
+ 
+diff --git a/src/headless_main.cpp b/src/headless_main.cpp
+index 81924c4..dbd3154 100644
+--- a/src/headless_main.cpp
++++ b/src/headless_main.cpp
+@@ -25,8 +25,10 @@ struct Options {
+     std::uint64_t metricsEvery = 100;
+     double realtimeStepsPerSecond = 0.0;
+     bool bruteForce = false;
++    particle_life::BoundaryMode boundaryMode = particle_life::BoundaryMode::LegacyContainment;
++    bool boundarySpecified = false;
+ 
+-    std::array<std::size_t, 5> initialCounts{};
++    std::array<std::size_t, 6> initialCounts{};
+ 
+     bool periodicSourceEnabled = false;
+     particle_life::PeriodicSource periodicSource;
+@@ -67,6 +69,23 @@ const char* requireValue(int argc, char** argv, int& index) {
+     return argv[++index];
+ }
+ 
++particle_life::BoundaryMode parseBoundaryMode(const std::string& value) {
++    if (value == "contain" || value == "legacy") {
++        return particle_life::BoundaryMode::LegacyContainment;
++    }
++    if (value == "destroy") {
++        return particle_life::BoundaryMode::Destroy;
++    }
++    if (value == "reflect" || value == "closed") {
++        return particle_life::BoundaryMode::Reflect;
++    }
++    if (value == "wrap" || value == "periodic") {
++        return particle_life::BoundaryMode::Wrap;
++    }
++    throw std::invalid_argument(
++        "--boundary expects contain, destroy, reflect or wrap");
++}
++
+ Options parseOptions(int argc, char** argv) {
+     Options options;
+     for (int index = 1; index < argc; ++index) {
+@@ -89,6 +108,9 @@ Options parseOptions(int argc, char** argv) {
+             options.realtimeStepsPerSecond = parseDouble(requireValue(argc, argv, index));
+         } else if (argument == "--brute-force") {
+             options.bruteForce = true;
++        } else if (argument == "--boundary") {
++            options.boundaryMode = parseBoundaryMode(requireValue(argc, argv, index));
++            options.boundarySpecified = true;
+         } else if (argument == "--initial-f") {
+             options.initialCounts[0] = parseUnsigned64(requireValue(argc, argv, index));
+         } else if (argument == "--initial-a") {
+@@ -99,10 +121,12 @@ Options parseOptions(int argc, char** argv) {
+             options.initialCounts[3] = parseUnsigned64(requireValue(argc, argv, index));
+         } else if (argument == "--initial-l") {
+             options.initialCounts[4] = parseUnsigned64(requireValue(argc, argv, index));
++        } else if (argument == "--initial-p") {
++            options.initialCounts[5] = parseUnsigned64(requireValue(argc, argv, index));
+         } else if (argument == "--source-type") {
+             const std::string value = requireValue(argc, argv, index);
+             if (value.size() != 1U) {
+-                throw std::invalid_argument("--source-type expects one of F, A, B, S, L");
++                throw std::invalid_argument("--source-type expects one of F, A, B, S, L, P");
+             }
+             options.periodicSource.type = particle_life::particleTypeFromCode(value[0]);
+             options.periodicSourceEnabled = true;
+@@ -131,8 +155,10 @@ Options parseOptions(int argc, char** argv) {
+                 << "  --checkpoint FILE [--checkpoint-every N]\n"
+                 << "  --metrics FILE [--metrics-every N]\n"
+                 << "  --realtime-hz HZ --brute-force\n"
+-                << "  --initial-f N --initial-a N --initial-b N --initial-s N --initial-l N\n"
+-                << "  --source-type F|A|B|S|L --source-count N --source-period N\n"
++                << "  --boundary contain|destroy|reflect|wrap\n"
++                << "  --initial-f N --initial-a N --initial-b N --initial-s N\n"
++                << "  --initial-l N --initial-p N\n"
++                << "  --source-type F|A|B|S|L|P --source-count N --source-period N\n"
+                 << "  --source-start N --source-end N --source-x X --source-y Y\n";
+             std::exit(0);
+         } else {
+@@ -155,14 +181,18 @@ int main(int argc, char** argv) {
+         if (options.bruteForce) {
+             simulation.config().neighborSearchMode = particle_life::NeighborSearchMode::BruteForce;
+         }
++        if (options.boundarySpecified) {
++            simulation.config().boundaryMode = options.boundaryMode;
++        }
+ 
+         particle_life::ExperimentPlan experiment;
+-        const std::array<particle_life::ParticleType, 5> types = {
++        const std::array<particle_life::ParticleType, 6> types = {
+             particle_life::ParticleType::F,
+             particle_life::ParticleType::A,
+             particle_life::ParticleType::B,
+             particle_life::ParticleType::S,
+-            particle_life::ParticleType::L
++            particle_life::ParticleType::L,
++            particle_life::ParticleType::P
+         };
+         for (std::size_t index = 0; index < types.size(); ++index) {
+             if (options.initialCounts[index] != 0U) {
+@@ -189,7 +219,8 @@ int main(int argc, char** argv) {
+                   << " total=" << metrics.total << " F=" << metrics.typeCounts[0]
+                   << " A=" << metrics.typeCounts[1] << " B=" << metrics.typeCounts[2]
+                   << " S=" << metrics.typeCounts[3] << " L=" << metrics.typeCounts[4]
+-                  << '\n';
++                  << " P=" << metrics.typeCounts[5]
++                  << " patch_bonds=" << metrics.patchBonds << '\n';
+         return 0;
+     } catch (const std::exception& exception) {
+         std::cerr << "Error: " << exception.what() << '\n';
+diff --git a/src/interactive_main.cpp b/src/interactive_main.cpp
+index 314a944..e4bbe81 100644
+--- a/src/interactive_main.cpp
++++ b/src/interactive_main.cpp
+@@ -9,12 +9,15 @@
+ #include <SFML/Graphics.hpp>
+ 
+ #include <algorithm>
++#include <array>
++#include <cmath>
+ #include <cstdint>
+ #include <filesystem>
+ #include <iostream>
+ #include <memory>
+ #include <stdexcept>
+ #include <string>
++#include <unordered_map>
+ 
+ namespace {
+ 
+@@ -32,11 +35,31 @@ struct ViewerState {
+     bool drawInteractionRadius = false;
+     bool spawnAtMouseLocation = false;
+     bool sourceEnabled = false;
++    int sourceTypeIndex = 0;
++    int patchBatchCount = 200;
+     particle_life::Vec2 sourcePosition;
+     bool paused = false;
+     bool singleStepRequested = false;
+ };
+ 
++constexpr std::array<particle_life::ParticleType, 6> kParticleTypes = {
++    particle_life::ParticleType::F,
++    particle_life::ParticleType::A,
++    particle_life::ParticleType::B,
++    particle_life::ParticleType::S,
++    particle_life::ParticleType::L,
++    particle_life::ParticleType::P
++};
++
++constexpr std::array<const char*, 6> kParticleTypeNames = {
++    "F - food/precursor",
++    "A - catalyst",
++    "B - intermediary",
++    "S - legacy surfactant",
++    "L - limiter",
++    "P - patch monomer"
++};
++
+ ViewerOptions parseOptions(int argc, char** argv) {
+     ViewerOptions options;
+     for (int index = 1; index < argc; ++index) {
+@@ -76,6 +99,24 @@ particle_life::Vec2 fromSf(const sf::Vector2f& value) {
+     return {value.x, value.y};
+ }
+ 
++particle_life::Vec2 displayDisplacement(
++    const particle_life::SimulationConfig& config,
++    const particle_life::Vec2& from,
++    const particle_life::Vec2& to) {
++    particle_life::Vec2 displacement = to - from;
++    if (config.boundaryMode == particle_life::BoundaryMode::Wrap) {
++        const float width = static_cast<float>(config.worldWidth);
++        const float height = static_cast<float>(config.worldHeight);
++        if (width > 0.0f) {
++            displacement.x -= std::round(displacement.x / width) * width;
++        }
++        if (height > 0.0f) {
++            displacement.y -= std::round(displacement.y / height) * height;
++        }
++    }
++    return displacement;
++}
++
+ sf::Color particleColor(particle_life::ParticleType type) {
+     switch (type) {
+     case particle_life::ParticleType::F:
+@@ -88,6 +129,8 @@ sf::Color particleColor(particle_life::ParticleType type) {
+         return sf::Color(255, 200, 0);
+     case particle_life::ParticleType::L:
+         return sf::Color(27, 227, 243);
++    case particle_life::ParticleType::P:
++        return sf::Color(80, 170, 255);
+     }
+     return sf::Color::White;
+ }
+@@ -109,13 +152,40 @@ void drawSimulation(
+     interactionCircle.setOrigin(config.interactionRadius, config.interactionRadius);
+     interactionCircle.setFillColor(sf::Color::Transparent);
+     interactionCircle.setOutlineThickness(0.1f);
+-    interactionCircle.setOutlineColor(sf::Color::Black);
++    interactionCircle.setOutlineColor(sf::Color(180, 180, 180));
+ 
+     const double persistenceSteps =
+         static_cast<double>(viewer.persistenceSeconds) *
+         static_cast<double>(framesPerSecond) *
+         static_cast<double>(viewer.stepsPerFrame);
+ 
++    std::unordered_map<particle_life::ParticleId, const particle_life::Particle*> particlesById;
++    particlesById.reserve(simulation.particles().size());
++    for (const particle_life::Particle& particle : simulation.particles()) {
++        particlesById.emplace(particle.id, &particle);
++    }
++
++    // A right bond is drawn once. In periodic mode the minimum-image segment
++    // is used, so a bond across the seam does not cross the whole box.
++    for (const particle_life::Particle& particle : simulation.particles()) {
++        if (
++            particle.type != particle_life::ParticleType::P ||
++            particle.rightBond == particle_life::kInvalidParticleId) {
++            continue;
++        }
++        const auto partnerIterator = particlesById.find(particle.rightBond);
++        if (partnerIterator == particlesById.end()) {
++            continue;
++        }
++        const particle_life::Vec2 displacement = displayDisplacement(
++            config, particle.position, partnerIterator->second->position);
++        const sf::Vertex bond[] = {
++            sf::Vertex(toSf(particle.position), sf::Color(160, 180, 200)),
++            sf::Vertex(toSf(particle.position + displacement), sf::Color(160, 180, 200))
++        };
++        window.draw(bond, 2, sf::Lines);
++    }
++
+     for (const particle_life::Particle& particle : simulation.particles()) {
+         const sf::Vector2f position = toSf(particle.position);
+         const sf::Color color = particleColor(particle.type);
+@@ -127,10 +197,20 @@ void drawSimulation(
+                 tailLength * particle_life::unitVectorFromAngle(
+                                  particle.orientation + static_cast<float>(particle_life::kPi));
+             const sf::Vertex tail[] = {
+-                sf::Vertex(position, sf::Color::Black),
+-                sf::Vertex(toSf(tailEnd), sf::Color::Black)
++                sf::Vertex(position, sf::Color(210, 210, 210)),
++                sf::Vertex(toSf(tailEnd), sf::Color(210, 210, 210))
+             };
+             window.draw(tail, 2, sf::Lines);
++        } else if (particle.type == particle_life::ParticleType::P) {
++            constexpr float normalLength = 6.0f;
++            const particle_life::Vec2 normalEnd =
++                particle.position +
++                normalLength * particle_life::unitVectorFromAngle(particle.orientation);
++            const sf::Vertex normal[] = {
++                sf::Vertex(position, sf::Color(220, 230, 255)),
++                sf::Vertex(toSf(normalEnd), sf::Color(220, 230, 255))
++            };
++            window.draw(normal, 2, sf::Lines);
+         }
+ 
+         if (
+@@ -182,7 +262,7 @@ int main(int argc, char** argv) {
+             metricsWriter->append(simulation);
+         }
+ 
+-        sf::RenderWindow window(sf::VideoMode(1920, 1080), "Particle system");
++        sf::RenderWindow window(sf::VideoMode(1920, 1080), "Life Emergence");
+         if (!ImGui::SFML::Init(window)) {
+             std::cerr << "ImGui-SFML initialization failed\n";
+             return 1;
+@@ -264,6 +344,8 @@ int main(int argc, char** argv) {
+                         simulation.spawn(particle_life::ParticleType::B, spawnOrigin);
+                     } else if (event.key.code == sf::Keyboard::L) {
+                         simulation.spawn(particle_life::ParticleType::L, spawnOrigin);
++                    } else if (event.key.code == sf::Keyboard::P) {
++                        simulation.spawn(particle_life::ParticleType::P, spawnOrigin);
+                     } else if (event.key.code == sf::Keyboard::Space) {
+                         viewer.paused = !viewer.paused;
+                     }
+@@ -286,6 +368,7 @@ int main(int argc, char** argv) {
+             ImGui::Text("Step: %llu", static_cast<unsigned long long>(simulation.stepIndex()));
+             ImGui::Text("Seed: %u", simulation.seed());
+             ImGui::Text("Population: %zu", simulation.particles().size());
++            ImGui::Text("P bonds: %zu", simulation.patchBondCount());
+             ImGui::Checkbox("Paused", &viewer.paused);
+             ImGui::SameLine();
+             if (ImGui::Button("Single step")) {
+@@ -294,12 +377,26 @@ int main(int argc, char** argv) {
+             if (ImGui::InputInt("Steps per frame", &viewer.stepsPerFrame)) {
+                 viewer.stepsPerFrame = std::max(viewer.stepsPerFrame, 1);
+             }
+-            ImGui::SliderFloat("dt", &config.dt, 0.0f, 1.0f);
++            ImGui::SliderFloat("dt", &config.dt, 0.001f, 1.0f);
+             ImGui::SliderFloat("Containing force", &config.containingForce, 0.0f, 2.0f);
+             ImGui::SliderFloat("Centerize", &config.centerForce, 0.0f, 0.001f);
+             ImGui::SliderFloat("Brownian speed", &config.brownianSpeed, 0.0f, 1.0f);
+-            ImGui::SliderFloat("Void viscosity", &config.voidViscosity, 0.99f, 1.0f);
+-            ImGui::SliderFloat("Void torque viscosity", &config.voidTorqueViscosity, 0.9f, 1.0f);
++            ImGui::SliderFloat("Void viscosity", &config.voidViscosity, 0.90f, 1.0f);
++            ImGui::SliderFloat("Void torque viscosity", &config.voidTorqueViscosity, 0.80f, 1.0f);
++
++            const char* boundaryNames[] = {
++                "Legacy soft containment",
++                "Destroy outside",
++                "Closed reflecting box",
++                "Periodic wrap"
++            };
++            int boundaryMode = static_cast<int>(config.boundaryMode);
++            if (ImGui::Combo("Boundary mode", &boundaryMode, boundaryNames, 4)) {
++                config.boundaryMode = static_cast<particle_life::BoundaryMode>(boundaryMode);
++            }
++
++            ImGui::Separator();
++            ImGui::Text("Legacy surfactant S");
+             ImGui::SliderFloat("S interaction radius", &config.interactionRadius, 4.0f, 20.0f);
+             ImGui::SliderFloat("S force strength", &config.surfactantForceStrength, 0.0f, 5.0f);
+             ImGui::SliderFloat("S force exp power", &config.surfactantForceExponent, 1.0f, 5.0f);
+@@ -308,7 +405,50 @@ int main(int argc, char** argv) {
+             ImGui::SliderFloat("S force viscosity", &config.surfactantForceViscosity, 0.0f, 4.0f);
+             ImGui::SliderFloat("S torque viscosity", &config.surfactantTorqueViscosity, 0.0f, 4.0f);
+             ImGui::SliderFloat("S opposition threshold", &config.oppositionThreshold, 0.0f, 7.0f);
+-            ImGui::Checkbox("Destroy at boundary", &config.destroyAtBoundary);
++
++            if (ImGui::CollapsingHeader("Patch monomers P", ImGuiTreeNodeFlags_DefaultOpen)) {
++                ImGui::TextWrapped(
++                    "Each P monomer has one saturable left site and one saturable right site. "
++                    "Raise temperature to dissociate, change the geometry, then cool to reassemble.");
++                ImGui::SliderFloat("P preferred turn angle", &config.patch.preferredTurnAngle, -1.2f, 1.2f);
++                ImGui::SliderFloat("P bond length", &config.patch.bondLength, 2.0f, 12.0f);
++                ImGui::SliderFloat("P capture radius", &config.patch.captureRadius, 0.05f, 8.0f);
++                ImGui::SliderFloat("P capture angle", &config.patch.captureAngle, 0.05f, 3.14159f);
++                ImGui::SliderFloat("P bond stiffness", &config.patch.bondStiffness, 0.0f, 20.0f);
++                ImGui::SliderFloat("P bending stiffness", &config.patch.bendingStiffness, 0.0f, 10.0f);
++                ImGui::SliderFloat("P bond damping", &config.patch.bondDamping, 0.0f, 5.0f);
++                ImGui::SliderFloat("P break distance", &config.patch.breakDistance, 0.05f, 15.0f);
++                ImGui::SliderFloat("P break angle", &config.patch.breakAngle, 0.05f, 3.14159f);
++                ImGui::SliderFloat("P core repulsion radius", &config.patch.coreRepulsionRadius, 0.5f, 12.0f);
++                ImGui::SliderFloat("P core repulsion strength", &config.patch.coreRepulsionStrength, 0.0f, 50.0f);
++                ImGui::SliderFloat("P temperature", &config.patch.temperature, 0.0f, 10.0f);
++                ImGui::SliderFloat("P thermal break rate", &config.patch.thermalBreakRate, 0.0f, 5.0f);
++
++                if (ImGui::InputInt("P batch count", &viewer.patchBatchCount)) {
++                    viewer.patchBatchCount = std::max(viewer.patchBatchCount, 0);
++                }
++                if (ImGui::Button("Spawn P batch")) {
++                    simulation.spawnMany(
++                        particle_life::ParticleType::P,
++                        static_cast<std::size_t>(viewer.patchBatchCount));
++                }
++                ImGui::SameLine();
++                if (ImGui::Button("Break all P bonds")) {
++                    simulation.breakAllPatchBonds();
++                }
++                ImGui::SameLine();
++                if (ImGui::Button("Reset P defaults")) {
++                    config.patch = particle_life::PatchParticleConfig{};
++                }
++            }
++
++            ImGui::Separator();
++            ImGui::Combo(
++                "Click source particle",
++                &viewer.sourceTypeIndex,
++                kParticleTypeNames.data(),
++                static_cast<int>(kParticleTypeNames.size()));
++            ImGui::Text("Click source: %s", viewer.sourceEnabled ? "ON" : "OFF");
+             ImGui::Checkbox("Draw S interaction radius", &viewer.drawInteractionRadius);
+             ImGui::Checkbox("Spawn particles at mouse location", &viewer.spawnAtMouseLocation);
+             bool useSpatialGrid = config.neighborSearchMode == particle_life::NeighborSearchMode::SpatialGrid;
+@@ -320,7 +460,7 @@ int main(int argc, char** argv) {
+             if (ImGui::Button("Save checkpoint")) {
+                 particle_life::CheckpointIO::save(options.checkpointPath, simulation);
+             }
+-            ImGui::Text("S/F/A/B/L: spawn, C: centerize, R: clear, Space: pause");
++            ImGui::Text("S/F/A/B/L/P: spawn, C: centerize, R: clear, Space: pause");
+             ImGui::End();
+ 
+             if (isDragging && sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+@@ -333,7 +473,9 @@ int main(int argc, char** argv) {
+             const bool shouldRun = !viewer.paused || viewer.singleStepRequested;
+             if (shouldRun) {
+                 if (viewer.sourceEnabled && !viewer.singleStepRequested) {
+-                    simulation.spawn(particle_life::ParticleType::F, viewer.sourcePosition);
++                    simulation.spawn(
++                        kParticleTypes.at(static_cast<std::size_t>(viewer.sourceTypeIndex)),
++                        viewer.sourcePosition);
+                 }
+                 const int stepCount = viewer.singleStepRequested ? 1 : viewer.stepsPerFrame;
+                 for (int step = 0; step < stepCount; ++step) {
+@@ -351,7 +493,7 @@ int main(int argc, char** argv) {
+             viewer.singleStepRequested = false;
+ 
+             window.setView(view);
+-            window.clear(sf::Color::White);
++            window.clear(sf::Color::Black);
+             drawSimulation(window, worldRectangle, simulation, viewer, framesPerSecond);
+             ImGui::SFML::Render(window);
+             window.display();
+diff --git a/src/metrics.cpp b/src/metrics.cpp
+index 0aab59f..df77021 100644
+--- a/src/metrics.cpp
++++ b/src/metrics.cpp
+@@ -3,6 +3,7 @@
+ #include "particle_life/math.hpp"
+ 
+ #include <algorithm>
++#include <cmath>
+ #include <iomanip>
+ #include <locale>
+ #include <stdexcept>
+@@ -13,6 +14,7 @@ MetricsSample collectMetrics(const Simulation& simulation) {
+     MetricsSample sample;
+     sample.step = simulation.stepIndex();
+     sample.total = simulation.particles().size();
++    sample.patchBonds = simulation.patchBondCount();
+ 
+     double speedSum = 0.0;
+     for (const Particle& particle : simulation.particles()) {
+@@ -39,7 +41,7 @@ MetricsCsvWriter::MetricsCsvWriter(const std::filesystem::path& path)
+     }
+     output_.imbue(std::locale::classic());
+     output_ << std::setprecision(17);
+-    output_ << "step,total,F,A,B,S,L,mean_speed,max_speed,kinetic_energy\n";
++    output_ << "step,total,F,A,B,S,L,P,patch_bonds,mean_speed,max_speed,kinetic_energy\n";
+ }
+ 
+ void MetricsCsvWriter::append(const Simulation& simulation) {
+@@ -51,8 +53,8 @@ void MetricsCsvWriter::append(const MetricsSample& sample) {
+     for (const std::size_t count : sample.typeCounts) {
+         output_ << ',' << count;
+     }
+-    output_ << ',' << sample.meanSpeed << ',' << sample.maximumSpeed << ','
+-            << sample.kineticEnergy << '\n';
++    output_ << ',' << sample.patchBonds << ',' << sample.meanSpeed << ','
++            << sample.maximumSpeed << ',' << sample.kineticEnergy << '\n';
+     output_.flush();
+ 
+     if (!output_) {
+diff --git a/src/simulation.cpp b/src/simulation.cpp
+index 663407f..7282d66 100644
+--- a/src/simulation.cpp
++++ b/src/simulation.cpp
+@@ -6,9 +6,34 @@
+ #include <numeric>
+ #include <sstream>
+ #include <stdexcept>
++#include <unordered_map>
++#include <unordered_set>
+ #include <utility>
+ 
+ namespace particle_life {
++namespace {
++
++using ParticleIndex = std::unordered_map<ParticleId, std::size_t>;
++
++ParticleIndex buildParticleIndex(const std::vector<Particle>& particles) {
++    ParticleIndex result;
++    result.reserve(particles.size());
++    for (std::size_t index = 0; index < particles.size(); ++index) {
++        result.emplace(particles[index].id, index);
++    }
++    return result;
++}
++
++Vec2 patchTangent(const Particle& particle) noexcept {
++    return unitVectorFromAngle(
++        particle.orientation + static_cast<float>(kPi) / 2.0f);
++}
++
++float safePositive(float value) noexcept {
++    return std::max(value, std::numeric_limits<float>::epsilon());
++}
++
++} // namespace
+ 
+ Simulation::Simulation(SimulationConfig config, std::uint32_t seed)
+     : config_(config),
+@@ -48,6 +73,7 @@ void Simulation::reset(std::uint32_t seed) {
+     seed_ = seed;
+     randomEngine_.seed(seed_);
+     step_ = 0;
++    nextParticleId_ = 1;
+     particles_.clear();
+ }
+ 
+@@ -62,6 +88,7 @@ std::size_t Simulation::spawn(ParticleType type, Vec2 origin) {
+     std::uniform_real_distribution<double> orientation(0.0, 2.0 * kPi);
+ 
+     Particle particle;
++    particle.id = nextParticleId_++;
+     particle.position = {
+         static_cast<float>(positionX(randomEngine_)),
+         static_cast<float>(positionY(randomEngine_))
+@@ -77,6 +104,8 @@ std::size_t Simulation::spawn(ParticleType type, Vec2 origin) {
+     particle.torque = 0.0f;
+     particle.type = type;
+     particle.spawnStep = step_;
++    particle.leftBond = kInvalidParticleId;
++    particle.rightBond = kInvalidParticleId;
+ 
+     particles_.push_back(particle);
+     return particles_.size() - 1U;
+@@ -89,6 +118,23 @@ void Simulation::spawnMany(ParticleType type, std::size_t count, Vec2 origin) {
+     }
+ }
+ 
++std::size_t Simulation::patchBondCount() const noexcept {
++    return static_cast<std::size_t>(std::count_if(
++        particles_.begin(),
++        particles_.end(),
++        [](const Particle& particle) {
++            return particle.type == ParticleType::P &&
++                   particle.rightBond != kInvalidParticleId;
++        }));
++}
++
++void Simulation::breakAllPatchBonds() noexcept {
++    for (Particle& particle : particles_) {
++        particle.leftBond = kInvalidParticleId;
++        particle.rightBond = kInvalidParticleId;
++    }
++}
++
+ void Simulation::calculateSurfactantForceAndTorque(
+     Particle& particle,
+     Particle& other,
+@@ -99,28 +145,9 @@ void Simulation::calculateSurfactantForceAndTorque(
+     const float orientation1 = particle.orientation;
+     const float orientation2 = other.orientation;
+ 
+-    float theta = orientation2 - orientation1;
+-    while (theta > static_cast<float>(kPi)) {
+-        theta -= static_cast<float>(2.0 * kPi);
+-    }
+-    while (theta < -static_cast<float>(kPi)) {
+-        theta += static_cast<float>(2.0 * kPi);
+-    }
+-
+-    float phi = angleFromVector(displacement) - orientation1;
+-    float antiPhi = angleFromVector(-displacement) - orientation2;
+-    while (phi > static_cast<float>(kPi)) {
+-        phi -= static_cast<float>(2.0 * kPi);
+-    }
+-    while (phi < -static_cast<float>(kPi)) {
+-        phi += static_cast<float>(2.0 * kPi);
+-    }
+-    while (antiPhi > static_cast<float>(kPi)) {
+-        antiPhi -= static_cast<float>(2.0 * kPi);
+-    }
+-    while (antiPhi < -static_cast<float>(kPi)) {
+-        antiPhi += static_cast<float>(2.0 * kPi);
+-    }
++    const float theta = wrapAngle(orientation2 - orientation1);
++    const float phi = wrapAngle(angleFromVector(displacement) - orientation1);
++    const float antiPhi = wrapAngle(angleFromVector(-displacement) - orientation2);
+ 
+     const float opposition = std::max(std::abs(phi), std::abs(antiPhi));
+ 
+@@ -148,20 +175,8 @@ void Simulation::calculateSurfactantForceAndTorque(
+     const bool isLeft =
+         dot(displacement, rotateVector(unitVectorFromAngle(middle), -static_cast<float>(kPi) / 2.0f)) > 0.0f;
+ 
+-    float leftTargetOffset = (-theta - config_.divisionAngle) / 2.0f;
+-    float rightTargetOffset = (-theta + config_.divisionAngle) / 2.0f;
+-    while (leftTargetOffset > static_cast<float>(kPi)) {
+-        leftTargetOffset -= static_cast<float>(2.0 * kPi);
+-    }
+-    while (leftTargetOffset < -static_cast<float>(kPi)) {
+-        leftTargetOffset += static_cast<float>(2.0 * kPi);
+-    }
+-    while (rightTargetOffset > static_cast<float>(kPi)) {
+-        rightTargetOffset -= static_cast<float>(2.0 * kPi);
+-    }
+-    while (rightTargetOffset < -static_cast<float>(kPi)) {
+-        rightTargetOffset += static_cast<float>(2.0 * kPi);
+-    }
++    float leftTargetOffset = wrapAngle((-theta - config_.divisionAngle) / 2.0f);
++    float rightTargetOffset = wrapAngle((-theta + config_.divisionAngle) / 2.0f);
+ 
+     const float directionFactor =
+         ((isLeft && leftTargetOffset < 0.0f) || (!isLeft && rightTargetOffset < 0.0f)) ? 1.0f : -1.0f;
+@@ -176,15 +191,75 @@ void Simulation::calculateSurfactantForceAndTorque(
+         config_.surfactantTorqueViscosity;
+ }
+ 
++Vec2 Simulation::displacementBetween(const Vec2& from, const Vec2& to) const noexcept {
++    Vec2 displacement = to - from;
++    if (config_.boundaryMode != BoundaryMode::Wrap) {
++        return displacement;
++    }
++
++    const float width = static_cast<float>(config_.worldWidth);
++    const float height = static_cast<float>(config_.worldHeight);
++    if (width > 0.0f) {
++        displacement.x -= std::round(displacement.x / width) * width;
++    }
++    if (height > 0.0f) {
++        displacement.y -= std::round(displacement.y / height) * height;
++    }
++    return displacement;
++}
++
+ void Simulation::collectCandidates(
+     std::size_t particleIndex,
++    float searchRadius,
+     std::vector<std::size_t>& output) const {
+     if (config_.neighborSearchMode == NeighborSearchMode::BruteForce) {
+         output.resize(particles_.size());
+         std::iota(output.begin(), output.end(), std::size_t{0});
+         return;
+     }
+-    spatialGrid_.queryCandidateIndices(particles_[particleIndex].position, output);
++
++    const Vec2 position = particles_[particleIndex].position;
++    spatialGrid_.queryCandidateIndices(position, output);
++
++    if (config_.boundaryMode == BoundaryMode::Wrap) {
++        const float width = static_cast<float>(config_.worldWidth);
++        const float height = static_cast<float>(config_.worldHeight);
++        const float halfWidth = width / 2.0f;
++        const float halfHeight = height / 2.0f;
++
++        std::vector<float> xShifts{0.0f};
++        std::vector<float> yShifts{0.0f};
++        if (position.x - (-halfWidth) < searchRadius) {
++            xShifts.push_back(width);
++        }
++        if (halfWidth - position.x < searchRadius) {
++            xShifts.push_back(-width);
++        }
++        if (position.y - (-halfHeight) < searchRadius) {
++            yShifts.push_back(height);
++        }
++        if (halfHeight - position.y < searchRadius) {
++            yShifts.push_back(-height);
++        }
++
++        std::vector<std::size_t> periodicCandidates;
++        for (const float shiftX : xShifts) {
++            for (const float shiftY : yShifts) {
++                if (shiftX == 0.0f && shiftY == 0.0f) {
++                    continue;
++                }
++                spatialGrid_.queryCandidateIndices(
++                    {position.x + shiftX, position.y + shiftY},
++                    periodicCandidates);
++                output.insert(
++                    output.end(),
++                    periodicCandidates.begin(),
++                    periodicCandidates.end());
++            }
++        }
++        std::sort(output.begin(), output.end());
++        output.erase(std::unique(output.begin(), output.end()), output.end());
++    }
+ }
+ 
+ void Simulation::compactActiveParticles(const std::vector<std::uint8_t>& active) {
+@@ -201,15 +276,334 @@ void Simulation::compactActiveParticles(const std::vector<std::uint8_t>& active)
+     particles_.resize(outputIndex);
+ }
+ 
++void Simulation::repairPatchBondConsistency() {
++    std::unordered_set<ParticleId> usedIds;
++    usedIds.reserve(particles_.size());
++    for (Particle& particle : particles_) {
++        if (particle.id == kInvalidParticleId || !usedIds.insert(particle.id).second) {
++            particle.id = nextParticleId_++;
++            particle.leftBond = kInvalidParticleId;
++            particle.rightBond = kInvalidParticleId;
++            usedIds.insert(particle.id);
++        } else {
++            nextParticleId_ = std::max(nextParticleId_, particle.id + 1U);
++        }
++        if (particle.type != ParticleType::P) {
++            particle.leftBond = kInvalidParticleId;
++            particle.rightBond = kInvalidParticleId;
++        }
++    }
++
++    const ParticleIndex particleIndex = buildParticleIndex(particles_);
++    for (Particle& particle : particles_) {
++        if (particle.type != ParticleType::P) {
++            continue;
++        }
++
++        if (particle.leftBond != kInvalidParticleId) {
++            const auto partnerIterator = particleIndex.find(particle.leftBond);
++            if (
++                partnerIterator == particleIndex.end() ||
++                particles_[partnerIterator->second].type != ParticleType::P ||
++                particles_[partnerIterator->second].rightBond != particle.id) {
++                particle.leftBond = kInvalidParticleId;
++            }
++        }
++        if (particle.rightBond != kInvalidParticleId) {
++            const auto partnerIterator = particleIndex.find(particle.rightBond);
++            if (
++                partnerIterator == particleIndex.end() ||
++                particles_[partnerIterator->second].type != ParticleType::P ||
++                particles_[partnerIterator->second].leftBond != particle.id) {
++                particle.rightBond = kInvalidParticleId;
++            }
++        }
++    }
++}
++
++void Simulation::updatePatchBonds() {
++    repairPatchBondConsistency();
++    ParticleIndex particleIndex = buildParticleIndex(particles_);
++    const PatchParticleConfig& patch = config_.patch;
++    const float halfBondLength = patch.bondLength / 2.0f;
++
++    std::uniform_real_distribution<float> unitRandom(0.0f, 1.0f);
++    const float thermalBreakProbability =
++        patch.temperature > 0.0f && patch.thermalBreakRate > 0.0f && config_.dt > 0.0f
++            ? 1.0f - std::exp(-patch.temperature * patch.thermalBreakRate * config_.dt)
++            : 0.0f;
++
++    // Existing bonds are checked directly by stable particle id. The spatial
++    // grid is not involved in keeping a bond alive.
++    for (Particle& particle : particles_) {
++        if (particle.type != ParticleType::P || particle.rightBond == kInvalidParticleId) {
++            continue;
++        }
++        const auto partnerIterator = particleIndex.find(particle.rightBond);
++        if (partnerIterator == particleIndex.end()) {
++            particle.rightBond = kInvalidParticleId;
++            continue;
++        }
++
++        Particle& partner = particles_[partnerIterator->second];
++        const Vec2 centerDisplacement = displacementBetween(particle.position, partner.position);
++        const Vec2 siteError =
++            centerDisplacement -
++            halfBondLength * (patchTangent(particle) + patchTangent(partner));
++        const float angularError = std::abs(wrapAngle(
++            partner.orientation - particle.orientation - patch.preferredTurnAngle));
++
++        const bool mechanicallyBroken =
++            norm(siteError) > patch.breakDistance || angularError > patch.breakAngle;
++        const bool thermallyBroken =
++            thermalBreakProbability > 0.0f && unitRandom(randomEngine_) < thermalBreakProbability;
++        if (mechanicallyBroken || thermallyBroken) {
++            particle.rightBond = kInvalidParticleId;
++            if (partner.leftBond == particle.id) {
++                partner.leftBond = kInvalidParticleId;
++            }
++        }
++    }
++
++    // First-arrived/first-served local association. Each nearby unordered pair
++    // is considered once, and either i.right-j.left or j.right-i.left may bind.
++    const float formationSearchRadius = patch.bondLength + patch.captureRadius;
++    std::vector<std::size_t> candidates;
++    for (std::size_t particleIndexValue = 0; particleIndexValue < particles_.size(); ++particleIndexValue) {
++        Particle& particle = particles_[particleIndexValue];
++        if (
++            particle.type != ParticleType::P ||
++            (particle.leftBond != kInvalidParticleId && particle.rightBond != kInvalidParticleId)) {
++            continue;
++        }
++
++        collectCandidates(particleIndexValue, formationSearchRadius, candidates);
++        for (const std::size_t otherIndex : candidates) {
++            if (otherIndex <= particleIndexValue) {
++                continue;
++            }
++            Particle& other = particles_[otherIndex];
++            if (other.type != ParticleType::P) {
++                continue;
++            }
++
++            const Vec2 centerDisplacement = displacementBetween(particle.position, other.position);
++            if (normSquared(centerDisplacement) > formationSearchRadius * formationSearchRadius) {
++                continue;
++            }
++
++            const Vec2 tangent = patchTangent(particle);
++            const Vec2 otherTangent = patchTangent(other);
++            const float angleScale = safePositive(patch.captureAngle);
++            const float distanceScale = safePositive(patch.captureRadius);
++
++            bool rightLeftValid = false;
++            float rightLeftScore = std::numeric_limits<float>::infinity();
++            if (
++                particle.rightBond == kInvalidParticleId &&
++                other.leftBond == kInvalidParticleId &&
++                dot(centerDisplacement, tangent) > 0.0f &&
++                dot(centerDisplacement, otherTangent) > 0.0f) {
++                const Vec2 siteError =
++                    centerDisplacement - halfBondLength * (tangent + otherTangent);
++                const float siteDistance = norm(siteError);
++                const float angularError = std::abs(wrapAngle(
++                    other.orientation - particle.orientation - patch.preferredTurnAngle));
++                rightLeftValid =
++                    siteDistance <= patch.captureRadius && angularError <= patch.captureAngle;
++                if (rightLeftValid) {
++                    rightLeftScore =
++                        siteDistance / distanceScale + angularError / angleScale;
++                }
++            }
++
++            bool leftRightValid = false;
++            float leftRightScore = std::numeric_limits<float>::infinity();
++            if (
++                particle.leftBond == kInvalidParticleId &&
++                other.rightBond == kInvalidParticleId &&
++                dot(centerDisplacement, tangent) < 0.0f &&
++                dot(centerDisplacement, otherTangent) < 0.0f) {
++                const Vec2 siteError =
++                    -centerDisplacement - halfBondLength * (tangent + otherTangent);
++                const float siteDistance = norm(siteError);
++                const float angularError = std::abs(wrapAngle(
++                    particle.orientation - other.orientation - patch.preferredTurnAngle));
++                leftRightValid =
++                    siteDistance <= patch.captureRadius && angularError <= patch.captureAngle;
++                if (leftRightValid) {
++                    leftRightScore =
++                        siteDistance / distanceScale + angularError / angleScale;
++                }
++            }
++
++            if (rightLeftValid && rightLeftScore <= leftRightScore) {
++                particle.rightBond = other.id;
++                other.leftBond = particle.id;
++            } else if (leftRightValid) {
++                particle.leftBond = other.id;
++                other.rightBond = particle.id;
++            }
++
++            if (
++                particle.leftBond != kInvalidParticleId &&
++                particle.rightBond != kInvalidParticleId) {
++                break;
++            }
++        }
++    }
++}
++
++void Simulation::applyPatchBondForces() {
++    const ParticleIndex particleIndex = buildParticleIndex(particles_);
++    const PatchParticleConfig& patch = config_.patch;
++    const float halfBondLength = patch.bondLength / 2.0f;
++
++    for (Particle& particle : particles_) {
++        if (particle.type != ParticleType::P || particle.rightBond == kInvalidParticleId) {
++            continue;
++        }
++        const auto partnerIterator = particleIndex.find(particle.rightBond);
++        if (partnerIterator == particleIndex.end()) {
++            continue;
++        }
++        Particle& partner = particles_[partnerIterator->second];
++
++        const Vec2 tangent = patchTangent(particle);
++        const Vec2 partnerTangent = patchTangent(partner);
++        const Vec2 centerDisplacement = displacementBetween(particle.position, partner.position);
++        const Vec2 siteError =
++            centerDisplacement - halfBondLength * (tangent + partnerTangent);
++        const Vec2 relativeVelocity = partner.velocity - particle.velocity;
++        const Vec2 force =
++            patch.bondStiffness * siteError + patch.bondDamping * relativeVelocity;
++
++        particle.force += force;
++        partner.force -= force;
++
++        const Vec2 particleLever = halfBondLength * tangent;
++        const Vec2 partnerLever = -halfBondLength * partnerTangent;
++        particle.torque += cross(particleLever, force);
++        partner.torque += cross(partnerLever, -force);
++
++        const float angularError = wrapAngle(
++            partner.orientation - particle.orientation - patch.preferredTurnAngle);
++        const float angularTorque =
++            patch.bendingStiffness * angularError +
++            patch.bondDamping * (partner.angularVelocity - particle.angularVelocity);
++        particle.torque += angularTorque;
++        partner.torque -= angularTorque;
++    }
++}
++
++void Simulation::applyPatchCoreRepulsion() {
++    const PatchParticleConfig& patch = config_.patch;
++    if (patch.coreRepulsionRadius <= 0.0f || patch.coreRepulsionStrength <= 0.0f) {
++        return;
++    }
++
++    std::vector<std::size_t> candidates;
++    for (std::size_t particleIndex = 0; particleIndex < particles_.size(); ++particleIndex) {
++        Particle& particle = particles_[particleIndex];
++        if (particle.type != ParticleType::P) {
++            continue;
++        }
++        collectCandidates(particleIndex, patch.coreRepulsionRadius, candidates);
++        for (const std::size_t otherIndex : candidates) {
++            if (otherIndex <= particleIndex || particles_[otherIndex].type != ParticleType::P) {
++                continue;
++            }
++
++            Particle& other = particles_[otherIndex];
++            Vec2 displacement = displacementBetween(particle.position, other.position);
++            float distance = norm(displacement);
++            if (distance >= patch.coreRepulsionRadius) {
++                continue;
++            }
++            if (distance == 0.0f) {
++                displacement = {1.0f, 0.0f};
++                distance = 1.0f;
++            }
++
++            const float magnitude =
++                patch.coreRepulsionStrength *
++                (1.0f - distance / patch.coreRepulsionRadius);
++            const Vec2 force = displacement * (magnitude / distance);
++            particle.force -= force;
++            other.force += force;
++        }
++    }
++}
++
++void Simulation::applyPostIntegrationBoundary(Particle& particle) const noexcept {
++    const float halfWidth = static_cast<float>(config_.worldWidth) / 2.0f;
++    const float halfHeight = static_cast<float>(config_.worldHeight) / 2.0f;
++
++    if (config_.boundaryMode == BoundaryMode::Wrap) {
++        const float width = static_cast<float>(config_.worldWidth);
++        const float height = static_cast<float>(config_.worldHeight);
++        if (width > 0.0f) {
++            while (particle.position.x >= halfWidth) {
++                particle.position.x -= width;
++            }
++            while (particle.position.x < -halfWidth) {
++                particle.position.x += width;
++            }
++        }
++        if (height > 0.0f) {
++            while (particle.position.y >= halfHeight) {
++                particle.position.y -= height;
++            }
++            while (particle.position.y < -halfHeight) {
++                particle.position.y += height;
++            }
++        }
++    } else if (config_.boundaryMode == BoundaryMode::Reflect) {
++        while (particle.position.x > halfWidth || particle.position.x < -halfWidth) {
++            if (particle.position.x > halfWidth) {
++                particle.position.x = halfWidth - (particle.position.x - halfWidth);
++                particle.velocity.x = -std::abs(particle.velocity.x);
++            } else if (particle.position.x < -halfWidth) {
++                particle.position.x = -halfWidth + (-halfWidth - particle.position.x);
++                particle.velocity.x = std::abs(particle.velocity.x);
++            }
++        }
++        while (particle.position.y > halfHeight || particle.position.y < -halfHeight) {
++            if (particle.position.y > halfHeight) {
++                particle.position.y = halfHeight - (particle.position.y - halfHeight);
++                particle.velocity.y = -std::abs(particle.velocity.y);
++            } else if (particle.position.y < -halfHeight) {
++                particle.position.y = -halfHeight + (-halfHeight - particle.position.y);
++                particle.velocity.y = std::abs(particle.velocity.y);
++            }
++        }
++    }
++}
++
+ void Simulation::step() {
+     ++step_;
+ 
+-    const float gridCellSize = std::max(
++    const float patchFormationRadius =
++        config_.patch.bondLength + config_.patch.captureRadius;
++    const float gridCellSize = std::max({
+         config_.interactionRadius,
+-        std::numeric_limits<float>::epsilon());
++        patchFormationRadius,
++        config_.patch.coreRepulsionRadius,
++        std::numeric_limits<float>::epsilon()
++    });
+     spatialGrid_.setCellSize(gridCellSize);
+     spatialGrid_.rebuild(particles_);
+ 
++    updatePatchBonds();
++
++    for (Particle& particle : particles_) {
++        particle.force = {};
++        particle.torque = 0.0f;
++    }
++
++    applyPatchBondForces();
++    applyPatchCoreRepulsion();
++
+     std::vector<std::uint8_t> active(particles_.size(), 1U);
+     std::vector<std::size_t> candidates;
+ 
+@@ -219,17 +613,14 @@ void Simulation::step() {
+         }
+ 
+         Particle& particle = particles_[particleIndex];
+-        particle.force = {};
+-        particle.torque = 0.0f;
+-
+-        collectCandidates(particleIndex, candidates);
++        collectCandidates(particleIndex, config_.interactionRadius, candidates);
+         for (const std::size_t otherIndex : candidates) {
+             if (otherIndex == particleIndex || active[otherIndex] == 0U) {
+                 continue;
+             }
+ 
+             Particle& other = particles_[otherIndex];
+-            const Vec2 displacement = other.position - particle.position;
++            const Vec2 displacement = displacementBetween(particle.position, other.position);
+             const float distance = norm(displacement);
+             if (distance == 0.0f) {
+                 continue;
+@@ -305,31 +696,38 @@ void Simulation::step() {
+             }
+         }
+ 
+-        if (config_.destroyAtBoundary) {
++        const float halfWidth = static_cast<float>(config_.worldWidth) / 2.0f;
++        const float halfHeight = static_cast<float>(config_.worldHeight) / 2.0f;
++        if (config_.boundaryMode == BoundaryMode::Destroy) {
+             if (
+-                particle.position.x > static_cast<float>(config_.worldWidth) / 2.0f ||
+-                particle.position.x < -static_cast<float>(config_.worldWidth) / 2.0f ||
+-                particle.position.y > static_cast<float>(config_.worldHeight) / 2.0f ||
+-                particle.position.y < -static_cast<float>(config_.worldHeight) / 2.0f) {
++                particle.position.x > halfWidth || particle.position.x < -halfWidth ||
++                particle.position.y > halfHeight || particle.position.y < -halfHeight) {
+                 active[particleIndex] = 0U;
+                 continue;
+             }
+-        } else {
+-            if (particle.position.x > static_cast<float>(config_.worldWidth) / 2.0f) {
++        } else if (config_.boundaryMode == BoundaryMode::LegacyContainment) {
++            if (particle.position.x > halfWidth) {
+                 particle.force += {-config_.containingForce, 0.0f};
+             }
+-            if (particle.position.x < -static_cast<float>(config_.worldWidth) / 2.0f) {
++            if (particle.position.x < -halfWidth) {
+                 particle.force += {config_.containingForce, 0.0f};
+             }
+-            if (particle.position.y > static_cast<float>(config_.worldHeight) / 2.0f) {
++            if (particle.position.y > halfHeight) {
+                 particle.force += {0.0f, -config_.containingForce};
+             }
+-            if (particle.position.y < -static_cast<float>(config_.worldHeight) / 2.0f) {
++            if (particle.position.y < -halfHeight) {
+                 particle.force += {0.0f, config_.containingForce};
+             }
+         }
+ 
+-        if (particle.type == ParticleType::S) {
++        if (particle.type == ParticleType::P) {
++            if (config_.patch.temperature > 0.0f) {
++                std::uniform_real_distribution<float> thermal(-1.0f, 1.0f);
++                particle.force += config_.patch.temperature * Vec2{
++                    thermal(randomEngine_), thermal(randomEngine_)};
++                particle.torque += config_.patch.temperature * thermal(randomEngine_);
++            }
++        } else if (particle.type == ParticleType::S) {
+             if (norm(particle.velocity) <= config_.brownianSpeed) {
+                 particle.force += 0.01f * particle.velocity / config_.dt;
+             }
+@@ -346,6 +744,7 @@ void Simulation::step() {
+     }
+ 
+     compactActiveParticles(active);
++    repairPatchBondConsistency();
+ 
+     for (Particle& particle : particles_) {
+         const Vec2 acceleration = particle.force;
+@@ -377,6 +776,7 @@ void Simulation::step() {
+ 
+         particle.position += particle.velocity * config_.dt;
+         particle.orientation += particle.angularVelocity * config_.dt;
++        applyPostIntegrationBoundary(particle);
+     }
+ }
+ 
+@@ -394,6 +794,7 @@ SimulationSnapshot Simulation::snapshot() const {
+     result.config = config_;
+     result.seed = seed_;
+     result.step = step_;
++    result.nextParticleId = nextParticleId_;
+     result.randomEngineState = randomState.str();
+     result.particles = particles_;
+     return result;
+@@ -403,6 +804,7 @@ void Simulation::restore(const SimulationSnapshot& snapshot) {
+     config_ = snapshot.config;
+     seed_ = snapshot.seed;
+     step_ = snapshot.step;
++    nextParticleId_ = std::max<ParticleId>(snapshot.nextParticleId, 1U);
+     particles_ = snapshot.particles;
+ 
+     if (snapshot.randomEngineState.empty()) {
+@@ -414,6 +816,7 @@ void Simulation::restore(const SimulationSnapshot& snapshot) {
+             throw std::runtime_error("Invalid random engine state in checkpoint");
+         }
+     }
++    repairPatchBondConsistency();
+ }
+ 
+ } // namespace particle_life
+diff --git a/src/spatial_grid_regression_main.cpp b/src/spatial_grid_regression_main.cpp
+index c04b565..1b29197 100644
+--- a/src/spatial_grid_regression_main.cpp
++++ b/src/spatial_grid_regression_main.cpp
+@@ -18,6 +18,7 @@ void requireSameParticle(
+     std::size_t index,
+     std::uint64_t step) {
+     const bool same =
++        bruteForce.id == spatial.id &&
+         sameFloat(bruteForce.position.x, spatial.position.x) &&
+         sameFloat(bruteForce.position.y, spatial.position.y) &&
+         sameFloat(bruteForce.velocity.x, spatial.velocity.x) &&
+@@ -28,7 +29,9 @@ void requireSameParticle(
+         sameFloat(bruteForce.force.y, spatial.force.y) &&
+         sameFloat(bruteForce.torque, spatial.torque) &&
+         bruteForce.type == spatial.type &&
+-        bruteForce.spawnStep == spatial.spawnStep;
++        bruteForce.spawnStep == spatial.spawnStep &&
++        bruteForce.leftBond == spatial.leftBond &&
++        bruteForce.rightBond == spatial.rightBond;
+ 
+     if (!same) {
+         throw std::runtime_error(
+@@ -37,58 +40,132 @@ void requireSameParticle(
+     }
+ }
+ 
++void setParticle(
++    particle_life::Simulation& simulation,
++    particle_life::ParticleType type,
++    particle_life::Vec2 position,
++    float orientation) {
++    const std::size_t index = simulation.spawn(type);
++    particle_life::Particle& particle = simulation.particles()[index];
++    particle.position = position;
++    particle.velocity = {};
++    particle.orientation = orientation;
++    particle.angularVelocity = 0.0f;
++}
++
++
++void verifyPeriodicSeamBond() {
++    particle_life::SimulationConfig config;
++    config.boundaryMode = particle_life::BoundaryMode::Wrap;
++    config.patch.temperature = 0.0f;
++    config.patch.thermalBreakRate = 0.0f;
++    config.patch.preferredTurnAngle = 0.4f;
++
++    particle_life::Simulation initializer(config, 17U);
++    setParticle(initializer, particle_life::ParticleType::P, {238.0f, 0.0f}, -1.5707963f);
++    setParticle(initializer, particle_life::ParticleType::P, {-237.0f, 1.0f}, -1.1707963f);
++
++    particle_life::SimulationSnapshot bruteSnapshot = initializer.snapshot();
++    particle_life::SimulationSnapshot spatialSnapshot = bruteSnapshot;
++    bruteSnapshot.config.neighborSearchMode = particle_life::NeighborSearchMode::BruteForce;
++    spatialSnapshot.config.neighborSearchMode = particle_life::NeighborSearchMode::SpatialGrid;
++
++    particle_life::Simulation bruteForce;
++    particle_life::Simulation spatial;
++    bruteForce.restore(bruteSnapshot);
++    spatial.restore(spatialSnapshot);
++    bruteForce.step();
++    spatial.step();
++
++    if (bruteForce.patchBondCount() != 1U || spatial.patchBondCount() != 1U) {
++        throw std::runtime_error("Periodic seam patch bond was not formed");
++    }
++    for (std::size_t index = 0; index < bruteForce.particles().size(); ++index) {
++        requireSameParticle(bruteForce.particles()[index], spatial.particles()[index], index, 1U);
++    }
++}
++
++void runComparison(
++    const particle_life::SimulationSnapshot& initialSnapshot,
++    particle_life::BoundaryMode boundaryMode,
++    std::uint64_t steps) {
++    particle_life::SimulationSnapshot bruteSnapshot = initialSnapshot;
++    particle_life::SimulationSnapshot spatialSnapshot = initialSnapshot;
++    bruteSnapshot.config.boundaryMode = boundaryMode;
++    spatialSnapshot.config.boundaryMode = boundaryMode;
++    bruteSnapshot.config.neighborSearchMode = particle_life::NeighborSearchMode::BruteForce;
++    spatialSnapshot.config.neighborSearchMode = particle_life::NeighborSearchMode::SpatialGrid;
++
++    particle_life::Simulation bruteForce;
++    particle_life::Simulation spatial;
++    bruteForce.restore(bruteSnapshot);
++    spatial.restore(spatialSnapshot);
++
++    for (std::uint64_t step = 1; step <= steps; ++step) {
++        bruteForce.step();
++        spatial.step();
++
++        if (bruteForce.particles().size() != spatial.particles().size()) {
++            throw std::runtime_error("Particle count diverged at step " + std::to_string(step));
++        }
++        for (std::size_t index = 0; index < bruteForce.particles().size(); ++index) {
++            requireSameParticle(
++                bruteForce.particles()[index],
++                spatial.particles()[index],
++                index,
++                step);
++        }
++        const particle_life::SimulationSnapshot bruteState = bruteForce.snapshot();
++        const particle_life::SimulationSnapshot spatialState = spatial.snapshot();
++        if (bruteState.randomEngineState != spatialState.randomEngineState) {
++            throw std::runtime_error("Random engine state diverged at step " + std::to_string(step));
++        }
++        if (bruteState.nextParticleId != spatialState.nextParticleId) {
++            throw std::runtime_error("Particle id state diverged at step " + std::to_string(step));
++        }
++    }
++}
++
+ } // namespace
+ 
+ int main() {
+     try {
+         constexpr std::uint32_t seed = 0x5a17c9e3U;
+         particle_life::SimulationConfig baseConfig;
+-        baseConfig.destroyAtBoundary = false;
++        baseConfig.boundaryMode = particle_life::BoundaryMode::LegacyContainment;
++        baseConfig.patch.temperature = 0.15f;
++        baseConfig.patch.thermalBreakRate = 0.03f;
+ 
+         particle_life::Simulation initializer(baseConfig, seed);
+-        initializer.spawnMany(particle_life::ParticleType::F, 160);
+-        initializer.spawnMany(particle_life::ParticleType::A, 20);
+-        initializer.spawnMany(particle_life::ParticleType::B, 20);
+-        initializer.spawnMany(particle_life::ParticleType::S, 80);
+-        initializer.spawnMany(particle_life::ParticleType::L, 10);
+-
+-        // Explicitly exercise positive, negative and exact cell-boundary coordinates.
+-        initializer.particles().push_back({{13.0f, 0.0f}, {}, 0.0f, 0.0f, {}, 0.0f, particle_life::ParticleType::S, 0});
+-        initializer.particles().push_back({{-13.0f, 0.0f}, {}, 0.1f, 0.0f, {}, 0.0f, particle_life::ParticleType::S, 0});
+-        initializer.particles().push_back({{0.0f, 13.0f}, {}, 0.2f, 0.0f, {}, 0.0f, particle_life::ParticleType::A, 0});
+-        initializer.particles().push_back({{0.0f, -13.0f}, {}, 0.3f, 0.0f, {}, 0.0f, particle_life::ParticleType::F, 0});
+-
+-        particle_life::SimulationSnapshot bruteSnapshot = initializer.snapshot();
+-        particle_life::SimulationSnapshot spatialSnapshot = bruteSnapshot;
+-        bruteSnapshot.config.neighborSearchMode = particle_life::NeighborSearchMode::BruteForce;
+-        spatialSnapshot.config.neighborSearchMode = particle_life::NeighborSearchMode::SpatialGrid;
+-
+-        particle_life::Simulation bruteForce;
+-        particle_life::Simulation spatial;
+-        bruteForce.restore(bruteSnapshot);
+-        spatial.restore(spatialSnapshot);
+-
+-        constexpr std::uint64_t steps = 2000;
+-        for (std::uint64_t step = 1; step <= steps; ++step) {
+-            bruteForce.step();
+-            spatial.step();
+-
+-            if (bruteForce.particles().size() != spatial.particles().size()) {
+-                throw std::runtime_error("Particle count diverged at step " + std::to_string(step));
+-            }
+-            for (std::size_t index = 0; index < bruteForce.particles().size(); ++index) {
+-                requireSameParticle(
+-                    bruteForce.particles()[index],
+-                    spatial.particles()[index],
+-                    index,
+-                    step);
+-            }
+-            if (bruteForce.snapshot().randomEngineState != spatial.snapshot().randomEngineState) {
+-                throw std::runtime_error("Random engine state diverged at step " + std::to_string(step));
+-            }
+-        }
++        initializer.spawnMany(particle_life::ParticleType::F, 120);
++        initializer.spawnMany(particle_life::ParticleType::A, 15);
++        initializer.spawnMany(particle_life::ParticleType::B, 15);
++        initializer.spawnMany(particle_life::ParticleType::S, 60);
++        initializer.spawnMany(particle_life::ParticleType::L, 8);
++        initializer.spawnMany(particle_life::ParticleType::P, 80);
++
++        // Positive, negative and exact cell-boundary coordinates.
++        setParticle(initializer, particle_life::ParticleType::S, {13.0f, 0.0f}, 0.0f);
++        setParticle(initializer, particle_life::ParticleType::S, {-13.0f, 0.0f}, 0.1f);
++        setParticle(initializer, particle_life::ParticleType::A, {0.0f, 13.0f}, 0.2f);
++        setParticle(initializer, particle_life::ParticleType::F, {0.0f, -13.0f}, 0.3f);
++
++        // Patch candidates on ordinary and periodic seams.
++        setParticle(initializer, particle_life::ParticleType::P, {-2.5f, 0.0f}, -1.5707963f);
++        setParticle(initializer, particle_life::ParticleType::P, {2.5f, 0.0f}, -1.3507963f);
++        setParticle(initializer, particle_life::ParticleType::P, {-239.0f, 40.0f}, -1.5707963f);
++        setParticle(initializer, particle_life::ParticleType::P, {239.0f, 40.0f}, -1.3507963f);
++
++        verifyPeriodicSeamBond();
++
++        const particle_life::SimulationSnapshot initialSnapshot = initializer.snapshot();
++        runComparison(
++            initialSnapshot,
++            particle_life::BoundaryMode::LegacyContainment,
++            1000);
++        runComparison(initialSnapshot, particle_life::BoundaryMode::Wrap, 1000);
+ 
+-        std::cout << "Spatial grid matches brute force for " << steps << " steps.\n";
++        std::cout << "Spatial grid matches brute force for legacy and periodic boundaries.\n";
+         return 0;
+     } catch (const std::exception& exception) {
+         std::cerr << "Regression failure: " << exception.what() << '\n';

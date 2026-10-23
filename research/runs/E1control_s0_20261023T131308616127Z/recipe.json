@@ -1,0 +1,36 @@
+{
+  "recipe_version": 1,
+  "run_id": "E1control_s0_20261023T131308616127Z",
+  "kind": "local_dynamics",
+  "source_sha256": {
+    "run_local_research.py": "bb81e42314b593d44dd953a55eb006dce4a09894f68f10343a8503d30627decc",
+    "local_dynamics.py": "a6cc9940d4c63b7bedcbc379afdacb5cf753c0e890682f27fded6d8c3f6bae4d"
+  },
+  "environment": {
+    "python": "3.12",
+    "numpy": "2.0.2"
+  },
+  "initialization_incident": false,
+  "config": {
+    "mode": "copy",
+    "branch": "E1",
+    "activation": true,
+    "release": "cycle",
+    "sequence": "000000",
+    "backbone_angle": 20,
+    "box": [
+      10,
+      7
+    ],
+    "free_units": 0,
+    "seed_family": 1,
+    "functional_cosines": {
+      "0": 0,
+      "1": 0
+    },
+    "temperature": 0.2,
+    "case": "E1control",
+    "seed": 0,
+    "duration": 100.0
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "mode": "copy",
+  "branch": "E1",
+  "activation": true,
+  "release": "cycle",
+  "sequence": "000000",
+  "backbone_angle": 20,
+  "box": [
+    10,
+    7
+  ],
+  "free_units": 0,
+  "seed_family": 1,
+  "functional_cosines": {
+    "0": 0,
+    "1": 0
+  },
+  "temperature": 0.2,
+  "case": "E1control",
+  "seed": 1,
+  "duration": 100
+}

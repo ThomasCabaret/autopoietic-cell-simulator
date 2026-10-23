@@ -1,0 +1,24 @@
+{
+  "recipe_version": 1,
+  "run_id": "V4_s2_20261023T114059802684Z",
+  "kind": "local_dynamics",
+  "source_sha256": {
+    "run_local_research.py": "c126a767b30acb6f17889f615a929d43139de260e153ae01ea70432b1dfd1def",
+    "local_dynamics.py": "115642ed45b4e65203db621dd70ccac6b5e53633d37b469fef23d1f7ff907c5a"
+  },
+  "environment": {
+    "python": "3.12",
+    "numpy": "2.0.2"
+  },
+  "initialization_incident": false,
+  "config": {
+    "mode": "vesicle",
+    "branch": "V4",
+    "initial": "straight",
+    "units": 18,
+    "short_length": 0.75,
+    "case": "V4",
+    "seed": 2,
+    "duration": 300.0
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "recipe_version": 1,
+  "run_id": "C0_20261023T131308019594Z",
+  "kind": "causal_audit",
+  "source_sha256": {
+    "audit_causal_network.py": "363a59b09e994efd90d121b98b064a46efa3d4300b7d5e9de91e283e5c30b3a1"
+  },
+  "environment": {
+    "python": "3.12",
+    "numpy": "not applicable"
+  },
+  "initialization_incident": false,
+  "entrypoint": "audit_causal_network.main"
+}

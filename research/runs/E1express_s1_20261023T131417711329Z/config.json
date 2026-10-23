@@ -1,0 +1,24 @@
+{
+  "mode": "copy",
+  "branch": "E1",
+  "activation": true,
+  "release": "cycle",
+  "sequence": "001011",
+  "period": 200,
+  "release_time": 15,
+  "backbone_angle": 20,
+  "box": [
+    8,
+    6
+  ],
+  "free_units": 0,
+  "function_units": 48,
+  "monomer_only_capture": true,
+  "functional_cosines": {
+    "0": 0.3,
+    "1": -0.3
+  },
+  "case": "E1express",
+  "seed": 1,
+  "duration": 600.0
+}

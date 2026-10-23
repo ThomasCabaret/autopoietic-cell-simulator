@@ -1,0 +1,102 @@
+{
+  "date": "2026-10-23",
+  "branch": "W0",
+  "kind": "engineering_validation_not_new_chemical_maturity",
+  "source_sha256": {
+    "simulator/__init__.py": "bf5a7a5cafdf7076cbc3cc9d8992895e4a8c217621ea024645a061a3531281a9",
+    "simulator/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "simulator/checkpoint.py": "c8520edff13108e3ac3651a7bacf855bd1cbee977dba0f067b57fdced5cbf3e8",
+    "simulator/cli.py": "2b4ba9fec940173ea9bd990483aa39c38b9b7f07b5af5b23811313d3b94d62f6",
+    "simulator/config.py": "11b1cf15a0b03042902ef3f10ae5881aec6736df7773f1218448178e2de40c7d",
+    "simulator/copy.py": "83d9d9fe52ee397474115b2ed92fe617a928f82fcc0a583e45b7a4dd45411777",
+    "simulator/engine.py": "c65b90ea8db7e963c5241ef7fe5e9c07034632d42bfc2748709daa0f612e7fbf",
+    "simulator/membrane.py": "76d5bfbb3f39dee38505e71e787cfc3a39396ad1554a9b36313af0dc64b77ca1",
+    "simulator/observations.py": "2d666a3c8e20d1260af0d847a1539a40287d89525e705e5002dfeaa34de61cb8",
+    "simulator/physics.py": "d8364c7fb784db08e2f9fe0b3f549abb69246e402c681b06293d85058a7aa464",
+    "simulator/plots.py": "96b1f61f29c551c39e4b84af5914c78ef4dea97b82d7cac734698c6526b51383",
+    "simulator/reference.py": "347618abbab85e3991f8b0fd771e2502f554a042db5f7b3140182ea04eb868bc",
+    "simulator/registry.py": "874c57228fd11d55d4c59163a5c87d81eebeeba721c3162220cb00d051f083ce",
+    "simulator/runner.py": "0d4c1ed2e946a2ad46294971dd78db4a35952c7f961bd92c491a71469446bff4",
+    "simulator/spatial.py": "e0f831e3ac3adcf624721244a83ec23dd7b5a11b0137015ee39ddd367e27649f",
+    "simulator/viewer.py": "f37e4d71d81541d06d7022e0c8d289cf38c0417be7b0ebcd225cae5d9e7942a8"
+  },
+  "environment": {
+    "python": "3.12.5",
+    "numpy": "2.0.2",
+    "scipy": "1.17.1",
+    "numba": "0.60.0",
+    "pygame-ce": "2.5.3"
+  },
+  "validated_runs": [
+    "research/engine_runs/Controle_sans_squelette_genetique_s0_20261023T140139874072Z/result.json",
+    "research/engine_runs/Copie_binaire_composite_s0_20261023T140139872073Z/result.json",
+    "research/engine_runs/Courbure_et_fermeture_membranaire_s0_20261023T140139844072Z/result.json",
+    "research/engine_runs/Traduction_directe_G_vers_F_s0_20261023T140139862070Z/result.json"
+  ],
+  "results": [
+    {
+      "path": "research/engine_runs/Controle_sans_squelette_genetique_s0_20261023T140139874072Z/result.json",
+      "name": "Controle sans squelette genetique",
+      "elapsed_seconds": 21.021520099951886,
+      "expected_checks": {
+        "ligation_events": true
+      }
+    },
+    {
+      "path": "research/engine_runs/Copie_binaire_composite_s0_20261023T140139872073Z/result.json",
+      "name": "Copie binaire composite",
+      "elapsed_seconds": 31.294824599986896,
+      "expected_checks": {
+        "detached_copy_sets_ever": true
+      }
+    },
+    {
+      "path": "research/engine_runs/Courbure_et_fermeture_membranaire_s0_20261023T140139844072Z/result.json",
+      "name": "Courbure et fermeture membranaire",
+      "elapsed_seconds": 13.27606730000116,
+      "expected_checks": {
+        "closed_sets_ever": true
+      }
+    },
+    {
+      "path": "research/engine_runs/Traduction_directe_G_vers_F_s0_20261023T140139862070Z/result.json",
+      "name": "Traduction directe G vers F",
+      "elapsed_seconds": 23.961308099911548,
+      "expected_checks": {
+        "translated_detached_ever": true
+      }
+    }
+  ],
+  "all_full_demo_checks_passed": true,
+  "tests": {
+    "shared_engine": 9,
+    "force_geometry_legacy": 4,
+    "observer_legacy": 3,
+    "all_passed": true,
+    "tree_vs_brute_bit_exact": true,
+    "checkpoint_resume_bit_exact": true,
+    "render_chunk_size_independent": true,
+    "headless_provenance_replay": true,
+    "ui_worker_vs_headless_bit_exact": true,
+    "offscreen_ui_event_loop_and_replay": "passed",
+    "native_desktop_manual_ui": "not tested",
+    "windows_bat_other_working_directory": "passed with one-unit no-gene control",
+    "archived_full_membrane_replay_all_metrics_equal": true,
+    "headless_imports_graphics_libraries": false,
+    "extracted_bundle_windows_launcher_from_other_directory": "passed; one-unit no-gene control; all expected checks true"
+  },
+  "old_archived_runs_unchanged_and_hashes_verified": 52,
+  "benchmark": "research/ENGINE_BENCHMARK.json",
+  "limits": [
+    "No GPU backend",
+    "No full reactive scaling benchmark",
+    "No new catalytic or material closure evidence",
+    "Migrated T7 seed zero has no certified second generation"
+  ],
+  "packaging": {
+    "archive": "deliverables/local_chemistry_simulator_20261023.zip",
+    "integrity": "all members SHA-256 verified by scripts/build_bundle.py",
+    "python_embedded": false,
+    "tested_python": "3.12.5"
+  }
+}

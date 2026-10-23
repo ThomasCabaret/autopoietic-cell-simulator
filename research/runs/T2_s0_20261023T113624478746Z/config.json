@@ -1,0 +1,10 @@
+{
+  "mode": "copy",
+  "branch": "T2",
+  "activation": true,
+  "release": "cycle",
+  "sequence": "001011",
+  "case": "T2",
+  "seed": 0,
+  "duration": 480.0
+}

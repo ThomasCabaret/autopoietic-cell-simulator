@@ -1,0 +1,24 @@
+# Stable source checkouts across Windows and Unix.
+* text=auto eol=lf
+*.bat text eol=crlf
+
+# Binary scientific artifacts and images must remain byte-for-byte identical.
+*.npz binary
+*.npy binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.zip binary
+
+# The current engine's complete source bytes are checkpoint version identifiers.
+# Some initial modules use CRLF: do not rewrite them on the first commit/clone.
+simulator/** -text -eol whitespace=blank-at-eol,space-before-tab,cr-at-eol,-blank-at-eof
+
+# Captured code and data are immutable evidence, including their line endings.
+# These overrides deliberately come after the general rules.
+research/runs/** -text -eol -whitespace
+research/engine_runs/** -text -eol -whitespace
+research/abstract_runs/** -text -eol -whitespace
+research/legacy_reference/** -text -eol -whitespace

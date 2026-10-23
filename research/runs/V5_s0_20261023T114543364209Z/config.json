@@ -1,0 +1,17 @@
+{
+  "mode": "vesicle",
+  "branch": "V5",
+  "initial": "dispersed_fragments",
+  "units": 18,
+  "fragment_size": 3,
+  "short_length": 0.75,
+  "cooperative_rows": true,
+  "box": [
+    10,
+    10
+  ],
+  "temperature": 0.15,
+  "case": "V5",
+  "seed": 0,
+  "duration": 1000.0
+}

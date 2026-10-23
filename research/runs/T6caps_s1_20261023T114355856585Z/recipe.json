@@ -1,0 +1,34 @@
+{
+  "recipe_version": 1,
+  "run_id": "T6caps_s1_20261023T114355856585Z",
+  "kind": "local_dynamics",
+  "source_sha256": {
+    "run_local_research.py": "1bdda858d3db0fbe39ce552afeef9be4a68e36799c35f8c8a08a00eaa9efc057",
+    "local_dynamics.py": "6ec6093b69b9cdfcb3cc553a9ac266509684c98f5720f6d87283265f0460f031"
+  },
+  "environment": {
+    "python": "3.12",
+    "numpy": "2.0.2"
+  },
+  "initialization_incident": false,
+  "config": {
+    "mode": "copy",
+    "branch": "T6",
+    "activation": true,
+    "release": "cycle",
+    "sequence": "200112",
+    "alphabet": "012",
+    "caps_symbol": 2,
+    "period": 200,
+    "release_time": 15,
+    "backbone_angle": 20,
+    "box": [
+      8,
+      6
+    ],
+    "free_units": 48,
+    "case": "T6caps",
+    "seed": 1,
+    "duration": 600.0
+  }
+}

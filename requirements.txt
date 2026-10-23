@@ -1,0 +1,7 @@
+# Tested together on Python 3.12, CPU only.
+numpy==2.0.2
+scipy==1.17.1
+numba==0.60.0
+pygame-ce==2.5.3
+# Only for optional static research figures:
+matplotlib==3.10.0

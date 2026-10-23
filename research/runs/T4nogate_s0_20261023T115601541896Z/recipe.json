@@ -1,0 +1,32 @@
+{
+  "recipe_version": 1,
+  "run_id": "T4nogate_s0_20261023T115601541896Z",
+  "kind": "local_dynamics",
+  "source_sha256": {
+    "run_local_research.py": "abbedca6c922e0cb03f43d608c063ee0ad1889be6ce60f51476499e6dd4a9f53",
+    "local_dynamics.py": "2087abf5c4f7d692918e134e7de24791f03a6d216e2362d3465c7b4323395b78"
+  },
+  "environment": {
+    "python": "3.12",
+    "numpy": "2.0.2"
+  },
+  "initialization_incident": false,
+  "config": {
+    "mode": "copy",
+    "branch": "T1",
+    "activation": false,
+    "release": "cycle",
+    "sequence": "001011",
+    "period": 200,
+    "release_time": 15,
+    "backbone_angle": 20,
+    "box": [
+      8,
+      6
+    ],
+    "free_units": 48,
+    "case": "T4nogate",
+    "seed": 0,
+    "duration": 600.0
+  }
+}

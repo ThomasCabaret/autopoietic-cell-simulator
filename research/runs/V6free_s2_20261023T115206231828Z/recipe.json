@@ -1,0 +1,32 @@
+{
+  "recipe_version": 1,
+  "run_id": "V6free_s2_20261023T115206231828Z",
+  "kind": "local_dynamics",
+  "source_sha256": {
+    "run_local_research.py": "abbedca6c922e0cb03f43d608c063ee0ad1889be6ce60f51476499e6dd4a9f53",
+    "local_dynamics.py": "2087abf5c4f7d692918e134e7de24791f03a6d216e2362d3465c7b4323395b78"
+  },
+  "environment": {
+    "python": "3.12",
+    "numpy": "2.0.2"
+  },
+  "initialization_incident": false,
+  "config": {
+    "mode": "vesicle",
+    "branch": "V6",
+    "initial": "dispersed_fragments",
+    "units": 18,
+    "fragment_size": 1,
+    "short_length": 0.75,
+    "cooperative_rows": true,
+    "box": [
+      10,
+      10
+    ],
+    "temperature": 0.15,
+    "oriented_ports": true,
+    "case": "V6free",
+    "seed": 2,
+    "duration": 1000.0
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "recipe_version": 1,
+  "run_id": "T7_s2_20261023T131417726979Z",
+  "kind": "local_dynamics",
+  "source_sha256": {
+    "run_local_research.py": "bb81e42314b593d44dd953a55eb006dce4a09894f68f10343a8503d30627decc",
+    "local_dynamics.py": "a6cc9940d4c63b7bedcbc379afdacb5cf753c0e890682f27fded6d8c3f6bae4d"
+  },
+  "environment": {
+    "python": "3.12",
+    "numpy": "2.0.2"
+  },
+  "initialization_incident": false,
+  "config": {
+    "mode": "copy",
+    "branch": "T7",
+    "activation": true,
+    "release": "cycle",
+    "sequence": "001011",
+    "period": 200,
+    "release_time": 15,
+    "backbone_angle": 20,
+    "box": [
+      8,
+      6
+    ],
+    "free_units": 48,
+    "monomer_only_capture": true,
+    "case": "T7",
+    "seed": 2,
+    "duration": 800.0
+  }
+}

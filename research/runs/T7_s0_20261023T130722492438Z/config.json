@@ -1,0 +1,19 @@
+{
+  "mode": "copy",
+  "branch": "T7",
+  "activation": true,
+  "release": "cycle",
+  "sequence": "001011",
+  "period": 200,
+  "release_time": 15,
+  "backbone_angle": 20,
+  "box": [
+    8,
+    6
+  ],
+  "free_units": 48,
+  "monomer_only_capture": true,
+  "case": "T7",
+  "seed": 0,
+  "duration": 800.0
+}

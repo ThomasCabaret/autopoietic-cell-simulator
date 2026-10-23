@@ -1,0 +1,23 @@
+{
+  "batch": 2,
+  "date": "2026-10-23",
+  "checks": {
+    "python_compilation_changed_programs": "passed",
+    "mechanical_test_count": 4,
+    "mechanical_tests": "passed",
+    "observer_test_count": 3,
+    "observer_tests": "passed",
+    "archived_replay": {
+      "run": "research/runs/E1zero_s0_20261023T131018800276Z",
+      "all_recorded_metrics_equal": true
+    },
+    "registered_result_count": 52,
+    "prior_technical_incidents": 4,
+    "archived_dynamic_source_hashes_verified": 104,
+    "abstract_source_hash_verified": true,
+    "batch_manifest_run_references_exist": 20,
+    "unique_branch_ids_and_existing_parents": 26,
+    "batch_figure_visually_inspected": true
+  },
+  "limits": "Integrity and observer verification do not establish catalytic function or physical material closure. Tests and replay are not additional independent physical trials."
+}

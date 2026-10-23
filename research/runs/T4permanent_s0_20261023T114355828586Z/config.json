@@ -1,0 +1,16 @@
+{
+  "mode": "copy",
+  "branch": "T4",
+  "activation": true,
+  "release": "never",
+  "sequence": "001011",
+  "backbone_angle": 20,
+  "box": [
+    8,
+    6
+  ],
+  "free_units": 48,
+  "case": "T4permanent",
+  "seed": 0,
+  "duration": 400.0
+}

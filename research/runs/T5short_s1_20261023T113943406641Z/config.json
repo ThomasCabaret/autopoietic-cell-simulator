@@ -1,0 +1,18 @@
+{
+  "mode": "copy",
+  "branch": "T5",
+  "activation": true,
+  "release": "cycle",
+  "sequence": "0011",
+  "period": 200,
+  "release_time": 15,
+  "backbone_angle": 20,
+  "box": [
+    8,
+    6
+  ],
+  "free_units": 48,
+  "case": "T5short",
+  "seed": 1,
+  "duration": 600.0
+}

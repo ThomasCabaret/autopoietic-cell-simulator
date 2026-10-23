@@ -1,0 +1,43 @@
+"""Build a movable Windows source distribution without copying the environment."""
+import hashlib
+import json
+from pathlib import Path
+import zipfile
+
+ROOT=Path(__file__).resolve().parents[1]
+
+
+def main():
+    verification=json.loads((ROOT/'research/ENGINE_VERIFICATION.json').read_text(encoding='utf-8'))
+    files=set()
+    for pattern in ('simulator/*.py','demonstrators/*.bat','demonstrators/*.md','demonstrators/configs/*.json'):
+        files.update(ROOT.glob(pattern))
+    files.update(ROOT/p for p in ('README.md','SIMULATOR_ARCHITECTURE.md','requirements.txt',
+        'CONTRIBUTING.md','GIT_SETUP.md','THIRD_PARTY_NOTICES.md',
+        '.gitignore','.gitattributes','.editorconfig',
+        'scripts/dispatch.py','scripts/launch.bat','scripts/reconstruct_experiment.py',
+        'research/REPRODUCTION.md','research/ENGINE_MIGRATION.md','research/ENGINE_VERIFICATION.json'))
+    files.update(p for p in (ROOT/'research/legacy_reference').rglob('*')
+                 if p.is_file() and '__pycache__' not in p.parts and p.suffix!='.pyc')
+    files.add(ROOT/'research/LEGACY_PROJECT_NOTES.md')
+    folders=[ROOT/Path(p).parent for p in verification['validated_runs']]
+    folders.append(ROOT/'research/runs/V6_s1_20261023T115206264055Z')
+    for folder in folders:
+        files.update(p for p in folder.rglob('*') if p.is_file() and '__pycache__' not in p.parts
+                     and (p.suffix=='.py' or p.name in ('config.json','scenario.json','recipe.json')))
+    manifest={p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()
+              for p in sorted(files)}
+    out=ROOT/'deliverables/local_chemistry_simulator_20261023.zip'
+    out.parent.mkdir(parents=True,exist_ok=True)
+    prefix='local_chemistry_simulator/'
+    with zipfile.ZipFile(out,'w',compression=zipfile.ZIP_DEFLATED) as archive:
+        for p in sorted(files): archive.write(p,prefix+p.relative_to(ROOT).as_posix())
+        archive.writestr(prefix+'DISTRIBUTION_MANIFEST.json',json.dumps(manifest,indent=2))
+    with zipfile.ZipFile(out) as archive:
+        assert archive.testzip() is None
+        assert all(hashlib.sha256(archive.read(prefix+name)).hexdigest()==digest for name,digest in manifest.items())
+    print(json.dumps({'archive':str(out),'files':len(files),'bytes':out.stat().st_size,
+                      'sha256':hashlib.sha256(out.read_bytes()).hexdigest(),'all_member_hashes_verified':True}))
+
+
+if __name__=='__main__': main()

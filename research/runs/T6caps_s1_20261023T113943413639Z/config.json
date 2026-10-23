@@ -1,0 +1,20 @@
+{
+  "mode": "copy",
+  "branch": "T6",
+  "activation": true,
+  "release": "cycle",
+  "sequence": "200112",
+  "alphabet": "012",
+  "caps_symbol": 2,
+  "period": 200,
+  "release_time": 15,
+  "backbone_angle": 20,
+  "box": [
+    8,
+    6
+  ],
+  "free_units": 48,
+  "case": "T6caps",
+  "seed": 1,
+  "duration": 600.0
+}

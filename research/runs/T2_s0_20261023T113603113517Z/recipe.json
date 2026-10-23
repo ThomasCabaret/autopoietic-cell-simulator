@@ -1,0 +1,24 @@
+{
+  "recipe_version": 1,
+  "run_id": "T2_s0_20261023T113603113517Z",
+  "kind": "local_dynamics",
+  "source_sha256": {
+    "run_local_research.py": "c126a767b30acb6f17889f615a929d43139de260e153ae01ea70432b1dfd1def",
+    "local_dynamics.py": "d6c81196c91e9adcad091b645bfb34446dc403edd3d31137e067700d671b4e4b"
+  },
+  "environment": {
+    "python": "3.12",
+    "numpy": "2.0.2"
+  },
+  "initialization_incident": false,
+  "config": {
+    "mode": "copy",
+    "branch": "T2",
+    "activation": true,
+    "release": "cycle",
+    "sequence": "001011",
+    "case": "T2",
+    "seed": 0,
+    "duration": 65.0
+  }
+}

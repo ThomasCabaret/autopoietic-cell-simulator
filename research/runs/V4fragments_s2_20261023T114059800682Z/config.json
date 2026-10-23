@@ -1,0 +1,11 @@
+{
+  "mode": "vesicle",
+  "branch": "V4",
+  "initial": "dispersed_fragments",
+  "units": 18,
+  "fragment_size": 3,
+  "short_length": 0.75,
+  "case": "V4fragments",
+  "seed": 2,
+  "duration": 1000.0
+}
