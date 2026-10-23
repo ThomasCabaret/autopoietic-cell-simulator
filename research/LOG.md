@@ -316,3 +316,26 @@ Figures inspectées. Rejeu C1 complet depuis sources figées ; recettes vérifi�
 Maturité encore partielle : assemblage libre démontré, opération géométrique
 répétée isolée ; transfert aux F exprimables et coexistence G/F prioritaires,
 puis rétention membranaire et fabrication des composants/outils.
+
+## 2026-10-23 — méthode durable : convergence des chimies
+
+À la demande de l'utilisateur, la démarche discutée est inscrite dans le skill
+de recherche et relayée par AGENTS.md et CONTRIBUTING.md. Les priorités actuelles
+C1/E3 sont explicitement présentées comme tests de convergence.
+
+La méthode impose d'identifier l'objectif du lot (exploration, intégration ou
+simplification), de figer un candidat pendant les comparaisons et de tracer ses
+variantes. Les bilans doivent conserver des références chimiques, signaler les
+régressions et suivre le coût des types, états, ports, motifs et helpers ajoutés.
+Les prototypes séparés restent autorisés avec obstacle et test de transfert
+explicites. L'intégration devient prioritaire après les preuves isolées.
+
+Trois niveaux sont distingués : modèles séparés, lois identiques testées
+séparément, puis coexistence et couplage dans le même bain. Le transfert exige
+qu'un produit fabriqué serve réellement au processus suivant sous les mêmes
+lois. Une archive reproductible ou un moteur commun ne prouve pas ce transfert.
+Les simplifications sont confrontées aux acquis précédents et les changements
+de critères doivent être motivés.
+
+Aucune nouvelle dynamique ni preuve chimique dans cette mise à jour documentaire ;
+statuts des branches et maturité expérimentale inchangés.

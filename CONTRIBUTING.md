@@ -7,6 +7,15 @@ Utiliser Python 3.12 et les versions de `requirements.txt`. Le moteur partagé e
 dans `simulator/` ; les règles chimiques se trouvent dans ses modules et les
 scénarios JSON dans `demonstrators/configs/`. Voir `SIMULATOR_ARCHITECTURE.md`.
 
+## Méthode de recherche
+
+Appliquer le [skill de recherche](.agents/skills/local-chemistry-research/SKILL.md),
+notamment sa section « Exploration, unification et simplification ». Chaque lot
+identifie son candidat de lois, le test décisif et les références chimiques à
+préserver. Les bilans suivent aussi les régressions, le coût des primitives et
+le transfert entre fonctions. Distinguer compatibilité sous des lois identiques
+et couplage observé dans un même bain ; le moteur commun ne démontre pas ces acquis.
+
 ## Vérification des changements
 
 ```powershell

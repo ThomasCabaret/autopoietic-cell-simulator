@@ -5,6 +5,18 @@ production des composants et remplacement des outils. Cellule préparée et éne
 externe déclarée autorisées. Les fonctions abstraites de C0 restent des obligations,
 pas des réactions biologiques à coder comme primitives.
 
+## Règle de conduite pour les prochains lots
+
+La méthode [Exploration, unification et simplification](../.agents/skills/local-chemistry-research/SKILL.md)
+s'applique aux priorités ci-dessous. C1 et E3 sont des tests de convergence :
+transférer une fonction aux vrais F exprimables et faire coexister copie et
+expression. Définir le candidat commun et ses expériences de référence avant
+de le modifier ; suivre régressions et coût des helpers, puis tenter les
+simplifications pertinentes. Toute nouvelle exploration séparée doit préciser
+l'obstacle qu'elle résout et son test de transfert. Les réussites déjà obtenues
+restent des preuves de leurs modèles respectifs, sans compatibilité commune
+présumée. Cette précision méthodologique n'ajoute aucun résultat expérimental.
+
 ## Décisions du lot
 
 À la demande de l'utilisateur, l'assemblage membranaire depuis des molécules
