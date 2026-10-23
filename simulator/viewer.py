@@ -192,6 +192,10 @@ class Canvas:
         if config['model']=='copy':
             labels=[('G complets liberes','detached_copy_sets_ever'),('F complets liberes','translated_detached_ever'),
                     ('Generation >= 2 liberee','certified_detached_generation2'),('Ligations','ligation_events')]
+            if 'food_products' in metrics:
+                labels=[('F complets liberes','translated_detached_ever'),('Produits XY','food_products'),
+                        ('Ligations sur F exprimes','food_expressed_tool_ligations'),
+                        ('Cycles max / F exprime','food_max_turnovers_per_expressed_tool')]
         elif config['model']=='catalysis':
             labels=[('Produits','products'),('Ligations co-liees','double_bound_ligations')]
         else: labels=[('Boucles observees','closed_sets_ever'),('Plus grand fragment','final_largest_component')]
@@ -274,6 +278,9 @@ def replay_view(folder,screenshot=None):
         bits=d['recognition_types'] if 'recognition_types' in d else np.zeros(n,dtype=int)
         families=d['families'] if 'families' in d else np.zeros(n,dtype=int)
         pairing=d['pairing'] if 'pairing' in d else None
+        food_edges=d['food_edges'] if 'food_edges' in d else None
+        food_binding=d['food_binding'] if 'food_binding' in d else None
+        if config['model']=='copy': n=len(bits)
     screen,canvas=start_window()
     clock=pygame.time.Clock(); t=0.; paused=False; running=True; speed=20.; drag=False
     history=result['metrics'].get('history',[])
@@ -314,12 +321,25 @@ def replay_view(folder,screenshot=None):
             if pairing is not None:
                 bonds['pairing']=[(n+i,n+int(j)) for i,j in enumerate(pairing[index]) if j>i]
             colors=['#718594' if f==0 else '#9a4aa0' for f in families]+[['#148e9c','#df7947','#8d75bb'][int(b)] for b in bits]
+            if food_edges is not None:
+                bonds['backbone'] += [(2*n+int(a),2*n+int(b)) for a,b in np.argwhere(np.triu(food_edges[index],1))]
+                bonds['pairing'] += [(n+i,2*n+int(f)) for i,f in enumerate(food_binding[index]) if f>=0]
+                colors += ['#148e9c' if f%2==0 else '#df7947' for f in range(len(food_edges[index]))]
         else:
             for row in (0,1): bonds['backbone'] += [(row*n+int(i),row*n+int(j)) for i,j in np.argwhere(np.triu(edges[index,row],1))]
             colors=['#148e9c']*n+['#df7947']*n
         hi=max(0,int(np.searchsorted(history_times,t,side='right'))-1)
         item=history[hi] if history else {}
         metrics=dict(result['metrics']) if t>=times[-1] else {}
+        if food_edges is not None:
+            events=[e for e in result['metrics']['food_events'] if e['time']<=times[index]]
+            turnovers={}
+            for e in events:
+                if e['expressed_certified']:
+                    key=tuple(e['chain']);turnovers[key]=turnovers.get(key,0)+1
+            metrics.update(food_products=int(np.count_nonzero(food_edges[index]))//2,
+                food_expressed_tool_ligations=sum(turnovers.values()),
+                food_max_turnovers_per_expressed_tool=max(turnovers.values(),default=0))
         metrics.update({key:item[old] for key,old in [('detached_copy_sets_ever','detached_ever'),('translated_detached_ever','translated_detached_ever'),('final_largest_component','largest_head_component')] if old in item})
         if config['model']=='catalysis':
             for key in ('products','double_bound_ligations'):

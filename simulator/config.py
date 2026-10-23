@@ -8,7 +8,11 @@ COPY_DEFAULTS = dict(sequence="001011", alphabet="01", free_units=30, function_u
     activation=True, release="cycle", period=60., release_time=10., template=True,
     backbone_angle=5., box=[10.,7.], monomer_only_capture=False, product_cooperativity=False,
     functional_cosines={}, seed_family=0, caps_symbol=-1, initial_min_separation=.60,
-    local_off_rate=.2, ligation_rate=12., ligation=True, temperature=.6)
+    local_off_rate=.2, ligation_rate=12., ligation=True, temperature=.6,
+    functional_bend_cosines={},functional_bend_strength=100.,food_pairs=0,
+    food_ligand_energy=2.,food_ligand_width=.6,food_binding_radius=.25,
+    food_binding_rate=20.,food_unbinding_rate=.1,food_reaction_radius=.25,food_reaction_rate=.2,
+    food_activation=False)
 MEMBRANE_DEFAULTS = dict(units=16, initial="straight", short_length=.75, bonding=True,
     end_attraction=4., cooperative_rows=False, oriented_ports=False, port_epsilon=.6,
     temperature=.06, face_docking=False, dock_energy=4., dock_width=.25,
@@ -70,6 +74,12 @@ def resolve(raw):
             raise ValueError('release must be cycle, never or local')
         if defaults['seed_family'] not in (0,1) or any(k not in ('0','1','2') or not math.isfinite(v) or not -1<=v<=1 for k,v in defaults['functional_cosines'].items()):
             raise ValueError('invalid family or native angle cosine')
+        if not isinstance(defaults['food_pairs'],int) or defaults['food_pairs']<0:
+            raise ValueError('food_pairs must be a nonnegative integer')
+        if any(k not in ('0','1','2') or not math.isfinite(v) or not -1<=v<=1 for k,v in defaults['functional_bend_cosines'].items()):
+            raise ValueError('invalid functional bend cosine')
+        if any(defaults[k]<=0 for k in ('food_ligand_width','food_binding_radius','food_reaction_radius')) or any(defaults[k]<0 for k in ('functional_bend_strength','food_ligand_energy','food_binding_rate','food_unbinding_rate','food_reaction_rate')):
+            raise ValueError('invalid functional substrate parameters')
     elif model=='membrane':
         if not isinstance(defaults['units'],int) or defaults['units']<2 or not isinstance(defaults.get('fragment_size',1),int) or defaults.get('fragment_size',1)<1:
             raise ValueError('invalid membrane size')

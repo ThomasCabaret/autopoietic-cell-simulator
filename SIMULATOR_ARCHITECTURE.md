@@ -32,6 +32,7 @@ flowchart TD
 | `physics.py` | Noyaux compilés de répulsion, ressorts, angles, orientation et attraction |
 | `copy.py`, `membrane.py`, `catalysis.py` | Conditions initiales et lois locales propres aux trois chimies ; le prototype C1 reste distinct des F composites |
 | `docking.py` | Géométrie de faces, potentiel coopératif à quatre billes et capture pour V8 |
+| `substrates.py` | Capture et ligation locales de X/Y sur les vrais F du hook `copy`, occupations exclusives et activation par voisin de squelette |
 | `registry.py` | Association explicite d'un nom de modèle, d'un hook, de paramètres et d'un observateur |
 | `observations.py` | Analyse uniquement : chaînes complètes, filiation, géométrie, boucles |
 | `runner.py`, `cli.py` | Campagnes, sorties, critères observés et ligne de commande |

@@ -339,3 +339,47 @@ de critères doivent être motivés.
 
 Aucune nouvelle dynamique ni preuve chimique dans cette mise à jour documentaire ;
 statuts des branches et maturité expérimentale inchangés.
+
+## 2026-10-23 — lot 4 : intégration expression et opération répétée
+
+Lot d'intégration selon la méthode adoptée : transfert C1 aux vraies sous-unités
+composites F du hook copy, sans conversion ni second ordonnanceur. Plan avant
+essais BATCH_04_PLAN.md ; arbre intermédiaire BATCH_04_DECISIONS.md.
+
+53 dynamiques terminées, zéro incident de simulation ; recettes BATCH_04_RECIPES.json,
+1007 empreintes vérifiées. Données complètes locales ignorées ; sources figées
+et synthèses conservées. Aucun ancien essai réécrit.
+
+C2A : une seule opération sur F préparé ; C2B réutilise les angles E1 et obtient
+5/5/5 opérations préparées. Les supports étant surtout adjacents, C2C retire
+l'angle ajouté : 3/4/5 opérations préparées, 3/4/4 pour la permutation de même
+composition, zéro pour les sites libres à affinités identiques. Ni supériorité
+de séquence ni repliement spécifique démontré. Le transfert aux composites
+fonctionne et une primitive supplémentaire a été évitée.
+
+Mais C2C exprimé ne fait que 1/1/0 opération sur chaîne exacte à t=800 ; les
+monomères F consomment les substrats entre eux. Les pools de 6/12 F, graine 0
+à t=1000, ne rétablissent pas la fonction. C2D réutilise une activation locale
+par liaison au squelette pour les substrats : capture/attraction affaiblies sur
+les F libres et déliaison accrue. Helper supplémentaire déclaré, pas une règle
+de reconnaissance d'outil ou de séquence entière.
+
+C2D 001, graines 0/1/2, G préparé et seulement des F monomères : 2/4/3 F exacts
+libérés, dont une même chaîne par essai soutient 3/3/4 produits distincts après
+traduction. G010 graine0 : trois F et deux opérations sur une même chaîne.
+Sans gène, trois graines : aucun F et aucune co-capture, mais 7/7/8 produits
+spontanés. Sans capture, graine0 : quatre F exacts, aucune opération soutenue.
+Le bilan global de produits ne prouve donc pas encore une accélération utile.
+
+Références réellement relancées sous D : copie G001011 une fois libérée ;
+expression F001011 deux fois et F010010 trois fois. E3 n'est pas résolu : copie
+et expression sont encore testées dans des bains distincts. Membrane séparée.
+XY ne constitue pas un monomère utilisable ; ouvrir C3 et préserver C2D comme
+référence du prochain candidat E3. Maturité : première intégration matérielle
+expression→opération répétée, fermeture et richesse générale encore ouvertes.
+
+28 tests passent, dont exclusivité des occupations, gradient, provenance,
+arbre/exhaustif et reprise exacte avec activation. Interface hors écran ;
+rejeux préparé et exprimé depuis les sources figées. Le premier essai des tests
+a rencontré une restriction des fichiers temporaires Windows, puis relance
+autorisée réussie ; cet incident n'est pas un échec chimique.

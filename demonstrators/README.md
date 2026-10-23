@@ -19,6 +19,7 @@ Les autres lanceurs n'installent rien et n'ont pas besoin du réseau.
 | `06_tout_sans_interface.bat` | Les quatre premiers scénarios, sans rendu, avec vérification automatique des critères |
 | `07_ruban_prepare.bat` | Contrôle historique : un ruban composite déjà polymérisé se courbe et ferme |
 | `08_ligation_preparee.bat` | Prototype séparé : une chaîne préparée de trois billes rapproche des substrats pour plusieurs ligations avec libération |
+| `09_expression_fonction.bat` | G fabrique une chaîne F composite, puis celle-ci soutient plusieurs ligations XY avec libération dans le même bain |
 
 Les trois premiers sont des **simulations en direct**, à graine fixée. Le quatrième
 est aussi calculé en direct. Le cinquième lit une trajectoire archivée ; il ne
@@ -33,6 +34,11 @@ séparé. La traduction
 est un templating direct G→F, sans ribosome, et ne prouve pas la fonction des F.
 La copie utilise un cycle externe fixé à l'avance. Les compteurs excluent le gène
 initial. Les séquences non orientées sont reconnues à inversion près.
+
+Le scénario 09 intègre traduction et opération répétée avec les vrais F composites.
+Il utilise une activation locale des sites par une liaison au squelette et des
+précurseurs activés ; XY ne sert pas encore à fabriquer les composants. Le scénario
+03 conserve sa configuration historique, dont les F n'ont pas cette activité.
 
 ## Interface
 

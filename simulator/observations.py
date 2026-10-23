@@ -65,8 +65,12 @@ class CopyObserver:
         self.edge_parent = {}
         self.certified = {tuple(range(self.initial_count)): 0} if config.get("template", True) and config.get("seed_family", 0) == 0 else {}
         self.last_shapes = []
+        self.food_events=[]; self.food_turnovers={}; self.last_food=None
+        self.food_edges_frames=[]; self.food_binding_frames=[]
 
-    def __call__(self, time, pos, edges, pairing, bits, events, families=None):
+    def __call__(self, time, pos, edges, pairing, bits, events, families=None, food=None):
+        food_events=[e for e in events if e.get('kind')=='food']
+        events=[e for e in events if e.get('kind')!='food']
         if families is None:
             families = np.zeros(len(bits), dtype=int)
         comp_list = components(len(bits), edges)
@@ -123,6 +127,24 @@ class CopyObserver:
             if any(all(i in comp for i in source) for comp in correct_now):
                 self.complete_source_events += 1
             self.events.append({"time": time, **e})
+        if food is not None:
+            self.last_food=food
+            for e in food_events:
+                support=e['support']; key=None; exact=False; certified=False
+                if all(i>=0 for i in support):
+                    for comp,order,cycle in comp_list:
+                        if len(comp)<2 or not all(i in comp for i in support) or not all(families[i]==1 for i in comp): continue
+                        key=tuple(sorted(comp))
+                        text=''.join(str(int(bits[i])) for i in order)
+                        exact=not cycle and text in (self.target,self.target[::-1])
+                        parents=[self.edge_parent.get(tuple(sorted((order[q],order[q+1])))) for q in range(len(order)-1)]
+                        certified=(exact and all(i>=self.initial_count and pairing[i]<0 for i in comp)
+                                   and bool(parents) and parents[0] is not None and all(p==parents[0] for p in parents))
+                        break
+                item=dict(time=time,**e,chain=list(key) if key else None,exact_chain=exact,
+                          expressed_certified=certified)
+                self.food_events.append(item)
+                if certified: self.food_turnovers[key]=self.food_turnovers.get(key,0)+1
         if not self.times or time - self.times[-1] >= .49:
             self.times.append(time)
             if getattr(self, 'record_trajectory', True):
@@ -132,6 +154,11 @@ class CopyObserver:
                 for i, j in edges:
                     mat[i, j] = mat[j, i] = 1
                 self.edges_frames.append(mat)
+                if food is not None:
+                    nf=len(food['food_bound']); fm=np.zeros((nf,nf),dtype=np.uint8)
+                    for a,b in food['products']: fm[a,b]=fm[b,a]=1
+                    self.food_edges_frames.append(fm)
+                    self.food_binding_frames.append(np.array(food['site_bound'],dtype=np.int64))
             self.history.append({"time": time, "edges": len(edges),
                                  "paired_sites": int(np.count_nonzero(pairing >= 0)),
                                  "complete_ever": len(self.complete), "detached_ever": len(self.detached),
@@ -141,7 +168,7 @@ class CopyObserver:
         self.last_families = families.copy()
 
     def summary(self):
-        return {"complete_copy_sets_ever": len(self.complete), "detached_copy_sets_ever": len(self.detached),
+        metrics={"complete_copy_sets_ever": len(self.complete), "detached_copy_sets_ever": len(self.detached),
                 "complete_sets": sorted(self.complete), "detached_sets": sorted(self.detached),
                 "best_matching_fragment": self.best_partial,
                 "ligation_events": len(self.events), "ligations_using_new_chains": self.new_source_events,
@@ -156,6 +183,15 @@ class CopyObserver:
                 "functional_chain_shapes_final": self.last_shapes,
                 "sequence_convention": "unoriented chain: sequence identified up to reversal",
                 "history": self.history, "events": self.events}
+        if self.last_food is not None:
+            metrics.update(food_products=len(self.last_food['products']),
+                food_double_bound_ligations=sum(all(i>=0 for i in e['support']) for e in self.food_events),
+                food_chain_supported_ligations=sum(e['chain'] is not None for e in self.food_events),
+                food_exact_chain_ligations=sum(e['exact_chain'] for e in self.food_events),
+                food_expressed_tool_ligations=sum(e['expressed_certified'] for e in self.food_events),
+                food_max_turnovers_per_expressed_tool=max(self.food_turnovers.values(),default=0),
+                food_events=self.food_events)
+        return metrics
 
 
 class VesicleObserver:

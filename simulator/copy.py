@@ -2,6 +2,7 @@
 import numpy as np
 from .reference import degree, normals, local_port_free, port_attraction, add_force
 from .physics import orientation_kernel
+from .substrates import Substrates
 
 class CopyChemistry:
     def __init__(self, config, rng):
@@ -57,6 +58,7 @@ class CopyChemistry:
         self.springs = np.empty((0,4))
         self.angles = np.empty((0,5))
         self.mobility = .25
+        self.food=Substrates(self,rng) if config.get('food_pairs',0) else None
 
     def react(self, time, dt, neighbors):
         config, rng = self.config, self.rng
@@ -91,10 +93,12 @@ class CopyChemistry:
                 rate = config.get("local_off_rate", .2)
             if rng.random() < -np.expm1(-rate * interval):
                 pairing[i] = pairing[j] = -1
-        candidates = neighbors.pairs(pos[n:], .3, "recognition")
+        candidates = neighbors.pairs(pos[n:2*n], .3, "recognition")
         candidates = candidates[bits[candidates[:, 0]] == bits[candidates[:, 1]]]
         rng.shuffle(candidates)
         for i, j in candidates:
+            if self.food is not None and (self.food.site_bound[i]>=0 or self.food.site_bound[j]>=0):
+                continue
             if pairing[i] >= 0 or pairing[j] >= 0 or np.dot(nrm[i], nrm[j]) > -.5:
                 continue
             if release:
@@ -109,8 +113,8 @@ class CopyChemistry:
                 continue
             if config.get("product_cooperativity", False):
                 support, incoming = (i, j) if deg[i] > 0 else (j, i)
-                neighbors = [b if a == support else a for a, b in edges if a == support or b == support]
-                bound_kinds = [families[pairing[q]] for q in neighbors if pairing[q] >= 0]
+                linked_neighbors = [b if a == support else a for a, b in edges if a == support or b == support]
+                bound_kinds = [families[pairing[q]] for q in linked_neighbors if pairing[q] >= 0]
                 if any(kind != families[incoming] for kind in bound_kinds):
                     continue
             rate = 35. if not gate or deg[i] or deg[j] else .1
@@ -149,33 +153,62 @@ class CopyChemistry:
                 native = config.get("functional_cosines", {}).get(str(int(bits[q])), 0.)
                 # Local pairing state masks native folding during expression.
                 preferred.append(native if families[q] == 1 and pairing[q] < 0 else 0.)
-            angles.extend([(n + i, i, j, stiffness, preferred[0]),
-                           (n + j, j, i, stiffness, preferred[1])])
+            for q,other,value in ((i,j,preferred[0]),(j,i,preferred[1])):
+                if families[q]==1 and pairing[q]<0 and config.get('functional_bend_cosines',{}) and not config.get('functional_cosines',{}):
+                    continue
+                angles.append((n+q,q,other,stiffness,value))
+        if config.get('functional_bend_cosines',{}):
+            adjacency=[[] for _ in range(n)]
+            for i,j in sorted(edges): adjacency[i].append(j); adjacency[j].append(i)
+            for j,linked in enumerate(adjacency):
+                if families[j]!=1 or len(linked)!=2: continue
+                i,k=linked
+                if any(pairing[q]>=0 for q in (i,j,k)): continue
+                cosine=config['functional_bend_cosines'].get(str(int(bits[j])),0.)
+                angles.append((i,j,k,config['functional_bend_strength'],cosine))
         for i in range(n):
             if pairing[i] > i:
                 springs.append((n + i, n + pairing[i], 80., 0.))
+        if self.food is not None:
+            events.extend(self.food.react(self,dt,neighbors))
+            springs.extend(self.food.springs())
         self.springs = np.asarray(springs, dtype=float).reshape(-1,4)
         self.angles = np.asarray(angles, dtype=float).reshape(-1,5)
         return events
 
     def extra_forces(self, neighbors):
         pairs = np.array([(i, int(j)) for i, j in enumerate(self.pairing) if j > i], dtype=np.int64).reshape(-1,2)
-        return orientation_kernel(self.pos, self.rungs, pairs)
+        force=orientation_kernel(self.pos, self.rungs, pairs)
+        if self.food is not None: force+=self.food.forces(self,neighbors)
+        return force
 
     def observe(self, callback, time, events):
-        callback(time, self.pos, self.edges, self.pairing, self.bits, events, self.families)
+        if self.food is None:
+            callback(time, self.pos, self.edges, self.pairing, self.bits, events, self.families)
+        else:
+            callback(time,self.pos,self.edges,self.pairing,self.bits,events,self.families,self.food.export())
 
     def bonds(self):
         pairs = [(self.n+i, self.n+int(j)) for i,j in enumerate(self.pairing) if j>i]
-        return {"scaffold": self.rungs.tolist(), "backbone": sorted(self.edges), "pairing": pairs}
+        bonds={"scaffold": self.rungs.tolist(), "backbone": sorted(self.edges), "pairing": pairs}
+        if self.food is not None:
+            bonds['backbone'] += [(2*self.n+a,2*self.n+b) for a,b in sorted(self.food.products)]
+            bonds['pairing'] += [(self.n+i,2*self.n+int(f)) for i,f in enumerate(self.food.site_bound) if f>=0]
+        return bonds
 
     def colors(self):
         palette = ["#148e9c", "#df7947", "#8d75bb"]
-        return ["#718594" if f == 0 else "#9a4aa0" for f in self.families] + [palette[int(b)] for b in self.bits]
+        colors=["#718594" if f == 0 else "#9a4aa0" for f in self.families] + [palette[int(b)] for b in self.bits]
+        if self.food is not None: colors += [palette[f%2] for f in range(self.food.count)]
+        return colors
 
     def export(self):
-        return {"edges": sorted(self.edges), "pairing": self.pairing.tolist()}
+        state={"edges": sorted(self.edges), "pairing": self.pairing.tolist()}
+        if self.food is not None: state['food']=self.food.export()
+        return state
 
     def restore(self, state):
         self.edges = {tuple(p) for p in state["edges"]}
         self.pairing = np.array(state["pairing"], dtype=np.int64)
+        if self.food is not None:
+            self.food.restore(state['food']);self.food.refresh(self)

@@ -20,6 +20,10 @@ def main():
         'research/BATCH_03.md','research/BATCH_03_RECIPES.json',
         'research/BATCH_03_MEMBRANES.png','research/BATCH_03_LIGATION.png',
         'research/BATCH_03_PLAN.md','research/MATURITY.md','research/PRIORITIES.md','research/MODEL.md'))
+    files.update(ROOT/p for p in ('research/BATCH_04.md','research/BATCH_04_PLAN.md',
+        'research/BATCH_04_DECISIONS.md','research/BATCH_04_RECIPES.json',
+        'research/BATCH_04_CONTROLS.png','research/BATCH_04_COUPLING.png','research/BATCH_04_TOOL.png',
+        '.agents/skills/local-chemistry-research/SKILL.md'))
     files.update(ROOT/p for p in ('AGENTS.md','RESEARCH_DIRECTION.md',
         'research/branches.json','research/LOG.md'))
     files.update(p for p in (ROOT/'research/legacy_reference').rglob('*')
@@ -29,6 +33,8 @@ def main():
     folders.append(ROOT/'research/runs/V6_s1_20261023T115206264055Z')
     batch=json.loads((ROOT/'research/BATCH_03_RECIPES.json').read_text(encoding='utf-8'))
     folders.extend(ROOT/Path(p).parent for p in batch['recipes'])
+    batch4=json.loads((ROOT/'research/BATCH_04_RECIPES.json').read_text(encoding='utf-8'))
+    folders.extend(ROOT/Path(p).parent for p in batch4['recipes'])
     for folder in folders:
         files.update(p for p in folder.rglob('*') if p.is_file() and '__pycache__' not in p.parts
                      and (p.suffix=='.py' or p.name in ('config.json','scenario.json','recipe.json')))

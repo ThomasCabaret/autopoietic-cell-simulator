@@ -255,7 +255,8 @@
       "priority": "P0",
       "test": "Compare one versus two physical docking channels at fixed symbol alphabet; measure complete detached G and F in the same run across seeds",
       "counterexample": "Additional faces create crosslinks, steric trapping or excessive primitive complexity instead of compatible processes",
-      "missing_proof": "No implementation or dynamic evidence yet; preserve local geometric and chemical eligibility only"
+      "missing_proof": "No implementation or dynamic evidence yet; preserve local geometric and chemical eligibility only",
+      "reference_to_preserve": "research/BATCH_04.md: translated F repeated operation under C2D; remains to combine with G copying"
     },
     {
       "id": "C1",
@@ -327,6 +328,80 @@
       "conclusion": "Attraction-free seeds 0/1 close at final time, seed 2 does not; thermal-off seed 0 closes two contours. Neither helper is necessary to the existence of contours",
       "counterexample": "Successful contours could be fragile or use brief unresolved openings; extension rupture is still active",
       "missing_proof": "Larger matched seed sweep, time-resolved opening rates, retention and joint ablation; no inferred yield superiority from three seeds"
+    },
+    {
+      "id": "C2",
+      "parent": "C1",
+      "related": [
+        "E1",
+        "E0"
+      ],
+      "hypothesis": "Actual composite F units can preorganize food ligations, then perform this operation after expression from G under unchanged local laws",
+      "status": "translated_composite_tool_reused_three_seeds_under_fixed_laws",
+      "priority": "P0",
+      "evidence": "research/BATCH_04_RECIPES.json",
+      "test": "Prepared composite F, same-composition permutation, unconnected sites and no capture; then expression and repeated use with provenance in one bath",
+      "counterexample": "Rung geometry prevents productive capture, food sequesters F before expression, or only isolated monomers support products",
+      "missing_proof": "No usable G/F/membrane monomer manufactured, no tool replacement, no robust global rate gain, no simultaneous G copying/F expression or membrane integration",
+      "conclusion": "C2D starts with G001 and free composite F only; seeds 0/1/2 express 2/4/3 detached exact F chains, with 3/3/4 ligations by a single certified translated chain per run. Another gene 010 seed 0 supports two turnovers",
+      "helpers": "Activated X/Y, irreversible uniform ligation and product affinity loss; backbone-local activation of food capture reduces free-F sequestration. No whole-chain recognition in dynamics",
+      "simplification": "Added three-support bend removed in C2C/D; existing E1 per-edge angles suffice with native cosine 0.8 for both bits"
+    },
+    {
+      "id": "C2A",
+      "parent": "C2",
+      "status": "single_operation_prepared_no_repeated_turnover",
+      "hypothesis": "Transfer C1 to composite F with an added native support bend",
+      "evidence": "research/BATCH_04_DECISIONS.md",
+      "conclusion": "Prepared and shuffled seed 0 each one co-bound event at t=200; site orientation unresolved"
+    },
+    {
+      "id": "C2B",
+      "parent": "C2A",
+      "status": "prepared_turnover_three_seeds_weak_expression_coupling",
+      "hypothesis": "Existing E1 angles can orient recognition sites toward substrates",
+      "evidence": "research/BATCH_04_RECIPES.json",
+      "conclusion": "Prepared 5/5/5 supported events; expressed exact tools 0/1 in seeds 0/1. Most events use adjacent sites; extra bend not justified"
+    },
+    {
+      "id": "C2C",
+      "parent": "C2B",
+      "status": "extra_bend_removed_prepared_function_retained",
+      "hypothesis": "Local per-edge E1 geometry suffices without a new support angle",
+      "evidence": "research/BATCH_04_RECIPES.json",
+      "conclusion": "Prepared 3/4/5 co-bound events; shuffled 3/4/4; unconnected sites 0/0/0. Expressed exact tools 1/1/0 events, never repeated per tool",
+      "limit": "No sequence-specific folding advantage; unassembled monomers compete for substrates"
+    },
+    {
+      "id": "C2pool",
+      "parent": "C2C",
+      "status": "pool_reduction_failed_in_two_exploratory_runs",
+      "hypothesis": "Fewer free F monomers could reduce substrate sequestration without changing laws",
+      "evidence": "research/BATCH_04_RECIPES.json",
+      "conclusion": "6/12 free F, seed 0 t=1000: 0/1 exact F chains detached, no exact-chain operation; not a general concentration sweep"
+    },
+    {
+      "id": "C2D",
+      "parent": "C2C",
+      "status": "expression_operation_coupled_three_seeds",
+      "hypothesis": "Reusing local backbone activation for food capture protects substrate access by expressed chains",
+      "evidence": "research/BATCH_04_RECIPES.json",
+      "conclusion": "Same expressed chain supports 3/3/4 distinct products across seeds; no-gene three seeds and no-capture one seed have zero certified operations; gene010 seed0 has two",
+      "cost": "Food affinity/on-rate scaled by 0.1/35 without a backbone neighbor; off-rate at least5. Additional helper, no aggregate or enzyme label",
+      "limit": "Background also forms 7/7/8 products without gene; total yield alone does not prove useful acceleration"
+    },
+    {
+      "id": "C3",
+      "parent": "C2D",
+      "related": [
+        "C0"
+      ],
+      "status": "proposed_not_tested",
+      "priority": "P0",
+      "hypothesis": "An expressed composite tool can manufacture a physically incorporable component from simpler resources",
+      "test": "Require conserved material and actual incorporation into G/F/membrane; product identity must arise from local states and bonds",
+      "counterexample": "Inert XY is merely renamed as a monomer, or product needs external conversion",
+      "missing_proof": "No usable component or tool regeneration yet"
     }
   ]
 }

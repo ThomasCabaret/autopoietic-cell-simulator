@@ -40,10 +40,13 @@ et le code nécessaires pour les [reconstruire](research/REPRODUCTION.md).
 - [Architecture, format et ajout de lois](SIMULATOR_ARCHITECTURE.md)
 - [Validation de la migration](research/ENGINE_MIGRATION.md)
 - [Lot 3 : assemblage membranaire et ligations géométriques](research/BATCH_03.md)
+- [Lot 4 : expression puis opération répétée par les F composites](research/BATCH_04.md)
 - [Maturité et fonctions encore manquantes](research/MATURITY.md)
 - [Méthode et contributions](CONTRIBUTING.md)
 - [Reconstruction des expériences sans données préembarquées](research/REPRODUCTION.md)
 - [Initialisation Git et premier push](GIT_SETUP.md)
 
-Les expériences de chimie restent des preuves de principe : aucune cellule viable,
-catalyse par une chaîne exprimée ou reconstruction de ses outils n'est démontrée.
+Le scénario `09_expression_fonction.bat` montre une chaîne F fabriquée depuis G
+puis réutilisée pour plusieurs ligations. Les expériences restent des preuves
+de principe : cellule viable, fabrication des composants et reconstruction des
+outils ne sont pas démontrées.

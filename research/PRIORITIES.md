@@ -1,61 +1,54 @@
-# Priorités — après le lot 3, 23 octobre 2026
+# Priorités — après le lot 4, 23 octobre 2026
 
-Critère : une chimie commune pour membrane, copie, expression, fonctions des chaînes,
-production des composants et remplacement des outils. Cellule préparée et énergie
-externe déclarée autorisées. Les fonctions abstraites de C0 restent des obligations,
-pas des réactions biologiques à coder comme primitives.
+Une chimie commune doit porter membrane, copie, expression, fonctions variées,
+fabrication des composants et remplacement des outils. Cellule construite,
+helpers locaux et énergie externe déclarée restent autorisés.
 
-## Règle de conduite pour les prochains lots
+Appliquer la méthode [exploration, unification et simplification](../.agents/skills/local-chemistry-research/SKILL.md).
+Le lot 4 fournit un premier transfert matériel ; il ne valide pas tout l'univers.
+Les plans et décisions antérieurs restent dans les bilans et le journal.
 
-La méthode [Exploration, unification et simplification](../.agents/skills/local-chemistry-research/SKILL.md)
-s'applique aux priorités ci-dessous. C1 et E3 sont des tests de convergence :
-transférer une fonction aux vrais F exprimables et faire coexister copie et
-expression. Définir le candidat commun et ses expériences de référence avant
-de le modifier ; suivre régressions et coût des helpers, puis tenter les
-simplifications pertinentes. Toute nouvelle exploration séparée doit préciser
-l'obstacle qu'elle résout et son test de transfert. Les réussites déjà obtenues
-restent des preuves de leurs modèles respectifs, sans compatibilité commune
-présumée. Cette précision méthodologique n'ajoute aucun résultat expérimental.
+## Décision après C2
 
-## Décisions du lot
+Les F composites préparés réalisent des opérations répétées. C2D fabrique ces
+mêmes F depuis G puis les utilise 3/3/4 fois par chaîne sur trois graines. Le
+nouvel angle de squelette a été retiré ; l'activation alimentaire par liaison
+locale a été retenue contre la concurrence des monomères. Le produit XY reste
+inutilisable et le gain global de vitesse reste à établir. Voir [lot 4](BATCH_04.md).
 
-À la demande de l'utilisateur, l'assemblage membranaire depuis des molécules
-isolées devient prioritaire par rapport au simple repliement du ruban préparé.
-V8 obtient des contours finaux sur trois graines au point retenu ; le démonstrateur
-est remplacé. Les échecs et ablations sont conservés dans [BATCH_03.md](BATCH_03.md).
-L'attraction et la rupture thermique ne sont pas nécessaires à toute fermeture.
+1. **P0 — E3, copie et expression simultanées.** Tester des faces locales de
+   recrutement distinctes, sans changement global de mode. Exiger G et F exacts
+   libérés dans le même bain, plusieurs graines. Conserver la fonction des F
+   exprimés comme référence, afin de ne pas résoudre la concurrence génétique
+   au prix de perdre le couplage acquis. Figer le candidat dérivé de D avant tests.
+2. **P0 — C3, produit réellement incorporable.** Remplacer l'opération XY inerte
+   par une voie construisant une sous-unité utilisable de G, F ou membrane depuis
+   des blocs simples. Vérifier l'incorporation physique, la matière, l'énergie
+   fournie et la distinction entre produit préparé et produit fabriqué. Garder
+   des affinités locales ; aucun nom d'enzyme ni conversion externe de molécule.
+3. **P1 — renouvellement et diversité des fonctions.** Après un premier composant
+   utilisable, viser le remplacement d'un outil. Tester des fonctions distinctes
+   par changement d'assemblage sous lois fixes ; le rôle spécifique d'un
+   repliement et une bibliothèque de machines restent ouverts.
+4. **P1 — M0, frontière fonctionnelle.** Mesurer rétention et passage de solutés
+   par les contours V8, puis compatibilité avec le candidat matériel commun.
+   Les indices intérieur/extérieur appartiennent seulement à l'analyse.
+5. **P1 — T9, parasites et générations.** Renouvellement ou coiffes locales sans
+   longueur cible dynamique ; mesurer des générations complètes répétées.
+6. **P2 — minimalité et robustesse.** Pour D, isoler les trois effets du helper
+   d'activation (attraction, capture, déliaison) et étendre graines et paramètres.
+   Pour V9/V7, conserver les ablations membranaires et améliorer la résolution
+   des ouvertures. Ne pas extrapoler la nécessité d'un helper à tout univers.
 
-En parallèle, C1 démontre préorganisation, ligation et libération répétées dans
-un prototype distinct. Les contrôles montrent un effet sur la co-capture, mais
-un gain total variable. Cette étape ne résout pas l'activité des F exprimés.
-Le plan d'avant essais reste dans [BATCH_03_PLAN.md](BATCH_03_PLAN.md) et les
-décisions antérieures sont conservées dans le journal et les bilans précédents.
+## Références à préserver pour le prochain candidat
 
-1. **P0 — C1 : transférer l'opération aux F composites exprimables.** Réutiliser
-   le véritable alphabet G/F et sa connectivité, plutôt qu'une troisième famille
-   incompatible. D'abord chaîne composite préparée, puis exprimée depuis G.
-   Garder réaction de bain identique, permutation de même composition, sites
-   séparés et absence de capture. Mesurer produits, renouvellement et rendement ;
-   refuser les gains dus à une règle de séquence entière ou à un comptage favorable.
-2. **P0 — E3 : coexistence copie/expression.** Tester deux faces locales de
-   recrutement, avec G et F complets libérés dans le même essai sur plusieurs
-   graines. Aucun changement global de mode copie/traduction. E3 demeure non testée.
-3. **P1 — M0 : frontière réellement fonctionnelle.** Mettre des solutés tests
-   près des contours V8 et mesurer rétention et passage selon une table locale
-   fixe. Distinguer fuites entre billes, rupture des liens et passage autorisé.
-   Les étiquettes intérieur/extérieur appartiennent uniquement à l'analyse.
-4. **P1 — nourriture→composants et outils.** Après transfert de C1, construire
-   une sous-unité utilisable avec matière et carburant déclarés ; viser ensuite
-   le remplacement d'un outil. Ne pas prendre le produit XY du prototype pour
-   un monomère fonctionnel déjà fabriqué.
-5. **P1 — T9 : fragments parasites et générations.** Comparer coiffes et
-   renouvellement local sans critère dynamique de longueur cible ; mesurer
-   plusieurs générations complètes, pas seulement davantage de ligations.
-6. **P2 — V9/V7 : minimalité et robustesse.** V9 : élargir les graines et varier
-   séparément attraction, courbure, densité et rupture ; suivre les ouvertures à
-   meilleure résolution. V7 sur V6 reste ouverte ; le contrôle thermique de V8
-   ne démontre pas la sortie de pièges sur V6.
+- Copie 001011, 48 G, graine 0 à t=800 : une copie libérée sous D.
+- Expression 001011, graine 0, et 010010, graine 1, 48 F sans X/Y à t=600 : 2/3 F libérés.
+- C2C préparé 001/010 et sites séparés : contrôle de géométrie à mêmes affinités.
+- C2D, 001 et 24 F avec X/Y, graines 0/1/2 à t=800 : maximum 3/3/4 opérations par outil exprimé.
+- Sans gène et sans capture : pas d'opération sur chaîne exprimée ; conserver
+  aussi les produits spontanés, afin de ne pas leur attribuer une provenance fausse.
 
-Toutes les nouvelles dynamiques utilisent le moteur commun. Code, lois, recettes
-et notes sont versionnés ; données complètes locales ignorées. Les sources des
-anciennes recettes restent figées. Commits locaux autorisés ; aucun push.
+La coexistence E3 et la membrane commune restent non démontrées. Les archives
+ne remplacent pas les nouveaux essais de compatibilité. Les [53 recettes du lot](BATCH_04_RECIPES.json)
+figent les lois réellement testées. Données locales ; commits locaux, aucun push.

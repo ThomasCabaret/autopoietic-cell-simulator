@@ -212,3 +212,32 @@ distincts soutenus par les mêmes sites sont observés, mais le gain net de
 rendement reste variable entre graines. Ce prototype n'est pas encore produit
 par traduction, ne refabrique pas ses outils et ne partage pas encore toutes
 ses primitives avec copie et membrane.
+
+## Lot 4 : transfert aux F composites et candidat commun C2D
+
+Le hook `copy` reçoit X/Y sans changer ses sous-unités : n supports G/F, n
+reconnaisseurs, puis 2×food_pairs billes de nourriture. Un reconnaisseur F libre
+reconnaît le bit de X/Y ; l'occupation alimentaire et l'appariement génétique
+s'excluent. Les substrats non produits ont la même capture gaussienne que C1
+(portée trois largeurs), liaison saturable et réaction locale uniforme X+Y→XY.
+Le lien produit retire l'affinité et libère le site. Les supports G/F n'ont pas
+besoin d'être convertis après traduction pour remplir cette fonction.
+
+C2A/B explorent un angle supplémentaire entre voisins de squelette F, dépendant
+du symbole et masqué localement pendant l'appariement. C2C/D le retirent : ils
+utilisent les seuls angles support–reconnaisseur–voisin E1, cosinus natif 0,8
+pour les deux symboles et zéro pendant l'appariement. Le candidat retenu ne
+démontre donc pas une fonction spécifique d'un repliement dépendant de séquence.
+
+C2D étend l'activation locale aux substrats. Pour un site F sans voisin de
+squelette, a=0,1/35 ; sinon a=1. L'énergie attractive et le taux de capture sont
+multipliés par a. Si a<1, le taux de déliaison est max(taux configuré,5), sinon
+le taux configuré. Ces constantes réutilisent celles de l'activation de copie ;
+c'est un helper supplémentaire déclaré, sans test de composant ou d'enzyme.
+Le taux de réaction X/Y reste inchangé dans tout le bain.
+
+La conservation porte sur les billes ; nourriture activée, ligation irréversible
+et cycle externe de déliaison restent fournis. Aucun bilan énergétique fermé,
+renouvellement des outils ou conversion de XY en G/F n'est simulé. Les métriques
+de chaînes exactes, provenance des arêtes et opérations par chaîne appartiennent
+uniquement à l'observateur. Voir [lot 4](BATCH_04.md) pour les contrôles et limites.

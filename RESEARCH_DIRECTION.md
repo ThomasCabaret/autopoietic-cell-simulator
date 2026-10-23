@@ -4,7 +4,7 @@ Outil de travail actuel : [simulateur et lancement des démonstrateurs](README.m
 [architecture du moteur partagé](SIMULATOR_ARCHITECTURE.md),
 [validation de migration](research/ENGINE_MIGRATION.md).
 
-État courant : [maturité](research/MATURITY.md), [bilan du lot 3](research/BATCH_03.md),
+État courant : [maturité](research/MATURITY.md), [bilan du lot 4](research/BATCH_04.md),
 [priorités et décisions](research/PRIORITIES.md),
 [architectures de fermeture conditionnelle](research/CELL_ARCHITECTURE.md).
 
@@ -16,6 +16,10 @@ Le lot 3 obtient des contours membranaires depuis des dimères isolés sur trois
 graines et des ligations répétées préorganisées par une petite chaîne préparée.
 Ce dernier prototype reste distinct des F composites exprimés : le transfert
 dans une chimie commune et la reconstruction des outils demeurent les verrous.
+Le lot 4 réalise ensuite ce transfert : sous C2D, des F composites exprimés depuis
+G soutiennent plusieurs ligations par une même chaîne sur trois graines. Il manque
+encore des produits incorporables, la coexistence copie/expression et la membrane
+dans ce même univers. L'activation alimentaire est un helper explicite.
 Les propositions et criblages ci-dessous conservent le cadrage historique ;
 les preuves actuelles et priorités sont dans les documents liés ci-dessus.
 
