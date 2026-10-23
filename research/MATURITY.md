@@ -1,33 +1,30 @@
-# Maturité de la chimie — après le lot 2, 23 octobre 2026
+# Maturité — après le lot 3, 23 octobre 2026
 
-Infrastructure ajoutée ensuite : moteur commun, interface et exécution headless,
-scénarios reproductibles et quatre démonstrateurs migrés vérifiés. Ce progrès
-logiciel ne remplit pas de nouvelle fonction biologique. Le T7 migré de graine 0
-ne retrouve pas la deuxième génération de sa trajectoire historique. Voir
-[ENGINE_MIGRATION.md](ENGINE_MIGRATION.md).
-
-Appréciation globale : **précoce, preuves de principe partielles**. L'expressivité
-requise n'est pas encore établie. Aucun pourcentage sans calibration.
+**Encore précoce et partielle.** Plusieurs fonctions sont démontrées séparément ;
+une chimie commune assez expressive pour refaire ses propres outils ne l'est pas.
+Les réussites de trois graines décrivent un point de fonctionnement, sans pourcentage
+de maturité ni garantie de robustesse générale.
 
 | Capacité nécessaire | Preuve actuelle | Ce qui manque |
 | --- | --- | --- |
-| Membrane composite | Rubans préparés fermés sur trois graines ; une boucle depuis des fragments | Robustesse, rétention, perméabilité, renouvellement |
-| Copie G | Copies exactes libérées ; deuxième génération complète certifiée dans un essai T7 sur trois | Lignée persistante, contrôle des fragments parasites, erreurs et rendement |
-| Traduction directe G→F | Chaînes F exactes et libérées pour deux séquences ; contrôle sans gène négatif | Coexistence avec la copie dans le même bain ; généralité sous variations |
-| Séquence→organisation | Géométrie différente pour deux chaînes préparées sous la même table locale ; une chaîne à préférence native exprimée | Organisation robuste de produits exprimés et activité utile de cette organisation |
-| Organisation→fonction | Aucune opération catalytique d'une chaîne F démontrée | Cycles répétés avec libération du produit et contrôle par séquence |
-| Nourriture→composants | Trois réseaux abstraits équilibrés et conditionnellement régénératifs | Fabrication physique des sous-unités G/F/membrane ; les essais les fournissent préparées |
-| Outils→production des outils | Dépendances et producteurs explicites dans l'audit C0 | Outils réels, remplacement sous dégradation, flux maintenu |
-| Univers commun | Copie/expression partagent un noyau et un motif local | Le bain mixte bloque ou sélectionne une famille ; membrane encore testée séparément |
+| Assemblage membranaire | V8 part de dimères isolés sans liens latéraux et forme des contours finaux sur 3/3 graines | Rétention, perméabilité, renouvellement ; ouvertures entre images non exclues |
+| Copie G | Copies exactes libérées ; génération deux complète une fois sur trois dans T7 historique | Lignée persistante ; T7 migré graine 0 ne reproduit que la première génération |
+| Traduction G→F | Chaînes composites F exactes libérées pour deux séquences ; contrôle sans gène négatif | Copie et expression simultanées dans le même bain |
+| Séquence→organisation | Géométries distinctes de chaînes préparées ; un produit F exprimé avec préférence native | Organisation fonctionnelle robuste des F exprimés |
+| Organisation→opération chimique | C1 : ligations co-capturées répétées et libération sur trois graines, contrôles de même composition et sites libres | Prototype distinct à trois billes simples ; gain global variable ; transfert aux F composites exprimables |
+| Nourriture→composants | Réseaux abstraits équilibrés et conditionnellement régénératifs | Fabrication physique de sous-unités G/F/membrane utilisables |
+| Outils→production des outils | Producteurs et dépendances explicités dans C0 | Outils réels, remplacement sous dégradation et flux maintenu |
+| Univers commun | Moteur partagé et primitives locales réutilisables | Compatibilité matérielle des trois hooks, bain mixte G/F, frontière fonctionnelle |
 
-Le cycle externe d'association/libération reste nécessaire aux réussites actuelles.
-La cellule initiale peut être construite ; la régénération depuis la nourriture
-reste une obligation même lorsque l'initialisation fournit déjà les outils.
+V8 n'impose aucun contour à la dynamique ; le suivi de fermeture est analytique.
+C1 n'impose aucune reconnaissance d'enzyme ou séquence complète, mais utilise
+une règle locale de perte d'affinité du produit et des précurseurs activés.
+La copie réussie dépend encore d'un cycle externe d'association/libération.
 
-Le prochain saut de maturité serait une **fonction chimique répétée portée par une
-chaîne exprimable**, puis sa participation à la fabrication des composants.
-Résoudre le recrutement simultané G/F est l'autre priorité immédiate. Une forme
-différente ou un graphe fermé ne remplit pas à lui seul ces critères.
+La cellule initiale peut être construite. La régénération depuis la nourriture
+reste nécessaire à la cible, même lorsque les premiers outils sont préparés.
+Le prochain saut serait une **chaîne composite exprimée qui réalise une opération
+répétée**, puis sa contribution à la fabrication de composants et outils.
 
-Preuves et limites : [lot 2](BATCH_02.md), [manifeste](BATCH_02.json),
-[architecture](CELL_ARCHITECTURE.md), [priorités](PRIORITIES.md).
+Preuves : [lot 3](BATCH_03.md), [recettes](BATCH_03_RECIPES.json),
+[lot 2](BATCH_02.md), [migration](ENGINE_MIGRATION.md), [priorités](PRIORITIES.md).

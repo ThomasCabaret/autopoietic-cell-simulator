@@ -1,6 +1,7 @@
 """Research execution and provenance; no graphics imported here."""
 from datetime import datetime,timezone
 import json
+import hashlib
 from pathlib import Path
 import shutil
 import time
@@ -39,6 +40,11 @@ def create_output(config,parent='outputs'):
 
 
 def save_result(path,sim,observer,elapsed,error=None):
+    # Hash the frozen snapshot, not possibly edited development files at run end.
+    archived={p.relative_to(path).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()
+              for p in sorted((path/'simulator').glob('*.py'))}
+    if not archived:
+        raise ValueError('Missing archived simulator sources for this result')
     metrics=observer.summary() if observer.times else {}
     checks={}
     for key,criterion in sim.config.get('expected',{}).items():
@@ -51,7 +57,7 @@ def save_result(path,sim,observer,elapsed,error=None):
     evidence={'format_version':2,'scenario':sim.config,
               'config':{**observer_config(sim.config),'branch':sim.config.get('branch','W0'),
                         'duration':sim.config['duration'],'dt':sim.dt},
-              'source_sha256':checkpoint.source_hashes(),'numpy':np.__version__,
+              'source_sha256':archived,'numpy':np.__version__,
               'elapsed_seconds':elapsed,'error':error,'completed':sim.done,
               'metrics':metrics,'expected_checks':checks}
     (path/'result.json').write_text(json.dumps(evidence,indent=2,ensure_ascii=False),encoding='utf-8')
@@ -60,7 +66,7 @@ def save_result(path,sim,observer,elapsed,error=None):
                'families':observer.last_families} if sim.config['model']=='copy' else {}
         np.savez_compressed(path/'trajectory.npz',positions=np.array(observer.frames),
                             times=np.array(observer.times),edges=np.array(observer.edges_frames),**extra)
-    checkpoint.save(path/'checkpoint.npz',sim,observer)
+    checkpoint.save(path/'checkpoint.npz',sim,observer,source_manifest=archived)
     return evidence
 
 

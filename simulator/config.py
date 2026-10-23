@@ -11,7 +11,8 @@ COPY_DEFAULTS = dict(sequence="001011", alphabet="01", free_units=30, function_u
     local_off_rate=.2, ligation_rate=12., ligation=True, temperature=.6)
 MEMBRANE_DEFAULTS = dict(units=16, initial="straight", short_length=.75, bonding=True,
     end_attraction=4., cooperative_rows=False, oriented_ports=False, port_epsilon=.6,
-    temperature=.06)
+    temperature=.06, face_docking=False, dock_energy=4., dock_width=.25,
+    dock_capture=.25, dock_rate=25., bond_off_rate=.01, break_extension=.35)
 
 
 def resolve(raw):
@@ -72,9 +73,12 @@ def resolve(raw):
     elif model=='membrane':
         if not isinstance(defaults['units'],int) or defaults['units']<2 or not isinstance(defaults.get('fragment_size',1),int) or defaults.get('fragment_size',1)<1:
             raise ValueError('invalid membrane size')
-        if defaults['initial'] not in ('straight','dispersed_fragments') or defaults['short_length']<=0:
+        if defaults['initial'] not in ('straight','dispersed_fragments','dispersed_units') or defaults['short_length']<=0:
             raise ValueError('invalid membrane geometry')
         defaults.setdefault('fragment_size',defaults['units'])
+        if defaults['initial']=='dispersed_units': defaults['fragment_size']=1
+        if defaults['dock_width']<=0 or defaults['dock_capture']<=0 or any(defaults[k]<0 for k in ('dock_energy','dock_rate','bond_off_rate','break_extension')):
+            raise ValueError('invalid local docking parameters')
     for key,criterion in raw.get('expected',{}).items():
         if not isinstance(criterion,(int,float,dict)) or isinstance(criterion,dict) and (not criterion or set(criterion)-{'min','max','eq'}):
             raise ValueError('Expected metric '+key+' needs min/max/eq thresholds')

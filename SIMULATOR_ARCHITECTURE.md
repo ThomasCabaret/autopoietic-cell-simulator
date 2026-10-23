@@ -30,7 +30,8 @@ flowchart TD
 | `simulator/engine.py` | Préparation, cadence des réactions, intégration, arrêt au nombre de pas demandé |
 | `spatial.py` | Contacts finis triés, arbre KD ou référence exhaustive, cache de voisinage avec marge |
 | `physics.py` | Noyaux compilés de répulsion, ressorts, angles, orientation et attraction |
-| `copy.py`, `membrane.py` | Conditions initiales et lois locales propres aux chimies |
+| `copy.py`, `membrane.py`, `catalysis.py` | Conditions initiales et lois locales propres aux trois chimies ; le prototype C1 reste distinct des F composites |
+| `docking.py` | Géométrie de faces, potentiel coopératif à quatre billes et capture pour V8 |
 | `registry.py` | Association explicite d'un nom de modèle, d'un hook, de paramètres et d'un observateur |
 | `observations.py` | Analyse uniquement : chaînes complètes, filiation, géométrie, boucles |
 | `runner.py`, `cli.py` | Campagnes, sorties, critères observés et ligne de commande |

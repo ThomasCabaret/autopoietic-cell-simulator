@@ -12,11 +12,13 @@ Les autres lanceurs n'installent rien et n'ont pas besoin du réseau.
 | Fichier à double-cliquer | Ce qui est montré |
 | --- | --- |
 | `01_copie.bat` | Un polymère préparé copie sa séquence dans de nouveaux composants puis les libère |
-| `02_membrane.bat` | Un ruban composite droit préparé se courbe et ferme ses deux rangées |
+| `02_membrane.bat` | Des molécules isolées de deux billes s'associent en contours fermés, sans liens latéraux initiaux |
 | `03_traduction.bat` | Une matrice G assemble une autre famille F de même séquence |
 | `04_controle_sans_gene.bat` | Les mêmes composants d'expression sans squelette génétique initial : aucune ligation |
 | `05_fragments_relecture.bat` | Relecture identifiée d'une réussite historique : cinq fragments forment une boucle de quinze unités |
 | `06_tout_sans_interface.bat` | Les quatre premiers scénarios, sans rendu, avec vérification automatique des critères |
+| `07_ruban_prepare.bat` | Contrôle historique : un ruban composite déjà polymérisé se courbe et ferme |
+| `08_ligation_preparee.bat` | Prototype séparé : une chaîne préparée de trois billes rapproche des substrats pour plusieurs ligations avec libération |
 
 Les trois premiers sont des **simulations en direct**, à graine fixée. Le quatrième
 est aussi calculé en direct. Le cinquième lit une trajectoire archivée ; il ne
@@ -25,7 +27,9 @@ Les données ne sont pas livrées dans le dépôt ni le ZIP : si la trajectoire 
 ce lanceur la reconstruit depuis les sources historiques et leur graine, puis
 l'affiche. Ce premier lancement peut donc prendre plus de temps.
 
-La membrane commence comme ruban polymérisé, pas comme unités libres. La traduction
+Le scénario membrane commence avec 36 dimères isolés et forme plusieurs contours ;
+la rétention d'un contenu n'est pas encore testée. Le ruban préparé reste un contrôle
+séparé. La traduction
 est un templating direct G→F, sans ribosome, et ne prouve pas la fonction des F.
 La copie utilise un cycle externe fixé à l'avance. Les compteurs excluent le gène
 initial. Les séquences non orientées sont reconnues à inversion près.
@@ -43,9 +47,10 @@ Le rendu est limité à 30 images/s. Le travailleur peut effectuer beaucoup plus
 pas ; les réactions et le bruit ne dépendent pas du nombre d'images. Un premier
 lancement peut compiler les noyaux CPU Numba pendant quelques secondes.
 
-Les calculs validés ont pris environ 13 à 31 secondes chacun sur cette machine,
-en lançant les quatre en parallèle, hors sauvegarde finale. Ce ne sont pas des
-délais garantis sur une autre machine ; les paramètres simulés restent les mêmes.
+La membrane calcule 1000 unités de temps et a pris environ une à deux minutes
+sur cette machine ; les trois autres scénarios avaient pris 13 à 31 secondes
+chacun lors de la validation initiale. Le premier lancement peut être plus lent.
+Ces durées ne sont pas garanties sur une autre machine.
 
 À la fermeture, les résultats sont conservés dans `outputs/`, même si l'expérience
 n'est pas terminée (`completed: false`). Un redémarrage conserve aussi l'ancien

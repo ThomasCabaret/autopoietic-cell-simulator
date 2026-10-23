@@ -16,12 +16,19 @@ def main():
         'CONTRIBUTING.md','GIT_SETUP.md','THIRD_PARTY_NOTICES.md',
         '.gitignore','.gitattributes','.editorconfig',
         'scripts/dispatch.py','scripts/launch.bat','scripts/reconstruct_experiment.py',
-        'research/REPRODUCTION.md','research/ENGINE_MIGRATION.md','research/ENGINE_VERIFICATION.json'))
+        'research/REPRODUCTION.md','research/ENGINE_MIGRATION.md','research/ENGINE_VERIFICATION.json',
+        'research/BATCH_03.md','research/BATCH_03_RECIPES.json',
+        'research/BATCH_03_MEMBRANES.png','research/BATCH_03_LIGATION.png',
+        'research/BATCH_03_PLAN.md','research/MATURITY.md','research/PRIORITIES.md','research/MODEL.md'))
+    files.update(ROOT/p for p in ('AGENTS.md','RESEARCH_DIRECTION.md',
+        'research/branches.json','research/LOG.md'))
     files.update(p for p in (ROOT/'research/legacy_reference').rglob('*')
                  if p.is_file() and '__pycache__' not in p.parts and p.suffix!='.pyc')
     files.add(ROOT/'research/LEGACY_PROJECT_NOTES.md')
     folders=[ROOT/Path(p).parent for p in verification['validated_runs']]
     folders.append(ROOT/'research/runs/V6_s1_20261023T115206264055Z')
+    batch=json.loads((ROOT/'research/BATCH_03_RECIPES.json').read_text(encoding='utf-8'))
+    folders.extend(ROOT/Path(p).parent for p in batch['recipes'])
     for folder in folders:
         files.update(p for p in folder.rglob('*') if p.is_file() and '__pycache__' not in p.parts
                      and (p.suffix=='.py' or p.name in ('config.json','scenario.json','recipe.json')))

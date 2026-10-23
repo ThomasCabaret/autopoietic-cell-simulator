@@ -192,6 +192,8 @@ class Canvas:
         if config['model']=='copy':
             labels=[('G complets liberes','detached_copy_sets_ever'),('F complets liberes','translated_detached_ever'),
                     ('Generation >= 2 liberee','certified_detached_generation2'),('Ligations','ligation_events')]
+        elif config['model']=='catalysis':
+            labels=[('Produits','products'),('Ligations co-liees','double_bound_ligations')]
         else: labels=[('Boucles observees','closed_sets_ever'),('Plus grand fragment','final_largest_component')]
         for label,key in labels:
             self.text(f'{label} : {metrics.get(key,0)}',x,y); y+=25
@@ -300,7 +302,14 @@ def replay_view(folder,screenshot=None):
         if not paused: t=min(float(times[-1]),t+elapsed*speed)
         index=min(len(times)-1,int(np.searchsorted(times,t)))
         bonds={'scaffold':[(i,n+i) for i in range(n)],'backbone':[],'pairing':[]}
-        if config['model']=='copy':
+        if config['model']=='catalysis':
+            bonds={'scaffold':[],'backbone':[],'pairing':[]}
+            for i,j in np.argwhere(np.triu(edges[index],1)):
+                group='scaffold' if j<3 else ('pairing' if i<3 else 'backbone')
+                bonds[group].append((int(i),int(j)))
+            symbols=[int(b) for b in config['chemistry']['sequence']]+[i%2 for i in range(len(positions[index])-3)]
+            colors=[('#275f94' if b==0 else '#9a4aa0') if i<3 else ('#148e9c' if b==0 else '#df7947') for i,b in enumerate(symbols)]
+        elif config['model']=='copy':
             bonds['backbone']=np.argwhere(np.triu(edges[index],1)).tolist()
             if pairing is not None:
                 bonds['pairing']=[(n+i,n+int(j)) for i,j in enumerate(pairing[index]) if j>i]
@@ -312,6 +321,9 @@ def replay_view(folder,screenshot=None):
         item=history[hi] if history else {}
         metrics=dict(result['metrics']) if t>=times[-1] else {}
         metrics.update({key:item[old] for key,old in [('detached_copy_sets_ever','detached_ever'),('translated_detached_ever','translated_detached_ever'),('final_largest_component','largest_head_component')] if old in item})
+        if config['model']=='catalysis':
+            for key in ('products','double_bound_ligations'):
+                if key in item: metrics[key]=item[key]
         if 'closed' in item and t<times[-1]: metrics['closed_sets_ever']=len(item['closed'])
         state={'positions':positions[index],'bonds':bonds,'colors':colors,'config':config,'time':float(times[index]),
                'done':t>=times[-1],'paused':paused,'rate':0,'metrics':metrics,'box':config['chemistry'].get('box')}

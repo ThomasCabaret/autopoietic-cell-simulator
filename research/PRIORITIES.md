@@ -1,76 +1,49 @@
-# Priorités — après le lot 2, 23 octobre 2026
+# Priorités — après le lot 3, 23 octobre 2026
 
-Règle de livraison précisée par l'utilisateur : versionner les lois, le code,
-les notes et les recettes de reproduction ; garder les données d'expériences
-sur le disque local, hors Git. Voir [REPRODUCTION.md](REPRODUCTION.md).
+Critère : une chimie commune pour membrane, copie, expression, fonctions des chaînes,
+production des composants et remplacement des outils. Cellule préparée et énergie
+externe déclarée autorisées. Les fonctions abstraites de C0 restent des obligations,
+pas des réactions biologiques à coder comme primitives.
 
-**Lot d'infrastructure W0 terminé ensuite à la demande de l'utilisateur :**
-moteur partagé CPU, voisinage spatial vérifié, interface optionnelle et scénarios
-Windows. Voir [ENGINE_MIGRATION.md](ENGINE_MIGRATION.md). Les prochaines expériences
-C1/E3 doivent utiliser ce noyau et enregistrer leur scénario résolu. Les sources
-historiques des anciens essais restent réservées à leurs rejeux.
+## Décisions du lot
 
-## Critère de maturité convenu
+À la demande de l'utilisateur, l'assemblage membranaire depuis des molécules
+isolées devient prioritaire par rapport au simple repliement du ruban préparé.
+V8 obtient des contours finaux sur trois graines au point retenu ; le démonstrateur
+est remplacé. Les échecs et ablations sont conservés dans [BATCH_03.md](BATCH_03.md).
+L'attraction et la rupture thermique ne sont pas nécessaires à toute fermeture.
 
-Une chimie commune doit permettre des assemblages porteurs de fonctions variées :
-membrane, copie d'information, expression vers des chaînes fonctionnelles (ou
-alternative à un alphabet), fonctions dépendant de leur organisation, production
-des composants et remplacement des outils nécessaires à cette production.
-Cellule construite initialement autorisée ; source d'énergie externe autorisée
-si déclarée. Le schéma abstrait et sa réalisation sont des travaux complémentaires.
+En parallèle, C1 démontre préorganisation, ligation et libération répétées dans
+un prototype distinct. Les contrôles montrent un effet sur la co-capture, mais
+un gain total variable. Cette étape ne résout pas l'activité des F exprimés.
+Le plan d'avant essais reste dans [BATCH_03_PLAN.md](BATCH_03_PLAN.md) et les
+décisions antérieures sont conservées dans le journal et les bilans précédents.
 
-## Décision avant les essais
+1. **P0 — C1 : transférer l'opération aux F composites exprimables.** Réutiliser
+   le véritable alphabet G/F et sa connectivité, plutôt qu'une troisième famille
+   incompatible. D'abord chaîne composite préparée, puis exprimée depuis G.
+   Garder réaction de bain identique, permutation de même composition, sites
+   séparés et absence de capture. Mesurer produits, renouvellement et rendement ;
+   refuser les gains dus à une règle de séquence entière ou à un comptage favorable.
+2. **P0 — E3 : coexistence copie/expression.** Tester deux faces locales de
+   recrutement, avec G et F complets libérés dans le même essai sur plusieurs
+   graines. Aucun changement global de mode copie/traduction. E3 demeure non testée.
+3. **P1 — M0 : frontière réellement fonctionnelle.** Mettre des solutés tests
+   près des contours V8 et mesurer rétention et passage selon une table locale
+   fixe. Distinguer fuites entre billes, rupture des liens et passage autorisé.
+   Les étiquettes intérieur/extérieur appartiennent uniquement à l'analyse.
+4. **P1 — nourriture→composants et outils.** Après transfert de C1, construire
+   une sous-unité utilisable avec matière et carburant déclarés ; viser ensuite
+   le remplacement d'un outil. Ne pas prendre le produit XY du prototype pour
+   un monomère fonctionnel déjà fabriqué.
+5. **P1 — T9 : fragments parasites et générations.** Comparer coiffes et
+   renouvellement local sans critère dynamique de longueur cible ; mesurer
+   plusieurs générations complètes, pas seulement davantage de ligations.
+6. **P2 — V9/V7 : minimalité et robustesse.** V9 : élargir les graines et varier
+   séparément attraction, courbure, densité et rupture ; suivre les ouvertures à
+   meilleure résolution. V7 sur V6 reste ouverte ; le contrôle thermique de V8
+   ne démontre pas la sortie de pièges sur V6.
 
-1. **T7 — deuxième génération.** Le recrutement de monomères libres seulement,
-   tiré de l'ancien projet, pourrait réduire l'hybridation entre produits. Le
-   tester isolément face à T4, avec un observateur de provenance des nouvelles
-   liaisons. Une ligation sur une copie ne sera plus confondue avec une nouvelle
-   copie complète de deuxième génération.
-2. **E0/E1 — expression puis organisation.** Étendre les mêmes motifs locaux à
-   deux familles G/F, avec reconnaissance et liaisons compatibles par types.
-   Tester une chaîne F complète et libérée, un contrôle sans gène, et la
-   coexistence avec la copie G. Examiner ensuite une préférence de géométrie
-   native de F dépendant du symbole, avec contrôle sans cette préférence.
-3. **C0 — fermeture abstraite.** Comparer une architecture à deux familles et
-   plusieurs outils spécialisés, une version plus compacte supposant un outil
-   polyvalent, et une alternative à un alphabet. Vérifier matière, production
-   de chaque outil et dépendances cachées ; ne pas confondre ce test formel avec
-   une catalyse ou un métabolisme observés dans la simulation.
-4. **V7 — garder en attente.** La réversibilité membranaire reste utile. Elle est
-   différée dans ce lot car traduction et régénération des outils sont des trous
-   de preuve plus importants pour la maturité désormais demandée.
-
-## Décisions après les essais
-
-Le [bilan du lot 2](BATCH_02.md) conserve les contrôles et les références exactes.
-T7 démontre une deuxième génération une fois sur trois ; E0 exprime F mais le
-bain mixte échoue ; E2 retrouve un produit d'une famille seulement par essai.
-E1 établit séquence→géométrie, sans catalyse. C0 est un cahier des charges
-conditionnel équilibré, dont les outils restent hypothétiques.
-
-1. **P0 — C1, organisation→catalyse.** Construire une chaîne F dont les contacts
-   locaux rapprochent deux substrats et permettent plusieurs ligations suivies
-   de libération. Comparer séquence, ordre permuté, absence de chaîne et affinités
-   élémentaires identiques sans préorganisation. Mesurer les cycles par chaîne
-   et le fond spontané ; une adsorption ou un seul produit ne suffit pas.
-   Motif réactionnel générique, aucun nom d'enzyme ni reconnaissance de séquence
-   entière dans le moteur. À tester d'abord avec chaîne préparée, puis exprimée.
-2. **P0 — E3, copie et expression compatibles.** Tester deux faces de recrutement
-   locales, physiquement distinctes, pour éviter la concurrence sur le même port.
-   Garder deux symboles réutilisables et le contrôle de coût en billes/primitives.
-   Succès requis : G et F complets libérés dans un même bain, plusieurs graines,
-   sans bascule globale entre un mode copie et un mode traduction.
-3. **P1 — fabrication des composants.** Une fois C1 établi, réaliser une voie
-   depuis des blocs simples vers une sous-unité utilisable, avec conservation de
-   matière et carburant déclaré. L'architecture C0 à quatre rôles fournit la
-   liste des fonctions ; les variantes polyvalente et R restent concurrentes.
-4. **P1 — T9, fragments parasites.** Comparer coiffes locales, réversibilité ou
-   renouvellement des fragments sans critère de longueur cible dans la dynamique.
-   Objectif : plusieurs générations complètes, pas seulement plus de ligations.
-5. **P2 — V7/M0, membrane fonctionnelle.** Reprendre réversibilité des contacts,
-   piégeage et perméabilité sélective. Ne pas intégrer une cellule avant d'avoir
-   séparément mesuré fonctions chimiques et transport.
-
-C1, E3 et T9 sont des pistes ouvertes, **pas des mécanismes déjà testés**. Cette
-priorité privilégie les deux trous de preuve qui bloquent aujourd'hui la richesse
-fonctionnelle : activité des chaînes et compatibilité des processus.
+Toutes les nouvelles dynamiques utilisent le moteur commun. Code, lois, recettes
+et notes sont versionnés ; données complètes locales ignorées. Les sources des
+anciennes recettes restent figées. Commits locaux autorisés ; aucun push.

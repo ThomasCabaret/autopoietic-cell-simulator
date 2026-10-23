@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "model": "membrane",
+  "engine": {
+    "dt": 0.002,
+    "spatial": "tree",
+    "skin": 0.25,
+    "sample_every": 200
+  },
+  "seed": 0,
+  "duration": 300.0,
+  "name": "Controle : repliement de ruban prepare",
+  "branch": "V4",
+  "chemistry": {
+    "units": 18,
+    "initial": "straight",
+    "short_length": 0.75,
+    "bonding": true,
+    "end_attraction": 4.0,
+    "cooperative_rows": false,
+    "oriented_ports": false,
+    "port_epsilon": 0.6,
+    "temperature": 0.06
+  },
+  "description": "Un ruban droit prepare se courbe puis ferme ses contacts locaux. La retention et la permeabilite ne sont pas demontrees.",
+  "expected": {
+    "closed_sets_ever": {
+      "min": 1
+    }
+  }
+}

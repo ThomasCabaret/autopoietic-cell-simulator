@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "model": "catalysis",
+  "name": "C1bare",
+  "branch": "C1",
+  "seed": 2,
+  "duration": 200.0,
+  "chemistry": {
+    "sequence": "001",
+    "food_pairs": 8,
+    "box": [
+      10.0,
+      10.0
+    ],
+    "temperature": 0.2,
+    "assembled": true,
+    "ligand_energy": 0.0,
+    "ligand_width": 0.6,
+    "binding_radius": 0.25,
+    "binding_rate": 0.0,
+    "unbinding_rate": 0.1,
+    "reaction_radius": 0.25,
+    "reaction_rate": 0.2,
+    "angle_strength": 100.0,
+    "native_cosines": {
+      "0": 0.98,
+      "1": -0.5
+    }
+  },
+  "engine": {
+    "dt": 0.002,
+    "spatial": "tree",
+    "skin": 0.25,
+    "sample_every": 250
+  }
+}

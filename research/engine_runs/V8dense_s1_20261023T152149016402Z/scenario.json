@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "model": "membrane",
+  "name": "V8dense",
+  "branch": "V8",
+  "seed": 1,
+  "duration": 1200.0,
+  "chemistry": {
+    "units": 36,
+    "initial": "dispersed_units",
+    "short_length": 0.75,
+    "bonding": true,
+    "end_attraction": 4.0,
+    "cooperative_rows": false,
+    "oriented_ports": false,
+    "port_epsilon": 0.6,
+    "temperature": 0.08,
+    "face_docking": true,
+    "dock_energy": 4.0,
+    "dock_width": 0.3,
+    "dock_capture": 0.25,
+    "dock_rate": 25.0,
+    "bond_off_rate": 0.02,
+    "break_extension": 0.35,
+    "box": [
+      10.0,
+      10.0
+    ],
+    "fragment_size": 1
+  },
+  "engine": {
+    "dt": 0.002,
+    "spatial": "tree",
+    "skin": 0.25,
+    "sample_every": 500
+  }
+}

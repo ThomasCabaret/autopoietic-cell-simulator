@@ -3,6 +3,7 @@ import numpy as np
 from .reference import degree, normals, local_port_free, port_attraction, add_force
 from .physics import orientation_kernel
 from .physics import attraction_kernel
+from .docking import free_faces,update_faces,docking_force
 
 class MembraneChemistry:
     def __init__(self, config, rng):
@@ -57,8 +58,24 @@ class MembraneChemistry:
         self.springs = np.empty((0,4))
         self.angles = np.empty((0,5))
         self.mobility = .4
+        self.face_links=[]
+        if config.get('face_docking',False):
+            directions=normals(pos,rungs)
+            tangents=np.column_stack((-directions[:,1],directions[:,0]))
+            for i,j in sorted(edges[0]&edges[1]):
+                a=int(np.dot(pos[j]-pos[i],tangents[i])>0)
+                self.face_links.append((i,j,a,1-a))
+        self.broken_contacts=0
+        self._cache_faces()
 
     def react(self, time, dt, neighbors):
+        if self.config.get('face_docking',False):
+            self.face_links,broken=update_faces(self.pos,self.face_links,self.config,self.rng,neighbors,dt*5)
+            self.broken_contacts+=broken
+            contacts={(i,j) for i,j,_,_ in self.face_links}
+            self.edges=[contacts.copy(),contacts.copy()]
+            self._face_mechanics()
+            return []
         config, rng = self.config, self.rng
         events = []
         pos = self.pos
@@ -123,6 +140,11 @@ class MembraneChemistry:
 
     def extra_forces(self, neighbors):
         pos, n = self.pos, self.n
+        if self.config.get('face_docking',False):
+            if self.config['dock_energy']==0.: return np.zeros_like(pos)
+            pairs=neighbors.pairs(pos[:n],self.long+4*self.config['dock_width'],'face_force')
+            return docking_force(pos,pairs,self.faces_free,self.long,self.short,
+                                 self.config['dock_energy'],self.config['dock_width'],self.face_partners)[0]
         force = np.zeros_like(pos)
         for row, length in enumerate((self.long, self.short)):
             if self.config.get("oriented_ports", False):
@@ -146,7 +168,33 @@ class MembraneChemistry:
         return ["#148e9c"]*self.n + ["#df7947"]*self.n
 
     def export(self):
-        return {"edges": [sorted(row) for row in self.edges]}
+        state={"edges": [sorted(row) for row in self.edges]}
+        if self.config.get('face_docking',False):
+            state.update(face_links=self.face_links,broken_contacts=self.broken_contacts)
+        return state
 
     def restore(self, state):
         self.edges = [{tuple(p) for p in row} for row in state["edges"]]
+        self.face_links=[tuple(p) for p in state.get('face_links',[])]
+        self.broken_contacts=state.get('broken_contacts',0)
+        self._cache_faces()
+
+    def _cache_faces(self):
+        self.faces_free=free_faces(self.n,self.face_links)
+        self.face_partners=np.full((self.n,2),-1,dtype=np.int64)
+        for i,j,a,b in self.face_links:
+            self.face_partners[i,a]=j; self.face_partners[j,b]=i
+
+    def _face_mechanics(self):
+        self._cache_faces()
+        n=self.n
+        springs=[(i,n+i,180.,self.shaft) for i in range(n)]
+        angles=[]
+        for row,length in enumerate((self.long,self.short)):
+            offset,other=row*n,(1-row)*n
+            for i,j in sorted(self.edges[row]):
+                springs.append((offset+i,offset+j,120.,length))
+                angles.extend(((other+i,offset+i,offset+j,1.,0.),
+                               (other+j,offset+j,offset+i,1.,0.)))
+        self.springs=np.asarray(springs,dtype=float).reshape(-1,4)
+        self.angles=np.asarray(angles,dtype=float).reshape(-1,5)

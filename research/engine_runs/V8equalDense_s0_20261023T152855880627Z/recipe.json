@@ -1,0 +1,67 @@
+{
+  "recipe_version": 1,
+  "run_id": "V8equalDense_s0_20261023T152855880627Z",
+  "kind": "shared_engine",
+  "source_sha256": {
+    "simulator/__init__.py": "bf5a7a5cafdf7076cbc3cc9d8992895e4a8c217621ea024645a061a3531281a9",
+    "simulator/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "simulator/catalysis.py": "b5a9f3a5f0f7d8b4194860491a5c7671dcd799a60ece98992ea7fe41e86074fb",
+    "simulator/checkpoint.py": "5c7c1feea319f63d2af9ee717a31eaef1108378f467c5dff2b25ae3795212dd5",
+    "simulator/cli.py": "2b4ba9fec940173ea9bd990483aa39c38b9b7f07b5af5b23811313d3b94d62f6",
+    "simulator/config.py": "20e01337ce8ce35b323d525f2d64f76802eba052648995ae74b8fd37ab5508c1",
+    "simulator/copy.py": "83d9d9fe52ee397474115b2ed92fe617a928f82fcc0a583e45b7a4dd45411777",
+    "simulator/docking.py": "db8daba23c23e293d7176d9a193d26139015b086b396a3a298650bfda06b3759",
+    "simulator/engine.py": "c65b90ea8db7e963c5241ef7fe5e9c07034632d42bfc2748709daa0f612e7fbf",
+    "simulator/membrane.py": "7a8d0cd49eb39d2109806d85d00bc5a55d59f796e5162e9a1ff639527f00cbb4",
+    "simulator/observations.py": "2d666a3c8e20d1260af0d847a1539a40287d89525e705e5002dfeaa34de61cb8",
+    "simulator/physics.py": "d8364c7fb784db08e2f9fe0b3f549abb69246e402c681b06293d85058a7aa464",
+    "simulator/plots.py": "96b1f61f29c551c39e4b84af5914c78ef4dea97b82d7cac734698c6526b51383",
+    "simulator/reference.py": "347618abbab85e3991f8b0fd771e2502f554a042db5f7b3140182ea04eb868bc",
+    "simulator/registry.py": "7da3d54f1cea7a2b1a44df986c8f0240edc0c89a6c60e87f389dd6915276f313",
+    "simulator/runner.py": "53d4612b5d4a5a09fa86f18cc9e9580c3ded047cf922bdf123ec63c5e5adeebd",
+    "simulator/spatial.py": "e0f831e3ac3adcf624721244a83ec23dd7b5a11b0137015ee39ddd367e27649f",
+    "simulator/viewer.py": "f37e4d71d81541d06d7022e0c8d289cf38c0417be7b0ebcd225cae5d9e7942a8"
+  },
+  "environment": {
+    "python": "3.12",
+    "numpy": "2.0.2"
+  },
+  "initialization_incident": false,
+  "scenario": {
+    "schema_version": 1,
+    "model": "membrane",
+    "name": "V8equalDense",
+    "branch": "V8",
+    "seed": 0,
+    "duration": 1000.0,
+    "chemistry": {
+      "units": 36,
+      "initial": "dispersed_units",
+      "short_length": 1.0,
+      "bonding": true,
+      "end_attraction": 4.0,
+      "cooperative_rows": false,
+      "oriented_ports": false,
+      "port_epsilon": 0.6,
+      "temperature": 0.08,
+      "face_docking": true,
+      "dock_energy": 4.0,
+      "dock_width": 0.3,
+      "dock_capture": 0.25,
+      "dock_rate": 25.0,
+      "bond_off_rate": 0.02,
+      "break_extension": 0.35,
+      "box": [
+        10.0,
+        10.0
+      ],
+      "fragment_size": 1
+    },
+    "engine": {
+      "dt": 0.002,
+      "spatial": "tree",
+      "skin": 0.25,
+      "sample_every": 500
+    }
+  }
+}

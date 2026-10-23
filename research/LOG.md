@@ -274,3 +274,45 @@ aucune donnée brute suivie et toutes les recettes/sources requises incluses.
 Ancien moteur, moteur partagé et audit abstrait ont été reconstruits depuis des
 dossiers ne contenant que les entrées : mêmes métriques et tableaux enregistrés
 que les originaux locaux. Aucun changement des lois ni de la maturité chimique.
+
+## 2026-10-23 — lot 3 : molécules membranaires libres et opération géométrique
+
+L'utilisateur distingue l'assemblage de molécules libres du repliement d'un ruban
+préparé, autorise les commits locaux et réserve tous les pushes. Plan conservé
+avant tests dans BATCH_03_PLAN.md ; règles durables dans AGENTS.md.
+
+35 nouvelles dynamiques achevées, zéro incident. BATCH_03_RECIPES.json fige leurs
+entrées et sources ; BATCH_03.md conserve réglages, résultats et limites. Les
+trajectoires et données restent locales ignorées. Aucune ancienne source modifiée.
+
+- V8 : nouveau contact coopératif de quatre billes sur faces saturables. Des
+  dimères H-T isolés s'assemblent sans aucune liaison latérale initiale. Les essais
+  à 24 molécules échouent, même prolongés. À 36 molécules, espacement 0,75 : trois
+  graines ferment au moins une fois mais deux seulement à la fin. L'espacement
+  0,65 donne des contours finaux 10+14 / 11 / 12+10 pour graines 0/1/2. Le scénario
+  Windows utilise désormais ce départ libre ; l'ancien ruban devient contrôle 07.
+- Contrôle à espacements égaux et densité égale : aucune fermeture, graine 0.
+  Sans attraction, deux graines sur trois ferment ; sans rupture thermique,
+  graine 0 ferme aussi. Ouvrir V9 pour minimalité : ces helpers ne sont pas
+  nécessaires à toute réussite. V7 sur V6 reste distinct et non testé.
+- La persistance suit le même ensemble de molécules : maxima 275/201/292,
+  échantillonnés toutes les unités de temps. Aucune preuve d'étanchéité, de contenu
+  retenu ni d'absence d'ouvertures entre images.
+- C1 : prototype séparé, chaîne préparée de trois billes simples, angle local
+  dépendant du symbole central. Ligation X+Y identique partout ; occupation du
+  produit supprime la capture. 001 donne 3/6/2 ligations avec les deux substrats
+  capturés, contre zéro pour 010 de même composition et pour les sites non reliés.
+  Les produits totaux 3/7/4 contre 3/2/4 ne prouvent pas de gain robuste général.
+  Le prototype n'utilise pas encore les F composites produits par traduction.
+- Le compteur initial de co-capture exigeait le squelette ; recomptage uniforme
+  des supports dans tous les événements, puis compteur clarifié. Validation
+  actuelle graine 1 : 7 produits, 6 co-capturés, 6 soutenus par chaîne.
+- Provenance : résultats et checkpoints hachent désormais les sources archivées
+  au début, même si les fichiers de développement changent pendant un run.
+
+Validation : 24 tests, égalité arbre/exhaustif et reprise pour les deux nouvelles
+chimies, gradients et conservation ; interface hors écran et travailleur/headless.
+Figures inspectées. Rejeu C1 complet depuis sources figées ; recettes vérifiées.
+Maturité encore partielle : assemblage libre démontré, opération géométrique
+répétée isolée ; transfert aux F exprimables et coexistence G/F prioritaires,
+puis rétention membranaire et fabrication des composants/outils.

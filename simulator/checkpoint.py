@@ -39,12 +39,12 @@ def unpack(value):
     return (set if kind=='set' else tuple)(unpack(v) for v in value['data'])
 
 
-def save(path, simulation, observer=None):
+def save(path, simulation, observer=None, source_manifest=None):
     simulation.prepare()
     c=simulation.chemistry
     metadata={'checkpoint_version':1,'config':simulation.config,'step':simulation.step_index,
               'prepared':simulation.prepared,'rng':simulation.rng.bit_generator.state,
-              'chemistry':c.export(),'source_sha256':source_hashes(),
+              'chemistry':c.export(),'source_sha256':source_manifest if source_manifest is not None else source_hashes(),
               'observer':pack(observer.__dict__) if observer is not None else None}
     path=Path(path)
     path.parent.mkdir(parents=True,exist_ok=True)

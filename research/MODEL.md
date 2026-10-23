@@ -157,3 +157,58 @@ compatibilités de liaisons et d'appariement ; elles ne désignent pas des enzym
 ou des fonctions moléculaires entières. Les sous-unités G/F et celles de membrane
 sont encore toutes fournies préparées. Le réseau C0 de CELL_ARCHITECTURE.md est
 un audit abstrait séparé et n'ajoute aucune réaction macro à ce moteur.
+
+## Lot 3 : molécules libres et contact composite V8
+
+Le départ `dispersed_units` force `fragment_size=1` : chaque paire H-T est déjà
+construite, mais aucune liaison H-H ou T-T n'existe dans l'initialisation. Centres
+et orientations sont aléatoires. La preuve recherchée est maintenant l'association
+de ces molécules, et non le repliement d'un ruban préparé.
+
+Deux faces sont définies localement par le lien H-T. Si `t` est la tangente
+perpendiculaire à son vecteur unitaire, les sites d'une face de signe `s` valent
+`H + s*l_H*t/2` et `T + s*l_T*t/2`. Pour deux faces opposées libres, on calcule
+`x = (|delta_H|² + |delta_T|²)/(2*sigma²)`. Le potentiel de capture est
+`U = -epsilon * [exp(-x) - exp(-8)*(9-x)]` pour `x<8`, zéro ailleurs.
+Il a une portée finie et une force continue à la coupure. Son gradient est
+distribué aux quatre billes, avec le couple dû aux sites virtuels ; le test
+numérique vérifie forces, action/réaction et couple total.
+
+C'est un helper coopératif explicite de quatre billes. La saturation dépend de
+l'occupation des deux faces chimiques, jamais d'un contour. Si les deux écarts
+de sites sont suffisamment petits, la capture peut former les liens H-H et T-T
+simultanément. Leurs longueurs préférées différentes font courber l'assemblage.
+Aucune taille de vésicule ni courbure de contour n'est demandée par le moteur.
+Une rupture thermique ou sous extension peut libérer les faces. Elle peut être
+suivie d'une réassociation rapide ; la rétention devra être mesurée séparément.
+
+Le point répété utilise 36 molécules, `l_H=1`, `l_T=0.65`, lien H-T de 0.65,
+boîte 10×10, température 0.08, énergie de capture 4 et largeur 0.3. Ces paramètres
+sont un point de fonctionnement choisi, pas une preuve de robustesse générale.
+La variante sans attraction supplémentaire réussit aussi dans certains essais :
+le potentiel coopératif n'est pas démontré nécessaire. La suppression de la
+rupture thermique ne supprime pas non plus toute fermeture au réglage testé.
+
+## Lot 3 : prototype de poche C1, distinct de l'alphabet F exprimé
+
+Ce hook exploratoire utilise une chaîne préparée de **trois billes**, pas les
+trois monomères composites du modèle G→F. Les symboles primitifs 0/1 déterminent
+une affinité pour X/Y et l'angle local au milieu d'une chaîne. La table native
+est identique pour toutes les séquences : cosinus 0.98 pour 0, −0.5 pour 1.
+001 rapproche ses deux extrémités ; 010, de même composition, laisse une poche
+ouverte et redistribue les affinités. Toutes les chaînes partent droites.
+
+Les aliments X/Y peuvent se lier aux sites de même symbole, de façon saturable.
+Toute paire X-Y suffisamment proche peut ensuite se ligaturer au **même taux**,
+libre dans le bain ou près d'une chaîne. Aucune règle ne vérifie « enzyme
+présente ». La préorganisation rend possible la ligation de deux réactifs retenus
+aux extrémités 0 et 2. Après la nouvelle liaison, l'état local du produit lui
+retire son affinité et libère les sites : ce helper de libération est fourni.
+
+Les aliments sont supposés activés ; la ligation est irréversible. Aucun bilan
+énergétique complet ni réalisation du carburant de C0 n'est revendiqué. Les
+billes sont conservées et la chaîne n'est pas consommée. Plusieurs produits
+distincts soutenus par les mêmes sites sont observés, mais le gain net de
+rendement reste variable entre graines. Ce prototype n'est pas encore produit
+par traduction, ne refabrique pas ses outils et ne partage pas encore toutes
+ses primitives avec copie et membrane.

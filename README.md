@@ -20,6 +20,8 @@ avec son interpréteur `.venv\Scripts\python.exe`.
 
 Les démonstrations en direct recalculent la dynamique. Le lanceur de fragments
 indique explicitement une relecture de trajectoire historique.
+La membrane s'assemble désormais depuis 36 molécules isolées de deux billes ;
+le repliement d'un ruban déjà construit reste un contrôle séparé.
 
 ```powershell
 python -m simulator --config demonstrators/configs/copy.json --gui
@@ -37,6 +39,8 @@ et le code nécessaires pour les [reconstruire](research/REPRODUCTION.md).
 - [Mode d'emploi des démonstrateurs](demonstrators/README.md)
 - [Architecture, format et ajout de lois](SIMULATOR_ARCHITECTURE.md)
 - [Validation de la migration](research/ENGINE_MIGRATION.md)
+- [Lot 3 : assemblage membranaire et ligations géométriques](research/BATCH_03.md)
+- [Maturité et fonctions encore manquantes](research/MATURITY.md)
 - [Méthode et contributions](CONTRIBUTING.md)
 - [Reconstruction des expériences sans données préembarquées](research/REPRODUCTION.md)
 - [Initialisation Git et premier push](GIT_SETUP.md)

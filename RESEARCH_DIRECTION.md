@@ -4,13 +4,20 @@ Outil de travail actuel : [simulateur et lancement des démonstrateurs](README.m
 [architecture du moteur partagé](SIMULATOR_ARCHITECTURE.md),
 [validation de migration](research/ENGINE_MIGRATION.md).
 
-État courant : [maturité](research/MATURITY.md), [bilan du lot 2](research/BATCH_02.md),
+État courant : [maturité](research/MATURITY.md), [bilan du lot 3](research/BATCH_03.md),
 [priorités et décisions](research/PRIORITIES.md),
 [architectures de fermeture conditionnelle](research/CELL_ARCHITECTURE.md).
 
 Suite dynamique de cette première exploration : [journal](research/LOG.md),
 [modèles et helpers](research/MODEL.md), [registre des essais](research/RESULTS.md).
 La méthode réutilisable est dans `.agents/skills/local-chemistry-research/SKILL.md`.
+
+Le lot 3 obtient des contours membranaires depuis des dimères isolés sur trois
+graines et des ligations répétées préorganisées par une petite chaîne préparée.
+Ce dernier prototype reste distinct des F composites exprimés : le transfert
+dans une chimie commune et la reconstruction des outils demeurent les verrous.
+Les propositions et criblages ci-dessous conservent le cadrage historique ;
+les preuves actuelles et priorités sont dans les documents liés ci-dessus.
 
 Référence complémentaire conservée après revue du dossier temporaire :
 [idées et architecture de l'ancien moteur](research/LEGACY_PROJECT_NOTES.md).
