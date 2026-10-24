@@ -20,6 +20,7 @@ Les autres lanceurs n'installent rien et n'ont pas besoin du réseau.
 | `07_ruban_prepare.bat` | Contrôle historique : un ruban composite déjà polymérisé se courbe et ferme |
 | `08_ligation_preparee.bat` | Prototype séparé : une chaîne préparée de trois billes rapproche des substrats pour plusieurs ligations avec libération |
 | `09_expression_fonction.bat` | G fabrique une chaîne F composite, puis celle-ci soutient plusieurs ligations XY avec libération dans le même bain |
+| `10_coexistence.bat` | G 001 est copié et traduit dans le même bain ; les F exprimés réalisent plusieurs opérations |
 
 Les trois premiers sont des **simulations en direct**, à graine fixée. Le quatrième
 est aussi calculé en direct. Le cinquième lit une trajectoire archivée ; il ne
@@ -39,6 +40,11 @@ Le scénario 09 intègre traduction et opération répétée avec les vrais F co
 Il utilise une activation locale des sites par une liaison au squelette et des
 précurseurs activés ; XY ne sert pas encore à fabriquer les composants. Le scénario
 03 conserve sa configuration historique, dont les F n'ont pas cette activité.
+
+Le scénario 10 réutilise une coopération locale, avec un seul port et la séquence
+courte 001. Ses compteurs exigent de nouveaux G et F observés détachés ensemble.
+La coexistence sur six symboles, la fabrication des composants et une membrane
+commune restent ouvertes. Voir le bilan du lot 5 et PROJECT_HEALTH.md.
 
 ## Interface
 

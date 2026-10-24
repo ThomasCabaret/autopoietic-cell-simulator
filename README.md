@@ -41,6 +41,8 @@ et le code nécessaires pour les [reconstruire](research/REPRODUCTION.md).
 - [Validation de la migration](research/ENGINE_MIGRATION.md)
 - [Lot 3 : assemblage membranaire et ligations géométriques](research/BATCH_03.md)
 - [Lot 4 : expression puis opération répétée par les F composites](research/BATCH_04.md)
+- [Lot 5 : copie, traduction et opération dans un même bain](research/BATCH_05.md)
+- [Santé du projet, risques et horizon de décision](research/PROJECT_HEALTH.md)
 - [Maturité et fonctions encore manquantes](research/MATURITY.md)
 - [Méthode et contributions](CONTRIBUTING.md)
 - [Reconstruction des expériences sans données préembarquées](research/REPRODUCTION.md)

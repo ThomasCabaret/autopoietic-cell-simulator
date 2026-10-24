@@ -4,7 +4,7 @@ Outil de travail actuel : [simulateur et lancement des démonstrateurs](README.m
 [architecture du moteur partagé](SIMULATOR_ARCHITECTURE.md),
 [validation de migration](research/ENGINE_MIGRATION.md).
 
-État courant : [maturité](research/MATURITY.md), [bilan du lot 4](research/BATCH_04.md),
+État courant : [maturité](research/MATURITY.md), [bilan du lot 5](research/BATCH_05.md),
 [priorités et décisions](research/PRIORITIES.md),
 [architectures de fermeture conditionnelle](research/CELL_ARCHITECTURE.md).
 
@@ -20,6 +20,10 @@ Le lot 4 réalise ensuite ce transfert : sous C2D, des F composites exprimés de
 G soutiennent plusieurs ligations par une même chaîne sur trois graines. Il manque
 encore des produits incorporables, la coexistence copie/expression et la membrane
 dans ce même univers. L'activation alimentaire est un helper explicite.
+Le lot 5 réunit ensuite copie, traduction et opération sur 001, en réutilisant
+la coopération locale plutôt que de rendre obligatoires deux faces. La longueur
+six ne donne pas encore cette coexistence. L'[évaluation de santé](research/PROJECT_HEALTH.md)
+priorise désormais la constructibilité des composants, puis fragments et transport.
 Les propositions et criblages ci-dessous conservent le cadrage historique ;
 les preuves actuelles et priorités sont dans les documents liés ci-dessus.
 

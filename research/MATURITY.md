@@ -1,39 +1,34 @@
-# Maturité — après le lot 4, 23 octobre 2026
+# Maturité — après le lot 5, 24 octobre 2026
 
-**Première intégration matérielle expression→opération répétée.** Trois graines
-du candidat C2D produisent des F composites depuis G puis réutilisent une même
-chaîne pour 3/3/4 ligations avec libération. Les lois restent fixes dans chaque
-bain, sans outil F préparé ni conversion externe du produit traduit.
+**Copie, traduction et opération répétée réunies pour 001, sur trois graines.**
+Le candidat de référence réutilise la coopération E2 sous les lois C2D, avec
+un port unique : 3/2/2 nouvelles copies G libérées, 3/2/3 F libérés et maximum
+2/3/2 opérations par un même F exprimé. Les deux produits sont observés libres
+ensemble dans les trois bains, sans mode global copie/traduction.
 
-La cible globale demeure partielle : XY n'est pas un composant utilisable,
-les outils ne sont pas régénérés et la membrane est encore une autre chimie.
-
-| Capacité nécessaire | Preuve actuelle | Ce qui manque |
+| Obligation | Preuve actuelle | Limite |
 | --- | --- | --- |
-| Assemblage membranaire | V8 : contours depuis des dimères libres sur 3/3 graines | Rétention, perméabilité, renouvellement et intégration matérielle |
-| Copie G | C2D conserve une copie 001011 libérée en graine 0 ; génération deux historique une fois sur trois | Lignée persistante, compatibilité avec expression dans un même bain |
-| Traduction G→F | C2D exprime 001011 et 010010 sous sa nouvelle géométrie ; 001 et 010 peuvent fonctionner ensuite | Robustesse sur longueur, séquence et conditions |
-| Organisation→opération | F composites préparés : plusieurs ligations sur trois graines, contrôles à affinités identiques | Bibliothèque de fonctions et rôle spécifique du repliement |
-| Expression→opération répétée | C2D, 001 : une même chaîne exprimée soutient 3/3/4 produits distincts ; 010 : deux en graine 0 | Gain global de vitesse utile, robustesse plus large et alimentation soutenue |
-| Nourriture→composants | X+Y→XY conservant les billes | XY est inerte pour G/F : aucune sous-unité utilisable fabriquée |
-| Outils→production des outils | Architecture abstraite C0 ; première opération exprimée C2D | Production et remplacement physiques des outils sous dégradation |
-| Univers commun | Copie et expression sous les lois D dans des essais séparés ; expression et opération couplées | Copie+expression simultanées et membrane dans ce même univers |
+| Membrane | V8 forme des contours depuis des dimères isolés | Chimie séparée ; rétention et flux non testés |
+| Copie G | 001 répliqué dans le bain mixte ; génération deux certifiée sur trois graines | 001011 échoue en copie dans le bain mixte aux réglages testés |
+| Expression F | 001 et 001011 exprimés sous coopération ; F réutilisables | Coexistence avec copie seulement démontrée pour 001 |
+| Fonction des F | Produits traduits réellement utilisés plusieurs fois, provenance analytique | XY n'est pas incorporable ; bénéfice net de flux non établi |
+| Compatibilité | Copie+expression+opération sous un même candidat, trois graines courtes | Aucune généralité en longueur, plusieurs gènes ou fonctions diverses |
+| Fabrication des pièces | Audit C0 et piste C3 | Les rungs et familles restent préparés ; aucune pièce construite depuis nourriture |
+| Renouvellement des outils | Dépendances explicitées, outils exprimés | Aucun maintien sous pertes ni fermeture physique |
 
-Helpers : précurseurs activés, réaction irréversible, perte locale d'affinité du
-produit, cycle externe de libération génétique, activation alimentaire par voisin
-de squelette. Sans cette dernière, le même couplage ne fait que 1/1/0 opération
-sur chaîne exacte aux graines testées. Les sites libres peuvent consommer les
-substrats ; le succès ne provient pas uniquement de la géométrie.
+Une alternative à deux faces fonctionne aussi pour 001, mais ajoute un état et
+perd le point de copie G seule 001011 en graine 0. La coopération existante est
+retenue comme référence plus simple ; le port unique sans coopération réussit
+déjà une fois sur trois. Ces quelques graines ne donnent pas un rendement général.
 
-L'angle de squelette ajouté pendant l'exploration a été retiré. Le candidat final
-réutilise les angles E1, cosinus 0,8 pour les deux symboles. Il ne prouve pas une
-activité sélective par repliement dépendant de la séquence. Le fond spontané
-produit aussi 7/7/8 XY sans gène à t=800 : ne pas assimiler opérations certifiées
-et accélération globale démontrée.
+Les essais sur six symboles conservent des fragments incomplets ; prolonger
+l'association ne résout pas la coexistence. La longueur est un risque prioritaire,
+sans diagnostic causal complet. Les helpers (cycle externe, ressources activées,
+libération locale, activation et coopération) restent fournis et déclarés.
 
-Prochain saut : conserver ce couplage tout en faisant coexister copie et expression
-(E3), puis fabriquer un composant incorporable (C3). Cellule initiale construite
-autorisée ; la reconstruction et le renouvellement matériels restent la cible.
-
-Preuves : [lot 4](BATCH_04.md), [recettes](BATCH_04_RECIPES.json),
-[décisions](BATCH_04_DECISIONS.md), [priorités](PRIORITIES.md).
+**Santé : progrès réel, faisabilité globale conditionnelle.** Le modèle matériel
+actuel ne peut pas fabriquer ses pièces sans évolution. C3 devient le prochain
+test de décision, puis fragments T9 et frontière M0. Quelques dizaines de lots
+restent plausibles pour une cellule minimale construite, sans estimation fiable
+avant ces verrous. Voir [santé](PROJECT_HEALTH.md), [lot 5](BATCH_05.md),
+[recettes](BATCH_05_RECIPES.json), [priorités](PRIORITIES.md).

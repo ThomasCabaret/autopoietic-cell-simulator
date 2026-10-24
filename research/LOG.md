@@ -383,3 +383,46 @@ arbre/exhaustif et reprise exacte avec activation. Interface hors écran ;
 rejeux préparé et exprimé depuis les sources figées. Le premier essai des tests
 a rencontré une restriction des fichiers temporaires Windows, puis relance
 autorisée réussie ; cet incident n'est pas un échec chimique.
+
+## 2026-10-24 — lot 5 : coexistence, simplification et santé
+
+Demande utilisateur : estimer progression, obstacles en aval et volume des
+interventions, puis poursuivre la priorité E3. Ajout PROJECT_HEALTH.md, méthode
+de santé dans le skill et AGENTS.md. Évaluation conditionnelle, sans promesse
+de délai ; C3 et M0 deviennent les tests de décision en aval d'E3.
+
+30 dynamiques achevées, zéro erreur du moteur ; 596 empreintes de sources
+vérifiées. Trois scénarios portent une étiquette longue mais ont réellement
+001 : erreur du générateur détectée, entrées conservées, trois essais relancés
+sur six symboles sous noms distincts. Générateur maintenant explicite et testé.
+
+E3A à deux faces géométriques fonctionne pour001 : G4/5/3, F3/4/3, coexistence
+détachée sur trois graines, max opérations par outil2/3/3. Mais six symboles
+restent en fragments et G seul6 graine0 perd sa copie. Prolonger l'association
+ne rétablit pas la coexistence longue. Les fragments F libérés ne sont plus
+recrutables avec la règle monomères seuls : mécanisme probable à tester, pas
+preuve causale. Le port unique sans coopération réussit lui-même une fois sur trois.
+
+E3C réutilise E2 (coopération locale de famille) sous C2D, sans deuxième site :
+G3/2/2, F3/2/3, coexistence détachée3/3, max opérations par outil2/3/2. Les trois
+graines ont aussi un descendant G génération2 certifié, pour cette courte001.
+Retenir cette simplification. Sous coopération, six symboles expriment un F par
+graine0/1 mais aucune copie G ; le critère général demeure ouvert.
+
+Les références G seuls6 et F seuls3 sont conservées sous coopération ; le F seul
+retrouve exactement les métriques et tableaux C2D. Sans gène, aucune chaîne ni
+opération soutenue, mais produits de bain conservés dans les résultats. Le
+démonstrateur10 calcule la coexistence ; ses critères passent. Reconstitution
+depuis les seules entrées : toutes métriques et trajectoires identiques.
+
+33 tests (26 moteur/chimies, 4 mécaniques, 3 observateur), dont forces réfléchies,
+moments, occupation des deux faces, arbre/exhaustif, reprise, détachement et
+contrat des scénarios. Skill validé. Lecture des NPZ de synthèse optimisée en
+chargeant les tableaux une fois ; cela ne change pas les observations physiques.
+Sources historiques et données locales préservées, aucun push.
+
+Maturité : trois fonctions intégrées sur une courte séquence ; constructibilité,
+information plus longue, flux utile et membrane restent des risques. Poursuite
+justifiée mais budget de quelques dizaines de lots non encore prévisible.
+Prochain travail C3 : construire puis incorporer matériellement une première
+sous-unité, avant davantage de comportements isolés.

@@ -12,7 +12,7 @@ COPY_DEFAULTS = dict(sequence="001011", alphabet="01", free_units=30, function_u
     functional_bend_cosines={},functional_bend_strength=100.,food_pairs=0,
     food_ligand_energy=2.,food_ligand_width=.6,food_binding_radius=.25,
     food_binding_rate=20.,food_unbinding_rate=.1,food_reaction_radius=.25,food_reaction_rate=.2,
-    food_activation=False)
+    food_activation=False,dual_faces=False)
 MEMBRANE_DEFAULTS = dict(units=16, initial="straight", short_length=.75, bonding=True,
     end_attraction=4., cooperative_rows=False, oriented_ports=False, port_epsilon=.6,
     temperature=.06, face_docking=False, dock_energy=4., dock_width=.25,

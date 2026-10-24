@@ -1,54 +1,51 @@
-# Priorités — après le lot 4, 23 octobre 2026
+# Priorités — après le lot 5, 24 octobre 2026
 
-Une chimie commune doit porter membrane, copie, expression, fonctions variées,
-fabrication des composants et remplacement des outils. Cellule construite,
-helpers locaux et énergie externe déclarée restent autorisés.
+Suivre la méthode [exploration, unification, simplification et santé](../.agents/skills/local-chemistry-research/SKILL.md).
+Le [lot 5](BATCH_05.md) réunit copie, expression et opération pour 001 sur trois
+graines. La coopération existante suffit ; les deux faces restent une alternative.
+Le succès court ne valide ni longueur six, ni constructibilité, ni fermeture.
 
-Appliquer la méthode [exploration, unification et simplification](../.agents/skills/local-chemistry-research/SKILL.md).
-Le lot 4 fournit un premier transfert matériel ; il ne valide pas tout l'univers.
-Les plans et décisions antérieurs restent dans les bilans et le journal.
+1. **P0 — C3, constructibilité et produit incorporable.** C'est désormais un
+   test de santé du projet. Les familles et rungs sont assignés au départ :
+   davantage de réglages ne peut pas produire un composant inexistant dans les
+   règles. Concevoir un noyau matériel de billes persistantes et liens/états
+   locaux ; former un dimère depuis précurseurs, identifier son état G/F puis
+   vérifier une véritable incorporation. Ne pas préassigner les futurs partenaires
+   ni simplement renommer XY. Conserver l'indirection et la matière. Tester une
+   voie d'abord, avant une bibliothèque de fonctions ou une réécriture générale.
+2. **P0 — T9/E3, longueur et fragments.** Au prochain test génétique, diagnostiquer
+   les stocks piégés et comparer finition/recyclage local des fragments à la
+   croissance de chaînes complètes. Contrôles sans renouvellement et stabilité
+   des gènes/outils ; aucun critère dynamique de longueur cible. L'association
+   prolongée seule échoue. Garder le couplage court comme référence, sans prétendre
+   que 001 résout la capacité d'information riche.
+3. **P1 — M0, frontière fonctionnelle.** Rétention et passage sous interactions
+   locales sélectives, puis compatibilité avec le noyau matériel commun. Les
+   indices intérieur/extérieur restent analytiques. Ne pas exiger la formation
+   spontanée de toute la cellule, dont l'initialisation construite est autorisée.
+4. **P1 — utilité et diversité.** Obtenir un flux de composant utile, comparé
+   avec/sans outil, puis plusieurs productions par assemblages différents sous
+   les mêmes lois. Les opérations XY et le comptage de co-capture ne prouvent
+   pas ce bénéfice. Prévoir remplacement sous pertes et matière/fuel déclarés.
+5. **P2 — minimalité et robustesse.** Étendre les graines seulement quand elles
+   répondent à une question ; ablater les aides et mesurer le coût réactif avant
+   une grande campagne. Ne pas ajouter une règle spécifique par fonction.
 
-## Décision après C2
+## Références à préserver ou à marquer comme régression
 
-Les F composites préparés réalisent des opérations répétées. C2D fabrique ces
-mêmes F depuis G puis les utilise 3/3/4 fois par chaîne sur trois graines. Le
-nouvel angle de squelette a été retiré ; l'activation alimentaire par liaison
-locale a été retenue contre la concurrence des monomères. Le produit XY reste
-inutilisable et le gain global de vitesse reste à établir. Voir [lot 4](BATCH_04.md).
+- E3C 001, 24 G + 24 F + X/Y, t=800, graines 0/1/2 : G 3/2/2, F 3/2/3,
+  coexistence détachée 3/3, maximum d'opérations par outil 2/3/2.
+- C2D expression→opération, F seuls, graine 0 : deux F, trois opérations par
+  outil. E3C retrouve exactement toutes ses métriques et tableaux.
+- G seuls 001011, 48 G à t=800, graine 0 : une copie sous coopération ; point
+  perdu avec deux faces. Ne pas cacher cette régression par un changement de graine.
+- Sans gène, coopération et deux faces : aucune chaîne fabriquée ni opération
+  certifiée ; conserver les produits spontanés comme tels.
+- 001011 dans le bain mixte : aucune coexistence démontrée, même si la coopération
+  exprime un F par essai. Ne pas agréger cette réussite et une copie d'un autre run.
 
-1. **P0 — E3, copie et expression simultanées.** Tester des faces locales de
-   recrutement distinctes, sans changement global de mode. Exiger G et F exacts
-   libérés dans le même bain, plusieurs graines. Conserver la fonction des F
-   exprimés comme référence, afin de ne pas résoudre la concurrence génétique
-   au prix de perdre le couplage acquis. Figer le candidat dérivé de D avant tests.
-2. **P0 — C3, produit réellement incorporable.** Remplacer l'opération XY inerte
-   par une voie construisant une sous-unité utilisable de G, F ou membrane depuis
-   des blocs simples. Vérifier l'incorporation physique, la matière, l'énergie
-   fournie et la distinction entre produit préparé et produit fabriqué. Garder
-   des affinités locales ; aucun nom d'enzyme ni conversion externe de molécule.
-3. **P1 — renouvellement et diversité des fonctions.** Après un premier composant
-   utilisable, viser le remplacement d'un outil. Tester des fonctions distinctes
-   par changement d'assemblage sous lois fixes ; le rôle spécifique d'un
-   repliement et une bibliothèque de machines restent ouverts.
-4. **P1 — M0, frontière fonctionnelle.** Mesurer rétention et passage de solutés
-   par les contours V8, puis compatibilité avec le candidat matériel commun.
-   Les indices intérieur/extérieur appartiennent seulement à l'analyse.
-5. **P1 — T9, parasites et générations.** Renouvellement ou coiffes locales sans
-   longueur cible dynamique ; mesurer des générations complètes répétées.
-6. **P2 — minimalité et robustesse.** Pour D, isoler les trois effets du helper
-   d'activation (attraction, capture, déliaison) et étendre graines et paramètres.
-   Pour V9/V7, conserver les ablations membranaires et améliorer la résolution
-   des ouvertures. Ne pas extrapoler la nécessité d'un helper à tout univers.
-
-## Références à préserver pour le prochain candidat
-
-- Copie 001011, 48 G, graine 0 à t=800 : une copie libérée sous D.
-- Expression 001011, graine 0, et 010010, graine 1, 48 F sans X/Y à t=600 : 2/3 F libérés.
-- C2C préparé 001/010 et sites séparés : contrôle de géométrie à mêmes affinités.
-- C2D, 001 et 24 F avec X/Y, graines 0/1/2 à t=800 : maximum 3/3/4 opérations par outil exprimé.
-- Sans gène et sans capture : pas d'opération sur chaîne exprimée ; conserver
-  aussi les produits spontanés, afin de ne pas leur attribuer une provenance fausse.
-
-La coexistence E3 et la membrane commune restent non démontrées. Les archives
-ne remplacent pas les nouveaux essais de compatibilité. Les [53 recettes du lot](BATCH_04_RECIPES.json)
-figent les lois réellement testées. Données locales ; commits locaux, aucun push.
+L'[évaluation de santé](PROJECT_HEALTH.md) fixe l'horizon E3, C3, M0. E3 est
+partiellement franchi ; C3 est le prochain point de décision sur la représentation.
+Si les interventions cessent de réduire les risques, revoir le candidat et le
+budget plutôt que multiplier les démonstrateurs. Données locales, commits locaux,
+aucun push. Les échecs et trois erreurs d'étiquette restent dans les recettes.

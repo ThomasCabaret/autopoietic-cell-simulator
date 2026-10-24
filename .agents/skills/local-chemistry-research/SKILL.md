@@ -76,6 +76,26 @@ simplification, et la maturité préciser le niveau de compatibilité effectivem
 observé. Compter les fonctions transférables et combinables ainsi que les
 régressions, sans déduire la convergence du seul nombre de démonstrateurs.
 
+### Santé du projet et coût de convergence
+
+Lire et actualiser `research/PROJECT_HEALTH.md` lors des bilans. Chercher les
+obstacles prévisibles en aval avant de multiplier les réussites locales :
+constructibilité des composants, flux utile des outils, compatibilité, transport,
+renouvellement et coût de calcul. Distinguer impossibilité dans le modèle actuel,
+risque sans mécanisme testé et impossibilité de principe ; l'absence de preuve
+d'un blocage ne prouve pas son absence. Donner pour chaque risque une piste
+concrète et un test qui pourrait invalider le candidat.
+
+Estimer le volume par jalons et interventions de conception, séparément des
+simulations automatiques. Une estimation en quelques dizaines de lots reste
+conditionnelle tant que les verrous majeurs ne sont pas testés ; ne pas garantir
+un délai ni masquer une exploration qui demanderait des milliers d'ajustements.
+Nommer le prochain horizon de réévaluation. Si les règles spécifiques s'accumulent
+ou si des tentatives successives ne réduisent plus l'incertitude, réexaminer
+l'alphabet ou la représentation avant de poursuivre le même réglage. L'objectif
+est une cellule construite maintenue et renouvelée ; ne pas ajouter une exigence
+d'origine spontanée ou de division pour juger la faisabilité de cette cible.
+
 ### Hypothèses, essais et preuves
 
 Reprendre `research/branches.json` et `research/LOG.md` avant d'explorer. Ajouter

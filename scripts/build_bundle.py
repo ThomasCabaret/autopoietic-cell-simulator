@@ -1,5 +1,6 @@
 """Build a movable Windows source distribution without copying the environment."""
 import hashlib
+from datetime import datetime
 import json
 from pathlib import Path
 import zipfile
@@ -24,6 +25,11 @@ def main():
         'research/BATCH_04_DECISIONS.md','research/BATCH_04_RECIPES.json',
         'research/BATCH_04_CONTROLS.png','research/BATCH_04_COUPLING.png','research/BATCH_04_TOOL.png',
         '.agents/skills/local-chemistry-research/SKILL.md'))
+    files.update(ROOT/p for p in ('research/BATCH_05.md','research/BATCH_05_PLAN.md',
+        'research/BATCH_05_DECISIONS.md','research/BATCH_05_RECIPES.json',
+        'research/BATCH_05_COEXISTENCE.png','research/PROJECT_HEALTH.md',
+        'experiments/run_batch3.py','experiments/run_batch4.py','experiments/run_batch5.py',
+        'experiments/make_batch3_report.py','experiments/make_batch4_report.py','experiments/make_batch5_report.py'))
     files.update(ROOT/p for p in ('AGENTS.md','RESEARCH_DIRECTION.md',
         'research/branches.json','research/LOG.md'))
     files.update(p for p in (ROOT/'research/legacy_reference').rglob('*')
@@ -35,12 +41,14 @@ def main():
     folders.extend(ROOT/Path(p).parent for p in batch['recipes'])
     batch4=json.loads((ROOT/'research/BATCH_04_RECIPES.json').read_text(encoding='utf-8'))
     folders.extend(ROOT/Path(p).parent for p in batch4['recipes'])
+    batch5=json.loads((ROOT/'research/BATCH_05_RECIPES.json').read_text(encoding='utf-8'))
+    folders.extend(ROOT/Path(p).parent for p in batch5['recipes'])
     for folder in folders:
         files.update(p for p in folder.rglob('*') if p.is_file() and '__pycache__' not in p.parts
                      and (p.suffix=='.py' or p.name in ('config.json','scenario.json','recipe.json')))
     manifest={p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()
               for p in sorted(files)}
-    out=ROOT/'deliverables/local_chemistry_simulator_20261023.zip'
+    out=ROOT/f'deliverables/local_chemistry_simulator_{datetime.now():%Y%m%d}.zip'
     out.parent.mkdir(parents=True,exist_ok=True)
     prefix='local_chemistry_simulator/'
     with zipfile.ZipFile(out,'w',compression=zipfile.ZIP_DEFLATED) as archive:

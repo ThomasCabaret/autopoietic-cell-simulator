@@ -167,7 +167,15 @@ class Canvas:
             corner=(np.array([0.,box[1]])-self.center)*[scale,-scale]+[area.centerx,area.centery]+self.pan
             pygame.draw.rect(self.screen,'#dce4ea',pygame.Rect(*corner,*(box*scale)),1)
         for group,color,width in [('scaffold','#bac6cf',2),('pairing','#c795d5',2),('backbone','#536e82',3)]:
-            for a,b in state['bonds'].get(group,[]): pygame.draw.line(self.screen,color,pt(a),pt(b),width)
+            for a,b in state['bonds'].get(group,[]):
+                n=len(state['bonds'].get('scaffold',[]))
+                if group=='pairing' and state['config']['chemistry'].get('dual_faces',False) and a<n and b<n:
+                    va=2*state['positions'][a]-state['positions'][n+a]
+                    vb=2*state['positions'][b]-state['positions'][n+b]
+                    q=(np.array([va,vb])-self.center)*[scale,-scale]+[area.centerx,area.centery]+self.pan
+                    pygame.draw.line(self.screen,color,q[0],q[1],width)
+                    for v in q:pygame.draw.circle(self.screen,color,np.rint(v).astype(int),4,1)
+                else:pygame.draw.line(self.screen,color,pt(a),pt(b),width)
         radius=max(3,min(11,round(scale*.105)))
         for i,color in enumerate(state['colors']):
             pygame.draw.circle(self.screen,color,pt(i),radius)
@@ -195,6 +203,10 @@ class Canvas:
             if 'food_products' in metrics:
                 labels=[('F complets liberes','translated_detached_ever'),('Produits XY','food_products'),
                         ('Ligations sur F exprimes','food_expressed_tool_ligations'),
+                        ('Cycles max / F exprime','food_max_turnovers_per_expressed_tool')]
+            if 'joint_detached_ever' in metrics:
+                labels=[('G complets liberes','detached_copy_sets_ever'),('F complets liberes','translated_detached_ever'),
+                        ('G et F libres ensemble','joint_detached_ever'),
                         ('Cycles max / F exprime','food_max_turnovers_per_expressed_tool')]
         elif config['model']=='catalysis':
             labels=[('Produits','products'),('Ligations co-liees','double_bound_ligations')]
@@ -280,6 +292,7 @@ def replay_view(folder,screenshot=None):
         pairing=d['pairing'] if 'pairing' in d else None
         food_edges=d['food_edges'] if 'food_edges' in d else None
         food_binding=d['food_binding'] if 'food_binding' in d else None
+        copy_pairing=d['copy_pairing'] if 'copy_pairing' in d else None
         if config['model']=='copy': n=len(bits)
     screen,canvas=start_window()
     clock=pygame.time.Clock(); t=0.; paused=False; running=True; speed=20.; drag=False
@@ -320,6 +333,8 @@ def replay_view(folder,screenshot=None):
             bonds['backbone']=np.argwhere(np.triu(edges[index],1)).tolist()
             if pairing is not None:
                 bonds['pairing']=[(n+i,n+int(j)) for i,j in enumerate(pairing[index]) if j>i]
+            if copy_pairing is not None:
+                bonds['pairing'] += [(i,int(j)) for i,j in enumerate(copy_pairing[index]) if j>i]
             colors=['#718594' if f==0 else '#9a4aa0' for f in families]+[['#148e9c','#df7947','#8d75bb'][int(b)] for b in bits]
             if food_edges is not None:
                 bonds['backbone'] += [(2*n+int(a),2*n+int(b)) for a,b in np.argwhere(np.triu(food_edges[index],1))]
@@ -341,6 +356,7 @@ def replay_view(folder,screenshot=None):
                 food_expressed_tool_ligations=sum(turnovers.values()),
                 food_max_turnovers_per_expressed_tool=max(turnovers.values(),default=0))
         metrics.update({key:item[old] for key,old in [('detached_copy_sets_ever','detached_ever'),('translated_detached_ever','translated_detached_ever'),('final_largest_component','largest_head_component')] if old in item})
+        if 'joint_detached_ever' in item:metrics['joint_detached_ever']=item['joint_detached_ever']
         if config['model']=='catalysis':
             for key in ('products','double_bound_ligations'):
                 if key in item: metrics[key]=item[key]

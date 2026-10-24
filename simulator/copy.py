@@ -3,6 +3,7 @@ import numpy as np
 from .reference import degree, normals, local_port_free, port_attraction, add_force
 from .physics import orientation_kernel
 from .substrates import Substrates
+from .dual_faces import react as dual_react,reflected_force
 
 class CopyChemistry:
     def __init__(self, config, rng):
@@ -59,8 +60,12 @@ class CopyChemistry:
         self.angles = np.empty((0,5))
         self.mobility = .25
         self.food=Substrates(self,rng) if config.get('food_pairs',0) else None
+        self.copy_pairing=np.full(n,-1,dtype=np.int64)
+        self.back_pairs=np.empty((0,2),dtype=np.int64)
 
     def react(self, time, dt, neighbors):
+        if self.config.get('dual_faces',False):
+            return self._finish(dt,neighbors,dual_react(self,time,dt,neighbors))
         config, rng = self.config, self.rng
         events = []
         pos = self.pos
@@ -143,6 +148,11 @@ class CopyChemistry:
             if rng.random() < -np.expm1(-config.get("ligation_rate", 12.) * interval):
                 edges.add(pair)
                 events.append({"source": (i, j), "formed": pair})
+        return self._finish(dt,neighbors,events)
+
+    def _finish(self,dt,neighbors,events):
+        config=self.config;n=self.n;edges=self.edges;bits=self.bits
+        families=self.families;pairing=self.pairing
         springs = [(i, n + i, 180., .45) for i in range(n)]
         angles = []
         for i, j in sorted(edges):
@@ -174,15 +184,24 @@ class CopyChemistry:
             springs.extend(self.food.springs())
         self.springs = np.asarray(springs, dtype=float).reshape(-1,4)
         self.angles = np.asarray(angles, dtype=float).reshape(-1,5)
+        if config.get('dual_faces',False):
+            self.back_pairs=np.array([(i,int(j)) for i,j in enumerate(self.copy_pairing) if j>i],dtype=np.int64).reshape(-1,2)
         return events
 
     def extra_forces(self, neighbors):
         pairs = np.array([(i, int(j)) for i, j in enumerate(self.pairing) if j > i], dtype=np.int64).reshape(-1,2)
         force=orientation_kernel(self.pos, self.rungs, pairs)
+        if self.config.get('dual_faces',False):
+            force+=orientation_kernel(self.pos,self.rungs,self.back_pairs)
+            force+=reflected_force(self.pos,self.back_pairs,self.n)[0]
         if self.food is not None: force+=self.food.forces(self,neighbors)
         return force
 
     def observe(self, callback, time, events):
+        if self.config.get('dual_faces',False):
+            callback(time,self.pos,self.edges,self.pairing,self.bits,events,self.families,
+                     self.food.export() if self.food is not None else None,self.copy_pairing)
+            return
         if self.food is None:
             callback(time, self.pos, self.edges, self.pairing, self.bits, events, self.families)
         else:
@@ -190,6 +209,7 @@ class CopyChemistry:
 
     def bonds(self):
         pairs = [(self.n+i, self.n+int(j)) for i,j in enumerate(self.pairing) if j>i]
+        if self.config.get('dual_faces',False):pairs += [(int(i),int(j)) for i,j in self.back_pairs]
         bonds={"scaffold": self.rungs.tolist(), "backbone": sorted(self.edges), "pairing": pairs}
         if self.food is not None:
             bonds['backbone'] += [(2*self.n+a,2*self.n+b) for a,b in sorted(self.food.products)]
@@ -204,11 +224,15 @@ class CopyChemistry:
 
     def export(self):
         state={"edges": sorted(self.edges), "pairing": self.pairing.tolist()}
+        if self.config.get('dual_faces',False):state['copy_pairing']=self.copy_pairing.tolist()
         if self.food is not None: state['food']=self.food.export()
         return state
 
     def restore(self, state):
         self.edges = {tuple(p) for p in state["edges"]}
         self.pairing = np.array(state["pairing"], dtype=np.int64)
+        if self.config.get('dual_faces',False):
+            self.copy_pairing=np.array(state['copy_pairing'],dtype=np.int64)
+            self.back_pairs=np.array([(i,int(j)) for i,j in enumerate(self.copy_pairing) if j>i],dtype=np.int64).reshape(-1,2)
         if self.food is not None:
             self.food.restore(state['food']);self.food.refresh(self)

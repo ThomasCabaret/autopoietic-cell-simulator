@@ -22,6 +22,9 @@
   trajectories, checkpoints, full run results and bulk experiment data local,
   excluded by `.gitignore`. Never delete local evidence just to keep Git small.
 - Preserve old recipe sources and hashes. Generate new run folders for changes.
+- At research handoff assess project health, future blockers and design effort
+  in `research/PROJECT_HEALTH.md`. Distinguish automatic trials from conceptual
+  changes; set decisive milestones and revisit a candidate that stops converging.
 - Run checks appropriate to the change. At batch handoff give a very brief,
   honest maturity assessment, distinguishing separate models from common chemistry.
 - The user authorizes useful local commits at the end of a batch. Review staged

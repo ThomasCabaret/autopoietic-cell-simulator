@@ -67,8 +67,13 @@ class CopyObserver:
         self.last_shapes = []
         self.food_events=[]; self.food_turnovers={}; self.last_food=None
         self.food_edges_frames=[]; self.food_binding_frames=[]
+        self.copy_pairing_frames=[];self.last_copy_pairing=None
+        self.coexistence_enabled=bool(config.get('dual_faces',False) or (config.get('free_units',0) and config.get('function_units',0)))
+        self.joint_detached_ever=False;self.joint_tool_events=0
 
-    def __call__(self, time, pos, edges, pairing, bits, events, families=None, food=None):
+    def __call__(self, time, pos, edges, pairing, bits, events, families=None, food=None,copy_pairing=None):
+        unpaired=lambda i:pairing[i]<0 and (copy_pairing is None or copy_pairing[i]<0)
+        self.last_copy_pairing=None if copy_pairing is None else copy_pairing.copy()
         food_events=[e for e in events if e.get('kind')=='food']
         events=[e for e in events if e.get('kind')!='food']
         if families is None:
@@ -87,6 +92,7 @@ class CopyObserver:
             parents = [key for key in prior if all(i in key for i in source)]
             self.edge_parent[tuple(sorted(event["formed"]))] = parents[0] if len(parents) == 1 else None
         correct_now = []
+        detached_g_now=[];detached_f_now=[]
         self.last_shapes = []
         for comp, order, cycle in comp_list:
             if order and len(order) > 1 and all(families[i] == 1 for i in comp):
@@ -105,8 +111,9 @@ class CopyObserver:
                 if text in (self.target, self.target[::-1]):
                     key = tuple(sorted(comp))
                     self.translated.add(key)
-                    if all(pairing[i] < 0 for i in comp):
+                    if all(unpaired(i) for i in comp):
                         self.translated_detached.add(key)
+                        detached_f_now.append(key)
                 continue
             if text in self.target or text[::-1] in self.target:
                 self.best_partial = max(self.best_partial, len(text))
@@ -118,8 +125,10 @@ class CopyObserver:
                            for q in range(len(order) - 1)]
                 if parents and parents[0] in prior and all(p == parents[0] for p in parents):
                     self.certified.setdefault(key, prior[parents[0]] + 1)
-                if all(pairing[i] < 0 for i in comp):
+                if all(unpaired(i) for i in comp):
                     self.detached.add(key)
+                    detached_g_now.append(key)
+        if detached_g_now and detached_f_now:self.joint_detached_ever=True
         for e in events:
             source = e["source"]
             if all(i >= self.initial_count for i in source):
@@ -145,11 +154,13 @@ class CopyObserver:
                           expressed_certified=certified)
                 self.food_events.append(item)
                 if certified: self.food_turnovers[key]=self.food_turnovers.get(key,0)+1
+                if certified and correct_now:self.joint_tool_events+=1
         if not self.times or time - self.times[-1] >= .49:
             self.times.append(time)
             if getattr(self, 'record_trajectory', True):
                 self.frames.append(pos.copy())
                 self.pairing_frames.append(pairing.copy())
+                if copy_pairing is not None:self.copy_pairing_frames.append(copy_pairing.copy())
                 mat = np.zeros((len(bits), len(bits)), dtype=np.uint8)
                 for i, j in edges:
                     mat[i, j] = mat[j, i] = 1
@@ -164,6 +175,9 @@ class CopyObserver:
                                  "complete_ever": len(self.complete), "detached_ever": len(self.detached),
                                  "translated_ever": len(self.translated), "translated_detached_ever": len(self.translated_detached),
                                  "certified_max_generation": max(self.certified.values(), default=0)})
+            if self.coexistence_enabled:
+                self.history[-1].update(joint_detached_ever=int(self.joint_detached_ever),
+                    detached_G_now=len(detached_g_now),detached_F_now=len(detached_f_now))
         self.last_bits = bits.copy()
         self.last_families = families.copy()
 
@@ -191,6 +205,9 @@ class CopyObserver:
                 food_expressed_tool_ligations=sum(e['expressed_certified'] for e in self.food_events),
                 food_max_turnovers_per_expressed_tool=max(self.food_turnovers.values(),default=0),
                 food_events=self.food_events)
+        if self.coexistence_enabled:
+            metrics.update(joint_detached_ever=int(self.joint_detached_ever),
+                           food_ligations_with_new_G_present=self.joint_tool_events)
         return metrics
 
 

@@ -241,3 +241,26 @@ et cycle externe de déliaison restent fournis. Aucun bilan énergétique fermé
 renouvellement des outils ou conversion de XY en G/F n'est simulé. Les métriques
 de chaînes exactes, provenance des arêtes et opérations par chaîne appartiennent
 uniquement à l'observateur. Voir [lot 4](BATCH_04.md) pour les contrôles et limites.
+
+## Lot 5 : coexistence et deux faces optionnelles
+
+Le candidat retenu E3C est C2D avec `product_cooperativity=true` : les familles
+déjà recrutées sur les voisins directement liés d'un support G favorisent une
+famille cohérente d'entrants. Ce helper E2 n'utilise aucune identité de gène.
+Le port génétique reste unique, partagé entre G et F. Les ressources, angles,
+activation alimentaire et cycle de déliaison C2D ne changent pas entre fonctions.
+Pour 001, G et F exacts sont vus détachés ensemble sur trois graines ; cette
+compatibilité ne s'étend pas encore à 001011 dans le même bain.
+
+L'alternative `dual_faces=true` sépare G–F sur R et G–G sur V=2P−R, avec deux
+occupations indépendantes d'un même G. La liaison réfléchie a l'énergie
+`k*|V_j-V_i|²/2`, k=80 ; les forces sont réparties selon (2,−1) sur les billes
+P/R. Les taux, activation, orientation et motif de ligation sont ceux du modèle
+initial. Deux faces fonctionnent pour 001 mais ajoutent un état et perdent le
+point de copie G seule6 graine0 ; elles restent expérimentales, sans nécessité
+prouvée. Les lois ne consultent jamais les métriques de coexistence.
+
+L'observateur vérifie le détachement sur les deux faces si elles existent ;
+`joint_detached_ever` demande des G et F nouveaux exacts libres au même instant.
+L'archive conserve les deux tableaux d'appariement. Les 3 essais mal étiquetés
+du lot5 sont décrits par leurs scénarios réels, sans correction rétrospective.

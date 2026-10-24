@@ -66,6 +66,7 @@ def save_result(path,sim,observer,elapsed,error=None):
                'families':observer.last_families} if sim.config['model']=='copy' else {}
         if getattr(observer,'food_edges_frames',[]):
             extra.update(food_edges=np.array(observer.food_edges_frames),food_binding=np.array(observer.food_binding_frames))
+        if getattr(observer,'copy_pairing_frames',[]):extra['copy_pairing']=np.array(observer.copy_pairing_frames)
         np.savez_compressed(path/'trajectory.npz',positions=np.array(observer.frames),
                             times=np.array(observer.times),edges=np.array(observer.edges_frames),**extra)
     checkpoint.save(path/'checkpoint.npz',sim,observer,source_manifest=archived)

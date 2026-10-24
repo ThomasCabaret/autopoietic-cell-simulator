@@ -251,12 +251,15 @@
       "id": "E3",
       "parent": "E2",
       "hypothesis": "Independent local recognition faces can decouple G copying from F expression without a global mode switch",
-      "status": "proposed_not_tested",
+      "status": "short_sequence_coexistence_and_function_three_seeds_length_six_unresolved",
       "priority": "P0",
       "test": "Compare one versus two physical docking channels at fixed symbol alphabet; measure complete detached G and F in the same run across seeds",
       "counterexample": "Additional faces create crosslinks, steric trapping or excessive primitive complexity instead of compatible processes",
-      "missing_proof": "No implementation or dynamic evidence yet; preserve local geometric and chemical eligibility only",
-      "reference_to_preserve": "research/BATCH_04.md: translated F repeated operation under C2D; remains to combine with G copying"
+      "missing_proof": "No mixed-bath replication of 001011 at tested settings; material constructibility, useful component production and membrane integration remain unproved",
+      "reference_to_preserve": "research/BATCH_04.md: translated F repeated operation under C2D; remains to combine with G copying",
+      "evidence": "research/BATCH_05_RECIPES.json",
+      "conclusion": "001, single port with existing cooperation: detached G 3/2/2, F 3/2/3, max operations per expressed tool 2/3/2, simultaneous detached G/F observed in all three seeds. Two faces also work, but are not required",
+      "simplification": "Retain E2 neighbor-family cooperation under C2D instead of adding the reflected face as an obligatory primitive"
     },
     {
       "id": "C1",
@@ -401,7 +404,41 @@
       "hypothesis": "An expressed composite tool can manufacture a physically incorporable component from simpler resources",
       "test": "Require conserved material and actual incorporation into G/F/membrane; product identity must arise from local states and bonds",
       "counterexample": "Inert XY is merely renamed as a monomer, or product needs external conversion",
-      "missing_proof": "No usable component or tool regeneration yet"
+      "missing_proof": "No usable component or tool regeneration yet",
+      "health_gate": "research/PROJECT_HEALTH.md: next decisive test; immutable prepared units cannot become a closed factory without representation change"
+    },
+    {
+      "id": "E3A",
+      "parent": "E3",
+      "hypothesis": "Two geometric recognition faces can separate G-copy and F-expression occupancy",
+      "status": "short_coexistence_three_seeds_with_regression",
+      "evidence": "research/BATCH_05_RECIPES.json",
+      "conclusion": "001 yields joint detached products and repeated expressed-tool operations on three seeds. Six-symbol mixed cases fail, and isolated G-only six seed0 loses its known copy",
+      "cost": "Reflected site V=2P-R, second independent occupation state; no new elementary type",
+      "limit": "Not necessary: single-port cooperation also works"
+    },
+    {
+      "id": "E3B",
+      "parent": "E3A",
+      "hypothesis": "Longer association before external release allows six-symbol daughters to finish",
+      "status": "protocol_change_insufficient",
+      "evidence": "research/BATCH_05_RECIPES.json",
+      "conclusion": "Period600 duration1800: two faces yield detached G 1/0 and F0/0 seeds0/1; single port seed0 none. Coexistence not restored",
+      "limit": "Three other runs accidentally used001 due label parsing; retained separately and not evidence for length6"
+    },
+    {
+      "id": "E3C",
+      "parent": "E3",
+      "related": [
+        "E2",
+        "C2D"
+      ],
+      "hypothesis": "Existing bounded neighbor-kind cooperation can coordinate a shared port while preserving expressed F function",
+      "status": "preferred_short_reference_three_seeds",
+      "evidence": "research/BATCH_05_RECIPES.json",
+      "conclusion": "001: G3/2/2, F3/2/3, joint detached3/3, max tool operations2/3/2. G-only6 reference and F-only3 function preserved. Mixed6 expresses one F each seed but no G",
+      "cost": "Reuse existing E2 helper, no added particle type or second site state",
+      "limit": "Three seeds at one short sequence do not establish general efficiency, long information capacity or physical closure"
     }
   ]
 }
