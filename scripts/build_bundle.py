@@ -32,6 +32,9 @@ def main():
         'experiments/make_batch3_report.py','experiments/make_batch4_report.py','experiments/make_batch5_report.py'))
     files.update(ROOT/p for p in ('AGENTS.md','RESEARCH_DIRECTION.md',
         'research/branches.json','research/LOG.md'))
+    files.update(ROOT/p for p in ('research/BATCH_06.md','research/BATCH_06_PLAN.md',
+        'research/BATCH_06_DECISIONS.md','research/BATCH_06_RECIPES.json',
+        'research/BATCH_06_CONSTRUCTION.png','experiments/run_batch6.py','experiments/make_batch6_report.py'))
     files.update(p for p in (ROOT/'research/legacy_reference').rglob('*')
                  if p.is_file() and '__pycache__' not in p.parts and p.suffix!='.pyc')
     files.add(ROOT/'research/LEGACY_PROJECT_NOTES.md')
@@ -43,6 +46,8 @@ def main():
     folders.extend(ROOT/Path(p).parent for p in batch4['recipes'])
     batch5=json.loads((ROOT/'research/BATCH_05_RECIPES.json').read_text(encoding='utf-8'))
     folders.extend(ROOT/Path(p).parent for p in batch5['recipes'])
+    batch6=json.loads((ROOT/'research/BATCH_06_RECIPES.json').read_text(encoding='utf-8'))
+    folders.extend(ROOT/Path(p).parent for p in batch6['recipes'])
     for folder in folders:
         files.update(p for p in folder.rglob('*') if p.is_file() and '__pycache__' not in p.parts
                      and (p.suffix=='.py' or p.name in ('config.json','scenario.json','recipe.json')))

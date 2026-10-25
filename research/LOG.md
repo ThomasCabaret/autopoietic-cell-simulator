@@ -426,3 +426,41 @@ information plus longue, flux utile et membrane restent des risques. Poursuite
 justifiée mais budget de quelques dizaines de lots non encore prévisible.
 Prochain travail C3 : construire puis incorporer matériellement une première
 sous-unité, avant davantage de comportements isolés.
+
+## 2026-10-25 — lot 6 : construction et incorporation de dimères
+
+Priorité C3A : une modification de représentation,19 dynamiques automatisées.
+P/R sont des billes persistantes ; partenaires choisis par contact saturé, symbole
+du vrai R, sites incomplets inactifs. Moteur partagé et CopyChemistry réutilisés.
+Rayon0,58/taux20 figés ; ressources spécialisées activées, lien irréversible.
+X/Y et faces doubles non portés et explicitement rejetés. Pas de catalyse par F
+dans ce lot, pas de conversion de XY en monomère par étiquette.
+
+G001 préparé et24 supports G +24R libres : copies construites libérées3/5/2.
+24 supports F seuls : F construits libérés4/4/4. Mixte24G+24F+48R : G2/0/2,
+F1/1/1 ; coexistence simultanée graines0/2, absente1. Formation24/24/24 ou48/48/48.
+Sans formation : aucun dimère/chaîne ; sans ligation : dimères mais aucune chaîne ;
+sans gène : aucune chaîne. Stock préparé sous mêmes lois : quatre copies G.
+Pilote t80 conservé avec une copie encore liée, non compté comme réussite libérée.
+Optimisation ultérieure : aucun tirage d'assemblage si tous les ports saturés,
+ce qui préserve les RNG des préparés. Sources du pilote distinctes conservées.
+
+Perturbation001011 :48G libres graine0 t800, un G construit libéré. Bain mixte
+graines0/1 t1200 : aucune chaîne exacte libérée malgré48 dimères et32/35 supports
+incorporés. Longueur/compétition restent ouvertes, aucune réussite généralisée.
+Références E3C001 actif et G001011 seul relancées avec option désactivée :
+toutes métriques et tous tableaux exactement identiques au lot5.
+
+Audit indépendant399 empreintes,27 377 images matérielles, liens et symboles,
+chronologie formation→incorporation, recensement des produits libérés. Reconstruction
+depuis sources seules : toutes métriques/tableaux exacts. Démonstrateur11 avec
+critères vérifiés et rendu/relecture des vrais rungs.38 tests passent :31 moteur,
+4 mécaniques,3 observateur. Première invocation des deux anciens tests comme
+modules inadaptée à leurs imports historiques ; scripts directs réussis ensuite.
+
+Santé : progrès concret du noyau matériel, faisabilité globale encore conditionnelle.
+C3A ne fabrique pas les pièces grâce aux outils et n'unifie pas encore leur activité.
+Prochain C3B : capture P/R, catalyse sous fond faible, libération et incorporation
+du même produit ; contrôles de flux. T9 et M0 restent des risques majeurs. Arbre,
+priorités, maturité et bilan de santé actualisés. Données locales conservées,
+code/recettes/documents versionnés, aucun push.

@@ -1,0 +1,92 @@
+{
+  "recipe_version": 1,
+  "run_id": "C3mixed_s2_20261025T072344367870Z",
+  "kind": "shared_engine",
+  "source_sha256": {
+    "simulator/__init__.py": "bf5a7a5cafdf7076cbc3cc9d8992895e4a8c217621ea024645a061a3531281a9",
+    "simulator/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "simulator/assembly.py": "6b7a90e45cd1da328cab9dc6749c763572cd0f5bfbb054c4f49b64d1139855b1",
+    "simulator/catalysis.py": "bf0f4c35e7c96dde717a29645ce39c628fa2f3a907441f2b706db550c637c4a2",
+    "simulator/checkpoint.py": "5c7c1feea319f63d2af9ee717a31eaef1108378f467c5dff2b25ae3795212dd5",
+    "simulator/cli.py": "2b4ba9fec940173ea9bd990483aa39c38b9b7f07b5af5b23811313d3b94d62f6",
+    "simulator/config.py": "5f61a3d47fb48effbf368c3994cafee121853c7711c4262097be8caf05c7d92d",
+    "simulator/copy.py": "e0fc838e3b7f76c53eca713090fe38a35357175259d18564572ca67fe940a7b9",
+    "simulator/docking.py": "db8daba23c23e293d7176d9a193d26139015b086b396a3a298650bfda06b3759",
+    "simulator/dual_faces.py": "dc7c31049fc5e6c7c1b97b194418de52fe32a19d5ab5cc1909c5c63c929929fa",
+    "simulator/engine.py": "c65b90ea8db7e963c5241ef7fe5e9c07034632d42bfc2748709daa0f612e7fbf",
+    "simulator/membrane.py": "ffd1350d79a099f13294e6171e2dcf99ea94a6ebe1ddde950e6e4215bc71eb87",
+    "simulator/observations.py": "f2f12c926b0e6eac13e74093a556023ae5fb326e1de153ccd8bc39fa0d95c907",
+    "simulator/physics.py": "d8364c7fb784db08e2f9fe0b3f549abb69246e402c681b06293d85058a7aa464",
+    "simulator/plots.py": "96b1f61f29c551c39e4b84af5914c78ef4dea97b82d7cac734698c6526b51383",
+    "simulator/reference.py": "347618abbab85e3991f8b0fd771e2502f554a042db5f7b3140182ea04eb868bc",
+    "simulator/registry.py": "7da3d54f1cea7a2b1a44df986c8f0240edc0c89a6c60e87f389dd6915276f313",
+    "simulator/runner.py": "439e5db5f0f0b8a73d2253a120511bbaafc3dfafee2b23d751f046aa41978667",
+    "simulator/spatial.py": "e0f831e3ac3adcf624721244a83ec23dd7b5a11b0137015ee39ddd367e27649f",
+    "simulator/substrates.py": "705561e0093da0513d3221947ba01b726e7789ffdca4ed9e3c64595c3899859d",
+    "simulator/viewer.py": "de763203d30038302a13ef53b13ae061d298a1207db15082c502633410f6533e"
+  },
+  "environment": {
+    "python": "3.12",
+    "numpy": "2.0.2"
+  },
+  "initialization_incident": false,
+  "scenario": {
+    "schema_version": 1,
+    "model": "copy",
+    "name": "C3mixed",
+    "branch": "C3A",
+    "seed": 2,
+    "duration": 800.0,
+    "chemistry": {
+      "sequence": "001",
+      "alphabet": "01",
+      "free_units": 24,
+      "function_units": 24,
+      "activation": true,
+      "release": "cycle",
+      "period": 200.0,
+      "release_time": 15.0,
+      "template": true,
+      "backbone_angle": 20.0,
+      "box": [
+        8.0,
+        6.0
+      ],
+      "monomer_only_capture": true,
+      "product_cooperativity": true,
+      "functional_cosines": {
+        "0": 0.8,
+        "1": 0.8
+      },
+      "seed_family": 0,
+      "caps_symbol": -1,
+      "initial_min_separation": 0.6,
+      "local_off_rate": 0.2,
+      "ligation_rate": 12.0,
+      "ligation": true,
+      "temperature": 0.6,
+      "functional_bend_cosines": {},
+      "functional_bend_strength": 100.0,
+      "food_pairs": 0,
+      "food_ligand_energy": 2.0,
+      "food_ligand_width": 0.6,
+      "food_binding_radius": 0.25,
+      "food_binding_rate": 20.0,
+      "food_unbinding_rate": 0.1,
+      "food_reaction_radius": 0.25,
+      "food_reaction_rate": 0.2,
+      "food_activation": true,
+      "dual_faces": false,
+      "constructible": true,
+      "assembled_stock": false,
+      "rung_capture_radius": 0.58,
+      "rung_formation_rate": 20.0
+    },
+    "engine": {
+      "dt": 0.005,
+      "spatial": "tree",
+      "skin": 0.25,
+      "sample_every": 100
+    }
+  }
+}

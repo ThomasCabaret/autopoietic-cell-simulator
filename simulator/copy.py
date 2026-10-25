@@ -4,6 +4,7 @@ from .reference import degree, normals, local_port_free, port_attraction, add_fo
 from .physics import orientation_kernel
 from .substrates import Substrates
 from .dual_faces import react as dual_react,reflected_force
+from .assembly import RungAssembly
 
 class CopyChemistry:
     def __init__(self, config, rng):
@@ -62,8 +63,10 @@ class CopyChemistry:
         self.food=Substrates(self,rng) if config.get('food_pairs',0) else None
         self.copy_pairing=np.full(n,-1,dtype=np.int64)
         self.back_pairs=np.empty((0,2),dtype=np.int64)
+        self.assembly=RungAssembly(self,rng) if config.get('constructible',False) else None
 
     def react(self, time, dt, neighbors):
+        if self.assembly is not None:self.assembly.react(self,time,dt,neighbors)
         if self.config.get('dual_faces',False):
             return self._finish(dt,neighbors,dual_react(self,time,dt,neighbors))
         config, rng = self.config, self.rng
@@ -83,7 +86,9 @@ class CopyChemistry:
         release_time = self.release_time
         interval = dt * 5
         deg = degree(n, edges)
-        nrm = normals(pos, rungs)
+        active=rungs[:,1]>=0
+        nrm = np.zeros((n,2))
+        nrm[active]=normals(pos,rungs[active])
         release = cycle == "cycle" and time % period >= period - release_time
         for i in range(n):
             j = pairing[i]
@@ -98,7 +103,11 @@ class CopyChemistry:
                 rate = config.get("local_off_rate", .2)
             if rng.random() < -np.expm1(-rate * interval):
                 pairing[i] = pairing[j] = -1
-        candidates = neighbors.pairs(pos[n:2*n], .3, "recognition")
+        if self.assembly is None:
+            candidates = neighbors.pairs(pos[n:2*n], .3, "recognition")
+        else:
+            available=np.flatnonzero(active)
+            candidates=available[neighbors.pairs(pos[rungs[active,1]],.3,'recognition')]
         candidates = candidates[bits[candidates[:, 0]] == bits[candidates[:, 1]]]
         rng.shuffle(candidates)
         for i, j in candidates:
@@ -153,7 +162,7 @@ class CopyChemistry:
     def _finish(self,dt,neighbors,events):
         config=self.config;n=self.n;edges=self.edges;bits=self.bits
         families=self.families;pairing=self.pairing
-        springs = [(i, n + i, 180., .45) for i in range(n)]
+        springs = [(i, int(r), 180., .45) for i,r in self.rungs if r>=0]
         angles = []
         for i, j in sorted(edges):
             springs.append((i, j, 100., 1.))
@@ -166,7 +175,7 @@ class CopyChemistry:
             for q,other,value in ((i,j,preferred[0]),(j,i,preferred[1])):
                 if families[q]==1 and pairing[q]<0 and config.get('functional_bend_cosines',{}) and not config.get('functional_cosines',{}):
                     continue
-                angles.append((n+q,q,other,stiffness,value))
+                angles.append((int(self.rungs[q,1]),q,other,stiffness,value))
         if config.get('functional_bend_cosines',{}):
             adjacency=[[] for _ in range(n)]
             for i,j in sorted(edges): adjacency[i].append(j); adjacency[j].append(i)
@@ -178,7 +187,7 @@ class CopyChemistry:
                 angles.append((i,j,k,config['functional_bend_strength'],cosine))
         for i in range(n):
             if pairing[i] > i:
-                springs.append((n + i, n + pairing[i], 80., 0.))
+                springs.append((int(self.rungs[i,1]), int(self.rungs[pairing[i],1]), 80., 0.))
         if self.food is not None:
             events.extend(self.food.react(self,dt,neighbors))
             springs.extend(self.food.springs())
@@ -198,6 +207,10 @@ class CopyChemistry:
         return force
 
     def observe(self, callback, time, events):
+        if self.assembly is not None:
+            callback(time,self.pos,self.edges,self.pairing,self.bits,events,self.families)
+            if hasattr(callback,'observe_assembly'):callback.observe_assembly(self,time)
+            return
         if self.config.get('dual_faces',False):
             callback(time,self.pos,self.edges,self.pairing,self.bits,events,self.families,
                      self.food.export() if self.food is not None else None,self.copy_pairing)
@@ -208,9 +221,9 @@ class CopyChemistry:
             callback(time,self.pos,self.edges,self.pairing,self.bits,events,self.families,self.food.export())
 
     def bonds(self):
-        pairs = [(self.n+i, self.n+int(j)) for i,j in enumerate(self.pairing) if j>i]
+        pairs = [(int(self.rungs[i,1]), int(self.rungs[j,1])) for i,j in enumerate(self.pairing) if j>i]
         if self.config.get('dual_faces',False):pairs += [(int(i),int(j)) for i,j in self.back_pairs]
-        bonds={"scaffold": self.rungs.tolist(), "backbone": sorted(self.edges), "pairing": pairs}
+        bonds={"scaffold": self.rungs[self.rungs[:,1]>=0].tolist(), "backbone": sorted(self.edges), "pairing": pairs}
         if self.food is not None:
             bonds['backbone'] += [(2*self.n+a,2*self.n+b) for a,b in sorted(self.food.products)]
             bonds['pairing'] += [(self.n+i,2*self.n+int(f)) for i,f in enumerate(self.food.site_bound) if f>=0]
@@ -219,6 +232,8 @@ class CopyChemistry:
     def colors(self):
         palette = ["#148e9c", "#df7947", "#8d75bb"]
         colors=["#718594" if f == 0 else "#9a4aa0" for f in self.families] + [palette[int(b)] for b in self.bits]
+        if self.assembly is not None:
+            colors=colors[:self.n]+[palette[int(b)] for b in self.assembly.atom_bits]
         if self.food is not None: colors += [palette[f%2] for f in range(self.food.count)]
         return colors
 
@@ -226,11 +241,13 @@ class CopyChemistry:
         state={"edges": sorted(self.edges), "pairing": self.pairing.tolist()}
         if self.config.get('dual_faces',False):state['copy_pairing']=self.copy_pairing.tolist()
         if self.food is not None: state['food']=self.food.export()
+        if self.assembly is not None:state['assembly']=self.assembly.export(self)
         return state
 
     def restore(self, state):
         self.edges = {tuple(p) for p in state["edges"]}
         self.pairing = np.array(state["pairing"], dtype=np.int64)
+        if self.assembly is not None:self.assembly.restore(self,state['assembly'])
         if self.config.get('dual_faces',False):
             self.copy_pairing=np.array(state['copy_pairing'],dtype=np.int64)
             self.back_pairs=np.array([(i,int(j)) for i,j in enumerate(self.copy_pairing) if j>i],dtype=np.int64).reshape(-1,2)

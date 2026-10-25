@@ -208,6 +208,9 @@ class Canvas:
                 labels=[('G complets liberes','detached_copy_sets_ever'),('F complets liberes','translated_detached_ever'),
                         ('G et F libres ensemble','joint_detached_ever'),
                         ('Cycles max / F exprime','food_max_turnovers_per_expressed_tool')]
+            if config['chemistry'].get('constructible',False):
+                labels=[('Dimeres construits','assembled_dimers'),('Composants incorpores','incorporated_constructed'),
+                        ('G construits liberes','constructed_detached_G'),('F construits liberes','constructed_detached_F')]
         elif config['model']=='catalysis':
             labels=[('Produits','products'),('Ligations co-liees','double_bound_ligations')]
         else: labels=[('Boucles observees','closed_sets_ever'),('Plus grand fragment','final_largest_component')]
@@ -293,6 +296,8 @@ def replay_view(folder,screenshot=None):
         food_edges=d['food_edges'] if 'food_edges' in d else None
         food_binding=d['food_binding'] if 'food_binding' in d else None
         copy_pairing=d['copy_pairing'] if 'copy_pairing' in d else None
+        rungs=d['rungs'] if 'rungs' in d else None
+        atom_bits=d['atom_bits'] if 'atom_bits' in d else None
         if config['model']=='copy': n=len(bits)
     screen,canvas=start_window()
     clock=pygame.time.Clock(); t=0.; paused=False; running=True; speed=20.; drag=False
@@ -330,12 +335,17 @@ def replay_view(folder,screenshot=None):
             symbols=[int(b) for b in config['chemistry']['sequence']]+[i%2 for i in range(len(positions[index])-3)]
             colors=[('#275f94' if b==0 else '#9a4aa0') if i<3 else ('#148e9c' if b==0 else '#df7947') for i,b in enumerate(symbols)]
         elif config['model']=='copy':
+            if rungs is not None:
+                bonds['scaffold']=[(int(i),int(r)) for i,r in rungs[index] if r>=0]
             bonds['backbone']=np.argwhere(np.triu(edges[index],1)).tolist()
             if pairing is not None:
-                bonds['pairing']=[(n+i,n+int(j)) for i,j in enumerate(pairing[index]) if j>i]
+                bonds['pairing']=[(n+i,n+int(j)) if rungs is None else (int(rungs[index,i,1]),int(rungs[index,j,1]))
+                                  for i,j in enumerate(pairing[index]) if j>i]
             if copy_pairing is not None:
                 bonds['pairing'] += [(i,int(j)) for i,j in enumerate(copy_pairing[index]) if j>i]
             colors=['#718594' if f==0 else '#9a4aa0' for f in families]+[['#148e9c','#df7947','#8d75bb'][int(b)] for b in bits]
+            if atom_bits is not None:
+                colors=colors[:n]+[['#148e9c','#df7947','#8d75bb'][int(b)] for b in atom_bits]
             if food_edges is not None:
                 bonds['backbone'] += [(2*n+int(a),2*n+int(b)) for a,b in np.argwhere(np.triu(food_edges[index],1))]
                 bonds['pairing'] += [(n+i,2*n+int(f)) for i,f in enumerate(food_binding[index]) if f>=0]
@@ -356,6 +366,11 @@ def replay_view(folder,screenshot=None):
                 food_expressed_tool_ligations=sum(turnovers.values()),
                 food_max_turnovers_per_expressed_tool=max(turnovers.values(),default=0))
         metrics.update({key:item[old] for key,old in [('detached_copy_sets_ever','detached_ever'),('translated_detached_ever','translated_detached_ever'),('final_largest_component','largest_head_component')] if old in item})
+        if rungs is not None:
+            metrics.update({key:item[key] for key in ('assembled_dimers','incorporated_constructed') if key in item})
+            if not config['chemistry'].get('assembled_stock',False):
+                metrics.update(constructed_detached_G=item.get('detached_ever',0),
+                               constructed_detached_F=item.get('translated_detached_ever',0))
         if 'joint_detached_ever' in item:metrics['joint_detached_ever']=item['joint_detached_ever']
         if config['model']=='catalysis':
             for key in ('products','double_bound_ligations'):

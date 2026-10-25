@@ -1,0 +1,25 @@
+{
+  "batch": 6,
+  "recipes": [
+    "research/engine_runs/C3copy6_s0_20261025T072401174176Z/recipe.json",
+    "research/engine_runs/C3copy_s0_20261025T072106207781Z/recipe.json",
+    "research/engine_runs/C3copy_s0_20261025T072239235459Z/recipe.json",
+    "research/engine_runs/C3copy_s1_20261025T072304105407Z/recipe.json",
+    "research/engine_runs/C3copy_s2_20261025T072329330632Z/recipe.json",
+    "research/engine_runs/C3expression_s0_20261025T072354244128Z/recipe.json",
+    "research/engine_runs/C3expression_s1_20261025T072422499184Z/recipe.json",
+    "research/engine_runs/C3expression_s2_20261025T072449753588Z/recipe.json",
+    "research/engine_runs/C3mixed6_s0_20261025T072446052356Z/recipe.json",
+    "research/engine_runs/C3mixed6_s1_20261025T072541551580Z/recipe.json",
+    "research/engine_runs/C3mixed_s0_20261025T072239290446Z/recipe.json",
+    "research/engine_runs/C3mixed_s1_20261025T072310338142Z/recipe.json",
+    "research/engine_runs/C3mixed_s2_20261025T072344367870Z/recipe.json",
+    "research/engine_runs/C3noassembly_s0_20261025T072426425167Z/recipe.json",
+    "research/engine_runs/C3nogene_s0_20261025T072518035518Z/recipe.json",
+    "research/engine_runs/C3noligation_s0_20261025T072452905292Z/recipe.json",
+    "research/engine_runs/C3prepared_s0_20261025T072539801682Z/recipe.json",
+    "research/engine_runs/C3regE3_s0_20261025T072318358058Z/recipe.json",
+    "research/engine_runs/C3regG6_s0_20261025T072414805547Z/recipe.json"
+  ],
+  "policy": "Sources and inputs only"
+}

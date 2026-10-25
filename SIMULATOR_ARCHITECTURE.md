@@ -144,3 +144,11 @@ métriques et les critères, une trajectoire optionnelle et le checkpoint. Le re
 compare toutes les métriques, sans réécrire l'expérience originale. Les tests
 utilisent `python -m unittest discover -s tests -v` ; le contrôle d'interface sans
 fenêtre utilise `python experiments/smoke_viewer.py`.
+# Extension matérielle C3A
+
+`assembly.py` fournit des liens P–R dynamiques à `CopyChemistry`, sans nouvel
+ordonnanceur. Les forces, l'affichage et les sauvegardes utilisent les véritables
+indices du graphe. `rungs` et `unit_bits` sont échantillonnés avec la trajectoire,
+`atom_bits` reste immuable. Les préparés gardent le chemin de calcul et les RNG
+antérieurs. Le portage X/Y et des faces doubles est explicitement refusé tant
+qu'il n'est pas réalisé ; voir le lot6 pour les limites de compatibilité.

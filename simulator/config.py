@@ -12,7 +12,8 @@ COPY_DEFAULTS = dict(sequence="001011", alphabet="01", free_units=30, function_u
     functional_bend_cosines={},functional_bend_strength=100.,food_pairs=0,
     food_ligand_energy=2.,food_ligand_width=.6,food_binding_radius=.25,
     food_binding_rate=20.,food_unbinding_rate=.1,food_reaction_radius=.25,food_reaction_rate=.2,
-    food_activation=False,dual_faces=False)
+    food_activation=False,dual_faces=False,constructible=False,assembled_stock=False,
+    rung_capture_radius=.58,rung_formation_rate=20.)
 MEMBRANE_DEFAULTS = dict(units=16, initial="straight", short_length=.75, bonding=True,
     end_attraction=4., cooperative_rows=False, oriented_ports=False, port_epsilon=.6,
     temperature=.06, face_docking=False, dock_energy=4., dock_width=.25,
@@ -62,6 +63,10 @@ def resolve(raw):
     if 'box' in defaults and (len(defaults['box'])!=2 or any(not math.isfinite(x) or x<=1.2 for x in defaults['box'])):
         raise ValueError('box requires two lengths greater than 1.2')
     if model=='copy':
+        if defaults['constructible'] and (defaults['dual_faces'] or defaults['food_pairs']):
+            raise ValueError('Constructible rungs: dual faces and X/Y food transfer not implemented')
+        if defaults['rung_capture_radius']<=0 or defaults['rung_formation_rate']<0:
+            raise ValueError('invalid rung assembly parameters')
         if not defaults['sequence'] or set(defaults['sequence'])-set('012'):
             raise ValueError('sequence uses symbols 0, 1, 2')
         if not defaults['alphabet'] or set(defaults['alphabet'])-set('012'):

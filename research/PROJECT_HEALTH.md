@@ -1,4 +1,4 @@
-# Santé du projet — 24 octobre 2026
+# Santé du projet — 25 octobre 2026
 
 Cette évaluation vise la faisabilité globale et le volume du travail, pas le
 nombre de simulations positives. Elle doit évoluer avec les résultats. La cible
@@ -98,3 +98,32 @@ et où G/F est un état constructible du lien, plutôt qu'une famille préassign
 L'incorporation d'un premier dimère produit sera le test, pas le seul dessin
 de cette représentation. M0 reste le jalon suivant de transport. Réévaluer la
 trajectoire et son volume sur ces preuves, avant un catalogue de nouvelles fonctions.
+
+## Réévaluation après le lot 6
+
+Le test matériel C3A est positif : des P/R indépendants construisent de vrais
+dimères qui entrent dans des copies G et expressions F exactes,3/3 en bains
+séparés et2/3 en bain mixte court. Une copie six symboles existe aussi dans un
+essai G seul ; les deux bains mixtes longs restent sans produit exact. La piste
+de représentation annoncée au lot5 a donc produit un transfert matériel en un
+lot, avec un lien dynamique et deux constantes, sans nouveau type par fonction.
+C'est un signe favorable pour le coût de conception, pas une extrapolation.
+
+Le risque est déplacé, pas supprimé : P_G/P_F/R0/R1 sont une nourriture
+spécialisée et le lien P–R se forme très vite spontanément. Aucun F n'en contrôle
+la fabrication. C3A refuse encore l'ancien module X/Y à indices fixes ; les
+preuves de fonction du lot5 ne s'additionnent donc pas à celles du lot6. La
+fermeture matérielle reste absente et les supports élémentaires restent fournis.
+
+Prochain test C3B : transférer les captures de C2D pour rapprocher un vrai P et
+un vrai R, sous fond faible, puis incorporer le même produit. C'est un début
+de solution concret au verrou de flux, non un mécanisme déjà testé. Mesurer
+avec/sans outil et capture, séquestration et rendement utile ; si deux tentatives
+de conception ne donnent ni transfert ni diagnostic neuf, revoir ce portage
+plutôt qu'ajouter des règles spécifiques. T9 et M0 restent les jalons suivants.
+
+Une intervention principale de représentation et19 dynamiques automatisées
+ont réduit un obstacle réel ; pas19 inventions. Aucun nouveau blocage de principe
+identifié. Santé toujours favorable à une poursuite ciblée, sans garantie sur
+quelques dizaines de lots tant que flux utile, longueur et membrane ne sont
+pas démontrés ensemble. Réévaluer après C3B, avant d'élargir les fonctions.

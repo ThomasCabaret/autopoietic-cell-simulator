@@ -70,6 +70,20 @@ class CopyObserver:
         self.copy_pairing_frames=[];self.last_copy_pairing=None
         self.coexistence_enabled=bool(config.get('dual_faces',False) or (config.get('free_units',0) and config.get('function_units',0)))
         self.joint_detached_ever=False;self.joint_tool_events=0
+        self.rungs_frames=[];self.unit_bits_frames=[];self.assembly_state=None
+        self.assembly_incorporated={}
+
+    def observe_assembly(self,c,time):
+        formed={e['support'] for e in c.assembly.events}
+        for i,j in c.edges:
+            for q in (i,j):
+                if q in formed:self.assembly_incorporated.setdefault(q,float(time))
+        self.assembly_state=dict(events=list(c.assembly.events),rungs=c.rungs.tolist(),
+            atom_bits=c.assembly.atom_bits.tolist(),initial_supports=sorted(c.assembly.initial_supports))
+        if self.times and self.times[-1]==time and getattr(self,'record_trajectory',True):
+            self.rungs_frames.append(c.rungs.copy());self.unit_bits_frames.append(c.bits.copy())
+        if self.history and self.history[-1]['time']==time:
+            self.history[-1].update(assembled_dimers=len(formed),incorporated_constructed=len(self.assembly_incorporated))
 
     def __call__(self, time, pos, edges, pairing, bits, events, families=None, food=None,copy_pairing=None):
         unpaired=lambda i:pairing[i]<0 and (copy_pairing is None or copy_pairing[i]<0)
@@ -208,6 +222,13 @@ class CopyObserver:
         if self.coexistence_enabled:
             metrics.update(joint_detached_ever=int(self.joint_detached_ever),
                            food_ligations_with_new_G_present=self.joint_tool_events)
+        if self.assembly_state is not None:
+            made={e['support'] for e in self.assembly_state['events']}
+            metrics.update(assembled_dimers=len(made),incorporated_constructed=len(self.assembly_incorporated),
+                constructed_detached_G=sum(set(key)<=made for key in self.detached),
+                constructed_detached_F=sum(set(key)<=made for key in self.translated_detached),
+                assembly_incorporation_times=self.assembly_incorporated,
+                assembly_state=self.assembly_state)
         return metrics
 
 

@@ -264,3 +264,20 @@ L'observateur vérifie le détachement sur les deux faces si elles existent ;
 `joint_detached_ever` demande des G et F nouveaux exacts libres au même instant.
 L'archive conserve les deux tableaux d'appariement. Les 3 essais mal étiquetés
 du lot5 sont décrits par leurs scénarios réels, sans correction rétrospective.
+# C3A — dimères constructibles (lot6)
+
+Option `constructible` du hook copy, module `assembly.py`. Alphabet matériel
+P_G/P_F/R0/R1 ; famille primitive du support et symbole immuable du reconnaisseur.
+Lien saturé P+R→P–R à distance<0,58, taux20 ; puis ressort180/0,45 existant.
+Les futurs partenaires ne sont pas imposés. Rung absent : symbole indisponible,
+aucune capture ni ligation. Rung présent : règles E3C existantes, appliquées aux
+IDs réels des partenaires. La dynamique ne consulte aucune séquence complète.
+La formation et le squelette restent irréversibles avec ressources activées et
+cycle externe ; pas de fermeture énergétique. Coût : état de lien P–R plus deux
+constantes, pas de nouvelle espèce représentant une fonction entière.
+
+Les précurseurs sont spécialisés, la formation spontanée : aucune catalyse par
+F revendiquée. `assembled_stock` ne change que l'état initial. X/Y et les faces
+doubles sont explicitement non transférés ; les combinaisons correspondantes
+sont rejetées. Preuve C3A ≠ activité C2D sous un univers déjà unifié. Les rungs,
+symboles de supports et types atomiques sont exportés pour observation/reprise.

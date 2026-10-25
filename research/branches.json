@@ -399,13 +399,14 @@
       "related": [
         "C0"
       ],
-      "status": "proposed_not_tested",
+      "status": "constructible_component_incorporated_tool_driven_production_open",
       "priority": "P0",
       "hypothesis": "An expressed composite tool can manufacture a physically incorporable component from simpler resources",
       "test": "Require conserved material and actual incorporation into G/F/membrane; product identity must arise from local states and bonds",
       "counterexample": "Inert XY is merely renamed as a monomer, or product needs external conversion",
-      "missing_proof": "No usable component or tool regeneration yet",
-      "health_gate": "research/PROJECT_HEALTH.md: next decisive test; immutable prepared units cannot become a closed factory without representation change"
+      "missing_proof": "C3A constructs usable dimers spontaneously; production by an expressed tool and tool regeneration remain open",
+      "health_gate": "research/PROJECT_HEALTH.md: C3A reduces representation risk; C3B useful tool-driven flux next",
+      "evidence": "research/BATCH_06_RECIPES.json"
     },
     {
       "id": "E3A",
@@ -439,6 +440,31 @@
       "conclusion": "001: G3/2/2, F3/2/3, joint detached3/3, max tool operations2/3/2. G-only6 reference and F-only3 function preserved. Mixed6 expresses one F each seed but no G",
       "cost": "Reuse existing E2 helper, no added particle type or second site state",
       "limit": "Three seeds at one short sequence do not establish general efficiency, long information capacity or physical closure"
+    },
+    {
+      "id": "C3A",
+      "parent": "C3",
+      "related": ["E3C"],
+      "hypothesis": "Persistent independent P/R beads can form locally saturated dimers that participate directly in the existing copy/translation laws",
+      "status": "constructed_and_incorporated_three_seeds_separate_short_mixed_two_of_three",
+      "evidence": "research/BATCH_06_RECIPES.json",
+      "test": "No free dimers initially; audit actual partner IDs and formation before incorporation; no-rung/no-ligation/no-gene controls",
+      "conclusion": "001 G-only detached3/5/2, F-only4/4/4; mixed G2/0/2 F1/1/1 and joint2/3. One six-symbol G copy, no complete products in two mixed six-symbol runs",
+      "cost": "Dynamic saturated P-R bond; radius0.58 rate20; no new elementary kind, same backbone forces. Activated specialized precursors, irreversible construction and external genetic release cycle",
+      "counterexample": "A renamed XY product or fixed future partner would not count; independent trajectory audit confirms actual cross-index partner formation",
+      "missing_proof": "No F-driven precursor assembly, X/Y activity not ported, no useful flux or replacement. Prepared E3C regressions preserved but not a combined chemistry"
+    },
+    {
+      "id": "C3B",
+      "parent": "C3A",
+      "related": ["C2D"],
+      "hypothesis": "Reusing local substrate capture on actual P/R precursors can let an expressed F manufacture a component that is then incorporated",
+      "status": "proposed_not_tested",
+      "priority": "P0",
+      "test": "Low spontaneous assembly; prepared then expressed tool; no-tool/no-capture controls; conserve bead IDs through release and incorporation under fixed laws",
+      "counterexample": "Tool only sequesters food, or apparent function requires conversion, per-function laws or high spontaneous background",
+      "missing_proof": "Transfer from C2D capture to the dynamic rung material graph and useful net flux",
+      "health_gate": "Reevaluate after two conceptual attempts without new transfer or diagnostic; T9 and M0 remain downstream risks"
     }
   ]
 }

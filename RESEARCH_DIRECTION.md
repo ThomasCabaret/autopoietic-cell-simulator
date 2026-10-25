@@ -4,7 +4,7 @@ Outil de travail actuel : [simulateur et lancement des démonstrateurs](README.m
 [architecture du moteur partagé](SIMULATOR_ARCHITECTURE.md),
 [validation de migration](research/ENGINE_MIGRATION.md).
 
-État courant : [maturité](research/MATURITY.md), [bilan du lot 5](research/BATCH_05.md),
+État courant : [maturité](research/MATURITY.md), [bilan du lot 6](research/BATCH_06.md),
 [priorités et décisions](research/PRIORITIES.md),
 [architectures de fermeture conditionnelle](research/CELL_ARCHITECTURE.md).
 
@@ -24,6 +24,9 @@ Le lot 5 réunit ensuite copie, traduction et opération sur 001, en réutilisan
 la coopération locale plutôt que de rendre obligatoires deux faces. La longueur
 six ne donne pas encore cette coexistence. L'[évaluation de santé](research/PROJECT_HEALTH.md)
 priorise désormais la constructibilité des composants, puis fragments et transport.
+Le lot6 construit des dimères depuis P/R libres puis les incorpore dans G et F.
+La formation reste spontanée ; l'activité des outils n'est pas encore portée
+sur ces précurseurs. Le transfert catalytique C3B est la prochaine décision.
 Les propositions et criblages ci-dessous conservent le cadrage historique ;
 les preuves actuelles et priorités sont dans les documents liés ci-dessus.
 
