@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "scope": "Prospective molecular tests, not executable engine scenarios or achieved results",
+  "campaign_contract": {
+    "freeze": "One alphabet, bond states, interactions, rates and external energy schedule per candidate",
+    "initial_state": "Constructed membrane, genes and tools allowed; track newly produced material separately",
+    "perturbations": "Add each non-target class then the full bath at 0.25x, 1x and 4x nominal concentration, with matched inert-crowding control",
+    "observe": "Wanted flux, wrong product bond states/sequences, sequestration time, leak, off-path aggregation, mass balance and resource depletion",
+    "avoid": "Do not forbid a collision by biological identity or infer harmlessness from no observed event",
+    "provisional_screens": "Target at least half the isolated useful flux after matched crowding correction and below 5% wrong incorporations; screening thresholds to declare before runs, not demonstrated performance or final viability criteria"
+  },
+  "tests": [
+    {"id": "I0", "priority": "P0", "purpose": "EN/EA/EL selectivity", "inputs": "Same X/Y/Z/E bath; each prepared tool then all three", "require": "Different assemblies under common laws favor N/A/L bond states respectively", "negative": "No-tool and rearranged/scrambled tools; neither substrate loss nor random product counts as useful synthesis"},
+    {"id": "I1", "priority": "P0", "purpose": "Multigene coexistence", "inputs": "Three distinct genes, both monomer families and tools", "require": "Each gene copied and each tool expressed, with ancestry; count chimeras and starvation", "negative": "Single-gene reference plus each other gene, same total crowding and precursor inventory"},
+    {"id": "I2", "priority": "P0", "purpose": "Large flexible membrane", "inputs": "Prepared boundary at calculated radius; same local laws as free lipids", "require": "Boundary contains target inventory without budding into preferred tiny rings", "negative": "Existing V8 curvature and near-flat/soft-curvature variants compared explicitly"},
+    {"id": "I3", "priority": "P0", "purpose": "Insertion from inside", "inputs": "Label newly made L analytically, initially inside a saturated prepared ring", "require": "Actual incorporation into existing boundary and resealing, not adsorption or a new internal vesicle", "negative": "No exchange; reversible contact exchange; add insertase only if simpler route fails with diagnostic"},
+    {"id": "I4", "priority": "P0", "purpose": "State-dependent permeability", "inputs": "Free X/Y/Z/E/W and bonded N/A plus polymers against the same boundary", "require": "Feed supply and waste removal compatible with low leakage of compounds; all rates measured", "negative": "Fixed primitive-only contact profiles; no dynamic inside/outside labels or particle teleportation"},
+    {"id": "I5", "priority": "P1", "purpose": "Product release and fouling", "inputs": "Each active tool, accumulating product and W, L plus membrane", "require": "Repeated turnover without coating genes/tools or permanent product binding", "negative": "No affinity switch versus bond-occupancy release; no per-enzyme product identity shortcut"},
+    {"id": "I6", "priority": "P1", "purpose": "Fragments and parasitic polymers", "inputs": "Gene/protein fragments, unrelated polymers and wrong-state dimers", "require": "Quantify recycling, resource traps and undesired templating while preserving targets", "negative": "No turnover; same loss imposed on complete and incomplete chains"},
+    {"id": "I7", "priority": "P1", "purpose": "Sustained replacement", "inputs": "Constructed cell with fixed food/fuel conditions and declared losses", "require": "New genes, active tools and boundary material replace losses; all three tool roles retained", "negative": "Disable each synthesis or energy input; count total extinction of a fragmented gene separately"},
+    {"id": "I8", "priority": "P1", "purpose": "Transport/metabolic budget", "inputs": "Required synthesis flux and measured permeability over actual boundary length", "require": "Import, waste export and catalytic capacities jointly exceed measured demand", "negative": "Spatially matched bath without membrane; identical external reservoir conditions"}
+  ]
+}

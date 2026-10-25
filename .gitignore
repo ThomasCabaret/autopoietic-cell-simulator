@@ -36,6 +36,7 @@ __pycache__/
 
 /research/abstract_runs/*/*
 !/research/abstract_runs/*/*.py
+!/research/abstract_runs/*/config.json
 !/research/abstract_runs/*/recipe.json
 
 # Test, analysis and editor caches

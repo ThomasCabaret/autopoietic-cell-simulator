@@ -1,27 +1,44 @@
-# Priorités — après le lot 6, 25 octobre 2026
+# Priorités — après le lot 7, 25 octobre 2026
+
+Le [graphe intégré](CELL_ARCHITECTURE.md) et les [contrats](CELL_INTERACTIONS.md)
+encadrent désormais les choix. Cible conditionnelle :3 gènes/3 outils,16 espèces
+cibles, budget nominal2 406 billes. Ce ne sont pas des capacités moléculaires
+validées. V8 préfère des anneaux trop petits pour ce contenu ; l'insertion dans
+un anneau saturé et la perméabilité selon l'état lié/libre sont à démontrer.
 
 Suivre la méthode [exploration, unification, simplification et santé](../.agents/skills/local-chemistry-research/SKILL.md).
 Le [lot 6](BATCH_06.md) construit de vrais dimères puis les incorpore dans G/F.
 Copie seule et expression seule passent3/3, coexistence courte2/3 ; aucun outil
 n'a encore produit ces dimères. La référence active E3C du lot5 reste conservée.
 
-1. **P0 — C3B, production utile par un outil puis incorporation.** C3A réduit
+1. **P0 — C3B/I0, production utile et sélectivité puis incorporation.** C3A réduit
    le verrou de représentation, pas celui du flux utile. Porter la capture
    locale de C2D vers un P et un R réels, avec fond ralenti et libération par
    occupation du lien produit. Tester d'abord outil préparé, puis exprimé et
    incorporation sans conversion externe, sous mêmes lois. Déclarer les états
    de capture réutilisés/ajoutés, comparer sans outil et sans capture. Ne pas
    simplement renommer XY ni additionner des réussites de modèles distincts.
+   Tester aussi deux produits de mêmes éléments mais de ports/états N/A distincts.
+   Le même alphabet doit permettre plusieurs outils ; commencer les contrôles
+   d'espèces étrangères avant d'élargir leurs fonctions. EN/EA/EL sont des rôles
+   visés par la forme des chaînes, jamais des types ni une table de séquences.
+   Le noyau C3A à P_G/P_F/R0/R1 reste un étage de transfert, pas encore la
+   synthèse commune depuis X/Y/Z ; déclarer et tester cet écart matériel.
 2. **P0 — T9/E3, longueur et fragments.** Au prochain test génétique, diagnostiquer
    les stocks piégés et comparer finition/recyclage local des fragments à la
    croissance de chaînes complètes. Contrôles sans renouvellement et stabilité
    des gènes/outils ; aucun critère dynamique de longueur cible. L'association
    prolongée seule échoue. Garder le couplage court comme référence, sans prétendre
    que 001 résout la capacité d'information riche.
-3. **P1 — M0, frontière fonctionnelle.** Rétention et passage sous interactions
-   locales sélectives, puis compatibilité avec le noyau matériel commun. Les
+3. **P0 — M1/I2–I4, frontière dimensionnée, insertion et flux.** Tester une grande
+   frontière préparée à faible courbure avant l'intégration : nominal rayon34,4,
+   environ219 L, contre rayon préféré1,53 pour V8curved. Mesurer échange local,
+   arrivée de L depuis dedans, refermeture et fuite. Rétention et passage sous interactions
+   locales dépendant de l'état de liaison, puis compatibilité avec le noyau commun. Les
    indices intérieur/extérieur restent analytiques. Ne pas exiger la formation
    spontanée de toute la cellule, dont l'initialisation construite est autorisée.
+   Ne pas résoudre le blocage par un outil d'insertion gratuit : compter gI/EI
+   et leur reconstruction si une insertase devient nécessaire.
 4. **P1 — utilité et diversité.** Obtenir un flux de composant utile, comparé
    avec/sans outil, puis plusieurs productions par assemblages différents sous
    les mêmes lois. Les opérations XY et le comptage de co-capture ne prouvent

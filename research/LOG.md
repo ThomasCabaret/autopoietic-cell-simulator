@@ -464,3 +464,39 @@ Prochain C3B : capture P/R, catalyse sous fond faible, libération et incorporat
 du même produit ; contrôles de flux. T9 et M0 restent des risques majeurs. Arbre,
 priorités, maturité et bilan de santé actualisés. Données locales conservées,
 code/recettes/documents versionnés, aucun push.
+
+## 2026-10-25 — lot7 : architecture intégrée et risques précoces
+
+Demande explicite : graphe causal clos, trois synthèses obligatoirement catalysées,
+environnements, interactions parasites et insertion de membrane, inventaire et
+nombre de billes. Reprise de C0 sans modifier son archive. Nouveau plan C0B à
+3 gènes/3 synthétases ; énergie activée fournie, copie/traduction directes.
+Les noms EN/EA/EL sont des rôles hypothétiques, pas des types du moteur.
+
+CELL_ARCHITECTURE et trois figures actualisent dépendances ET, import/export,
+matière, coûts d'insertion/activation optionnelles, inventaire et taille.16 espèces
+cibles,4 sortes matérielles et des états/ports supplémentaires. Complexes et
+parasites ne sont pas inclus dans16. Stocks explicites et longueurs supposées
+12/24/48 donnent1 020/2 406/6 292 billes avec126/219/458 L de frontière. Le
+nominal contient6 gènes et12 outils ; une insertase ajoute gI/EI et320 billes.
+
+Écart majeur identifié analytiquement : V8curved préfère environ11,5 L et
+rayon1,53, alors que le nominal demande rayon34,4. Pas de preuve d'instabilité
+de toute grande frontière contrainte, mais augmenter units n'en valide aucune.
+M1 devient P0 : faible courbure/souplesse, insertion depuis dedans, refermeture
+et fuite. Sélectivité N/A de même matière, profils de contact selon liens, débit
+surface/volume et extinction de gènes fragmentés deviennent des risques explicites.
+
+Audit conditionnel conserve la matière et détecte10 défauts, dont voie sans
+catalyseur, famille isomasse incorrecte, import/insertion/expression absents.
+Six tests logiciels passent. Reconstruction source+configuration retrouve toutes
+les valeurs ; recette avec hash des deux, nouveau type du reconstructeur partagé.
+Résultat complet local, configuration/sources/recette archivées ; gitignore autorise
+seulement le config JSON supplémentaire des audits. Aucun fichier historique modifié.
+
+CELL_INTERACTIONS et INTEGRATION_TESTS définissent les criblages futurs I0–I8,
+ajout de classes étrangères puis bain complet, concentrations et encombrement,
+flux utilisable, séquestration, parasites et fuites. AGENTS impose leur mise à jour.
+Maturité moléculaire inchangée : aucune nouvelle simulation n'est présentée comme
+preuve. Santé et volume restent conditionnels ; prochaines décisions I0/C3B,
+M1/I2–I4 et I1/T9. Arbre/priorités/maturité actualisés. Commit local, aucun push.

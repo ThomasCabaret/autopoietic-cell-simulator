@@ -1,4 +1,14 @@
-# Maturité — après le lot 6, 25 octobre 2026
+# Maturité — après le lot 7, 25 octobre 2026
+
+**Lot7 : architecture et risques mieux définis, maturité moléculaire inchangée.**
+Le [graphe cible](CELL_ARCHITECTURE.md) contient3 synthétases et leurs3 gènes,
+16 espèces cibles, bilan de renouvellement et budget nominal2 406 billes. Il
+est conditionnellement fermé dans l'audit, pas réalisé dans un bain. Sélectivité
+EN/EA/EL, multigène, frontière de219 L, insertion et perméabilité restent ouverts.
+La préférence de courbure V8 (~12L) ne correspond pas à cette taille. Les
+[tests I0–I4](INTEGRATION_TESTS.json) doivent décider tôt des changements de modèle.
+
+## Acquis moléculaires après le lot6
 
 **Construction puis incorporation démontrées pour de vrais dimères.** C3A forme
 des liens entre P/R libres sans partenaire préassigné : copies G001 libérées

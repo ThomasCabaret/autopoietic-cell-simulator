@@ -127,3 +127,36 @@ ont réduit un obstacle réel ; pas19 inventions. Aucun nouveau blocage de princ
 identifié. Santé toujours favorable à une poursuite ciblée, sans garantie sur
 quelques dizaines de lots tant que flux utile, longueur et membrane ne sont
 pas démontrés ensemble. Réévaluer après C3B, avant d'élargir les fonctions.
+
+## Réévaluation après le lot 7 — audit d'intégration
+
+Le graphe détaillé met désormais un coût et un test sur chaque dépendance :
+3 gènes/3 synthétases obligatoires N/A/L,16 espèces cibles et environ2 406 billes
+pour l'hypothèse nominale. Avec insertase,18 espèces et2 726 billes. Ces nombres
+ne prédisent ni longueur fonctionnelle ni vitesse ; les budgets12/24/48 unités
+par gène/outil bornent des hypothèses de travail, pas une incertitude statistique.
+
+**Risque majeur V8 : courbure préférée et capacité requise ne concordent pas.**
+Son rayon préféré1,53 (~12L) est bien inférieur au rayon nominal34,4 (~219L).
+Il faut tester une géométrie plus souple/moins courbée ou son soutien par le
+contenu ; le calcul ne prouve pas qu'un grand anneau contraint soit instable.
+Ajouter des molécules ne démontre pas sa stabilité. Une frontière préparée est
+permise : tester stabilité, insertion depuis dedans, refermeture et fuite à la
+taille calculée. Une insertase éventuelle exige son propre gène et sa régénération.
+
+**Risque biochimique central explicité : sélectivité plutôt que simple activité.**
+EN et EA doivent créer des composés de même matière mais d'états différents,
+sans enzymes primitives par fonction. Aucun mécanisme testé ne démontre encore
+cette petite bibliothèque. La voie concrète consiste à des ports/états et
+conformations locaux réutilisables, à évaluer dès C3B/I0. La compétition multigène,
+les fragments et les produits parasites doivent être ajoutés aux essais sous
+lois figées. À taille plus grande, l'import par surface peut aussi limiter la
+demande volumique ; les taux manquent pour conclure.
+
+Le lot apporte un cahier des charges plus réfutable et un audit à10 défauts,
+aucun progrès dynamique supplémentaire. Les deux verrous majeurs ci-dessus sont
+des insuffisances des candidats actuels, sans impossibilité de principe prouvée.
+Le volume global reste non estimable de façon fiable : pas de promesse de quelques
+dizaines de corrections. Horizon rapproché : I0/C3B et M1/I2–I4, puis I1/T9.
+Si ces essais n'apportent ni transfert ni diagnostic nouveau après deux
+interventions de conception, revoir les ports/la courbure avant de continuer.

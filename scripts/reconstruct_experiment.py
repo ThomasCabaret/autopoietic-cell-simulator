@@ -95,6 +95,13 @@ def worker(folder):
             if getattr(observer,'pairing_frames',[]): extra['pairing']=np.array(observer.pairing_frames)
         np.savez_compressed(folder/'trajectory.npz',positions=np.array(observer.frames),
                             times=np.array(observer.times),edges=np.array(observer.edges_frames),**extra)
+    elif recipe['kind']=='cell_design_audit':
+        config=(folder/'config.json').read_bytes()
+        if hashlib.sha256(config).hexdigest()!=recipe['config_sha256']:
+            raise ValueError('Cell-design configuration checksum differs')
+        audit=load_module('archived_cell_design',folder/'audit_cell_design.py')
+        result=audit.assess(json.loads(config))
+        (folder/'result.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
     else:
         audit=load_module('archived_audit',folder/'audit_causal_network.py')
         audit.ROOT=folder

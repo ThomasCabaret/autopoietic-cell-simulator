@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "id": "C0B_three_synthases_v1",
+  "scope": "Conditional cell specification, never a reaction lookup table for particle dynamics",
+  "primitive_material_kinds": ["X", "Y", "Z", "carrier"],
+  "chemical_states": {"carrier": ["E", "W"], "compound_bonds": ["N", "A", "L"], "lipid_end_states": ["head", "tail"]},
+  "food": ["X", "Y", "Z", "E"],
+  "imports": ["X", "Y", "Z", "E"],
+  "exports": ["W"],
+  "allowed_food": ["X", "Y", "Z", "E"],
+  "masses_XYZ_carrier": {
+    "X": [1, 0, 0, 0], "Y": [0, 1, 0, 0], "Z": [0, 0, 1, 0],
+    "E": [0, 0, 0, 1], "W": [0, 0, 0, 1],
+    "N0": [1, 1, 0, 0], "N1": [1, 0, 1, 0],
+    "A0": [1, 1, 0, 0], "A1": [1, 0, 1, 0], "L": [2, 0, 0, 0]
+  },
+  "monomer_families": {"genetic": ["N0", "N1"], "functional": ["A0", "A1"]},
+  "roles": [
+    {"id": "N", "gene": "gN", "tool": "EN", "products": ["N0", "N1"], "status": "hypothesis"},
+    {"id": "A", "gene": "gA", "tool": "EA", "products": ["A0", "A1"], "status": "hypothesis"},
+    {"id": "L", "gene": "gL", "tool": "EL", "products": ["L"], "status": "hypothesis"}
+  ],
+  "sequence_status": "Unassigned; balanced bit counts below are budget assumptions, not functional sequences",
+  "polymerization_energy_per_bond": 1,
+  "assembly_energy_per_dimer": 1,
+  "insertion": {"enabled": true, "mode": "passive_local_exchange", "status": "hypothesis", "tool": null, "energy_per_lipid": 0},
+  "sizing": {
+    "effective_bead_diameter": 0.7,
+    "membrane_margin": 2.0,
+    "lipid_thickness": 0.65,
+    "outer_pitch": 1.0,
+    "current_inner_pitch": 0.65,
+    "cases": [
+      {"id": "small", "length": 12, "gene_copies": 1, "tool_copies": 2, "free_N": 48, "free_A": 96, "free_L": 12, "raw_food_inside": 32, "fuel_inside": 48, "waste_cap": 32, "outside_halo": 128, "area_fraction": 0.25},
+      {"id": "nominal", "length": 24, "gene_copies": 2, "tool_copies": 4, "free_N": 96, "free_A": 192, "free_L": 24, "raw_food_inside": 64, "fuel_inside": 96, "waste_cap": 64, "outside_halo": 256, "area_fraction": 0.20},
+      {"id": "larger", "length": 48, "gene_copies": 3, "tool_copies": 8, "free_N": 192, "free_A": 384, "free_L": 48, "raw_food_inside": 128, "fuel_inside": 192, "waste_cap": 128, "outside_halo": 512, "area_fraction": 0.12}
+    ]
+  },
+  "interaction_classes": ["food", "E_W", "N", "A", "L", "genes", "EN", "EA", "EL", "boundary"],
+  "contact_contracts": [
+    {"pair": ["food", "EN"], "mode": "catalytic", "require": "X with Y/Z, fuel, local active geometry; output N only", "risk": "EA substrate competition, wrong bond state"},
+    {"pair": ["food", "EA"], "mode": "catalytic", "require": "X with Y/Z, fuel, local active geometry; output A only", "risk": "EN substrate competition, wrong bond state"},
+    {"pair": ["food", "EL"], "mode": "catalytic", "require": "two X, fuel, local active geometry; output polarized L", "risk": "nonspecific food glue, lipid coating"},
+    {"pair": ["E_W", "EN"], "mode": "catalytic", "require": "E consumed, W released and nonbinding", "risk": "spent carrier inhibits sites"},
+    {"pair": ["E_W", "EA"], "mode": "catalytic", "require": "E consumed, W released and nonbinding", "risk": "spent carrier inhibits sites"},
+    {"pair": ["E_W", "EL"], "mode": "catalytic", "require": "E consumed, W released and nonbinding", "risk": "spent carrier inhibits sites"},
+    {"pair": ["N", "genes"], "mode": "template", "require": "matching symbol, local alignment and occupancy; release", "risk": "cross-gene capture and fragments"},
+    {"pair": ["A", "genes"], "mode": "template", "require": "matching symbol, same-family neighboring product and release", "risk": "competes with N; tool synthesis stalls"},
+    {"pair": ["N", "N"], "mode": "conditional", "require": "ligation only in a locally templated motif; background bounded", "risk": "random polymers and irreversible resource traps"},
+    {"pair": ["A", "A"], "mode": "conditional", "require": "ligation only in a locally templated motif; folding after release", "risk": "random proteins, aggregation"},
+    {"pair": ["L", "L"], "mode": "conditional", "require": "compatible lateral faces, reversible exchange", "risk": "internal micelles and tiny vesicles"},
+    {"pair": ["L", "boundary"], "mode": "insertion", "require": "internal arrival, local opening/exchange, capture and resealing", "risk": "saturated ring excludes lipid or leaks"},
+    {"pair": ["food", "boundary"], "mode": "passage", "require": "local permeation without adsorption", "risk": "nutrient exclusion or membrane dissolution"},
+    {"pair": ["E_W", "boundary"], "mode": "passage", "require": "E entry and W exit down maintained external conditions", "risk": "waste accumulation, no maintained energy flux"},
+    {"pair": ["N", "boundary"], "mode": "retain", "require": "low permeation, no adhesion", "risk": "loss of assembled nucleotide reservoir"},
+    {"pair": ["A", "boundary"], "mode": "retain", "require": "low permeation, no adhesion", "risk": "loss of amino-acid reservoir"},
+    {"pair": ["genes", "boundary"], "mode": "retain", "require": "no crossing and no persistent adsorption", "risk": "genome loss or immobilization"},
+    {"pair": ["EN", "boundary"], "mode": "retain", "require": "no crossing and no persistent adsorption", "risk": "enzyme coating"},
+    {"pair": ["EA", "boundary"], "mode": "retain", "require": "no crossing and no persistent adsorption", "risk": "enzyme coating"},
+    {"pair": ["EL", "boundary"], "mode": "retain", "require": "retain tool, release L, avoid permanent anchor", "risk": "catalyst sequestered by its own product"}
+  ],
+  "default_contact": "No designed chemical affinity; mechanical collisions may occur. This is a target contract, not validated orthogonality.",
+  "variants": [
+    {"id": "three_roles", "extra_roles": [], "description": "external activated energy; passive lipid insertion"},
+    {"id": "with_insertase", "extra_roles": ["I"], "description": "gene gI and protein EI insert L; requires membrane-local operation"},
+    {"id": "with_activation", "extra_roles": ["Q"], "description": "gene gQ and protein EQ recharge carrier using external energy"},
+    {"id": "both", "extra_roles": ["I", "Q"], "description": "both extra functions must also be expressed and renewed"}
+  ]
+}

@@ -34,6 +34,11 @@ processus isolé. Il ne remplace pas les données historiques locales. Selon le
 type d'expérience, il régénère métriques, trajectoire et éventuellement checkpoint.
 L'audit abstrait recrée ses résultats dans un sous-dossier de cette sortie.
 
+Le lot7 utilise le type `cell_design_audit`, avec `config.json`, source exacte et
+empreintes du code **et de la configuration**. Le même reconstructeur régénère
+son `result.json` dans la sortie choisie ; aucune dynamique moléculaire n'est
+effectuée. Voir `research/BATCH_07_RECIPES.json` et `experiments/audit_cell_design.py`.
+
 La graine et le code identiques ne promettent pas une identité numérique entre
 versions différentes de bibliothèques ou matériels. Les références numériques
 connues sont dans la recette et l'environnement fixé dans `requirements.txt`.

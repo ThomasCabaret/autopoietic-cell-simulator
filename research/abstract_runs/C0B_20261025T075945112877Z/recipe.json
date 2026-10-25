@@ -1,0 +1,9 @@
+{
+  "recipe_version": 1,
+  "kind": "cell_design_audit",
+  "source_sha256": {
+    "audit_cell_design.py": "cdfe8d1d74c6dce28e373b37899751690a431f4040d977a2a9ad5bd97674f87a"
+  },
+  "config_sha256": "51e01e8dac0ef8247ab97007df84e7cec8128a876319497a1b9e2c1ff5be3d8e",
+  "command": "python audit_cell_design.py --spec config.json --output <new-folder>"
+}

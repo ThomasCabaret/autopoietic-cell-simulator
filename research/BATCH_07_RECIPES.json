@@ -1,0 +1,6 @@
+{
+  "batch": 7,
+  "kind": "conditional_architecture_audit_not_molecular_dynamics",
+  "recipes": ["research/abstract_runs/C0B_20261025T075945112877Z/recipe.json"],
+  "policy": "Archive inputs, exact code and recipe; full audit outputs remain local"
+}

@@ -465,6 +465,52 @@
       "counterexample": "Tool only sequesters food, or apparent function requires conversion, per-function laws or high spontaneous background",
       "missing_proof": "Transfer from C2D capture to the dynamic rung material graph and useful net flux",
       "health_gate": "Reevaluate after two conceptual attempts without new transfer or diagnostic; T9 and M0 remain downstream risks"
+    },
+    {
+      "id": "C0B",
+      "parent": "C0",
+      "related": ["C3A", "C3B", "M0", "T9"],
+      "hypothesis": "Three sequence-derived N/A/L synthases and three fragmented genes may form a renewable network with external activated fuel and locally exchangeable membrane",
+      "status": "conditional_design_audit_passes_not_molecular_evidence",
+      "evidence": "research/BATCH_07_RECIPES.json",
+      "test": "AND dependencies, material balance, renewable catalysts, insertion and import/export; inventory-based sizing and negative defects",
+      "conclusion": "16 target species, nominal2406 beads including219 membrane lipids; ten defects detected, six software tests. Existing V8 preferred radius1.53 differs from required34.4",
+      "cost": "Four primitive material kinds, N/A/L bond modes and local polarity/energy/ports assumed; optional insertase adds gene/tool and nominal320 beads",
+      "counterexample": "A closed reachability graph may still have no selective catalysts, inadequate import, saturated membrane, parasitic products or genetic extinction",
+      "missing_proof": "Functional sequences, common constructible XYZ chemistry, multigene compatibility, large boundary stability/insertion and sustained useful flux"
+    },
+    {
+      "id": "I0",
+      "parent": "C3B",
+      "related": ["C0B"],
+      "status": "proposed_not_tested",
+      "priority": "P0",
+      "hypothesis": "Different assemblies under fixed local laws can selectively make different usable bond states from shared food",
+      "test": "Prepared then expressed tools, N versus A products of equal mass, actual incorporation, no-tool and foreign-species/crowding controls",
+      "counterexample": "Selectivity is encoded as whole-enzyme identity, products cannot transfer, or parasites consume the useful flux",
+      "missing_proof": "Even a two-function transferable selective library remains unproved"
+    },
+    {
+      "id": "M1",
+      "parent": "M0",
+      "related": ["V8", "C0B"],
+      "status": "geometric_mismatch_identified_dynamics_not_tested",
+      "priority": "P0",
+      "hypothesis": "A constructed low/soft-curvature boundary can contain the full target inventory and exchange lipids locally without harmful leaks",
+      "test": "Prepared large boundary then actual L arrival from inside, insertion, resealing, retention and state-dependent feed passage under common local laws",
+      "counterexample": "Tiny-vesicle preference, port saturation, internal micelles or exchange leaks defeat the target despite topological closure",
+      "missing_proof": "No stable large loaded membrane, internal insertion or integrated transport measured; insertase would require its own gene and renewal"
+    },
+    {
+      "id": "I1",
+      "parent": "E3",
+      "related": ["C0B", "T9"],
+      "status": "proposed_not_tested",
+      "priority": "P0",
+      "hypothesis": "Several genes and both monomer families can coexist without gene monopolization, chimeras or irreversible fragment traps",
+      "test": "Three templates plus each foreign class at fixed laws, density-matched controls, useful per-gene flux and ancestry, wrong sequence and extinction counts",
+      "counterexample": "Short single-gene results do not scale to a multi-role genome or longer functional polymers",
+      "missing_proof": "Current mixed six-symbol result already unresolved; nominal length24 is a sizing assumption only"
     }
   ]
 }

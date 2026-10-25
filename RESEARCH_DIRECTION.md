@@ -4,7 +4,7 @@ Outil de travail actuel : [simulateur et lancement des démonstrateurs](README.m
 [architecture du moteur partagé](SIMULATOR_ARCHITECTURE.md),
 [validation de migration](research/ENGINE_MIGRATION.md).
 
-État courant : [maturité](research/MATURITY.md), [bilan du lot 6](research/BATCH_06.md),
+État courant : [maturité](research/MATURITY.md), [bilan du lot 7](research/BATCH_07.md),
 [priorités et décisions](research/PRIORITIES.md),
 [architectures de fermeture conditionnelle](research/CELL_ARCHITECTURE.md).
 
@@ -27,6 +27,9 @@ priorise désormais la constructibilité des composants, puis fragments et trans
 Le lot6 construit des dimères depuis P/R libres puis les incorpore dans G et F.
 La formation reste spontanée ; l'activité des outils n'est pas encore portée
 sur ces précurseurs. Le transfert catalytique C3B est la prochaine décision.
+Le lot7 chiffre le graphe à3 gènes/3 synthétases et son budget conditionnel,
+avec contrats d'interaction, insertion et transport. La courbure V8 ne correspond
+pas à la taille visée ; sélectivité et grande frontière deviennent des tests P0.
 Les propositions et criblages ci-dessous conservent le cadrage historique ;
 les preuves actuelles et priorités sont dans les documents liés ci-dessus.
 

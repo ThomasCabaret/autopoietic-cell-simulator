@@ -25,6 +25,10 @@
 - At research handoff assess project health, future blockers and design effort
   in `research/PROJECT_HEALTH.md`. Distinguish automatic trials from conceptual
   changes; set decisive milestones and revisit a candidate that stops converging.
+- Keep the causal architecture, interaction/noninteraction contracts and particle
+  budget current. Include imports, waste, membrane insertion, every added tool's
+  gene and renewal, off-target reactions and mixed-environment controls. A closed
+  dependency graph is a conditional specification, not evidence of viability.
 - Run checks appropriate to the change. At batch handoff give a very brief,
   honest maturity assessment, distinguishing separate models from common chemistry.
 - The user authorizes useful local commits at the end of a batch. Review staged

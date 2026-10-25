@@ -43,6 +43,8 @@ et le code nécessaires pour les [reconstruire](research/REPRODUCTION.md).
 - [Lot 4 : expression puis opération répétée par les F composites](research/BATCH_04.md)
 - [Lot 5 : copie, traduction et opération dans un même bain](research/BATCH_05.md)
 - [Lot 6 : composants construits puis incorporés](research/BATCH_06.md)
+- [Architecture intégrée : dépendances, interactions et budget de cellule](research/CELL_ARCHITECTURE.md)
+- [Lot 7 : audit du réseau, risques et dimensionnement](research/BATCH_07.md)
 - [Santé du projet, risques et horizon de décision](research/PROJECT_HEALTH.md)
 - [Maturité et fonctions encore manquantes](research/MATURITY.md)
 - [Méthode et contributions](CONTRIBUTING.md)
