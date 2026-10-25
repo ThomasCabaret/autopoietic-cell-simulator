@@ -1,4 +1,20 @@
-# Maturité — après le lot 7, 25 octobre 2026
+# Maturité — après le lot 8, 25 octobre 2026
+
+**Une boucle matérielle courte fonctionne sous une même chimie : G→F exprimé→
+dimères construits→incorporation.** Sur trois graines001, les F exprimés font
+34/40/24 opérations certifiées, dont3/13/7 produits incorporés. Copies G exactes
+entièrement issues de ces produits :1/2/0. F entièrement renouvelés ainsi :0/2/0.
+Les six monomères F initiaux sont préparés ; aucune chaîne F initiale. Renouvellement
+ponctuel, sans maintien sous pertes ni apport continu. Voir [lot8](BATCH_08.md).
+
+Le motif catalytique local ajoute une accélération explicite, avec captures
+saturées et libération par formation du lien. L'alphabet P_G/P_F/R0/R1 ne change
+pas ; le catalyseur est polyvalent. La voie XYZ/isomères du lot7 est un candidat,
+pas une exigence du projet. La membrane reste séparée ; aucune bibliothèque de
+fonctions, grande capacité génétique ou viabilité n'est démontrée. Prochain M1
+pour la frontière dimensionnée, puis choix d'alphabet/I0 et fragments/multigène.
+
+## État avant le lot8 : architecture conditionnelle
 
 **Lot7 : architecture et risques mieux définis, maturité moléculaire inchangée.**
 Le [graphe cible](CELL_ARCHITECTURE.md) contient3 synthétases et leurs3 gènes,

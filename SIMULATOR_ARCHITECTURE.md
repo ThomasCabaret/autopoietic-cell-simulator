@@ -152,3 +152,12 @@ indices du graphe. `rungs` et `unit_bits` sont échantillonnés avec la trajecto
 `atom_bits` reste immuable. Les préparés gardent le chemin de calcul et les RNG
 antérieurs. Le portage X/Y et des faces doubles est explicitement refusé tant
 qu'il n'est pas réalisé ; voir le lot6 pour les limites de compatibilité.
+
+## Captures de précurseurs et préparation explicite C3B1
+
+`precursors.py` ajoute forces compilées et captures saturées des vrais P/R au
+hook existant, sans autre boucle de simulation. `initial.py` décrit les groupes
+préparés ; ces métadonnées restent absentes des réactions. `precursor_binding`
+est enregistré avec les rungs pour montrer les liens sur les bonnes billes.
+Le comparateur de rejeu normalise les clés d'IDs après passage JSON. Les sources
+archivées restent inchangées ; le reconstructeur exécute leur version exacte.

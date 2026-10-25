@@ -45,6 +45,7 @@ et le code nécessaires pour les [reconstruire](research/REPRODUCTION.md).
 - [Lot 6 : composants construits puis incorporés](research/BATCH_06.md)
 - [Architecture intégrée : dépendances, interactions et budget de cellule](research/CELL_ARCHITECTURE.md)
 - [Lot 7 : audit du réseau, risques et dimensionnement](research/BATCH_07.md)
+- [Lot 8 : outil exprimé, fabrication de composants et copies](research/BATCH_08.md)
 - [Santé du projet, risques et horizon de décision](research/PROJECT_HEALTH.md)
 - [Maturité et fonctions encore manquantes](research/MATURITY.md)
 - [Méthode et contributions](CONTRIBUTING.md)

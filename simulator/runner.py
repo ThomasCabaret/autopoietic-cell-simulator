@@ -71,6 +71,7 @@ def save_result(path,sim,observer,elapsed,error=None):
         if getattr(observer,'rungs_frames',[]):
             extra.update(rungs=np.array(observer.rungs_frames),unit_bits=np.array(observer.unit_bits_frames),
                          atom_bits=np.array(observer.assembly_state['atom_bits']))
+        if getattr(observer,'precursor_binding_frames',[]):extra['precursor_binding']=np.array(observer.precursor_binding_frames)
         np.savez_compressed(path/'trajectory.npz',positions=np.array(observer.frames),
                             times=np.array(observer.times),edges=np.array(observer.edges_frames),**extra)
     checkpoint.save(path/'checkpoint.npz',sim,observer,source_manifest=archived)
@@ -115,7 +116,9 @@ def replay(path):
     sim.listeners.append(obs)
     while not sim.done:
         sim.advance(1000)
-    equal=json.dumps(obs.summary(),sort_keys=True)==json.dumps(evidence['metrics'],sort_keys=True)
+    # JSON converts integer atom-ID keys to strings. Compare normalized values,
+    # not serialization order (numeric 2,10 differs from string "10","2").
+    equal=json.loads(json.dumps(obs.summary()))==evidence['metrics']
     print(json.dumps({'all_metrics_reproduced':equal}))
     if not equal:
         raise AssertionError('Replay observations differ')

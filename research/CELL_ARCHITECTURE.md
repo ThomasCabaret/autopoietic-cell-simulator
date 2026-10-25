@@ -6,6 +6,34 @@
 [interactions et risques](CELL_INTERACTIONS.md), [tests futurs](INTEGRATION_TESTS.json),
 [bilan](BATCH_07.md). L'ancien schéma C0 est conservé plus bas comme historique.
 
+### Acquis complémentaire du lot8 et choix encore ouverts
+
+Le [lot8](BATCH_08.md) réalise un sous-réseau sous des lois communes :
+
+```mermaid
+flowchart LR
+  G[G001 construit puis copié] -->|expression| F[F001 exprimé]
+  P[P_G / P_F / R0 / R1 libres] --> D[Vrais dimères G/F]
+  F -->|motif local catalytique| D
+  D -->|copies complètes : 2 graines sur 3| G
+  D -->|F entièrement renouvelés : 1 graine sur 3| F
+```
+
+Six monomères F préparés amorcent les essais, sans chaîne F initiale. Les trois
+graines expriment un outil et incorporent ses produits. Les ressources sont
+spécialisées, la réaction utilise une accélération locale et un cycle externe.
+La membrane et le maintien sous pertes restent absents. Ce prototype contient
+102 billes et10 espèces cibles (4 précurseurs,4 dimères, G001 et F001), plus
+les fragments/complexes. Ce n'est pas un dimensionnement de cellule complète.
+
+Le schéma XYZ/isomères ci-dessous est une option de conception. L'utilisateur
+n'impose ni trois aliments primitifs ni une composition identique de N et A.
+Comparer à terme quatre précurseurs réutilisables et un assembleur polyvalent,
+avec une vraie voie L construite sous le même alphabet, à la variante C0B. Ne
+pas imposer une conversion XYZ inutile ; ne pas déclarer cet univers commun
+avant d'y fabriquer et renouveler une frontière. Le budget16 espèces/2406 billes
+reste celui des hypothèses C0B, pas une estimation révisée du candidat C3B1.
+
 La cellule est construite au départ, avec gènes, outils et membrane. Elle doit
 **renouveler** ces éléments depuis X/Y/Z et un porteur d'énergie activé E ; W
 est le même porteur déchargé. L'extérieur maintient des conditions riches en

@@ -5,6 +5,7 @@ from .physics import orientation_kernel
 from .substrates import Substrates
 from .dual_faces import react as dual_react,reflected_force
 from .assembly import RungAssembly
+from .initial import groups,place
 
 class CopyChemistry:
     def __init__(self, config, rng):
@@ -20,6 +21,11 @@ class CopyChemistry:
         families = np.array([config.get("seed_family", 0)] * length + [0] * extra + [1] * functional_count)
         capacities = np.where(bits == config.get("caps_symbol", -1), 1, 2)
         n = len(bits)
+        self.initial_groups=groups(config)
+        grouped={q for g in self.initial_groups for q in g['units']}
+        group_starts={g['units'][0]:g for g in self.initial_groups}
+        for g in self.initial_groups:bits[list(g['units'])]=[int(b) for b in g['sequence']]
+        capacities=np.where(bits==config.get('caps_symbol',-1),1,2)
         rungs = np.column_stack([np.arange(n), n + np.arange(n)])
         box = np.array(config.get("box", [10., 7.]))
         pos = np.empty((2 * n, 2))
@@ -27,6 +33,10 @@ class CopyChemistry:
         pos[:length, 1] = box[1] / 2 - .45
         pos[n:n + length] = pos[:length] + [0, .45]
         for i in range(length, n):
+            if i in group_starts:
+                place(group_starts[i],pos,n,box,rng,config.get('initial_min_separation',.60))
+                continue
+            if i in grouped:continue
             for attempt in range(20000):
                 candidate = rng.uniform([.6, .6], box - .6)
                 if np.min(np.linalg.norm(pos[:i] - candidate, axis=1)) > config.get("initial_min_separation", .60):
@@ -37,6 +47,8 @@ class CopyChemistry:
             angle = rng.uniform(0, 2 * np.pi)
             pos[n + i] = candidate + .45 * np.array([np.cos(angle), np.sin(angle)])
         edges = {(i, i + 1) for i in range(length - 1)} if config.get("template", True) else set()
+        for g in self.initial_groups:
+            if g['backbone']:edges.update(zip(g['units'][:-1],g['units'][1:]))
         pairing = np.full(n, -1, dtype=int)
         gate = config.get("activation", True)
         cycle = config.get("release", "cycle")
@@ -111,6 +123,8 @@ class CopyChemistry:
         candidates = candidates[bits[candidates[:, 0]] == bits[candidates[:, 1]]]
         rng.shuffle(candidates)
         for i, j in candidates:
+            if self.assembly is not None and self.assembly.catalyst is not None:
+                if self.assembly.catalyst.site_bound[i]>=0 or self.assembly.catalyst.site_bound[j]>=0:continue
             if self.food is not None and (self.food.site_bound[i]>=0 or self.food.site_bound[j]>=0):
                 continue
             if pairing[i] >= 0 or pairing[j] >= 0 or np.dot(nrm[i], nrm[j]) > -.5:
@@ -191,6 +205,9 @@ class CopyChemistry:
         if self.food is not None:
             events.extend(self.food.react(self,dt,neighbors))
             springs.extend(self.food.springs())
+        if self.assembly is not None and self.assembly.catalyst is not None:
+            self.assembly.catalyst.refresh(self)
+            springs.extend(self.assembly.catalyst.springs(self))
         self.springs = np.asarray(springs, dtype=float).reshape(-1,4)
         self.angles = np.asarray(angles, dtype=float).reshape(-1,5)
         if config.get('dual_faces',False):
@@ -204,6 +221,8 @@ class CopyChemistry:
             force+=orientation_kernel(self.pos,self.rungs,self.back_pairs)
             force+=reflected_force(self.pos,self.back_pairs,self.n)[0]
         if self.food is not None: force+=self.food.forces(self,neighbors)
+        if self.assembly is not None and self.assembly.catalyst is not None:
+            force+=self.assembly.catalyst.forces(self,neighbors)
         return force
 
     def observe(self, callback, time, events):
@@ -227,6 +246,8 @@ class CopyChemistry:
         if self.food is not None:
             bonds['backbone'] += [(2*self.n+a,2*self.n+b) for a,b in sorted(self.food.products)]
             bonds['pairing'] += [(self.n+i,2*self.n+int(f)) for i,f in enumerate(self.food.site_bound) if f>=0]
+        if self.assembly is not None and self.assembly.catalyst is not None:
+            bonds['pairing'] += [(int(self.rungs[i,1]),int(p)) for i,p in enumerate(self.assembly.catalyst.site_bound) if p>=0]
         return bonds
 
     def colors(self):

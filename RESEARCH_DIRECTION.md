@@ -4,7 +4,7 @@ Outil de travail actuel : [simulateur et lancement des démonstrateurs](README.m
 [architecture du moteur partagé](SIMULATOR_ARCHITECTURE.md),
 [validation de migration](research/ENGINE_MIGRATION.md).
 
-État courant : [maturité](research/MATURITY.md), [bilan du lot 7](research/BATCH_07.md),
+État courant : [maturité](research/MATURITY.md), [bilan du lot 8](research/BATCH_08.md),
 [priorités et décisions](research/PRIORITIES.md),
 [architectures de fermeture conditionnelle](research/CELL_ARCHITECTURE.md).
 
@@ -30,6 +30,11 @@ sur ces précurseurs. Le transfert catalytique C3B est la prochaine décision.
 Le lot7 chiffre le graphe à3 gènes/3 synthétases et son budget conditionnel,
 avec contrats d'interaction, insertion et transport. La courbure V8 ne correspond
 pas à la taille visée ; sélectivité et grande frontière deviennent des tests P0.
+Le lot8 réalise G→F exprimé→dimères→incorporation sur trois graines, avec copies
+G complètes issues des produits sur deux et renouvellement ponctuel de F sur une.
+Les ressources P/R sont spécialisées et le taux catalytique est une aide explicite.
+XYZ/isomères est une hypothèse, pas une contrainte : comparer les alphabets
+réutilisables et réduire maintenant le risque aval de grande frontière M1.
 Les propositions et criblages ci-dessous conservent le cadrage historique ;
 les preuves actuelles et priorités sont dans les documents liés ci-dessus.
 

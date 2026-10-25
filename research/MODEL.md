@@ -281,3 +281,22 @@ F revendiquée. `assembled_stock` ne change que l'état initial. X/Y et les face
 doubles sont explicitement non transférés ; les combinaisons correspondantes
 sont rejetées. Preuve C3A ≠ activité C2D sous un univers déjà unifié. Les rungs,
 symboles de supports et types atomiques sont exportés pour observation/reprise.
+
+## C3B1 — capture des vrais précurseurs et accélération locale (lot8)
+
+`precursors.py` capture sur F0 un P libre, sur F1 un R libre, avec saturation
+et exclusion des sites génétiques occupés. Les états de lien rendent les produits
+inaccessibles à cette capture. Une arête directe entre les deux F capturants
+accélère P–R (rayon0,58, taux20 contre fond0,0001). Six billes maximum dans le
+motif ; aucune identité de chaîne ni séquence globale dans la dynamique.
+
+Le transfert est mesuré après expression et après incorporation réelle. Un
+produit n'est pas déclaré actif en changeant son nom ; le rung et ses billes
+participent aux ressorts et ligations existants. La nouvelle accélération est
+une aide explicite : capture seule ne suffit pas dans l'ablation testée. Les
+primitives P_G/P_F/R0/R1 restent fournies, avec précurseurs activés et cycle externe.
+
+`initial.py` prépare les groupes déclarés et leurs liaisons initiales, sans
+ajouter de scheduler. L'observateur exclut les outils déjà préparés et n'attribue
+une opération à un F exprimé que si sa chaîne était certifiée complète détachée
+avant l'événement. Ces notions restent indisponibles aux règles chimiques.

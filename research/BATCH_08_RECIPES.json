@@ -1,0 +1,25 @@
+{
+  "batch": 8,
+  "recipes": [
+    "research/engine_runs/C3Bbare_s0_20261025T094719044115Z/recipe.json",
+    "research/engine_runs/C3Bexpress_s0_20261025T094443074138Z/recipe.json",
+    "research/engine_runs/C3Bexpress_s1_20261025T094654876859Z/recipe.json",
+    "research/engine_runs/C3Bexpress_s2_20261025T094924255118Z/recipe.json",
+    "research/engine_runs/C3BnoBoost_s0_20261025T095601781779Z/recipe.json",
+    "research/engine_runs/C3Bnogene_s0_20261025T094817322371Z/recipe.json",
+    "research/engine_runs/C3Bnone_s0_20261025T094443049137Z/recipe.json",
+    "research/engine_runs/C3Bnone_s1_20261025T094536074946Z/recipe.json",
+    "research/engine_runs/C3Bnone_s2_20261025T094625782875Z/recipe.json",
+    "research/engine_runs/C3Bprepared_s0_20261025T094032490828Z/recipe.json",
+    "research/engine_runs/C3Bprepared_s0_20261025T094443009138Z/recipe.json",
+    "research/engine_runs/C3Bprepared_s1_20261025T094540357911Z/recipe.json",
+    "research/engine_runs/C3Bprepared_s2_20261025T094634574039Z/recipe.json",
+    "research/engine_runs/C3BregAssembly_s0_20261025T094648292238Z/recipe.json",
+    "research/engine_runs/C3BregE3_s0_20261025T094724124058Z/recipe.json",
+    "research/engine_runs/C3Bunlinked_s0_20261025T094736109455Z/recipe.json",
+    "research/engine_runs/C3Bunlinked_s1_20261025T094834316971Z/recipe.json",
+    "research/engine_runs/C3Bunlinked_s2_20261025T094936100643Z/recipe.json",
+    "research/engine_runs/C3BunlinkedNoLigation_s0_20261025T095502787264Z/recipe.json"
+  ],
+  "policy": "Inputs and exact sources only"
+}

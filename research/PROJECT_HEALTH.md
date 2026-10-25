@@ -160,3 +160,38 @@ Le volume global reste non estimable de façon fiable : pas de promesse de quelq
 dizaines de corrections. Horizon rapproché : I0/C3B et M1/I2–I4, puis I1/T9.
 Si ces essais n'apportent ni transfert ni diagnostic nouveau après deux
 interventions de conception, revoir les ports/la courbure avant de continuer.
+
+## Réévaluation après le lot8
+
+Un risque matériel réel diminue : un F exprimé fabrique des dimères utilisables,
+avec incorporation sur trois graines et copie G complète issue de ces produits
+sur deux. Une graine renouvelle aussi deux F complets. Le contrôle sans outil
+reste presque sans produit, la capture sans accélération n'en donne aucun dans
+l'essai testé. Une fonction utile est donc transférée sous des lois communes,
+avec un helper nouveau déclaré plutôt qu'une cascade de changements par graine.
+
+Le résultat reste court et finit avec des stocks fabriqués mais non incorporés.
+La graine2 n'achève pas G malgré beaucoup de composants. Concurrence, fragments,
+longueur et remplacement durable restent ouverts ; ni pertes ni alimentation
+continue ni membrane n'ont été intégrées. La forte activité n'établit pas une
+bibliothèque expressive. Les taux d'énergie ne sont pas calibrés : précurseurs
+activés, cycle externe et accélération locale sont encore fournis.
+
+Le schéma XYZ avec monomères N/A isomasses était une hypothèse du lot7, non une
+contrainte utilisateur. L'assembleur observé est polyvalent depuis quatre
+précurseurs. Comparer ce coût à celui de XYZ au lieu de considérer l'écart comme
+une impossibilité artificielle ; aucun des deux n'a encore la production L et
+les interactions de membrane sous les mêmes lois. Garder les comptes16/2406
+comme budget du candidat C0B, pas comme taille finale promise du candidat C3B1.
+
+Prochain test décisif M1 : grande frontière préparée, échange/insertion et fuite,
+avant d'accumuler une nouvelle fonction chimique. I0/choix d'alphabet puis T9/I1
+restent les autres risques. Aucun nouveau blocage de principe identifié ; le
+transfert obtenu justifie une poursuite ciblée, sans estimation fiable du nombre
+de lots restants. Une intervention de mécanisme et19 calculs, pas19 inventions.
+
+Risque logiciel à traiter avant les grands bains : l'observateur stocke un graphe
+dense par image. Pour1000 supports et2400 images, cela représente environ2,4Go
+de matrices uint8 avant autres états. Stocker des arêtes parcimonieuses ou
+désactiver les trajectoires en campagne évite cette dette sans changer les lois.
+Les latences des petits runs concurrents ne sont pas un benchmark à2400 billes.

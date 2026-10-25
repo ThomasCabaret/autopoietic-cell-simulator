@@ -459,12 +459,14 @@
       "parent": "C3A",
       "related": ["C2D"],
       "hypothesis": "Reusing local substrate capture on actual P/R precursors can let an expressed F manufacture a component that is then incorporated",
-      "status": "proposed_not_tested",
+      "status": "expressed_tool_component_transfer_three_seeds_short_G_two_seeds",
       "priority": "P0",
       "test": "Low spontaneous assembly; prepared then expressed tool; no-tool/no-capture controls; conserve bead IDs through release and incorporation under fixed laws",
       "counterexample": "Tool only sequesters food, or apparent function requires conversion, per-function laws or high spontaneous background",
-      "missing_proof": "Transfer from C2D capture to the dynamic rung material graph and useful net flux",
-      "health_gate": "Reevaluate after two conceptual attempts without new transfer or diagnostic; T9 and M0 remain downstream risks"
+      "missing_proof": "Membrane/common alphabet, diverse functions, longer genes and sustained replacement remain open",
+      "health_gate": "C3B1 transfer succeeds; next M1 to reduce downstream boundary risk before more capture tuning",
+      "evidence": "research/BATCH_08_RECIPES.json",
+      "conclusion": "Expressed F tools make34/40/24 certified dimers and incorporate3/13/7. G entirely from those products1/2/0, F0/2/0"
     },
     {
       "id": "C0B",
@@ -511,6 +513,29 @@
       "test": "Three templates plus each foreign class at fixed laws, density-matched controls, useful per-gene flux and ancestry, wrong sequence and extinction counts",
       "counterexample": "Short single-gene results do not scale to a multi-role genome or longer functional polymers",
       "missing_proof": "Current mixed six-symbol result already unresolved; nominal length24 is a sizing assumption only"
+    },
+    {
+      "id": "C3B1",
+      "parent": "C3B",
+      "related": ["C2D", "C3A", "E3C"],
+      "status": "material_loop_short_sequence_partial_renewal",
+      "evidence": "research/BATCH_08_RECIPES.json",
+      "hypothesis": "A bounded pair of adjoining composite F sites can capture actual P/R precursors, accelerate their bond, release product and feed existing copying/expression",
+      "test": "Prepared tool three seeds; no chain initially with six prepared F monomers three seeds; no-tool/unlinked/no-capture/no-boost/no-gene controls; raw-ID transfer and exact-source local trace",
+      "conclusion": "Prepared dimers22/24/23 feed G3/3/5. Expressed tools34/40/24 certified operations feed3/13/7 incorporations; G fully from expressed-tool products1/2/0 and F0/2/0. Unlinked seed2 reconstructs tool by expression",
+      "cost": "No new elemental kind; saturated F0-P/F1-R capture and explicit direct-edge rate boost20 versus0.0001. Six-atom motif, C2D activation/release reused, activated specialized precursors and external cycle",
+      "counterexample": "No boost gives no product despite capture in seed0. High component production does not guarantee full copies: expression seed2 still fails G",
+      "missing_proof": "No common membrane, long genetic capacity, stress-tolerant maintenance or broad functional library; four-feed polyvalence is not the hypothetical XYZ isomer route"
+    },
+    {
+      "id": "C0C",
+      "parent": "C0B",
+      "related": ["C3B1", "M1", "I0"],
+      "status": "architecture_option_to_compare_not_closed_cell_proof",
+      "hypothesis": "Four reusable precursor kinds and a polyvalent G/F assembler may be simpler than forcing XYZ and distinct N/A isomer synthases",
+      "test": "Map actual membrane material and its construction into the same alphabet, count ports/states/foods/genes and compare useful flux plus off-targets; do not replace the C0B budget silently",
+      "counterexample": "The membrane requires extra primitive biological types or tools that erase the apparent simplification",
+      "missing_proof": "No lipid construction and renewal under the P/R laws; C0B16-species budget remains only that candidate's assumption"
     }
   ]
 }

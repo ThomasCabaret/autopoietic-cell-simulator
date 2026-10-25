@@ -1,6 +1,11 @@
 {
   "schema_version": 1,
   "scope": "Prospective molecular tests, not executable engine scenarios or achieved results",
+  "observed_subset": {
+    "batch8": "One shared P/R assembler: expression to component incorporation three seeds, full short G two seeds, full F renewal one seed",
+    "limitation": "No membrane, long multigene capacity, stress sweep, calibrated energy or sustained replacement; XYZ isomer selectivity remains an optional design path",
+    "control_caution": "Initially unlinked F can be expressed into an active tool; test subsequent state changes rather than assuming permanent noninteraction"
+  },
   "campaign_contract": {
     "freeze": "One alphabet, bond states, interactions, rates and external energy schedule per candidate",
     "initial_state": "Constructed membrane, genes and tools allowed; track newly produced material separately",

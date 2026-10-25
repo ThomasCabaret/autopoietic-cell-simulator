@@ -1,5 +1,6 @@
 """Analysis only: graph census and lineage are unavailable to the chemistry."""
 import numpy as np
+from .initial import groups
 
 def components(n, edges):
     adj = [[] for _ in range(n)]
@@ -55,6 +56,9 @@ class CopyObserver:
     def __init__(self, config):
         self.target = config.get("sequence", "001011")
         self.initial_count = len(self.target)
+        self.initial_groups=groups(config) if config.get('initial_assemblies') else []
+        self.initial_material=set(range(self.initial_count))
+        self.initial_material.update(q for g in self.initial_groups if g['backbone'] and len(g['units'])>1 for q in g['units'])
         self.complete, self.detached = set(), set()
         self.history, self.frames, self.times, self.edges_frames = [], [], [], []
         self.pairing_frames = []
@@ -72,6 +76,8 @@ class CopyObserver:
         self.joint_detached_ever=False;self.joint_tool_events=0
         self.rungs_frames=[];self.unit_bits_frames=[];self.assembly_state=None
         self.assembly_incorporated={}
+        self.assembly_seen=0;self.assembly_prior_tools={};self.assembly_catalytic_events=[]
+        self.precursor_binding_frames=[]
 
     def observe_assembly(self,c,time):
         formed={e['support'] for e in c.assembly.events}
@@ -80,8 +86,29 @@ class CopyObserver:
                 if q in formed:self.assembly_incorporated.setdefault(q,float(time))
         self.assembly_state=dict(events=list(c.assembly.events),rungs=c.rungs.tolist(),
             atom_bits=c.assembly.atom_bits.tolist(),initial_supports=sorted(c.assembly.initial_supports))
+        if c.assembly.catalyst is not None:
+            for e in c.assembly.events[self.assembly_seen:]:
+                support=e['catalytic_support'];key=None;kind=None
+                if e['catalyzed']:
+                    matches=[(k,v) for k,v in self.assembly_prior_tools.items() if set(support)<=set(k)]
+                    if len(matches)==1:key,kind=matches[0]
+                self.assembly_catalytic_events.append(dict(e,chain=list(key) if key else None,chain_kind=kind))
+            self.assembly_seen=len(c.assembly.events)
+            self.assembly_state['catalytic_events']=list(self.assembly_catalytic_events)
+            prepared={tuple(g['units']) for g in self.initial_groups if g['family']==1 and g['backbone']}
+            if c.config['seed_family']==1 and c.config['template']:prepared.add(tuple(range(self.initial_count)))
+            tools={}
+            for comp,order,cycle in components(c.n,c.edges):
+                if len(comp)<2 or cycle or not all(c.families[q]==1 and c.pairing[q]<0 for q in comp):continue
+                key=tuple(sorted(comp))
+                if key in prepared:tools[key]='prepared';continue
+                if key not in self.translated:continue
+                parents=[self.edge_parent.get(tuple(sorted((order[q],order[q+1])))) for q in range(len(order)-1)]
+                if parents and parents[0] is not None and all(p==parents[0] for p in parents):tools[key]='expressed'
+            self.assembly_prior_tools=tools
         if self.times and self.times[-1]==time and getattr(self,'record_trajectory',True):
             self.rungs_frames.append(c.rungs.copy());self.unit_bits_frames.append(c.bits.copy())
+            if c.assembly.catalyst is not None:self.precursor_binding_frames.append(c.assembly.catalyst.site_bound.copy())
         if self.history and self.history[-1]['time']==time:
             self.history[-1].update(assembled_dimers=len(formed),incorporated_constructed=len(self.assembly_incorporated))
 
@@ -112,11 +139,11 @@ class CopyObserver:
             if order and len(order) > 1 and all(families[i] == 1 for i in comp):
                 p = pos[order]
                 self.last_shapes.append({"sequence": "".join(str(int(bits[i])) for i in order),
-                                         "contains_initial_material": any(i < self.initial_count for i in comp),
+                                         "contains_initial_material": any(i in self.initial_material for i in comp),
                                          "units": len(comp),
                                          "end_to_end": float(np.linalg.norm(p[-1] - p[0])),
                                          "radius_of_gyration": float(np.sqrt(np.mean(np.sum((p - p.mean(axis=0)) ** 2, axis=1))))})
-            if not order or cycle or any(i < self.initial_count for i in comp):
+            if not order or cycle or any(i in self.initial_material for i in comp):
                 continue
             text = "".join(str(int(bits[i])) for i in order)
             if not all(families[i] == families[order[0]] for i in comp):
@@ -229,6 +256,20 @@ class CopyObserver:
                 constructed_detached_F=sum(set(key)<=made for key in self.translated_detached),
                 assembly_incorporation_times=self.assembly_incorporated,
                 assembly_state=self.assembly_state)
+            if 'catalytic_events' in self.assembly_state:
+                cat={e['support'] for e in self.assembly_catalytic_events if e['catalyzed']}
+                expressed={e['support'] for e in self.assembly_catalytic_events if e['chain_kind']=='expressed'}
+                counts={}
+                for e in self.assembly_catalytic_events:
+                    if e['chain_kind'] is not None:
+                        k=(e['chain_kind'],tuple(e['chain']));counts[k]=counts.get(k,0)+1
+                metrics.update(catalyzed_dimers=len(cat),catalyzed_incorporated=len(cat & set(self.assembly_incorporated)),
+                    expressed_catalyzed_dimers=len(expressed),
+                    expressed_catalyzed_incorporated=len(expressed & set(self.assembly_incorporated)),
+                    max_turnovers_per_expressed_tool=max((v for (kind,k),v in counts.items() if kind=='expressed'),default=0),
+                    max_turnovers_per_prepared_tool=max((v for (kind,k),v in counts.items() if kind=='prepared'),default=0),
+                    detached_G_with_catalyzed_component=sum(bool(set(k)&cat) for k in self.detached),
+                    detached_G_with_expressed_catalyzed_component=sum(bool(set(k)&expressed) for k in self.detached))
         return metrics
 
 

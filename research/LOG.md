@@ -500,3 +500,46 @@ flux utilisable, séquestration, parasites et fuites. AGENTS impose leur mise à
 Maturité moléculaire inchangée : aucune nouvelle simulation n'est présentée comme
 preuve. Santé et volume restent conditionnels ; prochaines décisions I0/C3B,
 M1/I2–I4 et I1/T9. Arbre/priorités/maturité actualisés. Commit local, aucun push.
+
+## 2026-10-25 — lot8 : composant catalysé puis incorporé
+
+Priorité C3B1. Transfert des captures C2D aux vraies billes P/R de C3A, avec
+un taux accéléré pour deux captures sur sites F voisins covalents. Alphabet
+inchangé ; motif six billes, capture saturée, exclusion du templating et
+libération par occupation du lien. L'aide cinétique reste déclarée et ablatée.
+Initialisation explicite des assemblages, distincte des réactions et des outils
+nouvellement exprimés. Moteur et ordonnanceur partagés conservés.
+
+19 dynamiques achevées sans erreur ;437 empreintes sources et29 858 images
+matérielles auditées. Outil préparé :22/24/23 dimères, G complets3/3/5. Outil
+exprimé depuis G001 et six monomères F préparés :34/40/24 réactions certifiées,
+3/13/7 produits incorporés. G entièrement issus de ces produits1/2/0, F0/2/0.
+Une boucle courte est donc transférée sous mêmes lois ; renouvellement ponctuel
+sur une graine, pas maintien sous pertes ni cellule complète.
+
+Sans outil initial :1/0/0 dimère. Sans capture ou sans accélération : aucun,
+graine0. Le contrôle délié graine2 réexprime un F puis se réactive : conserver
+ce résultat et ajouter délié sans ligation, qui reste sans catalyse. Sans gène :
+aucune opération. Ne pas effacer l'activation spontanée d'un contrôle évolutif.
+Les deux références C3A et E3C retrouvent toutes métriques et tableaux exacts.
+
+Traceur sur la graine1 :40 réactions locales vérifiées sur les sources figées,
+captures réciproques, arête F, distance, vrai partenaire et libération ; mêmes
+positions/rungs et métriques. Reconstruction source seule graine0 : tous tableaux
+et métriques identiques. Le défaut de tri des clés numériques du comparateur
+JSON a été corrigé sans modifier les archives. Test avec IDs9/15/26 ajouté ;
+première assertion de test mal placée corrigée également. Version initiale du
+traceur et source du traçage réussi conservées dans outputs avec hash. Les
+nouveaux traçages utilisent une destination neuve/horodatée.
+
+44 tests moteur/chimies/audit et7 contrôles historiques passent. Démonstrateur12
+graine1 : critères vérifiés ; captures dessinées sur les vrais atomes. Travailleur
+graphique et headless identiques sur le contrôle court, relecture vérifiée.
+Le quota a interrompu la clôture, pas les calculs : reprise des preuves existantes.
+
+Le schéma XYZ/isomères reste une option et non une exigence utilisateur. Comparer
+à terme quatre précurseurs réutilisables et assembleur polyvalent en incluant L.
+Architecture, interactions, arbre, priorités, maturité et santé actualisés.
+Prochain M1 pour grande frontière/insertion/fuite avant de multiplier les réglages
+de capture ; I0 et T9/multigène restent ouverts. Risque mémoire des graphes denses
+à traiter avant les bains volumineux. Données locales préservées, aucun push.

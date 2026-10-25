@@ -22,6 +22,7 @@ Les autres lanceurs n'installent rien et n'ont pas besoin du réseau.
 | `09_expression_fonction.bat` | G fabrique une chaîne F composite, puis celle-ci soutient plusieurs ligations XY avec libération dans le même bain |
 | `10_coexistence.bat` | G 001 est copié et traduit dans le même bain ; les F exprimés réalisent plusieurs opérations |
 | `11_construction.bat` | Des P/R libres forment des dimères, puis G et F ; formation spontanée, pas encore pilotée par des outils |
+| `12_catalyse_et_copie.bat` | Un F exprimé fabrique des composants, puis nouvelles copies G et F ; graine illustrative1, aucune chaîne F initiale |
 
 Les trois premiers sont des **simulations en direct**, à graine fixée. Le quatrième
 est aussi calculé en direct. Le cinquième lit une trajectoire archivée ; il ne

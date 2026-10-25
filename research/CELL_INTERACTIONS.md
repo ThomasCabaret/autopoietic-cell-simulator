@@ -4,6 +4,14 @@
 [campagnes futures](INTEGRATION_TESTS.json). Les lignes ci-dessous sont des
 **obligations à tester**, pas une matrice déjà implémentée et validée.
 
+Lot8 : capture P/R, libération et transfert vers G/F sont testés sous C3B1,
+avec3/3 incorporations,2/3 copies G complètes issues des produits et1/3
+renouvellement de F. Le contrôle délié peut se réexprimer en enzyme : une classe
+initialement inactive n'est pas nécessairement inoffensive à long terme.
+La sélectivité XYZ/N/A de même composition reste une option C0B ; le prototype
+à quatre précurseurs est polyvalent. Les autres contrats, notamment L/frontière,
+ne sont pas validés par cette preuve partielle.
+
 ![Matrice des contrats](CELL_INTERACTIONS.png)
 
 La matrice regroupe16 espèces cibles en10 classes. Une case vide demande

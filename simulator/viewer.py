@@ -211,6 +211,9 @@ class Canvas:
             if config['chemistry'].get('constructible',False):
                 labels=[('Dimeres construits','assembled_dimers'),('Composants incorpores','incorporated_constructed'),
                         ('G construits liberes','constructed_detached_G'),('F construits liberes','constructed_detached_F')]
+            if config['chemistry'].get('rung_catalysis',False):
+                labels=[('Dimeres catalyses','catalyzed_dimers'),('Dont par F exprimes','expressed_catalyzed_dimers'),
+                        ('Composants reutilises','catalyzed_incorporated'),('Copies G liberees','detached_copy_sets_ever')]
         elif config['model']=='catalysis':
             labels=[('Produits','products'),('Ligations co-liees','double_bound_ligations')]
         else: labels=[('Boucles observees','closed_sets_ever'),('Plus grand fragment','final_largest_component')]
@@ -298,6 +301,7 @@ def replay_view(folder,screenshot=None):
         copy_pairing=d['copy_pairing'] if 'copy_pairing' in d else None
         rungs=d['rungs'] if 'rungs' in d else None
         atom_bits=d['atom_bits'] if 'atom_bits' in d else None
+        precursor_binding=d['precursor_binding'] if 'precursor_binding' in d else None
         if config['model']=='copy': n=len(bits)
     screen,canvas=start_window()
     clock=pygame.time.Clock(); t=0.; paused=False; running=True; speed=20.; drag=False
@@ -343,6 +347,8 @@ def replay_view(folder,screenshot=None):
                                   for i,j in enumerate(pairing[index]) if j>i]
             if copy_pairing is not None:
                 bonds['pairing'] += [(i,int(j)) for i,j in enumerate(copy_pairing[index]) if j>i]
+            if precursor_binding is not None:
+                bonds['pairing'] += [(int(rungs[index,i,1]),int(p)) for i,p in enumerate(precursor_binding[index]) if p>=0]
             colors=['#718594' if f==0 else '#9a4aa0' for f in families]+[['#148e9c','#df7947','#8d75bb'][int(b)] for b in bits]
             if atom_bits is not None:
                 colors=colors[:n]+[['#148e9c','#df7947','#8d75bb'][int(b)] for b in atom_bits]
@@ -371,6 +377,14 @@ def replay_view(folder,screenshot=None):
             if not config['chemistry'].get('assembled_stock',False):
                 metrics.update(constructed_detached_G=item.get('detached_ever',0),
                                constructed_detached_F=item.get('translated_detached_ever',0))
+        if precursor_binding is not None:
+            state=result['metrics']['assembly_state']
+            events=[e for e in state['catalytic_events'] if e['time']<=times[index]]
+            catalytic={e['support'] for e in events if e['catalyzed']}
+            inc={int(s) for s,tinc in result['metrics']['assembly_incorporation_times'].items() if tinc<=times[index]}
+            metrics.update(catalyzed_dimers=len(catalytic),
+                expressed_catalyzed_dimers=sum(e['chain_kind']=='expressed' for e in events),
+                catalyzed_incorporated=len(catalytic & inc))
         if 'joint_detached_ever' in item:metrics['joint_detached_ever']=item['joint_detached_ever']
         if config['model']=='catalysis':
             for key in ('products','double_bound_ligations'):

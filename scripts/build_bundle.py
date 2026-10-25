@@ -40,6 +40,10 @@ def main():
         'research/CELL_ARCHITECTURE.md','research/CELL_DEPENDENCIES.png',
         'research/CELL_INTERACTIONS.md','research/CELL_INTERACTIONS.png','research/CELL_SIZE.png',
         'research/INTEGRATION_TESTS.json','experiments/audit_cell_design.py','experiments/render_cell_design.py'))
+    files.update(ROOT/p for p in ('research/BATCH_08.md','research/BATCH_08_PLAN.md',
+        'research/BATCH_08_DECISIONS.md','research/BATCH_08_RECIPES.json',
+        'research/BATCH_08_TRANSFER.png','research/BATCH_08_EXPRESSION.png',
+        'experiments/run_batch8.py','experiments/make_batch8_report.py','experiments/audit_precursor_trace.py'))
     files.update(p for p in (ROOT/'research/legacy_reference').rglob('*')
                  if p.is_file() and '__pycache__' not in p.parts and p.suffix!='.pyc')
     files.add(ROOT/'research/LEGACY_PROJECT_NOTES.md')
@@ -55,6 +59,8 @@ def main():
     folders.extend(ROOT/Path(p).parent for p in batch6['recipes'])
     batch7=json.loads((ROOT/'research/BATCH_07_RECIPES.json').read_text(encoding='utf-8'))
     folders.extend(ROOT/Path(p).parent for p in batch7['recipes'])
+    batch8=json.loads((ROOT/'research/BATCH_08_RECIPES.json').read_text(encoding='utf-8'))
+    folders.extend(ROOT/Path(p).parent for p in batch8['recipes'])
     for folder in folders:
         files.update(p for p in folder.rglob('*') if p.is_file() and '__pycache__' not in p.parts
                      and (p.suffix=='.py' or p.name in ('config.json','scenario.json','recipe.json')))
