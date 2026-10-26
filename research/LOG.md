@@ -598,3 +598,20 @@ Prochaines decisions : controle long sans echange et ouvertures, puis integratio
 avec vrais precurseurs/composants G/F sous lois communes. Aucun blocage de principe
 etabli, volume restant incertain. Pas de nouvelle campagne pendant le debriefing.
 Voir BATCH_10_RESULTS.md ; donnees locales preservees.
+
+## 2026-10-26 — préparation lot11 M1R
+
+Contrôles longs B versus échange désactivé,0/1/2,t1500. Même physique et même
+initialisation que K1, barrière conservée. Nouveau BoundaryAudit analytique,
+sans contour inventé ni rétroaction. États inconnus décomposés, épisodes et
+extrémités mesurés ; pas d'inférence d'étanchéité depuis proximité géométrique.
+
+63 tests+7 historiques passent ; reprise exacte avec audit, primaire inchangé.
+Pilote B0 à150 : toutes positions, PRNG, chimie et métriques de la référence
+lot9 exactes.301 échantillons,260 fermés,38 ouverts classables,2 grand écart,
+1 fragmenté ;35 ouvertures observées avant le premier échange. Pas de conclusion
+sur les défauts tardifs. Census vérifié, preuve et données dans outputs/batch11.
+
+Plan/rapport/postprocesseur conservés. Six tâches longues à lancer après commit,
+recette figée avant calcul. Aucune nouvelle loi, aucune fonction G/F intégrée.
+Maturité inchangée ; décision après les contrôles, pas de helper supplémentaire.

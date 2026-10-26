@@ -20,6 +20,8 @@ def prepare(plan_path,parent):
     for i,raw in enumerate(plan['tasks']):
         cfg=resolve(raw['scenario']) if 'scenario' in raw else resolve(read(ROOT/raw['config']))
         tasks.append(dict(id=f'task{i:04d}',label=raw.get('label',cfg['name']),scenario=cfg))
+    if plan.get('boundary_audit',False) and any(t['scenario']['model']!='membrane_bath' for t in tasks):
+        raise ValueError('Boundary audit requires membrane_bath tasks')
     folder=parent/('campaign_'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ'));folder.mkdir(exist_ok=False)
     runtime=folder/'runtime';runtime.mkdir();source=ROOT/'simulator'
     (runtime/'simulator').mkdir()
@@ -28,6 +30,7 @@ def prepare(plan_path,parent):
     hashes={p.relative_to(runtime).as_posix():digest(p) for p in runtime.rglob('*.py')}
     manifest=dict(version=1,name=plan.get('name','campaign'),created=time.time(),tasks=tasks,
         workers=workers,checkpoint_seconds=interval,kinetic_window=window,
+        boundary_audit=bool(plan.get('boundary_audit',False)),
         record_trajectory=bool(plan.get('record_trajectory',False)),source_sha256=hashes,
         comparison_policy=plan.get('comparison_policy','Separate candidates; no common chemistry inferred'),
         plan_sha256=digest(plan_path))
@@ -141,6 +144,8 @@ def analyze(folder):
         row=dict(task=task['id'],group=key,seed=cfg['seed'],name=cfg['name'],duration=cfg['duration'],
             metrics={k:result['metrics'].get(k) for k in ('parent_closed_fraction','envelope_valid_fraction','retained_escape_fraction','inserted_into_closed_parent_ever','persistent_inserted_10')},
             first_passages=kinetic['first_passages'],opportunities=kinetic['opportunity_totals'])
+        if state.get('boundary_audit'):
+            row['boundary_audit']={k:v for k,v in read(folder/state['boundary_audit']).items() if k!='state'}
         rows.append(row);groups.setdefault(key,[]).append(row)
     estimates={}
     for key,group in groups.items():
@@ -156,6 +161,18 @@ def analyze(folder):
             if not p['measured']:return 'non mesuré'
             return f"{p['time']:g}" if p['event'] else f"> {p['time']:g} (censuré)"
         lines.append(f"| {row['task']} | {row['seed']} | {fmt('encounter_pairs')} | {fmt('exchange_faces')} | {fmt('closed_insertion')} |")
+    audited=[r for r in rows if 'boundary_audit' in r]
+    if audited:
+        lines += ['', '## Diagnostic des ouvertures', '',
+            'Durées et causes échantillonnées ; aucun contour reconstruit pendant les périodes inconnues.', '',
+            '| Tâche | Échantillons inconnus | Cause inconnue dominante | Plus longue séquence fermée observée |',
+            '| --- | ---: | --- | ---: |']
+        for row in audited:
+            audit=row['boundary_audit'];unknown=audit['unknown_reason_samples']
+            rate=sum(unknown.values())/max(audit['samples'],1)
+            reason=max(unknown,key=unknown.get) if unknown else 'aucune'
+            span=audit['longest_observed_span_by_state'].get('closed',0.)
+            lines.append(f"| {row['task']} | {100*rate:.1f}% | {reason} | {span:g} |")
     (folder/'analysis.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
     return report
 

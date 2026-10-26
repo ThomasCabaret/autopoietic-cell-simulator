@@ -113,3 +113,10 @@ avant ces verrous. Voir [santé](PROJECT_HEALTH.md), [lot 5](BATCH_05.md),
 Le [lot10](BATCH_10.md) fournit calcul différé, sources figées, reprise exacte et
 premières mesures cinétiques/censures de membrane. Cela ne change pas la maturité
 chimique ci-dessus. Campagne de réplication/ablation à analyser séparément.
+
+## Préparation du lot11
+
+Audit des ouvertures et reprise validés, pilote exactement conforme à l'ancienne
+référence. Aucune nouvelle fonction ni amélioration de robustesse revendiquée.
+Les contrôles longs B/sans échange doivent décider du prochain changement ;
+voir BATCH_11.md. La membrane reste séparée de G/F.

@@ -238,3 +238,18 @@ Prochaines decisions : controle long sans echange et ouvertures, puis integratio
 avec vrais precurseurs/composants G/F sous lois communes. Aucun blocage de principe
 etabli, volume restant incertain. Pas de nouvelle campagne pendant le debriefing.
 Voir BATCH_10_RESULTS.md ; donnees locales preservees.
+
+## Préparation M1R, lot11
+
+L'audit permet désormais de distinguer une fragmentation du graphe d'un grand
+écart terminal sans transformer l'inconnu en rétention. Le pilote source-exact
+réduit le risque de mesure intrusive. Aucun progrès chimique revendiqué et
+aucune nouvelle primitive. Les trois B sont rejoués parce que K1 n'enregistrait
+pas ces diagnostics ni les positions complètes : coût justifié par une question
+causale précise. Les trois témoins sans échange répondent au verrou manquant.
+
+Horizon de décision : cette campagne, puis intégration G/F. Si elle ne localise
+aucun défaut causal, ne pas multiplier des réglages de docking ; examiner le
+critère topologique et une mesure physique indépendante des fuites. Le budget
+et le chemin vers les aliments/outils réels restent conditionnels, aucun délai
+en lots ni facteur d'accélération promis.

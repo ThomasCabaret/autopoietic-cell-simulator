@@ -52,6 +52,8 @@ def main():
     files.update(ROOT/p for p in ('scripts/campaign.py','scripts/campaign.ps1',
         'start_campaign.bat','campaign_status.bat','stop_campaign.bat','resume_campaign.bat','analyze_campaign.bat',
         'campaigns/README.md','campaigns/membrane_kinetics.json','research/BATCH_10_PLAN.md','research/BATCH_10.md'))
+    files.update(ROOT/p for p in ('campaigns/membrane_robustness.json','research/BATCH_10_RESULTS.md',
+        'research/BATCH_11_PLAN.md','research/BATCH_11.md','experiments/pilot_batch11.py','experiments/analyze_batch11.py'))
     files.update(p for p in (ROOT/'research/campaign_recipes').rglob('*') if p.is_file()
         and ('__pycache__' not in p.parts) and (p.suffix=='.py' or p.name in ('manifest.json','manifest.sha256','plan.json')))
     files.update(p for p in (ROOT/'research/legacy_reference').rglob('*')

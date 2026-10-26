@@ -61,3 +61,13 @@ pas une preuve que X/Y/Z et les vrais G/F passent/sont retenus comme souhaité.
 Tests : gradient, moment/force totaux, arité indépendante de l'agrégat, modification
 des seuls labels/rayon initiaux sans effet après préparation, arbre/exhaustif,
 reprise, et trajectoire avec/sans observateur identique. Archiver échecs et helpers.
+
+## Audit des ouvertures, lot11
+
+`boundary_audit.py` lit composantes, IDs initiaux, extrémités et épisodes uniquement
+après l'observateur. Aucune de ces informations n'est consultée par les forces
+ou réactions. Il ne dessine pas de nouveau contour et ne corrige aucun état.
+Les observations physiques antérieures, positions et PRNG restent identiques,
+y compris dans le pilote comparé aux sources du lot9. Les extrémités proches
+sont un diagnostic de géométrie, jamais une règle de refermeture ni une preuve
+de confinement. Le coût ajouté est analytique, sans type/port/helper physique.

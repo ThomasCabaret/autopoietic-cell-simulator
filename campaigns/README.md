@@ -1,6 +1,12 @@
 # Campagnes différées
 
-Le plan `membrane_kinetics.json` compare deux candidats séparés, B et B sans
+Le plan courant `membrane_robustness.json` compare B avec échange et son ablation
+sans échange, sur les graines0/1/2 à1500, avec diagnostic des ouvertures. Les
+lois restent celles du lot10 ; les nouveaux champs analytiques ne pilotent rien.
+Deux travailleurs, checkpoints60s, aucune trajectoire dense. Voir
+[lot11](../research/BATCH_11_PLAN.md). `start_campaign.bat` utilise ce plan courant.
+
+Le plan historique `membrane_kinetics.json` compare deux candidats séparés, B et B sans
 barrière de lien, chacun sur les graines0/1/2 jusqu'au temps simulé1500. Deux
 travailleurs maximum ; données locales, trajectoires complètes désactivées.
 Ce test complète le lot9 ; ce n'est pas une cellule G/F intégrée.
@@ -67,3 +73,25 @@ censures, mais trois graines ne donnent pas une estimation robuste. Les graines
 dupliquées ne sont comptées qu'une fois dans les courbes. Aucun ajustement
 stationnaire de taux ni conclusion automatique d'impossibilité. Les autres
 hooks peuvent tourner, mais leur éligibilité chimique est marquée non mesurée.
+
+## Diagnostic des ouvertures du lot11
+
+Le champ de manifeste `boundary_audit: true` ajoute un observateur indépendant,
+avec le même échantillonnage0,5 que les mesures précédentes. Il conserve
+`boundary_audit.json` auprès du résultat, et les résumés dans `analysis.json`/
+`analysis.md`. Ses états : fermé, ouvert classable, fragmentation, grand écart
+terminal, aire faible, croisement, inconnu résiduel. Il ne crée pas d'enveloppe
+pour les périodes inconnues et ne classe pas les sondes pendant celles-ci.
+
+Les extrémités proches ne prouvent pas l'étanchéité ; les durées d'épisodes sont
+échantillonnées, avec transitions entre images. L'association avec un échange
+récent ne prouve pas que celui-ci cause l'ouverture. Après campagne :
+
+```powershell
+python experiments/analyze_batch11.py outputs/campaigns/campaign_IDENTIFIANT
+```
+
+Ce contrôle recoupe le census avec les historiques et compare B aux résultats
+K1 quand leurs données locales sont disponibles. Il conserve sa source et son
+empreinte dans une nouvelle sortie d'analyse. Les témoins sans échange ne sont
+pas attendus avoir les fonctions d'insertion du candidat actif.

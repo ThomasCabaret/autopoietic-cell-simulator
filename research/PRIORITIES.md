@@ -127,3 +127,11 @@ Contrôleur/mesures livrés et testés ; utiliser le plan B/Bsimple sur horizons
 puis analyser les occasions de réaction, la fermeture, la persistance et la fuite.
 La livraison technique n'autorise pas à déclarer M1B robuste. Les décisions I0/T9
 et le transfert vers une chimie commune restent les suites scientifiques.
+
+## Mise en œuvre du prochain test M1R
+
+Le lot11 prépare B et sans échange au même horizon1500, avec diagnostic des
+ouvertures et contrôle source-exact. Analyser ces six résultats avant tout
+réglage chimique. Ensuite intégration de vrais précurseurs/composants G/F sous
+lois communes ; si le diagnostic reste indécidable, mesurer directement les
+fuites des périodes inconnues, plutôt que déclarer leur rétention.

@@ -121,3 +121,11 @@ G/F ni nourriture/déchet, aucun L fabriqué : contrats de transport et de non-
 interaction biologique toujours ouverts. Le helper d'échange pourrait défaire
 des assemblages étrangers si on le généralise ; mesurer ces réactions parasites
 avant l'unification. Sources, cas et limites dans BATCH_09.md.
+
+## Contrôle de robustesse M1R
+
+K1 observe insertion B3/3 à1500, mais critère de fermeture2/3 et beaucoup
+d'inconnu pour B0 ; supprimer la barrière de lien donne des pertes2–4/24.
+Le lot11 conserve cette aide et compare l'échange à son ablation, sans nouveaux
+types ni fonctions. Les diagnostics n'ajoutent aucun transport réel d'aliments,
+déchets ou G/F ; les contrats matériels restent ouverts et le budget inchangé.
