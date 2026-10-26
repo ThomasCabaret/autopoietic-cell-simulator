@@ -1,4 +1,21 @@
-# Priorités — après le lot9,26 octobre2026
+# Priorités — après analyse du lot10,26 octobre2026
+
+Campagne K1 achevée6/6, [résultats](BATCH_10_RESULTS.md). Insertion B observée3/3
+à1500 ; fermeture/rétention conjointes incomplètes. B simple perd2–4/24 sondes et
+n'insère que1/3. Conserver la barrière de lien comme référence, sans prétendre
+qu'elle suffit au maintien global.
+
+1. **Robustesse membrane :** même horizon sans échange pour isoler ses effets,
+   mesurer ouvertures/périodes inconnues, puis accès et refermeture. Demander
+   insertion et confinement conjoints ; ne pas multiplier les helpers.
+2. **Intégration matérielle :** transférer membrane et vrais précurseurs G/F vers
+   des lois communes, tester cohabitation, états libre/lié et effets parasites,
+   puis copie/expression confinées. Construction L et diversité I0/T9 ouvertes.
+
+Pas de prochaine campagne lancée pendant ce débriefing. Optimisation CPU si le
+coût d'intégration le justifie ; aucun besoin démontré de portage GPU immédiat.
+
+## Priorités avant analyse du lot10, historique
 
 Le [lot9](BATCH_09.md) réduit le risque de grande frontière : rétention sélective
 sur sondes3/3 à150 sans barrière de lien, fuite1/24 à450 sur un suivi ; deux

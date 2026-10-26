@@ -2,7 +2,7 @@
 
 26 octobre2026. [Plan](BATCH_10_PLAN.md), [utilisation Windows](../campaigns/README.md).
 Cette livraison améliore la méthode de calcul ; aucune nouvelle capacité chimique
-ni accélération×10 n'est revendiquée. La campagne longue sera analysée au retour.
+ni accélération×10 n'est revendiquée. La campagne longue est achevée6/6 ; voir [résultats et décisions](BATCH_10_RESULTS.md).
 
 ## Livré et vérifié
 

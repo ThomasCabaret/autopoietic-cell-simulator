@@ -586,3 +586,15 @@ Campagne K1 effectivement lancee : campaign_20261026T102204813246Z, commit103dbb
 six taches a1500, deux travailleurs actifs et quatre en attente au controle.
 Recette source seule conservee ; aucune conclusion chimique avant analyse.
 Lancement persistant hors bac a sable verifie apres controle Windows court.
+
+## 2026-10-26 — debriefing K1 acheve
+
+Six essais complets,168 empreintes et18006 observations verifiees. B insere1/2/5
+dimeres a1500 : la duree150 masquait deux attentes longues. Fermeture au seuil
+seulement2/3 et graine0 non classable28% du temps ; retention globale non prouvee.
+B sans barriere de lien perd2-4/24 sondes, insertion0/1/0 : simplification refusee
+pour ce couplage long. Beaucoup de rencontres, rares geometries admissibles.
+Prochaines decisions : controle long sans echange et ouvertures, puis integration
+avec vrais precurseurs/composants G/F sous lois communes. Aucun blocage de principe
+etabli, volume restant incertain. Pas de nouvelle campagne pendant le debriefing.
+Voir BATCH_10_RESULTS.md ; donnees locales preservees.

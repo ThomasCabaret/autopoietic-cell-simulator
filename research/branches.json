@@ -586,23 +586,25 @@
       "id": "M1B",
       "parent": "M1A",
       "hypothesis": "Bounded associative partner exchange permits insertion without aggregate control",
-      "status": "two_insertions_one_seed_selected_long_followup",
+      "status": "insertion_three_seeds_at1500_global_screen_incomplete",
       "conclusion": "0/0/2 at150, persistence6; selected seed2 at450 persistence10.5, no observed probe escape",
       "cost": "Six atoms, one contact replaced by one; rate0.2/capture0.8, nonthermal uncalibrated helper",
       "missing_proof": "Robust kinetics, barrier ablation transfer, mixed chemistry and energy accounting",
-      "evidence": "research/BATCH_09_RECIPES.json"
+      "evidence": "research/BATCH_09_RECIPES.json",
+      "batch10_result": "1/2/5 inserted; closed fraction0.590/0.805/0.826; zero observed escape but seed0 only0.718 classifiable; no integrated G/F"
     },
     {
       "id": "K1",
       "parent": "M1B",
       "hypothesis": "Frozen resumable campaigns and reaction exposure distinguish slow mechanisms from insufficient sampling",
-      "status": "campaign_running_not_analyzed",
+      "status": "six_runs_complete_kinetic_analysis_recorded",
       "priority": "P0",
       "test": "Observer invariance, exact resume, source freeze, censorship and positive encounter/eligibility tests",
       "missing_proof": "No completed kinetic campaign yet",
       "evidence": "research/BATCH_10.md",
       "conclusion": "Read-only pre-reaction membrane opportunities and exact resumed exposures; no chemical conclusion before long campaign",
-      "campaign_recipe": "research/campaign_recipes/K1_20261026T102204813246Z/manifest.json"
+      "campaign_recipe": "research/campaign_recipes/K1_20261026T102204813246Z/manifest.json",
+      "results": "research/BATCH_10_RESULTS.md"
     },
     {
       "id": "M1BS",
@@ -612,11 +614,12 @@
         "K1"
       ],
       "hypothesis": "Associative exchange can keep insertion while removing the segment barrier",
-      "status": "campaign_running_not_analyzed",
+      "status": "long_screen_fails_leakage",
       "test": "B versus Bsimple, identical seeds0/1/2 and horizon1500, kinetic exposure and leakage",
       "cost": "Remove three-atom segment barrier; preserve six-atom exchange helper",
       "missing_proof": "No outcomes analyzed yet; not common chemistry with G/F",
-      "campaign_recipe": "research/campaign_recipes/K1_20261026T102204813246Z/manifest.json"
+      "campaign_recipe": "research/campaign_recipes/K1_20261026T102204813246Z/manifest.json",
+      "batch10_result": "0/1/0 inserted;4/3/2 escaped of24; simplification not retained for B at1500"
     }
   ]
 }

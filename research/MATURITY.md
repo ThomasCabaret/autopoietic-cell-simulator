@@ -1,4 +1,17 @@
-# Maturité — après le lot9,26 octobre2026
+# Maturité — après analyse du lot10,26 octobre2026
+
+**Insertion locale retrouvée sur les trois graines à1500, frontière encore
+insuffisamment robuste.** B incorpore1/2/5 dimères, persistance échantillonnée≥10.
+Deux premières insertions arrivent après150. Fermeture≥0,8 seulement2/3 ; la
+graine0 est non classable28% du temps, son zéro de fuite observé ne prouve donc
+pas une rétention complète. Sans barrière de lien : insertion0/1/0, fuite2–4/24.
+
+La membrane demeure séparée de G/F. Prochain : contrôles longs sans échange et
+diagnostic des ouvertures, puis intégration des vrais précurseurs/composants sous
+lois communes. Voir [débriefing](BATCH_10_RESULTS.md). Aucun blocage de principe
+établi, aucune viabilité ni estimation fiable du nombre de lots restants.
+
+## État après lot9, historique
 
 **Grande frontière sélective obtenue, insertion encore fragile.** Le [lot9](BATCH_09.md)
 maintient un anneau préparé de219 dimères avec passage des sondes transparentes

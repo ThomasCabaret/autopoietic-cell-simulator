@@ -226,3 +226,15 @@ et reprendre après interruption.58 tests+7 historiques, aucun gain chimique ni
 débit×10 démontré. La campagne B/Bsimple doit maintenant dire si l'accès admissible
 est réellement limitant ; ne pas convertir sa simple mise en route en preuve.
 Éligibilité G/F, échantillonnage des conflits et coût du diagnostic restent à étendre.
+
+## 2026-10-26 — debriefing K1 acheve
+
+Six essais complets,168 empreintes et18006 observations verifiees. B insere1/2/5
+dimeres a1500 : la duree150 masquait deux attentes longues. Fermeture au seuil
+seulement2/3 et graine0 non classable28% du temps ; retention globale non prouvee.
+B sans barriere de lien perd2-4/24 sondes, insertion0/1/0 : simplification refusee
+pour ce couplage long. Beaucoup de rencontres, rares geometries admissibles.
+Prochaines decisions : controle long sans echange et ouvertures, puis integration
+avec vrais precurseurs/composants G/F sous lois communes. Aucun blocage de principe
+etabli, volume restant incertain. Pas de nouvelle campagne pendant le debriefing.
+Voir BATCH_10_RESULTS.md ; donnees locales preservees.
