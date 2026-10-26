@@ -48,3 +48,19 @@ Le calcul peut continuer après la réponse, ordinateur actif. Pas de service
 au démarrage, notification ou poursuite pendant veille/extinction. Après arrêt
 brutal, reprendre au checkpoint et inspecter les erreurs. Les lanceurs et leurs
 limites sont décrits dans campaigns/README.md.
+
+## Campagne effectivement lancée
+
+`campaign_20261026T102204813246Z`, sources du commit103dbbd, six tâches à1500,
+deux travailleurs. Démarrage vérifié : deux processus actifs, quatre tâches en
+attente, aucune erreur. Cela ne préjuge pas des résultats à la fin du lot.
+La [recette source seule](campaign_recipes/K1_20261026T102204813246Z/manifest.json)
+est conservée avec son runtime exact. Les sorties sont sous
+`outputs/campaigns/campaign_20261026T102204813246Z/` et restent locales.
+
+Le contrôle court du lanceur Windows est achevé et analysé. Dans l'environnement
+de l'agent, un premier processus lancé dans le bac à sable n'avait pas survécu
+à la commande ; son essai et ses journaux sont conservés. Le lancement persistant
+autorisé hors bac à sable est vérifié par verrou actif/progrès réel, pas par le
+seul PID renvoyé par Start-Process. Un double-clic Windows ordinaire ne dépend
+pas du bac à sable de l'agent.

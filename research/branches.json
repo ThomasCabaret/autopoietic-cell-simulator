@@ -596,12 +596,13 @@
       "id": "K1",
       "parent": "M1B",
       "hypothesis": "Frozen resumable campaigns and reaction exposure distinguish slow mechanisms from insufficient sampling",
-      "status": "infrastructure_validated_long_campaign_pending",
+      "status": "campaign_running_not_analyzed",
       "priority": "P0",
       "test": "Observer invariance, exact resume, source freeze, censorship and positive encounter/eligibility tests",
       "missing_proof": "No completed kinetic campaign yet",
       "evidence": "research/BATCH_10.md",
-      "conclusion": "Read-only pre-reaction membrane opportunities and exact resumed exposures; no chemical conclusion before long campaign"
+      "conclusion": "Read-only pre-reaction membrane opportunities and exact resumed exposures; no chemical conclusion before long campaign",
+      "campaign_recipe": "research/campaign_recipes/K1_20261026T102204813246Z/manifest.json"
     },
     {
       "id": "M1BS",
@@ -611,10 +612,11 @@
         "K1"
       ],
       "hypothesis": "Associative exchange can keep insertion while removing the segment barrier",
-      "status": "frozen_campaign_planned",
+      "status": "campaign_running_not_analyzed",
       "test": "B versus Bsimple, identical seeds0/1/2 and horizon1500, kinetic exposure and leakage",
       "cost": "Remove three-atom segment barrier; preserve six-atom exchange helper",
-      "missing_proof": "No outcomes analyzed yet; not common chemistry with G/F"
+      "missing_proof": "No outcomes analyzed yet; not common chemistry with G/F",
+      "campaign_recipe": "research/campaign_recipes/K1_20261026T102204813246Z/manifest.json"
     }
   ]
 }

@@ -1,0 +1,16 @@
+{
+  "name": "K1 — insertion locale, horizons comparables et ablation de barrière",
+  "comparison_policy": "Deux candidats distincts B et B simple ; trois graines chacun, même horizon1500. Sondes uniquement ; aucune compatibilité G/F revendiquée.",
+  "workers": 2,
+  "checkpoint_seconds": 60,
+  "kinetic_window": 25,
+  "record_trajectory": false,
+  "tasks": [
+    {"scenario": {"schema_version":1,"model":"membrane_bath","name":"M1B_long","branch":"M1B","seed":0,"duration":1500,"engine":{"dt":0.002,"sample_every":250},"chemistry":{"contact_exchange_rate":0.2}}},
+    {"scenario": {"schema_version":1,"model":"membrane_bath","name":"M1Bsimple_long","branch":"M1BS","seed":0,"duration":1500,"engine":{"dt":0.002,"sample_every":250},"chemistry":{"contact_exchange_rate":0.2,"barrier_stiffness":0}}},
+    {"scenario": {"schema_version":1,"model":"membrane_bath","name":"M1B_long","branch":"M1B","seed":1,"duration":1500,"engine":{"dt":0.002,"sample_every":250},"chemistry":{"contact_exchange_rate":0.2}}},
+    {"scenario": {"schema_version":1,"model":"membrane_bath","name":"M1Bsimple_long","branch":"M1BS","seed":1,"duration":1500,"engine":{"dt":0.002,"sample_every":250},"chemistry":{"contact_exchange_rate":0.2,"barrier_stiffness":0}}},
+    {"scenario": {"schema_version":1,"model":"membrane_bath","name":"M1B_long","branch":"M1B","seed":2,"duration":1500,"engine":{"dt":0.002,"sample_every":250},"chemistry":{"contact_exchange_rate":0.2}}},
+    {"scenario": {"schema_version":1,"model":"membrane_bath","name":"M1Bsimple_long","branch":"M1BS","seed":2,"duration":1500,"engine":{"dt":0.002,"sample_every":250},"chemistry":{"contact_exchange_rate":0.2,"barrier_stiffness":0}}}
+  ]
+}

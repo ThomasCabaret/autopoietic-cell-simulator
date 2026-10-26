@@ -581,3 +581,8 @@ Plan B/Bsimple,3 graines chacun,t1500,2 travailleurs, checkpoint60s, sans trajec
 complète. Recette de campagne à conserver ; analyse différée, aucune conclusion
 chimique anticipée. Pas de GPU ajouté ni facteur×10 mesuré. Données locales,
 commits locaux uniquement.
+
+Campagne K1 effectivement lancee : campaign_20261026T102204813246Z, commit103dbbd,
+six taches a1500, deux travailleurs actifs et quatre en attente au controle.
+Recette source seule conservee ; aucune conclusion chimique avant analyse.
+Lancement persistant hors bac a sable verifie apres controle Windows court.
