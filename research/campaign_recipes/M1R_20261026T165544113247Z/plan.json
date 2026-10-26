@@ -1,0 +1,17 @@
+{
+  "name": "M1R — ouvertures avec et sans échange local",
+  "comparison_policy": "Ablation échange0 versus B0.2, trois graines identiques, horizon1500 ; lois physiques inchangées, diagnostic analytique sans rétroaction. Pas de G/F ni de nouveaux L fabriqués.",
+  "workers": 2,
+  "checkpoint_seconds": 60,
+  "kinetic_window": 25,
+  "record_trajectory": false,
+  "boundary_audit": true,
+  "tasks": [
+    {"scenario": {"schema_version":1,"model":"membrane_bath","name":"M1noExchange_long","branch":"M1Rcontrol","seed":0,"duration":1500,"engine":{"dt":0.002,"sample_every":250},"chemistry":{"contact_exchange_rate":0}}},
+    {"scenario": {"schema_version":1,"model":"membrane_bath","name":"M1B_recheck","branch":"M1R","seed":0,"duration":1500,"engine":{"dt":0.002,"sample_every":250},"chemistry":{"contact_exchange_rate":0.2}}},
+    {"scenario": {"schema_version":1,"model":"membrane_bath","name":"M1noExchange_long","branch":"M1Rcontrol","seed":1,"duration":1500,"engine":{"dt":0.002,"sample_every":250},"chemistry":{"contact_exchange_rate":0}}},
+    {"scenario": {"schema_version":1,"model":"membrane_bath","name":"M1B_recheck","branch":"M1R","seed":1,"duration":1500,"engine":{"dt":0.002,"sample_every":250},"chemistry":{"contact_exchange_rate":0.2}}},
+    {"scenario": {"schema_version":1,"model":"membrane_bath","name":"M1noExchange_long","branch":"M1Rcontrol","seed":2,"duration":1500,"engine":{"dt":0.002,"sample_every":250},"chemistry":{"contact_exchange_rate":0}}},
+    {"scenario": {"schema_version":1,"model":"membrane_bath","name":"M1B_recheck","branch":"M1R","seed":2,"duration":1500,"engine":{"dt":0.002,"sample_every":250},"chemistry":{"contact_exchange_rate":0.2}}}
+  ]
+}

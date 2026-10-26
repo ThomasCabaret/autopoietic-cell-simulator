@@ -628,7 +628,7 @@
         "K1",
         "M1BS"
       ],
-      "status": "validated_instrumentation_campaign_preparing",
+      "status": "campaign_running_not_analyzed",
       "hypothesis": "Long matched no-exchange controls and explicit unknown-state reasons can separate spontaneous fragmentation from exchange-associated resealing defects",
       "test": "B and exchange0, identical seeds0/1/2 and horizon1500, unchanged laws; read-only sampled topology and exact legacy comparison",
       "cost": "Zero physical kind/state/port/helper added; analytic observer and output only",
@@ -636,7 +636,9 @@
       "pilot": "B0 t150 exact positions/RNG/chemistry/metrics;35 observed openings before first exchange",
       "counterexample": "Nearby endpoints are not a sealed boundary; correlation with an exchange is not causality; sampling can miss short openings",
       "missing_proof": "Six long controls not analyzed; no real G/F or manufactured lipid in the bath",
-      "health_gate": "Decide after six controls, before adding helpers; investigate direct leakage measurement if topology alone is inconclusive"
+      "health_gate": "Decide after six controls, before adding helpers; investigate direct leakage measurement if topology alone is inconclusive",
+      "campaign_recipe": "research/campaign_recipes/M1R_20261026T165544113247Z/manifest.json",
+      "pilot_recipe": "research/campaign_recipes/M1Rpilot_20261026T164551801107Z/manifest.json"
     }
   ]
 }

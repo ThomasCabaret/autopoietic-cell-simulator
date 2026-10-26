@@ -55,3 +55,15 @@ L'intégration matérielle G/F reste l'étape suivante ; membrane, vrais aliment
 déchets non réunis. Budget de ce bain534 billes, cible C0B2406 toujours conditionnelle.
 La maturité chimique reste celle du lot10 tant que les six nouveaux essais ne
 sont pas analysés. Aucun nouveau blocage de principe ni délai fiable annoncé.
+
+## Lancement effectif
+
+`campaign_20261026T165544113247Z`, sources du commit0850065, six essais à1500,
+deux travailleurs. Démarrage vérifié sans erreur : deux tâches actives, quatre
+en attente, progression effective et contrôleur vivant. Les résultats restent
+à analyser ; la mise en route ne constitue pas un résultat chimique.
+
+[Recette de campagne](campaign_recipes/M1R_20261026T165544113247Z/manifest.json),
+[recette du pilote](campaign_recipes/M1Rpilot_20261026T164551801107Z/manifest.json).
+Sorties locales sous outputs/campaigns/campaign_20261026T165544113247Z/.
+Les lanceurs status/stop/resume/analyze restent ceux documentés dans campaigns/.

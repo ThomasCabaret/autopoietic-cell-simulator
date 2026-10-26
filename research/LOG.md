@@ -615,3 +615,7 @@ sur les défauts tardifs. Census vérifié, preuve et données dans outputs/batc
 Plan/rapport/postprocesseur conservés. Six tâches longues à lancer après commit,
 recette figée avant calcul. Aucune nouvelle loi, aucune fonction G/F intégrée.
 Maturité inchangée ; décision après les contrôles, pas de helper supplémentaire.
+
+Campagne M1R lancee : campaign_20261026T165544113247Z, code0850065,
+six taches a1500, deux actives et quatre en attente au controle, aucune erreur.
+Recettes source seule du pilote et du lot conservees ; resultats non analyses.
