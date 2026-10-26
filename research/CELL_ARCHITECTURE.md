@@ -352,3 +352,13 @@ L'audit formel sert à ne pas oublier une dépendance. Les expériences molécul
 devront décider si cette architecture est faisable ou doit être redessinée.
 
 </details>
+
+## État moléculaire après le lot9
+
+La frontière préparée à219 L est testée sur534 billes avec sondes, sans charge
+G/F. Réduire la courbure suffit au criblage de stabilité ; un échange activé local
+permet deux insertions sur une graine, sans insertase primitive. Rien n'ajoute donc
+encore gI/EI au graphe cible. Énergie de cet échange non calibrée ; sa production
+depuis une machinerie et la fabrication de L restent ouvertes. Budget C0B2406
+inchangé et conditionnel. Les aliments/déchets réels et leurs états de liaison
+ne sont pas remplacés par les sondes du test. Voir BATCH_09.md et LOCALITY_AUDIT.md.

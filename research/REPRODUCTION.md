@@ -65,3 +65,21 @@ Le benchmark se reconstruit avec `python experiments/benchmark_engine.py` et le
 criblage statique avec `python experiments/composite_geometry.py`. Leurs sorties
 générées restent locales. Les ZIP de démonstration contiennent maintenant le
 code et les recettes, sans données de simulation préembarquées.
+
+## Lot9
+
+`python experiments/run_batch9.py M1noBondBarrier --seed 0` utilise le moteur
+courant. BATCH_09_RECIPES.json contient les24 recettes exactes. Le reconstructeur
+partagé les régénère ; `python experiments/make_batch9_report.py` audite ensuite
+les résultats locaux. `verify_batch9.py membrane`, `copy`, `reconstruct` vérifient
+les références et tous leurs tableaux. `audit_membrane_exchange.py` trace les
+deux événements archivés ; `smoke_membrane_bath.py` teste le rendu hors écran.
+
+## Campagnes K1
+
+Le plan, les commandes et la restauration source seule sont décrits dans
+campaigns/README.md. Les recettes figées sont placées sous research/campaign_recipes/,
+avec manifeste/plan/empreintes et runtime exact, sans données. Après restauration,
+le contrôleur figé produit de nouvelles sorties. Le commit de développement est
+aussi inscrit dans le manifeste ; les empreintes restent l'identité exacte des
+sources exécutées.

@@ -87,3 +87,10 @@ python chemin/vers/un_dossier_de_resultats/replay.py
 
 La dernière commande recalcule depuis le code exact archivé et compare toutes
 les métriques. Utiliser l'environnement Python indiqué par `requirements.txt`.
+
+## Grande frontière préparée
+
+`13_grande_membrane.bat` lance219 dimères préparés,24 libres et48 sondes. Violet :
+repoussées ; or : transparentes. Contacts de billes seuls, sans barrière de lien.
+Ce démonstrateur ne prouve ni formation libre de ce grand anneau, ni rétention
+de G/F réels, ni insertion durable. Voir research/BATCH_09.md.

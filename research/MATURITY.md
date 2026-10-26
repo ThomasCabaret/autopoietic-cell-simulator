@@ -1,4 +1,19 @@
-# Maturité — après le lot 8, 25 octobre 2026
+# Maturité — après le lot9,26 octobre2026
+
+**Grande frontière sélective obtenue, insertion encore fragile.** Le [lot9](BATCH_09.md)
+maintient un anneau préparé de219 dimères avec passage des sondes transparentes
+et aucune sortie observée des sondes repoussées àt150 sur3 graines, même sans
+barrière de lien. À450, cette variante simple perd1/24 sonde sur la graine suivie.
+L'échange local incorpore deux nouveaux dimères sur1/3 graines ; persistance10,5
+seulement lors du suivi sélectionné à450. Aucune robustesse3/3 revendiquée.
+
+La membrane demeure séparée de la boucle G/F du lot8. Aucun gain de maturité
+intégrée, mais un risque géométrique aval réduit et une voie d'insertion testée.
+Prochain : cinétique/censures et campagnes reprenables, transfert sans barrière
+de lien vers B, puis vrais constituants sous des lois communes. I0 et T9 restent
+majeurs. L'[audit](LOCALITY_AUDIT.md) rend explicites localité et aides.
+
+## Référence commune conservée du lot8
 
 **Une boucle matérielle courte fonctionne sous une même chimie : G→F exprimé→
 dimères construits→incorporation.** Sur trois graines001, les F exprimés font
@@ -79,3 +94,9 @@ C3B devient le prochain test, puis fragments T9 et frontière M0. Quelques dizai
 restent plausibles pour une cellule minimale construite, sans estimation fiable
 avant ces verrous. Voir [santé](PROJECT_HEALTH.md), [lot 5](BATCH_05.md),
 [recettes](BATCH_05_RECIPES.json), [priorités](PRIORITIES.md).
+
+## Outils de recherche K1 disponibles
+
+Le [lot10](BATCH_10.md) fournit calcul différé, sources figées, reprise exacte et
+premières mesures cinétiques/censures de membrane. Cela ne change pas la maturité
+chimique ci-dessus. Campagne de réplication/ablation à analyser séparément.

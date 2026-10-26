@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "model": "membrane_bath",
+  "name": "M1exchange",
+  "branch": "M1A",
+  "seed": 0,
+  "duration": 150.0,
+  "engine": {
+    "dt": 0.002,
+    "spatial": "tree",
+    "skin": 0.25,
+    "sample_every": 250
+  },
+  "chemistry": {
+    "units": 243,
+    "initial": "ring",
+    "short_length": 0.98,
+    "bonding": true,
+    "end_attraction": 4.0,
+    "cooperative_rows": false,
+    "oriented_ports": false,
+    "port_epsilon": 0.6,
+    "temperature": 0.08,
+    "face_docking": true,
+    "dock_energy": 4.0,
+    "dock_width": 0.3,
+    "dock_capture": 0.25,
+    "dock_rate": 25.0,
+    "bond_off_rate": 0.02,
+    "break_extension": 0.35,
+    "ring_units": 219,
+    "ring_radius": 34.5,
+    "box": [
+      90.0,
+      90.0
+    ],
+    "free_lipid_start": "inside_annulus",
+    "retained_probes": 24,
+    "permeable_probes": 24,
+    "barrier_radius": 0.55,
+    "barrier_stiffness": 80.0,
+    "initial_jitter": 0.015,
+    "contact_exchange_rate": 0.2,
+    "contact_exchange_capture": 0.8
+  }
+}

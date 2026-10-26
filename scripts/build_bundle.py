@@ -44,6 +44,16 @@ def main():
         'research/BATCH_08_DECISIONS.md','research/BATCH_08_RECIPES.json',
         'research/BATCH_08_TRANSFER.png','research/BATCH_08_EXPRESSION.png',
         'experiments/run_batch8.py','experiments/make_batch8_report.py','experiments/audit_precursor_trace.py'))
+    files.update(ROOT/p for p in ('research/BATCH_09.md','research/BATCH_09_PLAN.md',
+        'research/BATCH_09_RECIPES.json','research/BATCH_09_MEMBRANE.png','research/LOCALITY_AUDIT.md',
+        'research/KINETICS_AND_PERFORMANCE.md','experiments/run_batch9.py',
+        'experiments/make_batch9_report.py','experiments/verify_batch9.py',
+        'experiments/audit_membrane_exchange.py','experiments/profile_simulator.py','experiments/smoke_membrane_bath.py'))
+    files.update(ROOT/p for p in ('scripts/campaign.py','scripts/campaign.ps1',
+        'start_campaign.bat','campaign_status.bat','stop_campaign.bat','resume_campaign.bat','analyze_campaign.bat',
+        'campaigns/README.md','campaigns/membrane_kinetics.json','research/BATCH_10_PLAN.md','research/BATCH_10.md'))
+    files.update(p for p in (ROOT/'research/campaign_recipes').rglob('*') if p.is_file()
+        and ('__pycache__' not in p.parts) and (p.suffix=='.py' or p.name in ('manifest.json','manifest.sha256','plan.json')))
     files.update(p for p in (ROOT/'research/legacy_reference').rglob('*')
                  if p.is_file() and '__pycache__' not in p.parts and p.suffix!='.pyc')
     files.add(ROOT/'research/LEGACY_PROJECT_NOTES.md')
@@ -61,6 +71,8 @@ def main():
     folders.extend(ROOT/Path(p).parent for p in batch7['recipes'])
     batch8=json.loads((ROOT/'research/BATCH_08_RECIPES.json').read_text(encoding='utf-8'))
     folders.extend(ROOT/Path(p).parent for p in batch8['recipes'])
+    batch9=json.loads((ROOT/'research/BATCH_09_RECIPES.json').read_text(encoding='utf-8'))
+    folders.extend(ROOT/Path(p).parent for p in batch9['recipes'])
     for folder in folders:
         files.update(p for p in folder.rglob('*') if p.is_file() and '__pycache__' not in p.parts
                      and (p.suffix=='.py' or p.name in ('config.json','scenario.json','recipe.json')))

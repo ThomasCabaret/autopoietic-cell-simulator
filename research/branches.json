@@ -444,7 +444,9 @@
     {
       "id": "C3A",
       "parent": "C3",
-      "related": ["E3C"],
+      "related": [
+        "E3C"
+      ],
       "hypothesis": "Persistent independent P/R beads can form locally saturated dimers that participate directly in the existing copy/translation laws",
       "status": "constructed_and_incorporated_three_seeds_separate_short_mixed_two_of_three",
       "evidence": "research/BATCH_06_RECIPES.json",
@@ -457,7 +459,9 @@
     {
       "id": "C3B",
       "parent": "C3A",
-      "related": ["C2D"],
+      "related": [
+        "C2D"
+      ],
       "hypothesis": "Reusing local substrate capture on actual P/R precursors can let an expressed F manufacture a component that is then incorporated",
       "status": "expressed_tool_component_transfer_three_seeds_short_G_two_seeds",
       "priority": "P0",
@@ -471,7 +475,12 @@
     {
       "id": "C0B",
       "parent": "C0",
-      "related": ["C3A", "C3B", "M0", "T9"],
+      "related": [
+        "C3A",
+        "C3B",
+        "M0",
+        "T9"
+      ],
       "hypothesis": "Three sequence-derived N/A/L synthases and three fragmented genes may form a renewable network with external activated fuel and locally exchangeable membrane",
       "status": "conditional_design_audit_passes_not_molecular_evidence",
       "evidence": "research/BATCH_07_RECIPES.json",
@@ -484,7 +493,9 @@
     {
       "id": "I0",
       "parent": "C3B",
-      "related": ["C0B"],
+      "related": [
+        "C0B"
+      ],
       "status": "proposed_not_tested",
       "priority": "P0",
       "hypothesis": "Different assemblies under fixed local laws can selectively make different usable bond states from shared food",
@@ -495,18 +506,25 @@
     {
       "id": "M1",
       "parent": "M0",
-      "related": ["V8", "C0B"],
-      "status": "geometric_mismatch_identified_dynamics_not_tested",
+      "related": [
+        "V8",
+        "C0B"
+      ],
+      "status": "large_prepared_boundary_selective_probes_insertion_rare",
       "priority": "P0",
       "hypothesis": "A constructed low/soft-curvature boundary can contain the full target inventory and exchange lipids locally without harmful leaks",
       "test": "Prepared large boundary then actual L arrival from inside, insertion, resealing, retention and state-dependent feed passage under common local laws",
       "counterexample": "Tiny-vesicle preference, port saturation, internal micelles or exchange leaks defeat the target despite topological closure",
-      "missing_proof": "No stable large loaded membrane, internal insertion or integrated transport measured; insertase would require its own gene and renewal"
+      "missing_proof": "No real G/F content or food, no robust insertion, no common membrane/genetic chemistry",
+      "evidence": "research/BATCH_09_RECIPES.json"
     },
     {
       "id": "I1",
       "parent": "E3",
-      "related": ["C0B", "T9"],
+      "related": [
+        "C0B",
+        "T9"
+      ],
       "status": "proposed_not_tested",
       "priority": "P0",
       "hypothesis": "Several genes and both monomer families can coexist without gene monopolization, chimeras or irreversible fragment traps",
@@ -517,7 +535,11 @@
     {
       "id": "C3B1",
       "parent": "C3B",
-      "related": ["C2D", "C3A", "E3C"],
+      "related": [
+        "C2D",
+        "C3A",
+        "E3C"
+      ],
       "status": "material_loop_short_sequence_partial_renewal",
       "evidence": "research/BATCH_08_RECIPES.json",
       "hypothesis": "A bounded pair of adjoining composite F sites can capture actual P/R precursors, accelerate their bond, release product and feed existing copying/expression",
@@ -530,12 +552,69 @@
     {
       "id": "C0C",
       "parent": "C0B",
-      "related": ["C3B1", "M1", "I0"],
+      "related": [
+        "C3B1",
+        "M1",
+        "I0"
+      ],
       "status": "architecture_option_to_compare_not_closed_cell_proof",
       "hypothesis": "Four reusable precursor kinds and a polyvalent G/F assembler may be simpler than forcing XYZ and distinct N/A isomer synthases",
       "test": "Map actual membrane material and its construction into the same alphabet, count ports/states/foods/genes and compare useful flux plus off-targets; do not replace the C0B budget silently",
       "counterexample": "The membrane requires extra primitive biological types or tools that erase the apparent simplification",
       "missing_proof": "No lipid construction and renewal under the P/R laws; C0B16-species budget remains only that candidate's assumption"
+    },
+    {
+      "id": "M1A",
+      "parent": "M1",
+      "hypothesis": "Local low-curvature contacts retain a large prepared boundary",
+      "status": "probe_screen_three_seeds",
+      "test": "Three seeds, transparent and curvature/attraction controls",
+      "conclusion": "219 L stable; zero observed probe escape at150; passive insertion absent",
+      "cost": "H/T alphabet unchanged; optional three-atom segment barrier, two diagnostic probe types",
+      "evidence": "research/BATCH_09_RECIPES.json"
+    },
+    {
+      "id": "M1S",
+      "parent": "M1A",
+      "hypothesis": "Bead contacts suffice without segment barrier",
+      "status": "simplification_probe_screen_three_seeds",
+      "conclusion": "Zero escape3/3 at150;1/24 at450 in selected seed0; not transferred to exchange",
+      "cost": "Removes three-atom barrier from forces; no new primitive",
+      "evidence": "research/BATCH_09.md"
+    },
+    {
+      "id": "M1B",
+      "parent": "M1A",
+      "hypothesis": "Bounded associative partner exchange permits insertion without aggregate control",
+      "status": "two_insertions_one_seed_selected_long_followup",
+      "conclusion": "0/0/2 at150, persistence6; selected seed2 at450 persistence10.5, no observed probe escape",
+      "cost": "Six atoms, one contact replaced by one; rate0.2/capture0.8, nonthermal uncalibrated helper",
+      "missing_proof": "Robust kinetics, barrier ablation transfer, mixed chemistry and energy accounting",
+      "evidence": "research/BATCH_09_RECIPES.json"
+    },
+    {
+      "id": "K1",
+      "parent": "M1B",
+      "hypothesis": "Frozen resumable campaigns and reaction exposure distinguish slow mechanisms from insufficient sampling",
+      "status": "infrastructure_validated_long_campaign_pending",
+      "priority": "P0",
+      "test": "Observer invariance, exact resume, source freeze, censorship and positive encounter/eligibility tests",
+      "missing_proof": "No completed kinetic campaign yet",
+      "evidence": "research/BATCH_10.md",
+      "conclusion": "Read-only pre-reaction membrane opportunities and exact resumed exposures; no chemical conclusion before long campaign"
+    },
+    {
+      "id": "M1BS",
+      "parent": "M1B",
+      "related": [
+        "M1S",
+        "K1"
+      ],
+      "hypothesis": "Associative exchange can keep insertion while removing the segment barrier",
+      "status": "frozen_campaign_planned",
+      "test": "B versus Bsimple, identical seeds0/1/2 and horizon1500, kinetic exposure and leakage",
+      "cost": "Remove three-atom segment barrier; preserve six-atom exchange helper",
+      "missing_proof": "No outcomes analyzed yet; not common chemistry with G/F"
     }
   ]
 }

@@ -216,9 +216,17 @@ class Canvas:
                         ('Composants reutilises','catalyzed_incorporated'),('Copies G liberees','detached_copy_sets_ever')]
         elif config['model']=='catalysis':
             labels=[('Produits','products'),('Ligations co-liees','double_bound_ligations')]
+        elif config['model']=='membrane_bath':
+            labels=[('Fraction fermee','parent_closed_fraction'),('Lipides inseres','inserted_into_closed_parent_ever'),
+                    ('Fuite observee','retained_escape_fraction'),('Entree transparente','permeable_entry_fraction')]
         else: labels=[('Boucles observees','closed_sets_ever'),('Plus grand fragment','final_largest_component')]
         for label,key in labels:
-            self.text(f'{label} : {metrics.get(key,0)}',x,y); y+=25
+            value=metrics.get(key,0)
+            if config['model']=='membrane_bath' and key.endswith('fraction'):
+                value='inconnue' if value is None else f'{100*value:.1f}%'
+            self.text(f'{label} : {value}',x,y); y+=25
+        if config['model']=='membrane_bath':
+            self.text('Frontiere preparee ; sondes inertes.',x,y,font=self.small); y+=24
         if config['model']=='copy':
             self.text('Comptes hors polymere initial.',x,y,font=self.small); y+=24
         self.text(f"{state.get('rate',0):,.0f} pas/s  |  rendu 30 Hz",x,y,font=self.small); y+=32
@@ -302,7 +310,9 @@ def replay_view(folder,screenshot=None):
         rungs=d['rungs'] if 'rungs' in d else None
         atom_bits=d['atom_bits'] if 'atom_bits' in d else None
         precursor_binding=d['precursor_binding'] if 'precursor_binding' in d else None
+        membrane_links=d['membrane_face_links'] if 'membrane_face_links' in d else None
         if config['model']=='copy': n=len(bits)
+        if config['model']=='membrane_bath': n=config['chemistry']['units']
     screen,canvas=start_window()
     clock=pygame.time.Clock(); t=0.; paused=False; running=True; speed=20.; drag=False
     history=result['metrics'].get('history',[])
@@ -356,12 +366,26 @@ def replay_view(folder,screenshot=None):
                 bonds['backbone'] += [(2*n+int(a),2*n+int(b)) for a,b in np.argwhere(np.triu(food_edges[index],1))]
                 bonds['pairing'] += [(n+i,2*n+int(f)) for i,f in enumerate(food_binding[index]) if f>=0]
                 colors += ['#148e9c' if f%2==0 else '#df7947' for f in range(len(food_edges[index]))]
+        elif config['model']=='membrane_bath':
+            links=membrane_links[index];links=links[links[:,0]>=0]
+            for offset in (0,n):
+                bonds['backbone'] += [(offset+int(i),offset+int(j)) for i,j,a,b in links]
+            c=config['chemistry']
+            colors=['#148e9c']*n+['#df7947']*n+['#9a4aa0']*c['retained_probes']+['#d4af37']*c['permeable_probes']
         else:
             for row in (0,1): bonds['backbone'] += [(row*n+int(i),row*n+int(j)) for i,j in np.argwhere(np.triu(edges[index,row],1))]
             colors=['#148e9c']*n+['#df7947']*n
         hi=max(0,int(np.searchsorted(history_times,t,side='right'))-1)
         item=history[hi] if history else {}
         metrics=dict(result['metrics']) if t>=times[-1] else {}
+        if config['model']=='membrane_bath' and history:
+            past=history[:hi+1];c=config['chemistry']
+            inserted={i for sample in past for i in sample['inserted_now']}
+            valid=any(sample['envelope_valid'] for sample in past)
+            metrics.update(parent_closed_fraction=sum(sample['parent_closed'] for sample in past)/len(past),
+                inserted_into_closed_parent_ever=len(inserted),
+                retained_escape_fraction=item['retained_escaped']/c['retained_probes'] if valid and c['retained_probes'] else None,
+                permeable_entry_fraction=item['permeable_entered']/c['permeable_probes'] if valid and c['permeable_probes'] else None)
         if food_edges is not None:
             events=[e for e in result['metrics']['food_events'] if e['time']<=times[index]]
             turnovers={}

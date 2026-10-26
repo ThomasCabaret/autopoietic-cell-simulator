@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "model": "membrane_bath",
+  "name": "Grande membrane preparee et sondes selectives",
+  "description": "219 dimeres prepares en anneau, 24 libres a l'interieur. Violet : sondes repoussees ; or : transparentes. Pas de gene ni d'insertion durable demontree.",
+  "branch": "M1S",
+  "seed": 0,
+  "duration": 150,
+  "engine": {"dt": 0.002, "sample_every": 250},
+  "chemistry": {"barrier_stiffness": 0},
+  "expected": {
+    "parent_closed_fraction": {"min": 0.8},
+    "envelope_valid_fraction": {"min": 0.95},
+    "retained_escape_fraction": {"max": 0.05},
+    "permeable_entry_fraction": {"min": 0.1}
+  }
+}

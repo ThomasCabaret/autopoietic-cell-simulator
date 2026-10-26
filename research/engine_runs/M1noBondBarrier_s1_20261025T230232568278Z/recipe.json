@@ -1,0 +1,83 @@
+{
+  "recipe_version": 1,
+  "run_id": "M1noBondBarrier_s1_20261025T230232568278Z",
+  "kind": "shared_engine",
+  "source_sha256": {
+    "simulator/__init__.py": "bf5a7a5cafdf7076cbc3cc9d8992895e4a8c217621ea024645a061a3531281a9",
+    "simulator/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "simulator/assembly.py": "4bd703a271102d5ca6a7ae3c6d0109ae158617fef8136b4f8ba5d5456d092034",
+    "simulator/catalysis.py": "bf0f4c35e7c96dde717a29645ce39c628fa2f3a907441f2b706db550c637c4a2",
+    "simulator/checkpoint.py": "5c7c1feea319f63d2af9ee717a31eaef1108378f467c5dff2b25ae3795212dd5",
+    "simulator/cli.py": "2b4ba9fec940173ea9bd990483aa39c38b9b7f07b5af5b23811313d3b94d62f6",
+    "simulator/config.py": "a7da96a0090c9e4a24a41106a87bc7afd9eaa3e63d206202bc89cd62279bd50b",
+    "simulator/contact_exchange.py": "3a1797a0b00f84265a16cfa9bdd652073ffd64522401f2fdf65e2d3544d2f38f",
+    "simulator/copy.py": "87b4e37c7bf4f15f314dff5d9e8e15378e5e35c71255f8c82e10db181ff4946d",
+    "simulator/docking.py": "db8daba23c23e293d7176d9a193d26139015b086b396a3a298650bfda06b3759",
+    "simulator/dual_faces.py": "dc7c31049fc5e6c7c1b97b194418de52fe32a19d5ab5cc1909c5c63c929929fa",
+    "simulator/engine.py": "c65b90ea8db7e963c5241ef7fe5e9c07034632d42bfc2748709daa0f612e7fbf",
+    "simulator/initial.py": "ecc0cdce037a2a38af2a9885ad323bce7f5752331f85a908f9643c34abe4c3b0",
+    "simulator/membrane.py": "ffd1350d79a099f13294e6171e2dcf99ea94a6ebe1ddde950e6e4215bc71eb87",
+    "simulator/membrane_bath.py": "713fbdce7755228de140709c4bc47a2e7cf36b0bb9dbbfd0def2509058a0f50f",
+    "simulator/observations.py": "ca86092042f5b56a60af77fd248d4b6561132eb341314dca11b3a3707ebff7f0",
+    "simulator/physics.py": "d8364c7fb784db08e2f9fe0b3f549abb69246e402c681b06293d85058a7aa464",
+    "simulator/plots.py": "96b1f61f29c551c39e4b84af5914c78ef4dea97b82d7cac734698c6526b51383",
+    "simulator/precursors.py": "dbabe84042b28b1f6a9c407b5dc3770a9fc0a27167c8f33c5c8eadbf7dbb593f",
+    "simulator/reference.py": "347618abbab85e3991f8b0fd771e2502f554a042db5f7b3140182ea04eb868bc",
+    "simulator/registry.py": "c766aad7b56575e940cdd2603d75e66cd2c0388ddf76a94741c05d8996d86ff8",
+    "simulator/runner.py": "e71cda264ee7a780034a0db96b13ffe5fa49c405f002dca376ca36c8e96d77a9",
+    "simulator/spatial.py": "e0f831e3ac3adcf624721244a83ec23dd7b5a11b0137015ee39ddd367e27649f",
+    "simulator/substrates.py": "705561e0093da0513d3221947ba01b726e7789ffdca4ed9e3c64595c3899859d",
+    "simulator/viewer.py": "85ae7d0e9fb13dcbf70a64232635c00d7a6f871809a864fe2b643a630f2632c3"
+  },
+  "environment": {
+    "python": "3.12",
+    "numpy": "2.0.2"
+  },
+  "initialization_incident": false,
+  "scenario": {
+    "schema_version": 1,
+    "model": "membrane_bath",
+    "name": "M1noBondBarrier",
+    "branch": "M1A",
+    "seed": 1,
+    "duration": 150.0,
+    "engine": {
+      "dt": 0.002,
+      "spatial": "tree",
+      "skin": 0.25,
+      "sample_every": 250
+    },
+    "chemistry": {
+      "units": 243,
+      "initial": "ring",
+      "short_length": 0.98,
+      "bonding": true,
+      "end_attraction": 4.0,
+      "cooperative_rows": false,
+      "oriented_ports": false,
+      "port_epsilon": 0.6,
+      "temperature": 0.08,
+      "face_docking": true,
+      "dock_energy": 4.0,
+      "dock_width": 0.3,
+      "dock_capture": 0.25,
+      "dock_rate": 25.0,
+      "bond_off_rate": 0.02,
+      "break_extension": 0.35,
+      "ring_units": 219,
+      "ring_radius": 34.5,
+      "box": [
+        90.0,
+        90.0
+      ],
+      "free_lipid_start": "inside_annulus",
+      "retained_probes": 24,
+      "permeable_probes": 24,
+      "barrier_radius": 0.55,
+      "barrier_stiffness": 0.0,
+      "initial_jitter": 0.015,
+      "contact_exchange_rate": 0.0,
+      "contact_exchange_capture": 0.8
+    }
+  }
+}

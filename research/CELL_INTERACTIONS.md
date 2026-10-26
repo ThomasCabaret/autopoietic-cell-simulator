@@ -109,3 +109,15 @@ sont des environnements du test, pas des détails ajoutés après intégration.
 Ce sont des risques concrets du candidat. Aucun n'est un argument pour écrire
 des milliers de corrections locales : les tests I0–I4 doivent décider tôt s'il
 faut changer les ports, le recyclage ou la représentation membranaire.
+
+## Test partiel I2–I4, lot9
+
+Frontière219 L préparés : faible courbure maintenue, sélectivité de sondes obtenue
+par contacts locaux, barrière de lien ablatable dans S. B donne une insertion
+rare par échange à six billes ; aucun contour/indice intérieur n'est lu dans les
+lois. Sans attraction ou ancienne courbure, la frontière se fragmente. Un état
+non classable n'est pas une preuve de rétention. Le test ne contient aucun vrai
+G/F ni nourriture/déchet, aucun L fabriqué : contrats de transport et de non-
+interaction biologique toujours ouverts. Le helper d'échange pourrait défaire
+des assemblages étrangers si on le généralise ; mesurer ces réactions parasites
+avant l'unification. Sources, cas et limites dans BATCH_09.md.

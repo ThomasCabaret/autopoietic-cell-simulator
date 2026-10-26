@@ -18,6 +18,10 @@
   prepared ribbon is a separate control, not proof of molecular self-assembly.
 - Keep laws local: no contour, complete sequence, complete genome or biological
   aggregate identity in the dynamics. Observers may identify these afterwards.
+- Apply `research/LOCALITY_AUDIT.md`: state each rule's bounded neighborhood and
+  helper cost; keep initialization/measurement labels out of reactions. Test no
+  observer feedback and declare external forcing. Do not encode a whole biological
+  function in a primitive type or count prepared structures as emergent results.
 - Commit code, laws, configurations, recipes and research documents. Keep raw
   trajectories, checkpoints, full run results and bulk experiment data local,
   excluded by `.gitignore`. Never delete local evidence just to keep Git small.
@@ -31,6 +35,10 @@
   dependency graph is a conditional specification, not evidence of viability.
 - Run checks appropriate to the change. At batch handoff give a very brief,
   honest maturity assessment, distinguishing separate models from common chemistry.
+- Follow `research/KINETICS_AND_PERFORMANCE.md`: distinguish no encounters,
+  ineligible contacts, reaction waiting and product instability. Keep no-event
+  runs right-censored; freeze horizons and report selected follow-ups as selected.
+  Long campaigns must expose status, checkpoints and source-frozen recipes.
 - The user authorizes useful local commits at the end of a batch. Review staged
   paths so experimental data and unrelated user changes are excluded.
 - **Never push to the remote repository. The user performs all pushes.**

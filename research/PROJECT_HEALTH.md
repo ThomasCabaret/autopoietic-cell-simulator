@@ -1,4 +1,4 @@
-# Santé du projet — 25 octobre 2026
+# Santé du projet —26 octobre2026
 
 Cette évaluation vise la faisabilité globale et le volume du travail, pas le
 nombre de simulations positives. Elle doit évoluer avec les résultats. La cible
@@ -195,3 +195,34 @@ dense par image. Pour1000 supports et2400 images, cela représente environ2,4Go
 de matrices uint8 avant autres états. Stocker des arêtes parcimonieuses ou
 désactiver les trajectoires en campagne évite cette dette sans changer les lois.
 Les latences des petits runs concurrents ne sont pas un benchmark à2400 billes.
+
+## Réévaluation après le lot9
+
+Poursuite ciblée justifiée : le défaut de courbure aval est observé puis réduit
+par une géométrie locale moins courbée. Une barrière de lien peut être retirée
+du criblage de sondes. L'insertion a un début de solution à six billes, sans
+contrôleur de contour ; elle reste rare et insuffisamment répliquée.24 calculs
+ne sont pas24 interventions conceptuelles : géométrie, barrière ablatée et un
+échange activé constituent les changements principaux.
+
+Risques : accès aux faces saturées, fuite à longue durée, état réel libre/lié des
+précurseurs, fabrication de L et compatibilité G/F. La perméabilité de sondes ne
+résout pas ces transferts. Ne pas attribuer à B la simplification S sans test.
+Si une insertase est requise, compter gI/EI et leur renouvellement. Richesse
+génétique et diversité des catalyseurs restent non démontrées.
+
+Aucun blocage de principe établi, aucun délai fiable en nombre de lots. Prochain
+horizon : K1 cinétique/campagnes puis M1B simplifié/plusieurs graines, avant I0/T9.
+Le suivi favorable B2 à450 est sélectionné : conclure3/3 serait un biais. Le coût
+Python est une piste d'accélération, pas un facteur×10 mesuré. Le stockage
+parcimonieux résout la dette des matrices denses pour ce hook seulement.
+
+## Livraison technique K1
+
+Le lot10 réduit le risque de faux échec par durée arbitraire : rencontres et
+éligibilité sont instrumentées sans modifier les trajectoires. Les censures et
+lois distinctes restent visibles. Les campagnes peuvent tourner hors conversation
+et reprendre après interruption.58 tests+7 historiques, aucun gain chimique ni
+débit×10 démontré. La campagne B/Bsimple doit maintenant dire si l'accès admissible
+est réellement limitant ; ne pas convertir sa simple mise en route en preuve.
+Éligibilité G/F, échantillonnage des conflits et coût du diagnostic restent à étendre.

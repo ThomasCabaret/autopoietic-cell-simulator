@@ -1,0 +1,30 @@
+{
+  "batch": 9,
+  "recipes": [
+    "research/engine_runs/M1A_s0_20261025T204441148425Z/recipe.json",
+    "research/engine_runs/M1A_s0_20261025T212521678424Z/recipe.json",
+    "research/engine_runs/M1A_s1_20261025T212650901752Z/recipe.json",
+    "research/engine_runs/M1A_s2_20261025T212817582490Z/recipe.json",
+    "research/engine_runs/M1bulk_s0_20261025T213144217816Z/recipe.json",
+    "research/engine_runs/M1exchange_s0_20261025T215436327289Z/recipe.json",
+    "research/engine_runs/M1exchange_s0_20261025T225915563115Z/recipe.json",
+    "research/engine_runs/M1exchange_s1_20261025T225925750592Z/recipe.json",
+    "research/engine_runs/M1exchange_s2_20261025T230253267029Z/recipe.json",
+    "research/engine_runs/M1exchange_s2_20261026T062849173724Z/recipe.json",
+    "research/engine_runs/M1exchangeOutside_s0_20261026T062859340109Z/recipe.json",
+    "research/engine_runs/M1flat_s0_20261025T212809499887Z/recipe.json",
+    "research/engine_runs/M1noAttract_s0_20261025T213252983077Z/recipe.json",
+    "research/engine_runs/M1noBondBarrier_s0_20261025T225935909350Z/recipe.json",
+    "research/engine_runs/M1noBondBarrier_s0_20261026T062838922435Z/recipe.json",
+    "research/engine_runs/M1noBondBarrier_s1_20261025T230232568278Z/recipe.json",
+    "research/engine_runs/M1noBondBarrier_s2_20261025T230242804209Z/recipe.json",
+    "research/engine_runs/M1noFree_s0_20261025T212928282828Z/recipe.json",
+    "research/engine_runs/M1noOff_s0_20261025T212521678424Z/recipe.json",
+    "research/engine_runs/M1oldCurve_s0_20261025T212650995749Z/recipe.json",
+    "research/engine_runs/M1outside_s0_20261025T213034694294Z/recipe.json",
+    "research/engine_runs/M1transparent_s0_20261025T212521678424Z/recipe.json",
+    "research/engine_runs/M1transparent_s1_20261025T212629442554Z/recipe.json",
+    "research/engine_runs/M1transparent_s2_20261025T212739090990Z/recipe.json"
+  ],
+  "policy": "Only inputs and exact sources; raw evidence stays local"
+}

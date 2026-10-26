@@ -56,3 +56,14 @@ Le scénario `09_expression_fonction.bat` montre une chaîne F fabriquée depuis
 puis réutilisée pour plusieurs ligations. Les expériences restent des preuves
 de principe : cellule viable, fabrication des composants et reconstruction des
 outils ne sont pas démontrées.
+
+Le [lot9](research/BATCH_09.md) teste une grande frontière préparée, la
+sélectivité de sondes et une voie d'insertion locale encore rare. Démonstrateur13.
+L'[audit de localité](research/LOCALITY_AUDIT.md) précise les raccourcis interdits
+et les aides externes ; [cinétique et performance](research/KINETICS_AND_PERFORMANCE.md)
+fixe les prochaines obligations de mesure et de calcul différé.
+
+Les [campagnes différées](campaigns/README.md) disposent de lanceurs Windows :
+`start_campaign.bat`, `campaign_status.bat`, `stop_campaign.bat`,
+`resume_campaign.bat`, `analyze_campaign.bat`. Sources figées et reprise ; aucune
+notification ni exécution pendant veille/extinction. Voir [lot10](research/BATCH_10.md).

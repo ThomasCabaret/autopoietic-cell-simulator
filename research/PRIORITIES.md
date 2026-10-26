@@ -1,4 +1,17 @@
-# Priorités — après le lot 8, 25 octobre 2026
+# Priorités — après le lot9,26 octobre2026
+
+Le [lot9](BATCH_09.md) réduit le risque de grande frontière : rétention sélective
+sur sondes3/3 à150 sans barrière de lien, fuite1/24 à450 sur un suivi ; deux
+insertions par échange local sur une seule graine. Membrane et G/F restent séparés.
+
+**Prochain lot technique K1 :** campagne figée, état consultable, arrêt/reprise
+et analyse cinétique des rencontres, éligibilité, premières transitions et essais
+censurés. Puis M1B sur horizons comparables et transfert sans barrière de lien.
+Profiler avant optimisation CPU, sans modifier les lois ; GPU après preuve de coût.
+I0/alphabet commun et T9/multigène suivent. L'ancien plan est conservé ci-dessous
+comme contexte du lot8, et non comme état des preuves du lot9.
+
+## Plan avant le lot9
 
 Le [lot8](BATCH_08.md) franchit C3B pour une fonction : F exprimé→composant
 incorporé3/3, copie G entièrement issue de ses produits2/3, renouvellement de
@@ -90,3 +103,10 @@ prétendre C3 entièrement clos ni la membrane compatible avec cette boucle.
 Si les interventions cessent de réduire les risques, revoir le candidat et le
 budget plutôt que multiplier les démonstrateurs. Données locales, commits locaux,
 aucun push. Les échecs et trois erreurs d'étiquette restent dans les recettes.
+
+## État après livraison technique K1
+
+Contrôleur/mesures livrés et testés ; utiliser le plan B/Bsimple sur horizons égaux,
+puis analyser les occasions de réaction, la fermeture, la persistance et la fuite.
+La livraison technique n'autorise pas à déclarer M1B robuste. Les décisions I0/T9
+et le transfert vers une chimie commune restent les suites scientifiques.

@@ -92,6 +92,16 @@ def resolve(raw):
             raise ValueError('invalid functional bend cosine')
         if any(defaults[k]<=0 for k in ('food_ligand_width','food_binding_radius','food_reaction_radius')) or any(defaults[k]<0 for k in ('functional_bend_strength','food_ligand_energy','food_binding_rate','food_unbinding_rate','food_reaction_rate')):
             raise ValueError('invalid functional substrate parameters')
+    elif model=='membrane_bath':
+        if defaults['initial']!='ring' or not defaults['face_docking']:raise ValueError('Bath requires prepared ring and local face docking')
+        if any(not isinstance(defaults[k],int) or defaults[k]<0 for k in ('units','ring_units','retained_probes','permeable_probes')) or not 3<=defaults['ring_units']<=defaults['units']:
+            raise ValueError('Invalid membrane bath counts')
+        if defaults['ring_radius']<=5. or defaults['short_length']<=0 or defaults['dock_width']<=0 or defaults['dock_capture']<=0:
+            raise ValueError('Invalid membrane bath geometry')
+        if defaults['free_lipid_start'] not in ('inside_annulus','outside_annulus','inside_bulk'):raise ValueError('Invalid free lipid initial distribution')
+        if any(defaults[k]<0 for k in ('barrier_radius','barrier_stiffness','initial_jitter','dock_energy','dock_rate','bond_off_rate','break_extension','contact_exchange_rate')):raise ValueError('Invalid membrane bath rates or stiffness')
+        if defaults['contact_exchange_capture']<=0:raise ValueError('Invalid local exchange capture')
+        if min(defaults['box'])<2*(defaults['ring_radius']+5.):raise ValueError('Box too small for prepared bath')
     elif model=='membrane':
         if not isinstance(defaults['units'],int) or defaults['units']<2 or not isinstance(defaults.get('fragment_size',1),int) or defaults.get('fragment_size',1)<1:
             raise ValueError('invalid membrane size')

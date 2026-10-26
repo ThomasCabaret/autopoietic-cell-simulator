@@ -22,3 +22,4 @@ research/runs/** -text -eol -whitespace
 research/engine_runs/** -text -eol -whitespace
 research/abstract_runs/** -text -eol -whitespace
 research/legacy_reference/** -text -eol -whitespace
+research/campaign_recipes/** -text -eol -whitespace

@@ -1,0 +1,63 @@
+# Fidélité à l'objectif : localité et risques de pilotage
+
+Lot9,25 octobre2026. La cible est une implémentation locale de fonctions qui
+n'ont de sens qu'à l'échelle des assemblages. Concevoir une chimie, fournir
+énergie et conditions initiales ne dispense pas de cette contrainte.
+
+## Ce qui invaliderait une démonstration
+
+- Lire une séquence, une longueur cible ou un génome entier pour déclencher
+  copie, fin de copie, expression, repliement ou fonction enzymatique.
+- Reconnaître une protéine/vésicule comme objet complet puis lui attribuer un
+  comportement. Donner à une bille « enzyme N » toute sa fonction serait une
+  autre façon de déplacer la réponse dans les primitives.
+- Identifier un contour, son intérieur, son rayon/aire ou ses membres dans une
+  règle, puis refermer, repousser le contenu, choisir une insertion ou transporter
+  une molécule pour atteindre le résultat. Une pression globale de consigne serait
+  également un pilotage, même calculée depuis les coordonnées.
+- Faire une conversion/relocalisation externe d'un produit entre fabrication et
+  usage, changer les lois au moment opportun ou corriger l'état depuis l'analyse.
+- Programmer un calendrier de sauvetage ciblé sur les événements observés.
+  Une condition externe fixée d'avance est une aide différente, à déclarer.
+- Présenter un anneau préparé comme autoassemblé, une bille-sonde comme un gène
+  réellement retenu, ou des mécanismes séparés comme une cellule intégrée.
+
+Une interaction sur quatre/six billes liées, de portée et d'arité fixes, reste
+locale si elle lit uniquement leurs attributs et liens voisins. Le fait que ce
+motif contienne tout un petit dimère n'autorise pas une inspection arbitraire
+d'une future macromolécule. Le coût du motif doit rester borné lorsque celle-ci
+grandit. La localité ne suffit pas : une primitive spécifique par fonction peut
+écrire implicitement le programme attendu. Mesurer réutilisation et complexité.
+
+## Audit du code au départ du lot9
+
+| Zone | Lecture dans la dynamique | Diagnostic et réserve |
+| --- | --- | --- |
+| `copy.py` | Reconnaisseurs liés, arêtes voisines et ports ; motif parallèle de ligation | Pas de séquence complète dans `react`/forces. `sequence` sert à l'initialisation ; l'observateur reconnaît les produits |
+| `assembly.py`/`precursors.py` | Deux précurseurs, deux F voisins liés, six billes au total | Aide catalytique explicite ; pas de reconnaissance d'enzyme entière. Alphabet de précurseurs spécialisé et diversité limitée |
+| `docking.py` | Deux H–T, leurs faces saturées, géométrie à quatre billes | Aucun contour ni taille souhaitée. Les longueurs locales induisent une courbure préférée ; ne pas régler celle-ci en ligne depuis un rayon global |
+| `engine.py` | Voisins spatiaux, forces, diffusion, boîte imposée | Taille des tableaux et arbres spatiaux sont de l'infrastructure, pas une identité biologique. La boîte ne doit pas remplacer la membrane |
+| `observations.py` | Graphes complets, séquences, provenance, contours | Autorisé pour mesurer uniquement. L'API donne des références vivantes : risque de rétroaction accidentelle à couvrir par tests |
+| Cycle génétique | Temps uniforme, période et phase de déliaison | Forçage externe global réel, pas autonomie en bain stationnaire. Fixé avant les runs, sans consultation des copies ; étudier/ablate sa nécessité |
+
+Les gardes « plus aucun précurseur disponible » peuvent accélérer le calcul si
+elles ne changent aucune transition locale éligible. Les champs de rayon ou de
+labels de départ sont permis dans le constructeur ; ils ne doivent pas réapparaître
+dans les forces/réactions. Permuter les IDs ne doit pas changer une force physique.
+
+## Obligations du lot9
+
+Le grand anneau et les cohortes de sondes sont préparés et marqués seulement
+pour analyse. Les contacts H–H/T–T de V8 se rompent/reforment sans reconnaître
+leur composante. L'insertion est une observation après coup de nouvelles unités
+dans un contour issu de l'anneau ; ce n'est jamais une opération du moteur.
+
+Une barrière locale sur un lien de membrane peut repousser une sonde : deux
+extrémités et une sonde, trois billes, force et réaction distribuées par gradient.
+Elle doit exister aussi sur un fragment ouvert, agir des deux côtés et rester
+indépendante de l'intérieur. Une sonde transparente est un contrôle physique,
+pas une preuve que X/Y/Z et les vrais G/F passent/sont retenus comme souhaité.
+
+Tests : gradient, moment/force totaux, arité indépendante de l'agrégat, modification
+des seuls labels/rayon initiaux sans effet après préparation, arbre/exhaustif,
+reprise, et trajectoire avec/sans observateur identique. Archiver échecs et helpers.

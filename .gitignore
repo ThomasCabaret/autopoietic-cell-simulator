@@ -12,6 +12,15 @@ __pycache__/
 # Local executions and reproducible distribution archives
 /outputs/
 /deliverables/
+/research/campaign_recipes/**/*
+!/research/campaign_recipes/*/
+!/research/campaign_recipes/*/manifest.json
+!/research/campaign_recipes/*/manifest.sha256
+!/research/campaign_recipes/*/plan.json
+!/research/campaign_recipes/*/runtime/
+!/research/campaign_recipes/*/runtime/campaign.py
+!/research/campaign_recipes/*/runtime/simulator/
+!/research/campaign_recipes/*/runtime/simulator/*.py
 /build/
 /dist/
 

@@ -543,3 +543,41 @@ Architecture, interactions, arbre, priorités, maturité et santé actualisés.
 Prochain M1 pour grande frontière/insertion/fuite avant de multiplier les réglages
 de capture ; I0 et T9/multigène restent ouverts. Risque mémoire des graphes denses
 à traiter avant les bains volumineux. Données locales préservées, aucun push.
+
+## 2026-10-26 — lot9 : frontière dimensionnée et audit de localité
+
+24 dynamiques,586 empreintes,7904 images auditées. Frontière219 dimères préparés,
+24 libres,48 sondes :534 billes, pas la cellule2406. A et S sans barrière de lien
+retiennent les sondes testées3/3 à150 ; contrôle transparent perd10–14/24. À450,
+S0 perd1/24. Aucune insertion passive. B échange un contact local à six billes :
+deux insertions sur graine2 seulement, persistance6 à150 puis10,5 à450 dans un
+suivi sélectionné. Aucun taux de réussite3/3 à450 ni membrane commune G/F.
+
+Pilote conservé avec erreur d'enveloppe : corde virtuelle36 donnant six fausses
+sorties. Version2 classe inconnu les fragments à écart>2,5 ; lois inchangées.
+51 tests moteur et7 historiques, deux régressions chimiques exactes, reconstruction
+source seule et trace des deux échanges exacts. Interface et données parcimonieuses
+validées. Démo13. Audit des risques de tricherie et limites des aides explicites.
+
+L'interruption puis discussion utilisateur ouvrent K1 : campagnes différées,
+reprise et diagnostic cinétique avant de juger les essais lents. Profil court :
+réactions Python dominantes pour le bain membrane ; aucun facteur×10 revendiqué.
+Arbre, priorités, maturité, santé et architecture actualisés. Aucun push.
+
+## 2026-10-26 — lot10 technique K1 : exposition et campagnes différées
+
+Contrôleur de campagnes et travailleurs sur Simulation.advance, sources figées,
+verrous OS, statut atomique, arrêt/checkpoints/reprise, export/restauration source
+seule. Aucun nouveau scheduler de réactions. Compteurs pré-réaction de rencontres
+et faces admissibles pour membrane, sans PRNG ni écriture chimique ; fenêtres,
+premiers passages censurés et Kaplan–Meier par lois/protocole/horizon.
+
+58 tests logiciels et7 historiques passent. Reprise intermédiaire exacte, y
+compris exposition, worker figé, pas de redémarrage des terminés, altération
+refusée, ancienne trace «running» reconnue interrompue si verrou absent.
+Les hazards exacts et l'éligibilité des autres hooks ne sont pas prétendus.
+
+Plan B/Bsimple,3 graines chacun,t1500,2 travailleurs, checkpoint60s, sans trajectoire
+complète. Recette de campagne à conserver ; analyse différée, aucune conclusion
+chimique anticipée. Pas de GPU ajouté ni facteur×10 mesuré. Données locales,
+commits locaux uniquement.

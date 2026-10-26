@@ -161,3 +161,11 @@ préparés ; ces métadonnées restent absentes des réactions. `precursor_bindi
 est enregistré avec les rungs pour montrer les liens sur les bonnes billes.
 Le comparateur de rejeu normalise les clés d'IDs après passage JSON. Les sources
 archivées restent inchangées ; le reconstructeur exécute leur version exacte.
+
+## Frontière et sondes M1
+
+`membrane_bath.py` réutilise les contacts V8 et le même ordonnanceur. Barrière
+optionnelle sur un segment réel : trois billes. `contact_exchange.py` remplace
+un contact local sans relocation ni fermeture automatique. Observations globales
+séparées ; trajectoires `membrane_face_links` parcimonieuses, reprises et rendu
+adaptés. Le hook initialise un anneau construit, aucune autoformation revendiquée.
