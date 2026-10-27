@@ -56,6 +56,13 @@ renouvellement à400 ne prouvent pas l'impossibilité. Si l'activité isolée à
 disparaît ou si la géométrie de confinement échoue, traiter ce verrou avant une
 grande campagne. Aucune bibliothèque fonctionnelle, division ni viabilité promise.
 
+À titre de calibration historique (autres dt/trajectoires, pas prévision), les
+C3Bexpress1200 avaient leurs premiers F libérés à385,5/185,5/385,5 et premiers
+actes catalysés à387,275/198,05/400,15. L'horizon400 est donc un **criblage précoce**,
+pas un test de maintien ni un délai suffisant garanti. Rapporter les zéros
+censurés et l'exposition ; geler séparément toute prolongation, sélectionnée ou
+systématique, sans fusionner les horizons dans une estimation favorable.
+
 Coût : table croisée contact libre/lié, deux constantes0,55/80 et réutilisation de la barrière, zéro type
 élémentaire ajouté aux deux alphabets réunis, zéro outil/gène. Six types chimiques
 hérités (H/T et P_G/P_F/R0/R1), classes mécaniques agrégées distinctes des espèces.

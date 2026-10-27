@@ -667,3 +667,8 @@ Pilotes graine0 natif/froid60 et bain/sansL20 sans erreur ni réaction ; bain sa
 contact encore. Résultats courts censurés, pas preuve d'inactivité. Plan quatre
 conditions × trois graines à400 avant résultats. Réactions L et P/R encore
 disjointes ; production L par F et diversité restent des verrous de représentation.
+
+Campagne J0 lancée : campaign_20261027T113835658766Z, code55bcbf9,12 tâches
+à400 sur sources figées, deux travailleurs. Recette source seule conservée.
+73 tests uniques logiciels et7 historiques passent ; archive de distribution
+avec hashes vérifiés. Aucun succès chimique attribué avant analyse du lot.

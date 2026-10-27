@@ -60,3 +60,17 @@ Ce petit contenu ne remplace pas le budget cellulaire conditionnel C0B2406.
 Aucune division, renouvellement durable, membrane synthétisée ni viabilité.
 Maturité : banc commun vérifié, compatibilité chimique fonctionnelle encore à
 mesurer. Santé : poursuite ciblée, effort global toujours non estimable.
+
+## Lancement figé
+
+Campagne `campaign_20261027T113835658766Z`, code55bcbf9, douze tâches à400,
+deux travailleurs. [Recette source seule](campaign_recipes/J0_20261027T113835658766Z/manifest.json)
+préservée. Les résultats sont en cours, pas encore un bilan de compatibilité.
+Suivi `campaign_status.bat`, pause/reprise et analyse par les lanceurs existants.
+Les paramètres ne seront pas modifiés d'après les premiers résultats.
+
+Contrôle de fonctionnement en cours : checkpoint périodique du premier bain
+(graine0) rechargé à143,5,588 billes dont102 P/R, vues partagées et288 observations.
+Exposition observée approchée448 temps-atome libres,0 lié : premiers contacts
+réels, pas encore une démonstration de rétention ou de transfert fonctionnel.
+Ce point partiel n'est pas une sélection de succès et ne modifie aucun horizon.

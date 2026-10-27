@@ -680,13 +680,15 @@
         "C0C",
         "I0"
       ],
-      "status": "common_bath_verified_short_pilots_no_events_long_comparison_planned",
+      "status": "twelve_task_frozen_common_bath_campaign_running",
       "hypothesis": "Actual free P/R pass L contacts while locally bonded P/R are repelled, and genetic activity survives a common physical bath",
       "test": "Native/cold/no-boundary/bath, seeds0/1/2 at400; products incorporated, contact exposure and sampled transport; exact checkpoint and no observer feedback",
       "cost": "Union of six inherited elemental kinds, two cross-contact constants0.55/80 and local bond predicate; no new gene/tool; external cycle and activated feed inherited",
       "counterexample": "Low temperature or dilution disables genetic flux, bound products escape or stick, or no encounters expose the boundary",
       "missing_proof": "No functional joint-bath transfer yet, L synthesis by F impossible with current disjoint reactions; general library and robust membrane unresolved",
-      "evidence": "research/BATCH_13.md"
+      "evidence": "research/BATCH_13.md",
+      "campaign_recipe": "research/campaign_recipes/J0_20261027T113835658766Z/manifest.json",
+      "pilot_recipes": "research/BATCH_13_PILOTS.json"
     }
   ]
 }
