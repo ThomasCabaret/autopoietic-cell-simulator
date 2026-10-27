@@ -1,7 +1,12 @@
 # Campagnes différées
 
-Le plan courant `common_bath.json` teste J0 sur quatre conditions et trois graines
-à400 ; voir le paragraphe lot13 ci-dessous. `start_campaign.bat` utilise ce plan.
+Le plan courant `genetic_kinetics.json` rejoue les six témoins génétiques J0 à400
+avec `genetic_audit=true` : occasions, exclusions et occupations, sans changer
+les lois. Voir [lot14](../research/BATCH_14_PLAN.md). Le lancement par défaut
+utilise ce plan. Le suivi froid3200 ne sera lancé qu'après diagnostic explicite.
+
+Le plan historique `common_bath.json` teste J0 sur quatre conditions et trois graines
+à400 ; voir le paragraphe lot13 ci-dessous.
 
 Le plan historique `membrane_terminal_exchange.json` lance G1 sur trois graines à1500,
 avec `terminal_exchange=true` et les diagnostics précédents. Comparaison aux six

@@ -707,6 +707,23 @@
       "counterexample": "Late chemistry, optimal feed inventory or rendering changes the short synthetic timings; required renewal time may exceed planning scenarios",
       "missing_proof": "No measured functional T50, optimal feed concentration or dt convergence",
       "evidence": "research/NUMERICS_AND_RENEWAL.md"
+    },
+    {
+      "id": "GKA",
+      "parent": "J0",
+      "related": [
+        "C3B1",
+        "K1",
+        "T9"
+      ],
+      "status": "diagnostic_verified_six_exact_replays_planned",
+      "hypothesis": "Recognition access, double occupancy and ligation eligibility distinguish slowed cold kinetics from local traps before changing laws",
+      "test": "Unchanged native/cold J0 seeds0/1/2 at400, passive own-cache pre-reaction census; compare complete primary metrics, positions, RNG and chemistry to J0",
+      "cost": "Zero physical primitive, gene, tool or parameter; one optional passive diagnostic with private cache and resumable state",
+      "counterexample": "Repeated eligible opportunities without products or long irreversible partial states contradict pure encounter scarcity; measurement that changes trajectories is invalid",
+      "missing_proof": "Six replay statistics pending; common-bath function, L synthesis, dt convergence and renewal remain open",
+      "evidence": "research/BATCH_14.md",
+      "health_gate": "One six-control diagnosis then one justified all-seed extension to3200 or one conceptual intervention, no unconstrained thermal tuning"
     }
   ]
 }

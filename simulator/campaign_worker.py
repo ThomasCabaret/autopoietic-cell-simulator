@@ -7,6 +7,7 @@ from . import checkpoint
 from .campaign_io import read,write,lock
 from .kinetics import KineticProbe
 from .boundary_audit import BoundaryAudit
+from .genetic_audit import GeneticAudit
 
 
 def execute(folder,task_id):
@@ -28,6 +29,10 @@ def execute(folder,task_id):
                 sim=Simulation(task['scenario']);obs=make_observer(sim.config,manifest['record_trajectory']);sim.listeners.append(obs)
             probe=KineticProbe(sim.config,getattr(obs,'campaign_kinetics_state',None),manifest['kinetic_window'])
             probe.attach(sim.chemistry)
+            genetic=None
+            if manifest.get('genetic_audit',False):
+                genetic=GeneticAudit(getattr(obs,'campaign_genetic_state',None),manifest['kinetic_window'])
+                genetic.attach(sim.chemistry)
             audit=None
             if manifest.get('boundary_audit',False):
                 audit=BoundaryAudit(sim.config,obs,getattr(obs,'campaign_boundary_state',None))
@@ -36,6 +41,7 @@ def execute(folder,task_id):
             def save():
                 obs.campaign_kinetics_state=probe.state
                 if audit is not None:obs.campaign_boundary_state=audit.state
+                if genetic is not None:obs.campaign_genetic_state=genetic.state
                 checkpoint.save(path/'periodic.npz',sim,obs)
                 state['checkpoint']=(path/'periodic.npz').relative_to(folder).as_posix()
             while not sim.done:
@@ -53,14 +59,20 @@ def execute(folder,task_id):
                     if probe.terminal:
                         state['kinetic_exposure']['gated_exchange_face_time']=sum(w.get('gated_exchange_face_time',0.) for w in probe.state['windows'].values())
                     if audit is not None:state['boundary_state']=audit.state['last_kind']
+                    if genetic is not None:
+                        state['genetic_first']=genetic.state['first']
                     write(dest/'state.json',state)
             obs.campaign_kinetics_state=probe.state
             if audit is not None:obs.campaign_boundary_state=audit.state
+            if genetic is not None:obs.campaign_genetic_state=genetic.state
             evidence=save_result(path,sim,obs,time.monotonic()-start)
             save();write(path/'kinetics.json',probe.summary(sim.time,evidence['metrics']))
             if audit is not None:
                 write(path/'boundary_audit.json',audit.summary())
                 state['boundary_audit']=(path/'boundary_audit.json').relative_to(folder).as_posix()
+            if genetic is not None:
+                write(path/'genetic_audit.json',genetic.summary(sim.time))
+                state['genetic_audit']=(path/'genetic_audit.json').relative_to(folder).as_posix()
             state.update(status='complete',updated=time.time(),step=sim.step_index,target_step=sim.target_step,
                 simulated_time=sim.time,result=(path/'result.json').relative_to(folder).as_posix(),
                 kinetics=(path/'kinetics.json').relative_to(folder).as_posix(),expected_checks=evidence['expected_checks'])

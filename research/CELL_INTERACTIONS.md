@@ -152,3 +152,8 @@ Production de L par F non implémentée ; un changement de représentation est
 requis, sans conversion externe ni simple renommage P/R. J0 vérifie d'abord
 cohabitation, contacts, dilution et température ; les autres contrats restent
 conditionnels, y compris transport sous consommation et renouvellement.
+
+GKA (lot14) instrumente les motifs génétiques existants pour analyser l'échec
+à froid avant d'ajouter une autre interaction. Aucun type, outil/gène ou coût
+particulaire changé. Les réactions chimiques P/R–L restent absentes ; aucune
+sélectivité supplémentaire n'est déduite de cet observateur.

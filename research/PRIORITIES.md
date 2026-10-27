@@ -1,4 +1,12 @@
-# Priorités — lot13,27 octobre2026
+# Priorités — lot14,27 octobre2026
+
+GKA : diagnostiquer la reconnaissance et la ligation à froid avant tout réglage.
+Six témoins J0 natif/froid rejoués à400, instrumentation sans rétroaction,
+comparaison exacte aux originaux. Plan BATCH_14_PLAN.md : distinguer occasions
+rares, occupations, géométrie et attente réactive ; suivi froid3200 de toutes les
+graines seulement si le diagnostic le justifie. Aucun nouveau helper chimique.
+
+## Priorités du lot13, historique
 
 G1 achevé et analysé : insertion1/2/2, fermeture0,840/0,841/0,759 ; critère
 conjoint2/3, aucune dominance sur B. Voir BATCH_12_RESULTS.md. **Arrêter les

@@ -22,6 +22,11 @@ def prepare(plan_path,parent):
         tasks.append(dict(id=f'task{i:04d}',label=raw.get('label',cfg['name']),scenario=cfg))
     if plan.get('boundary_audit',False) and any(t['scenario']['model']!='membrane_bath' for t in tasks):
         raise ValueError('Boundary audit requires membrane_bath tasks')
+    if plan.get('genetic_audit',False):
+        for t in tasks:
+            cfg=t['scenario'];g=cfg['chemistry'].get('genetics',cfg['chemistry'])
+            if cfg['model'] not in ('copy','coupled_bath') or g.get('dual_faces') or g.get('food_pairs'):
+                raise ValueError('Genetic audit requires copy/coupled P/R without dual faces or X/Y')
     folder=parent/('campaign_'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ'));folder.mkdir(exist_ok=False)
     runtime=folder/'runtime';runtime.mkdir();source=ROOT/'simulator'
     (runtime/'simulator').mkdir()
@@ -31,6 +36,7 @@ def prepare(plan_path,parent):
     manifest=dict(version=1,name=plan.get('name','campaign'),created=time.time(),tasks=tasks,
         workers=workers,checkpoint_seconds=interval,kinetic_window=window,
         boundary_audit=bool(plan.get('boundary_audit',False)),
+        genetic_audit=bool(plan.get('genetic_audit',False)),
         record_trajectory=bool(plan.get('record_trajectory',False)),source_sha256=hashes,
         comparison_policy=plan.get('comparison_policy','Separate candidates; no common chemistry inferred'),
         plan_sha256=digest(plan_path))
@@ -154,6 +160,8 @@ def analyze(folder):
                 row['membrane']={k:metrics['membrane'][k] for k in ('parent_closed_fraction','envelope_valid_fraction')} if metrics['membrane'] else None
         if state.get('boundary_audit'):
             row['boundary_audit']={k:v for k,v in read(folder/state['boundary_audit']).items() if k!='state'}
+        if state.get('genetic_audit'):
+            row['genetic_audit']={k:v for k,v in read(folder/state['genetic_audit']).items() if k!='state'}
         rows.append(row);groups.setdefault(key,[]).append(row)
     estimates={}
     for key,group in groups.items():
@@ -207,6 +215,16 @@ def analyze(folder):
         for r in transported:
             t=r['transport'];e=t['near_membrane_atom_time'];x=t['sampled_crossings']
             lines.append(f"| {r['task']} | {e['free']:.3g} | {e['bound']:.3g} | {x['free']} / {x['bound']} / {x['state_changed']} | {t['valid_transport_fraction']:.3f} |")
+    genetic_audits=[r for r in rows if 'genetic_audit' in r]
+    if genetic_audits:
+        lines += ['', '## Occasions génétiques pré-réaction', '',
+            'Expositions en temps-motif, approximatives ; changements possibles dans le tick. Aucune rétroaction.', '',
+            '| Tâche | Capture G–F | Double appariement | Ligation F admissible | Ligation G admissible | Catalyse admissible |',
+            '| --- | ---: | ---: | ---: | ---: | ---: |']
+        for r in genetic_audits:
+            e=r['genetic_audit']['exposure']
+            values=[e.get(k,0.) for k in ('recognition_eligible_GF','ligation_double_paired','ligation_eligible_F','ligation_eligible_G','assembly_catalytic_eligible')]
+            lines.append('| '+r['task']+' | '+' | '.join(f'{v:.3g}' for v in values)+' |')
     (folder/'analysis.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
     return report
 

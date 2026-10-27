@@ -104,3 +104,13 @@ Les tests couvrent observateur sans rétroaction, force de réaction sur L,
 état de liaison, mêmes positions/PRNG après reprise, caches spatiaux séparés
 et absence de parois internes. Les contours sont réservés aux mesures, qui
 abandonnent les intervalles inconnus. Production de L par F non implémentée.
+
+## GKA — observateur génétique
+
+Le diagnostic lit les positions, états locaux et motifs d'appariement/ligation
+existants, avec ses propres requêtes spatiales. Son état, ses fenêtres et ses
+épisodes ne sont jamais lus par la chimie. Il remplace seulement le callable
+par un wrapper passif qui appelle l'original une fois et retourne ses événements.
+Pas de nouveau type/état/port physique ; aucun label de gène ou séquence cible
+dans les filtres. Les tests vérifient positions, chimie et PRNG identiques,
+y compris dans le hook couplé. Les sources historiques sont préservées.

@@ -1,6 +1,6 @@
 param(
     [ValidateSet('Start','Status','Stop','Resume','Analyze')][string]$Action='Status',
-    [string]$Plan='campaigns\common_bath.json',
+    [string]$Plan='campaigns\genetic_kinetics.json',
     [string]$Folder=''
 )
 $ErrorActionPreference='Stop'

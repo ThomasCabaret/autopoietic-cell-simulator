@@ -320,3 +320,13 @@ inconnu. Un scénario1000–10000 unités demanderait27min–4h25 à taille nomi
 ce n'est ni une borne ni une prévision. La convergence en pas de temps est aussi
 non démontrée. Prochain diagnostic : cinétique froide puis contrôle dt/dt2/dt4
 sous mêmes lois, avant de compter sur un renouvellement rapide ou un gain GPU.
+
+## GKA — horizon de décision rapproché
+
+Un petit nombre de sites s'apparient déjà à froid ; un simple « pas de rencontre »
+ne suffit pas. GKA mesure admissibilité et occupation sans modifier le candidat.
+Le prochain horizon est six rejeux400, puis une seule prolongation de toutes
+les graines froides ou une intervention conceptuelle motivée. Aucun progrès de
+fonction ajouté et aucune certitude sur la durée du renouvellement. Ne pas
+transformer le scénario de coût1000–10000 unités en marge haute ou probabilité
+de terminer sous dix heures : la cinétique et les fonctions aval restent inconnues.

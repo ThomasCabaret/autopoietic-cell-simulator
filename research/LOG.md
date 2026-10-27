@@ -687,3 +687,15 @@ pas trois synthétases ni une cellule viable. Équations et métrique T50 par fa
 dans NUMERICS_AND_RENEWAL.md, protocole de convergence numérique ajouté à
 KINETICS_AND_PERFORMANCE. Aucun T50 global mesuré ni optimum de nourriture.
 Code chimique inchangé, pas de nouvelle campagne ; audit détaillé J0 restant.
+
+## 2026-10-27 — démarrage GKA, diagnostic génétique
+
+Priorité à l'incompatibilité froide, pas nouvelle fonction. Les anciens historiques
+ont déjà des appariements, maxima4/2/4 sites à froid contre6/6/6 au chaud. Audit
+pré-réaction ajouté sans PRNG ni retour vers les lois, avec census d'exclusions,
+motifs de ligation et supports catalytiques. Six témoins natif/froid à400 prévus,
+sources figées et comparaison exacte des métriques/positions/PRNG/chimie.
+Suite ciblée6 tests positive ; suite complète d'abord bloquée par permissions
+sur les répertoires temporaires du sandbox, relancée hors sandbox à code identique.
+Aucune régression ou réussite chimique déduite de cette erreur d'environnement.
+Relance complète :79 tests logiciels et7 historiques passent avant gel.

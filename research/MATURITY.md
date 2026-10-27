@@ -151,3 +151,7 @@ catalysé incorporé dans le bain commun. Les trois témoins à0,6 expriment un 
 aucun à0,08 à cet horizon. Compatibilité fonctionnelle toujours non acquise ;
 cinétique à froid et convergence numérique restent à diagnostiquer. Le nouveau
 benchmark à2406/6292 billes mesure le coût du calcul, pas une cellule renouvelée.
+
+GKA ajoute un audit d'occasions génétiques sans nouvelle loi ; la maturité
+chimique n'augmente pas avant diagnostic et transfert. Un banc commun exécuté
+ne compense pas l'absence actuelle de F ou d'incorporation à froid à400.
