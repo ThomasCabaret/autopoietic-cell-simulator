@@ -1,4 +1,18 @@
-# Priorités — lot14 J1,27 octobre2026
+# Priorités — lot15 J2,27 octobre2026
+
+J1 terminé12/12 : incorporation froide préparée3/3 mais aucun F nouveau ; un
+témoin délié exprime un F actif. Dans les6 bains : fabrication préparée13/13/11,
+aucune incorporation et frontière fragile. Monomères présents mais plus éloignés
+du gène, aucun fragment F délié non cible dans les bains. Ne pas accuser L ni
+ajouter un recycleur avant contrôle spatial.
+
+Priorité J2 : grands/petits mondes sans L, mêmes paquets/PRNG initiaux, préparé
+et délié, trois graines à1200. Voir BATCH_15_PLAN.md. Décider ensuite entre
+densité/organisation et effet de frontière. L'homéostasie faible est désormais
+explicite dans HOMEOSTASIS.md ; inventaires bornés par un stock fini ne la
+prouvent pas. T9, convergence dt, bibliothèque et production L restent requis.
+
+## Priorités J1, historique
 
 GKA terminé6/6 avec rejeu primaire exact. Deux froids n'ont aucun motif doublement
 apparié observé ; le troisième forme une liaison, pas un F complet. Aucun taux

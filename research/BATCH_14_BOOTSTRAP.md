@@ -52,3 +52,11 @@ campaign_recipes/J1_20261027T144451586423Z ; résultats non encore analysés.
 Les79 tests logiciels+7 historiques passent ; les13 tests campagne/couplage
 repassent après ajout de la distinction préparé/exprimé dans le tableau.
 Suivi campaign_status.bat, pause/reprise et analyze_campaign.bat habituels.
+
+## Clôture
+
+Les12 essais sont terminés, sources/événements/inventaires vérifiés. Voir
+[résultats complets](BATCH_14_BOOTSTRAP_RESULTS.md). Froid préparé : produits
+incorporés3/3 ; témoin délié1 : F exprimé actif et un produit incorporé. Dans
+les6 bains membranaires : aucune incorporation, frontière encore fragile.
+J2 sépare maintenant domaine et présence de L, sans nouvelle réaction.

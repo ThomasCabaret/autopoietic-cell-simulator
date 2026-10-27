@@ -10,7 +10,7 @@ from .membrane_bath import MembraneBathChemistry, MembraneBathObserver, barrier_
 from .observations import CopyObserver, components, area
 
 DEFAULTS=dict(temperature=.08,membrane={},genetics={},include_membrane=True,
-              packet_offset=[27.5,0.],bound_contact=.55,bound_barrier_stiffness=80.)
+              packet_offset=[27.5,0.],bound_contact=.55,bound_barrier_stiffness=80.,world_box=None)
 
 
 class ScopedNeighbors:
@@ -51,6 +51,14 @@ class CoupledBathChemistry:
         self.genetics.box=self.box
         self.offset=len(self.membrane.pos) if config['include_membrane'] else 0
         self.pos=np.concatenate((self.membrane.pos[:self.offset],self.genetics.pos))
+        # Explicit whole-world boundary control with L absent. The packet and
+        # its RNG state are preserved up to translation; never an inner wall.
+        if config['world_box'] is not None:
+            if self.offset:raise ValueError('World-box control requires no membrane particles')
+            world=np.asarray(config['world_box'],dtype=float)
+            self.pos+=world/2-self.box/2-np.asarray(config['packet_offset'])
+            self.box=world;self.genetics.box=self.box
+            if np.any(self.pos<0) or np.any(self.pos>self.box):raise ValueError('Initial packet leaves the control world')
         self.mobility=np.concatenate((np.full(self.offset,.4),np.full(len(self.genetics.pos),.25)))[:,None]
         # 0=L,1=free P,2=free R,3=bound P,4=bound R: mechanical
         # classes only, not new elementary kinds or whole-molecule identities.

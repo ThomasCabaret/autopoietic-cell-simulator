@@ -1,9 +1,14 @@
 # Campagnes différées
 
-Le plan courant `constructed_tool.json` teste J1 à1200 : mêmes atomes et positions
+Le plan courant `compartment_controls.json` teste J2 :12 témoins sans L,
+mondes globaux90×90/8×6, préparé/délié et trois graines à1200. Paquets/RNG
+initiaux identiques à translation près ; aucun mur interne dans une cellule.
+Voir [lot15](../research/BATCH_15_PLAN.md). Le lancement par défaut utilise ce plan.
+
+Le plan historique `constructed_tool.json` teste J1 à1200 : mêmes atomes et positions
 avec un F001 lié ou délié, trois graines, avec/sans membrane, audit génétique.
 Voir [protocole et limites](../research/BATCH_14_BOOTSTRAP.md). Outil initial
-exclu des F nouveaux. Le lancement par défaut utilise ce plan.
+exclu des F nouveaux. Les12 essais sont terminés, bilan dans BATCH_14_BOOTSTRAP_RESULTS.md.
 
 Le plan historique `genetic_kinetics.json` rejoue les six témoins génétiques J0 à400
 avec `genetic_audit=true` : occasions, exclusions et occupations, sans changer

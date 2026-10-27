@@ -114,3 +114,13 @@ par un wrapper passif qui appelle l'original une fois et retourne ses événemen
 Pas de nouveau type/état/port physique ; aucun label de gène ou séquence cible
 dans les filtres. Les tests vérifient positions, chimie et PRNG identiques,
 y compris dans le hook couplé. Les sources historiques sont préservées.
+
+## J2 — frontière d'environnement explicite
+
+`world_box` ne sert qu'à initialiser la boîte globale d'un monde sans L et à
+translater le paquet ; les forces réutilisent les mêmes murs du moteur sur
+toutes les billes. Aucun contour, centre de gène ou concentration globale n'est
+consulté pendant la dynamique. Coût : deux longueurs externes pour un contrôle,
+zéro primitive chimique ni nouveau taux. Le défautNone est comparé exactement
+au hook J1 archivé ; un override avec L est refusé. Le census post-hoc peut lire
+le gène entier et des composants pour mesurer, jamais pour piloter les lois.

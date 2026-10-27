@@ -87,6 +87,14 @@
       "inputs": "Required synthesis flux and measured permeability over actual boundary length",
       "require": "Import, waste export and catalytic capacities jointly exceed measured demand",
       "negative": "Spatially matched bath without membrane; identical external reservoir conditions"
+    },
+    {
+      "id": "I9",
+      "priority": "P0_before_viability_claim",
+      "purpose": "Weak homeostasis: bounded functional stocks and recoverable perturbations",
+      "inputs": "Open constructed cell, fixed local feed/waste conditions, shortages/excesses and predefined loss perturbations",
+      "require": "All essential classes stay in declared viable bands, recover after perturbation and maintain material balance without irreversible loss or accumulation",
+      "negative": "Finite closed inventory exhaustion is not homeostasis; ablate proposed feedback or recycling, report extinction and censoring; never restore missing genes externally"
     }
   ]
 }

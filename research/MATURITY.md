@@ -161,3 +161,16 @@ partielle. J1 conserve les lois et teste un outil préparé ; pilote sélectionn
 3 produits catalysés contre0, aucune incorporation. Activité possible à froid
 pour cet outil, pas de fonctionnement intégré acquis. Le préparé ne compte pas
 comme F exprimé. Diversité, membrane fabriquée et maintien toujours ouverts.
+
+## J1 achevé et J2
+
+Les préparés froids incorporent2/5/1 composants catalysés, G nouveaux0/1/0,
+aucun F nouveau. Le délié1 exprime un F,18 actes de cet outil et1 incorporation.
+Sous mêmes lois à0,08, la chaîne expression→construction→incorporation existe
+donc dans un essai froid isolé. Dans les6 bains avec membrane : aucune
+incorporation, malgré13/13/11 composants catalysés par les préparés.
+
+La chimie reste fonctionnellement non couplée à la frontière. J2 teste le
+domaine disponible avant toute nouvelle règle. L'homéostasie faible est une
+obligation de maintien explicite, non validée ; ni plafond de particules ni
+stock épuisé ne vaut régulation. Aucun régime durable ou délai de renouvellement.

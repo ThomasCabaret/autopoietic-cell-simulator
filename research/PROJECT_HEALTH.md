@@ -342,3 +342,25 @@ transfert. Douze tâches1200 doivent trancher expression/usage/confinement, sans
 changer les lois. Santé : décision ciblée et zéro dette chimique ajoutée,
 mais T9 et fabrication de L restent des obstacles prévisibles. Volume restant
 et probabilité d'un renouvellement sous dix heures toujours non estimables.
+
+## Réévaluation après J1 — stocks, environnement et homéostasie
+
+J1 achevé12/12. Le transfert matériel froid préparé existe3/3 en petite boîte,
+et un témoin délié produit un F actif ; ce risque thermique n'est donc pas une
+interdiction structurelle générale. En revanche, aucun produit n'est incorporé
+dans les6 bains membranaires. La membrane reste fragile et les contextes de
+confinement diffèrent. Les réactions réussies isolées ne se composent pas encore.
+
+Le census montre un obstacle plus précis : produits monomères disponibles mais
+plus éloignés du gène, pas de fragments F déliés dans les bains. Une intervention
+de diagnostic nouvelle réduit l'incertitude ; aucune nouvelle loi ni fonction.
+J2 doit dire si le grand domaine suffit à produire cet échec sans L. Réévaluer
+après les12 témoins, avant nouveau helper. Une récupération dans une petite
+boîte externe ne démontrera pas la cellule ni une solution à sa dilution.
+
+Le froid préparé1 consomme presque ses précurseurs (4 P et4 R restants) tout
+en laissant34 monomères isolés : l'homéostasie ne découle pas de la catalyse.
+HOMEOSTASIS.md fixe accumulation, extinctions et récupération comme obligations.
+La réversibilité/recyclage et l'inhibition locale restent des pistes non testées,
+avec coût/gènes à déclarer si nécessaires. Le renouvellement intégré, la synthèse
+L, la longueur/multigène et le volume final de conception restent incertains.

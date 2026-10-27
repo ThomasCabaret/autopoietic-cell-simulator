@@ -721,7 +721,7 @@
       "test": "Unchanged native/cold J0 seeds0/1/2 at400, passive own-cache pre-reaction census; compare complete primary metrics, positions, RNG and chemistry to J0",
       "cost": "Zero physical primitive, gene, tool or parameter; one optional passive diagnostic with private cache and resumable state",
       "counterexample": "Repeated eligible opportunities without products or long irreversible partial states contradict pure encounter scarcity; measurement that changes trajectories is invalid",
-      "missing_proof": "Six replay statistics pending; common-bath function, L synthesis, dt convergence and renewal remain open",
+      "missing_proof": "Common-bath function, L synthesis, dt convergence and renewal remain open",
       "evidence": "research/BATCH_14.md",
       "health_gate": "One six-control diagnosis then one justified all-seed extension to3200 or one conceptual intervention, no unconstrained thermal tuning",
       "campaign_recipe": "research/campaign_recipes/GKA_20261027T122747493430Z/manifest.json",
@@ -736,7 +736,7 @@
         "J0",
         "T9"
       ],
-      "status": "twelve_task_constructed_tool_campaign_running",
+      "status": "twelve_complete_cold_transfer_observed_no_membrane_bath_incorporation",
       "hypothesis": "A constructed initial F001 can supply usable dimers and allow new G/F in the cold common bath without requiring enzyme-free bootstrap",
       "test": "Four conditions cold/bath times prepared/unlinked, seeds0/1/2 to1200; identical atoms, bits, positions and RNG within each pair, only two initial bonds differ",
       "cost": "No new physical law/type/helper/gene or atom; one existing F001 initially constructed, excluded from translated products",
@@ -744,7 +744,40 @@
       "missing_proof": "Joint transfer, new expressed tool activity and renewal, library and L synthesis remain open",
       "evidence": "research/BATCH_14_BOOTSTRAP.md",
       "campaign_recipe": "research/campaign_recipes/J1_20261027T144451586423Z/manifest.json",
-      "pilot_recipes": "research/BATCH_14_PILOTS.json"
+      "pilot_recipes": "research/BATCH_14_PILOTS.json",
+      "results": "research/BATCH_14_BOOTSTRAP_RESULTS.md",
+      "conclusion": "Cold prepared18/38/21 catalyzed,2/5/1 incorporated; cold unlinked1 expressed F18 acts and1 incorporation. Bath prepared13/13/11, no incorporation any bath. Membrane fragile."
+    },
+    {
+      "id": "J2",
+      "parent": "J1",
+      "related": [
+        "J0",
+        "GKA",
+        "T9"
+      ],
+      "status": "matched_environment_controls_verified_before_campaign",
+      "hypothesis": "Large available domain can suppress useful genetic transfer without direct membrane inhibition",
+      "test": "Open90x90 and compact8x6 no-L worlds, prepared/unlinked, seeds0/1/2 at1200; same PR packet/RNG and reaction laws, global walls declared",
+      "cost": "No chemical primitive or rate; one whole-world boundary control of two external lengths without L",
+      "counterexample": "Open supports transfer but membrane baths do not, or compact matched states also fail",
+      "missing_proof": "No new cohort results; common-cell function, homeostasis, library and membrane synthesis open",
+      "evidence": "research/BATCH_15_PLAN.md"
+    },
+    {
+      "id": "H0",
+      "parent": "C0B",
+      "related": [
+        "J1",
+        "T9"
+      ],
+      "status": "explicit_weak_homeostasis_specification_not_tested",
+      "hypothesis": "Local reversibility, recycling, material export and possibly product inhibition can bound stocks while preserving recoverability",
+      "test": "Predeclared open-feed shortage/excess/loss perturbations, per-essential-family recovery and mass balance; count extinctions",
+      "cost": "No mechanism implemented; any future recycler/regulator must declare primitives and gene renewal",
+      "counterexample": "Closed-pool exhaustion is mislabeled regulation, global concentration thresholds control laws, or species disappear irreversibly",
+      "missing_proof": "All weak-homeostasis dynamics, feedback and recovery tests remain open",
+      "evidence": "research/HOMEOSTASIS.md"
     }
   ]
 }

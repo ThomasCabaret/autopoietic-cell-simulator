@@ -95,6 +95,10 @@ def resolve(raw):
     elif model=='coupled_bath':
         from .coupled_bath import membrane_config,genetics_config
         if not isinstance(defaults['include_membrane'],bool):raise ValueError('include_membrane must be boolean')
+        world=defaults['world_box']
+        if world is not None and (defaults['include_membrane'] or not isinstance(world,list) or len(world)!=2 or
+            any(not isinstance(x,(int,float)) or not math.isfinite(x) or x<=1.2 for x in world)):
+            raise ValueError('world_box is an explicit two-length boundary control without membrane')
         if not isinstance(defaults['membrane'],dict) or not isinstance(defaults['genetics'],dict):raise ValueError('Nested chemistry requires objects')
         if len(defaults['packet_offset'])!=2 or any(not math.isfinite(x) for x in defaults['packet_offset']):raise ValueError('Invalid initial packet offset')
         if defaults['bound_contact']<0 or defaults['bound_barrier_stiffness']<0:raise ValueError('Invalid cross-contact parameters')

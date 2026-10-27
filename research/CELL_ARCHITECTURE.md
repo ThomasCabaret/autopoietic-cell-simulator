@@ -362,3 +362,12 @@ encore gI/EI au graphe cible. Énergie de cet échange non calibrée ; sa produc
 depuis une machinerie et la fabrication de L restent ouvertes. Budget C0B2406
 inchangé et conditionnel. Les aliments/déchets réels et leurs états de liaison
 ne sont pas remplacés par les sondes du test. Voir BATCH_09.md et LOCALITY_AUDIT.md.
+# Obligation de maintien et essais de domaine
+
+Le contrat [HOMEOSTASIS.md](HOMEOSTASIS.md) précise la cible : faibles bandes
+de stocks, prévention des accumulations et des extinctions, récupération après
+perturbation. Il n'ajoute pas encore d'outil à C0B ; tout outil nécessaire
+de recyclage/régulation devra avoir son gène et sa voie de renouvellement.
+Le budget conditionnel2406 reste inchangé et peut être révisé sur ces besoins.
+J2 est un contrôle sans membrane à102 billes, pas un nouveau dimensionnement
+de cellule ni un confinement artificiel à réutiliser dans sa dynamique.

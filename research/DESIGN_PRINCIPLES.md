@@ -67,3 +67,12 @@ pas les lignes de code. Accepter une refonte si les fonctions ne se composent
 pas, plutôt que multiplier les exceptions. Relever le coût en interventions
 de conception, séparément des essais automatisés. Mettre à jour arbre,
 priorités, maturité et santé ; annoncer honnêtement séparé, commun ou couplé.
+
+## Homéostasie faible et maintien
+
+Lire [HOMEOSTASIS.md](HOMEOSTASIS.md) avant d'introduire alimentation continue,
+pertes ou régulation. Prévenir accumulation et extinctions irréversibles fait
+partie de la cible, sans imposer une concentration exacte. Un nombre fixe de
+billes, un réservoir épuisé ou une saturation de débit ne démontrent pas ce
+maintien. Les rétroactions doivent être locales et leurs coûts comptés ; tester
+les deux sens de perturbation et la récupération, sans réinjection d'un gène perdu.

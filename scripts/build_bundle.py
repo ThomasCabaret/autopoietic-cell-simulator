@@ -65,6 +65,10 @@ def main():
         'experiments/prepare_batch14.py','experiments/analyze_batch14.py','campaigns/genetic_kinetics.json'))
     files.update(ROOT/p for p in ('research/BATCH_14_RESULTS.md','research/BATCH_14_BOOTSTRAP.md',
         'research/BATCH_14_PILOTS.json','experiments/prepare_batch14_bootstrap.py','campaigns/constructed_tool.json'))
+    files.update(ROOT/p for p in ('research/BATCH_14_BOOTSTRAP_RESULTS.md','research/BATCH_15_PLAN.md',
+        'research/BATCH_15.md','research/HOMEOSTASIS.md','experiments/inventory_audit.py',
+        'experiments/analyze_constructed_tool.py','experiments/prepare_compartment_controls.py',
+        'campaigns/compartment_controls.json'))
     files.update(p for p in (ROOT/'research/campaign_recipes').rglob('*') if p.is_file()
         and ('__pycache__' not in p.parts) and (p.suffix=='.py' or p.name in ('manifest.json','manifest.sha256','plan.json')))
     files.update(p for p in (ROOT/'research/legacy_reference').rglob('*')

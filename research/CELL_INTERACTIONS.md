@@ -157,3 +157,17 @@ GKA (lot14) instrumente les motifs génétiques existants pour analyser l'échec
 à froid avant d'ajouter une autre interaction. Aucun type, outil/gène ou coût
 particulaire changé. Les réactions chimiques P/R–L restent absentes ; aucune
 sélectivité supplémentaire n'est déduite de cet observateur.
+
+## J1 achevé et témoin J2
+
+Fabrication froide préparée et incorporation3/3 dans la petite boîte ; aucune
+incorporation dans les6 bains avec L. Le stock monomère y existe, éloigné du gène.
+Le contraste J2 retire L et compare deux boîtes globales avec paquet initial
+identique : contrôle d'environnement, pas nouveau mécanisme cellulaire.
+Réactions, alphabet et budget nominal inchangés. Le contrôle compact ne peut
+pas contenir L ; aucune paroi interne autour du gène n'est autorisée.
+
+L'homéostasie faible exige en plus des flux un contrôle d'accumulation et de
+récupération après pénurie ; voir HOMEOSTASIS.md et test prospectif I9. Le
+recyclage pourrait changer les contrats libre/lié et la perméabilité : les
+réévaluer ensemble, sans supposer une fonction de nettoyage gratuite.

@@ -714,3 +714,21 @@ résultats, aucune nouvelle loi. Prolongation froide3200 non choisie maintenant.
 J1 lancé : campaign_20261027T144451586423Z, code39fead3,12 tâches1200,
 deux travailleurs, sources figées et recette versionnée. Tests79+7 et reprise
 des13 contrôles campagne/couplage réussis. Aucun succès de transfert anticipé.
+
+## 2026-10-27 — lot15, clôture J1 et contrôle spatial J2
+
+Reprise avec6 J1 achevés ;12/12 terminés pendant le traitement, aucune erreur.
+Census vérifié : hashes, événements, vraies IDs P/R, durées et102 billes P/R.
+Préparés froids18/38/21 catalysés,2/5/1 incorporés ; G0/1/0 et F0/0/0.
+Délié froid1 : F1,18 actes exprimés et1 incorporation. Bains préparés13/13/11,
+zéro incorporation dans les6 bains, frontière encore fragile.
+
+Le census distingue monomères éloignés et fragments ; zéro fragment F délié
+non cible dans les bains. Choix J2 : séparer domaine global et présence de L,
+pas nouvelle loi. Paquets/RNG vérifiés sur6 paires open/compact et contre les
+bains J1. Réglage de frontière globale sans L seulement ; défaut exact au
+hook J1 archivé.86 tests logiciels+7 historiques passent.
+
+Homéostasie faible explicitée dans HOMEOSTASIS.md et contrat de reprise ; pas
+de régulation implémentée ni essai de maintien revendiqué. Plan12 témoins J2
+à1200 fixé avant résultats, sources à geler après commit, données locales.
