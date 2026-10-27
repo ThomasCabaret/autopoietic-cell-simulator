@@ -1,9 +1,14 @@
 # Campagnes différées
 
-Le plan courant `compartment_controls.json` teste J2 :12 témoins sans L,
+Le plan courant `density_transfer.json` teste J3 : inventaires×1/8/16, avec/sans
+L, trois graines à1200, plus3 ablations du boost àK16.21 tâches et deux travailleurs,
+jusqu'à2118 billes, sources figées et checkpoints. Plusieurs heures possibles.
+Voir [lot16](../research/BATCH_16_PLAN.md). Aucun flux externe encore implémenté.
+
+Le plan historique `compartment_controls.json` teste J2 :12 témoins sans L,
 mondes globaux90×90/8×6, préparé/délié et trois graines à1200. Paquets/RNG
 initiaux identiques à translation près ; aucun mur interne dans une cellule.
-Voir [lot15](../research/BATCH_15_PLAN.md). Le lancement par défaut utilise ce plan.
+Voir [lot15](../research/BATCH_15_PLAN.md) et ses résultats terminés12/12.
 
 Le plan historique `constructed_tool.json` teste J1 à1200 : mêmes atomes et positions
 avec un F001 lié ou délié, trois graines, avec/sans membrane, audit génétique.

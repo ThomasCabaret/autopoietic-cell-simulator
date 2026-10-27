@@ -39,3 +39,23 @@ class InventoryAuditTests(unittest.TestCase):
         self.assertEqual(inv['target_like_components']['F'],1)
         self.assertEqual(c.assembly.events,[])
         self.assertIn('structural',inv['scope'])
+
+    def test_membrane_comparison_does_not_overweight_gene_event_samples(self):
+        from experiments.analyze_constructed_tool import membrane_grid_metrics
+        regular=[dict(time=t,parent_closed=True,envelope_valid=True) for t in (0.,.5,1.)]
+        extra=[dict(time=t,parent_closed=False,envelope_valid=False) for t in (.1,.2,.3,.4)]
+        a=membrane_grid_metrics(regular,.5,1.)
+        self.assertEqual(a,membrane_grid_metrics(sorted(regular+extra,key=lambda h:h['time']),.5,1.))
+        self.assertEqual(a['regular_grid_closed_fraction'],1.)
+
+    def test_scaled_census_uses_nearest_of_all_initial_templates(self):
+        from experiments.prepare_density_campaign import scenario as scaled
+        sim=Simulation(scaled(8,False,0,duration=.02));c=sim.chemistry;g=c.genetics
+        positions=c.pos.copy();positions[g.rungs[3:6,1]]=[5.,5.]
+        monomers=[q for group in g.initial_groups if group['family']==1 and not group['backbone'] for q in group['units']]
+        positions[g.rungs[monomers,1]]=[5.1,5.1]
+        inv=census(sim.config,c.export(),positions)
+        self.assertEqual(inv['initial_template_count'],8)
+        self.assertEqual(inv['pools']['beads_accounted'],816)
+        self.assertLess(inv['available_monomer_nearest_template']['F']['median_distance'],1.)
+        self.assertGreater(inv['free_monomer_access']['F']['median_distance'],10.)

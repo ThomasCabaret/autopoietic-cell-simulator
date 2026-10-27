@@ -68,6 +68,11 @@ class CopyObserver:
         self.translated, self.translated_detached = set(), set()
         self.edge_parent = {}
         self.certified = {tuple(range(self.initial_count)): 0} if config.get("template", True) and config.get("seed_family", 0) == 0 else {}
+        # Every constructed complete G template is a generation-zero parent.
+        # Initial groups may also contain fragments or F tools: neither qualifies.
+        for group in self.initial_groups:
+            if group['family']==0 and group['backbone'] and group['sequence'] in (self.target,self.target[::-1]):
+                self.certified[tuple(group['units'])]=0
         self.last_shapes = []
         self.food_events=[]; self.food_turnovers={}; self.last_food=None
         self.food_edges_frames=[]; self.food_binding_frames=[]

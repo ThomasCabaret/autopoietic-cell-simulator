@@ -69,6 +69,9 @@ def main():
         'research/BATCH_15.md','research/HOMEOSTASIS.md','experiments/inventory_audit.py',
         'experiments/analyze_constructed_tool.py','experiments/prepare_compartment_controls.py',
         'campaigns/compartment_controls.json'))
+    files.update(ROOT/p for p in ('research/BATCH_15_RESULTS.md','research/BATCH_16_PLAN.md',
+        'research/BATCH_16.md','research/BATCH_16_PILOTS.json','research/OPEN_BOUNDARY.md',
+        'experiments/prepare_density_campaign.py','campaigns/density_transfer.json'))
     files.update(p for p in (ROOT/'research/campaign_recipes').rglob('*') if p.is_file()
         and ('__pycache__' not in p.parts) and (p.suffix=='.py' or p.name in ('manifest.json','manifest.sha256','plan.json')))
     files.update(p for p in (ROOT/'research/legacy_reference').rglob('*')
@@ -93,6 +96,7 @@ def main():
     folders.append(ROOT/'research/engine_runs/M1B0_exchange_geometry_s0_20261027T065021427657Z')
     folders.extend(ROOT/Path(p).parent for p in json.loads((ROOT/'research/BATCH_13_PILOTS.json').read_text(encoding='utf-8'))['recipes'])
     folders.extend(ROOT/Path(p).parent for p in json.loads((ROOT/'research/BATCH_14_PILOTS.json').read_text(encoding='utf-8'))['recipes'])
+    folders.extend(ROOT/Path(p).parent for p in json.loads((ROOT/'research/BATCH_16_PILOTS.json').read_text(encoding='utf-8'))['recipes'])
     for folder in folders:
         files.update(p for p in folder.rglob('*') if p.is_file() and '__pycache__' not in p.parts
                      and (p.suffix=='.py' or p.name in ('config.json','scenario.json','recipe.json')))

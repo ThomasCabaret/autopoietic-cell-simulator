@@ -1,4 +1,19 @@
-# Priorités — lot15 J2,27 octobre2026
+# Priorités — lot16 J3,27 octobre2026
+
+J2 achevé12/12 : compact préparé incorpore1/2/2, grand préparé0/0/1 ; aucun
+G/F nouveau complet. Le domaine compte, sans être une solution suffisante.
+Priorité J3 : inventaires construits×1/8/16 dans la vésicule réelle, appariés
+sans L, et ablation du boost àK16.21 tâches1200, lois figées, mêmes trois graines.
+Voir BATCH_16_PLAN.md. Exiger flux incorporé et nouveaux G/F ; copies initiales
+et fonctions distinctes ne se confondent pas. Revoir les motifs si K16 échoue,
+pas une nouvelle arborescence de densités.
+
+La frontière alimentée au bord du monde est la cible décrite dans OPEN_BOUNDARY.md,
+pas encore un mécanisme livré. Flux réglé n'implique pas concentration locale
+fixée ; pas de plafond de particules final imposé. Maintien, dt, diversité et
+synthèse de L restent ouverts, sans délai de renouvellement prédit.
+
+## Priorités J2, historique
 
 J1 terminé12/12 : incorporation froide préparée3/3 mais aucun F nouveau ; un
 témoin délié exprime un F actif. Dans les6 bains : fabrication préparée13/13/11,

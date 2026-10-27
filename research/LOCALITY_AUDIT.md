@@ -124,3 +124,9 @@ consulté pendant la dynamique. Coût : deux longueurs externes pour un contrôl
 zéro primitive chimique ni nouveau taux. Le défautNone est comparé exactement
 au hook J1 archivé ; un override avec L est refusé. Le census post-hoc peut lire
 le gène entier et des composants pour mesurer, jamais pour piloter les lois.
+
+J3 conserve toutes les lois, hors ablation nommée du taux catalytique. Les
+copies/positions initiales sont construites, sans recentrage ou mur dans la
+cellule pendant la dynamique. Les parents G préparés sont reconnus uniquement
+dans l'observateur de filiation, sans PRNG ni retour vers les réactions. Source
+externe future au bord du monde déclarée dans OPEN_BOUNDARY.md, pas implémentée.

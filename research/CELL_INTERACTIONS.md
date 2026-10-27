@@ -171,3 +171,13 @@ L'homéostasie faible exige en plus des flux un contrôle d'accumulation et de
 récupération après pénurie ; voir HOMEOSTASIS.md et test prospectif I9. Le
 recyclage pourrait changer les contrats libre/lié et la perméabilité : les
 réévaluer ensemble, sans supposer une fonction de nettoyage gratuite.
+
+J2 terminé : compact préparé incorpore3/3, grand1/3, aucun G/F complet. J3
+augmente l'inventaire intérieur plutôt que changer les affinités : contacts et
+étanchéité doivent être effectivement exposés, même si le paquet commence au
+centre. Une absence de contact avec L ne valide pas une rétention durable.
+
+Le futur flux environnemental est injecté au bord du monde (OPEN_BOUNDARY.md),
+pas à la membrane ni dans le cytoplasme. Mesurer import utile, gradients et
+export des déchets sous consommation réelle ; aucune concentration locale
+ne sera garantie par une règle globale qui comble les déficits.

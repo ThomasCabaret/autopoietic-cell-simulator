@@ -43,3 +43,10 @@ deux travailleurs, audit génétique et checkpoints60s. Recette source seule :
 campaign_recipes/J2_20261027T162612551317Z. Résultats encore en cours, pas
 de conclusion sur le contraste de domaine. Suivi campaign_status.bat et analyse
 analyze_campaign.bat ; le census s'applique aussi à cette cohorte.
+
+## Clôture
+
+J2 terminé12/12 sans erreur. Vérification complète et résultats BATCH_15_RESULTS.md.
+Le compact facilite les incorporations, mais aucun G/F nouveau complet ; le
+grand domaine échoue fréquemment aussi sans L. J3 teste l'inventaire construit
+près du budget cellulaire, avant toute nouvelle loi ou source de particules.

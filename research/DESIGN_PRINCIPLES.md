@@ -76,3 +76,8 @@ partie de la cible, sans imposer une concentration exacte. Un nombre fixe de
 billes, un réservoir épuisé ou une saturation de débit ne démontrent pas ce
 maintien. Les rétroactions doivent être locales et leurs coûts comptés ; tester
 les deux sens de perturbation et la récupération, sans réinjection d'un gène perdu.
+
+Pour l'environnement final, voir OPEN_BOUNDARY.md : apport réglable au bord du
+domaine extérieur et absorption des sorties. Le nombre total peut varier ; ne
+pas substituer à ce flux une concentration imposée près de la vésicule ni une
+compensation de ses déficits par un observateur. Gradients/pénuries sont à mesurer.

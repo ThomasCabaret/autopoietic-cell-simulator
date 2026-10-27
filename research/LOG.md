@@ -735,3 +735,21 @@ de régulation implémentée ni essai de maintien revendiqué. Plan12 témoins J
 
 J2 lancé : campaign_20261027T162612551317Z, codeb0e104a,12 témoins1200,
 deux travailleurs et recipe source seule conservée. Pas de résultat anticipé.
+
+## 2026-10-27 — lot16, J2 terminé et inventaire J3
+
+J2 achevé12/12, sources et census vérifiés. Préparés ouverts10/14/22 catalysés,
+0/0/1 incorporés ; compacts38/35/29 et1/2/2. Aucun G/F nouveau dans les12.
+Choix J3 : inventaire construit×1/8/16, même chimie et mêmes gènes001, avec/sans
+L, plus ablation du boostK16.21 tâches1200 prévues avant résultats. Paquets/PRNG
+initiaux vérifiés sur9 paires et3 ablations, intérieur à la vésicule.
+
+Observateur corrigé pour certifier tous les G préparés complets, auparavant
+seul le premier ; cas simple exact à la référence. Census multi-template et
+comparaison de membrane sur grille régulière pour éviter le biais des callbacks
+de ligation. Source physique inchangée. Pilote K16,t2 :2118 billes, stable,
+3 actes, aucune incorporation ou chaîne nouvelle, aucun contact avec L.
+
+Demande utilisateur d'entrée/sortie au bord préservée dans OPEN_BOUNDARY.md :
+flux réglable, pas de concentration interne garantie. Capacité dynamique des
+tables/IDs encore à réaliser ; pas de source implémentée pendant ce lot.

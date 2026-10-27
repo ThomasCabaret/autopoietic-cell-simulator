@@ -1,0 +1,7 @@
+{
+  "batch": 16,
+  "recipes": [
+    "research/engine_runs/J3_k16_bath_s0_20261027T171118943484Z/recipe.json"
+  ],
+  "policy": "Source-only technical k16 seed0 t2 pilot, not efficacy or renewal"
+}

@@ -756,14 +756,16 @@
         "GKA",
         "T9"
       ],
-      "status": "twelve_matched_world_controls_running",
+      "status": "twelve_complete_compaction_helps_incorporation_no_complete_chains",
       "hypothesis": "Large available domain can suppress useful genetic transfer without direct membrane inhibition",
       "test": "Open90x90 and compact8x6 no-L worlds, prepared/unlinked, seeds0/1/2 at1200; same PR packet/RNG and reaction laws, global walls declared",
       "cost": "No chemical primitive or rate; one whole-world boundary control of two external lengths without L",
       "counterexample": "Open supports transfer but membrane baths do not, or compact matched states also fail",
       "missing_proof": "No new cohort results; common-cell function, homeostasis, library and membrane synthesis open",
       "evidence": "research/BATCH_15_PLAN.md",
-      "campaign_recipe": "research/campaign_recipes/J2_20261027T162612551317Z/manifest.json"
+      "campaign_recipe": "research/campaign_recipes/J2_20261027T162612551317Z/manifest.json",
+      "results": "research/BATCH_15_RESULTS.md",
+      "conclusion": "Prepared compact1/2/2 incorporated, open0/0/1; no new G/F in12 tasks. Domain contributes but not sufficient."
     },
     {
       "id": "H0",
@@ -779,6 +781,37 @@
       "counterexample": "Closed-pool exhaustion is mislabeled regulation, global concentration thresholds control laws, or species disappear irreversibly",
       "missing_proof": "All weak-homeostasis dynamics, feedback and recovery tests remain open",
       "evidence": "research/HOMEOSTASIS.md"
+    },
+    {
+      "id": "J3",
+      "parent": "J2",
+      "related": [
+        "C0B",
+        "C3B1",
+        "T9"
+      ],
+      "status": "scaled_inventory_verified_pilot_stable_long_campaign_planned",
+      "hypothesis": "A populated constructed vesicle permits useful genetic transfer under unchanged local laws where an underfilled bath dispersed components",
+      "test": "Inventories1/8/16, matched with/without L, three seeds1200; noBoost K16 three controls, new chains and usable product ancestry, contacts and regular-grid membrane audit",
+      "cost": "No new chemical primitive; increased prepared copies of the same001 and stocks, noBoost rate ablation separate. Observer certifies all complete prepared G parents.",
+      "counterexample": "K16 still gives no complete G/F or products stay unusable, or noBoost gives the same useful flux",
+      "missing_proof": "Long dense-bath transfer, robustness, genuine molecular diversity, L synthesis and homeostasis open",
+      "evidence": "research/BATCH_16_PLAN.md"
+    },
+    {
+      "id": "ENV0",
+      "parent": "H0",
+      "related": [
+        "C0B",
+        "J3"
+      ],
+      "status": "outer_flux_boundary_specified_not_implemented",
+      "hypothesis": "Prescribed precursor arrivals at the outer finite domain and absorbing exits allow supply/export without clamping cell-local concentrations",
+      "test": "Empty-domain transport/mass balance and timestep/entry-layer checks, then local consumption and actual vesicle uptake; record source/sink and gradients",
+      "cost": "Future technical dynamic IDs/tables and external forcing, not a cellular enzyme; no implementation in J3",
+      "counterexample": "Global concentration feedback replenishes the cell, genes are reintroduced, capacity exhaustion is mislabeled homeostasis, or source flux is called local concentration",
+      "missing_proof": "Dynamic source/sink and all open-bath transport/maintenance tests remain open",
+      "evidence": "research/OPEN_BOUNDARY.md"
     }
   ]
 }

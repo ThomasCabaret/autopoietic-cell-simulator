@@ -174,3 +174,16 @@ La chimie reste fonctionnellement non couplée à la frontière. J2 teste le
 domaine disponible avant toute nouvelle règle. L'homéostasie faible est une
 obligation de maintien explicite, non validée ; ni plafond de particules ni
 stock épuisé ne vaut régulation. Aucun régime durable ou délai de renouvellement.
+
+## J2 achevé et changement d'échelle J3
+
+J2 confirme un transfert plus fréquent en compact, mais aucun G/F nouveau dans
+les12 essais. Dans le grand monde sans L, deux préparés sur trois n'incorporent
+rien : la présence de membrane n'est pas nécessaire à cet échec. Robustesse
+génétique et cohabitation utile toujours non validées.
+
+J3 rapproche l'inventaire du budget (jusqu'à2118 billes avec L), sans nouvelle
+chimie ; les nombreux gènes sont des copies de001 et les outils sont construits.
+Pilote technique stable, pas de résultat long. Filiation des différents templates
+initiaux correctement observée, sans effet dynamique. Une frontière source/puits
+au bord extérieur est spécifiée pour la suite, non implémentée. Homéostasie absente.

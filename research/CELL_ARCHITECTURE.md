@@ -36,8 +36,10 @@ reste celui des hypothèses C0B, pas une estimation révisée du candidat C3B1.
 
 La cellule est construite au départ, avec gènes, outils et membrane. Elle doit
 **renouveler** ces éléments depuis X/Y/Z et un porteur d'énergie activé E ; W
-est le même porteur déchargé. L'extérieur maintient des conditions riches en
-X/Y/Z/E et pauvres en W. Le système est ouvert en matière et en énergie ; la
+est le même porteur déchargé. L'extérieur doit être alimenté et évacué selon
+un protocole déclaré ; la cible précisée est un flux au bord du domaine fini,
+pas une concentration garantie autour de la cellule (OPEN_BOUNDARY.md).
+Le système est ouvert en matière et en énergie ; la
 fermeture recherchée concerne les dépendances fonctionnelles internes.
 
 | Gène fragmenté | Chaîne F à exprimer | Fonction nécessaire | Produit utilisable |
@@ -371,3 +373,9 @@ de recyclage/régulation devra avoir son gène et sa voie de renouvellement.
 Le budget conditionnel2406 reste inchangé et peut être révisé sur ces besoins.
 J2 est un contrôle sans membrane à102 billes, pas un nouveau dimensionnement
 de cellule ni un confinement artificiel à réutiliser dans sa dynamique.
+
+J3 teste102/816/1632 billes génétiques avec486 billes L constantes, soit
+588/1302/2118 au total. Il s'agit de copies multiples du seul001, pas des trois
+synthétases C0B ou d'une longueur24 démontrée. Les copies préparées sont fournies
+et ne comptent pas comme renouvellement. Le budget final reste conditionnel ;
+les futures particules d'apport/sortie devront s'ajouter au bilan dynamique.

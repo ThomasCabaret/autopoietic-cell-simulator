@@ -60,3 +60,9 @@ les lipides. La croissance seule n'est pas un renouvellement.
 
 État : obligation explicite et futurs tests, aucune homéostasie dynamique validée.
 Avant de construire un régulateur, terminer le diagnostic J2 du transport/domaine.
+
+Précision ultérieure de l'utilisateur : l'environnement final peut créer des
+précurseurs au bord du domaine et absorber les particules sortantes. Voir
+OPEN_BOUNDARY.md. Les nombres de particules sont variables ; le flux externe
+réglé ne garantit pas une concentration près de la cellule consommatrice.
+Les expériences actuelles fermées ne remplacent pas cette cible d'alimentation.

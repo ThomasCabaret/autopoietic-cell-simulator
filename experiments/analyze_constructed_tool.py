@@ -8,6 +8,14 @@ from scripts.campaign import validate,status,read,write
 from experiments.inventory_audit import census
 
 
+def membrane_grid_metrics(history,interval,duration):
+    grid=[h for h in history if abs(h['time']/interval-round(h['time']/interval))<1e-7]
+    assert len(grid)==int(round(duration/interval))+1
+    return dict(regular_grid_closed_fraction=sum(h['parent_closed'] for h in grid)/len(grid),
+        regular_grid_envelope_fraction=sum(h['envelope_valid'] for h in grid)/len(grid),
+        regular_grid_samples=len(grid),regular_grid_interval=interval)
+
+
 def analyze(folder):
     folder=Path(folder).resolve();manifest=validate(folder);snapshot=status(folder)
     expected={k:v for k,v in manifest['source_sha256'].items() if k.startswith('simulator/')};rows=[]
@@ -35,10 +43,12 @@ def analyze(folder):
         row=dict(task=task['id'],case=cfg['name'],seed=cfg['seed'],duration=cfg['duration'],
             catalyzed=m['catalyzed_dimers'],catalyzed_incorporated=m['catalyzed_incorporated'],
             expressed_catalyzed=m['expressed_catalyzed_dimers'],expressed_incorporated=m['expressed_catalyzed_incorporated'],
-            G=m['detached_copy_sets_ever'],F=m['translated_detached_ever'],inventory=inv,
+            G=m['detached_copy_sets_ever'],F=m['translated_detached_ever'],
+            all_constructed_G=m['constructed_detached_G'],all_constructed_F=m['constructed_detached_F'],inventory=inv,
             genetic_exposure=e,source_and_census_verified=True)
         if metrics.get('membrane'):
             mm=metrics['membrane'];row['membrane']={k:mm[k] for k in ('parent_closed_fraction','envelope_valid_fraction','inserted_into_closed_parent_ever')}
+            row['membrane'].update(membrane_grid_metrics(mm['history'],cfg['engine']['sample_every']*cfg['engine']['dt'],cfg['duration']))
         rows.append(row)
     stamp=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ');out=folder/('inventory_analysis_'+stamp);out.mkdir()
     hashes={}

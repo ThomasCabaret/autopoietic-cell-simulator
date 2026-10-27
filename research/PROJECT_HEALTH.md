@@ -364,3 +364,24 @@ HOMEOSTASIS.md fixe accumulation, extinctions et récupération comme obligation
 La réversibilité/recyclage et l'inhibition locale restent des pistes non testées,
 avec coût/gènes à déclarer si nécessaires. Le renouvellement intégré, la synthèse
 L, la longueur/multigène et le volume final de conception restent incertains.
+
+## Réévaluation après J2
+
+J2 terminé12/12 : le grand domaine sans L suffit à raréfier les incorporations,
+le compact les retrouve3/3 chez les préparés, mais aucun nouveau G/F complet.
+Le candidat n'est donc pas convergé. Une meilleure description du verrou est
+acquise ; multiplier des réglages de docking ne répondrait pas à ce constat.
+
+J3 est une seule intervention d'inventaire, avec18 comparaisons et3 ablations
+automatiques, pas21 principes nouveaux. Il remplit davantage la frontière déjà
+dimensionnée, avec contrôles sans L. Si même le budget proche de la cible échoue,
+revoir la capture/finition avant un autre balayage de densité. La correction des
+parents initiaux est une dette de mesure, pas une amélioration chimique.
+
+La cible de flux externe est clarifiée : injection au bord, absorption à la
+sortie, concentrations et gradients émergents. Les tables actuelles à capacité
+fixe ne la permettent pas encore directement ; des IDs stables et entrées/sorties
+cohérentes sont une évolution technique nécessaire, pas un argument de blocage
+chimique de principe. Distinguer ce coût du mécanisme cellulaire. Maintien,
+bibliothèque, information longue et synthèse de L restent à prouver ; ni nombre
+fiable de lots restants ni probabilité de renouvellement sous dix heures.
