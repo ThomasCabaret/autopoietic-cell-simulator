@@ -1,4 +1,14 @@
-# Maturité — après analyse du lot10,26 octobre2026
+# Maturité — après analyse du lot11,27 octobre2026
+
+**Le confinement sans échange est reproductible dans le criblage ; la voie
+d'insertion reste fragile.** Sans échange : fermeture0,844–0,851 et peu d'inconnu
+sur trois graines à1500, aucune sortie observée. B reproduit K1 exactement,
+avec une voie rare de défaut prolongé B0 identifiée. [Résultats](BATCH_11_RESULTS.md).
+La prochaine intervention vise le motif local de substitution, sans déplacer
+de particules ni fabriquer de contour. Aucun bain G/F intégré ni viabilité
+démontrée ; la séparation des modèles demeure.
+
+## État après lot10, historique
 
 **Insertion locale retrouvée sur les trois graines à1500, frontière encore
 insuffisamment robuste.** B incorpore1/2/5 dimères, persistance échantillonnée≥10.
@@ -120,3 +130,10 @@ Audit des ouvertures et reprise validés, pilote exactement conforme à l'ancien
 référence. Aucune nouvelle fonction ni amélioration de robustesse revendiquée.
 Les contrôles longs B/sans échange doivent décider du prochain changement ;
 voir BATCH_11.md. La membrane reste séparée de G/F.
+
+## Variante locale G1 en cours de validation
+
+Un garde sur les occupations locales est teste, sans nouvelle primitive
+materielle. Aucun echange ni insertion dans son pilote court ; les anciennes
+reussites B ne sont pas attribuees a G1. Maturite integree inchangee jusqu aux
+resultats longs. Voir BATCH_12.md.

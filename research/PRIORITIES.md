@@ -1,4 +1,25 @@
-# Priorités — après analyse du lot10,26 octobre2026
+# Priorités — lot12,27 octobre2026
+
+Trace M1G terminée et garde géométrique rejeté. Comparer maintenant G1, condition
+symétrique sur deux occupations de ports, sur0/1/2 à1500 aux témoins M1R conservés.
+Pilote court sans activité, occasions admissibles non nulles : aucun succès à
+déclarer. Conserver activité d'insertion **et** confinement ; zéro insertion
+est une régression même si les défauts disparaissent. Une seule variante figée,
+puis décision de mécanisme, avant intégration matérielle G/F.
+
+## Priorités après lot11, historique
+
+M1R achevé6/6 et références B exactes. Les ruptures spontanées des témoins sont
+brèves ; B0 présente un défaut prolongé entre une substitution et son inversion.
+Voir [résultats](BATCH_11_RESULTS.md).
+
+**Prochain test M1G :** tracer les participants/ports d'une substitution réussie
+et d'une défectueuse, puis restreindre un motif strictement local seulement si
+la trace le justifie. Garder fixation des lois, réversibilité, fonctions utiles,
+mesures d'exposition et critères conjoints. L'intégration matérielle G/F reste
+ensuite ; pas d'insertase gratuite ni de balayage de constantes sans diagnostic.
+
+## Priorités après lot10, historique
 
 Campagne K1 achevée6/6, [résultats](BATCH_10_RESULTS.md). Insertion B observée3/3
 à1500 ; fermeture/rétention conjointes incomplètes. B simple perd2–4/24 sondes et

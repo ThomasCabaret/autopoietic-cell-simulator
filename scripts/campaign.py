@@ -173,6 +173,14 @@ def analyze(folder):
             reason=max(unknown,key=unknown.get) if unknown else 'aucune'
             span=audit['longest_observed_span_by_state'].get('closed',0.)
             lines.append(f"| {row['task']} | {100*rate:.1f}% | {reason} | {span:g} |")
+    guarded=[r for r in rows if 'gated_exchange_face_time' in r['opportunities']]
+    if guarded:
+        lines += ['', '## Exposition au garde local', '',
+            'Temps-face pré-réaction approximatifs ; le garde ne mesure pas un risque exact.', '',
+            '| Tâche | Géométrie brute | Après garde | Échanges effectués |', '| --- | ---: | ---: | ---: |']
+        for row in guarded:
+            o=row['opportunities']
+            lines.append(f"| {row['task']} | {o['exchange_face_time']:.3g} | {o['gated_exchange_face_time']:.3g} | {o['exchanges']} |")
     (folder/'analysis.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
     return report
 

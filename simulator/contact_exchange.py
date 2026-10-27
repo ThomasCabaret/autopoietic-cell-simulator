@@ -29,6 +29,9 @@ def exchange_faces(pos,links,config,rng,neighbors,interval):
                 if j<0 or partners[k,b]>=0 or (i,a) in touched or (k,b) in touched:continue
                 old_face=int(partner_faces[i,a])
                 if (j,old_face) in touched:continue
+                # Symmetric under swapping displaced/incoming partners. Read
+                # only their other local port occupancy, never a chain identity.
+                if config.get('terminal_exchange',False) and partners[j,1-old_face]>=0 and partners[k,1-b]>=0:continue
                 dh=np.linalg.norm(pos[k]-pos[i]);dt=np.linalg.norm(pos[n+k]-pos[n+i])
                 if max(abs(dh-long),abs(dt-short))>config['break_extension']:continue
                 q=float(np.sum((head[k,b]-head[i,a])**2)+np.sum((tail[k,b]-tail[i,a])**2))

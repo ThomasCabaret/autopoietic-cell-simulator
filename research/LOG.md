@@ -619,3 +619,28 @@ Maturité inchangée ; décision après les contrôles, pas de helper supplémen
 Campagne M1R lancee : campaign_20261026T165544113247Z, code0850065,
 six taches a1500, deux actives et quatre en attente au controle, aucune erreur.
 Recettes source seule du pilote et du lot conservees ; resultats non analyses.
+
+## 2026-10-27 — analyse M1R et trace locale M1G
+
+Six controles completes, census et references B verifies exactement. Sans echange
+la fermeture est0.844-0.851 avec peu de periodes inconnues ; B0 degrade surtout
+apres787.56 jusque1236.11.897 images ont une extremite isolee au-dela1.35, contre
+aucune avant/apres pour B0. Le defaut merite une intervention de motif local,
+pas une pression globale ou une reinterpretation favorable du confinement.
+Trace selectionnee B0 jusque800 sur sources figees, cas productif et cas
+defectueux compares ; aucun filtre dans la dynamique a ce stade. Hypothese
+disponibilite des faces a confirmer. Cout scientifique : diagnostic reduisant
+un risque, pas nouveau modele viable. G/F et fabrication de L restent separes ;
+aucun blocage de principe ni delai fiable en nombre de lots.
+
+## 2026-10-27 — M1G1 apres trace locale
+
+Trace B0 jusque800 exacte : deux evenements, arrivee libre puis arrivee deja
+liee ailleurs. Garde geometrique rejete car il interdirait les deux. Ancien
+driver et sources conserves, version portable releve les deux occupations.
+Nouveau garde symetrique sur autres ports existants, aucun taux/rayon/type
+ajoute. Pas de reparation automatique ni identite biologique. Premier test
+mal calibre corrigé : autre reaction legitime, pas defaut de loi.
+67 tests logiciels et7 historiques passent. Pilote choisi2 a150 sans echange
+ni insertion, brut7.50 et sous garde7.08 temps-face : pas de succes affirme.
+Trois graines a1500 prevues avant calcul, comparaison aux temoins M1R conserves.

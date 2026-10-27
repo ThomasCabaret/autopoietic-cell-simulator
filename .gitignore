@@ -40,6 +40,7 @@ __pycache__/
 !/research/engine_runs/*/scenario.json
 !/research/engine_runs/*/recipe.json
 !/research/engine_runs/*/replay.py
+!/research/engine_runs/*/trace_driver.py
 !/research/engine_runs/*/simulator/
 !/research/engine_runs/*/simulator/*.py
 

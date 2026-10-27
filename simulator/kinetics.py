@@ -12,6 +12,7 @@ from .spatial import Neighborhood
 class KineticProbe:
     def __init__(self,config,state=None,window=25.):
         self.config=config;self.window=window;self.neighbors=Neighborhood()
+        self.terminal=config['chemistry'].get('terminal_exchange',False)
         self.state=state or dict(version=1,last_time=None,windows={},first={},encountered={},ticks=0)
 
     def scan(self,c):
@@ -26,16 +27,26 @@ class KineticProbe:
         unlinked=np.array([(int(a),int(b)) not in linked for a,b in pairs])
         strain=np.maximum(abs(np.linalg.norm(pos[k]-pos[i],axis=1)-1.),
                           abs(np.linalg.norm(pos[n+k]-pos[n+i],axis=1)-c.short))<=c.config['break_extension']
-        capture=exchange=0
+        capture=exchange=gated=0
+        if self.terminal:
+            partners=np.full((n,2),-1,dtype=np.int64);partner_face=np.zeros((n,2),dtype=np.int64)
+            for x,y,a,b in c.face_links:
+                partners[x,a]=y;partners[y,b]=x;partner_face[x,a]=b;partner_face[y,b]=a
         for a in (0,1):
             b=1-a
             q=np.sum((head[k,b]-head[i,a])**2,axis=1)+np.sum((tail[k,b]-tail[i,a])**2,axis=1)
             capture+=int(np.count_nonzero(unlinked&free[i,a]&free[k,b]&(q<c.config['dock_capture']**2)))
             # Original occupied face, incoming free face. The reverse direction
             # would replace a contact of a new unit; report it separately later.
-            exchange+=int(np.count_nonzero(unlinked&~free[i,a]&free[k,b]&strain&(q<c.config['contact_exchange_capture']**2)))
-        return dict(encounter_pairs=len(pairs),capture_faces=capture,exchange_faces=exchange,
+            eligible=unlinked&~free[i,a]&free[k,b]&strain&(q<c.config['contact_exchange_capture']**2)
+            exchange+=int(np.count_nonzero(eligible))
+            if self.terminal:
+                j=np.maximum(partners[i,a],0);other=1-partner_face[i,a]
+                gated+=int(np.count_nonzero(eligible&(free[j,other]|free[k,1-b])))
+        result=dict(encounter_pairs=len(pairs),capture_faces=capture,exchange_faces=exchange,
                     units=[int(x) for x in np.unique(k)])
+        if self.terminal:result['gated_exchange_faces']=gated
+        return result
 
     def attach(self,c):
         original=c.react
@@ -55,6 +66,9 @@ class KineticProbe:
                 w[target]+=span*before.get(name,0)
                 if before.get(name,0)>0:state['first'].setdefault(name,float(time))
             for unit in before.get('units',[]):state['encountered'].setdefault(str(unit),float(time))
+            if self.terminal:
+                w['gated_exchange_face_time']=w.get('gated_exchange_face_time',0.)+span*before.get('gated_exchange_faces',0)
+                if before.get('gated_exchange_faces',0):state['first'].setdefault('gated_exchange_faces',float(time))
             if edges or self.config['model']=='membrane_bath':
                 after=set(c.face_links);formed=len(after-edges);broken=len(edges-after)
                 w['formed_contacts']+=formed;w['broken_contacts']+=broken
@@ -69,7 +83,9 @@ class KineticProbe:
 
     def summary(self,time,metrics):
         first=self.state['first'];passages={}
-        for name in ('encounter_pairs','capture_faces','exchange_faces','new_old_contact','exchange'):
+        names=['encounter_pairs','capture_faces','exchange_faces','new_old_contact','exchange']
+        if self.terminal:names.append('gated_exchange_faces')
+        for name in names:
             value=first.get(name);passages[name]=dict(time=value if value is not None else time,event=value is not None,
                 measured=self.config['model']=='membrane_bath')
         history=metrics.get('history',[])
@@ -77,9 +93,11 @@ class KineticProbe:
         passages['closed_insertion']=dict(time=time if insertion is None else insertion,event=insertion is not None,
             measured=self.config['model']=='membrane_bath')
         windows=list(self.state['windows'].values())
+        keys=['encounter_pair_time','capture_face_time','exchange_face_time','exchanges']
+        if self.terminal:keys.append('gated_exchange_face_time')
         return dict(version=1,scope='Membrane pre-reaction original/new pair census; other hooks have no eligibility diagnostic',
             resolution='Every reaction tick; right-endpoint face-time approximation, no exact hazard or independence claim',
             sampled_until=time,first_passages=passages,encountered_new_units=len(self.state['encountered']),
-            opportunity_totals={k:sum(w[k] for w in windows) for k in ('encounter_pair_time','capture_face_time','exchange_face_time','exchanges')},
+            opportunity_totals={k:sum(w.get(k,0.) for w in windows) for k in keys},
             windows=windows,state=self.state,
             limitations='No-event passages are right-censored; sequential competition and reverse new-unit exchanges are not included in eligibility exposure; net contact changes can miss within-tick break/reform')

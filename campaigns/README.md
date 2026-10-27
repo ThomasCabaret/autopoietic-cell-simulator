@@ -1,10 +1,16 @@
 # Campagnes différées
 
-Le plan courant `membrane_robustness.json` compare B avec échange et son ablation
+Le plan courant `membrane_terminal_exchange.json` lance G1 sur trois graines à1500,
+avec `terminal_exchange=true` et les diagnostics précédents. Comparaison aux six
+témoins M1R conservés : aucun témoin recalculé inutilement. Le garde est une
+nouvelle hypothèse de chimie locale, pas une amélioration déjà démontrée. Voir
+[décisions](../research/BATCH_12_DECISIONS.md). `start_campaign.bat` utilise ce plan.
+
+Le plan historique `membrane_robustness.json` compare B avec échange et son ablation
 sans échange, sur les graines0/1/2 à1500, avec diagnostic des ouvertures. Les
 lois restent celles du lot10 ; les nouveaux champs analytiques ne pilotent rien.
 Deux travailleurs, checkpoints60s, aucune trajectoire dense. Voir
-[lot11](../research/BATCH_11_PLAN.md). `start_campaign.bat` utilise ce plan courant.
+[lot11](../research/BATCH_11_PLAN.md).
 
 Le plan historique `membrane_kinetics.json` compare deux candidats séparés, B et B sans
 barrière de lien, chacun sur les graines0/1/2 jusqu'au temps simulé1500. Deux
@@ -95,3 +101,12 @@ Ce contrôle recoupe le census avec les historiques et compare B aux résultats
 K1 quand leurs données locales sont disponibles. Il conserve sa source et son
 empreinte dans une nouvelle sortie d'analyse. Les témoins sans échange ne sont
 pas attendus avoir les fonctions d'insertion du candidat actif.
+
+## Exposition du garde G1
+
+Quand `terminal_exchange` est activé dans les lois, le diagnostic distingue le
+temps-face géométriquement éligible brut de celui qui satisfait aussi le garde.
+Le rapport les affiche séparément. Ces observations sont pré-réaction : les
+ruptures, conflits et changements de disponibilité au cours du tick empêchent
+d'en déduire un hazard exact. Une bonne fermeture sans insertion reste un échec
+fonctionnel du candidat, même si les sondes restent dedans.

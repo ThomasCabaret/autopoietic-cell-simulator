@@ -101,6 +101,7 @@ def resolve(raw):
         if defaults['free_lipid_start'] not in ('inside_annulus','outside_annulus','inside_bulk'):raise ValueError('Invalid free lipid initial distribution')
         if any(defaults[k]<0 for k in ('barrier_radius','barrier_stiffness','initial_jitter','dock_energy','dock_rate','bond_off_rate','break_extension','contact_exchange_rate')):raise ValueError('Invalid membrane bath rates or stiffness')
         if defaults['contact_exchange_capture']<=0:raise ValueError('Invalid local exchange capture')
+        if not isinstance(defaults['terminal_exchange'],bool):raise ValueError('terminal_exchange must be boolean')
         if min(defaults['box'])<2*(defaults['ring_radius']+5.):raise ValueError('Box too small for prepared bath')
     elif model=='membrane':
         if not isinstance(defaults['units'],int) or defaults['units']<2 or not isinstance(defaults.get('fragment_size',1),int) or defaults.get('fragment_size',1)<1:

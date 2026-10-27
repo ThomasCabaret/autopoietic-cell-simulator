@@ -628,7 +628,7 @@
         "K1",
         "M1BS"
       ],
-      "status": "campaign_running_not_analyzed",
+      "status": "six_controls_analyzed_long_defect_localized",
       "hypothesis": "Long matched no-exchange controls and explicit unknown-state reasons can separate spontaneous fragmentation from exchange-associated resealing defects",
       "test": "B and exchange0, identical seeds0/1/2 and horizon1500, unchanged laws; read-only sampled topology and exact legacy comparison",
       "cost": "Zero physical kind/state/port/helper added; analytic observer and output only",
@@ -638,7 +638,35 @@
       "missing_proof": "Six long controls not analyzed; no real G/F or manufactured lipid in the bath",
       "health_gate": "Decide after six controls, before adding helpers; investigate direct leakage measurement if topology alone is inconclusive",
       "campaign_recipe": "research/campaign_recipes/M1R_20261026T165544113247Z/manifest.json",
-      "pilot_recipe": "research/campaign_recipes/M1Rpilot_20261026T164551801107Z/manifest.json"
+      "pilot_recipe": "research/campaign_recipes/M1Rpilot_20261026T164551801107Z/manifest.json",
+      "results": "research/BATCH_11_RESULTS.md",
+      "conclusion": "No exchange closed0.844-0.851; rare B0 long gap after787.56 until1236.11,897 samples beyond endpoint1.35; B reference metrics/positions/RNG/chemistry exact"
+    },
+    {
+      "id": "M1G",
+      "parent": "M1R",
+      "status": "trace_complete_geometric_guard_rejected",
+      "hypothesis": "Port occupancy or remaining interface geometry distinguishes productive local replacement from a long unhealed gap",
+      "test": "Frozen B0 prefix800; shadow geometry only at actual six-atom events; compare full observer/event prefix",
+      "cost": "Read-only trace first; any chemical restriction must be declared before comparison",
+      "counterexample": "If selected good/bad motifs do not differ in the proposed property, do not add that guard",
+      "evidence": "research/BATCH_12_DECISIONS.md",
+      "conclusion": "Successful and failed remaining mismatches3.801/4.054 exceed1.44 so geometry guard rejected; incoming other face free only in successful selected case"
+    },
+    {
+      "id": "M1G1",
+      "parent": "M1G",
+      "related": [
+        "M1B",
+        "M1R"
+      ],
+      "status": "validated_rule_pilot_no_events_long_campaign_preparing",
+      "hypothesis": "Symmetric local port availability excludes continuing-segment splices while retaining terminal replacements and reverse reactions",
+      "cost": "One mode and predicate on existing other-port occupations; no elementary kind, remembered state, rate or radius added",
+      "test": "67 tests plus7 historical, selected seed2 t150 no events despite gated exposure7.08; fixed seeds0/1/2 to1500, reuse M1R controls",
+      "counterexample": "Eliminating insertion is a regression even if closure improves",
+      "missing_proof": "Active new-mode insertion and joint confinement not demonstrated; G/F separate",
+      "evidence": "research/BATCH_12_DECISIONS.md"
     }
   ]
 }

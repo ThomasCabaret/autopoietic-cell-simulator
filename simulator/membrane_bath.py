@@ -17,7 +17,7 @@ DEFAULTS=dict(MEMBRANE_DEFAULTS,units=243,ring_units=219,ring_radius=34.5,
     temperature=.08,dock_width=.3,bond_off_rate=.02,
     free_lipid_start='inside_annulus',retained_probes=24,permeable_probes=24,
     barrier_radius=.55,barrier_stiffness=80.,initial_jitter=.015,
-    contact_exchange_rate=0.,contact_exchange_capture=.8)
+    contact_exchange_rate=0.,contact_exchange_capture=.8,terminal_exchange=False)
 
 
 @njit(cache=True,nogil=True)

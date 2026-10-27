@@ -1,0 +1,14 @@
+{
+  "name": "M1G1 — échange avec disponibilité locale symétrique",
+  "comparison_policy": "Nouvelle variante terminal_exchange=true, trois graines0/1/2 jusqu'à1500. Comparer aux B et sans échange déjà conservés dans M1R, sans changer leurs sources ni leurs résultats. Une condition de port ajoutée, aucune autre constante modifiée.",
+  "workers": 2,
+  "checkpoint_seconds": 60,
+  "kinetic_window": 25,
+  "record_trajectory": false,
+  "boundary_audit": true,
+  "tasks": [
+    {"scenario": {"schema_version":1,"model":"membrane_bath","name":"M1G_terminal","branch":"M1G1","seed":0,"duration":1500,"engine":{"dt":0.002,"sample_every":250},"chemistry":{"contact_exchange_rate":0.2,"terminal_exchange":true}}},
+    {"scenario": {"schema_version":1,"model":"membrane_bath","name":"M1G_terminal","branch":"M1G1","seed":1,"duration":1500,"engine":{"dt":0.002,"sample_every":250},"chemistry":{"contact_exchange_rate":0.2,"terminal_exchange":true}}},
+    {"scenario": {"schema_version":1,"model":"membrane_bath","name":"M1G_terminal","branch":"M1G1","seed":2,"duration":1500,"engine":{"dt":0.002,"sample_every":250},"chemistry":{"contact_exchange_rate":0.2,"terminal_exchange":true}}}
+  ]
+}

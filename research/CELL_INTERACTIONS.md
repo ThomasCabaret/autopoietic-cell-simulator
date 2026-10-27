@@ -129,3 +129,11 @@ d'inconnu pour B0 ; supprimer la barrière de lien donne des pertes2–4/24.
 Le lot11 conserve cette aide et compare l'échange à son ablation, sans nouveaux
 types ni fonctions. Les diagnostics n'ajoutent aucun transport réel d'aliments,
 déchets ou G/F ; les contrats matériels restent ouverts et le budget inchangé.
+
+## Variante G1, occupation des autres ports
+
+Un swap est refuse quand les autres ports des deux partenaires sont occupes.
+La condition est locale et symetrique, mais reduit des echanges entre segments ;
+sa reutilisation dans une chimie commune et ses effets parasites restent a
+tester. Aucune insertase ni gene ajoute : loi primitive conditionnelle declaree,
+avec l aide activee de B toujours fournie. Budget534 billes et cible C0B inchanges.

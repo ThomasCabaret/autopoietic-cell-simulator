@@ -50,6 +50,8 @@ def execute(folder,task_id):
                         simulated_time=sim.time,steps_per_second=rate,eta_seconds=(sim.target_step-sim.step_index)/rate if rate else None)
                     state['kinetic_exposure']={k:sum(w[k] for w in probe.state['windows'].values())
                         for k in ('encounter_pair_time','capture_face_time','exchange_face_time','exchanges')}
+                    if probe.terminal:
+                        state['kinetic_exposure']['gated_exchange_face_time']=sum(w.get('gated_exchange_face_time',0.) for w in probe.state['windows'].values())
                     if audit is not None:state['boundary_state']=audit.state['last_kind']
                     write(dest/'state.json',state)
             obs.campaign_kinetics_state=probe.state

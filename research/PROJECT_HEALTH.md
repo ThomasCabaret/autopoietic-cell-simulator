@@ -253,3 +253,28 @@ aucun défaut causal, ne pas multiplier des réglages de docking ; examiner le
 critère topologique et une mesure physique indépendante des fuites. Le budget
 et le chemin vers les aliments/outils réels restent conditionnels, aucun délai
 en lots ni facteur d'accélération promis.
+
+## 2026-10-27 — analyse M1R et trace locale M1G
+
+Six controles completes, census et references B verifies exactement. Sans echange
+la fermeture est0.844-0.851 avec peu de periodes inconnues ; B0 degrade surtout
+apres787.56 jusque1236.11.897 images ont une extremite isolee au-dela1.35, contre
+aucune avant/apres pour B0. Le defaut merite une intervention de motif local,
+pas une pression globale ou une reinterpretation favorable du confinement.
+Trace selectionnee B0 jusque800 sur sources figees, cas productif et cas
+defectueux compares ; aucun filtre dans la dynamique a ce stade. Hypothese
+disponibilite des faces a confirmer. Cout scientifique : diagnostic reduisant
+un risque, pas nouveau modele viable. G/F et fabrication de L restent separes ;
+aucun blocage de principe ni delai fiable en nombre de lots.
+
+## Decision M1G1
+
+La trace apporte un diagnostic neuf, pas un gain de viabilite. Un filtre
+geometrique tentant est rejete ; une seule restriction locale symetrique est
+retenue comme hypothese, en comptant sa complexite. La symetrie ne calibre
+pas l energie. Le pilote sans activite reste visible et les occasions sous
+garde sont mesurees pour eviter un faux succes par inhibition totale.
+Horizon : trois essais longs comparables aux six temoins disponibles. Si la
+fonction utile disparait ou si les defauts restent, revoir le mecanisme plutot
+qu empiler des conditions. G/F, L, alimentation et renouvellement restent
+ouverts ; pas de nombre fiable de lots restants ni nouveau blocage de principe.

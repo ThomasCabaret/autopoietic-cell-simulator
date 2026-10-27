@@ -71,3 +71,17 @@ Les observations physiques antérieures, positions et PRNG restent identiques,
 y compris dans le pilote comparé aux sources du lot9. Les extrémités proches
 sont un diagnostic de géométrie, jamais une règle de refermeture ni une preuve
 de confinement. Le coût ajouté est analytique, sans type/port/helper physique.
+
+## Condition d'échange G1, lot12
+
+`contact_exchange.py` peut lire les autres ports du partenaire libéré et de
+l'arrivant. Si les deux sont occupés, le swap est interdit ; sinon ancien taux
+et géométrie. Lecture bornée d'états de ports déjà existants sur trois dimères,
+pas d'inspection de longueur, de composante ou de molécule biologique complète.
+Un contact est remplacé par un contact, aucune fermeture ou relocation imposée.
+Le prédicat est symétrique au swap ; cela ne prouve pas l'équilibre détaillé.
+
+Coût : une condition/mode logique, zéro type, état mémorisé ou taux/rayon ajouté.
+La chimie modifiée est déclarée G1 ; ne pas lui attribuer les réussites de B.
+L'aide cinétique non thermique antérieure reste une dette énergétique explicite.
+Le choix du mode est figé avant les essais et ne dépend jamais des observateurs.

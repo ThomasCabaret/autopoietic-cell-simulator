@@ -54,6 +54,9 @@ def main():
         'campaigns/README.md','campaigns/membrane_kinetics.json','research/BATCH_10_PLAN.md','research/BATCH_10.md'))
     files.update(ROOT/p for p in ('campaigns/membrane_robustness.json','research/BATCH_10_RESULTS.md',
         'research/BATCH_11_PLAN.md','research/BATCH_11.md','experiments/pilot_batch11.py','experiments/analyze_batch11.py'))
+    files.update(ROOT/p for p in ('campaigns/membrane_terminal_exchange.json','research/BATCH_11_RESULTS.md',
+        'research/BATCH_12_PLAN.md','research/BATCH_12.md','research/BATCH_12_DECISIONS.md',
+        'experiments/trace_exchange_geometry.py','experiments/pilot_batch12.py'))
     files.update(p for p in (ROOT/'research/campaign_recipes').rglob('*') if p.is_file()
         and ('__pycache__' not in p.parts) and (p.suffix=='.py' or p.name in ('manifest.json','manifest.sha256','plan.json')))
     files.update(p for p in (ROOT/'research/legacy_reference').rglob('*')
@@ -75,6 +78,7 @@ def main():
     folders.extend(ROOT/Path(p).parent for p in batch8['recipes'])
     batch9=json.loads((ROOT/'research/BATCH_09_RECIPES.json').read_text(encoding='utf-8'))
     folders.extend(ROOT/Path(p).parent for p in batch9['recipes'])
+    folders.append(ROOT/'research/engine_runs/M1B0_exchange_geometry_s0_20261027T065021427657Z')
     for folder in folders:
         files.update(p for p in folder.rglob('*') if p.is_file() and '__pycache__' not in p.parts
                      and (p.suffix=='.py' or p.name in ('config.json','scenario.json','recipe.json')))
