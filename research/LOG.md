@@ -644,3 +644,7 @@ mal calibre corrigé : autre reaction legitime, pas defaut de loi.
 67 tests logiciels et7 historiques passent. Pilote choisi2 a150 sans echange
 ni insertion, brut7.50 et sous garde7.08 temps-face : pas de succes affirme.
 Trois graines a1500 prevues avant calcul, comparaison aux temoins M1R conserves.
+
+Campagne G1 lancee : campaign_20261027T074404542747Z, code8d73330, trois
+graines a1500, deux actives et une en attente, aucune erreur au controle.
+Recette exacte preservee ; aucun succes chimique anticipe.

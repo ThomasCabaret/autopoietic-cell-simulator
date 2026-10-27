@@ -660,13 +660,15 @@
         "M1B",
         "M1R"
       ],
-      "status": "validated_rule_pilot_no_events_long_campaign_preparing",
+      "status": "three_seed_campaign_running_not_analyzed",
       "hypothesis": "Symmetric local port availability excludes continuing-segment splices while retaining terminal replacements and reverse reactions",
       "cost": "One mode and predicate on existing other-port occupations; no elementary kind, remembered state, rate or radius added",
       "test": "67 tests plus7 historical, selected seed2 t150 no events despite gated exposure7.08; fixed seeds0/1/2 to1500, reuse M1R controls",
       "counterexample": "Eliminating insertion is a regression even if closure improves",
       "missing_proof": "Active new-mode insertion and joint confinement not demonstrated; G/F separate",
-      "evidence": "research/BATCH_12_DECISIONS.md"
+      "evidence": "research/BATCH_12_DECISIONS.md",
+      "campaign_recipe": "research/campaign_recipes/M1G1_20261027T074404542747Z/manifest.json",
+      "pilot_recipe": "research/campaign_recipes/M1Gpilot_20261027T071956153601Z/manifest.json"
     }
   ]
 }

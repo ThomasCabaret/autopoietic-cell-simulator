@@ -33,3 +33,12 @@ cette fonction tout en évitant les défauts. Confinement réel, aliments/déche
 production L et noyau G/F commun toujours ouverts. Aucun blocage de principe
 établi ; réexaminer le mécanisme si cette intervention n'apporte aucun transfert
 ni diagnostic nouveau, plutôt qu'ajouter des règles spécifiques successives.
+
+## Lancement effectif
+
+`campaign_20261027T074404542747Z`, code8d73330, trois graines à1500. Deux tâches
+actives et une en attente au contrôle, aucune erreur, progression réelle.
+[Recette exacte](campaign_recipes/M1G1_20261027T074404542747Z/manifest.json) et
+[pilote](campaign_recipes/M1Gpilot_20261027T071956153601Z/manifest.json) conservés.
+Les sorties restent locales ; les résultats longs ne sont pas encore analysés.
+Les mêmes lanceurs status/stop/resume/analyze s'appliquent à ce lot.
