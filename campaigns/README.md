@@ -1,10 +1,13 @@
 # Campagnes différées
 
-Le plan courant `membrane_terminal_exchange.json` lance G1 sur trois graines à1500,
+Le plan courant `common_bath.json` teste J0 sur quatre conditions et trois graines
+à400 ; voir le paragraphe lot13 ci-dessous. `start_campaign.bat` utilise ce plan.
+
+Le plan historique `membrane_terminal_exchange.json` lance G1 sur trois graines à1500,
 avec `terminal_exchange=true` et les diagnostics précédents. Comparaison aux six
 témoins M1R conservés : aucun témoin recalculé inutilement. Le garde est une
 nouvelle hypothèse de chimie locale, pas une amélioration déjà démontrée. Voir
-[décisions](../research/BATCH_12_DECISIONS.md). `start_campaign.bat` utilise ce plan.
+[décisions](../research/BATCH_12_DECISIONS.md) et [résultats](../research/BATCH_12_RESULTS.md).
 
 Le plan historique `membrane_robustness.json` compare B avec échange et son ablation
 sans échange, sur les graines0/1/2 à1500, avec diagnostic des ouvertures. Les
@@ -110,3 +113,14 @@ Le rapport les affiche séparément. Ces observations sont pré-réaction : les
 ruptures, conflits et changements de disponibilité au cours du tick empêchent
 d'en déduire un hazard exact. Une bonne fermeture sans insertion reste un échec
 fonctionnel du candidat, même si les sondes restent dedans.
+## Lot13 : bain commun J0
+
+Le lancement par défaut utilise `common_bath.json` :12 essais à400, quatre
+conditions × graines0/1/2, deux travailleurs. `coupled_bath` réunit les vraies
+billes P/R et L dans un même espace, température et ordonnanceur. Les témoins
+natif/froid restent des candidats thermiques distincts. Lire BATCH_13_PLAN.md
+et DESIGN_PRINCIPLES.md avant toute comparaison. Les tableaux d'analyse affichent
+les vrais produits catalysés/incorporés et les contacts/passages échantillonnés.
+L'éligibilité catalytique complète n'est pas encore mesurée par KineticProbe ;
+les tableaux historiques d'échange indiquent donc « non mesuré » pour J0.
+Les plans de membrane précédents sont conservés, pas relancés par défaut.

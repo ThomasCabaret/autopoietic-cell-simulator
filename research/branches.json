@@ -635,7 +635,7 @@
       "evidence": "research/BATCH_11.md",
       "pilot": "B0 t150 exact positions/RNG/chemistry/metrics;35 observed openings before first exchange",
       "counterexample": "Nearby endpoints are not a sealed boundary; correlation with an exchange is not causality; sampling can miss short openings",
-      "missing_proof": "Six long controls not analyzed; no real G/F or manufactured lipid in the bath",
+      "missing_proof": "Long controls analyzed; no real G/F or manufactured lipid in those baths",
       "health_gate": "Decide after six controls, before adding helpers; investigate direct leakage measurement if topology alone is inconclusive",
       "campaign_recipe": "research/campaign_recipes/M1R_20261026T165544113247Z/manifest.json",
       "pilot_recipe": "research/campaign_recipes/M1Rpilot_20261026T164551801107Z/manifest.json",
@@ -660,15 +660,33 @@
         "M1B",
         "M1R"
       ],
-      "status": "three_seed_campaign_running_not_analyzed",
+      "status": "long_campaign_complete_insertion_retained_joint_screen_2_of_3",
       "hypothesis": "Symmetric local port availability excludes continuing-segment splices while retaining terminal replacements and reverse reactions",
       "cost": "One mode and predicate on existing other-port occupations; no elementary kind, remembered state, rate or radius added",
       "test": "67 tests plus7 historical, selected seed2 t150 no events despite gated exposure7.08; fixed seeds0/1/2 to1500, reuse M1R controls",
       "counterexample": "Eliminating insertion is a regression even if closure improves",
-      "missing_proof": "Active new-mode insertion and joint confinement not demonstrated; G/F separate",
+      "missing_proof": "Robust closure, real food/G/F coexistence and membrane synthesis remain open",
       "evidence": "research/BATCH_12_DECISIONS.md",
       "campaign_recipe": "research/campaign_recipes/M1G1_20261027T074404542747Z/manifest.json",
-      "pilot_recipe": "research/campaign_recipes/M1Gpilot_20261027T071956153601Z/manifest.json"
+      "pilot_recipe": "research/campaign_recipes/M1Gpilot_20261027T071956153601Z/manifest.json",
+      "results": "research/BATCH_12_RESULTS.md",
+      "conclusion": "Inserted1/2/2, persistent1/2/1, closed0.840/0.841/0.759. Unknown1.2-3.1 percent; no observed escape. Does not dominate B."
+    },
+    {
+      "id": "J0",
+      "parent": "M1G1",
+      "related": [
+        "C3B1",
+        "C0C",
+        "I0"
+      ],
+      "status": "common_bath_verified_short_pilots_no_events_long_comparison_planned",
+      "hypothesis": "Actual free P/R pass L contacts while locally bonded P/R are repelled, and genetic activity survives a common physical bath",
+      "test": "Native/cold/no-boundary/bath, seeds0/1/2 at400; products incorporated, contact exposure and sampled transport; exact checkpoint and no observer feedback",
+      "cost": "Union of six inherited elemental kinds, two cross-contact constants0.55/80 and local bond predicate; no new gene/tool; external cycle and activated feed inherited",
+      "counterexample": "Low temperature or dilution disables genetic flux, bound products escape or stick, or no encounters expose the boundary",
+      "missing_proof": "No functional joint-bath transfer yet, L synthesis by F impossible with current disjoint reactions; general library and robust membrane unresolved",
+      "evidence": "research/BATCH_13.md"
     }
   ]
 }

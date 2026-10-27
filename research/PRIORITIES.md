@@ -1,4 +1,18 @@
-# Priorités — lot12,27 octobre2026
+# Priorités — lot13,27 octobre2026
+
+G1 achevé et analysé : insertion1/2/2, fermeture0,840/0,841/0,759 ; critère
+conjoint2/3, aucune dominance sur B. Voir BATCH_12_RESULTS.md. **Arrêter les
+réglages isolés de membrane** et tester J0 : vrais P/R libres/liés, température
+commune, contacts et produits incorporés, témoins natif/froid et sans frontière.
+Le plan BATCH_13_PLAN.md fixe quatre conditions × trois graines à400.
+
+Ensuite décider si le verrou est thermique, dilution/concentration, transport ou
+construction. La fabrication de L par F et une seconde fonction sous lois fixes
+restent les prochains tests d'expressivité ; J0 ne les implémente pas. Longueur,
+multigène et remplacement durable ouverts. Lire DESIGN_PRINCIPLES.md avant
+toute nouvelle loi : pas de nouveau garde par défaut ni de loi par fonction.
+
+## Priorités avant analyse du lot12, historique
 
 Trace M1G terminée et garde géométrique rejeté. Comparer maintenant G1, condition
 symétrique sur deux occupations de ports, sur0/1/2 à1500 aux témoins M1R conservés.

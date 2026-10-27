@@ -169,3 +169,18 @@ optionnelle sur un segment réel : trois billes. `contact_exchange.py` remplace
 un contact local sans relocation ni fermeture automatique. Observations globales
 séparées ; trajectoires `membrane_face_links` parcimonieuses, reprises et rendu
 adaptés. Le hook initialise un anneau construit, aucune autoformation revendiquée.
+
+## Premier banc de cohabitation J0
+
+`coupled_bath` compose CopyChemistry et MembraneBathChemistry sous le même
+`Simulation.advance`, avec positions partagées et indices de forces décalés.
+Les mobilités par particule utilisent le broadcasting déjà présent dans
+l'intégrateur ; aucune seconde horloge n'est créée. Les caches spatiaux sont
+préfixés par module pour empêcher leur collision. Les observateurs imbriqués
+sont sauvegardés comme états simples pour la reprise exacte.
+
+Les contacts croisés dépendent seulement du lien P–R local. Une température
+commune est exigée ; la boîte génétique n'est utilisée que pour l'initialisation.
+Il s'agit d'une union explicite d'alphabets et de lois, pas d'une preuve de leur
+minimalité. Les réactions chimiques croisées et la fabrication de L par F ne
+sont pas implémentées. Voir research/BATCH_13_PLAN.md et DESIGN_PRINCIPLES.md.

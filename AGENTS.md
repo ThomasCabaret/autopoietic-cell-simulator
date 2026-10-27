@@ -18,6 +18,12 @@
   prepared ribbon is a separate control, not proof of molecular self-assembly.
 - Keep laws local: no contour, complete sequence, complete genome or biological
   aggregate identity in the dynamics. Observers may identify these afterwards.
+- Treat emergence and extensibility as design requirements, not optional audits.
+  Read `research/DESIGN_PRINCIPLES.md` before changing a candidate. Locality alone
+  does not establish expressivity: prefer new functions from new assemblies under
+  fixed laws, test downstream incompatibilities early, and revisit a representation
+  that needs one special rule per function. Software modularity is not chemical
+  composability. Cell division is an optional future stress case, not today's goal.
 - Apply `research/LOCALITY_AUDIT.md`: state each rule's bounded neighborhood and
   helper cost; keep initialization/measurement labels out of reactions. Test no
   observer feedback and declare external forcing. Do not encode a whole biological

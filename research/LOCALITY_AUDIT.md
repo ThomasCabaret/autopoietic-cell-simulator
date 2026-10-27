@@ -85,3 +85,22 @@ Coût : une condition/mode logique, zéro type, état mémorisé ou taux/rayon a
 La chimie modifiée est déclarée G1 ; ne pas lui attribuer les réussites de B.
 L'aide cinétique non thermique antérieure reste une dette énergétique explicite.
 Le choix du mode est figé avant les essais et ne dépend jamais des observateurs.
+## Contrat de reprise et bain J0
+
+Voir [DESIGN_PRINCIPLES.md](DESIGN_PRINCIPLES.md) : la localité est nécessaire,
+mais ne démontre ni minimalité ni richesse des assemblages.
+
+J0 lit, pour chaque atome P/R, l'existence de son lien P–R saturé : deux atomes
+réels. Cet état active son contact avec une bille L ou un segment H–H lié ;
+la force de segment porte sur trois atomes et est symétrique dans l'espace.
+Les listes d'atomes sont des index de types chimiques, jamais des composantes
+biologiques. Aucun parcours de polymère ou contour ne dirige ces contacts.
+
+Coût croisé : deux constantes de contact, rayon0,55 et raideur80, reprises aux
+valeurs de la barrière existante, plus le prédicat libre/lié. Zéro élément,
+outil ou gène ajouté aux six types hérités ; union non minimisée. La commutation
+peut changer l'énergie : aide non calibrée déclarée. Température unique imposée.
+Les tests couvrent observateur sans rétroaction, force de réaction sur L,
+état de liaison, mêmes positions/PRNG après reprise, caches spatiaux séparés
+et absence de parois internes. Les contours sont réservés aux mesures, qui
+abandonnent les intervalles inconnus. Production de L par F non implémentée.

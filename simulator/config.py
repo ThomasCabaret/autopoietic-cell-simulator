@@ -92,6 +92,19 @@ def resolve(raw):
             raise ValueError('invalid functional bend cosine')
         if any(defaults[k]<=0 for k in ('food_ligand_width','food_binding_radius','food_reaction_radius')) or any(defaults[k]<0 for k in ('functional_bend_strength','food_ligand_energy','food_binding_rate','food_unbinding_rate','food_reaction_rate')):
             raise ValueError('invalid functional substrate parameters')
+    elif model=='coupled_bath':
+        from .coupled_bath import membrane_config,genetics_config
+        if not isinstance(defaults['include_membrane'],bool):raise ValueError('include_membrane must be boolean')
+        if not isinstance(defaults['membrane'],dict) or not isinstance(defaults['genetics'],dict):raise ValueError('Nested chemistry requires objects')
+        if len(defaults['packet_offset'])!=2 or any(not math.isfinite(x) for x in defaults['packet_offset']):raise ValueError('Invalid initial packet offset')
+        if defaults['bound_contact']<0 or defaults['bound_barrier_stiffness']<0:raise ValueError('Invalid cross-contact parameters')
+        m,g=membrane_config(defaults),genetics_config(defaults)
+        if not g['constructible'] or g['food_pairs'] or g['dual_faces']:raise ValueError('Coupled bath requires constructible P/R without X/Y or dual faces')
+        if any(k in defaults['membrane'] for k in ('retained_probes','permeable_probes')):raise ValueError('No diagnostic probes in coupled bath')
+        if 'temperature' in defaults['membrane'] or 'temperature' in defaults['genetics']:raise ValueError('One common bath temperature is required')
+        # Store resolved inner laws, but the bath temperature is specified once.
+        defaults['membrane']={k:v for k,v in m.items() if k not in ('temperature','retained_probes','permeable_probes')}
+        defaults['genetics']={k:v for k,v in g.items() if k!='temperature'}
     elif model=='membrane_bath':
         if defaults['initial']!='ring' or not defaults['face_docking']:raise ValueError('Bath requires prepared ring and local face docking')
         if any(not isinstance(defaults[k],int) or defaults[k]<0 for k in ('units','ring_units','retained_probes','permeable_probes')) or not 3<=defaults['ring_units']<=defaults['units']:

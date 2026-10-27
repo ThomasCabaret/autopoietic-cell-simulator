@@ -137,3 +137,18 @@ La condition est locale et symetrique, mais reduit des echanges entre segments ;
 sa reutilisation dans une chimie commune et ses effets parasites restent a
 tester. Aucune insertase ni gene ajoute : loi primitive conditionnelle declaree,
 avec l aide activee de B toujours fournie. Budget534 billes et cible C0B inchanges.
+
+## J0 — premier contrat de contact P/R–L
+
+Le banc J0 contient588 billes :243 L à deux billes et51 supports/reconnaisseurs
+(102 billes). Les sondes artificielles sont retirées. P/R libres sont transparents
+aux L ; le lien réel P–R active la répulsion de billes et segment0,55/80.
+L'affinité chimique P/R–L est nulle par contrat de types, non par label de gène.
+Cette sélectivité est implémentée, pas encore validée en flux fonctionnel.
+La commutation d'énergie est une aide déclarée. Aucun outil/gène ajouté et
+budget cible C0B inchangé ; le petit test n'est pas une cellule dimensionnée.
+
+Production de L par F non implémentée ; un changement de représentation est
+requis, sans conversion externe ni simple renommage P/R. J0 vérifie d'abord
+cohabitation, contacts, dilution et température ; les autres contrats restent
+conditionnels, y compris transport sous consommation et renouvellement.

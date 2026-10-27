@@ -144,6 +144,14 @@ def analyze(folder):
         row=dict(task=task['id'],group=key,seed=cfg['seed'],name=cfg['name'],duration=cfg['duration'],
             metrics={k:result['metrics'].get(k) for k in ('parent_closed_fraction','envelope_valid_fraction','retained_escape_fraction','inserted_into_closed_parent_ever','persistent_inserted_10')},
             first_passages=kinetic['first_passages'],opportunities=kinetic['opportunity_totals'])
+        if cfg['model'] in ('copy','coupled_bath'):
+            metrics=result['metrics'];gene=metrics.get('genetics',metrics)
+            row['genetics']={k:gene.get(k) for k in ('assembled_dimers','catalyzed_dimers','catalyzed_incorporated',
+                'expressed_catalyzed_dimers','expressed_catalyzed_incorporated','detached_copy_sets_ever','translated_detached_ever')}
+            if cfg['model']=='coupled_bath':
+                row['transport']={k:metrics[k] for k in ('valid_transport_fraction','near_membrane_atom_time',
+                    'first_membrane_contact','sampled_crossings','final_inside_counts')}
+                row['membrane']={k:metrics['membrane'][k] for k in ('parent_closed_fraction','envelope_valid_fraction')} if metrics['membrane'] else None
         if state.get('boundary_audit'):
             row['boundary_audit']={k:v for k,v in read(folder/state['boundary_audit']).items() if k!='state'}
         rows.append(row);groups.setdefault(key,[]).append(row)
@@ -181,6 +189,24 @@ def analyze(folder):
         for row in guarded:
             o=row['opportunities']
             lines.append(f"| {row['task']} | {o['exchange_face_time']:.3g} | {o['gated_exchange_face_time']:.3g} | {o['exchanges']} |")
+    genetic=[r for r in rows if 'genetics' in r]
+    if genetic:
+        lines += ['', '## Produits génétiques matériels', '',
+            'Températures, présence de L et modèles restent des groupes distincts. Aucun seuil de viabilité déduit.', '',
+            '| Tâche / cas | Graine | Dimères catalysés | Incorporés | G détachés | F détachés |',
+            '| --- | ---: | ---: | ---: | ---: | ---: |']
+        for r in genetic:
+            g=r['genetics']
+            lines.append(f"| {r['task']} / {r['name']} | {r['seed']} | {g['catalyzed_dimers']} | {g['catalyzed_incorporated']} | {g['detached_copy_sets_ever']} | {g['translated_detached_ever']} |")
+    transported=[r for r in rows if 'transport' in r]
+    if transported:
+        lines += ['', '## Contacts réels et transport échantillonné', '',
+            'Temps-atome approchés aux observations ; passages = changements de côté du contour analytique, pas un flux net ni preuve de scellement. Aucun suivi à travers les périodes inconnues.', '',
+            '| Tâche | Contact libre | Contact lié | Changements libre / lié / état changé | Contour classable |',
+            '| --- | ---: | ---: | --- | ---: |']
+        for r in transported:
+            t=r['transport'];e=t['near_membrane_atom_time'];x=t['sampled_crossings']
+            lines.append(f"| {r['task']} | {e['free']:.3g} | {e['bound']:.3g} | {x['free']} / {x['bound']} / {x['state_changed']} | {t['valid_transport_fraction']:.3f} |")
     (folder/'analysis.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
     return report
 

@@ -131,9 +131,17 @@ référence. Aucune nouvelle fonction ni amélioration de robustesse revendiqué
 Les contrôles longs B/sans échange doivent décider du prochain changement ;
 voir BATCH_11.md. La membrane reste séparée de G/F.
 
-## Variante locale G1 en cours de validation
+## Variante locale G1 — résultats longs et étape J0
 
-Un garde sur les occupations locales est teste, sans nouvelle primitive
-materielle. Aucun echange ni insertion dans son pilote court ; les anciennes
-reussites B ne sont pas attribuees a G1. Maturite integree inchangee jusqu aux
-resultats longs. Voir BATCH_12.md.
+G1 insère1/2/2 à1500, persistants1/2/1, fermeture0,840/0,841/0,759 et1,2–3,1%
+d'inconnu. Zéro fuite observée, pas de preuve pendant l'inconnu. Critère conjoint
+2/3 comme B, sans dominance : un défaut tardif est réduit, une autre graine
+régresse. Voir BATCH_12_RESULTS.md. La membrane n'est pas robuste validée.
+
+J0 compose désormais vrais P/R et L dans un seul bain physique avec contacts
+locaux libres/liés, température commune et observateurs sans rétroaction.
+Pilotes courts sans événement/rencontre : infrastructure vérifiée, aucun gain
+de compatibilité fonctionnelle encore revendiqué. Les alphabets restent réunis,
+non minimisés ; fabrication de L par F et diversité fonctionnelle non réalisées.
+Voir BATCH_13.md. La méthode distingue désormais explicitement localité, coût et
+expressivité ; aucune flexibilité future n'est déduite du seul code modulaire.

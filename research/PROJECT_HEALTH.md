@@ -1,4 +1,4 @@
-# Santé du projet —26 octobre2026
+# Santé du projet —27 octobre2026
 
 Cette évaluation vise la faisabilité globale et le volume du travail, pas le
 nombre de simulations positives. Elle doit évoluer avec les résultats. La cible
@@ -278,3 +278,30 @@ Horizon : trois essais longs comparables aux six temoins disponibles. Si la
 fonction utile disparait ou si les defauts restent, revoir le mecanisme plutot
 qu empiler des conditions. G/F, L, alimentation et renouvellement restent
 ouverts ; pas de nombre fiable de lots restants ni nouveau blocage de principe.
+
+## Lot13 — ne pas confondre correction et flexibilité
+
+G1 conserve l'insertion3/3 mais ne domine pas B : fermeture2/3 au seuil, graine2
+dégradée. Continuer à empiler des gardes spécialisés serait un risque de volume.
+Décision : passer au test précoce de conditions communes J0, avec une dette
+croisée libre/lié déclarée plutôt qu'un nouveau réglage de docking.
+
+Le moteur accepte un bain commun vérifié ; les lois G/F étaient à0,6 et L à0,08.
+J0 choisit explicitement0,08 et mesure ce changement avec témoins. La disparition
+du petit confinement génétique peut diluer le stock : les témoins sans membrane
+séparent ce risque de la température. Aucun résultat fonctionnel du bain commun
+n'est encore acquis ; les pilotes courts sans rencontre ne permettent pas de
+juger la cinétique. Réévaluation après la campagne400, avant autre helper.
+
+Verrou structurel restant : les réactions actuelles ne fabriquent pas de L avec
+F, et P–R/H–T n'ont pas la même géométrie. Les deux modules joints ne résolvent
+pas cela. Une piste concrète est une seconde capture/assemblage depuis des
+réactifs élémentaires avec produit de membrane utilisable, puis deux outils
+sélectifs obtenus par assemblages sous les mêmes lois. Ce sera une évolution
+matérielle déclarée, à comparer à un alphabet commun, pas un renommage de types.
+La division reste une extension hypothétique, pas une exigence nouvelle.
+
+Santé : poursuite justifiée par des tests réfutables, expressivité générale et
+coût global non démontrés. Aucun obstacle irréversible établi ; ces verrous
+pourraient cependant imposer une refonte. Contrat de reprise DESIGN_PRINCIPLES.md
+désormais référencé par AGENTS.md et le skill.

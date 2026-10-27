@@ -1,0 +1,10 @@
+{
+  "batch": 13,
+  "recipes": [
+    "research/engine_runs/J0_bath_s0_20261027T112756257510Z/recipe.json",
+    "research/engine_runs/J0_cold_s0_20261027T112808344079Z/recipe.json",
+    "research/engine_runs/J0_native_s0_20261027T112756059413Z/recipe.json",
+    "research/engine_runs/J0_no_boundary_s0_20261027T112818751810Z/recipe.json"
+  ],
+  "policy": "Sources and scenarios only; selected seed0 short technical pilots, no chemical success"
+}

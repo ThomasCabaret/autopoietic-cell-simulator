@@ -23,6 +23,26 @@ des lois réutilisables dont les assemblages portent les fonctions.
 
 ## Travail expérimental
 
+### Contrat de conception à préserver entre agents
+
+Lire [les principes de conception](../../../research/DESIGN_PRINCIPLES.md)
+avant de changer une chimie ou de choisir le prochain jalon. L'objectif n'est
+pas une collection de scènes réussies : des assemblages doivent porter des
+fonctions différentes et combinables dans un petit univers fixe. Ni la localité
+d'une rustine ni la modularité du logiciel ne prouvent cette expressivité.
+
+Dans chaque plan, nommer la fonction aval menacée, le test de transfert ou de
+non-interaction le moins coûteux qui pourrait invalider le choix, et ce qui
+reste réutilisable si le candidat échoue. Vérifier tôt les conditions physiques
+communes (énergie/température, échelles, état libre/lié, transport), pas seulement
+la présence des modules dans le même moteur. Pour un ajout de loi, distinguer
+sa réutilisation démontrée, sa réutilisation espérée et sa dette spécifique.
+Ne pas déclarer toutes les futures fonctions garanties ; une division éventuelle
+est un exemple de flexibilité à examiner, pas une priorité ni un critère ajouté
+de viabilité. Un blocage structurel doit déclencher un choix d'architecture,
+pas une accumulation de réglages. Les seuils d'arrêt et références ci-dessous
+restent applicables.
+
 ### Exploration, unification et simplification
 
 Pour chaque lot, annoncer dans le plan s'il explore un mécanisme, intègre des

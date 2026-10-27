@@ -648,3 +648,22 @@ Trois graines a1500 prevues avant calcul, comparaison aux temoins M1R conserves.
 Campagne G1 lancee : campaign_20261027T074404542747Z, code8d73330, trois
 graines a1500, deux actives et une en attente, aucune erreur au controle.
 Recette exacte preservee ; aucun succes chimique anticipe.
+
+## 2026-10-27 — clôture G1 et intégration J0
+
+G1 terminé3/3 à1500, sources/census/durées/échanges vérifiés. Insertion1/2/2,
+persistants1/2/1, fermeture0,840/0,841/0,759. Aucune fuite observée,1,2–3,1%
+d'inconnu. Critère conjoint2/3 comme B, aucun candidat dominant. Pas de nouveau
+garde : priorité au transfert matériel, résultats dans BATCH_12_RESULTS.md.
+
+AGENTS/skill renvoient au contrat DESIGN_PRINCIPLES : localité, simplicité,
+expressivité distinctes ; incompatibilités aval à tester tôt ; modularité du code
+sans garantie chimique ; division future sans priorité ajoutée. Exigences rendues
+explicites pour toute reprise. Nouveau hook J0 dans le même ordonnanceur : P/R et
+L mécaniquement couplés, contact selon lien local, température unique0,08,
+mobilités héritées. Aucun transfert de matière par convertisseur externe.
+
+Pilotes graine0 natif/froid60 et bain/sansL20 sans erreur ni réaction ; bain sans
+contact encore. Résultats courts censurés, pas preuve d'inactivité. Plan quatre
+conditions × trois graines à400 avant résultats. Réactions L et P/R encore
+disjointes ; production L par F et diversité restent des verrous de représentation.

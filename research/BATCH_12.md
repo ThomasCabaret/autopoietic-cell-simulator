@@ -42,3 +42,10 @@ actives et une en attente au contrôle, aucune erreur, progression réelle.
 [pilote](campaign_recipes/M1Gpilot_20261027T071956153601Z/manifest.json) conservés.
 Les sorties restent locales ; les résultats longs ne sont pas encore analysés.
 Les mêmes lanceurs status/stop/resume/analyze s'appliquent à ce lot.
+
+## Clôture
+
+Campagne3/3 terminée, contrôles de sources et census validés ; voir
+[résultats](BATCH_12_RESULTS.md). Insertion conservée, fermeture conjointe2/3,
+graine2 dégradée. G1 reste un banc provisoire, pas une solution robuste validée.
+La suite J0 teste les composants réels sous une température commune.
