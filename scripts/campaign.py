@@ -201,11 +201,11 @@ def analyze(folder):
     if genetic:
         lines += ['', '## Produits génétiques matériels', '',
             'Températures, présence de L et modèles restent des groupes distincts. Aucun seuil de viabilité déduit.', '',
-            '| Tâche / cas | Graine | Dimères catalysés | Incorporés | G détachés | F détachés |',
-            '| --- | ---: | ---: | ---: | ---: | ---: |']
+            '| Tâche / cas | Graine | Dimères catalysés | Incorporés | Par F exprimés / incorporés | G détachés | F nouveaux détachés |',
+            '| --- | ---: | ---: | ---: | ---: | ---: | ---: |']
         for r in genetic:
             g=r['genetics']
-            lines.append(f"| {r['task']} / {r['name']} | {r['seed']} | {g['catalyzed_dimers']} | {g['catalyzed_incorporated']} | {g['detached_copy_sets_ever']} | {g['translated_detached_ever']} |")
+            lines.append(f"| {r['task']} / {r['name']} | {r['seed']} | {g['catalyzed_dimers']} | {g['catalyzed_incorporated']} | {g['expressed_catalyzed_dimers']} / {g['expressed_catalyzed_incorporated']} | {g['detached_copy_sets_ever']} | {g['translated_detached_ever']} |")
     transported=[r for r in rows if 'transport' in r]
     if transported:
         lines += ['', '## Contacts réels et transport échantillonné', '',

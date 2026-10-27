@@ -1,0 +1,8 @@
+{
+  "batch": 14,
+  "recipes": [
+    "research/engine_runs/J1_cold_prepared_s0_20261027T140008820483Z/recipe.json",
+    "research/engine_runs/J1_cold_unlinked_s0_20261027T140032576531Z/recipe.json"
+  ],
+  "policy": "Source-only paired cold seed0 pilots200, no incorporation"
+}

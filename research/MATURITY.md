@@ -155,3 +155,9 @@ benchmark à2406/6292 billes mesure le coût du calcul, pas une cellule renouvel
 GKA ajoute un audit d'occasions génétiques sans nouvelle loi ; la maturité
 chimique n'augmente pas avant diagnostic et transfert. Un banc commun exécuté
 ne compense pas l'absence actuelle de F ou d'incorporation à froid à400.
+
+GKA achevé et exact : froid0/1 sans double appariement, froid2 une ligation
+partielle. J1 conserve les lois et teste un outil préparé ; pilote sélectionné
+3 produits catalysés contre0, aucune incorporation. Activité possible à froid
+pour cet outil, pas de fonctionnement intégré acquis. Le préparé ne compte pas
+comme F exprimé. Diversité, membrane fabriquée et maintien toujours ouverts.

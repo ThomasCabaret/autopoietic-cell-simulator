@@ -1,4 +1,17 @@
-# Priorités — lot14,27 octobre2026
+# Priorités — lot14 J1,27 octobre2026
+
+GKA terminé6/6 avec rejeu primaire exact. Deux froids n'ont aucun motif doublement
+apparié observé ; le troisième forme une liaison, pas un F complet. Aucun taux
+supplémentaire justifié. Cycle réel200/15 corrigé dans les anciennes notes.
+
+Priorité J1 : outil initial construit contre même géométrie déliée, mêmes lois,
+même quantité de matière, trois graines avec/sans membrane à1200. Pilote200 :
+3 dimères contre0, aucune incorporation. Demander produit incorporé et nouveaux
+F/G, distinguer F préparé et exprimé. Voir BATCH_14_BOOTSTRAP.md. Aucun suivi
+froid3200 lancé. T9 si fragments ; sinon diagnostiquer dilution et transport
+dans le bain, puis convergence dt et diversité/synthèse L sous lois communes.
+
+## Phase de diagnostic GKA, historique
 
 GKA : diagnostiquer la reconnaissance et la ligation à froid avant tout réglage.
 Six témoins J0 natif/froid rejoués à400, instrumentation sans rétroaction,

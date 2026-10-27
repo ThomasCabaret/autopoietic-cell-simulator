@@ -699,3 +699,14 @@ Suite ciblée6 tests positive ; suite complète d'abord bloquée par permissions
 sur les répertoires temporaires du sandbox, relancée hors sandbox à code identique.
 Aucune régression ou réussite chimique déduite de cette erreur d'environnement.
 Relance complète :79 tests logiciels et7 historiques passent avant gel.
+
+GKA campaign_20261027T122747493430Z achevé6/6, code0c08498. Toutes métriques,
+positions, PRNG et chimie exactement conformes aux six témoins J0. Diagnostic :
+zéro double appariement froid0/1 ; froid2 une liaison sans trimer. Correction
+documentaire du cycle à200/15, toujours celui des recettes et calculs.
+
+Décision J1 : départ construit avecF001 contre sa géométrie déliée, six dimères
+F initiaux conservés. Six paires vérifiées : positions/PRNG/rungs/bits identiques,
+deux liens seulement diffèrent. Pilotes0 à200 :3 catalysés contre0, aucune
+incorporation ou nouveau F. Plan12 tâches1200 avec/sans membrane fixé avant
+résultats, aucune nouvelle loi. Prolongation froide3200 non choisie maintenant.

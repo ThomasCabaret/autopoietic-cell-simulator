@@ -40,3 +40,14 @@ graines froides à3200 répondra à une hypothèse, sans remplacer les censures4
 Maturité : aucune nouvelle fonction revendiquée. Le prochain gain attendu est
 un diagnostic qui tranche une incompatibilité, puis le retour vers une fonction
 transférée dans le bain commun. Production L et diversité sous lois fixes ouvertes.
+
+## Clôture GKA et phase suivante
+
+Six rejeux achevés et exacts jusque positions/PRNG/chimie ; résultats dans
+BATCH_14_RESULTS.md. Sources physiques existantes toutes byte-identiques à J0,
+seul le worker ajoute la mesure. Recette GKA_20261027T122747493430Z préservée.
+Le cycle documentaire60/10 était erroné : recettes et calculs200/15, notes corrigées.
+
+Suite J1, BATCH_14_BOOTSTRAP.md : outil construit et témoin géométrique délié,
+aucune loi nouvelle. Le pilote200 produit3 dimères contre0, incorporation0/0.
+Les douze essais1200 restent nécessaires pour tester le transfert et la membrane.

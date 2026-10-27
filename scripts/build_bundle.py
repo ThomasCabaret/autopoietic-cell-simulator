@@ -63,6 +63,8 @@ def main():
     files.update(ROOT/p for p in ('experiments/benchmark_cell_workload.py','research/NUMERICS_AND_RENEWAL.md'))
     files.update(ROOT/p for p in ('research/BATCH_14_PLAN.md','research/BATCH_14.md',
         'experiments/prepare_batch14.py','experiments/analyze_batch14.py','campaigns/genetic_kinetics.json'))
+    files.update(ROOT/p for p in ('research/BATCH_14_RESULTS.md','research/BATCH_14_BOOTSTRAP.md',
+        'research/BATCH_14_PILOTS.json','experiments/prepare_batch14_bootstrap.py','campaigns/constructed_tool.json'))
     files.update(p for p in (ROOT/'research/campaign_recipes').rglob('*') if p.is_file()
         and ('__pycache__' not in p.parts) and (p.suffix=='.py' or p.name in ('manifest.json','manifest.sha256','plan.json')))
     files.update(p for p in (ROOT/'research/legacy_reference').rglob('*')
@@ -86,6 +88,7 @@ def main():
     folders.extend(ROOT/Path(p).parent for p in batch9['recipes'])
     folders.append(ROOT/'research/engine_runs/M1B0_exchange_geometry_s0_20261027T065021427657Z')
     folders.extend(ROOT/Path(p).parent for p in json.loads((ROOT/'research/BATCH_13_PILOTS.json').read_text(encoding='utf-8'))['recipes'])
+    folders.extend(ROOT/Path(p).parent for p in json.loads((ROOT/'research/BATCH_14_PILOTS.json').read_text(encoding='utf-8'))['recipes'])
     for folder in folders:
         files.update(p for p in folder.rglob('*') if p.is_file() and '__pycache__' not in p.parts
                      and (p.suffix=='.py' or p.name in ('config.json','scenario.json','recipe.json')))

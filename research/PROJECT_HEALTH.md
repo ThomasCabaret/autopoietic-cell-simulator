@@ -330,3 +330,15 @@ les graines froides ou une intervention conceptuelle motivée. Aucun progrès de
 fonction ajouté et aucune certitude sur la durée du renouvellement. Ne pas
 transformer le scénario de coût1000–10000 unités en marge haute ou probabilité
 de terminer sous dix heures : la cinétique et les fonctions aval restent inconnues.
+
+## Décision après GKA
+
+Six rejeux exacts, diagnostic nouveau : double appariement absent dans froid0/1,
+une ligation sans trimer dans froid2. Pas de nouveau taux. La cible autorise
+une cellule construite : tester un outil construit et son témoin délié est plus
+direct que multiplier les attentes pour l'amorçage depuis seuls monomères.
+Pilote positif pour activité3 contre0, incorporation absente : pas encore un
+transfert. Douze tâches1200 doivent trancher expression/usage/confinement, sans
+changer les lois. Santé : décision ciblée et zéro dette chimique ajoutée,
+mais T9 et fabrication de L restent des obstacles prévisibles. Volume restant
+et probabilité d'un renouvellement sous dix heures toujours non estimables.

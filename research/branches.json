@@ -716,14 +716,33 @@
         "K1",
         "T9"
       ],
-      "status": "diagnostic_verified_six_exact_replays_planned",
+      "status": "six_replays_exact_opportunity_scarcity_and_partial_chain_observed",
       "hypothesis": "Recognition access, double occupancy and ligation eligibility distinguish slowed cold kinetics from local traps before changing laws",
       "test": "Unchanged native/cold J0 seeds0/1/2 at400, passive own-cache pre-reaction census; compare complete primary metrics, positions, RNG and chemistry to J0",
       "cost": "Zero physical primitive, gene, tool or parameter; one optional passive diagnostic with private cache and resumable state",
       "counterexample": "Repeated eligible opportunities without products or long irreversible partial states contradict pure encounter scarcity; measurement that changes trajectories is invalid",
       "missing_proof": "Six replay statistics pending; common-bath function, L synthesis, dt convergence and renewal remain open",
       "evidence": "research/BATCH_14.md",
-      "health_gate": "One six-control diagnosis then one justified all-seed extension to3200 or one conceptual intervention, no unconstrained thermal tuning"
+      "health_gate": "One six-control diagnosis then one justified all-seed extension to3200 or one conceptual intervention, no unconstrained thermal tuning",
+      "campaign_recipe": "research/campaign_recipes/GKA_20261027T122747493430Z/manifest.json",
+      "results": "research/BATCH_14_RESULTS.md",
+      "conclusion": "Cold0/1 zero double occupancy; cold2 one ligation without trimer; all six full primary states exactly J0"
+    },
+    {
+      "id": "J1",
+      "parent": "GKA",
+      "related": [
+        "C3B1",
+        "J0",
+        "T9"
+      ],
+      "status": "matched_initial_tools_verified_pilots_active_not_incorporated",
+      "hypothesis": "A constructed initial F001 can supply usable dimers and allow new G/F in the cold common bath without requiring enzyme-free bootstrap",
+      "test": "Four conditions cold/bath times prepared/unlinked, seeds0/1/2 to1200; identical atoms, bits, positions and RNG within each pair, only two initial bonds differ",
+      "cost": "No new physical law/type/helper/gene or atom; one existing F001 initially constructed, excluded from translated products",
+      "counterexample": "Prepared tool produces no usable material, products never incorporate, or activity fails in the membrane bath",
+      "missing_proof": "Joint transfer, new expressed tool activity and renewal, library and L synthesis remain open",
+      "evidence": "research/BATCH_14_BOOTSTRAP.md"
     }
   ]
 }

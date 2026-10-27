@@ -34,7 +34,7 @@ réévaluation rétroactive de la cinétique dans les anciens fichiers.
 
 Si la rareté des occasions ou la diffusion reste plausible, prolonger **les trois
 graines froides**, mêmes lois à3200 (8×400, face au ratio de diffusion0,6/0,08=7,5).
-Cette échelle n'est pas une équivalence thermique : forces/bruit et cycle60/10
+Cette échelle n'est pas une équivalence thermique : forces/bruit et cycle200/15
 ne se redimensionnent pas ensemble. Garder le bilan censuré à400 et rapporter
 séparément le suivi3200, sans sélectionner une graine favorable. Si le diagnostic
 établit un piège structurel distinct, le documenter avant choix d'une variante.
@@ -47,3 +47,9 @@ mais ne pas mélanger leur effet à la question H1–H4 dans cette comparaison.
 Critère de progrès : diagnostic réfutable ou transfert matériel, pas nombre de
 simulations. Conserver membrane, alphabet et références historiques. Aucun gène,
 espèce, alimentation ni budget ajouté ; G/F et L chimiquement disjoints dans J0.
+
+Décision après phase A : ne pas lancer ce suivi3200 maintenant. Voir
+BATCH_14_RESULTS.md : tester un outil initial construit et son contrôle délié,
+sous lois inchangées, répond plus directement à la cible cellulaire autorisée.
+Le cycle200/15 est corrigé ici d'après la recette figée ; l'ancien texte60/10
+était une erreur documentaire, sans effet sur les calculs.

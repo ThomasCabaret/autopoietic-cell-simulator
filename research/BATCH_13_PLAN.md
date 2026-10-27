@@ -25,7 +25,7 @@ Pas de réaction chimique croisée encore : ce contrat zéro-affinité est expli
 - Température commune0,08. C3B1 utilisait0,6 : c'est une variante, pas un transfert
   acquis. Mobilités élémentaires conservées0,4 pour L et0,25 pour P/R.
 - Configuration génétique C3Bexpress : G001 préparé, six monomères F préparés,
-  précurseurs P/R réellement indépendants ; cycle60/10 et activation fournis.
+  précurseurs P/R réellement indépendants ; cycle200/15 et activation fournis.
 - Frontière219 L préparés,24 L libres, lois G1 inchangées ; aucune sonde artificielle.
 - Répulsion de billes membrane–P/R libres nulle ; rayon0,55 quand l'atome a un lien
   P–R. Barrière de segment à trois atomes de mêmes rayon/raideur0,55/80. Pas de
