@@ -43,3 +43,12 @@ de fonctions, ni renouvellement durable ou division ne sont démontrés par J1.
 Budget102/588 billes et cible C0B inchangés. Coût de conception : une comparaison
 de conditions initiales, pas12 nouvelles lois. La suite doit réduire un verrou,
 pas accumuler des aides. Pas de prévision de délai biologique sous dix heures.
+
+## Lancement
+
+Campagne `campaign_20261027T144451586423Z`, code39fead3, douze tâches à1200,
+deux travailleurs, audit et checkpoints actifs. Recette source seule dans
+campaign_recipes/J1_20261027T144451586423Z ; résultats non encore analysés.
+Les79 tests logiciels+7 historiques passent ; les13 tests campagne/couplage
+repassent après ajout de la distinction préparé/exprimé dans le tableau.
+Suivi campaign_status.bat, pause/reprise et analyze_campaign.bat habituels.

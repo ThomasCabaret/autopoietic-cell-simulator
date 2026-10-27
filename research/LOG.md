@@ -710,3 +710,7 @@ F initiaux conservés. Six paires vérifiées : positions/PRNG/rungs/bits identi
 deux liens seulement diffèrent. Pilotes0 à200 :3 catalysés contre0, aucune
 incorporation ou nouveau F. Plan12 tâches1200 avec/sans membrane fixé avant
 résultats, aucune nouvelle loi. Prolongation froide3200 non choisie maintenant.
+
+J1 lancé : campaign_20261027T144451586423Z, code39fead3,12 tâches1200,
+deux travailleurs, sources figées et recette versionnée. Tests79+7 et reprise
+des13 contrôles campagne/couplage réussis. Aucun succès de transfert anticipé.

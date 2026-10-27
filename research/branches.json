@@ -736,13 +736,15 @@
         "J0",
         "T9"
       ],
-      "status": "matched_initial_tools_verified_pilots_active_not_incorporated",
+      "status": "twelve_task_constructed_tool_campaign_running",
       "hypothesis": "A constructed initial F001 can supply usable dimers and allow new G/F in the cold common bath without requiring enzyme-free bootstrap",
       "test": "Four conditions cold/bath times prepared/unlinked, seeds0/1/2 to1200; identical atoms, bits, positions and RNG within each pair, only two initial bonds differ",
       "cost": "No new physical law/type/helper/gene or atom; one existing F001 initially constructed, excluded from translated products",
       "counterexample": "Prepared tool produces no usable material, products never incorporate, or activity fails in the membrane bath",
       "missing_proof": "Joint transfer, new expressed tool activity and renewal, library and L synthesis remain open",
-      "evidence": "research/BATCH_14_BOOTSTRAP.md"
+      "evidence": "research/BATCH_14_BOOTSTRAP.md",
+      "campaign_recipe": "research/campaign_recipes/J1_20261027T144451586423Z/manifest.json",
+      "pilot_recipes": "research/BATCH_14_PILOTS.json"
     }
   ]
 }
