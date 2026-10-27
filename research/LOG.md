@@ -732,3 +732,6 @@ hook J1 archivé.86 tests logiciels+7 historiques passent.
 Homéostasie faible explicitée dans HOMEOSTASIS.md et contrat de reprise ; pas
 de régulation implémentée ni essai de maintien revendiqué. Plan12 témoins J2
 à1200 fixé avant résultats, sources à geler après commit, données locales.
+
+J2 lancé : campaign_20261027T162612551317Z, codeb0e104a,12 témoins1200,
+deux travailleurs et recipe source seule conservée. Pas de résultat anticipé.

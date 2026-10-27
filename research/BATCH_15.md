@@ -35,3 +35,11 @@ graines, deux travailleurs et checkpoints. Horizon de décision : cette cohorte,
 puis densité/organisation ou diagnostic de L. Aucune nouvelle synthétase,
 aucun changement du budget cellulaire conditionnel. Le maintien, la diversité
 et la synthèse de L par F restent ouverts ; pas de délai biologique estimable.
+
+## Lancement J2
+
+Campagne `campaign_20261027T162612551317Z`, codeb0e104a,12 témoins à1200,
+deux travailleurs, audit génétique et checkpoints60s. Recette source seule :
+campaign_recipes/J2_20261027T162612551317Z. Résultats encore en cours, pas
+de conclusion sur le contraste de domaine. Suivi campaign_status.bat et analyse
+analyze_campaign.bat ; le census s'applique aussi à cette cohorte.

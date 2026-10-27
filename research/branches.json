@@ -756,13 +756,14 @@
         "GKA",
         "T9"
       ],
-      "status": "matched_environment_controls_verified_before_campaign",
+      "status": "twelve_matched_world_controls_running",
       "hypothesis": "Large available domain can suppress useful genetic transfer without direct membrane inhibition",
       "test": "Open90x90 and compact8x6 no-L worlds, prepared/unlinked, seeds0/1/2 at1200; same PR packet/RNG and reaction laws, global walls declared",
       "cost": "No chemical primitive or rate; one whole-world boundary control of two external lengths without L",
       "counterexample": "Open supports transfer but membrane baths do not, or compact matched states also fail",
       "missing_proof": "No new cohort results; common-cell function, homeostasis, library and membrane synthesis open",
-      "evidence": "research/BATCH_15_PLAN.md"
+      "evidence": "research/BATCH_15_PLAN.md",
+      "campaign_recipe": "research/campaign_recipes/J2_20261027T162612551317Z/manifest.json"
     },
     {
       "id": "H0",
