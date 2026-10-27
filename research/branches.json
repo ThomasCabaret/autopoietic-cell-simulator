@@ -790,13 +790,15 @@
         "C3B1",
         "T9"
       ],
-      "status": "scaled_inventory_verified_pilot_stable_long_campaign_planned",
+      "status": "twenty_one_scaled_inventory_tasks_running",
       "hypothesis": "A populated constructed vesicle permits useful genetic transfer under unchanged local laws where an underfilled bath dispersed components",
       "test": "Inventories1/8/16, matched with/without L, three seeds1200; noBoost K16 three controls, new chains and usable product ancestry, contacts and regular-grid membrane audit",
       "cost": "No new chemical primitive; increased prepared copies of the same001 and stocks, noBoost rate ablation separate. Observer certifies all complete prepared G parents.",
       "counterexample": "K16 still gives no complete G/F or products stay unusable, or noBoost gives the same useful flux",
       "missing_proof": "Long dense-bath transfer, robustness, genuine molecular diversity, L synthesis and homeostasis open",
-      "evidence": "research/BATCH_16_PLAN.md"
+      "evidence": "research/BATCH_16_PLAN.md",
+      "campaign_recipe": "research/campaign_recipes/J3_20261027T192723206222Z/manifest.json",
+      "pilot_recipes": "research/BATCH_16_PILOTS.json"
     },
     {
       "id": "ENV0",

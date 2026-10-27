@@ -753,3 +753,7 @@ de ligation. Source physique inchangée. Pilote K16,t2 :2118 billes, stable,
 Demande utilisateur d'entrée/sortie au bord préservée dans OPEN_BOUNDARY.md :
 flux réglable, pas de concentration interne garantie. Capacité dynamique des
 tables/IDs encore à réaliser ; pas de source implémentée pendant ce lot.
+
+J3 lancé : campaign_20261027T192723206222Z, code3d2cb79,21 tâches1200,
+deux travailleurs, source figée et recette versionnée.91 tests logiciels et7
+historiques passent ; données de campagne locales. Aucun succès long anticipé.

@@ -43,3 +43,11 @@ Validation avant gel :91 tests logiciels et7 historiques passent. Les neuf
 paires avec/sans L et trois ablations ont été vérifiées. Comparaison de hashes
 aux sources J2 : seul simulator/observations.py change, pour la filiation ;
 tous les modules physiques et réactifs restent byte-identiques.
+
+## Lancement figé
+
+Campagne `campaign_20261027T192723206222Z`, code3d2cb79,21 tâches à1200,
+deux travailleurs et checkpoints60s. Recette source seule conservée dans
+campaign_recipes/J3_20261027T192723206222Z. Aucun résultat long encore interprété.
+Suivi campaign_status.bat, arrêt/reprise et analyze_campaign.bat habituels ;
+le census détaillé se lance par experiments/analyze_constructed_tool.py.
