@@ -672,3 +672,18 @@ Campagne J0 lancée : campaign_20261027T113835658766Z, code55bcbf9,12 tâches
 à400 sur sources figées, deux travailleurs. Recette source seule conservée.
 73 tests uniques logiciels et7 historiques passent ; archive de distribution
 avec hashes vérifiés. Aucun succès chimique attribué avant analyse du lot.
+
+## 2026-10-27 — bilan numérique et ordre de grandeur demandé
+
+J0 terminé12/12 sans erreur. Analyse figée et première lecture : F natif1/1/1,
+froid0/0/0, bain0/0/0 à400 ; aucun produit catalysé incorporé dans les12 essais.
+Contacts/passages libres3/3 ; aucun passage lié observé, exposition liée nulle
+dans une graine. Pas de conclusion d'étanchéité ou d'impossibilité à froid.
+
+Benchmark complet court reproductible ajouté, sources/configs brutes dans
+outputs/performance/cell_workload_20261027T115831264333Z :588/1020/2406/6292
+billes,708/705/315/122 pas/s, sans rendu. Charges longues préparées synthétiques,
+pas trois synthétases ni une cellule viable. Équations et métrique T50 par famille
+dans NUMERICS_AND_RENEWAL.md, protocole de convergence numérique ajouté à
+KINETICS_AND_PERFORMANCE. Aucun T50 global mesuré ni optimum de nourriture.
+Code chimique inchangé, pas de nouvelle campagne ; audit détaillé J0 restant.

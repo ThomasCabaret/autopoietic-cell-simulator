@@ -680,15 +680,33 @@
         "C0C",
         "I0"
       ],
-      "status": "twelve_task_frozen_common_bath_campaign_running",
+      "status": "twelve_complete_first_readout_cold_functional_transfer_not_seen_at400",
       "hypothesis": "Actual free P/R pass L contacts while locally bonded P/R are repelled, and genetic activity survives a common physical bath",
       "test": "Native/cold/no-boundary/bath, seeds0/1/2 at400; products incorporated, contact exposure and sampled transport; exact checkpoint and no observer feedback",
       "cost": "Union of six inherited elemental kinds, two cross-contact constants0.55/80 and local bond predicate; no new gene/tool; external cycle and activated feed inherited",
       "counterexample": "Low temperature or dilution disables genetic flux, bound products escape or stick, or no encounters expose the boundary",
-      "missing_proof": "No functional joint-bath transfer yet, L synthesis by F impossible with current disjoint reactions; general library and robust membrane unresolved",
+      "missing_proof": "Detailed cold eligibility/occupancy diagnosis, dt convergence, sustained renewal and L synthesis by F remain open",
       "evidence": "research/BATCH_13.md",
       "campaign_recipe": "research/campaign_recipes/J0_20261027T113835658766Z/manifest.json",
-      "pilot_recipes": "research/BATCH_13_PILOTS.json"
+      "pilot_recipes": "research/BATCH_13_PILOTS.json",
+      "results": "research/NUMERICS_AND_RENEWAL.md",
+      "conclusion": "Native F1/1/1, cold and bath F0/0/0 at400, no constructed incorporation; free contact and sampled side changes3/3, no proof of seal"
+    },
+    {
+      "id": "N0",
+      "parent": "K1",
+      "related": [
+        "J0",
+        "C0B"
+      ],
+      "status": "short_full_engine_synthetic_cell_workload_measured",
+      "hypothesis": "Full engine cost with prepared long chains at target particle budgets is small enough for useful renewal experiments",
+      "test": "Seed0, dt0.002,50 warm steps then3 blocks of250, full chemistry and observation without UI or checkpoints; frozen source hashes and resolved scenarios",
+      "cost": "No chemistry primitive or engine dynamics changed; performance driver and methodological note only",
+      "conclusion": "588/1020/2406/6292 beads give708/705/315/122 steps per second; not a viability test or a scaling theorem",
+      "counterexample": "Late chemistry, optimal feed inventory or rendering changes the short synthetic timings; required renewal time may exceed planning scenarios",
+      "missing_proof": "No measured functional T50, optimal feed concentration or dt convergence",
+      "evidence": "research/NUMERICS_AND_RENEWAL.md"
     }
   ]
 }

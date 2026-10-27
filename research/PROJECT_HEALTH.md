@@ -305,3 +305,18 @@ Santé : poursuite justifiée par des tests réfutables, expressivité général
 coût global non démontrés. Aucun obstacle irréversible établi ; ces verrous
 pourraient cependant imposer une refonte. Contrat de reprise DESIGN_PRINCIPLES.md
 désormais référencé par AGENTS.md et le skill.
+
+## Bilan technique : précision et renouvellement
+
+J0 est terminé12/12 à400. Les témoins froids n'expriment aucun F alors que les
+trois témoins natifs en expriment un. Les contacts avec la frontière existent,
+mais aucun flux incorporé ne ferme la boucle du bain commun. Le changement de
+température est un risque observé sur cet horizon, sans diagnostic causal ni
+preuve d'impossibilité. Ne pas masquer ce résultat par le benchmark logiciel.
+
+Le coût de charges synthétiques à2406/6292 billes est accessible : environ
+315/122 pas/s sans rendu, mais le temps biologique de demi-renouvellement reste
+inconnu. Un scénario1000–10000 unités demanderait27min–4h25 à taille nominale ;
+ce n'est ni une borne ni une prévision. La convergence en pas de temps est aussi
+non démontrée. Prochain diagnostic : cinétique froide puis contrôle dt/dt2/dt4
+sous mêmes lois, avant de compter sur un renouvellement rapide ou un gain GPU.

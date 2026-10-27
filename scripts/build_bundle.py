@@ -60,6 +60,7 @@ def main():
     files.update(ROOT/p for p in ('research/DESIGN_PRINCIPLES.md','research/BATCH_12_RESULTS.md',
         'research/BATCH_13_PLAN.md','research/BATCH_13.md','research/BATCH_13_PILOTS.json',
         'campaigns/common_bath.json','experiments/run_batch13.py','experiments/analyze_batch12.py'))
+    files.update(ROOT/p for p in ('experiments/benchmark_cell_workload.py','research/NUMERICS_AND_RENEWAL.md'))
     files.update(p for p in (ROOT/'research/campaign_recipes').rglob('*') if p.is_file()
         and ('__pycache__' not in p.parts) and (p.suffix=='.py' or p.name in ('manifest.json','manifest.sha256','plan.json')))
     files.update(p for p in (ROOT/'research/legacy_reference').rglob('*')

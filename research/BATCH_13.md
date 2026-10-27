@@ -74,3 +74,13 @@ Contrôle de fonctionnement en cours : checkpoint périodique du premier bain
 Exposition observée approchée448 temps-atome libres,0 lié : premiers contacts
 réels, pas encore une démonstration de rétention ou de transfert fonctionnel.
 Ce point partiel n'est pas une sélection de succès et ne modifie aucun horizon.
+
+## Statut au bilan technique suivant
+
+Les12 essais sont maintenant terminés sans erreur à400 ; première lecture dans
+[NUMERICS_AND_RENEWAL.md](NUMERICS_AND_RENEWAL.md). Contacts/passages libres
+présents3/3 mais aucun F ou flux incorporé dans le bain commun à cette échéance.
+Les témoins natifs produisent chacun un F, les témoins froids aucun. Ce constat
+appelle un diagnostic d'accès/éligibilité/occupation, pas la déclaration d'une
+impossibilité à froid. Audit détaillé du transfert et des périodes inconnues
+encore à faire. Aucune nouvelle campagne lancée pendant ce bilan technique.

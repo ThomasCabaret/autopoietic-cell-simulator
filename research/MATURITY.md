@@ -145,3 +145,9 @@ de compatibilité fonctionnelle encore revendiqué. Les alphabets restent réuni
 non minimisés ; fabrication de L par F et diversité fonctionnelle non réalisées.
 Voir BATCH_13.md. La méthode distingue désormais explicitement localité, coût et
 expressivité ; aucune flexibilité future n'est déduite du seul code modulaire.
+
+Lecture J0 achevé à400 : contacts/passages libres présents3/3, aucun F ni produit
+catalysé incorporé dans le bain commun. Les trois témoins à0,6 expriment un F,
+aucun à0,08 à cet horizon. Compatibilité fonctionnelle toujours non acquise ;
+cinétique à froid et convergence numérique restent à diagnostiquer. Le nouveau
+benchmark à2406/6292 billes mesure le coût du calcul, pas une cellule renouvelée.

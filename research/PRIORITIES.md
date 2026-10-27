@@ -12,6 +12,12 @@ restent les prochains tests d'expressivité ; J0 ne les implémente pas. Longueu
 multigène et remplacement durable ouverts. Lire DESIGN_PRINCIPLES.md avant
 toute nouvelle loi : pas de nouveau garde par défaut ni de loi par fonction.
 
+Mise à jour du bilan technique : J0 terminé12/12 à400, premiers F natifs3/3
+contre0/3 à froid ; bain commun sans F ni incorporation. Voir NUMERICS_AND_RENEWAL.
+Avant retouche ou prolongation : analyser les contacts/occupations et l'éligibilité
+du génétique à froid pour distinguer temps d'attente et pièges. Programmer ensuite
+la convergence en dt des mécanismes retenus ; elle n'est pas encore démontrée.
+
 ## Priorités avant analyse du lot12, historique
 
 Trace M1G terminée et garde géométrique rejeté. Comparer maintenant G1, condition

@@ -87,3 +87,29 @@ Un gain global×10 est une cible plausible à explorer, pas une promesse. Distin
 temps d'une trajectoire, débit total de campagne et volume de données. Réévaluer
 après profil stabilisé et une première optimisation CPU mesurée, avant un portage
 GPU complet. Cette étape technique n'accroît pas la maturité chimique du projet.
+
+## Robustesse numérique et vitesse fonctionnelle
+
+Voir [équations, coûts et limites](NUMERICS_AND_RENEWAL.md). Séparer le pas de
+temps, la cadence de réaction et les paramètres physiques (température, mobilité,
+forces, taux). Une baisse de bruit change la chimie ; ce n'est pas une optimisation.
+
+Avant de déclarer un mécanisme robuste numériquement, comparer dt,dt/2,dt/4
+sous lois physiques figées, même horizon et cadence d'observation en temps
+simulé. Examiner aussi l'intervalle de réaction5dt et ses conflits. Comparer
+distributions cinétiques, fuites, produits utiles et erreurs avec incertitudes,
+pas l'identité de trajectoires de même graine. Le bruit doit conserver son
+échelle sqrt(dt) et les probabilités leur intervalle physique. Une convergence
+de quelques forces ou une reprise exacte n'établit pas la convergence chimique.
+Pour les paramètres physiques, rechercher un domaine de fonctionnement avec
+perturbations modestes et non un point isolé ; déclarer les régressions.
+
+La cible de performance est le temps **réel** pour renouveler les constituants
+fonctionnels, chaque famille essentielle suivie séparément, tout en maintenant
+l'inventaire et l'activité. Les produits doivent être incorporés ; une hausse
+de stock, un déchet ou une chaîne inactive ne compte pas comme remplacement.
+Rapporter également vitesse simulée, taille du bain, concentrations/apports,
+contacts/éligibilité, température et surcoûts du rendu/checkpoint. Optimiser
+l'apport à lois et précision numérique fixes ; ne pas accélérer les réactions
+ou grossir dt pour améliorer artificiellement le score. Aucun optimum ni
+demi-renouvellement cellulaire complet n'est encore mesuré.
