@@ -379,3 +379,10 @@ J3 teste102/816/1632 billes génétiques avec486 billes L constantes, soit
 synthétases C0B ou d'une longueur24 démontrée. Les copies préparées sont fournies
 et ne comptent pas comme renouvellement. Le budget final reste conditionnel ;
 les futures particules d'apport/sortie devront s'ajouter au bilan dynamique.
+
+J3 terminé : fabrication→incorporation3/3 dans le bain2118 billes, nouvelles
+copies G2/3 et F2/3 ; activité d'un F exprimé et produits utilisés sur1/3.
+Pas de même essai réunissant nouveau G et cet usage aval. Le graphe C0B reste
+conditionnel : ces seize G001/F001 ne réalisent pas les trois fonctions de
+synthèse distinctes, et aucun L n'est fabriqué. N1 raffine seulement le temps ;
+aucun gène, outil ou budget particulaire ajouté. Voir BATCH_16_RESULTS.md.

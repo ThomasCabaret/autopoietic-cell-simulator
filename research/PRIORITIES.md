@@ -1,4 +1,21 @@
-# Priorités — lot16 J3,27 octobre2026
+# Priorités — lot17 N1,28 octobre2026
+
+J3 terminé21/21. Bain K16 :331/401/313 actes catalytiques,18/18/26 produits
+incorporés, G1/1/0 et F0/1/1 nouveaux libérés. F exprimé actif et produit utile
+en graine2 ; pas de même essai réunissant nouveau G et cet usage aval. Voir
+BATCH_16_RESULTS.md. La catalyse compte face à l'ablation, mais le renouvellement
+reste rare et la membrane fragile. Aucune nouvelle grille de densités.
+
+Priorité N1 : vérifier dt/2 puis dt/4 sous mêmes lois, même horizon1200,
+grille d'observation0,5, référence J3 réutilisée. Six essais, réaction5dt :
+convergence temporelle conjointe seulement. BATCH_17_PLAN.md fixe lecture et
+alertes avant les nouveaux résultats. Ensuite T9/finition/recapture locale
+avec contrôles de séquestration ; pas d'exception par séquence complète.
+
+Synthèse L, bibliothèque distincte, génome long, flux externe et homéostasie
+restent des verrous. Ni maintien ni durée de demi-renouvellement démontrés.
+
+## Priorités lot16, historique
 
 J2 achevé12/12 : compact préparé incorpore1/2/2, grand préparé0/0/1 ; aucun
 G/F nouveau complet. Le domaine compte, sans être une solution suffisante.

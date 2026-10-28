@@ -1,10 +1,40 @@
-# Santé du projet —27 octobre2026
+# Santé du projet —28 octobre2026
 
 Cette évaluation vise la faisabilité globale et le volume du travail, pas le
 nombre de simulations positives. Elle doit évoluer avec les résultats. La cible
 est une cellule construite qui maintient et refabrique ses composants depuis
 une nourriture simple, avec énergie externe déclarée. Apparition spontanée,
 division et évolution ouverte ne sont pas des conditions ajoutées à cette cible.
+
+## Réévaluation courante après J3
+
+Progrès matériel : la hausse finie d'inventaire obtient un transfert utile dans
+les trois bains K16, deux ont G nouveau, deux F nouveau et un F exprimé fabrique
+des produits ensuite incorporés. Pas de primitive ajoutée. Le boost est utile
+face à l'ablation ; le changement de milieu n'interdit donc pas tout couplage.
+Cela réduit une incertitude d'intégration, sans valider le maintien : un F
+nouveau au mieux pour seize préparés et seulement le gène001.
+
+Risque structurel concret : les fragments F libérés ne peuvent pas se recapturer.
+Ils restent minoritaires face aux monomères accumulés dans J3 ; ce n'est pas
+une explication établie de tous les échecs. Piste : recapture/finition par motifs
+de voisinage liés bornés, avec contrôle de séquestration et parasites ; pas
+de lecture de chaîne complète. La température commune a permis un transfert
+rare, mais ses résultats n'ont pas encore passé le contrôle numérique.
+
+N1 est le prochain horizon : six calculs automatiques, aucune nouvelle loi,
+référence J3 explicitement réutilisée. Si le raffinement dt/2→dt/4 dérive, isoler
+les cadences ; sinon ouvrir un seul test T9 avec références d'intégration.
+L'ajout d'affinités sans diagnostic ou de densités toujours plus grandes est
+écarté. Aucun obstacle irréversible de principe établi, mais une refonte reste
+possible pour les gènes longs, la diversité et la synthèse membranaire.
+
+Poursuite justifiée, projet encore exploratoire. L'incertitude baisse, sans
+justifier une promesse de convergence en quelques dizaines de lots. Plusieurs
+grands jalons restent non réalisés : L fabriqué puis inséré, deuxième fonction
+utile sous lois fixes, génome plus long, alimentation/export et homéostasie.
+Le coût des essais temporels est de plusieurs heures, pas une estimation de
+renouvellement cellulaire. Pas de probabilité défendable de finir sous dix heures.
 
 ## Estimation avant le lot 5
 

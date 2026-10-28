@@ -1,9 +1,17 @@
 # Campagnes différées
 
-Le plan courant `density_transfer.json` teste J3 : inventaires×1/8/16, avec/sans
+Le plan courant `numerical_refinement.json` teste N1 : six bains J3 K16 avec L,
+dt0,001/0,0005, graines0/1/2 à1200, référence dt0,002 réutilisée explicitement.
+Même chimie, réaction5dt et observation0,5 ; raffinement conjoint, pas chemin
+brownien commun. Voir [lot17](../research/BATCH_17_PLAN.md). Plusieurs heures
+possibles. Analyse détaillée après achèvement :
+`python experiments/analyze_numerical_campaign.py outputs/campaigns/campaign_IDENTIFIANT`.
+Les alertes automatiques ne certifient pas la convergence sur trois graines.
+
+Le plan historique `density_transfer.json` teste J3 : inventaires×1/8/16, avec/sans
 L, trois graines à1200, plus3 ablations du boost àK16.21 tâches et deux travailleurs,
 jusqu'à2118 billes, sources figées et checkpoints. Plusieurs heures possibles.
-Voir [lot16](../research/BATCH_16_PLAN.md). Aucun flux externe encore implémenté.
+Terminé21/21, [résultats](../research/BATCH_16_RESULTS.md). Aucun flux externe encore implémenté.
 
 Le plan historique `compartment_controls.json` teste J2 :12 témoins sans L,
 mondes globaux90×90/8×6, préparé/délié et trois graines à1200. Paquets/RNG

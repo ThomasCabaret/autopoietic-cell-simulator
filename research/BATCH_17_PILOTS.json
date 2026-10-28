@@ -1,0 +1,6 @@
+{
+  "recipes": [
+    "research/engine_runs/N1_dt4_s0_20261028T072601579498Z/recipe.json"
+  ],
+  "scope": "Selected seed0 finest-step startup to2; 2118 beads,3 catalytic products, no incorporation/new G/F, no P/R-L contact. Not a kinetic or convergence result."
+}

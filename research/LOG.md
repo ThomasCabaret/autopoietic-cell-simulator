@@ -757,3 +757,24 @@ tables/IDs encore à réaliser ; pas de source implémentée pendant ce lot.
 J3 lancé : campaign_20261027T192723206222Z, code3d2cb79,21 tâches1200,
 deux travailleurs, source figée et recette versionnée.91 tests logiciels et7
 historiques passent ; données de campagne locales. Aucun succès long anticipé.
+
+## 2026-10-28 — lot17, bilan J3 et contrôle temporel N1
+
+J3 achevé21/21, aucune erreur ; sources, événements, matière et checkpoints
+vérifiés. K16 avec L :331/401/313 catalysés,18/18/26 incorporés ; G1/1/0 et
+F0/1/1 nouveaux, tous les G/F nouveaux de ces bains entièrement construits.
+Un F exprimé effectue4 actes dont2 produits utilisés (graine2) ; graine1 G+F
+sans activité de ce F observée. Aucun essai ne ferme tous ces critères ensemble.
+Sans boost :0/1/0 actes, aucune incorporation/nouvelle chaîne.
+
+Fermeture sur grille0,5 :0,732/0,791/0,786, pas de frontière robuste. Fragments
+F déliés10/16/6 unités, stocks monomères élevés ; restriction de recapture
+structurelle, sans démonstration de causalité dominante. Pas de nouveau balayage
+de densité. N1 conserve la chimie et raffine dt/2,dt/4 avant une intervention
+T9. Six essais à1200, trois témoins J3 réutilisés, réaction5dt et observation0,5.
+Critères/alertes déclarés dans BATCH_17_PLAN.md avant nouveaux résultats.
+
+Avant gel N1 :91 tests logiciels+7 historiques, six initialisations appariées
+vérifiées,31 modules simulator byte-identiques à J3 et rejeu court exact.
+Pilote finest dt0,0005,t2 :3 produits, aucun transfert/chaîne/contact avec L,
+seulement démarrage technique. Zéro dette chimique ajoutée.

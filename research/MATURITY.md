@@ -1,4 +1,20 @@
-# Maturité — après analyse du lot11,27 octobre2026
+# Maturité — après J3,28 octobre2026
+
+**Transfert matériel dans un bain commun membranaire désormais observé,
+renouvellement intégré encore faible.** K16 avec L : produits fabriqués puis
+incorporés3/3, nouvelles copies G2/3 et nouveaux F2/3 ; un F exprimé réalise
+4 opérations dont2 produits utilisés, sur une graine. Une autre graine a G et
+F nouveaux ensemble mais sans activité de ce F observée à1200. Aucun essai
+n'établit donc toute la boucle avec G renouvelé et F renouvelé productif.
+Référence BATCH_16_RESULTS.md ; seize copies du seul001, pas plusieurs fonctions.
+
+La frontière ferme73–79% des points réguliers K16, exposition des espèces liées
+à L parfois minime. Pas de rétention robuste ni synthèse L, génome long,
+bibliothèque d'outils, flux ouvert ou maintien sous pertes. N1 vérifie maintenant
+la discrétisation avant modification T9. Le progrès d'intégration est réel,
+la richesse suffisante pour une cellule viable reste à démontrer.
+
+## État après lot11, historique
 
 **Le confinement sans échange est reproductible dans le criblage ; la voie
 d'insertion reste fragile.** Sans échange : fermeture0,844–0,851 et peu d'inconnu

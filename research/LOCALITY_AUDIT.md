@@ -130,3 +130,9 @@ copies/positions initiales sont construites, sans recentrage ou mur dans la
 cellule pendant la dynamique. Les parents G préparés sont reconnus uniquement
 dans l'observateur de filiation, sans PRNG ni retour vers les réactions. Source
 externe future au bord du monde déclarée dans OPEN_BOUNDARY.md, pas implémentée.
+
+N1 ne change aucune règle locale : même état initial construit et toutes
+sources simulator identiques à J3, dt divisé par2/4, réaction toujours5dt,
+observation0,5. Le comparateur lit des chaînes entières et provenances seulement
+après calcul ; aucun résultat ne modifie les trajectoires ou taux. Coût chimique
+nul, un protocole numérique et ses alertes descriptives, pas un régulateur.

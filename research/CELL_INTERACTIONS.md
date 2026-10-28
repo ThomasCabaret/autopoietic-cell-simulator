@@ -181,3 +181,12 @@ Le futur flux environnemental est injecté au bord du monde (OPEN_BOUNDARY.md),
 pas à la membrane ni dans le cytoplasme. Mesurer import utile, gradients et
 export des déchets sous consommation réelle ; aucune concentration locale
 ne sera garantie par une règle globale qui comble les déficits.
+
+J3 donne du transfert utile avec L àK16 sur3/3, avec rencontres libres contre
+L et passage observé, mais très peu de contacts liés dans certaines graines.
+Des périodes inconnues subsistent : aucune rétention globale prouvée. Les
+monomères s'accumulent tandis que des fragments F libérés perdent la recapture
+génétique ; de futures modifications T9 devront retester collage parasite,
+accessibilité des gènes et catalyse des fragments, pas les déclarer tous inertes.
+N1 conserve exactement ces interactions et raffine conjointement mécanique
+et ticks réactionnels avant d'attribuer une rareté à la chimie.

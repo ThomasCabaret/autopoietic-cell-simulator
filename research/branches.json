@@ -790,15 +790,31 @@
         "C3B1",
         "T9"
       ],
-      "status": "twenty_one_scaled_inventory_tasks_running",
+      "status": "twenty_one_complete_common_bath_transfer_rare_new_G_F",
       "hypothesis": "A populated constructed vesicle permits useful genetic transfer under unchanged local laws where an underfilled bath dispersed components",
       "test": "Inventories1/8/16, matched with/without L, three seeds1200; noBoost K16 three controls, new chains and usable product ancestry, contacts and regular-grid membrane audit",
       "cost": "No new chemical primitive; increased prepared copies of the same001 and stocks, noBoost rate ablation separate. Observer certifies all complete prepared G parents.",
       "counterexample": "K16 still gives no complete G/F or products stay unusable, or noBoost gives the same useful flux",
-      "missing_proof": "Long dense-bath transfer, robustness, genuine molecular diversity, L synthesis and homeostasis open",
+      "missing_proof": "No same run combines new G and useful activity of expressed F; numerical robustness, molecular diversity, L synthesis and homeostasis open",
       "evidence": "research/BATCH_16_PLAN.md",
       "campaign_recipe": "research/campaign_recipes/J3_20261027T192723206222Z/manifest.json",
-      "pilot_recipes": "research/BATCH_16_PILOTS.json"
+      "pilot_recipes": "research/BATCH_16_PILOTS.json",
+      "results": "research/BATCH_16_RESULTS.md",
+      "conclusion": "K16 bath331/401/313 catalyzed,18/18/26 incorporated,G1/1/0,F0/1/1. Expressed F seed2 makes4 products,2 used. NoBoost0/1/0 acts, no incorporation/chains. Membrane fragile; same001 repeated, not diverse functions."
+    },
+    {
+      "id": "N1",
+      "parent": "J3",
+      "related": ["N0", "GKA", "T9"],
+      "status": "six_task_temporal_refinement_prepared",
+      "hypothesis": "Useful common-bath transfer and membrane behavior survive joint mechanical and reaction timestep refinement before modifying fragment completion",
+      "test": "J3 K16 bath seeds0/1/2 to1200 atdt0.001/0.0005, reuse three originaldt0.002 controls explicitly; observations0.5, reactions5dt, source and initial-state identity verified",
+      "cost": "Zero new chemical primitive, state, gene, tool or rate; numerical protocol and passive descriptive comparator only",
+      "counterexample": "Persistent drift at finer timesteps, mechanical failures or changing chemical source hashes invalidate an interpretation based only on local chemical bottlenecks",
+      "missing_proof": "Long refined results pending; three seeds cannot certify rare-chain convergence; reaction versus mechanical cadence not isolated",
+      "evidence": "research/BATCH_17_PLAN.md",
+      "pilot_recipes": "research/BATCH_17_PILOTS.json",
+      "health_gate": "One six-task numerical milestone then isolate cadence if drifting, otherwise one local T9 completion test with interference controls, not more density grids"
     },
     {
       "id": "ENV0",
