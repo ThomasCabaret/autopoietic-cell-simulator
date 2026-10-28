@@ -829,6 +829,8 @@
       "counterexample": "Sources or initial laws differ, decision uses incomplete cohorts, controller launches duplicate or excessive tasks, or persistent drift is concealed as chemistry",
       "missing_proof": "All N2 long results pending and conditional; no convergence, mechanism selection or new chemical maturity established",
       "evidence": "research/BATCH_18_PLAN.md",
+      "campaign_recipe": "research/campaign_recipes/N2_conditional_20261028T172046220951Z/manifest.json",
+      "followup_recipe": "research/BATCH_18_FOLLOWUP.json",
       "health_gate": "At most six new tasks then stop for interpretation; no further numerical grid or chemical mutation by default"
     },
     {

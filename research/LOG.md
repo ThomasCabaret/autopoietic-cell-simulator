@@ -810,3 +810,9 @@ F déjà lié par family_degree. Recapture des extrémités peut séquestrer les
 complets aussi ; prochain motif à concevoir/tester avec ces deux contrôles.
 99 tests logiciels+7 historiques passent ; pilote N2 every20,t2 stable,
 2 produits, aucun transfert/chaîne/contact L. Aucun nouveau succès chimique.
+
+Suivi figé followup_20261028T172046220951Z, code4fa4442, exécuté sur les vrais
+résultats : needs_interpretation/run_N2=false, aucun travailleur N2 lancé.
+Rapport/hash de décision archivés localement ; manifeste source BATCH_18_FOLLOWUP.
+Recette N2 conditionnelle exportée, six tâches dormantes. Pas de campagne longue
+active à la clôture ; prochaine étape de conception T9 avec contrôles outils.

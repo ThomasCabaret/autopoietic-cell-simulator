@@ -76,7 +76,7 @@ def main():
         'research/BATCH_17.md','research/BATCH_17_PILOTS.json','experiments/prepare_numerical_campaign.py',
         'experiments/analyze_numerical_campaign.py','campaigns/numerical_refinement.json'))
     files.update(ROOT/p for p in ('research/BATCH_17_RESULTS.md','research/BATCH_18_PLAN.md','research/BATCH_18.md',
-        'research/BATCH_18_PILOTS.json','research/AUTOMATED_EXPLORATION.md',
+        'research/BATCH_18_PILOTS.json','research/BATCH_18_FOLLOWUP.json','research/AUTOMATED_EXPLORATION.md',
         'experiments/prepare_cadence_campaign.py','experiments/analyze_cadence_campaign.py',
         'scripts/numerical_followup.py','scripts/numerical_followup.ps1',
         'start_followup.bat','followup_status.bat','stop_followup.bat','resume_followup.bat',

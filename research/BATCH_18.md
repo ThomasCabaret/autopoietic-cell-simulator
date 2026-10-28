@@ -52,3 +52,19 @@ appariés vérifiés, ancien moteur reproduit exactement, reprise entre ticks
 indépendants exacte, suivi bloqué sur cohorte incomplète, pas de double lancement,
 arrêt après critère sans alerte. Pilote N2 every20,t2 :2 produits catalysés,
 zéro incorporation/G/F/contact L, contrôle technique seulement.
+
+## Exécution du suivi figé
+
+Suivi `followup_20261028T172046220951Z`, code4fa4442. Il s'exécute sur N1 achevé,
+refait les contrôles/analyse avec ses sources propres puis atteint
+`needs_interpretation`, `run_N2=false`. Aucun travailleur N2 lancé ; six tâches
+préparées restent dormantes, pas des essais en échec ou en cours. La branche
+sans alerte a donc aussi été exercée sur les vraies données. Aucun calcul long
+encore actif à la clôture. État consultable par `followup_status.bat`.
+
+Manifeste du suivi et hashes : BATCH_18_FOLLOWUP.json. La révision Git indiquée
+reconstitue ses drivers et leurs sources exactes ; les chemins absolus décrivent
+cette exécution locale. Pour une autre machine, reconstruire les recettes N1/J3
+puis préparer un nouveau suivi avec `--parent` et `--baseline` correspondants.
+Recette N2 source seule conservée dans
+`campaign_recipes/N2_conditional_20261028T172046220951Z`, explicitement non exécutée.
