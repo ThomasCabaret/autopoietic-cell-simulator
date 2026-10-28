@@ -778,3 +778,8 @@ Avant gel N1 :91 tests logiciels+7 historiques, six initialisations appariées
 vérifiées,31 modules simulator byte-identiques à J3 et rejeu court exact.
 Pilote finest dt0,0005,t2 :3 produits, aucun transfert/chaîne/contact avec L,
 seulement démarrage technique. Zéro dette chimique ajoutée.
+
+N1 lancé : campaign_20261028T073131539788Z, code770d9b3, six tâches1200,
+deux travailleurs, recette source seule exportée. Premier statut : deux actifs,
+quatre en attente, zéro erreur. Comparateur partiel exécuté : sources/candidats
+cohérents, cohortes explicitement incomplètes, aucune convergence revendiquée.

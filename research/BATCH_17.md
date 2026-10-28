@@ -34,3 +34,19 @@ Validation avant gel :91 tests logiciels et7 historiques passent. Les31 sources
 identique pour positions, état chimique et PRNG. Six états initiaux et leurs
 intervalles vérifiés. Comparateur : contrôles de triage sans dérive, dérive
 sur quatre grandeurs, transition vers zéro et cohorte incomplète vérifiés.
+
+## Lancement figé
+
+Campagne `campaign_20261028T073131539788Z`, code770d9b3, six tâches1200,
+deux travailleurs, checkpoints60s. Recette source seule dans
+`campaign_recipes/N1_20261028T073131539788Z`. Au premier contrôle : deux tâches
+actives, quatre en attente, aucune erreur. Le pipeline d'analyse partielle
+vérifie références, sources et configurations ; il indique correctement que
+les cohortes ne sont pas achevées et ne certifie aucune convergence.
+
+Suivi `campaign_status.bat`, pause `stop_campaign.bat`, reprise
+`resume_campaign.bat`. Analyse détaillée :
+`python experiments/analyze_numerical_campaign.py outputs/campaigns/campaign_20261028T073131539788Z`.
+Les rapports complets restent locaux. Aucun résultat long anticipé.
+Rechargement effectif des deux premiers checkpoints vérifié àt84,5 et85 :
+continuité disponible, sans arrêt ni modification des travailleurs actifs.
