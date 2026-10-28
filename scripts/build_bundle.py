@@ -75,6 +75,13 @@ def main():
     files.update(ROOT/p for p in ('research/BATCH_16_RESULTS.md','research/BATCH_17_PLAN.md',
         'research/BATCH_17.md','research/BATCH_17_PILOTS.json','experiments/prepare_numerical_campaign.py',
         'experiments/analyze_numerical_campaign.py','campaigns/numerical_refinement.json'))
+    files.update(ROOT/p for p in ('research/BATCH_17_RESULTS.md','research/BATCH_18_PLAN.md','research/BATCH_18.md',
+        'research/BATCH_18_PILOTS.json','research/AUTOMATED_EXPLORATION.md',
+        'experiments/prepare_cadence_campaign.py','experiments/analyze_cadence_campaign.py',
+        'scripts/numerical_followup.py','scripts/numerical_followup.ps1',
+        'start_followup.bat','followup_status.bat','stop_followup.bat','resume_followup.bat',
+        'campaigns/cadence_controls.json'))
+    files.add(ROOT/'experiments/diagnose_fragment_capture.py')
     files.update(p for p in (ROOT/'research/campaign_recipes').rglob('*') if p.is_file()
         and ('__pycache__' not in p.parts) and (p.suffix=='.py' or p.name in ('manifest.json','manifest.sha256','plan.json')))
     files.update(p for p in (ROOT/'research/legacy_reference').rglob('*')
@@ -101,6 +108,7 @@ def main():
     folders.extend(ROOT/Path(p).parent for p in json.loads((ROOT/'research/BATCH_14_PILOTS.json').read_text(encoding='utf-8'))['recipes'])
     folders.extend(ROOT/Path(p).parent for p in json.loads((ROOT/'research/BATCH_16_PILOTS.json').read_text(encoding='utf-8'))['recipes'])
     folders.extend(ROOT/Path(p).parent for p in json.loads((ROOT/'research/BATCH_17_PILOTS.json').read_text(encoding='utf-8'))['recipes'])
+    folders.extend(ROOT/Path(p).parent for p in json.loads((ROOT/'research/BATCH_18_PILOTS.json').read_text(encoding='utf-8'))['recipes'])
     for folder in folders:
         files.update(p for p in folder.rglob('*') if p.is_file() and '__pycache__' not in p.parts
                      and (p.suffix=='.py' or p.name in ('config.json','scenario.json','recipe.json')))

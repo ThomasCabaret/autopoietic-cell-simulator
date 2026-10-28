@@ -1,4 +1,28 @@
-# Priorités — lot17 N1,28 octobre2026
+# Priorités — lot18, suivi automatique de N1
+
+**Mise à jour de clôture : N1 achevé6/6**, voir BATCH_17_RESULTS.md. Pas d'alerte
+médiane prospective, donc N2 ne doit pas être lancé par le suivi. La baisse
+cumulée d'incorporation et une frontière fine dégradée empêchent de certifier
+la convergence. Prochaine priorité T9 : recapture/finition avec témoin de
+séquestration des outils complets. Le diagnostic exact des six motifs du lot18
+montre que retirer le seul garde monomère ne débloque pas les fragments F.
+Automatiser la comparaison bornée après choix de ce motif, pas sa conception.
+
+## État au début du lot18
+
+N1 reste en cours,2/6 achevés au premier contrôle, aucune erreur. Ne pas changer
+ses lois, graines ou horizons. Le suivi AUTOMATED_EXPLORATION.md / BATCH_18_PLAN.md
+attend la cohorte entière, analyse puis déclenche N2 seulement si l'alerte de
+raffinement fin annoncée existe. N2 sépare cadence réaction/mécanique, six essais
+au plus ; sinon arrêt pour choix T9. Aucun balayage de densité ajouté.
+
+La mécanique reste au vrai dt ; reaction_every est une cadence numérique,
+défaut5 exact à la référence. L'analyse des résultats anciens garde leurs
+sources archivées. À la fin de N2 ou en absence d'alerte, décision mécanistique
+et T9/finition avec contrôles de parasites ; pas d'autre grille par défaut.
+Ne pas confondre gain d'automatisation et maturité chimique.
+
+## Priorités lot17, historique
 
 J3 terminé21/21. Bain K16 :331/401/313 actes catalytiques,18/18/26 produits
 incorporés, G1/1/0 et F0/1/1 nouveaux libérés. F exprimé actif et produit utile

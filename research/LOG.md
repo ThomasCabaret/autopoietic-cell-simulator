@@ -783,3 +783,30 @@ N1 lancé : campaign_20261028T073131539788Z, code770d9b3, six tâches1200,
 deux travailleurs, recette source seule exportée. Premier statut : deux actifs,
 quatre en attente, zéro erreur. Comparateur partiel exécuté : sources/candidats
 cohérents, cohortes explicitement incomplètes, aucune convergence revendiquée.
+
+## 2026-10-28 — lot18, exploration automatique bornée
+
+État initial N1 :2 achevés,2 actifs,2 en attente, sans erreur. Résultats partiels
+moyens277/335 actes,9/16 incorporés,G1/0,F0/2 ; pas de médiane de cohorte validée.
+Demande utilisateur : programmer les décisions calculables et réserver
+l'interprétation aux mécanismes. Contrat AUTOMATED_EXPLORATION.md référencé par
+AGENTS et DESIGN_PRINCIPLES ; budgets, branches et échecs doivent rester tracés.
+
+Préparation du suivi figé N1→analyse→N2 si alerte de niveau fin. Six essais
+maximum supplémentaires, deux travailleurs après libération de N1, mêmes lois,
+pas de nouvelle chimie automatique. N2 isole cadence réaction0,005/0,01 à
+dt0,0005 ; défaut du moteur conservé exactement. Les deux premiers résultats
+N1 étaient connus au choix de ce suivi, sélection déclarée, pas validation aveugle.
+
+Pendant validation : N1 termine6/6. Rapport numerical_analysis_20261028T162258944076Z,
+aucune alerte médiane, donc N2 non déclenché selon protocole. Au pas fin F1/1/1,
+G0/0/0, actes exprimés3/2/0 dont1/0/0 produits utilisés ; frontière fine1
+fermeture0,426/enveloppe0,703, événement gardé malgré médiane sans alerte.
+Incorporation médiane18→16→12 : baisse cumulée33%, pas de certificat numérique.
+
+Diagnostic T9_gates_20261028T171634136779Z : six contacts idéaux, un tick réel
+conditionné sans intégration ; retirer monomer_only_capture laisse le blocage
+F déjà lié par family_degree. Recapture des extrémités peut séquestrer les outils
+complets aussi ; prochain motif à concevoir/tester avec ces deux contrôles.
+99 tests logiciels+7 historiques passent ; pilote N2 every20,t2 stable,
+2 produits, aucun transfert/chaîne/contact L. Aucun nouveau succès chimique.

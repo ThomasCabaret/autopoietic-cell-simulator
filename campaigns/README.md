@@ -1,5 +1,17 @@
 # Campagnes différées
 
+La suite conditionnelle du lot18 surveille N1, en fait l'analyse complète puis
+lance `cadence_controls.json` seulement si une alerte prospective concerne le
+raffinement le plus fin. Six essais N2 maximum ; ensuite arrêt pour interprétation.
+Voir [protocole](../research/BATCH_18_PLAN.md) et [méthode](../research/AUTOMATED_EXPLORATION.md).
+`start_followup.bat`, `followup_status.bat`, `stop_followup.bat`, `resume_followup.bat`
+gèrent ce suivi borné. Le statut donne N1 et N2 ; le pointeur de campagne courant
+reste N1, la préparation de N2 utilise un répertoire séparé. Arrêter le suivi
+met N2 en pause s'il est lancé ; N1 conserve ses propres commandes de pause/reprise.
+Une erreur exige inspection, aucune relance automatique d'échec. Le suivi doit
+être repris explicitement après redémarrage ; aucune exécution ordinateur éteint.
+Analyse N2 : `python experiments/analyze_cadence_campaign.py DOSSIER_N2 --n1 DOSSIER_N1`.
+
 Le plan courant `numerical_refinement.json` teste N1 : six bains J3 K16 avec L,
 dt0,001/0,0005, graines0/1/2 à1200, référence dt0,002 réutilisée explicitement.
 Même chimie, réaction5dt et observation0,5 ; raffinement conjoint, pas chemin

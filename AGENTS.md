@@ -32,6 +32,11 @@
   trajectories, checkpoints, full run results and bulk experiment data local,
   excluded by `.gitignore`. Never delete local evidence just to keep Git small.
 - Preserve old recipe sources and hashes. Generate new run folders for changes.
+- Automate bounded exploration and test chains when decisions have explicit
+  computable criteria; follow `research/AUTOMATED_EXPLORATION.md`. Freeze branches,
+  budgets and stopping rules, preserve rejected trials, and stop for interpretation
+  when a new mechanism or scientific judgment is needed. Do not spend conversational
+  iterations manually applying a declared threshold or launching its fixed follow-up.
 - At research handoff assess project health, future blockers and design effort
   in `research/PROJECT_HEALTH.md`. Distinguish automatic trials from conceptual
   changes; set decisive milestones and revisit a candidate that stops converging.

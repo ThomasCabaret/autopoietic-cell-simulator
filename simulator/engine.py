@@ -14,6 +14,7 @@ class Simulation:
         self.rng = np.random.default_rng(self.config['seed'])
         self.chemistry = MODELS[self.config['model']][0](self.config['chemistry'],self.rng)
         self.dt = self.config['engine']['dt']
+        self.reaction_every = self.config['engine']['reaction_every']
         self.neighbors = Neighborhood(self.config['engine']['spatial'],self.config['engine']['skin'])
         self.step_index = 0
         self.prepared = False
@@ -32,8 +33,11 @@ class Simulation:
         if self.prepared:
             return
         events=[]
-        if self.step_index%5==0:
-            events=self.chemistry.react(self.time,self.dt,self.neighbors)
+        if self.step_index%self.reaction_every==0:
+            # Existing hook API uses 5*its dt argument as reaction interval.
+            # Preserve the default argument bit-for-bit; mechanics always uses self.dt.
+            reaction_dt=self.dt if self.reaction_every==5 else self.dt*self.reaction_every/5
+            events=self.chemistry.react(self.time,reaction_dt,self.neighbors)
         if self.step_index%self.config['engine']['sample_every']==0 or events or self.done:
             for callback in self.listeners:
                 self.chemistry.observe(callback,self.time,events)

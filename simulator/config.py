@@ -38,7 +38,7 @@ def resolve(raw):
         raise ValueError("Unknown chemistry keys: " + str(sorted(set(chemistry)-set(defaults)-{"box","fragment_size"})))
     defaults.update(chemistry)
     engine = {"dt": .005 if model=="copy" else .002, "spatial":"tree", "skin":.25,
-              "sample_every":100 if model=="copy" else 200}
+              "sample_every":100 if model=="copy" else 200, "reaction_every":5}
     if set(raw.get("engine",{}))-set(engine):
         raise ValueError("Unknown engine setting")
     engine.update(raw.get("engine",{}))
@@ -55,6 +55,8 @@ def resolve(raw):
         raise ValueError("seed must be a nonnegative integer")
     if not isinstance(engine['sample_every'],int) or engine['sample_every']<1:
         raise ValueError("sample_every must be a positive integer")
+    if type(engine['reaction_every']) is not int or engine['reaction_every']<1:
+        raise ValueError('reaction_every must be a positive integer')
     if engine['spatial'] not in ('tree','brute') or not isinstance(engine['skin'],(int,float)) or not math.isfinite(engine['skin']) or engine['skin']<0:
         raise ValueError('invalid spatial backend or neighbor skin')
     if any(isinstance(v,(int,float)) and not math.isfinite(v) for v in defaults.values()):

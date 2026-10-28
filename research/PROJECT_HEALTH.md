@@ -8,6 +8,22 @@ division et évolution ouverte ne sont pas des conditions ajoutées à cette cib
 
 ## Réévaluation courante après J3
 
+Clôture lot18 : N1 achevé, pas d'alerte médiane déclenchant N2 mais baisse cumulée
+et frontière fine1 dégradée conservées. L'analyse flexible complète le triage,
+sans en réécrire les seuils. Diagnostic T9 nouveau : deux gardes distincts,
+simple ablation monomère insuffisante, et recapture d'extrémités menaçant aussi
+les outils complets. Piste bornée : cohérence d'appariements des voisins liés,
+avec témoins de séquestration ; aucune solution encore testée. Revoir ce choix
+après un seul lot de mécanisme et transfert, pas une accumulation d'exceptions.
+
+Lot18 : N1 encore incomplet, aucune raison d'en changer le candidat. Le suivi
+N1→analyse→N2 conditionnel automatise les transitions déjà calculables et borne
+le coût à six essais supplémentaires. Cela évite une conversation par seuil ou
+lancement sans résoudre automatiquement les choix de chimie. Le prochain point
+d'interprétation reste T9 ou la résolution des contacts, après le diagnostic
+numérique ; pas une succession indéfinie de raffinements. Aucune hausse de
+maturité ni diminution démontrée du nombre de décisions conceptuelles restantes.
+
 Progrès matériel : la hausse finie d'inventaire obtient un transfert utile dans
 les trois bains K16, deux ont G nouveau, deux F nouveau et un F exprimé fabrique
 des produits ensuite incorporés. Pas de primitive ajoutée. Le boost est utile

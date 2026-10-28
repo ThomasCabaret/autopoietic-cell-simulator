@@ -81,3 +81,13 @@ Pour l'environnement final, voir OPEN_BOUNDARY.md : apport réglable au bord du
 domaine extérieur et absorption des sorties. Le nombre total peut varier ; ne
 pas substituer à ce flux une concentration imposée près de la vésicule ni une
 compensation de ses déficits par un observateur. Gradients/pénuries sont à mesurer.
+
+## Automatiser les décisions calculables
+
+Lire AUTOMATED_EXPLORATION.md. Les seuils, grilles bornées et contrôles enchaînés
+dont la décision est formalisable sont exécutés par programme, avec leurs
+budgets et critères figés. Garder l'interprétation pour les choix de lois,
+représentations et incompatibilités. Le pilotage entre expériences reste externe
+à la chimie ; aucune rétroaction d'un score global dans une trajectoire. Un
+arbre sélectionné par les résultats est déclaré comme exploration, pas validation
+indépendante. Ne pas automatiser une recherche illimitée qui repousse le jalon.

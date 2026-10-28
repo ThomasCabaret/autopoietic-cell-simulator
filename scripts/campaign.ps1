@@ -10,6 +10,16 @@ $pythonPath=Join-Path $projectRoot '.venv\Scripts\python.exe'
 if (-not (Test-Path -LiteralPath $pythonPath)) { $pythonPath=(Get-Command python).Source }
 $controllerScript=Join-Path $PSScriptRoot 'campaign.py'
 if ($Action -eq 'Start') {
+    $followupLatest=Join-Path $projectRoot 'outputs\followups\latest.txt'
+    if (Test-Path -LiteralPath $followupLatest) {
+        $followupFolder=(Get-Content -LiteralPath $followupLatest -Raw).Trim()
+        $followupText=& $pythonPath (Join-Path $PSScriptRoot 'numerical_followup.py') status --job $followupFolder
+        if ($LASTEXITCODE -ne 0) { throw 'Suivi automatique invalide, inspecter avant une nouvelle campagne.' }
+        $followup=$followupText | ConvertFrom-Json
+        if ($followup.active -or $followup.child_controller_active -or $followup.child.running) {
+            throw 'Un suivi automatique est actif. Consulter followup_status.bat ou stop_followup.bat.'
+        }
+    }
     $latest=Join-Path $projectRoot 'outputs\campaigns\latest.txt'
     if (Test-Path -LiteralPath $latest) {
         $lastFolder=(Get-Content -LiteralPath $latest -Raw).Trim()

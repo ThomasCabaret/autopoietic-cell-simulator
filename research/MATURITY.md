@@ -1,4 +1,22 @@
-# Maturité — après J3,28 octobre2026
+# Maturité — N1 partiel, automatisation lot18
+
+**Clôture : N1 achevé6/6, transfert utile retrouvé au pas fin, maturité globale
+encore limitée.** F complet3/3 au pas fin, G0/3, produits d'un F exprimé utilisés
+sur1/3. Aucun certificat de convergence : chaînes rares, baisse cumulée des
+incorporations et frontière dégradée dans un essai. L'automate n'ajoute aucune
+preuve chimique. T9 a maintenant un diagnostic précis de deux gardes distincts
+et du risque de collage des outils complets. Voir BATCH_18.md.
+
+## État initial du lot18
+
+Maturité chimique inchangée depuis J3. Deux essais N1 achevés au pas0,001
+retrouvent incorporation et nouvelles chaînes ; aucune conclusion de convergence
+sur une cohorte incomplète. Aucun nouveau mécanisme ou bibliothèque acquis.
+La suite automatique bornée analyse N1 puis teste N2 si l'alerte fine l'exige,
+avant interprétation/T9. Elle réduit les interventions de lancement, pas les
+incertitudes biologiques par elle-même. Voir BATCH_18_PLAN.md.
+
+## État après J3
 
 **Transfert matériel dans un bain commun membranaire désormais observé,
 renouvellement intégré encore faible.** K16 avec L : produits fabriqués puis

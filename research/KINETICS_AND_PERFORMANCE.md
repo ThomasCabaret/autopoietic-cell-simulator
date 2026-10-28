@@ -113,3 +113,18 @@ contacts/éligibilité, température et surcoûts du rendu/checkpoint. Optimiser
 l'apport à lois et précision numérique fixes ; ne pas accélérer les réactions
 ou grossir dt pour améliorer artificiellement le score. Aucun optimum ni
 demi-renouvellement cellulaire complet n'est encore mesuré.
+
+## Décisions d'exploration entre campagnes
+
+Voir AUTOMATED_EXPLORATION.md : programmer aussi les transitions déjà définies,
+pas seulement les répétitions d'une liste de tâches. Le suivi N1→N2 est borné,
+figé, reprenable et sélectionné selon une alerte descriptive prospective. Il
+attend une cohorte complète, conserve ses échecs, journalise le hash du rapport
+et s'arrête avant choix mécanistique. Aucun pilotage des lois par les mesures
+au sein d'un essai ; aucune relance technique ou recherche illimitée automatique.
+
+`engine.reaction_every` sépare désormais les cadences numérique/mécanique ;
+défaut5 conserve exactement le passage de dt aux hooks hérités. Ces hooks
+interprètent5dt comme leur intervalle de réaction. Quand la cadence change,
+le moteur fournit intervalle/5 à ce seul appel ; intégration et bruit gardent
+le vrai dt. N2 est le contrôle prévu, pas une optimisation déclarée du moteur.

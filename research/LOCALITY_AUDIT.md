@@ -136,3 +136,10 @@ sources simulator identiques à J3, dt divisé par2/4, réaction toujours5dt,
 observation0,5. Le comparateur lit des chaînes entières et provenances seulement
 après calcul ; aucun résultat ne modifie les trajectoires ou taux. Coût chimique
 nul, un protocole numérique et ses alertes descriptives, pas un régulateur.
+
+N2 ajoute uniquement une cadence numérique indépendante, transmise aux taux
+locaux existants via l'intervalle du tick. Aucun voisinage, état ou type chimique
+supplémentaire ; défaut5 exact vérifié. Le suivi conditionnel utilise des rapports
+globaux pour choisir **une nouvelle expérience**, avec sources figées avant sa
+trajectoire. C'est une intervention expérimentale externe, jamais une décision
+de la cellule, une rétroaction dans ses réactions ou une preuve d'homéostasie.
