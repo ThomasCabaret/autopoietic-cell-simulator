@@ -32,6 +32,11 @@
   trajectories, checkpoints, full run results and bulk experiment data local,
   excluded by `.gitignore`. Never delete local evidence just to keep Git small.
 - Preserve old recipe sources and hashes. Generate new run folders for changes.
+- Use a temporary microscopic "magnifying glass" when a motivated spatial/time
+  target can clarify rule design or unexpected emergent behavior; follow the
+  diagnostic guidance in `research/KINETICS_AND_PERFORMANCE.md`. Bound captures,
+  explain the question and decision they inform, and keep observation passive.
+  This is a judgment-driven tool, not a required recording for every experiment.
 - Automate bounded exploration and test chains when decisions have explicit
   computable criteria; follow `research/AUTOMATED_EXPLORATION.md`. Freeze branches,
   budgets and stopping rules, preserve rejected trials, and stop for interpretation

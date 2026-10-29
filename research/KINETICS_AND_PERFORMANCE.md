@@ -128,3 +128,43 @@ défaut5 conserve exactement le passage de dt aux hooks hérités. Ces hooks
 interprètent5dt comme leur intervalle de réaction. Quand la cadence change,
 le moteur fournit intervalle/5 à ce seul appel ; intégration et bruit gardent
 le vrai dt. N2 est le contrôle prévu, pas une optimisation déclarée du moteur.
+
+## Loupe microscopique temporaire
+
+À utiliser lorsqu'une question concrète de conception ou de diagnostic rend
+utile une observation fine, au jugement de l'agent. Par exemple : vérifier qu'un
+contact produit bien l'alignement imaginé lors de la conception d'une règle,
+ou comprendre une lésion, un piège ou une cinétique émergente contre-intuitive.
+Ne pas instrumenter systématiquement les essais pour accumuler des données.
+
+Motiver brièvement la capture : mécanisme attendu, incertitude à lever, cible
+spatiale/temporelle et décision que l'observation pourrait éclairer. Une cible
+déterminée dynamiquement est permise, comme la première lésion et son voisinage.
+Adapter fenêtre avant/après, cadence, nombre de particules/événements et budget
+de données à la question ; conserver assez de contexte pour ne pas attribuer
+à tort un mouvement à une interaction extérieure au cadrage. Pas de budget ou
+format universel imposé. Réutiliser une trace ou un rejeu existant lorsque cela
+suffit ; ne construire un outil supplémentaire que pour un besoin identifié.
+
+Capturer seulement les informations nécessaires : positions/liaisons et leur
+chronologie, occupations de sites, géométrie et raisons d'acceptation/rejet,
+contributions de force si elles sont utiles. Choisir vue globale, zoom, séquence
+annotée ou tableau d'événements selon ce qui permet de comprendre la dynamique.
+Le déclencheur et l'analyse peuvent reconnaître une structure globale ; ces
+informations ne doivent jamais diriger les forces, réactions, déplacements ou
+PRNG de la simulation. Un diagnostic instrumenté doit préserver la dynamique.
+
+Pour un rejeu fidèle, garder les sources/scénario, graine et, si nécessaire,
+un checkpoint global antérieur avec état aléatoire. Une capture locale seule
+ne reproduit pas les influences du reste du bain. Déclarer les exemples choisis
+et les limites d'échantillonnage : un événement sélectionné explique un mécanisme
+possible, pas sa fréquence ni sa généralité. Valider ensuite toute modification
+par les contrôles appropriés sous lois figées.
+
+Consigner ce que la loupe apprend, l'hypothèse qu'elle renforce/réfute et la suite
+qui en découle, y compris un diagnostic non concluant. Arrêter la capture quand
+la question est résolue, le budget atteint ou l'apport insuffisant ; réorienter
+si nécessaire. « Temporaire » concerne l'instrumentation active : les preuves
+capturées restent locales, ignorées par Git et conservées selon le contrat du
+projet, avec recettes et conclusions versionnées. Cette recommandation ne crée
+ni obligation de film à chaque lot ni nouveau mécanisme chimique validé.

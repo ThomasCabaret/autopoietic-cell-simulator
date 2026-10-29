@@ -816,3 +816,15 @@ résultats : needs_interpretation/run_N2=false, aucun travailleur N2 lancé.
 Rapport/hash de décision archivés localement ; manifeste source BATCH_18_FOLLOWUP.
 Recette N2 conditionnelle exportée, six tâches dormantes. Pas de campagne longue
 active à la clôture ; prochaine étape de conception T9 avec contrôles outils.
+
+## 2026-10-29 — méthode, loupe microscopique motivée
+
+Demande utilisateur inscrite dans AGENTS, DESIGN_PRINCIPLES et
+KINETICS_AND_PERFORMANCE : diagnostic temporaire, ciblé spatialement et dans
+le temps, éventuellement déclenché par un événement. Usage au jugement de
+l'agent pour vérifier un mécanisme à la conception ou expliquer un comportement
+émergent inattendu, avec question, budget et décision motivés. Pas de capture
+systématique ni de nouvel outil sans besoin. Observation passive, contexte et
+reproductibilité préservés ; arrêter l'instrumentation sans supprimer les preuves.
+Modification documentaire seulement, aucune simulation lancée, maturité chimique
+et priorité T9 inchangées.

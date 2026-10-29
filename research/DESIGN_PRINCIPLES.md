@@ -91,3 +91,24 @@ représentations et incompatibilités. Le pilotage entre expériences reste exte
 à la chimie ; aucune rétroaction d'un score global dans une trajectoire. Un
 arbre sélectionné par les résultats est déclaré comme exploration, pas validation
 indépendante. Ne pas automatiser une recherche illimitée qui repousse le jalon.
+
+## Loupe microscopique motivée
+
+Utiliser, au jugement de l'agent, une observation microscopique temporaire quand
+une question de conception ou un comportement inattendu le justifie. Décrire
+le mouvement ou l'enchaînement attendu à l'échelle de l'assemblage, puis cibler
+la transition locale dont l'observation pourrait expliquer l'écart et orienter
+une modification. La compréhension globale sert à concevoir les lois locales,
+jamais à piloter les structures dans la dynamique.
+
+Deux usages utiles : vérifier à la conception qu'une règle réalise le mécanisme
+imaginé ; diagnostiquer ensuite pourquoi le comportement émergent ou la cinétique
+globale s'en écarte. La cible peut être déterminée pendant le calcul, par exemple
+autour de la première lésion. Borner le voisinage et la fenêtre temporelle,
+motiver les données nécessaires et la décision qu'elles peuvent éclairer.
+Voir KINETICS_AND_PERFORMANCE.md pour le contrat de capture.
+
+Ce n'est ni un enregistrement systématique ni un passage obligé à chaque règle
+ou lot. Une loupe sans question susceptible d'influencer la compréhension ou
+la conception n'a pas de raison d'être activée. Arrêter ou réorienter le
+diagnostic lorsqu'il a répondu à sa question ou n'apporte plus d'information.
