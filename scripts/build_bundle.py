@@ -21,6 +21,10 @@ def main():
     files.update(ROOT/p for p in ('research/BATCH_19_PLAN.md','research/BATCH_19.md',
         'experiments/prepare_population_campaign.py','scripts/population_report.py',
         'campaigns/polymer_population.json','population_status.bat'))
+    files.update(ROOT/p for p in ('research/BATCH_20_PLAN.md','research/BATCH_20.md',
+        'experiments/prepare_mixing_campaign.py','scripts/mixing_report.py','scripts/mixing.ps1',
+        'campaigns/mixing.json','start_mixing.bat','mixing_status.bat','stop_mixing.bat',
+        'resume_mixing.bat','analyze_mixing.bat'))
     files.update(ROOT/p for p in ('README.md','SIMULATOR_ARCHITECTURE.md','requirements.txt',
         'CONTRIBUTING.md','GIT_SETUP.md','THIRD_PARTY_NOTICES.md',
         '.gitignore','.gitattributes','.editorconfig',

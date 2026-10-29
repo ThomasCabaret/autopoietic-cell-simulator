@@ -6,6 +6,29 @@ est une cellule construite qui maintient et refabrique ses composants depuis
 une nourriture simple, avec énergie externe déclarée. Apparition spontanée,
 division et évolution ouverte ne sont pas des conditions ajoutées à cette cible.
 
+## Transport et mélange MIX1 — 29 octobre 2026
+
+L'observation visuelle utilisateur motive un diagnostic de transport sans
+réactions, en parallèle de P10. Le moteur est brownien suramorti : aucune
+vitesse persistante. La diffusion du centre d'un assemblage idéal de b billes
+identiques est mu*T/b ; le temps de relaxation spatiale croît comme L²/D.
+Cette dépendance rend les grands espaces et grands polymères réellement risqués,
+même avec un moteur rapide. Le réalisme hydrodynamique n'est pas acquis.
+
+MIX1 sépare dispersion, mémoire des positions, voisins et contacts. Le premier
+essai froid trouve des seuils descriptifs vers360 pour les voisins et3970 pour
+l'occupation, sans preuve de réaction ou d'équilibre durable. Cohorte incomplète,
+ni blocage irréversible ni absence de problème de transport établis. Les dimères
+fixes sans affinités ne représentent pas une protéine piégée dans la chimie.
+Les témoins idéaux/denses et de cadence doivent précéder toute correction.
+
+Budget borné : dix essais, un travailleur MIX1 en plus des deux P10, statistiques
+compactes et checkpoints. Prochain choix conceptuel après lecture de la cohorte :
+mécanisme de mouvement ou accès chimique, sans augmenter aveuglément bruit,
+mobilité ou dose. Une future convection/inertie serait une variante physique
+déclarée avec régressions de réaction et de membrane, pas une accélération
+technique déjà prouvée. Pas de nouvelle machine moléculaire autorisée ici.
+
 ## Jalons génétiques P10 — 29 octobre 2026
 
 La demande utilisateur de population issue d'un seul G long est prioritaire

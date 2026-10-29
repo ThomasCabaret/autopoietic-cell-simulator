@@ -916,3 +916,21 @@ préservées, voir BATCH_19.md ; priorités, arbre, santé et maturité actualis
 cohorte incomplète ; pas de plateau final déclaré.115 tests logiciels et7
 historiques passent après relance hors du bac à sable Windows qui bloquait
 les écritures temporaires. Les recettes et contrôles de passivité sont conservés.
+
+### 29 octobre 2026 — lot20 MIX1, dispersion et voisins sans chimie
+
+Demande utilisateur : environ200 molécules dans une demi-boîte, mesurer leur
+diffusion et mélange. Nouveau hook mécanique fixe, partagé avec Simulation :
+pas de réaction/affinité, mêmes intégrateur brownien, ressorts et parois souples.
+Observations passives : occupation, MSD/D court, voisins, MI corrigée par
+permutations indépendantes, clusters géométriques, contacts et partenaires uniques.
+
+Deux pilotes de20 terminés. Campagne figée dix essais froid/chaud et contrôles
+idéaux/cadence lancée avec un travailleur, dossier séparé de P10 toujours intact.
+Premier préfixe froid distingue renouvellement de voisins vers360 et occupation
+vers3970, sans preuve d'équilibre ni réaction. Voir BATCH_20_PLAN.md/BATCH_20.md.
+Sources/recettes seules versionnées, pas de trajectoires denses.121 tests et7
+historiques passent ; empreintes GUI actualisées, mêmes signatures physiques.
+Arbre, priorités, maturité et santé actualisés ; aucune nouvelle loi de mouvement.
+Premier froid terminé à12000 en370,25s,48,5% à droite, rétention brute0,031 et
+99,84 partenaires uniques au rayon0,3. Cohorte encore incomplète, voir BATCH_20.md.

@@ -94,6 +94,18 @@ def resolve(raw):
             raise ValueError('invalid functional bend cosine')
         if any(defaults[k]<=0 for k in ('food_ligand_width','food_binding_radius','food_reaction_radius')) or any(defaults[k]<0 for k in ('functional_bend_strength','food_ligand_energy','food_binding_rate','food_unbinding_rate','food_reaction_rate')):
             raise ValueError('invalid functional substrate parameters')
+    elif model=='mixing':
+        if type(defaults['molecules']) is not int or defaults['molecules']<7:
+            raise ValueError('Mixing requires at least seven molecules')
+        if defaults['beads_per_molecule'] not in (1,2) or type(defaults['steric']) is not bool or type(defaults['initial_half']) is not bool:
+            raise ValueError('Invalid fixed molecule geometry or steric control')
+        if defaults['record_interval']<=0 or defaults['contact_interval']<=0:
+            raise ValueError('Invalid mixing observation intervals')
+        cadence=engine['sample_every']*engine['dt']
+        if defaults['contact_interval']<cadence-1e-9 or abs(defaults['contact_interval']/cadence-round(defaults['contact_interval']/cadence))>1e-7:
+            raise ValueError('Contact interval must be a multiple of the engine sampling cadence')
+        if abs(defaults['record_interval']/defaults['contact_interval']-round(defaults['record_interval']/defaults['contact_interval']))>1e-7:
+            raise ValueError('Record interval must be a multiple of the contact interval')
     elif model=='coupled_bath':
         from .coupled_bath import membrane_config,genetics_config
         if not isinstance(defaults['include_membrane'],bool):raise ValueError('include_membrane must be boolean')

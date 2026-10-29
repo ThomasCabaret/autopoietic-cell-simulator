@@ -1,5 +1,12 @@
 # Campagnes différées
 
+**MIX1 en parallèle de P10** :200 molécules dans une demi-boîte, mécanique seule,
+sans réactions. Un travailleur, dix essais et contrôles, pointeur séparé sous
+`outputs/mixing_campaigns`. `mixing_status.bat`, `stop_mixing.bat`,
+`resume_mixing.bat`, `analyze_mixing.bat` ; lancement neuf `start_mixing.bat`.
+Voir [protocole](../research/BATCH_20_PLAN.md) et [premiers résultats](../research/BATCH_20.md).
+Ces commandes ne modifient pas la campagne P10 courante ni son pointeur.
+
 **29 octobre 2026 — campagne courante P10** : dix essais de population depuis
 un unique G de dix symboles, copie G seule ou expression F seule, monomères
 composites abondants et témoins de volume/densité. Voir

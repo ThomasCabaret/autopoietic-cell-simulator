@@ -47,6 +47,15 @@ dans les forces/réactions. Permuter les IDs ne doit pas changer une force physi
 
 ## Obligations du lot9
 
+MIX1 (lot20) ajoute un hook de diagnostic mécanique sans réactions, utilisant
+les mêmes noyaux, thermostat et parois. Les liaisons internes fixes exercent
+leurs forces par paires ; aucune identité moléculaire globale ne décide un
+déplacement. Centres de molécules, labels initiaux, clusters et MI sont lus
+uniquement par l'observateur, avec PRNG d'analyse distinct et tests de passivité.
+Le contrôle sans répulsion est explicite ; aucun ajout de forçage/inertie ni
+réglage des conditions des démos. Ne pas présenter cet isolement comme une
+nouvelle fonction émergente ou une chimie complète.
+
 Ajout P10 (lot19,29 octobre2026) : `polymer_population.py` est un observateur
 optionnel qui lit les composants, séquences complètes, identités initiales et
 contacts pour les recenser. Ses données n'entrent ni dans les taux, ni dans les

@@ -8,6 +8,16 @@ elles ne conditionnent plus l'examen de ces démos. Voir ../docs/DEMOS.md.
 Ce progrès d'ingénierie ne démontre aucun nouveau mécanisme, maintien ou
 renouvellement cellulaire. Les preuves et limites chimiques ci-dessous restent.
 
+## Diagnostic MIX1 en cours — lot20
+
+Un modèle sans réactions mesure la mécanique du moteur, avec molécules fixes
+et mêmes forces/bruit/parois. Pilotes terminés ; cohorte longue en cours,
+un travailleur indépendant de P10. La première graine froide renouvelle ses
+voisins avant l'homogénéité spatiale ; pas de conclusion sur trois graines ou
+sur les protéines liées et les pièges chimiques absents de ce modèle.
+Ce diagnostic améliore la compréhension du transport, pas la maturité chimique.
+Voir BATCH_20.md. Aucun changement d'intégrateur ni de paramètres des démos.
+
 ## Diagnostic P10 en cours — lot19
 
 La capacité génétique longue et la distribution de tous les produits deviennent

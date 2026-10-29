@@ -54,6 +54,10 @@ def execute(folder,task_id):
                     write(path/'population.json',population.summary())
                     state['population']=(path/'population.json').relative_to(folder).as_posix()
                     state['population_latest']=population.latest()
+                if sim.config['model']=='mixing':
+                    write(path/'mixing.json',obs.summary())
+                    state['mixing']=(path/'mixing.json').relative_to(folder).as_posix()
+                    state['mixing_latest']=obs.state['history'][-1]
             while not sim.done:
                 if (folder/'STOP').exists():
                     save();state.update(status='paused',step=sim.step_index,simulated_time=sim.time,updated=time.time())
@@ -72,6 +76,7 @@ def execute(folder,task_id):
                     if genetic is not None:
                         state['genetic_first']=genetic.state['first']
                     if population is not None:state['population_latest']=population.latest()
+                    if sim.config['model']=='mixing':state['mixing_latest']=obs.state['history'][-1]
                     write(dest/'state.json',state)
             obs.campaign_kinetics_state=probe.state
             if audit is not None:obs.campaign_boundary_state=audit.state

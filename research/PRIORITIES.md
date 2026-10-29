@@ -1,4 +1,15 @@
-# Priorité actuelle — P10, fidélité globale des populations
+# Priorités actuelles — MIX1 transport, P10 fidélité
+
+29 octobre 2026 : demande utilisateur de caractérisation de la dispersion et
+du mélange sans chimie. MIX1 tourne séparément avec un travailleur,200 molécules
+dans une moitié de boîte, deux températures, contrôles de répulsion, taille et
+cadence. Voir BATCH_20_PLAN.md/BATCH_20.md ; suivi `mixing_status.bat`.
+P10 continue avec son dossier et ses commandes propres, sans changement de lois.
+Lire ces deux diagnostics avant de choisir une correction de transport ou T9.
+Ne pas confondre remplissage global, renouvellement des voisins et contacts
+chimiquement éligibles. Aucune inertie, convection ou nouvelle protéine ajoutée.
+
+## P10, fidélité globale des populations
 
 29 octobre 2026 : demande utilisateur prioritaire après examen de la copie.
 Lot19 lancé : un seul G de dix symboles, stock abondant de dimères libres,

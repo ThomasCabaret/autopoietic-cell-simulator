@@ -871,6 +871,18 @@
       "evidence": "research/BATCH_19.md"
     },
     {
+      "id": "MIX1",
+      "parent": "P10",
+      "related": ["J3", "N1"],
+      "status": "mechanics_only_mixing_campaign_running_pilots_complete",
+      "hypothesis": "Slow filling of a large space may coexist with much faster local neighbor turnover; beadwise Brownian mobility, steric forces and contact sampling must be separated before changing motion",
+      "test": "200 fixed molecules in left half of24x18 soft-wall box. Three seeds each atT0.08/T0.6; ideal dimer/monomer and warm finer-contact controls. Shared engine, no reactions, occupancy/MI/neighbors/encounters, one worker while P10 stays frozen",
+      "cost": "No chemical primitive, enzyme, flow or integration change. Mechanics-only diagnostic hook and passive bounded statistics; ten trajectories, no dense position recording",
+      "counterexample": "Empty half-box is called no encounters; geometric proximity is called a reaction; molecular center D is replaced by single-bead D; finite occupancy/MI noise or contact recrossings are ignored",
+      "missing_proof": "Full mixing cohort and cadence comparison pending. Actual functional polymers, chemical trapping, membrane and whole-cell transport are outside the inert dimer model",
+      "evidence": "research/BATCH_20.md"
+    },
+    {
       "id": "ENV0",
       "parent": "H0",
       "related": [
