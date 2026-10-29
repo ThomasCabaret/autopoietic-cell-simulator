@@ -956,3 +956,32 @@ Première graine longue : seuil voisins17,6s de calcul brownien contre2,0s
 Langevin0,1 et4,9s DPD0,5 ; critères conjoints encore censurés, pas de gain
 cellulaire déduit.127 tests logiciels et7 historiques passent. P10/MIX1 ont
 depuis terminé10/10 chacun ; résultats conservés, bilan complet à lire.
+
+### 29 octobre 2026 — lot22, lecture des38 essais puis transfert LT1 terminé6/6
+
+Demande : lire l'état, agir selon les résultats, demander un choix seulement
+si nécessaire. Vérification des scénarios, sources et analyses P10/MIX1/MIX2.
+P10 G10 donne1/1/0 nouvelles copies contre F10 1/3/1 ; fragments G dominants,
+doublement de stock insuffisant. Reconstruction des véritables sources de
+ligation avant chaque tick, vérifiée contre les checkpoints :82–86% des actes
+G400 utilisent un fragment comme matrice. La fidélité stricte des symboles
+est imposée ; le problème est l'amplification utile, pas un taux de mutation mesuré.
+
+MIX1 confirme dispersion lente et recroisements sensibles à l'échantillonnage.
+MIX2 : compromis réel favorable à Langevin0,1 pour plusieurs métriques, sans
+domination sur toutes ; mélange conjoint froid censuré pour les candidats
+rapides, gain chaud≈3,4× à une graine seulement. Choix d'un transfert ciblé,
+pas de nouvelle grille de mouvements. Plan BATCH_22_PLAN.md avant exécution.
+
+LT1 : deux pilotes puis six essais figés à3200, mêmes réactions P10, stocks et
+positions, seul mouvement changé. Cache des forces invalidé à chaque réaction
+même sans ligation rapportée. Audit thermique passif, checkpoints exacts,
+préfixe brownien P10 à50 identique. LT1 achevé6/6 : G2/0/3, F7/7/6 exacts,
+fragments encore matrices de64–86% des actes G. F10 fonctionnels non testés.
+Aucun nouveau gène/outil ; membrane non transférée ; démos inchangées.
+
+Bilan BATCH_22.md ; synthèse locale source-vérifiée44 essais sous
+outputs/reviews/completed_20261029T175433568977Z, sources d'analyse versionnées,
+recettes LT1/pilotes exportées.133 tests logiciels et7 historiques réussis.
+Arbre, priorité T9, localité, maturité et santé actualisés. Pas de calcul de
+ce lot encore actif, pas de nouvelle grille lancée à la clôture, aucun push.

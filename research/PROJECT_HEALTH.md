@@ -1,4 +1,4 @@
-# Santé du projet —28 octobre2026
+# Santé du projet —29 octobre2026
 
 Cette évaluation vise la faisabilité globale et le volume du travail, pas le
 nombre de simulations positives. Elle doit évoluer avec les résultats. La cible
@@ -6,7 +6,38 @@ est une cellule construite qui maintient et refabrique ses composants depuis
 une nourriture simple, avec énergie externe déclarée. Apparition spontanée,
 division et évolution ouverte ne sont pas des conditions ajoutées à cette cible.
 
-## Compromis mouvement/calcul MIX2 — 29 octobre 2026
+## Réévaluation après les44 essais P10/MIX1/MIX2/LT1
+
+Les cohortes sont achevées et les résultats/sources vérifiés ; voir BATCH_22.md.
+La progression est mesurable : gains de transport à coût réel, puis davantage
+de F10 exacts sous les mêmes réactions (1/3/1 vers7/7/6). Il ne s'agit pas
+d'une simple optimisation d'un banc inerte. En revanche G10 reste peu amplifié
+(1/1/0 vers2/0/3), malgré un transport accru et des stocks initialement abondants.
+L'audit établit le rôle de matrices concurrentes joué par les fragments.
+
+Santé **conditionnelle** : l'instrumentation et les essais réduisent une
+incertitude importante, mais le défaut génétique est structurel pour ce
+candidat. Aucun blocage irréversible de principe établi ; aucune justification
+non plus pour promettre une cellule viable après quelques réglages ou en un
+nombre ferme de lots. Le renouvellement en moins de dix heures n'est pas déduit
+des benchmarks inertes ou de ces rendements.
+
+Prochain jalon décisif : un mécanisme local de finition/recyclage ou spécificité
+qui favorise les copies longues libérées/réutilisables sans rendre les outils
+complets indisponibles. Deux changements conceptuels sans transfert ni diagnostic
+nouveau imposent de réexaminer alphabet/représentation. Les répétitions de graines
+et les branches de paramètres sont des essais automatiques, pas des avancées de
+conception. Pas de nouvelles grilles de densité ou de dynamique inerte par défaut.
+
+Une machine processive est une alternative à discuter, pas une primitive magique
+à introduire : coût gène/expression/renouvellement et feu vert utilisateur requis.
+Avant adoption de Langevin, la membrane, la catalyse et le bain commun doivent
+être testés sous ce mouvement. Ces incompatibilités possibles, la synthèse de L,
+la diversité des outils et l'homéostasie restent ouvertes. Aucune nouvelle
+dépendance causale ni aucun outil ajouté dans LT1. Le dépôt conserve les recettes
+et les démos antérieures, donc le diagnostic est réutilisable si le candidat échoue.
+
+## Historique — compromis mouvement/calcul MIX2 avant lecture de la cohorte
 
 L'utilisateur autorise les variantes inertielles à coût borné. Deux familles
 locales et un témoin brownien apparié sont comparés ; aucune nouvelle fonction

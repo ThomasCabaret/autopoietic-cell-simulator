@@ -1,5 +1,27 @@
 # Architecture du simulateur partagé
 
+## Mouvement réactif expérimental — LT1
+
+Le scénario peut contenir une clé racine `mechanics` pour le seul modèle `copy` :
+`{"motion":"langevin","mass":1.0,"damping":0.1,"dpd_cutoff":1.0}`.
+`dpd_cutoff` est un paramètre commun du conteneur mécanique, sans effet dans
+Langevin ; DPD reste réservé au modèle inerte `mixing`. La température vient
+toujours des conditions physiques de la chimie. L'absence de cette clé garde
+le chemin brownien existant, sans modifier ses configurations résolues.
+
+Même ordonnanceur et forces conservatives, intégrateur BAOAB dans `motion.py`.
+Après **chaque** tick réactif, le cache de force est invalidé : appariement ou
+libération peuvent changer les forces sans produire d'événement de ligation.
+La reprise conserve vitesses, cache et PRNG. `MotionAudit` lit passivement la
+température cinétique/mouvement et sauvegarde son état avec le travailleur ;
+il ne rescale jamais les vitesses. Les signatures physiques GUI incluent
+`mechanics` lorsque présent. Les six presets historiques restent inchangés.
+
+Le transfert LT1 est achevé6/6, voir [bilan](research/BATCH_22.md). Gains de
+séquences F testés sous réactions constantes ; aucun transfert membrane/catalyse
+ni adoption du nouveau mouvement par défaut. Le contrat d'invalidation s'applique
+avant tout futur élargissement à un autre hook.
+
 ## Nouveau client durable GUI1
 
 `visualizer/` est un client Qt/PySide6 + ModernGL optionnel, distinct du paquet

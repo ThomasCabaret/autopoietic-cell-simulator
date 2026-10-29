@@ -29,6 +29,11 @@ def main():
         'experiments/prepare_motion_campaign.py','experiments/benchmark_motion_cost.py',
         'scripts/motion_report.py','campaigns/motion.json','start_motion.bat',
         'motion_status.bat','stop_motion.bat','resume_motion.bat','analyze_motion.bat'))
+    files.update(ROOT/p for p in ('research/BATCH_22_PLAN.md','research/BATCH_22.md',
+        'experiments/audit_polymer_lineage.py','experiments/prepare_reactive_motion.py',
+        'experiments/review_completed_campaigns.py','campaigns/transfer.json',
+        'start_transfer.bat','transfer_status.bat','stop_transfer.bat',
+        'resume_transfer.bat','analyze_transfer.bat'))
     files.update(ROOT/p for p in ('README.md','SIMULATOR_ARCHITECTURE.md','requirements.txt',
         'CONTRIBUTING.md','GIT_SETUP.md','THIRD_PARTY_NOTICES.md',
         '.gitignore','.gitattributes','.editorconfig',

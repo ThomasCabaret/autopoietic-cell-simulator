@@ -1,6 +1,6 @@
 param(
     [ValidateSet('Start','Status','Stop','Resume','Analyze')][string]$Action='Status',
-    [ValidateSet('mixing','motion')][string]$Bench='mixing'
+    [ValidateSet('mixing','motion','transfer')][string]$Bench='mixing'
 )
 $ErrorActionPreference='Stop'
 $projectRoot=Split-Path -Parent $PSScriptRoot
@@ -8,7 +8,7 @@ Set-Location -LiteralPath $projectRoot
 $pythonPath=Join-Path $projectRoot '.venv\Scripts\python.exe'
 if (-not (Test-Path -LiteralPath $pythonPath)) { $pythonPath=(Get-Command python).Source }
 $parent=Join-Path $projectRoot "outputs\${Bench}_campaigns"
-$report=if ($Bench -eq 'motion') { 'motion_report.py' } else { 'mixing_report.py' }
+$report=if ($Bench -eq 'motion') { 'motion_report.py' } elseif ($Bench -eq 'transfer') { 'population_report.py' } else { 'mixing_report.py' }
 $latest=Join-Path $parent 'latest.txt'
 $controller=Join-Path $PSScriptRoot 'campaign.py'
 if ($Action -eq 'Start') {
@@ -18,7 +18,7 @@ if ($Action -eq 'Start') {
         if ($LASTEXITCODE -ne 0) { throw 'Inspecter la campagne de mélange précédente.' }
         $state=$text | ConvertFrom-Json
         if ($state.controller_active -or ($state.tasks | Where-Object { $_.worker_active })) {
-            throw 'Un diagnostic de mélange est déjà actif. Utiliser mixing_status.bat.'
+            throw "Un diagnostic est déjà actif. Utiliser ${Bench}_status.bat."
         }
     }
     $prepared=& $pythonPath $controller prepare "campaigns\$Bench.json" --output $parent

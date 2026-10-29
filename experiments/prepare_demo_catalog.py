@@ -12,6 +12,7 @@ from simulator.config import resolve
 def signature(cfg):
     resolved=resolve(cfg)
     payload={k:resolved[k] for k in ('model','seed','duration','engine','chemistry')}
+    if 'mechanics' in resolved:payload['mechanics']=resolved['mechanics']
     return hashlib.sha256(json.dumps(payload,sort_keys=True,separators=(',',':')).encode()).hexdigest()
 
 

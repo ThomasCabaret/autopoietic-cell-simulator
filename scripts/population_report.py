@@ -82,6 +82,11 @@ def analyze(folder):
             # Atomic replacement by the worker makes progressive reads safe.
             population = read(folder/state['population'])
             row['population'] = summarize(population, task['scenario'])
+        if state.get('motion_audit'):
+            audit=read(folder/state['motion_audit'])
+            values=[h['kinetic_temperature'] for h in audit['history']]
+            row['thermal_range']=[min(values),max(values)] if values else None
+            row['max_step_displacement']=max((h['max_step_displacement'] for h in audit['history']),default=None)
         if state['phase'] == 'complete':
             evidence = read(folder/state['result'])
             expected = {k:v for k,v in manifest['source_sha256'].items() if k.startswith('simulator/')}

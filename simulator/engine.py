@@ -17,10 +17,11 @@ class Simulation:
         self.reaction_every = self.config['engine']['reaction_every']
         self.neighbors = Neighborhood(self.config['engine']['spatial'],self.config['engine']['skin'])
         self.motion=None
-        if self.chemistry.config.get('motion','brownian')!='brownian':
-            if self.config['model']!='mixing':raise ValueError('Inertial variants are restricted to the inert mixing bench')
+        motion_settings=self.config.get('mechanics',self.chemistry.config)
+        if motion_settings.get('motion','brownian')!='brownian':
+            if self.config['model'] not in ('mixing','copy'):raise ValueError('Unsupported inertial hook')
             from .motion import InertialMotion
-            self.motion=InertialMotion(self.chemistry,self.rng)
+            self.motion=InertialMotion(self.chemistry,self.rng,motion_settings)
             self.chemistry.motion_state=self.motion
         self.step_index = 0
         self.prepared = False
@@ -44,6 +45,10 @@ class Simulation:
             # Preserve the default argument bit-for-bit; mechanics always uses self.dt.
             reaction_dt=self.dt if self.reaction_every==5 else self.dt*self.reaction_every/5
             events=self.chemistry.react(self.time,reaction_dt,self.neighbors)
+            if self.motion is not None and self.config['model']!='mixing':
+                # Pairing, release and other unreported state changes also alter forces.
+                # Refresh even when react() returns no backbone-formation event.
+                self.motion.force=None
         if self.step_index%self.config['engine']['sample_every']==0 or events or self.done:
             for callback in self.listeners:
                 self.chemistry.observe(callback,self.time,events)

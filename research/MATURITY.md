@@ -1,4 +1,26 @@
-# Maturité — visualisation essentielle et démos, chimie inchangée
+# Maturité — transfert cinétique partiel, copie longue encore fragile
+
+Clôture lot22,29 octobre2026 : les38 essais P10/MIX1/MIX2 et les6 contre-tests
+LT1 sont terminés, sources vérifiées. Aucun calcul de ce lot encore actif.
+Voir [BATCH_22.md](BATCH_22.md) pour cohortes, limites et provenance.
+
+Le candidat Langevin améliore plusieurs métriques de mélange à coût réel et,
+sans changement des réactions, augmente les séquences F10 complètes de1/3/1
+à7/7/6. Ce sont des séquences, pas encore des enzymes F10 fonctionnelles.
+G10 passe de1/1/0 à2/0/3 : amplification toujours fragile, fragments concurrents
+effectivement matrices de64–86% des ligations LT1. Aucun canal de mutation
+ponctuelle n'existe : fidélité des symboles imposée, pas correction émergente.
+
+Niveau démontré dans ce lot : mêmes lois réactives testées en bains G et F
+séparés sous un nouveau mouvement. Pas de transfert membrane/catalyse, de
+nouveau bain couplé, d'homéostasie ou de maintien. Les progrès intégrés J3
+antérieurs restent distincts et browniens. La maturité globale demeure limitée ;
+T9 est un verrou structurel identifié plutôt qu'une attente de calcul plus long.
+Langevin reste optionnel expérimental ; six démos aux signatures physiques
+inchangées. Aucun nouvel outil ou gène.140 tests logiciels/historiques réussis
+valident le logiciel, pas une cellule viable ou une convergence numérique générale.
+
+## État antérieur et historique des lancements
 
 29 octobre2026 : socle de visualisation durable Qt/OpenGL livré, simulation en
 processus indépendant, filtres et suivi passifs, capture PNG. Le catalogue GUI2

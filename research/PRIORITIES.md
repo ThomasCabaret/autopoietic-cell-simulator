@@ -1,4 +1,30 @@
-# Priorités actuelles — MIX2 rendement cinétique, MIX1/P10 à analyser
+# Priorités actuelles — T9, concurrence des fragments après transfert LT1
+
+29 octobre2026, clôture lot22 : P10/MIX1/MIX2 achevés38/38, analysés avec
+contrôle des sources ; LT1 achevé6/6, sans erreur. Aucune de ces campagnes
+n'est encore active. Voir [bilan](BATCH_22.md) et [plan](BATCH_22_PLAN.md).
+
+Langevin0,1,m1,dt0,005 est un candidat expérimental, pas le nouveau défaut.
+Sous les réactions P10 inchangées, F10 exacts1/3/1 deviennent7/7/6, mais
+G10 exacts1/1/0 deviennent2/0/3. Les fragments G sont de véritables matrices
+concurrentes :82–86% des ligations du témoin,64–86% avec Langevin. Plus de
+transport ou de stock seuls ne résolvent donc pas le verrou génétique.
+
+1. Concevoir le prochain motif local T9 de finition/réutilisation ou de
+   limitation des matrices courtes, avec ablation et contrôle de séquestration
+   des outils complets. Pas d'accès à la longueur cible/séquence globale.
+2. Test borné depuis un seul G long : copies exactes libérées et réutilisables,
+   générations, consommation/parasites ; garder les vrais produits incomplets.
+   Ne pas lancer une nouvelle grille de doses ou de mouvements inertes.
+3. Avant adoption d'un mouvement : transfert membrane/catalyse et couplage
+   sous lois communes. Les démos conservent leur brownien de référence.
+
+Une nouvelle machine processive/polymerase peut être proposée, avec coût complet
+gène/expression/renouvellement et solutions plus simples, mais attend le feu
+vert utilisateur. Aucun nouvel outil n'est ajouté par défaut. Deux changements
+conceptuels sans transfert ni diagnostic nouveau imposent une révision du modèle.
+
+## Historique avant analyse des campagnes
 
 29 octobre 2026 : variantes de mouvement autorisées. MIX2 compare Brownien,
 Langevin inertiel et DPD sur coût réel par objectif, avec contrôles thermiques,

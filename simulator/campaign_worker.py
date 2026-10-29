@@ -30,6 +30,11 @@ def execute(folder,task_id):
                 sim=Simulation(task['scenario']);obs=make_observer(sim.config,manifest['record_trajectory']);sim.listeners.append(obs)
             track_performance=manifest.get('motion_report',False)
             performance=getattr(obs,'campaign_performance',dict(history=[dict(time=sim.time,step=sim.step_index,compute_seconds=0.)],compute_seconds=0.))
+            motion_audit=None
+            if sim.motion is not None and sim.config['model']=='copy':
+                from .motion import MotionAudit
+                motion_audit=MotionAudit(sim,getattr(obs,'campaign_motion_state',None))
+                sim.listeners.append(motion_audit)
             population=None
             if manifest.get('population_audit',False):
                 population=PopulationAudit(sim.config,getattr(obs,'campaign_population_state',None),manifest['population_interval'])
@@ -51,6 +56,7 @@ def execute(folder,task_id):
                 if genetic is not None:obs.campaign_genetic_state=genetic.state
                 if population is not None:obs.campaign_population_state=population.state
                 if track_performance:obs.campaign_performance=performance
+                if motion_audit is not None:obs.campaign_motion_state=motion_audit.state
                 checkpoint.save(path/'periodic.npz',sim,obs)
                 state['checkpoint']=(path/'periodic.npz').relative_to(folder).as_posix()
                 if population is not None:
@@ -64,6 +70,9 @@ def execute(folder,task_id):
                 if track_performance:
                     write(path/'performance.json',performance)
                     state['performance']=(path/'performance.json').relative_to(folder).as_posix()
+                if motion_audit is not None:
+                    write(path/'motion_audit.json',motion_audit.summary())
+                    state['motion_audit']=(path/'motion_audit.json').relative_to(folder).as_posix()
             while not sim.done:
                 if (folder/'STOP').exists():
                     save();state.update(status='paused',step=sim.step_index,simulated_time=sim.time,updated=time.time())
@@ -93,6 +102,7 @@ def execute(folder,task_id):
             if genetic is not None:obs.campaign_genetic_state=genetic.state
             if population is not None:obs.campaign_population_state=population.state
             if track_performance:obs.campaign_performance=performance
+            if motion_audit is not None:obs.campaign_motion_state=motion_audit.state
             evidence=save_result(path,sim,obs,time.monotonic()-start)
             save();write(path/'kinetics.json',probe.summary(sim.time,evidence['metrics']))
             if audit is not None:

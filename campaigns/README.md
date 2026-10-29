@@ -1,9 +1,31 @@
 # Campagnes différées
 
+**Clôture lot22 —29 octobre2026** : P10 terminé10/10, MIX1 terminé10/10,
+MIX2 terminé18/18, puis LT1 terminé6/6, sans erreur. Aucune de ces campagnes
+n'est active. [Bilan scientifique et provenance](../research/BATCH_22.md).
+Les sections de lancement ci-dessous conservent les protocoles historiques.
+
+**LT1, transfert réactif Langevin**, plan `transfer.json`, deux travailleurs,
+six essais G/F séparés, lois P10 inchangées :
+
+- `transfer_status.bat` : statut et population, dossier `outputs/transfer_campaigns`.
+- `analyze_transfer.bat` : rapport par la source d'analyse figée de la campagne.
+- `stop_transfer.bat` / `resume_transfer.bat` : pause et reprise des essais inachevés.
+- `start_transfer.bat` : nouvelle campagne, sans écraser les résultats achevés.
+
+Recette conservée : `research/campaign_recipes/LT1_20261029T172315655927Z`.
+Pour restaurer cette recette, passer `--output outputs/transfer_campaigns` au
+contrôleur générique : il met à jour le pointeur de ce répertoire. Sans cette
+option, le répertoire par défaut est `outputs/campaigns`.
+Langevin reste expérimental sur `copy` ; membrane et démos restent browniennes.
+
+## Protocoles antérieurs et commandes de reconstruction
+
 **MIX2 — variantes de mouvement**, deux travailleurs,18 essais bornés :
 `motion_status.bat`, `stop_motion.bat`, `resume_motion.bat`, `analyze_motion.bat`.
 Nouveau lancement : `start_motion.bat`. Pointeur séparé `outputs/motion_campaigns`.
-Langevin/DPD sont limités au banc non réactif ; aucune modification des démos.
+DPD est limité au banc non réactif ; Langevin a depuis été testé dans LT1.
+Aucune modification des démos.
 Rapport automatique de coût réel jusqu'aux seuils, contrôles de température
 et de pas. Voir [protocole](../research/BATCH_21_PLAN.md) et [pilotes](../research/BATCH_21.md).
 

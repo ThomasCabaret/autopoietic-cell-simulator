@@ -23,7 +23,7 @@ MEMBRANE_DEFAULTS = dict(units=16, initial="straight", short_length=.75, bonding
 
 def resolve(raw):
     raw = copy.deepcopy(raw)
-    allowed = {"schema_version","name","description","model","seed","duration","chemistry","engine","expected","branch"}
+    allowed = {"schema_version","name","description","model","seed","duration","chemistry","engine","expected","branch","mechanics"}
     if set(raw)-allowed:
         raise ValueError("Unknown scenario keys: " + str(sorted(set(raw)-allowed)))
     if raw.get("schema_version") != 1:
@@ -32,6 +32,14 @@ def resolve(raw):
     from .registry import MODELS
     if model not in MODELS:
         raise ValueError("Unknown chemical hook: " + str(model))
+    if 'mechanics' in raw:
+        settings=raw['mechanics']
+        if model!='copy' or not isinstance(settings,dict) or set(settings)-{'motion','mass','damping','dpd_cutoff'}:
+            raise ValueError('Experimental reactive mechanics currently requires the copy hook')
+        settings={**dict(motion='langevin',mass=1.,damping=.1,dpd_cutoff=1.),**settings}
+        if settings['motion']!='langevin' or any(type(settings[k]) not in (int,float) or not math.isfinite(settings[k]) or settings[k]<=0 for k in ('mass','damping','dpd_cutoff')):
+            raise ValueError('Only positive-mass Langevin reactive trials are enabled')
+        raw['mechanics']=settings
     defaults = copy.deepcopy(MODELS[model][1])
     chemistry = raw.get("chemistry", {})
     if set(chemistry) - set(defaults) - {"box", "fragment_size"}:

@@ -6,6 +6,25 @@ n'ont de sens qu'à l'échelle des assemblages. Concevoir une chimie, fournir
 
 ## Ce qui invaliderait une démonstration
 
+État lot22 : [bilan complet](BATCH_22.md). Le candidat LT1 ajoute Langevin
+au hook copy, sans lecture d'assemblage : vitesse et thermostat indépendant
+par bille, forces existantes entre liens explicites et voisins de portée finie.
+Le bruit thermique et le cycle externe de libération sont déclarés ; aucune
+adaptation à une concentration, longueur ou performance mesurée. Coût : deux
+coordonnées de vitesse par bille, masse/frottement et recalcul des forces après
+chaque réaction, y compris les changements non rapportés comme événements.
+Zéro nouvelle primitive chimique, état/port, gène ou protéine.
+
+L'audit de filiation reconstruit a posteriori les composantes et séquences
+avant chaque tick ; il lit les arêtes sources réellement enregistrées et vérifie
+le checkpoint final. Ces identités et l'audit thermique ne pilotent aucune
+force ou réaction. Les tests de passivité et reprise incluent vitesses et PRNG.
+La stricte fidélité des symboles est une loi choisie ; l'absence d'erreurs
+ponctuelles ne doit pas être présentée comme une correction émergente. Membrane
+et chimie couplée non transférées à ce mouvement ; les démos gardent leur défaut.
+
+### Critères généraux
+
 - Lire une séquence, une longueur cible ou un génome entier pour déclencher
   copie, fin de copie, expression, repliement ou fonction enzymatique.
 - Reconnaître une protéine/vésicule comme objet complet puis lui attribuer un

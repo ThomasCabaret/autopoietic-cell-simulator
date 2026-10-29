@@ -1,4 +1,4 @@
-"""Experimental inertial mechanics for the nonreactive mixing bench only.
+"""Experimental inertial mechanics, with cache invalidation owned by the engine.
 
 No component, molecule label or target is read. Pair OU impulses are reciprocal;
 all conservative interactions use the same finite-range forces as the old path.
@@ -27,10 +27,10 @@ def pair_ou(pos,vel,pairs,noise,dt,mass,gamma,temperature,cutoff,reverse=False):
 
 
 class InertialMotion:
-    def __init__(self,c,rng):
-        cfg=c.config;self.kind=cfg['motion'];self.mass=cfg['mass']
+    def __init__(self,c,rng,settings=None):
+        cfg=c.config if settings is None else settings;self.kind=cfg['motion'];self.mass=cfg['mass']
         self.gamma=cfg['damping'];self.cutoff=cfg['dpd_cutoff']
-        self.velocities=rng.normal(size=c.pos.shape)*np.sqrt(cfg['temperature']/self.mass)
+        self.velocities=rng.normal(size=c.pos.shape)*np.sqrt(c.config['temperature']/self.mass)
         self.force=None;self.steps=0;self.force_evaluations=0;self.pair_visits=0;self.max_displacement=0.
 
     def conservative(self,c,neighbors):
@@ -88,3 +88,21 @@ class InertialMotion:
         self.force=None if state['force'] is None else np.array(state['force'],dtype=float)
         self.steps=state['steps'];self.force_evaluations=state['force_evaluations']
         self.pair_visits=state['pair_visits'];self.max_displacement=state['max_displacement']
+
+
+class MotionAudit:
+    """Passive thermal/readout companion for reactive hooks; no engine feedback."""
+    def __init__(self,sim,state=None,interval=.5):
+        self.sim=sim;self.interval=interval
+        self.state=state if state is not None else dict(history=[],next_sample=0.)
+
+    def __call__(self,time,*args):
+        if time<self.state['next_sample']-1e-8 and not self.sim.done:return
+        row=dict(time=float(time),**self.sim.motion.diagnostics(self.sim.chemistry))
+        self.state['history'].append(row)
+        self.state['next_sample']=(int((time+1e-8)/self.interval)+1)*self.interval
+
+    def summary(self):
+        return dict(target_temperature=self.sim.chemistry.config['temperature'],
+            history=self.state['history'],interval=self.interval,
+            scope='All-bead kinetic temperature and bond/readout samples, observation only. Reaction potential changes and external release may heat the bath; no global rescaling.')

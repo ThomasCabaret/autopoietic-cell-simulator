@@ -287,11 +287,16 @@
       "id": "T9",
       "parent": "T7",
       "hypothesis": "Local caps or reversible turnover can reduce persistent short parasitic products and support sustained full generations",
-      "status": "proposed_not_tested",
+      "status": "priority_structural_fragment_competition_diagnosed_mechanism_pending",
       "priority": "P1",
       "test": "Ablate caps and local bond turnover separately; compare full descendant generations and fragment-size distributions at matched duration and pools",
       "counterexample": "Turnover destroys full templates as quickly as parasites; caps merely shorten the target",
-      "missing_proof": "T6 and T7 provide ingredients, not evidence for sustained generational growth"
+      "missing_proof": "No local completion/recycling mechanism yet restores reliable long-G amplification. Avoid sequestration of complete tools; additional protein requires user approval.",
+      "related": [
+        "P10",
+        "LT1"
+      ],
+      "results": "research/BATCH_22.md"
     },
     {
       "id": "V8",
@@ -805,7 +810,11 @@
     {
       "id": "N1",
       "parent": "J3",
-      "related": ["N0", "GKA", "T9"],
+      "related": [
+        "N0",
+        "GKA",
+        "T9"
+      ],
       "status": "six_complete_no_prospective_median_alert_rare_events_not_converged",
       "hypothesis": "Useful common-bath transfer and membrane behavior survive joint mechanical and reaction timestep refinement before modifying fragment completion",
       "test": "J3 K16 bath seeds0/1/2 to1200 atdt0.001/0.0005, reuse three originaldt0.002 controls explicitly; observations0.5, reactions5dt, source and initial-state identity verified",
@@ -821,7 +830,10 @@
     {
       "id": "N2",
       "parent": "N1",
-      "related": ["T9", "GKA"],
+      "related": [
+        "T9",
+        "GKA"
+      ],
       "status": "conditional_control_not_triggered_no_finest_median_alert",
       "hypothesis": "Fixed fine mechanical step with coarser reaction ticks distinguishes mechanical from reactive discretization effects before changing completion chemistry",
       "test": "After complete N1 only: any prospective median alert to factor4 triggers all six N2 tasks; dt0.0005,every10/20,seeds0/1/2 to1200, reusing matched-interval N1/J3 controls",
@@ -836,7 +848,10 @@
     {
       "id": "GUI1",
       "parent": "W0",
-      "related": ["J3", "N1"],
+      "related": [
+        "J3",
+        "N1"
+      ],
       "status": "durable_qt_opengl_foundation_delivered_interface_not_complete",
       "hypothesis": "A process-isolated instanced GPU client makes current and larger baths inspectable without altering chemistry and can evolve toward presentation/video export",
       "test": "Native Qt interaction/capture checks, exact worker/headless positions and RNG, passive per-reaction event tap, synthetic1920x1080 rendering to100000 particles and99999 bonds",
@@ -849,7 +864,10 @@
     {
       "id": "GUI2",
       "parent": "GUI1",
-      "related": ["J3", "N1"],
+      "related": [
+        "J3",
+        "N1"
+      ],
       "status": "curated_live_demo_catalog_available_advanced_video_deferred",
       "hypothesis": "Direct access to the most integrated studied bath plus three scoped subsystems lets the user inspect current mechanisms and gaps before further chemistry work",
       "test": "Six presets compared to preserved research inputs, declared initial materials checked; real Qt actions, initial pause, short J3 playback and exact restart; passive primary counters checked",
@@ -861,37 +879,56 @@
     {
       "id": "P10",
       "parent": "T7",
-      "related": ["T9", "GUI2"],
-      "status": "ten_symbol_population_campaign_running_pilots_complete",
+      "related": [
+        "T9",
+        "GUI2"
+      ],
+      "status": "ten_complete_short_G_templates_dominate_no_reliable_amplification",
       "hypothesis": "Strict symbol recognition does not ensure complete-chain amplification; abundant monomers may accumulate in partial or off-target products",
       "test": "One G0010110101; G-only copy or F-only expression, 400 monomers, seeds0/1/2 at3200; selected doubled-reserve/area and dilute seed0 controls. Full passive sequence census every10, live stock and kinetic exposure, fixed16 cycles",
       "cost": "Zero new chemical primitive, tool or law. Passive population observer and frozen campaign reports, two workers, no dense trajectories",
       "counterexample": "Only exact-ever counters are reported while failures are omitted; a finite reservoir plateau is called intrinsic capacity; survival of irreversible initial edges is called active repair; separate G/F baths called integrated",
-      "missing_proof": "Long-run cohort, sequence/length distributions, multi-generation amplification and scope of crowding/resource effects remain pending. No point-mutation channel exists",
-      "evidence": "research/BATCH_19.md"
+      "missing_proof": "No robust multi-generation G10 amplification. Strict recognition forbids point errors by construction; no functional F10 or integrated-bath validation.",
+      "evidence": "research/BATCH_19.md",
+      "campaign_recipe": "research/campaign_recipes/P10_20261029T120049792477Z/manifest.json",
+      "results": "research/BATCH_22.md",
+      "conclusion": "G400 exact1/1/0, fragments138/162/158; F400 exact1/3/1. Actual event replay:82-86% G400 ligations use fragment matrices. Doubled G pool seed0 gives1 exact/355 fragments. No observed off-target sequences; irreversible original backbone persists, not active repair."
     },
     {
       "id": "MIX1",
       "parent": "P10",
-      "related": ["J3", "N1"],
-      "status": "mechanics_only_mixing_campaign_running_pilots_complete",
+      "related": [
+        "J3",
+        "N1"
+      ],
+      "status": "ten_complete_global_filling_neighbors_and_sampling_distinguished",
       "hypothesis": "Slow filling of a large space may coexist with much faster local neighbor turnover; beadwise Brownian mobility, steric forces and contact sampling must be separated before changing motion",
       "test": "200 fixed molecules in left half of24x18 soft-wall box. Three seeds each atT0.08/T0.6; ideal dimer/monomer and warm finer-contact controls. Shared engine, no reactions, occupancy/MI/neighbors/encounters, one worker while P10 stays frozen",
       "cost": "No chemical primitive, enzyme, flow or integration change. Mechanics-only diagnostic hook and passive bounded statistics; ten trajectories, no dense position recording",
       "counterexample": "Empty half-box is called no encounters; geometric proximity is called a reaction; molecular center D is replaced by single-bead D; finite occupancy/MI noise or contact recrossings are ignored",
-      "missing_proof": "Full mixing cohort and cadence comparison pending. Actual functional polymers, chemical trapping, membrane and whole-cell transport are outside the inert dimer model",
-      "evidence": "research/BATCH_20.md"
+      "missing_proof": "Inert dimers only; actual chemical trapping, polymers, membrane and whole-cell throughput outside this diagnostic.",
+      "evidence": "research/BATCH_20.md",
+      "campaign_recipe": "research/campaign_recipes/MIX1_20261029T123103222882Z/manifest.json",
+      "results": "research/BATCH_22.md",
+      "conclusion": "Cold neighbors360/420/420 versus occupation3970/4430/4510. Ideal dimer D0.00990 vs0.01 expected. Finer warm contact sampling changes episodes50%, distinct partners3.1%, exposure0.08%; not independent reaction counts."
     },
     {
       "id": "MIX2",
       "parent": "MIX1",
-      "status": "inertial_variant_campaign_running_seven_pilots_complete",
+      "status": "eighteen_complete_langevin_selected_for_reactive_transfer_not_default",
       "hypothesis": "Persistent local velocities and pairwise momentum-conserving thermostatting can improve mixing per actual compute second; extra neighbor work may cancel physical gains",
       "test": "Matched collision-free200-dimer initial states; Brownian, BAOAB Langevin gamma4/0.1 and pair-OU DPD gamma0.5/2. Frozen18-task cohort, three cold seeds, warm and dt controls, clocks per250 steps including observers, thermal and joint-mixing goals with censoring",
       "cost": "Two velocity coordinates per bead, mass/damping; DPD adds radius and two O(local-pairs) thermostat sweeps. Conservative force cached only in fixed-bond nonreactive bench. No chemical primitive or cell engine adoption",
       "counterexample": "Only simulated mixing time is ranked; initial compression heats inertial candidates; DPD density front is called mixing; censored goals omitted; fixed-bond force cache reused for a changing chemistry",
-      "missing_proof": "Full cohort and dt/thermal agreement pending. No reaction, folding, membrane or whole-cell throughput transfer tested",
-      "evidence": "research/BATCH_21.md"
+      "missing_proof": "Fast cold joint mixing censored at1600 versus Brownian12000; no full cold ranking. Warm/dt controls single seed. Membrane and common-bath transfer pending; LT1 copy transfer now tested separately.",
+      "evidence": "research/BATCH_21.md",
+      "campaign_recipe": "research/campaign_recipes/MIX2_20261029T132411069082Z/manifest.json",
+      "results": "research/BATCH_22.md",
+      "conclusion": "Langevin0.1 cold median neighbor compute2.03s vs18.35 Brownian; DPD faster occupancy but more costly on several goals. Warm joint106.08/31.08/63.21s Brownian/Langevin/DPD, one seed. Select simple Langevin without claiming universal optimum.",
+      "related": [
+        "LT1",
+        "P10"
+      ]
     },
     {
       "id": "ENV0",
@@ -907,6 +944,27 @@
       "counterexample": "Global concentration feedback replenishes the cell, genes are reintroduced, capacity exhaustion is mislabeled homeostasis, or source flux is called local concentration",
       "missing_proof": "Dynamic source/sink and all open-bath transport/maintenance tests remain open",
       "evidence": "research/OPEN_BOUNDARY.md"
+    },
+    {
+      "id": "LT1",
+      "parent": "MIX2",
+      "related": [
+        "P10",
+        "T9",
+        "J3"
+      ],
+      "status": "six_complete_reactive_transfer_F_improved_G_still_fragile",
+      "hypothesis": "Selected inertial motion improves useful complete products under unchanged P10 reactions rather than only accelerating fragment production",
+      "test": "P10 G-only/F-only400 pools, seeds0/1/2,horizon3200,T0.6,dt0.005,release200/15; only root mechanics Langevin gamma0.1,m1. Two pilots first; reuse six frozen P10 references; passive populations, temperature and pre-tick ligation ancestry.",
+      "cost": "No chemical type, state, port, law, gene or tool. Two velocity coordinates per bead, mass/damping, reactive force-cache refresh, passive thermal audit. DPD not enabled for copy.",
+      "counterexample": "More reactions consume stock without released exact descendants, force cache ignores unreported pairing changes, movement heats bath or chemical gains are claimed from inert-gas metrics alone",
+      "missing_proof": "Reliable G amplification, functional F10, membrane/catalysis transfer and coupled cell under inertial movement. Strict symbol recognition is imposed; no proofreading or point-mutation estimate.",
+      "evidence": "research/BATCH_22_PLAN.md",
+      "results": "research/BATCH_22.md",
+      "campaign_recipe": "research/campaign_recipes/LT1_20261029T172315655927Z/manifest.json",
+      "pilot_recipe": "research/campaign_recipes/LT1pilot_20261029T172036396166Z/manifest.json",
+      "conclusion": "G exact1/1/0 ->2/0/3; F exact1/3/1 ->7/7/6. Fragment templates still64-86% of G ligations. All6 complete; no new off-target sequences. Default Brownian and demo physics unchanged.",
+      "health_gate": "Next local T9 mechanism with parasite and sequestration controls; after two conceptual changes without transfer/new diagnosis revisit representation. New molecular tool requires costed proposal and user approval."
     }
   ]
 }
