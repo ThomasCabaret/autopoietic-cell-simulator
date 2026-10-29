@@ -8,6 +8,16 @@ elles ne conditionnent plus l'examen de ces démos. Voir ../docs/DEMOS.md.
 Ce progrès d'ingénierie ne démontre aucun nouveau mécanisme, maintien ou
 renouvellement cellulaire. Les preuves et limites chimiques ci-dessous restent.
 
+## Variantes MIX2 — lot21 en cours
+
+Vitesses locales, Langevin et DPD sont implémentés dans le seul banc non réactif.
+Sept pilotes stables montrent qu'un renouvellement plus rapide en temps simulé
+peut perdre en coût réel : DPD passe le seuil voisins avant Langevin0,1 mais
+coûte plus de secondes de calcul à dt identique. Grille longue18 essais lancée,
+sans adoption ni transfert à la cellule. Les mouvements collectifs peuvent
+remplir un espace avant de mélanger les identités : suivre aussi le critère
+conjoint et les partenaires uniques. Maturité chimique inchangée.
+
 ## Diagnostic MIX1 en cours — lot20
 
 Un modèle sans réactions mesure la mécanique du moteur, avec molécules fixes

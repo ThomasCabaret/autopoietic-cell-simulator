@@ -934,3 +934,25 @@ historiques passent ; empreintes GUI actualisées, mêmes signatures physiques.
 Arbre, priorités, maturité et santé actualisés ; aucune nouvelle loi de mouvement.
 Premier froid terminé à12000 en370,25s,48,5% à droite, rétention brute0,031 et
 99,84 partenaires uniques au rayon0,3. Cohorte encore incomplète, voir BATCH_20.md.
+
+### 29 octobre 2026 — lot21 MIX2, variantes cinétiques à coût réel mesuré
+
+Utilisateur : tester l'inertie et DPD en comptant leur complexité et temps CPU.
+Vitesses ajoutées uniquement au modèle mixing, force conservative mise en cache
+pour ses liens fixes ; ancien chemin brownien préservé. BAOAB et deux demi-passes
+OU de paires DPD compilées. Checkpoints avec vitesses/forces/PRNG, tests de
+passivité et de conservation locale. Aucun outil protéique ajouté.
+
+Sept pilotes à100 terminés, température et liens stables ; DPD atteint plus tôt
+le seuil voisins mais coûte plus de calcul que Langevin0,1 à dt0,005. Affichage
+CP1252 du rapport pilote en erreur après calculs, corrigé pour la campagne longue,
+source et logs conservés. Une occupation DPD transitoire motive un critère
+conjoint tenu, fixé avant les longs essais. Benchmark série distingue moteur
+seul et surcoût des diagnostics. Recettes et données dans BATCH_21.md.
+
+MIX2 lancé,18 essais figés, deux travailleurs, sans modifier MIX1/P10. Priorités,
+arbre, santé et maturité actualisés ; aucune adoption dans les démos chimiques.
+Première graine longue : seuil voisins17,6s de calcul brownien contre2,0s
+Langevin0,1 et4,9s DPD0,5 ; critères conjoints encore censurés, pas de gain
+cellulaire déduit.127 tests logiciels et7 historiques passent. P10/MIX1 ont
+depuis terminé10/10 chacun ; résultats conservés, bilan complet à lire.

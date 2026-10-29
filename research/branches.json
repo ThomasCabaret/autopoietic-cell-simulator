@@ -883,6 +883,17 @@
       "evidence": "research/BATCH_20.md"
     },
     {
+      "id": "MIX2",
+      "parent": "MIX1",
+      "status": "inertial_variant_campaign_running_seven_pilots_complete",
+      "hypothesis": "Persistent local velocities and pairwise momentum-conserving thermostatting can improve mixing per actual compute second; extra neighbor work may cancel physical gains",
+      "test": "Matched collision-free200-dimer initial states; Brownian, BAOAB Langevin gamma4/0.1 and pair-OU DPD gamma0.5/2. Frozen18-task cohort, three cold seeds, warm and dt controls, clocks per250 steps including observers, thermal and joint-mixing goals with censoring",
+      "cost": "Two velocity coordinates per bead, mass/damping; DPD adds radius and two O(local-pairs) thermostat sweeps. Conservative force cached only in fixed-bond nonreactive bench. No chemical primitive or cell engine adoption",
+      "counterexample": "Only simulated mixing time is ranked; initial compression heats inertial candidates; DPD density front is called mixing; censored goals omitted; fixed-bond force cache reused for a changing chemistry",
+      "missing_proof": "Full cohort and dt/thermal agreement pending. No reaction, folding, membrane or whole-cell throughput transfer tested",
+      "evidence": "research/BATCH_21.md"
+    },
+    {
       "id": "ENV0",
       "parent": "H0",
       "related": [

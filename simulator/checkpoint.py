@@ -46,6 +46,7 @@ def save(path, simulation, observer=None, source_manifest=None):
               'prepared':simulation.prepared,'rng':simulation.rng.bit_generator.state,
               'chemistry':c.export(),'source_sha256':source_manifest if source_manifest is not None else source_hashes(),
               'observer':pack(observer.__dict__) if observer is not None else None}
+    if simulation.motion is not None:metadata['motion']=simulation.motion.export()
     path=Path(path)
     path.parent.mkdir(parents=True,exist_ok=True)
     temporary=path.with_name(path.name+'.tmp')
@@ -70,6 +71,9 @@ def load(path, observer_factory=None):
         sim.chemistry.springs=data['springs'].copy()
         sim.chemistry.angles=data['angles'].copy()
         sim.chemistry.restore(metadata['chemistry'])
+        if metadata.get('motion') is not None:
+            if sim.motion is None:raise ValueError('Checkpoint has velocities but scenario has no inertial motion')
+            sim.motion.restore(metadata['motion'])
     observer=None
     if observer_factory is not None:
         observer=observer_factory(sim.config)

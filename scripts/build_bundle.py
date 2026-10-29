@@ -25,6 +25,10 @@ def main():
         'experiments/prepare_mixing_campaign.py','scripts/mixing_report.py','scripts/mixing.ps1',
         'campaigns/mixing.json','start_mixing.bat','mixing_status.bat','stop_mixing.bat',
         'resume_mixing.bat','analyze_mixing.bat'))
+    files.update(ROOT/p for p in ('research/BATCH_21_PLAN.md','research/BATCH_21.md',
+        'experiments/prepare_motion_campaign.py','experiments/benchmark_motion_cost.py',
+        'scripts/motion_report.py','campaigns/motion.json','start_motion.bat',
+        'motion_status.bat','stop_motion.bat','resume_motion.bat','analyze_motion.bat'))
     files.update(ROOT/p for p in ('README.md','SIMULATOR_ARCHITECTURE.md','requirements.txt',
         'CONTRIBUTING.md','GIT_SETUP.md','THIRD_PARTY_NOTICES.md',
         '.gitignore','.gitattributes','.editorconfig',

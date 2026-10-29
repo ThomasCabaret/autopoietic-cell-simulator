@@ -47,6 +47,15 @@ dans les forces/réactions. Permuter les IDs ne doit pas changer une force physi
 
 ## Obligations du lot9
 
+MIX2 (lot21) : vitesses et masses locales ; forces conservatives existantes,
+Langevin par bille, OU DPD sur deux billes proches seulement. Le thermostat de
+paire lit position/vitesse relative et applique des impulsions opposées. Ni
+agrégat, centre de masse, séquence ou but de mélange dans le mouvement. Pas de
+soustraction globale de vitesse ou rescaling de température. L'observation
+globale et les horloges de benchmark ne changent aucune transition. La force
+mise en cache est limitée aux liens fixes du modèle mixing ; pas de transfert
+automatique à une chimie réactive. Coût physique/numérique explicite dans BATCH_21_PLAN.md.
+
 MIX1 (lot20) ajoute un hook de diagnostic mécanique sans réactions, utilisant
 les mêmes noyaux, thermostat et parois. Les liaisons internes fixes exercent
 leurs forces par paires ; aucune identité moléculaire globale ne décide un

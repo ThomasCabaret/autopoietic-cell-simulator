@@ -6,6 +6,27 @@ est une cellule construite qui maintient et refabrique ses composants depuis
 une nourriture simple, avec énergie externe déclarée. Apparition spontanée,
 division et évolution ouverte ne sont pas des conditions ajoutées à cette cible.
 
+## Compromis mouvement/calcul MIX2 — 29 octobre 2026
+
+L'utilisateur autorise les variantes inertielles à coût borné. Deux familles
+locales et un témoin brownien apparié sont comparés ; aucune nouvelle fonction
+biologique ni règle propre à une molécule. La géométrie initiale sans compression
+évite de confondre échauffement préparé et meilleur transport. L'ancien moteur
+brownien reste le défaut et les sources des campagnes antérieures sont figées.
+
+Pilotes : gain de renouvellement local plausible ; DPD plus rapide physiquement
+mais souvent plus coûteux que Langevin pour ce seuil. Ne pas choisir avant les
+objectifs conjoints, la cadence et les coûts. La grille de18 essais, deux
+travailleurs, borne l'exploration automatique ; les paramètres physiques et
+horizons sont déclarés. Réévaluer après cette cohorte, sans ajouter une série
+indéfinie de paramètres. Une classe n'atteignant aucun meilleur compromis doit
+être abandonnée ou revisitée conceptuellement, pas sauvée par une métrique unique.
+
+Le risque aval demeure : des contacts plus courts peuvent dégrader les réactions,
+une inertie excessive la membrane, et le thermostat les fonctions de repliement.
+Un gain mécanique ne prouve pas un gain cellulaire. Aucun blocage irréversible
+de principe établi et aucune garantie d'optimum ou de facteur10 donnée.
+
 ## Transport et mélange MIX1 — 29 octobre 2026
 
 L'observation visuelle utilisateur motive un diagnostic de transport sans

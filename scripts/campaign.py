@@ -35,6 +35,8 @@ def prepare(plan_path,parent):
         for task in tasks:PopulationAudit(task['scenario'],interval=population_interval)
     if plan.get('mixing_report',False) and any(t['scenario']['model']!='mixing' for t in tasks):
         raise ValueError('Mixing report requires mechanics-only mixing scenarios')
+    if plan.get('motion_report',False) and any(t['scenario']['model']!='mixing' for t in tasks):
+        raise ValueError('Motion comparison requires the inert mixing bench')
     folder=parent/('campaign_'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ'));folder.mkdir(exist_ok=False)
     runtime=folder/'runtime';runtime.mkdir();source=ROOT/'simulator'
     (runtime/'simulator').mkdir()
@@ -44,6 +46,8 @@ def prepare(plan_path,parent):
         shutil.copyfile(ROOT/'scripts/population_report.py',runtime/'population_report.py')
     if plan.get('mixing_report',False):
         shutil.copyfile(ROOT/'scripts/mixing_report.py',runtime/'mixing_report.py')
+    if plan.get('motion_report',False):
+        shutil.copyfile(ROOT/'scripts/motion_report.py',runtime/'motion_report.py')
     hashes={p.relative_to(runtime).as_posix():digest(p) for p in runtime.rglob('*.py')}
     manifest=dict(version=1,name=plan.get('name','campaign'),created=time.time(),tasks=tasks,
         workers=workers,checkpoint_seconds=interval,kinetic_window=window,
@@ -51,6 +55,7 @@ def prepare(plan_path,parent):
         genetic_audit=bool(plan.get('genetic_audit',False)),
         population_audit=bool(plan.get('population_audit',False)),population_interval=population_interval,
         mixing_report=bool(plan.get('mixing_report',False)),
+        motion_report=bool(plan.get('motion_report',False)),
         record_trajectory=bool(plan.get('record_trajectory',False)),source_sha256=hashes,
         comparison_policy=plan.get('comparison_policy','Separate candidates; no common chemistry inferred'),
         plan_sha256=digest(plan_path))
@@ -141,6 +146,8 @@ def run(folder,retry_failed=False):
             subprocess.run([sys.executable,str(folder/'runtime/population_report.py'),str(folder)],check=True)
         if manifest.get('mixing_report',False):
             subprocess.run([sys.executable,str(folder/'runtime/mixing_report.py'),str(folder)],check=True)
+        if manifest.get('motion_report',False):
+            subprocess.run([sys.executable,str(folder/'runtime/motion_report.py'),str(folder)],check=True)
         return 1 if failures or final['counts']['failed'] else 0
 
 

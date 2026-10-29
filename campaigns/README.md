@@ -1,5 +1,12 @@
 # Campagnes différées
 
+**MIX2 — variantes de mouvement**, deux travailleurs,18 essais bornés :
+`motion_status.bat`, `stop_motion.bat`, `resume_motion.bat`, `analyze_motion.bat`.
+Nouveau lancement : `start_motion.bat`. Pointeur séparé `outputs/motion_campaigns`.
+Langevin/DPD sont limités au banc non réactif ; aucune modification des démos.
+Rapport automatique de coût réel jusqu'aux seuils, contrôles de température
+et de pas. Voir [protocole](../research/BATCH_21_PLAN.md) et [pilotes](../research/BATCH_21.md).
+
 **MIX1 en parallèle de P10** :200 molécules dans une demi-boîte, mécanique seule,
 sans réactions. Un travailleur, dix essais et contrôles, pointeur séparé sous
 `outputs/mixing_campaigns`. `mixing_status.bat`, `stop_mixing.bat`,

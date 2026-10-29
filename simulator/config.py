@@ -95,6 +95,11 @@ def resolve(raw):
         if any(defaults[k]<=0 for k in ('food_ligand_width','food_binding_radius','food_reaction_radius')) or any(defaults[k]<0 for k in ('functional_bend_strength','food_ligand_energy','food_binding_rate','food_unbinding_rate','food_reaction_rate')):
             raise ValueError('invalid functional substrate parameters')
     elif model=='mixing':
+        if defaults['motion'] not in ('brownian','langevin','dpd'):
+            raise ValueError('Unknown mixing motion variant')
+        if defaults['mass']<=0 or defaults['damping']<0 or defaults['dpd_cutoff']<=0:
+            raise ValueError('Invalid mass, damping or DPD cutoff')
+        if type(defaults['initial_clearance']) is not bool:raise ValueError('Invalid initial clearance flag')
         if type(defaults['molecules']) is not int or defaults['molecules']<7:
             raise ValueError('Mixing requires at least seven molecules')
         if defaults['beads_per_molecule'] not in (1,2) or type(defaults['steric']) is not bool or type(defaults['initial_half']) is not bool:

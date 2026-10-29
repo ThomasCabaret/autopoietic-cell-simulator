@@ -1,4 +1,14 @@
-# Priorités actuelles — MIX1 transport, P10 fidélité
+# Priorités actuelles — MIX2 rendement cinétique, MIX1/P10 à analyser
+
+29 octobre 2026 : variantes de mouvement autorisées. MIX2 compare Brownien,
+Langevin inertiel et DPD sur coût réel par objectif, avec contrôles thermiques,
+pas numérique et référence brownienne appariée. Voir BATCH_21_PLAN.md/BATCH_21.md.
+Campagne bornée18 essais, deux travailleurs, pointeur séparé motion_campaigns.
+Ne pas adopter un modèle sur un seul seuil local ni oublier le surcoût des
+paires. Le choix scientifique attend la cohorte, puis les réactions/membrane
+doivent être revalidées avant transfert. Les démos gardent leur chemin brownien.
+
+## Priorités précédentes — MIX1 et P10
 
 29 octobre 2026 : demande utilisateur de caractérisation de la dispersion et
 du mélange sans chimie. MIX1 tourne séparément avec un travailleur,200 molécules

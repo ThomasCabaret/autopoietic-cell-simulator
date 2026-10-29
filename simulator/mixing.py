@@ -4,7 +4,8 @@ from scipy.spatial import cKDTree
 
 DEFAULTS = dict(molecules=200, beads_per_molecule=2, steric=True,
     temperature=.08, box=[24.,18.], initial_half=True,
-    record_interval=10., contact_interval=.05)
+    record_interval=10., contact_interval=.05,
+    motion='brownian',mass=1.,damping=4.,dpd_cutoff=1.,initial_clearance=False)
 
 
 class MixingChemistry:
@@ -32,11 +33,31 @@ class MixingChemistry:
         else:
             self.pos=centers.copy();self.kinds=np.zeros(self.n,dtype=np.int64)
             self.contact=np.array([[.70]])
+        if config['initial_clearance']:
+            # Prepared collision-free geometry: same draw for all motion variants.
+            heads=[];tails=[];high=self.box-[.5,.5]
+            if config['initial_half']:high[0]=self.box[0]/2-.5
+            for _ in range(self.n):
+                for attempt in range(100000):
+                    center=rng.uniform([.5,.5],high)
+                    theta=rng.uniform(0,2*np.pi);u=.225*np.array([np.cos(theta),np.sin(theta)])
+                    h=center-u if self.size==2 else center
+                    t=center+u if self.size==2 else center
+                    if heads:
+                        H=np.asarray(heads);R=np.asarray(tails)
+                        if np.linalg.norm(H-h,axis=1).min()<.7:continue
+                        if self.size==2 and (np.linalg.norm(R-h,axis=1).min()<.28 or np.linalg.norm(H-t,axis=1).min()<.28):continue
+                    break
+                else:raise ValueError('Cannot prepare a collision-free half-box')
+                heads.append(h);tails.append(t)
+            self.pos=np.vstack([heads,tails]) if self.size==2 else np.array(heads)
         if not config['steric']:self.contact[:]=0.
 
     def react(self,time,dt,neighbors):return []
     def extra_forces(self,neighbors):return np.zeros_like(self.pos)
-    def observe(self,callback,time,events):callback(time,self.pos)
+    def observe(self,callback,time,events):
+        state=getattr(self,'motion_state',None)
+        callback(time,self.pos,None if state is None else state.diagnostics(self))
     def bonds(self):return dict(scaffold=[(i,self.n+i) for i in range(self.n)] if self.size==2 else [])
     def colors(self):return ['#37b9ca']*self.n+(['#e9a65c']*self.n if self.size==2 else [])
     def export(self):return {}
@@ -86,7 +107,7 @@ class MixingObserver:
         xy=np.clip((points/self.box*[4,2]).astype(int),[0,0],[3,1])
         return 2*xy[:,0]+xy[:,1]
 
-    def __call__(self,time,pos):
+    def __call__(self,time,pos,motion_stats=None):
         s=self.state
         if s['last_time'] is not None and time-s['last_time']<self.config['contact_interval']-1e-8:return
         centers=(pos[:self.n]+pos[self.n:])/2 if self.size==2 else pos
@@ -148,22 +169,31 @@ class MixingObserver:
             permutation_mi_sd=float(null.std()),corrected_normalized_mi=max(0.,mi-float(null.mean()))/entropy if entropy else 0.,
             geometric_clusters=geometric_clusters(centers),contacts=contacts,
             outside_soft_box_fraction=float(np.mean(np.any((centers<0)|(centers>self.box),axis=1))))
+        if motion_stats is not None:row['motion']=motion_stats
         s['history'].append(row);s['next_record']=(int((time+1e-8)/self.config['record_interval'])+1)*self.config['record_interval']
 
     def summary(self):
-        D=.25*self.config['temperature']/self.size
+        motion=self.config.get('motion','brownian')
+        D=(.25*self.config['temperature']/self.size if motion=='brownian' else
+           self.config['temperature']/(self.config['mass']*self.config['damping']*self.size)
+           if motion=='langevin' and self.config['damping']>0 else None)
         history=self.state['history']
         thresholds=dict(occupation=lambda r:abs(r['right_fraction']-.5)<=.1 and r['spatial_tv']<=self.uniform_tv_reference['p95'],
             neighbor_replacement=lambda r:r['neighbor_retention_excess']<=.1,
-            positional_memory=lambda r:r['corrected_normalized_mi']<=.1)
+            positional_memory=lambda r:r['corrected_normalized_mi']<=.1,
+            half_partners=lambda r:r['contacts']['0.3']['mean_distinct_partners']>=(self.n-1)/2)
         first={}
         for name,condition in thresholds.items():
             hit=next((r['time'] for r in history if condition(r)),None)
             first[name]=dict(time=hit if hit is not None else self.state['last_time'],event=hit is not None)
+        hit=next((history[i]['time'] for i in range(4,len(history))
+            if all(all(condition(r) for condition in thresholds.values()) for r in history[i-4:i+1])),None)
+        first['joint_mixing']=dict(time=hit if hit is not None else self.state['last_time'],event=hit is not None)
         return dict(history=history,first_passages=first,uniform_tv_reference=self.uniform_tv_reference,
+            motion=motion,
             isolated_center_D_prediction=D,
             reflecting_first_mode_tau_prediction=self.box[0]**2/(np.pi**2*D) if D else None,
             molecule_count=self.n,bead_count=self.n*self.size,
             contact_sampling_interval=self.config['contact_interval'],
-            scope='No chemical reactions, affinities or transient bonds. Fixed monomers/dimers under the existing Brownian integrator and soft walls. Geometric encounters do not imply reactive eligibility.',
-            limitations='Contacts sampled, sub-sample encounters may be missed; episode durations are discretized and active episodes right-censored. Grid/MI finite-sample references are descriptive, not independent significance tests. First threshold passages are not a proof of sustained equilibrium. Ideal reflecting theory approximates soft walls and ignores steric forces.')
+            scope='No chemical reactions, affinities or transient bonds. Fixed molecules and soft walls; motion variant explicitly declared. Geometric encounters do not imply reactive eligibility.',
+            limitations='Contacts sampled; sub-sample encounters may be missed. Episodes discretized, active ones right-censored. Grid/MI finite-sample references descriptive. First thresholds do not prove sustained equilibrium. Reflecting theory ignores cores and soft walls. Short-lag increments are NOT the long-time diffusion coefficient for inertial motion.')

@@ -1,0 +1,641 @@
+{
+  "name": "MIX2 mixing per real compute second",
+  "workers": 2,
+  "checkpoint_seconds": 30.0,
+  "kinetic_window": 50.0,
+  "record_trajectory": false,
+  "motion_report": true,
+  "comparison_policy": "Frozen local mechanics variants; not chemistry integration. Same collision-free initial positions for each seed; same Maxwell initial velocities between inertial cases. Original MIX1 retained, matched Brownian baselines rerun. Cold baseline/matched-drag control12000, fast branches1600; no-event times censored, unequal horizons explicit. Contacts0.05 and statistics2.5 for all. Wall-clock brackets from actual250-step chunks including observers; also exclude first2.5 simulated time as declared warmup. Two workers; machine contention remains a limitation.",
+  "tasks": [
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "mixing",
+        "branch": "MIX2",
+        "seed": 0,
+        "name": "MIX2_brownian_g4_dt0.005_T0.08",
+        "duration": 12000.0,
+        "engine": {
+          "dt": 0.005,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 10,
+          "reaction_every": 5
+        },
+        "chemistry": {
+          "molecules": 200,
+          "beads_per_molecule": 2,
+          "steric": true,
+          "temperature": 0.08,
+          "box": [
+            24.0,
+            18.0
+          ],
+          "initial_half": true,
+          "record_interval": 2.5,
+          "contact_interval": 0.05,
+          "motion": "brownian",
+          "damping": 4.0,
+          "mass": 1.0,
+          "dpd_cutoff": 1.0,
+          "initial_clearance": true
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "mixing",
+        "branch": "MIX2",
+        "seed": 0,
+        "name": "MIX2_langevin_g0.1_dt0.005_T0.08",
+        "duration": 1600.0,
+        "engine": {
+          "dt": 0.005,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 10,
+          "reaction_every": 5
+        },
+        "chemistry": {
+          "molecules": 200,
+          "beads_per_molecule": 2,
+          "steric": true,
+          "temperature": 0.08,
+          "box": [
+            24.0,
+            18.0
+          ],
+          "initial_half": true,
+          "record_interval": 2.5,
+          "contact_interval": 0.05,
+          "motion": "langevin",
+          "damping": 0.1,
+          "mass": 1.0,
+          "dpd_cutoff": 1.0,
+          "initial_clearance": true
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "mixing",
+        "branch": "MIX2",
+        "seed": 0,
+        "name": "MIX2_dpd_g0.5_dt0.005_T0.08",
+        "duration": 1600.0,
+        "engine": {
+          "dt": 0.005,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 10,
+          "reaction_every": 5
+        },
+        "chemistry": {
+          "molecules": 200,
+          "beads_per_molecule": 2,
+          "steric": true,
+          "temperature": 0.08,
+          "box": [
+            24.0,
+            18.0
+          ],
+          "initial_half": true,
+          "record_interval": 2.5,
+          "contact_interval": 0.05,
+          "motion": "dpd",
+          "damping": 0.5,
+          "mass": 1.0,
+          "dpd_cutoff": 1.0,
+          "initial_clearance": true
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "mixing",
+        "branch": "MIX2",
+        "seed": 1,
+        "name": "MIX2_brownian_g4_dt0.005_T0.08",
+        "duration": 12000.0,
+        "engine": {
+          "dt": 0.005,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 10,
+          "reaction_every": 5
+        },
+        "chemistry": {
+          "molecules": 200,
+          "beads_per_molecule": 2,
+          "steric": true,
+          "temperature": 0.08,
+          "box": [
+            24.0,
+            18.0
+          ],
+          "initial_half": true,
+          "record_interval": 2.5,
+          "contact_interval": 0.05,
+          "motion": "brownian",
+          "damping": 4.0,
+          "mass": 1.0,
+          "dpd_cutoff": 1.0,
+          "initial_clearance": true
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "mixing",
+        "branch": "MIX2",
+        "seed": 1,
+        "name": "MIX2_langevin_g0.1_dt0.005_T0.08",
+        "duration": 1600.0,
+        "engine": {
+          "dt": 0.005,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 10,
+          "reaction_every": 5
+        },
+        "chemistry": {
+          "molecules": 200,
+          "beads_per_molecule": 2,
+          "steric": true,
+          "temperature": 0.08,
+          "box": [
+            24.0,
+            18.0
+          ],
+          "initial_half": true,
+          "record_interval": 2.5,
+          "contact_interval": 0.05,
+          "motion": "langevin",
+          "damping": 0.1,
+          "mass": 1.0,
+          "dpd_cutoff": 1.0,
+          "initial_clearance": true
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "mixing",
+        "branch": "MIX2",
+        "seed": 1,
+        "name": "MIX2_dpd_g0.5_dt0.005_T0.08",
+        "duration": 1600.0,
+        "engine": {
+          "dt": 0.005,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 10,
+          "reaction_every": 5
+        },
+        "chemistry": {
+          "molecules": 200,
+          "beads_per_molecule": 2,
+          "steric": true,
+          "temperature": 0.08,
+          "box": [
+            24.0,
+            18.0
+          ],
+          "initial_half": true,
+          "record_interval": 2.5,
+          "contact_interval": 0.05,
+          "motion": "dpd",
+          "damping": 0.5,
+          "mass": 1.0,
+          "dpd_cutoff": 1.0,
+          "initial_clearance": true
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "mixing",
+        "branch": "MIX2",
+        "seed": 2,
+        "name": "MIX2_brownian_g4_dt0.005_T0.08",
+        "duration": 12000.0,
+        "engine": {
+          "dt": 0.005,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 10,
+          "reaction_every": 5
+        },
+        "chemistry": {
+          "molecules": 200,
+          "beads_per_molecule": 2,
+          "steric": true,
+          "temperature": 0.08,
+          "box": [
+            24.0,
+            18.0
+          ],
+          "initial_half": true,
+          "record_interval": 2.5,
+          "contact_interval": 0.05,
+          "motion": "brownian",
+          "damping": 4.0,
+          "mass": 1.0,
+          "dpd_cutoff": 1.0,
+          "initial_clearance": true
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "mixing",
+        "branch": "MIX2",
+        "seed": 2,
+        "name": "MIX2_langevin_g0.1_dt0.005_T0.08",
+        "duration": 1600.0,
+        "engine": {
+          "dt": 0.005,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 10,
+          "reaction_every": 5
+        },
+        "chemistry": {
+          "molecules": 200,
+          "beads_per_molecule": 2,
+          "steric": true,
+          "temperature": 0.08,
+          "box": [
+            24.0,
+            18.0
+          ],
+          "initial_half": true,
+          "record_interval": 2.5,
+          "contact_interval": 0.05,
+          "motion": "langevin",
+          "damping": 0.1,
+          "mass": 1.0,
+          "dpd_cutoff": 1.0,
+          "initial_clearance": true
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "mixing",
+        "branch": "MIX2",
+        "seed": 2,
+        "name": "MIX2_dpd_g0.5_dt0.005_T0.08",
+        "duration": 1600.0,
+        "engine": {
+          "dt": 0.005,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 10,
+          "reaction_every": 5
+        },
+        "chemistry": {
+          "molecules": 200,
+          "beads_per_molecule": 2,
+          "steric": true,
+          "temperature": 0.08,
+          "box": [
+            24.0,
+            18.0
+          ],
+          "initial_half": true,
+          "record_interval": 2.5,
+          "contact_interval": 0.05,
+          "motion": "dpd",
+          "damping": 0.5,
+          "mass": 1.0,
+          "dpd_cutoff": 1.0,
+          "initial_clearance": true
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "mixing",
+        "branch": "MIX2",
+        "seed": 0,
+        "name": "MIX2_langevin_g4_dt0.005_T0.08",
+        "duration": 12000.0,
+        "engine": {
+          "dt": 0.005,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 10,
+          "reaction_every": 5
+        },
+        "chemistry": {
+          "molecules": 200,
+          "beads_per_molecule": 2,
+          "steric": true,
+          "temperature": 0.08,
+          "box": [
+            24.0,
+            18.0
+          ],
+          "initial_half": true,
+          "record_interval": 2.5,
+          "contact_interval": 0.05,
+          "motion": "langevin",
+          "damping": 4.0,
+          "mass": 1.0,
+          "dpd_cutoff": 1.0,
+          "initial_clearance": true
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "mixing",
+        "branch": "MIX2",
+        "seed": 0,
+        "name": "MIX2_dpd_g2_dt0.005_T0.08",
+        "duration": 1600.0,
+        "engine": {
+          "dt": 0.005,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 10,
+          "reaction_every": 5
+        },
+        "chemistry": {
+          "molecules": 200,
+          "beads_per_molecule": 2,
+          "steric": true,
+          "temperature": 0.08,
+          "box": [
+            24.0,
+            18.0
+          ],
+          "initial_half": true,
+          "record_interval": 2.5,
+          "contact_interval": 0.05,
+          "motion": "dpd",
+          "damping": 2.0,
+          "mass": 1.0,
+          "dpd_cutoff": 1.0,
+          "initial_clearance": true
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "mixing",
+        "branch": "MIX2",
+        "seed": 1,
+        "name": "MIX2_dpd_g2_dt0.005_T0.08",
+        "duration": 1600.0,
+        "engine": {
+          "dt": 0.005,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 10,
+          "reaction_every": 5
+        },
+        "chemistry": {
+          "molecules": 200,
+          "beads_per_molecule": 2,
+          "steric": true,
+          "temperature": 0.08,
+          "box": [
+            24.0,
+            18.0
+          ],
+          "initial_half": true,
+          "record_interval": 2.5,
+          "contact_interval": 0.05,
+          "motion": "dpd",
+          "damping": 2.0,
+          "mass": 1.0,
+          "dpd_cutoff": 1.0,
+          "initial_clearance": true
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "mixing",
+        "branch": "MIX2",
+        "seed": 2,
+        "name": "MIX2_dpd_g2_dt0.005_T0.08",
+        "duration": 1600.0,
+        "engine": {
+          "dt": 0.005,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 10,
+          "reaction_every": 5
+        },
+        "chemistry": {
+          "molecules": 200,
+          "beads_per_molecule": 2,
+          "steric": true,
+          "temperature": 0.08,
+          "box": [
+            24.0,
+            18.0
+          ],
+          "initial_half": true,
+          "record_interval": 2.5,
+          "contact_interval": 0.05,
+          "motion": "dpd",
+          "damping": 2.0,
+          "mass": 1.0,
+          "dpd_cutoff": 1.0,
+          "initial_clearance": true
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "mixing",
+        "branch": "MIX2",
+        "seed": 0,
+        "name": "MIX2_langevin_g0.1_dt0.01_T0.08",
+        "duration": 1600.0,
+        "engine": {
+          "dt": 0.01,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 5,
+          "reaction_every": 5
+        },
+        "chemistry": {
+          "molecules": 200,
+          "beads_per_molecule": 2,
+          "steric": true,
+          "temperature": 0.08,
+          "box": [
+            24.0,
+            18.0
+          ],
+          "initial_half": true,
+          "record_interval": 2.5,
+          "contact_interval": 0.05,
+          "motion": "langevin",
+          "damping": 0.1,
+          "mass": 1.0,
+          "dpd_cutoff": 1.0,
+          "initial_clearance": true
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "mixing",
+        "branch": "MIX2",
+        "seed": 0,
+        "name": "MIX2_dpd_g0.5_dt0.01_T0.08",
+        "duration": 1600.0,
+        "engine": {
+          "dt": 0.01,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 5,
+          "reaction_every": 5
+        },
+        "chemistry": {
+          "molecules": 200,
+          "beads_per_molecule": 2,
+          "steric": true,
+          "temperature": 0.08,
+          "box": [
+            24.0,
+            18.0
+          ],
+          "initial_half": true,
+          "record_interval": 2.5,
+          "contact_interval": 0.05,
+          "motion": "dpd",
+          "damping": 0.5,
+          "mass": 1.0,
+          "dpd_cutoff": 1.0,
+          "initial_clearance": true
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "mixing",
+        "branch": "MIX2",
+        "seed": 0,
+        "name": "MIX2_brownian_g4_dt0.005_T0.6",
+        "duration": 1600.0,
+        "engine": {
+          "dt": 0.005,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 10,
+          "reaction_every": 5
+        },
+        "chemistry": {
+          "molecules": 200,
+          "beads_per_molecule": 2,
+          "steric": true,
+          "temperature": 0.6,
+          "box": [
+            24.0,
+            18.0
+          ],
+          "initial_half": true,
+          "record_interval": 2.5,
+          "contact_interval": 0.05,
+          "motion": "brownian",
+          "damping": 4.0,
+          "mass": 1.0,
+          "dpd_cutoff": 1.0,
+          "initial_clearance": true
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "mixing",
+        "branch": "MIX2",
+        "seed": 0,
+        "name": "MIX2_langevin_g0.1_dt0.005_T0.6",
+        "duration": 1600.0,
+        "engine": {
+          "dt": 0.005,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 10,
+          "reaction_every": 5
+        },
+        "chemistry": {
+          "molecules": 200,
+          "beads_per_molecule": 2,
+          "steric": true,
+          "temperature": 0.6,
+          "box": [
+            24.0,
+            18.0
+          ],
+          "initial_half": true,
+          "record_interval": 2.5,
+          "contact_interval": 0.05,
+          "motion": "langevin",
+          "damping": 0.1,
+          "mass": 1.0,
+          "dpd_cutoff": 1.0,
+          "initial_clearance": true
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "mixing",
+        "branch": "MIX2",
+        "seed": 0,
+        "name": "MIX2_dpd_g0.5_dt0.005_T0.6",
+        "duration": 1600.0,
+        "engine": {
+          "dt": 0.005,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 10,
+          "reaction_every": 5
+        },
+        "chemistry": {
+          "molecules": 200,
+          "beads_per_molecule": 2,
+          "steric": true,
+          "temperature": 0.6,
+          "box": [
+            24.0,
+            18.0
+          ],
+          "initial_half": true,
+          "record_interval": 2.5,
+          "contact_interval": 0.05,
+          "motion": "dpd",
+          "damping": 0.5,
+          "mass": 1.0,
+          "dpd_cutoff": 1.0,
+          "initial_clearance": true
+        }
+      }
+    }
+  ]
+}

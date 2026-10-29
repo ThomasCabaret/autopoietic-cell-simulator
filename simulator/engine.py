@@ -16,6 +16,12 @@ class Simulation:
         self.dt = self.config['engine']['dt']
         self.reaction_every = self.config['engine']['reaction_every']
         self.neighbors = Neighborhood(self.config['engine']['spatial'],self.config['engine']['skin'])
+        self.motion=None
+        if self.chemistry.config.get('motion','brownian')!='brownian':
+            if self.config['model']!='mixing':raise ValueError('Inertial variants are restricted to the inert mixing bench')
+            from .motion import InertialMotion
+            self.motion=InertialMotion(self.chemistry,self.rng)
+            self.chemistry.motion_state=self.motion
         self.step_index = 0
         self.prepared = False
         self.listeners = []
@@ -49,10 +55,12 @@ class Simulation:
         self.prepare()
         c=self.chemistry
         for _ in range(min(steps,max(0,self.target_step-self.step_index))):
-            pairs=self.neighbors.pairs(c.pos,float(c.contact.max()),'core')
-            force=force_kernel(c.pos,pairs,c.kinds,c.contact,c.springs,c.angles)
-            force+=c.extra_forces(self.neighbors)
-            c.pos=integrate(c.pos,force,self.rng,self.dt,c.mobility,c.config['temperature'],c.box)
+            if self.motion is None:
+                pairs=self.neighbors.pairs(c.pos,float(c.contact.max()),'core')
+                force=force_kernel(c.pos,pairs,c.kinds,c.contact,c.springs,c.angles)
+                force+=c.extra_forces(self.neighbors)
+                c.pos=integrate(c.pos,force,self.rng,self.dt,c.mobility,c.config['temperature'],c.box)
+            else:self.motion.step(c,self.rng,self.dt,self.neighbors)
             self.step_index+=1
             self.prepared=False
             self.prepare()

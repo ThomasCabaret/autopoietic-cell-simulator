@@ -28,6 +28,8 @@ def execute(folder,task_id):
                 sim,obs=checkpoint.load(folder/state['checkpoint'],make_observer)
             else:
                 sim=Simulation(task['scenario']);obs=make_observer(sim.config,manifest['record_trajectory']);sim.listeners.append(obs)
+            track_performance=manifest.get('motion_report',False)
+            performance=getattr(obs,'campaign_performance',dict(history=[dict(time=sim.time,step=sim.step_index,compute_seconds=0.)],compute_seconds=0.))
             population=None
             if manifest.get('population_audit',False):
                 population=PopulationAudit(sim.config,getattr(obs,'campaign_population_state',None),manifest['population_interval'])
@@ -48,6 +50,7 @@ def execute(folder,task_id):
                 if audit is not None:obs.campaign_boundary_state=audit.state
                 if genetic is not None:obs.campaign_genetic_state=genetic.state
                 if population is not None:obs.campaign_population_state=population.state
+                if track_performance:obs.campaign_performance=performance
                 checkpoint.save(path/'periodic.npz',sim,obs)
                 state['checkpoint']=(path/'periodic.npz').relative_to(folder).as_posix()
                 if population is not None:
@@ -58,11 +61,17 @@ def execute(folder,task_id):
                     write(path/'mixing.json',obs.summary())
                     state['mixing']=(path/'mixing.json').relative_to(folder).as_posix()
                     state['mixing_latest']=obs.state['history'][-1]
+                if track_performance:
+                    write(path/'performance.json',performance)
+                    state['performance']=(path/'performance.json').relative_to(folder).as_posix()
             while not sim.done:
                 if (folder/'STOP').exists():
                     save();state.update(status='paused',step=sim.step_index,simulated_time=sim.time,updated=time.time())
                     write(dest/'state.json',state);return 0
-                sim.advance(250);now=time.monotonic()
+                before=time.perf_counter();sim.advance(250);spent=time.perf_counter()-before;now=time.monotonic()
+                if track_performance:
+                    performance['compute_seconds']+=spent
+                    performance['history'].append(dict(time=sim.time,step=sim.step_index,compute_seconds=performance['compute_seconds']))
                 if now-last_save>=manifest['checkpoint_seconds']:save();last_save=now
                 if now-last_report>=1.:
                     rate=(sim.step_index-last_step)/(now-last_report);last_report=now;last_step=sim.step_index
@@ -77,11 +86,13 @@ def execute(folder,task_id):
                         state['genetic_first']=genetic.state['first']
                     if population is not None:state['population_latest']=population.latest()
                     if sim.config['model']=='mixing':state['mixing_latest']=obs.state['history'][-1]
+                    if track_performance:state['benchmark_compute_seconds']=performance['compute_seconds']
                     write(dest/'state.json',state)
             obs.campaign_kinetics_state=probe.state
             if audit is not None:obs.campaign_boundary_state=audit.state
             if genetic is not None:obs.campaign_genetic_state=genetic.state
             if population is not None:obs.campaign_population_state=population.state
+            if track_performance:obs.campaign_performance=performance
             evidence=save_result(path,sim,obs,time.monotonic()-start)
             save();write(path/'kinetics.json',probe.summary(sim.time,evidence['metrics']))
             if audit is not None:
