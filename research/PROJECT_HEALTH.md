@@ -6,6 +6,22 @@ est une cellule construite qui maintient et refabrique ses composants depuis
 une nourriture simple, avec énergie externe déclarée. Apparition spontanée,
 division et évolution ouverte ne sont pas des conditions ajoutées à cette cible.
 
+## Priorité d'ingénierie GUI1
+
+29 octobre2026 : l'utilisateur demande l'interface finale dès maintenant afin
+de contrôler visuellement les choix et de préparer à terme des animations.
+Qt/OpenGL et séparation par processus évitent de dépendre du dessin Pygame
+par bille ; les états sont copiés et les effets graphiques restent indépendants.
+Le rendu synthétique100000 billes+99999 liens atteint≈38 images/s sur Intel UHD
+en1080p, sans coût de simulation/IPC/sélection inclus. Ce n'est pas un budget
+de renouvellement. Lecture des graphes O(E), copies IPC et sélection restent
+des coûts à profiler aux grandes tailles, sans promesse de montée illimitée.
+
+Le lot livre un socle et des vérifications d'identité dynamique, pas une nouvelle
+capacité chimique. Prochain horizon : finition relecture/vidéo/inspection de
+la GUI puis scénario intégré visible, sans embellir ses fonctions manquantes.
+Les limites membranaires, T9, diversité et maintien restent identiques.
+
 ## Réévaluation courante après J3
 
 Clôture lot18 : N1 achevé, pas d'alerte médiane déclenchant N2 mais baisse cumulée

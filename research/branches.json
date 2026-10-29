@@ -834,6 +834,19 @@
       "health_gate": "At most six new tasks then stop for interpretation; no further numerical grid or chemical mutation by default"
     },
     {
+      "id": "GUI1",
+      "parent": "W0",
+      "related": ["J3", "N1"],
+      "status": "durable_qt_opengl_foundation_delivered_interface_not_complete",
+      "hypothesis": "A process-isolated instanced GPU client makes current and larger baths inspectable without altering chemistry and can evolve toward presentation/video export",
+      "test": "Native Qt interaction/capture checks, exact worker/headless positions and RNG, passive per-reaction event tap, synthetic1920x1080 rendering to100000 particles and99999 bonds",
+      "cost": "No chemical primitive, law, gene or engine change. Optional Qt/ModernGL dependencies, two-frame transport and bounded4096 events",
+      "counterexample": "Graphics affect RNG or positions, transient bonds disappear without disclosure, queue growth is unbounded, or pure rendering speed is called whole-cell performance",
+      "missing_proof": "New replay/video export, ports/nonbond contacts, molecular visibility groups and integrated demonstration pending; IPC/event collection costs at massive sizes unmeasured",
+      "evidence": "docs/VISUALIZER.md",
+      "health_gate": "Finish the visualization tool before presenting new integrated biological demos; chemical maturity unchanged"
+    },
+    {
       "id": "ENV0",
       "parent": "H0",
       "related": [

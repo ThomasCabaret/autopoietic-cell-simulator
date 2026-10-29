@@ -828,3 +828,32 @@ systématique ni de nouvel outil sans besoin. Observation passive, contexte et
 reproductibilité préservés ; arrêter l'instrumentation sans supprimer les preuves.
 Modification documentaire seulement, aucune simulation lancée, maturité chimique
 et priorité T9 inchangées.
+
+## 2026-10-29 — GUI1, interface durable prioritaire
+
+Demande utilisateur : développer maintenant le client final d'exploration et
+de futures animations de vulgarisation, avant nouvelle démo intégrée. Paquet
+visualizer indépendant du moteur : Qt/PySide6 pour la fenêtre, ModernGL3.3 pour
+le rendu instancié, processus propriétaire de la simulation, snapshots copiés.
+Navigation, pause/pas/rythme sans modification de dt, opacités, sélection/suivi,
+partenaires liés directs, flashes des transitions, journal et export PNG livrés.
+
+La GUI est explicitement en cours de finition, pas déclarée terminée : relecture,
+export vidéo, inspection de ports/contacts et regroupements moléculaires à venir,
+courbes facultatives ensuite. Aucun nouveau candidat chimique ni démonstrateur
+intégré créé. Les fichiers de recherche et recettes antérieurs sont préservés.
+
+Sept tests de contrat passent : caméra, filtres/physique séparés, tampon d'événements,
+sélection après rupture et processus réel pause/pas/rythme, positions/RNG exacts.
+Test Qt/OpenGL natif passé, captures dans outputs/visualizer_qa ; test synthétique
+Intel UHD1920×1080,100000 billes+99999 liens≈26,4ms, trois appels de rendu, sans
+simulation/IPC/sélection. Sources et résultats bruts locaux, pas de hausse de
+maturité chimique. Statut détaillé : docs/VISUALIZER.md.
+Les attaches virtuelles historiques sont rendues à leur position réfléchie,
+avec contrôle dédié ; aucun changement du moteur scientifique.
+Validation finale :106 tests logiciels et7 historiques réussis, plus le test
+Qt/OpenGL natif. Distribution source reconstruite avec vérification des hashes,
+sans bibliothèques installées ni captures/résultats d'essais dans Git.
+Limite explicitée : la comparaison de liens après chaque tick voit les
+transitions entre ticks, pas tous les intermédiaires d'un même tick. Flux de
+mutations natif prévu dans la finition, aucun événement intermédiaire inventé.

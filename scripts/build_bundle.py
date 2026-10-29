@@ -13,6 +13,9 @@ def main():
     files=set()
     for pattern in ('simulator/*.py','demonstrators/*.bat','demonstrators/*.md','demonstrators/configs/*.json'):
         files.update(ROOT.glob(pattern))
+    files.update(ROOT.glob('visualizer/*.py'));files.update(ROOT.glob('visualizer/shaders/*'))
+    files.update(ROOT/p for p in ('visualizer.bat','install_visualizer.bat','requirements-viewer.txt',
+        'docs/VISUALIZER.md','experiments/smoke_visualizer.py','experiments/benchmark_visualizer.py'))
     files.update(ROOT/p for p in ('README.md','SIMULATOR_ARCHITECTURE.md','requirements.txt',
         'CONTRIBUTING.md','GIT_SETUP.md','THIRD_PARTY_NOTICES.md',
         '.gitignore','.gitattributes','.editorconfig',

@@ -1,4 +1,12 @@
-# Maturité — N1 partiel, automatisation lot18
+# Maturité — GUI1, chimie inchangée
+
+29 octobre2026 : socle de visualisation durable Qt/OpenGL livré, simulation en
+processus indépendant, filtres et suivi passifs, capture PNG. Interface encore
+à finir avant la nouvelle démo intégrée ; état détaillé ../docs/VISUALIZER.md.
+Ce progrès d'ingénierie ne démontre aucun nouveau mécanisme, maintien ou
+renouvellement cellulaire. Les preuves et limites chimiques ci-dessous restent.
+
+## État scientifique après N1 / lot18
 
 **Clôture : N1 achevé6/6, transfert utile retrouvé au pas fin, maturité globale
 encore limitée.** F complet3/3 au pas fin, G0/3, produits d'un F exprimé utilisés

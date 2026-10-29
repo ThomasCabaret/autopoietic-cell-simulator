@@ -1,4 +1,13 @@
-# Priorités — lot18, suivi automatique de N1
+# Priorité actuelle — interface durable, GUI1
+
+29 octobre2026, demande utilisateur : concentrer le travail sur l'interface
+finale de visualisation avant de préparer la nouvelle démo intégrée. Le socle
+GUI1 Qt/OpenGL est livré, voir ../docs/VISUALIZER.md pour les fonctions et la
+liste de finition. Prochains lots : relecture/export vidéo et inspection
+moléculaire, puis démo(s) intégrées honnêtes. Les courbes restent modulaires.
+Pas de nouvelle loi chimique ou campagne T9 dans ce lot d'ingénierie.
+
+## Priorités de recherche précédentes — lot18
 
 **Mise à jour de clôture : N1 achevé6/6**, voir BATCH_17_RESULTS.md. Pas d'alerte
 médiane prospective, donc N2 ne doit pas être lancé par le suivi. La baisse

@@ -1,5 +1,22 @@
 # Architecture du simulateur partagé
 
+## Nouveau client durable GUI1
+
+`visualizer/` est un client Qt/PySide6 + ModernGL optionnel, distinct du paquet
+`simulator/`. Un processus possède la simulation et son PRNG ; la GUI reçoit
+des copies de scènes par file bornée. Caméra, filtres, sélection et shaders ne
+sont jamais lus par les lois. Le rendu utilise des quadrilatères GPU instanciés
+pour particules et liaisons, sans dessin Python par particule. Les bibliothèques
+graphiques ne sont pas requises pour le mode sans interface.
+
+Les shaders, renderer indépendant de Qt et temps de présentation explicite
+préparent l'évolution du style et le futur export vidéo hors écran. GUI1 fournit
+la navigation, le contrôle de rythme sans changement numérique, les opacités,
+le suivi structurel et ses partenaires liés directs, flashes/journal et PNG.
+Le contrat et les limites, la validation et les fonctions restantes sont dans
+[docs/VISUALIZER.md](docs/VISUALIZER.md). La boucle Pygame décrite plus bas est
+maintenue pour compatibilité avec les anciennes recettes, pas remplacée en place.
+
 ## Choix de ce lot
 
 Python 3.12 organise l'expérience, NumPy contient l'état, Numba compile les noyaux
@@ -67,7 +84,8 @@ Les critères `min`, `max`, `eq` portent sur des métriques, après la dynamique
 Les unités sont celles, sans calibration physique, des prototypes de recherche.
 
 La durée doit être un multiple entier de `dt`. La chimie est mise à jour tous
-les cinq pas ; modifier `dt` change aussi cet intervalle. Le mode actuel est 2D,
+les `engine.reaction_every` pas (défaut5) ; modifier `dt` seul change donc aussi
+cet intervalle. Le mode actuel est 2D,
 sans frontières périodiques, dans l'espace ouvert ou avec des murs souples.
 
 ## Contrat d'un module chimique
