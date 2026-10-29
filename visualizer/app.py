@@ -11,6 +11,7 @@ from .camera import Camera
 from .scene import Selection
 from .renderer import Renderer
 from .worker import ProcessSource
+from .demos import DemoCatalog
 
 Q=QtWidgets
 
@@ -35,6 +36,9 @@ QStatusBar { background:#142134; color:#95afc9; }
 QMenuBar,QMenu { background:#172335; }
 QMenu::item:selected { background:#2a4c64; }
 QScrollArea { border:0; }
+QTabWidget::pane { border:0; }
+QTabBar::tab { background:#1a2a3e; padding:9px 16px; color:#91abc6; }
+QTabBar::tab:selected { background:#26445b; color:#e7f2fc; }
 '''
 
 
@@ -53,7 +57,7 @@ class Viewport(QtOpenGLWidgets.QOpenGLWidget):
         self.renderer=None;self.ctx=None;self.press=None;self.last=None;self.dragged=False
         self.fbo=None;self.last_fbo=None;self.render_count=0;self.paint_ms=0.
         self.setMinimumSize(400,350);self.setMouseTracking(True)
-        self.empty=Q.QLabel('CHIMIE LOCALE\n\nOuvrir un scénario pour explorer la simulation',self)
+        self.empty=Q.QLabel('CHIMIE LOCALE\n\nMenu Démos → Bain intégré actuel\n\nou ouvrir votre propre scénario JSON',self)
         self.empty.setAlignment(QtCore.Qt.AlignCenter)
         self.empty.setStyleSheet('color:#91abc6;background:transparent;font-size:18px;')
 
@@ -129,6 +133,7 @@ class MainWindow(Q.QMainWindow):
         super().__init__();self.setWindowTitle('Chimie locale · Atelier de visualisation')
         self.resize(1480,940);self.setStyleSheet(STYLE)
         self.output=Path(output);self.source=None;self.packet=None;self.config=None;self.layer_labels=()
+        self.catalog=DemoCatalog();self.active_demo=None;self.session_written=False
         self.viewport=Viewport();self.setCentralWidget(self.viewport)
         self.viewport.failure.connect(self.show_error);self.viewport.picked.connect(lambda _:self.inspect())
         self.make_toolbar();self.make_sidebar();self.make_menu()
@@ -144,7 +149,7 @@ class MainWindow(Q.QMainWindow):
     def make_toolbar(self):
         self.toolbar=Q.QToolBar();self.toolbar.setMovable(False);self.addToolBar(self.toolbar)
         self.toolbar.addAction(self.action('Ouvrir…',self.open_file))
-        self.play=self.action('▶ Reprendre',self.toggle_pause);self.toolbar.addAction(self.play)
+        self.play=self.action('▶ Jouer',self.toggle_pause);self.toolbar.addAction(self.play)
         self.toolbar.addAction(self.action('Un pas',self.single_step))
         self.toolbar.addAction(self.action('Recommencer',self.restart))
         self.toolbar.addSeparator();self.toolbar.addAction(self.action('Vue globale',self.fit))
@@ -180,8 +185,27 @@ class MainWindow(Q.QMainWindow):
         layout.addWidget(display)
         history=Q.QGroupBox('Transformations récentes');h=Q.QVBoxLayout(history)
         self.events=Q.QListWidget();self.events.setMaximumHeight(155);self.events.itemClicked.connect(self.event_clicked);h.addWidget(self.events)
-        layout.addWidget(history);layout.addStretch();self.note=Q.QLabel('Interface · lot 1\nRelecture vidéo, export vidéo et courbes : à venir.');self.note.setWordWrap(True);layout.addWidget(self.note)
-        scroll.setWidget(body);self.dock.setWidget(scroll)
+        layout.addWidget(history);layout.addStretch();self.note=Q.QLabel('Visualisation essentielle disponible.\nVidéo et courbes : pour plus tard.');self.note.setWordWrap(True);layout.addWidget(self.note)
+        scroll.setWidget(body)
+        self.tabs=Q.QTabWidget();self.demo_page=Q.QScrollArea();self.demo_page.setWidgetResizable(True)
+        card=Q.QWidget();card.setMinimumWidth(300);card_layout=Q.QVBoxLayout(card);card_layout.setSpacing(13)
+        self.demo_heading=Q.QLabel('Démos du projet');self.demo_heading.setWordWrap(True)
+        self.demo_heading.setStyleSheet('font-size:19px;font-weight:600;color:#e7f2fc;');card_layout.addWidget(self.demo_heading)
+        self.demo_level=Q.QLabel('Choisir une démo dans le menu Démos.');self.demo_level.setWordWrap(True)
+        self.demo_level.setStyleSheet('color:#5ed7c3;');card_layout.addWidget(self.demo_level)
+        self.demo_fields={}
+        for key,title in [('summary','Ce que montre cette démo'),('prepared','État initial préparé'),
+                          ('observe','À observer'),('limits','Limites actuelles'),('conditions','Conditions'),('look','Comment regarder')]:
+            group=Q.QGroupBox(title);box=Q.QVBoxLayout(group);label=Q.QLabel('—');label.setWordWrap(True)
+            label.setTextInteractionFlags(QtCore.Qt.TextSelectableByMouse);box.addWidget(label)
+            self.demo_fields[key]=label;card_layout.addWidget(group)
+        measurements=Q.QGroupBox('Mesures en direct');box=Q.QVBoxLayout(measurements)
+        self.demo_measures=Q.QLabel('Les mesures apparaîtront après le chargement.');self.demo_measures.setWordWrap(True)
+        box.addWidget(self.demo_measures);card_layout.insertWidget(3,measurements)
+        self.demo_evidence=Q.QLabel('');self.demo_evidence.setWordWrap(True);card_layout.addWidget(self.demo_evidence);card_layout.addStretch()
+        self.demo_page.setWidget(card)
+        self.tabs.addTab(self.demo_page,'Démo');self.tabs.addTab(scroll,'Explorer');self.tabs.setCurrentIndex(1)
+        self.dock.setWidget(self.tabs)
 
     def make_menu(self):
         file=self.menuBar().addMenu('Fichier')
@@ -189,6 +213,17 @@ class MainWindow(Q.QMainWindow):
         file.addAction(self.action('Exporter une image…',self.save_image))
         file.addAction(self.action('Sauver un checkpoint',lambda:self.command('checkpoint')))
         file.addAction(self.action('Quitter',self.close))
+        self.demo_menu=self.menuBar().addMenu('Démos');self.demo_actions={}
+        for demo in self.catalog.data['demos']:
+            variants=[v for v in self.catalog.data['variants'] if v['demo']==demo['id']]
+            target=self.demo_menu.addMenu(demo['title']) if len(variants)>1 else self.demo_menu
+            for variant in variants:
+                text=variant['title'] if len(variants)>1 else demo['title']
+                action=self.action(text,lambda checked=False,key=variant['id']:self.load_demo(key))
+                action.setToolTip(demo['summary']);target.addAction(action);self.demo_actions[variant['id']]=action
+            if demo['id']=='integrated':self.demo_menu.addSeparator()
+        button=Q.QToolButton();button.setText('Démos');button.setMenu(self.demo_menu)
+        button.setPopupMode(Q.QToolButton.InstantPopup);self.toolbar.insertWidget(self.toolbar.actions()[0],button)
         view=self.menuBar().addMenu('Vue');view.addAction(self.dock.toggleViewAction())
         view.addAction(self.action('Mode présentation',self.presentation));view.addAction(self.action('Plein écran',self.fullscreen))
 
@@ -200,16 +235,37 @@ class MainWindow(Q.QMainWindow):
                 self.load_config(load(Path(path)))
             except Exception as exc:self.show_error(str(exc))
 
-    def load_config(self,config):
+    def load_demo(self,key):
+        try:
+            variant,info,config=self.catalog.get(key)
+            self.load_config(config,dict(variant=variant,info=info,catalog_date=self.catalog.data['date']))
+        except Exception as exc:self.show_error(str(exc))
+
+    def load_config(self,config,demo=None):
         if self.source and not self.source.close():self.statusBar().showMessage('Ancien processus arrêté de force : vérifier ses sorties.')
-        self.config=config;self.packet=None;self.viewport.frame=None;self.viewport.opacity=[];self.viewport.flashes.clear();self.viewport.selection=Selection()
+        self.config=config;self.active_demo=demo;self.session_written=False;self.packet=None;self.viewport.frame=None;self.viewport.opacity=[];self.viewport.flashes.clear();self.viewport.selection=Selection()
         for name in ('assembly','focus','partners'):setattr(self.viewport.selection,name,getattr(self,'check_'+name).isChecked())
         self.viewport.empty.setText('Initialisation du moteur…');self.viewport.empty.show()
         self.events.clear();self.layer_labels=();self.title.setText(config['name']);self.description.setText(config.get('description',''))
         self.context.setText(f"Graine {config['seed']} · {config['model']}\ndt = {config['engine']['dt']:g} · lois inchangées par la vue")
-        self.source=ProcessSource(config,self.output);self.source.command('speed',self.speed.currentData())
+        self.source=ProcessSource(config,self.output)
+        if demo:
+            info=demo['info'];variant=demo['variant']
+            self.title.setText(info['title']);self.description.setText(info['summary'])
+            self.demo_heading.setText(info['title']);self.demo_level.setText(f"{info['level']}\n{variant['title']} · {variant['beads']:,} billes")
+            for key,label in self.demo_fields.items():label.setText(info[key])
+            self.demo_evidence.setText(f"État du {demo['catalog_date']}\nRéférence : {info['evidence']}\nDépart recalculé depuis t = 0 ; aucune trajectoire embarquée.")
+            self.demo_measures.setText('Initialisation des observateurs…')
+            self.speed.setCurrentIndex(self.speed.findData(variant['view_speed']))
+            self.tabs.setCurrentIndex(0)
+        else:
+            self.demo_heading.setText('Scénario personnalisé');self.demo_level.setText('Chargement depuis un fichier JSON')
+            for label in self.demo_fields.values():label.setText('—')
+            self.demo_evidence.setText('');self.demo_measures.setText('Les mesures apparaîtront après le chargement.')
+            self.tabs.setCurrentIndex(1)
+        self.source.command('speed',self.speed.currentData())
         self.statusBar().showMessage('Initialisation du moteur… La simulation démarrera en pause.')
-        self.clear_selection();self.play.setEnabled(True);self.play.setText('▶ Reprendre')
+        self.clear_selection();self.play.setEnabled(True);self.play.setText('▶ Jouer')
 
     def command(self,action,value=None):
         if self.source:self.source.command(action,value)
@@ -219,7 +275,7 @@ class MainWindow(Q.QMainWindow):
 
     def single_step(self):self.command('step')
     def restart(self):
-        if self.config:self.load_config(self.config)
+        if self.config:self.load_config(self.config,self.active_demo)
     def change_speed(self):self.command('speed',self.speed.currentData())
     def fit(self):self.viewport.fit();self.check_follow.setChecked(False)
     def fullscreen(self):self.showNormal() if self.isFullScreen() else self.showFullScreen()
@@ -267,15 +323,23 @@ class MainWindow(Q.QMainWindow):
             for packet in self.source.poll():
                 if 'error' in packet:self.show_error(packet['error']);continue
                 self.packet=packet;f=packet['frame'];self.viewport.receive(f,packet['events'])
+                if self.active_demo and not self.session_written:
+                    (Path(packet['path'])/'demo.json').write_text(json.dumps(self.active_demo,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+                    self.session_written=True
                 if self.layer_labels!=f.labels:self.build_layers(f)
                 self.play.setEnabled(not f.done)
-                self.play.setText('Terminée' if f.done else ('▶ Reprendre' if packet['paused'] else 'Ⅱ Pause'))
+                self.play.setText('Terminée' if f.done else ('▶ Jouer' if packet['paused'] else 'Ⅱ Pause'))
                 self.time_label.setText(f'   t = {f.time:.3f} / {packet["config"]["duration"]:g}   ·   {len(f.positions):,} billes')
                 for event in packet['events'][-100:]:
                     text={'bond_created':'+ liaison','bond_broken':'− liaison','state_changed':'↻ état'}[event.kind]
                     item=Q.QListWidgetItem(f't {event.time:.3f}  {text}  {event.group}  '+','.join(map(str,event.ids)))
                     item.setData(QtCore.Qt.UserRole,event);self.events.insertItem(0,item)
                 while self.events.count()>100:self.events.takeItem(self.events.count()-1)
+                observation=packet.get('observations',{})
+                if observation.get('time') is not None:
+                    lines=[f"Mesures à t = {observation['time']:.3f}"]
+                    lines.extend(f'{name} : {value}' for name,value in observation['rows'])
+                    self.demo_measures.setText('\n'.join(lines))
         now=time.monotonic()
         if now-self.last_fps>=1:
             self.fps=(self.viewport.render_count-self.last_render_count)/(now-self.last_fps)
@@ -298,7 +362,8 @@ class MainWindow(Q.QMainWindow):
             camera=dict(center=self.viewport.camera.center.tolist(),scale=self.viewport.camera.scale),
             opacity=list(map(float,self.viewport.opacity)),soft_style=self.viewport.soft,
             selection=self.viewport.selection.anchor,config=self.config,
-            renderer=self.viewport.ctx.info.get('GL_RENDERER') if self.viewport.ctx else None)
+            renderer=self.viewport.ctx.info.get('GL_RENDERER') if self.viewport.ctx else None,
+            demo_id=self.active_demo['variant']['id'] if self.active_demo else None)
         path.with_suffix('.json').write_text(json.dumps(metadata,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
         self.statusBar().showMessage(f'Vue exportée : {path}')
 

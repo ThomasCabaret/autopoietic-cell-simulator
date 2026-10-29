@@ -1,11 +1,15 @@
-# Priorité actuelle — interface durable, GUI1
+# Priorité actuelle — examiner les démos du projet
 
-29 octobre2026, demande utilisateur : concentrer le travail sur l'interface
-finale de visualisation avant de préparer la nouvelle démo intégrée. Le socle
-GUI1 Qt/OpenGL est livré, voir ../docs/VISUALIZER.md pour les fonctions et la
-liste de finition. Prochains lots : relecture/export vidéo et inspection
-moléculaire, puis démo(s) intégrées honnêtes. Les courbes restent modulaires.
-Pas de nouvelle loi chimique ou campagne T9 dans ce lot d'ingénierie.
+29 octobre2026, précision utilisateur : le minimum de visualisation est suffisant
+pour passer aux démos représentatives. GUI2 ajoute le catalogue : bain J3 intégré
+à2118 billes (graines2/0/1), circuit matériel C3B1, copie T7 et membranes V8.
+Voir ../docs/DEMOS.md. Chaque fiche distingue départ préparé, observation et
+limites ; les paramètres physiques restent ceux des sources de recherche.
+
+Vidéo/relecture avancée/courbes sont reportées et ne doivent plus retarder
+l'examen du résultat global. Prochaine étape : retours visuels sur ces scènes,
+puis reprise ciblée de la recherche (T9) selon les mécanismes observés. Aucune
+nouvelle loi ou campagne chimique introduite dans ce lot de catalogue.
 
 ## Priorités de recherche précédentes — lot18
 

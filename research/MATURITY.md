@@ -1,8 +1,10 @@
-# Maturité — GUI1, chimie inchangée
+# Maturité — visualisation essentielle et démos, chimie inchangée
 
 29 octobre2026 : socle de visualisation durable Qt/OpenGL livré, simulation en
-processus indépendant, filtres et suivi passifs, capture PNG. Interface encore
-à finir avant la nouvelle démo intégrée ; état détaillé ../docs/VISUALIZER.md.
+processus indépendant, filtres et suivi passifs, capture PNG. Le catalogue GUI2
+rend le bain intégré J3 et trois sous-systèmes directement accessibles, avec
+leurs états initiaux et limites. Vidéo et fonctions avancées sont reportées ;
+elles ne conditionnent plus l'examen de ces démos. Voir ../docs/DEMOS.md.
 Ce progrès d'ingénierie ne démontre aucun nouveau mécanisme, maintien ou
 renouvellement cellulaire. Les preuves et limites chimiques ci-dessous restent.
 

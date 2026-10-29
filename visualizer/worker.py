@@ -9,6 +9,7 @@ import queue
 import time
 import traceback
 from .scene import EventTap,frame,species
+from .observations import live_observations
 
 
 def execute(config,commands,frames,parent):
@@ -18,6 +19,9 @@ def execute(config,commands,frames,parent):
     sim=obs=path=None;started=time.monotonic();saved=False;error=None
     try:
         sim=Simulation(config);obs=make_observer(sim.config,False);sim.listeners.append(obs)
+        observed_time=[None]
+        def observation_clock(time,*args):observed_time[0]=float(time)
+        sim.listeners.append(observation_clock)
         path=create_output(sim.config,parent);tap=EventTap(sim.chemistry);catalog=species(sim.chemistry)
         paused=True;speed=.5;last_publish=-1.;last=time.monotonic();last_rate=last;last_step=0;rate=0.;credit=0.;dirty=True
         sim.advance(0)
@@ -28,7 +32,8 @@ def execute(config,commands,frames,parent):
             if not force and now-last_publish<1/30:return
             if frames.full():return
             packet=dict(frame=frame(sim,catalog,tap.revision),events=list(tap.events),dropped=tap.dropped,
-                paused=paused,speed=speed,rate=rate,path=str(path.resolve()),config=sim.config)
+                paused=paused,speed=speed,rate=rate,path=str(path.resolve()),config=sim.config,
+                observations=live_observations(obs,observed_time[0]))
             try:frames.put_nowait(packet)
             except queue.Full:return
             tap.events.clear();last_publish=now;dirty=False

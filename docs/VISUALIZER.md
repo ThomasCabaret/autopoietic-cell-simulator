@@ -1,22 +1,26 @@
-# Interface de visualisation durable — lot GUI1
+# Interface de visualisation durable — GUI1 et catalogue GUI2
 
-État du29 octobre2026 : **socle fonctionnel, interface globale encore en cours**.
+État du29 octobre2026 : **visualisation essentielle et menu de démos disponibles**.
 Ce lot construit l'outil final d'exploration et de préparation de captures.
-Il ne produit pas encore la nouvelle démo biologique intégrée. Les anciens
-démonstrateurs Pygame restent disponibles et inchangés.
+Le catalogue permet de regarder le bain intégré actuel et trois sous-systèmes.
+Les fonctions vidéo avancées sont reportées pour spécification ultérieure.
+Les anciens démonstrateurs Pygame restent disponibles et inchangés.
 
 ## Lancer
 
 Installer une fois avec `install_visualizer.bat`, puis ouvrir `visualizer.bat`.
-Choisir un scénario JSON via **Ouvrir** ; la simulation démarre en pause.
+Choisir **Démos → Bain intégré actuel → Graine2 · transfert observé** pour
+commencer. Les états sont recalculés en pause, sans film préenregistré ; cliquer
+Jouer puis ralentir si nécessaire. [Catalogue et limites](DEMOS.md).
+On peut aussi choisir un scénario JSON via **Ouvrir**.
 On peut ouvrir un scénario existant directement :
 
 ```powershell
 python -m visualizer --config demonstrators/configs/construction.json
 ```
 
-Ce scénario est un exemple technique historique, pas la représentation de
-l'avancement intégré actuel. Chaque nouvelle ouverture ou recommencement
+Ce fichier est un exemple technique historique ; le menu Démos fournit la vue
+intégrée représentative actuelle. Chaque nouvelle ouverture ou recommencement
 crée un dossier distinct dans `outputs/visualizer/`, jamais une réécriture des
 preuves de recherche. L'interface utilise le vrai moteur `Simulation.advance`.
 
@@ -24,6 +28,7 @@ preuves de recherche. L'interface utilise le vrai moteur `Simulation.advance`.
 
 | Fonction | État GUI1 |
 |---|---|
+| Catalogue des démos de recherche et leurs états initiaux | Livré dans le menu Démos ; fiches, limites et compteurs dans l'onglet Démo |
 | Grande fenêtre redimensionnable, plein écran | Livré, F11 |
 | Zoom centré sur le curseur, déplacement XY | Livré, molette / glisser gauche |
 | Vue globale, pause/reprise, un pas | Livré, F / Espace / N |
@@ -91,6 +96,7 @@ flowchart LR
 | `camera.py` | Transformations XY/zoom indépendantes du toolkit |
 | `renderer.py`, `shaders/` | Rendu GPU, buffers réutilisés, temps de présentation explicite |
 | `app.py` | Widgets, commandes, inspection, journal et export PNG |
+| `demos.py`, `observations.py` | Catalogue versionné/signatures et lecture passive des mesures de recherche |
 
 Aucun module du moteur n'importe Qt ou ModernGL. Positions GPU en float32
 uniquement dans les copies de dessin ; mécanique et PRNG conservent leurs types
@@ -111,7 +117,7 @@ explicite. Il pourra viser un framebuffer hors écran pour l'export vidéo avec
 cadence fixe, sans capturer les panneaux ni dépendre du débit de simulation.
 Le client de relecture et l'encodeur restent à implémenter.
 
-## Suite de la GUI avant la première nouvelle démo intégrée
+## Fonctions avancées reportées, sans bloquer les démos
 
 - Relecture du nouvel état visuel, navigation temporelle et transitions rejouées.
 - Flux de mutations natif et borné pour les transitions intermédiaires au sein
@@ -122,11 +128,12 @@ Le client de relecture et l'encodeur restent à implémenter.
   moléculaires, retour clair sur les structures préparées et produites.
 - Reprise de checkpoint dans ce client, préférences de vue et ergonomie à affiner.
 - Courbes cinétiques comme panneau facultatif indépendant, après le socle.
-- Ensuite seulement, scénario(s) minimalement nombreux illustrant l'intégration
-  scientifique actuelle, avec ses dégradations et capacités manquantes visibles.
+- Le catalogue illustre déjà l'intégration scientifique actuelle, avec ses
+  dégradations et capacités manquantes visibles ; il évoluera avec les résultats.
 
-L'interface n'est donc **pas déclarée terminée**. La priorité reste sa finition,
-pas une nouvelle exploration de lois ou une démo qui embellit les résultats.
+Le minimum de visualisation demandé est disponible. Export vidéo, relecture
+avancée et courbes demanderont une spécification ultérieure ; ils ne sont pas
+des prérequis pour examiner les démos ou reprendre la recherche.
 
 ## Vérification
 
@@ -137,6 +144,8 @@ ces tests de contrat. `python experiments/smoke_visualizer.py` exerce la vraie
 fenêtre et exporte des captures dans `outputs/visualizer_qa/`.
 Validation GUI1 :106 tests logiciels et7 historiques passent, avec test natif
 Qt/OpenGL d'interaction et capture ; aucune modification du paquet `simulator/`.
+Validation du catalogue GUI2 :111 tests logiciels et7 historiques passent ;
+six préréglages vérifiés et ouverts via leurs actions Qt. Vidéo hors du lot.
 
 `python experiments/benchmark_visualizer.py` mesure uniquement le rendu sur
 scènes synthétiques, avec upload des buffers et fin du travail GPU. Premier

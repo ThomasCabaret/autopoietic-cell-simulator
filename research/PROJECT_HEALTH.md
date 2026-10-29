@@ -8,6 +8,14 @@ division et évolution ouverte ne sont pas des conditions ajoutées à cette cib
 
 ## Priorité d'ingénierie GUI1
 
+GUI2 : le minimum demandé permet maintenant d'examiner le bain J3 dans la GUI,
+avec trois graines, et trois mécanismes séparés. Entrées comparées aux recettes
+préservées, démarrage/lecture/recommencement vérifiés ; pas de nouvelle campagne
+longue ni preuve de viabilité. Le client présente aussi les compteurs primaires
+hors structures préparées. La vidéo et les outils avancés sont explicitement
+reportés par l'utilisateur et ne doivent pas devenir un obstacle au retour
+visuel ou une raison d'accumuler de l'ingénierie avant de regarder la cellule.
+
 29 octobre2026 : l'utilisateur demande l'interface finale dès maintenant afin
 de contrôler visuellement les choix et de préparer à terme des animations.
 Qt/OpenGL et séparation par processus évitent de dépendre du dessin Pygame
@@ -17,9 +25,10 @@ en1080p, sans coût de simulation/IPC/sélection inclus. Ce n'est pas un budget
 de renouvellement. Lecture des graphes O(E), copies IPC et sélection restent
 des coûts à profiler aux grandes tailles, sans promesse de montée illimitée.
 
-Le lot livre un socle et des vérifications d'identité dynamique, pas une nouvelle
-capacité chimique. Prochain horizon : finition relecture/vidéo/inspection de
-la GUI puis scénario intégré visible, sans embellir ses fonctions manquantes.
+Le lot GUI1 livre un socle et des vérifications d'identité dynamique, pas une
+nouvelle capacité chimique. GUI2 rend désormais les scénarios visibles sans
+attendre relecture/vidéo, reportées pour spécification ; les fonctions manquantes
+restent déclarées.
 Les limites membranaires, T9, diversité et maintien restent identiques.
 
 ## Réévaluation courante après J3

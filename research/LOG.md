@@ -857,3 +857,30 @@ sans bibliothèques installées ni captures/résultats d'essais dans Git.
 Limite explicitée : la comparaison de liens après chaque tick voit les
 transitions entre ticks, pas tous les intermédiaires d'un même tick. Flux de
 mutations natif prévu dans la finition, aucun événement intermédiaire inventé.
+
+## 2026-10-29 — GUI2, catalogue des démos représentatives
+
+L'utilisateur reporte vidéo et outils avancés : priorité au minimum visuel et
+aux démos jouables maintenant. Catalogue versionné de quatre scènes scientifiques,
+six préréglages : J3 K16 avec L, graines2/0/1 (2118 billes) ; circuit matériel
+C3B1 graine1 (102) ; copie T7 graine0 (108) ; membrane V8 libre graine0 (72).
+Les états initiaux résolus et signatures modèle/graine/horizon/moteur/chimie
+correspondent aux entrées archivées ; aucune loi ou structure supplémentaire
+imposée. J3 graine2 sélectionnée pour illustrer un transfert, pas une robustesse.
+
+Menu Démos et fiche dédiée : matériel préparé, phénomène à observer, aides,
+limitations et référence. Compteurs copiés des observateurs existants, nouveaux
+G/F hors préparés, avec horloge de mesure passive. Lecture au maximum proposée
+mais départ en pause ; ralentissement seulement du déroulement, jamais de dt.
+Les sessions gardent leur configuration et leur fiche dans les sorties locales.
+
+Tests des six états, des signatures et des compteurs réussis. Test natif Qt :
+les six actions ouvrent les bons scénarios en pause ; lecture/pas/arrêt J3 et
+recommencement retrouvent exactement l'état initial. Captures dans outputs/demo_qa.
+Contrôle GUI court, pas de nouveau résultat chimique ou de campagne entière
+réexécutée. Les dégradations et les capacités manquantes restent déclarées.
+Validation finale :111 tests logiciels et7 historiques passent, ainsi que le
+test natif des six choix. Les31 empreintes du moteur sont gardées au catalogue :
+un changement de code demande une révision explicite avant de réutiliser les
+étiquettes des démos. Aucun changement du paquet simulator ni données brutes
+ajoutées au dépôt ; vidéo et fonctions avancées reportées.

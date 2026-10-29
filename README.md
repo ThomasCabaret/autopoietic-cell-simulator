@@ -1,11 +1,13 @@
 # Simulateur de chimie locale
 
-**Nouvelle interface durable (GUI1)** : exécuter `install_visualizer.bat` une fois,
+**Interface durable et démos du projet** : exécuter `install_visualizer.bat` une fois,
 puis `visualizer.bat`. Fenêtre Qt, rendu OpenGL par lots, navigation, filtres,
 sélection/suivi, transformations et export PNG. Elle démarre en pause après
-ouverture d'un scénario. [Fonctions livrées et suite de la GUI](docs/VISUALIZER.md).
-Cette interface est en cours de finition ; la nouvelle démo intégrée et l'export
-vidéo viennent ensuite. Les lanceurs Pygame historiques ci-dessous sont conservés.
+ouverture d'un scénario. Aller dans **Démos → Bain intégré actuel → Graine2**
+pour la vue d'ensemble, ou choisir un sous-système. [Catalogue et limites](docs/DEMOS.md).
+La visualisation essentielle est disponible ; la vidéo et les outils avancés
+seront spécifiés plus tard. [Guide de la GUI](docs/VISUALIZER.md).
+Les lanceurs Pygame historiques ci-dessous sont conservés.
 
 Un moteur CPU commun pour les campagnes sans fenêtre et les démonstrateurs
 interactifs. Les lois de copie/expression et de membrane sont des modules séparés.

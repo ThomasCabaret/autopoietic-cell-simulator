@@ -1,0 +1,85 @@
+# Démos représentatives accessibles dans la GUI
+
+Catalogue du 29 octobre 2026. Lancer `visualizer.bat`, puis **Démos → Bain intégré
+actuel → Graine 2 · transfert observé** pour commencer. Le bouton **Démos** de
+la barre d'outils ouvre le même catalogue. Aucun chemin JSON à chercher.
+
+Chaque choix recalcule la simulation depuis son état initial, en pause. Cliquer
+**Jouer**, puis ajuster la vitesse, zoomer à la molette ou glisser pour
+déplacer la vue. Le rythme initial des démos est **Maximum**, sans modification
+du pas numérique ; ralentir ensuite pour examiner les liaisons. **F** revient
+à la vue globale. L'onglet **Explorer** contient filtres, sélection et suivi ;
+l'onglet **Démo** explique l'essai, ses limites et ses mesures en direct.
+
+## Quatre démos, six préréglages
+
+| Démo | Billes | Rôle et départ | Limite essentielle |
+|---|---:|---|---|
+| Bain intégré actuel, J3 |2118|Grande membrane,16 G001 et16 F001 déjà construits, monomères et précurseurs ; même bain|Intégration partielle, pas une cellule viable ni un renouvellement complet|
+| Copie, expression et fabrication, C3B1 |102|Un G001 et six monomères F, autres P/R libres ; les F complets doivent être exprimés|Sous-système chaud sans membrane, pas interchangeable avec le bain intégré|
+| Copie binaire seule, T7 |108|Chaîne001011 et48 dimères libres déjà fabriqués|Copie seule, sans fabrication des dimères ni expression|
+| Petites membranes depuis molécules libres, V8 |72|36 dimères isolés, aucune liaison latérale préassemblée|Petits contours distincts de la grande membrane, pas de rétention démontrée|
+
+Le premier est la vue la plus intégrée effectivement étudiée. Trois graines
+0/1/2 sont proposées ; la 2 apparaît en premier car un F nouvellement exprimé
+y a produit des composants ensuite incorporés. Ce choix est illustratif :
+il ne mesure pas une probabilité de succès. La 1 produit G et F nouveaux mais
+sans activité observée de ce F à 1200 ; la 0 ne produit pas de nouveau F sur
+cet horizon. Les résultats ne doivent pas être réunis en une réussite unique.
+Référence : research/BATCH_16_RESULTS.md.
+
+La grande membrane est **préparée** : 219 molécules en anneau et 24 libres.
+Les 24 libres peuvent s'insérer ; elles ne sont pas synthétisées par les outils.
+Le contenu est placé au centre puis évolue sans paroi interne ni recentrage.
+Le stock de nourriture est fini, sans flux extérieur continu. Les défauts,
+la dispersion et le faible renouvellement restent visibles. La durée 1200 est
+en unités simulées ; le temps à l'écran dépend du débit réel, pas d'un film
+précalculé. Le cycle d'association/libération est une aide externe 200/15.
+
+Les trois sous-systèmes servent à voir plus facilement les mécanismes que le
+grand bain rend rares ou difficiles à lire. C3B1 et T7 utilisent 0,6 de température,
+le bain intégré 0,08 ; V8 a une autre géométrie membranaire. **Leurs réussites ne
+s'additionnent pas en une preuve d'une chimie commune complète.** Les fiches
+de la GUI déclarent ces différences et le matériel préparé.
+
+## Mesures et traçabilité
+
+La fiche montre les nouveaux G/F libérés hors chaînes préparées, les composants
+construits/catalysés/réutilisés et l'état de frontière ou les contours observés,
+selon le modèle. Ces compteurs viennent des observateurs de recherche existants,
+avec leur temps de mesure ; ils ne pilotent jamais les réactions. Ce ne sont
+pas encore des courbes cinétiques. « Frontière non classable » reste un état
+inconnu, pas une fermeture supposée.
+
+`demonstrators/catalog.json` décrit les fiches, graines, sources et signatures.
+Les `demonstrators/configs/demo_*.json` sont des scénarios résolus dérivés des
+entrées archivées, sans nouvelles règles ou liens forcés. Les champs de dynamique
+modèle/graine/horizon/moteur/chimie sont comparés aux sources. Le chargement
+refuse une signature modifiée au lieu de garder silencieusement la même étiquette.
+Chaque session écrit son scénario, ses sources moteur et un `demo.json` local.
+Les sources historiques restent intactes ; aucune trajectoire ou checkpoint
+n'est embarqué dans le catalogue.
+
+Pour reconstruire ou contrôler les entrées :
+
+```powershell
+python experiments/prepare_demo_catalog.py build
+python experiments/prepare_demo_catalog.py verify
+```
+
+Le contrôle vérifie notamment 16 G/F complets préparés pour J3, aucun F complet
+préparé pour C3B1 et aucune liaison latérale initiale pour V8. Les validations
+GUI ouvrent les six choix via leurs actions Qt, vérifient la pause initiale,
+font jouer le bain intégré et retrouvent exactement son état initial au
+recommencement. Elles ne constituent pas une nouvelle campagne complète à 1200.
+Les réussites de long horizon citées proviennent des expériences référencées.
+
+Vidéo, relecture avancée et courbes sont reportées pour spécification ultérieure.
+Elles ne conditionnent pas l'utilisation actuelle de ces démos.
+
+Validation du lot : 111 tests logiciels et 7 historiques réussis, plus le test
+Qt/OpenGL natif des six entrées et du démarrage/pause/recommencement de J3.
+
+Le catalogue conserve aussi les empreintes du code moteur utilisé pour cette
+sélection. Si ce code change, les démos demandent une révision du catalogue
+avant leur lancement ; une ancienne étiquette ne masque pas de nouvelles lois.
