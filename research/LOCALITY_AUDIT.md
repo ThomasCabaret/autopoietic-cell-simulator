@@ -47,6 +47,14 @@ dans les forces/réactions. Permuter les IDs ne doit pas changer une force physi
 
 ## Obligations du lot9
 
+Ajout P10 (lot19,29 octobre2026) : `polymer_population.py` est un observateur
+optionnel qui lit les composants, séquences complètes, identités initiales et
+contacts pour les recenser. Ses données n'entrent ni dans les taux, ni dans les
+forces, ni dans le PRNG. Aucun changement de loi ou de motif réactif ; portée
+globale d'analyse déclarée, coût chimique nul. Tests d'identité dynamique et
+de reprise exacte dans `tests/test_polymer_population.py`. Aucun ajout de
+matière ou sauvetage d'une séquence selon les résultats observés.
+
 Le grand anneau et les cohortes de sondes sont préparés et marqués seulement
 pour analyse. Les contacts H–H/T–T de V8 se rompent/reforment sans reconnaître
 leur composante. L'insertion est une observation après coup de nouvelles unités

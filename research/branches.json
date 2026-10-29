@@ -859,6 +859,18 @@
       "evidence": "docs/DEMOS.md"
     },
     {
+      "id": "P10",
+      "parent": "T7",
+      "related": ["T9", "GUI2"],
+      "status": "ten_symbol_population_campaign_running_pilots_complete",
+      "hypothesis": "Strict symbol recognition does not ensure complete-chain amplification; abundant monomers may accumulate in partial or off-target products",
+      "test": "One G0010110101; G-only copy or F-only expression, 400 monomers, seeds0/1/2 at3200; selected doubled-reserve/area and dilute seed0 controls. Full passive sequence census every10, live stock and kinetic exposure, fixed16 cycles",
+      "cost": "Zero new chemical primitive, tool or law. Passive population observer and frozen campaign reports, two workers, no dense trajectories",
+      "counterexample": "Only exact-ever counters are reported while failures are omitted; a finite reservoir plateau is called intrinsic capacity; survival of irreversible initial edges is called active repair; separate G/F baths called integrated",
+      "missing_proof": "Long-run cohort, sequence/length distributions, multi-generation amplification and scope of crowding/resource effects remain pending. No point-mutation channel exists",
+      "evidence": "research/BATCH_19.md"
+    },
+    {
       "id": "ENV0",
       "parent": "H0",
       "related": [

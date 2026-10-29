@@ -1,4 +1,16 @@
-# Priorité actuelle — examiner les démos du projet
+# Priorité actuelle — P10, fidélité globale des populations
+
+29 octobre 2026 : demande utilisateur prioritaire après examen de la copie.
+Lot19 lancé : un seul G de dix symboles, stock abondant de dimères libres,
+distribution complète des séquences et longueurs au fil du temps. Copie seule
+et expression seule, trois graines chacune ; contrôles de réserve/volume et
+de dilution, dix essais à3200. Voir BATCH_19_PLAN.md et BATCH_19.md.
+Lire la cohorte avant de modifier T9 : abondance initiale ne garantit pas une
+réserve libre tardive, et la fidélité locale stricte ne garantit pas l'amplification.
+Aucune nouvelle protéine ou loi. La synthèse depuis P/R et la membrane restent
+hors de ce diagnostic ; ne pas appeler ce lot une nouvelle cellule intégrée.
+
+## Priorité précédente — examiner les démos du projet
 
 29 octobre2026, précision utilisateur : le minimum de visualisation est suffisant
 pour passer aux démos représentatives. GUI2 ajoute le catalogue : bain J3 intégré

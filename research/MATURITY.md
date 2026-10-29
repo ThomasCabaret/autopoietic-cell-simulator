@@ -8,6 +8,17 @@ elles ne conditionnent plus l'examen de ces démos. Voir ../docs/DEMOS.md.
 Ce progrès d'ingénierie ne démontre aucun nouveau mécanisme, maintien ou
 renouvellement cellulaire. Les preuves et limites chimiques ci-dessous restent.
 
+## Diagnostic P10 en cours — lot19
+
+La capacité génétique longue et la distribution de tous les produits deviennent
+le jalon immédiat avant T9. Deux pilotes à50 sur dix symboles confirment le
+recensement et la formation de fragments avec plus de97% des monomères libres ;
+aucune copie complète nouvelle à cet horizon court, observations censurées.
+Dix essais longs sont lancés, sans changement des lois T7. Pas encore de bilan
+de cohorte ni d'augmentation de maturité pour l'intégration. Le brin original
+ne peut pas perdre ses liaisons irréversibles : sa survie ne démontrerait pas
+une préservation active de l'information. Voir BATCH_19_PLAN.md.
+
 ## État scientifique après N1 / lot18
 
 **Clôture : N1 achevé6/6, transfert utile retrouvé au pas fin, maturité globale

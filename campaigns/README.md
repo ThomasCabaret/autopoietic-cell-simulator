@@ -1,5 +1,14 @@
 # Campagnes différées
 
+**29 octobre 2026 — campagne courante P10** : dix essais de population depuis
+un unique G de dix symboles, copie G seule ou expression F seule, monomères
+composites abondants et témoins de volume/densité. Voir
+[protocole](../research/BATCH_19_PLAN.md) et [lancement](../research/BATCH_19.md).
+`population_status.bat` affiche le statut et le recensement progressif ; les
+commandes habituelles stop/reprise ciblent la campagne courante. Le rapport
+`population_analysis.md/json` est aussi généré automatiquement à la fin.
+Pas de nouvelles lois ou protéines, ni de preuve d'intégration cellulaire.
+
 La suite conditionnelle du lot18 surveille N1, en fait l'analyse complète puis
 lance `cadence_controls.json` seulement si une alerte prospective concerne le
 raffinement le plus fin. Six essais N2 maximum ; ensuite arrêt pour interprétation.

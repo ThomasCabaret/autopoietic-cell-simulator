@@ -8,6 +8,7 @@ from .campaign_io import read,write,lock
 from .kinetics import KineticProbe
 from .boundary_audit import BoundaryAudit
 from .genetic_audit import GeneticAudit
+from .polymer_population import PopulationAudit
 
 
 def execute(folder,task_id):
@@ -27,6 +28,10 @@ def execute(folder,task_id):
                 sim,obs=checkpoint.load(folder/state['checkpoint'],make_observer)
             else:
                 sim=Simulation(task['scenario']);obs=make_observer(sim.config,manifest['record_trajectory']);sim.listeners.append(obs)
+            population=None
+            if manifest.get('population_audit',False):
+                population=PopulationAudit(sim.config,getattr(obs,'campaign_population_state',None),manifest['population_interval'])
+                sim.listeners.append(population)
             probe=KineticProbe(sim.config,getattr(obs,'campaign_kinetics_state',None),manifest['kinetic_window'])
             probe.attach(sim.chemistry)
             genetic=None
@@ -42,8 +47,13 @@ def execute(folder,task_id):
                 obs.campaign_kinetics_state=probe.state
                 if audit is not None:obs.campaign_boundary_state=audit.state
                 if genetic is not None:obs.campaign_genetic_state=genetic.state
+                if population is not None:obs.campaign_population_state=population.state
                 checkpoint.save(path/'periodic.npz',sim,obs)
                 state['checkpoint']=(path/'periodic.npz').relative_to(folder).as_posix()
+                if population is not None:
+                    write(path/'population.json',population.summary())
+                    state['population']=(path/'population.json').relative_to(folder).as_posix()
+                    state['population_latest']=population.latest()
             while not sim.done:
                 if (folder/'STOP').exists():
                     save();state.update(status='paused',step=sim.step_index,simulated_time=sim.time,updated=time.time())
@@ -61,10 +71,12 @@ def execute(folder,task_id):
                     if audit is not None:state['boundary_state']=audit.state['last_kind']
                     if genetic is not None:
                         state['genetic_first']=genetic.state['first']
+                    if population is not None:state['population_latest']=population.latest()
                     write(dest/'state.json',state)
             obs.campaign_kinetics_state=probe.state
             if audit is not None:obs.campaign_boundary_state=audit.state
             if genetic is not None:obs.campaign_genetic_state=genetic.state
+            if population is not None:obs.campaign_population_state=population.state
             evidence=save_result(path,sim,obs,time.monotonic()-start)
             save();write(path/'kinetics.json',probe.summary(sim.time,evidence['metrics']))
             if audit is not None:

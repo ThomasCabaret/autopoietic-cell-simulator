@@ -16,6 +16,9 @@ def prepare(plan_path,parent):
     if not isinstance(workers,int) or not 1<=workers<=max(1,os.cpu_count() or 1):raise ValueError('Invalid worker count')
     if not all(isinstance(v,(int,float)) and 0<v<86400 for v in (interval,window)):raise ValueError('Invalid checkpoint/window interval')
     if not plan.get('tasks'):raise ValueError('Empty campaign')
+    population_interval=plan.get('population_interval',10.)
+    if not isinstance(population_interval,(int,float)) or population_interval<=0:
+        raise ValueError('Invalid population interval')
     tasks=[]
     for i,raw in enumerate(plan['tasks']):
         cfg=resolve(raw['scenario']) if 'scenario' in raw else resolve(read(ROOT/raw['config']))
@@ -27,16 +30,22 @@ def prepare(plan_path,parent):
             cfg=t['scenario'];g=cfg['chemistry'].get('genetics',cfg['chemistry'])
             if cfg['model'] not in ('copy','coupled_bath') or g.get('dual_faces') or g.get('food_pairs'):
                 raise ValueError('Genetic audit requires copy/coupled P/R without dual faces or X/Y')
+    if plan.get('population_audit',False):
+        from simulator.polymer_population import PopulationAudit
+        for task in tasks:PopulationAudit(task['scenario'],interval=population_interval)
     folder=parent/('campaign_'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ'));folder.mkdir(exist_ok=False)
     runtime=folder/'runtime';runtime.mkdir();source=ROOT/'simulator'
     (runtime/'simulator').mkdir()
     for p in source.glob('*.py'):shutil.copyfile(p,runtime/'simulator'/p.name)
     shutil.copyfile(__file__,runtime/'campaign.py')
+    if plan.get('population_audit',False):
+        shutil.copyfile(ROOT/'scripts/population_report.py',runtime/'population_report.py')
     hashes={p.relative_to(runtime).as_posix():digest(p) for p in runtime.rglob('*.py')}
     manifest=dict(version=1,name=plan.get('name','campaign'),created=time.time(),tasks=tasks,
         workers=workers,checkpoint_seconds=interval,kinetic_window=window,
         boundary_audit=bool(plan.get('boundary_audit',False)),
         genetic_audit=bool(plan.get('genetic_audit',False)),
+        population_audit=bool(plan.get('population_audit',False)),population_interval=population_interval,
         record_trajectory=bool(plan.get('record_trajectory',False)),source_sha256=hashes,
         comparison_policy=plan.get('comparison_policy','Separate candidates; no common chemistry inferred'),
         plan_sha256=digest(plan_path))
@@ -123,6 +132,8 @@ def run(folder,retry_failed=False):
             if stopping and not active:break
             time.sleep(.25)
         final=status(folder)
+        if manifest.get('population_audit',False):
+            subprocess.run([sys.executable,str(folder/'runtime/population_report.py'),str(folder)],check=True)
         return 1 if failures or final['counts']['failed'] else 0
 
 

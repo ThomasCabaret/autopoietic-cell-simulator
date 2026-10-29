@@ -19,6 +19,7 @@ __pycache__/
 !/research/campaign_recipes/*/plan.json
 !/research/campaign_recipes/*/runtime/
 !/research/campaign_recipes/*/runtime/campaign.py
+!/research/campaign_recipes/*/runtime/population_report.py
 !/research/campaign_recipes/*/runtime/simulator/
 !/research/campaign_recipes/*/runtime/simulator/*.py
 /build/

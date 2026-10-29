@@ -896,3 +896,23 @@ le feu vert utilisateur avant sa mise en œuvre. AGENTS.md relaie cette règle ;
 le skill de recherche impose déjà la lecture du contrat de conception.
 Aucune nouvelle protéine, loi, campagne ou branche expérimentale introduite ;
 priorités scientifiques et maturité inchangées.
+
+### 29 octobre 2026 — lot19, P10 distribution complète des produits
+
+Demande utilisateur : un brin de dix symboles, réserve abondante, observer toute
+la population et non les seules copies réussies. BATCH_19_PLAN.md fixe le test.
+Nouveau PopulationAudit optionnel et passif : séquences canoniques, longueurs,
+stocks, produits nouveaux/libres, matériel initial et contacts de cœur.
+Campagnes/sauvegarde/reprise réutilisées ; zéro nouvelle loi ou protéine.
+
+Deux pilotes à50 terminés, environ1000 pas/s, fragments avec97% de monomères
+encore libres et aucun exact à cette date. Pas d'échec définitif déduit.
+Deux témoins dilués ajoutés prospectivement après observation de contacts de
+cœur fréquents. Campagne P10 figée puis lancée en arrière-plan, dix essais à3200,
+deux travailleurs, checkpoints30s, pas de trajectoire dense. Recettes de sources
+préservées, voir BATCH_19.md ; priorités, arbre, santé et maturité actualisés.
+À800, les deux premières graines G ont chacune un exact nouveau détaché contre
+27/24 fragments, avec308/324 monomères libres sur400. Lecture intermédiaire,
+cohorte incomplète ; pas de plateau final déclaré.115 tests logiciels et7
+historiques passent après relance hors du bac à sable Windows qui bloquait
+les écritures temporaires. Les recettes et contrôles de passivité sont conservés.

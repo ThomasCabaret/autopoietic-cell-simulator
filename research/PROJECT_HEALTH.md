@@ -6,6 +6,24 @@ est une cellule construite qui maintient et refabrique ses composants depuis
 une nourriture simple, avec énergie externe déclarée. Apparition spontanée,
 division et évolution ouverte ne sont pas des conditions ajoutées à cette cible.
 
+## Jalons génétiques P10 — 29 octobre 2026
+
+La demande utilisateur de population issue d'un seul G long est prioritaire
+avant correction T9. Tester dix symboles, abondance finie et volume/densité
+contrôlés réduit une incertitude qui menace toute fermeture causale. Deux
+pilotes se terminent, la cohorte longue de dix essais est lancée ; pas de
+conclusion favorable ou d'obstacle irréversible déduit de ces premiers instants.
+Coût : un observateur passif optionnel, zéro primitive ou outil chimique.
+
+Le budget est borné à16 cycles par essai, deux travailleurs ; débit initial
+environ1000 pas/s pour820 billes, coût de l'ordre d'une heure pour la campagne,
+révisable avec la croissance et les témoins1620 billes. Ce sont des essais
+automatiques, pas dix changements conceptuels. Prochain point de décision :
+distribution, amplification et réserve libre à800/1600/3200, puis choix T9
+ou réexamen de la représentation. Ne pas compenser un rendement nul par une
+suite sans fin de doses/horizons. Pas de nouvelles enzymes sans proposition
+et feu vert utilisateur, conformément au contrat.
+
 ## Priorité d'ingénierie GUI1
 
 GUI2 : le minimum demandé permet maintenant d'examiner le bain J3 dans la GUI,
