@@ -884,3 +884,15 @@ test natif des six choix. Les31 empreintes du moteur sont gardées au catalogue 
 un changement de code demande une révision explicite avant de réutiliser les
 étiquettes des démos. Aucun changement du paquet simulator ni données brutes
 ajoutées au dépôt ; vidéo et fonctions avancées reportées.
+
+### 29 octobre 2026 — option d'un nouvel assemblage fonctionnel
+
+Précision méthodologique utilisateur : comparer une amélioration des lois à
+un nouvel outil moléculaire assemblé, par exemple une insertase. Cette option
+existait déjà dans CELL_ARCHITECTURE.md (EI/gI), sans réalisation démontrée.
+DESIGN_PRINCIPLES.md impose désormais une proposition motivée : mécanisme local,
+coût complet de reconstruction, alternatives et test discriminant. Attendre
+le feu vert utilisateur avant sa mise en œuvre. AGENTS.md relaie cette règle ;
+le skill de recherche impose déjà la lecture du contrat de conception.
+Aucune nouvelle protéine, loi, campagne ou branche expérimentale introduite ;
+priorités scientifiques et maturité inchangées.

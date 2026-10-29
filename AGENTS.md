@@ -49,6 +49,11 @@
   budget current. Include imports, waste, membrane insertion, every added tool's
   gene and renewal, off-target reactions and mixed-environment controls. A closed
   dependency graph is a conditional specification, not evidence of viability.
+- Consider a new molecular assembly as an alternative to changing general laws
+  when a diagnosed mechanism becomes difficult. Compare its local mechanism,
+  total gene/tool/renewal dependencies and off-target costs as specified in
+  `research/DESIGN_PRINCIPLES.md`. Suggest the option to the user and wait for
+  their explicit go-ahead before implementing an additional functional tool.
 - Run checks appropriate to the change. At batch handoff give a very brief,
   honest maturity assessment, distinguishing separate models from common chemistry.
 - Follow `research/KINETICS_AND_PERFORMANCE.md`: distinguish no encounters,

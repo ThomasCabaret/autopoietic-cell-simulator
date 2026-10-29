@@ -60,6 +60,48 @@ constriction et renouvellement. Aucune capacité de division n'est démontrée,
 et sa réalisation n'est pas requise pour le jalon actuel de maintien d'une
 cellule construite. La flexibilité n'est pas une promesse d'évolution ouverte.
 
+## Résoudre un verrou par un nouvel outil moléculaire
+
+Précision utilisateur du 29 octobre 2026 : envisager explicitement plusieurs
+voies face à un verrou identifié : améliorer un mécanisme local existant,
+concevoir un nouvel assemblage fonctionnel sous les mêmes lois, ou réexaminer
+la représentation. Ne pas supposer que toute difficulté doit être résolue par
+une modification des lois générales. Une machine moléculaire peut réserver
+une opération à ses contacts et éviter de perturber tout le bain.
+
+Exemple hypothétique : un assemblage se lie localement à des composants de
+membrane et à une molécule libre, favorise une transition de liaison, puis se
+libère pour recommencer. Son activité doit provenir de ses constituants,
+ports, géométrie et états locaux. Ne pas ajouter une primitive « insertase »
+qui reconnaît une membrane entière et exécute son insertion. Une étiquette
+de protéine, un gène complet ou un contour ne peut diriger la réaction.
+Cette esquisse ne prouve pas que la chimie actuelle peut la réaliser.
+
+Avant de proposer un outil supplémentaire, présenter :
+
+- Le verrou et son diagnostic, les solutions plus simples considérées et le
+  gain attendu par rapport à une modification des lois.
+- Le mécanisme local envisagé, les primitives déjà disponibles et les ajouts
+  éventuels ; distinguer nouvel assemblage et nouvelle loi.
+- Le coût total : gène, expression, précurseurs, énergie, copies, transport,
+  renouvellement et dépendances nécessaires pour refaire l'outil lui-même.
+  Un gène supplémentaire n'impose pas nécessairement un nouvel alphabet.
+- Les interférences possibles et le plus petit test discriminant : témoin
+  sans outil ou avec assemblage inactif, libération et réutilisation, produit
+  utile en aval, maintien des fonctions préexistantes dans le même bain.
+
+Comparer la complexité totale et la fermeture causale, pas seulement le nombre
+de règles ou la simplicité du démonstrateur isolé. Éviter une chaîne d'outils
+auxiliaires dont chacun exige un outil supplémentaire non reconstruit.
+
+**Suggérer cette option à l'utilisateur et attendre son feu vert avant de
+mettre en œuvre un nouvel outil fonctionnel supplémentaire.** L'analyse
+conceptuelle et la proposition sont encouragées ; elles ne valent pas
+autorisation de l'ajouter. Cette décision utilisateur ne concerne pas les
+contrôles ordinaires des outils déjà présents. Après accord, tracer la variante,
+mettre à jour graphe causal, contrats d'interaction et budget de particules,
+puis distinguer activité d'un outil préparé, fabrication et renouvellement.
+
 ## Décisions et maturité
 
 Les acquis à préserver sont des comportements sous un candidat identifié,
