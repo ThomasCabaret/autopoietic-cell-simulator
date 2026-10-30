@@ -1160,3 +1160,26 @@ les deux variantes, porte refusée, B4 non lancé, aucun calcul actif. Pas de
 nouvelle analyse mécanistique ou campagne ; prochain jalon scientifique inchangé.
 Arbre, priorités, santé et maturité mis à jour ; niveau moléculaire inchangé.
 Code, annotations, SVG/HTML et documents versionnés ; données locales, pas de push.
+
+### Lot29 — familles d'actions protéiques et recentrage I0
+
+Demande utilisateur : établir le rationnel des fonctions d'assemblages locaux
+avant de poursuivre les corrections de copie ; tailles20–24 injustifiées sans
+mécanisme. Lecture de precursors/assembly/copy et des preuves C3B1 : petit
+co-recruteur P/R, formation réelle puis libération, helper de taux explicite.
+La capture regroupe P_G/P_F et R0/R1, MD2 a les mêmes préférences d'angle0,8
+pour F0/F1 ; ni EN/EA sélectifs ni synthèse L ou répertoire de repliements acquis.
+
+FUNCTIONAL_MECHANISMS.md décrit six familles et leurs tests : gabarit/pince,
+poche/repliement, charnière/travail, clivage/recyclage, transfert/insertion et
+marcheur processif. États locaux, propagation des forces, aides énergétiques,
+libération et reconstruction sont requis ; aucun nom de chaîne entière dans
+les lois. Aucun nouvel outil ou essai implémenté. Deux fonctions utiles sous
+lois fixes, puis transfert/expression, deviennent le jalon prioritaire I0.
+T9 revient lorsqu'il bloque une fonction établie. Principes durables actualisés.
+
+Atlas révision02 : tailles inconnues, brins interrompus,24 séparé dans le budget
+et ses métadonnées/CLI ; aucune taille déduite de l'illustration. Contrôles carte
+et audit9/9, rendu inspecté. Moteur, scénarios et anciennes preuves inchangés.
+Arbre, priorités, santé/maturité mis à jour ; le recentrage ne vaut pas nouvelle
+activité moléculaire. Sources/documents seulement, commit local sans push.

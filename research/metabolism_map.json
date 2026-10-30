@@ -1,12 +1,13 @@
 {
   "schema_version": 1,
   "reviewed": "2026-10-30",
+  "revision": 2,
   "specification": "research/minimal_cell_spec.json",
   "title": "La cellule qui se refabrique",
   "subtitle": "Atlas du métabolisme visé · architecture C0B · cellule construite au départ",
   "genome": {
     "organization": "one_strand_per_gene",
-    "length_source": "nominal_sizing_assumption",
+    "length_source": "unknown_functional_lengths; nominal_sizing_is_not_a_prediction",
     "sequences": {"gN": null, "gA": null, "gL": null},
     "convention": "Bases binaires sur un brin ; appariements transitoires, pas de duplex permanent exigé."
   },

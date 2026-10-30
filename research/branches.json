@@ -504,12 +504,14 @@
       "related": [
         "C0B"
       ],
-      "status": "proposed_not_tested",
+      "status": "current_conceptual_priority_functional_mechanisms_before_copy_tuning",
       "priority": "P0",
       "hypothesis": "Different assemblies under fixed local laws can selectively make different usable bond states from shared food",
       "test": "Prepared then expressed tools, N versus A products of equal mass, actual incorporation, no-tool and foreign-species/crowding controls",
       "counterexample": "Selectivity is encoded as whole-enzyme identity, products cannot transfer, or parasites consume the useful flux",
-      "missing_proof": "Even a two-function transferable selective library remains unproved"
+      "missing_proof": "Even a two-function transferable selective library remains unproved",
+      "evidence": "research/FUNCTIONAL_MECHANISMS.md",
+      "health_gate": "Choose and test reusable local assemblies before further genetic parameter tuning; copying returns as priority when it blocks transfer of an established function. Length follows mechanism, not sizing cases."
     },
     {
       "id": "M1",
@@ -1101,7 +1103,22 @@
       "evidence": "research/BATCH_28_PLAN.md",
       "results": "research/BATCH_28.md",
       "source": "research/metabolism_map.json",
-      "artifact": "docs/metabolism/metabolism.svg"
+      "artifact": "docs/metabolism/metabolism.svg",
+      "revision_2": "All gene lengths unknown;24 retained only in a separate budget scenario, not in the gene glyph count or headline."
+    },
+    {
+      "id": "FM1",
+      "parent": "I0",
+      "related": ["C3B1", "C0B", "T9", "MAP1"],
+      "status": "mechanism_families_documented_no_new_tool_or_experiment",
+      "hypothesis": "Small assemblages of local capture sites, conformation and bond-state changes can support reusable functions; functional diversity must be established before stabilizing long copying",
+      "test": "Next milestone only: select common laws, compare distinct useful products, background, release, turnover and transfer, then express the same assembly; include L as a downstream falsifier",
+      "cost": "No implemented primitive/state/port/rate/tool/gene/particle. Existing six-bead capture/ligation motif audited; hypothetical extensions require an explicit cost and approval for extra tools.",
+      "counterexample": "One special rule per function, whole-chain detection, missing energy/reset, no product release, or a growing chain length without a measured functional benefit",
+      "missing_proof": "Current broad P/R capture has no demonstrated EN/EA selectivity, no L synthesis, identical F0/F1 angular preferences in MD2; generic programmable repertoire unproven",
+      "evidence": "research/BATCH_29_PLAN.md",
+      "results": "research/BATCH_29.md",
+      "source": "research/FUNCTIONAL_MECHANISMS.md"
     }
   ]
 }

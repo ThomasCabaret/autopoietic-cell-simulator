@@ -53,6 +53,13 @@ de dimensionnement alternatives. Ce ne sont pas24 paires de bases permanentes :
 le modèle suit des chaînes simples et leurs appariements transitoires. Un brin
 par gène simplifie le découpage sans garantir début, finition et libération.
 
+Révision02 / lot29 : « taille inconnue » sur chacun des gènes et dans l'en-tête.
+Les barres interrompues ne représentent pas un nombre de bases ; les24 unités
+ne sont conservées que dans le scénario de comptabilité, y compris les
+métadonnées `network` explicitement marquées comme budget nominal. La fonction
+de l'assemblage devra déterminer sa longueur, éventuellement différente pour
+chaque outil. Voir [le brouillon mécanistique](../../research/FUNCTIONAL_MECHANISMS.md).
+
 Chaque flèche de copie/expression suppose **tous** ses intrants : gène matrice,
 monomères adéquats et énergie ; matrice et catalyseur sont conservés. Les
 intersections de traits sans point ne constituent pas une réaction. Les formes

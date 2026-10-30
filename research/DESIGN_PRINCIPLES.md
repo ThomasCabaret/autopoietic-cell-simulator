@@ -46,6 +46,16 @@ helper spécifique reste une dette tant que sa réutilisation n'est pas établie
 
 ## Anticiper les incompatibilités avant un gros investissement
 
+La fonction des assemblages est un jalon central, pas une propriété supposée
+pour après la stabilisation génétique. Lire FUNCTIONAL_MECHANISMS.md : avant
+de multiplier des corrections de copie, établir une famille plausible puis
+des productions distinctes et transférables sous lois fixes. Un seul assembleur
+polyvalent et local ne prouve pas encore un répertoire programmable d'outils.
+Un blocage de copie reprend la priorité s'il empêche le transfert d'une fonction
+déjà établie. Déterminer les longueurs depuis les mécanismes, pas depuis les
+cas de budget12/24/48 ; ces nombres ne deviennent jamais des cibles fonctionnelles
+sans preuve. Toute unité supplémentaire doit avoir un rôle ou un avantage testé.
+
 Chaque plan indique :
 
 1. Le verrou global réduit et la capacité aval susceptible d'être empêchée.

@@ -67,6 +67,8 @@ def main():
         'research/metabolism_map.json','experiments/build_metabolism_map.py','metabolism.bat',
         'docs/metabolism/README.md','docs/metabolism/viewer.html.in',
         'docs/metabolism/index.html','docs/metabolism/metabolism.svg'))
+    files.update(ROOT/p for p in ('research/BATCH_29_PLAN.md','research/BATCH_29.md',
+        'research/FUNCTIONAL_MECHANISMS.md'))
     files.update(ROOT/p for p in ('README.md','SIMULATOR_ARCHITECTURE.md','requirements.txt',
         'CONTRIBUTING.md','GIT_SETUP.md','THIRD_PARTY_NOTICES.md',
         '.gitignore','.gitattributes','.editorconfig',

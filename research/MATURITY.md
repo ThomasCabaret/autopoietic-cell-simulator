@@ -1,5 +1,12 @@
 # Maturité — mécanique améliorée, renouvellement F toujours non démontré
 
+Lot29 : clarification critique, pas de nouvelle preuve dynamique. Une petite
+chaîne peut recruter P/R, favoriser leur liaison via un helper local et libérer
+les produits ; la bibliothèque séquence→fonctions distinctes reste non prouvée.
+MD2 ne distingue pas les précurseurs G/F dans cette capture et ne fabrique pas L.
+I0 reprend la priorité avant réglages de copie. Longueurs fonctionnelles inconnues,
+atlas rectifié ; aucun gain moléculaire revendiqué par ce travail de conception.
+
 Lot28 : atlas de l'architecture cible livré avec rôles et limites distincts,
 aucune nouvelle capacité chimique. T9E corrigé terminé12/12 ; aucun F nouveau
 libéré dans le contrôle expression pour ancien ou nouveau, porte de transfert

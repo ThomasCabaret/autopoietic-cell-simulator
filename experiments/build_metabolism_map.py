@@ -67,7 +67,7 @@ def build_svg(m):
     v=SVG();v.add(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="map-title map-desc">')
     v.add('<title id="map-title">'+escape(a['title'])+'</title>')
     v.add('<desc id="map-desc">Trois gènes séparés, trois synthétases visées. Précurseurs et énergie alimentent copie, expression et membrane. Spécification conditionnelle, séquences inconnues et recyclage non résolu.</desc>')
-    v.add('<metadata id="map-data">'+escape(json.dumps(dict(specification=s['id'],provenance=m['provenance'],network=m['network']),ensure_ascii=False))+'</metadata>')
+    v.add('<metadata id="map-data">'+escape(json.dumps(dict(specification=s['id'],provenance=m['provenance'],network=m['network'],network_scope='Nominal budget only; functional lengths and sequences remain unknown'),ensure_ascii=False))+'</metadata>')
     v.add('<defs>')
     for color in (INK,MUTED,GOLD,WASTE,'#147e9a','#7850a6','#278568'):
         v.add(f'<marker id="arrow-{color[1:]}" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L8 4 L0 8" fill="none" stroke="{color}" stroke-width="2"/></marker>')
@@ -79,15 +79,15 @@ def build_svg(m):
     v.text(60,117,a['title'],52,INK,650)
     v.text(62,155,a['subtitle'],22,MUTED)
     v.rect(1410,35,610,143,'#e6ede6',radius=20)
-    v.text(1435,70,f'{n} GÈNES  /  {n*length} BASES',30,INK,650)
-    v.text(1435,103,f'{length} bases par brin · hypothèse de dimensionnement',18,MUTED)
-    v.text(1435,131,'Séquences à concevoir · une famille binaire · pas de codons',17,MUTED)
+    v.text(1435,70,f'{n} GÈNES / TAILLES INCONNUES',28,INK,650)
+    v.text(1435,103,'La fonction devra déterminer la longueur du brin.',18,MUTED)
+    v.text(1435,131,f'{length} bases : scénario de budget, aucune prédiction.',17,MUTED)
     v.pill(60,192,'CIBLE CONDITIONNELLE',INK,224)
     v.text(308,214,'Traits colorés : matière',17,MUTED)
     v.path('M550 207 H602',GOLD,3,arrow=True,dash=True)
     v.text(620,214,'Catalyse : outil conservé',17,MUTED)
     v.text(1010,214,'Matrice conservée ≠ matière du produit',17,MUTED)
-    v.text(2020,214,a['reviewed']+' · révision 01',16,MUTED,anchor='end')
+    v.text(2020,214,a['reviewed']+f' · révision {a.get("revision",1):02d}',16,MUTED,anchor='end')
     # Compartment boundary is a diagram convention, never exported to dynamics.
     v.rect(274,266,1502,900,'url(#cell-fill)','#9fbdad',64,3)
     v.rect(287,279,1476,874,'none','#d0ddd2',54,2)
@@ -150,10 +150,15 @@ def build_svg(m):
         v.add('</g>')
         # Single strand per gene. Unknown bars deliberately contain no invented sequence.
         v.add(f'<g id="species-{gene}">');v.rect(cx-155,947,310,141,'white',color,20,1.5)
-        v.text(cx-132,982,gene,30,color,600);v.text(cx+132,979,f'{length} bases*',19,MUTED,anchor='end')
-        for q in range(length):
-            v.rect(cx-129+q*258/length,1001,max(2,258/length-3),16,'#d3dfdc',radius=3)
         sequence=a['genome']['sequences'][gene]
+        v.text(cx-132,982,gene,30,color,600);v.text(cx+132,979,'Taille inconnue',18,MUTED,anchor='end')
+        if sequence is None:
+            for q in range(6):
+                for x in (cx-129+q*17,cx+29+q*17):v.rect(x,1001,12,16,'#d3dfdc',radius=3)
+            v.text(cx,1017,'…',23,MUTED,anchor='middle')
+        else:
+            for q in range(len(sequence)):
+                v.rect(cx-129+q*258/len(sequence),1001,max(2,258/len(sequence)-3),16,'#d3dfdc',radius=3)
         v.text(cx-132,1045,sequence if sequence else 'Séquence à concevoir',18,INK)
         v.text(cx-132,1072,'Un brin distinct · copies séparées',16,MUTED)
         v.add('</g>')
@@ -182,7 +187,7 @@ def build_svg(m):
     v.text(1808,1072,'FRONTIÈRE DE L',16,lc,600)
     v.lines(1810,1101,['Retient N/A, gènes','et outils ; laisse','passer les apports.'],16,MUTED,23)
     # Gene-copy/energy bookkeeping: exact formal ledger, not a kinetic claim.
-    v.text(335,1199,f'* Nominal : {n} espèces de gènes × {length} bases ; {m["nominal"]["gene_copies"]} copies/gène → {n*length*m["nominal"]["gene_copies"]} bases présentes. Budget global : {b["total_beads"]:,} billes.'.replace(',',' '),17,MUTED)
+    v.text(335,1199,f'Budget hypothétique séparé : {length} bases/brin ; {m["nominal"]["gene_copies"]} copies/gène → {n*length*m["nominal"]["gene_copies"]} bases présentes. Total : {b["total_beads"]:,} billes. Tailles réelles inconnues.'.replace(',',' '),17,MUTED)
     # Bottom information is readable on one poster, not hidden behind tooltips.
     foot_y=1240
     for x,width in ((60,620),(710,620),(1360,660)):v.rect(x,foot_y,width,200,'white','#dce2da',18)
@@ -192,7 +197,7 @@ def build_svg(m):
         'EA produit les A : chaînes EN, EA et EL, y compris elle-même.',
         'EL produit L : renouvellement de la frontière.',
         'Matrices et catalyseurs conservés ; réactifs + énergie requis.',
-        f'Énergie formelle : {s["assembly_energy_per_dimer"]} E/dimère, '+str((length-1)*s['polymerization_energy_per_bond'])+' E/chaîne de '+str(length)+' unités.',
+        f'Comptabilité : {s["assembly_energy_per_dimer"]} E/dimère, {s["polymerization_energy_per_bond"]} E/liaison de chaîne.',
         'Copie/expression : motifs locaux génériques, sans outil dédié.'
     ],17,MUTED,25)
     v.text(734,1274,'02 / DÉCHETS, RECYCLAGE & LIMITES',17,INK,600)
@@ -247,8 +252,9 @@ def main():
     (folder/'index.html').write_text(build_html(svg),encoding='utf-8')
     if args.preview:preview(svg,args.preview)
     print(json.dumps(dict(svg='docs/metabolism/metabolism.svg',html='docs/metabolism/index.html',
-        genes=len(model['spec']['roles']),bases_per_gene=model['nominal']['length'],
-        total_genetic_bases=len(model['spec']['roles'])*model['nominal']['length'],
+        genes=len(model['spec']['roles']),functional_lengths='unknown',
+        nominal_budget_bases_per_gene=model['nominal']['length'],
+        nominal_budget_genetic_bases=len(model['spec']['roles'])*model['nominal']['length'],
         conditional_audit_passed=True),ensure_ascii=False))
 
 

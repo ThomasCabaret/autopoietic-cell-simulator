@@ -16,6 +16,7 @@ class MetabolismMapTests(unittest.TestCase):
         namespace={'s':'http://www.w3.org/2000/svg'}
         metadata=json.loads(root.find('s:metadata',namespace).text)
         self.assertEqual(metadata['network'],m['network'])
+        self.assertIn('Nominal budget only',metadata['network_scope'])
         for reaction in metadata['network']['reactions']:
             if reaction['kind']=='polymer':
                 self.assertEqual(len(reaction['catalysts']),1)
@@ -27,6 +28,9 @@ class MetabolismMapTests(unittest.TestCase):
         self.assertEqual(m['nominal']['length'],24)
         self.assertEqual((m['current_sequence'],m['current_gene_copies']),('001',16))
         self.assertEqual(svg.count('Séquence à concevoir'),3)
+        self.assertEqual(svg.count('Taille inconnue'),3)
+        self.assertIn('TAILLES INCONNUES',svg)
+        self.assertNotIn('GÈNES  /  72 BASES',svg)
         self.assertIn('CIBLE CONDITIONNELLE',svg)
         self.assertIn('mécanisme de recyclage à choisir',svg)
 

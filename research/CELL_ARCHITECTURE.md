@@ -4,6 +4,13 @@
 
 ### Atlas de conception et organisation génétique — lot28
 
+Révision lot29 : [familles de mécanismes fonctionnels](FUNCTIONAL_MECHANISMS.md)
+prioritaires avant nouvelle optimisation de la copie. Les tailles et séquences
+des outils/gènes sont inconnues ;24 n'a aucun statut de prédiction. L'atlas
+affiche désormais cette incertitude sur les gènes et garde le budget séparément.
+Les trois rôles de production sont un plan conditionnel, pas une preuve de trois
+enzymes réalisables ni d'un nombre de gènes définitif.
+
 [Planche vectorielle générée](../docs/metabolism/metabolism.svg),
 [page navigable](../docs/metabolism/index.html), [sources et reconstruction](../docs/metabolism/README.md).
 La carte expose C0B comme une hypothèse de travail, avec son écart au candidat

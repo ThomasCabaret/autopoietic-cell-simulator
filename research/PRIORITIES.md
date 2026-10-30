@@ -1,4 +1,26 @@
-# Priorités actuelles — T9 dans le bain MD2, démos actuelles disponibles
+# Priorités actuelles — I0 : mécanismes et diversité des outils
+
+Lot29, priorité corrigée à la demande utilisateur : établir comment des petits
+assemblages peuvent porter des fonctions différentes sous des lois communes,
+avant de reprendre des réglages techniques de duplication. Lire
+[FUNCTIONAL_MECHANISMS.md](FUNCTIONAL_MECHANISMS.md). Le co-recrutement P/R
+existe, mais la capture actuelle ne distingue pas P_G/P_F ni R0/R1, L n'est
+pas fabriqué et les préférences angulaires F0/F1 de MD2 sont identiques.
+Un premier assembleur local ne suffit pas à prouver un répertoire d'outils.
+
+1. I0 : choisir une famille de petits catalyseurs ou une architecture polyvalente
+   avec deux productions distinctes utilisables, même alphabet/lois/énergie.
+   Prévoir bon/mauvais produit, fond, turnover, libération et transfert réel.
+2. Puis expression du même outil et usage de ses produits pour son renouvellement,
+   avec le test aval de fabrication L. Les nouvelles machines nécessitent la
+   proposition et l'accord prévus ; aucune n'est ajoutée dans ce lot de notes.
+3. Reprendre T9 en obstacle d'intégration si la copie bloque une fonction déjà
+   établie. Garder MD2 et les copies comme références, pas nouvelle grille ici.
+
+Tailles des gènes/outils inconnues. Le mécanisme détermine leur dimension ;
+24 reste un scénario de budget. Atlas corrigé, aucun changement du moteur.
+
+## Historique avant recentrage fonctionnel
 
 Lot28 documentaire : atlas généré disponible via metabolism.bat, trois gènes
 visés et déchets/recyclage manquants explicités, aucune loi changée. T9E est

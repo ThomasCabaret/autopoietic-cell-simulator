@@ -6,6 +6,17 @@ est une cellule construite qui maintient et refabrique ses composants depuis
 une nourriture simple, avec énergie externe déclarée. Apparition spontanée,
 division et évolution ouverte ne sont pas des conditions ajoutées à cette cible.
 
+Lot29 : l'expressivité des assemblages devient le verrou conceptuel prioritaire.
+Le candidat dispose d'un assembleur P/R générique et d'aides locales, mais pas
+d'une sélectivité EN/EA/L programmable démontrée. Même une copie parfaite ne
+résoudrait pas ce manque ; stabiliser toute la génétique d'abord serait un
+investissement prématuré. Premier jalon : deux productions utiles distinctes
+sous lois fixes, puis transfert expression→outil→produit utilisable et test L.
+Comparer un noyau minimal à une extension fonctionnellement justifiée ; aucune
+raison actuelle de prédire24 unités. Si chaque fonction exige une loi dédiée,
+revoir l'alphabet/représentation plutôt qu'ajouter une longue série de correctifs.
+Le moteur partagé et les références restent réutilisables en cas de refonte.
+
 Lot28 : l'atlas rend visibles trois séquences fonctionnelles encore inconnues,
 la fabrication L, le recyclage, les flux et l'homéostasie non réalisés. Il ne
 réduit pas ces verrous à des corrections techniques certaines. La cible3 gènes
