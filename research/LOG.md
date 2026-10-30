@@ -985,3 +985,37 @@ outputs/reviews/completed_20261029T175433568977Z, sources d'analyse versionnées
 recettes LT1/pilotes exportées.133 tests logiciels et7 historiques réussis.
 Arbre, priorité T9, localité, maturité et santé actualisés. Pas de calcul de
 ce lot encore actif, pas de nouvelle grille lancée à la clôture, aucun push.
+
+### 30 octobre2026 — lot23, Langevin visible et transfert aux démos
+
+Utilisateur : intégrer le mouvement dans les microdémos et résultats actuels,
+exposer l'enjeu puis reprendre les priorités. Plan BATCH_23_PLAN.md avant les
+pilotes et longs essais. Douze choix GUI : six références browniennes conservées
+et six variantes Langevin0,1,m1, mêmes lois, matériel et positions initiales.
+Chaque fiche expose l'enjeu, conditions et référence adaptées au candidat.
+Pas d'adoption globale ni nouvelle protéine. Option mechanics étendue aux
+membranes/bain couplé, cache invalidé après chaque réaction, audit passif étendu.
+
+136 tests logiciels et7 historiques réussis ;12 tests ciblés repassés après
+refus d'accès technique au temporaire du bac à sable, logs conservés. Test natif
+Qt/OpenGL12 actions, pause initiale et reprise exacte J3 sous deux mouvements.
+Captures inspectées. Les vieux presets conservent leur signature physique.
+
+Deux pilotes à5 terminés, sans erreur numérique mais échauffement cinétique
+mesuré V8/J3. Campagne LT2 source-figée16 essais, deux travailleurs ; recettes
+LT2/pilotes exportées, pointeur outputs/demo_motion_campaigns indépendant.
+Six essais micro principaux terminés : T7 G1/1 ; C3B1 G/F2/3 vers4/5,
+composants catalysés utilisés13 vers29 dont produits de F exprimés13 vers19 ;
+V8 premier contour184 vers41, fraction régulière81,5% vers94,5%, contours
+finaux différents. Contrôles fins T7/C3B1 variables, pas de certificat de
+convergence. Bains J3 et fin de cohorte à lire ; aucun changement des lois
+pendant les calculs. Voir BATCH_23.md, suivi demo_motion_status.bat.
+
+À la remise de main :9/16 terminés,0 erreur, sept tâches intégrées inachevées
+(deux actives). V8 fin : premier contour91, fraction régulière90,0%, deux
+contours finaux12/10, température tardive≈0,0947 contre cible0,08. Assemblage
+préservé, ni convergence quantitative ni origine thermique établies.
+
+Arbre, priorités, maturité, santé et audit de localité actualisés. Le modèle
+commun viable et T9 restent ouverts ; pas de nouvelle dépendance causale,
+pas de nouveau gène ou budget de particules. Pas de push.

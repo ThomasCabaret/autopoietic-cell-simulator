@@ -965,6 +965,29 @@
       "pilot_recipe": "research/campaign_recipes/LT1pilot_20261029T172036396166Z/manifest.json",
       "conclusion": "G exact1/1/0 ->2/0/3; F exact1/3/1 ->7/7/6. Fragment templates still64-86% of G ligations. All6 complete; no new off-target sequences. Default Brownian and demo physics unchanged.",
       "health_gate": "Next local T9 mechanism with parasite and sequestration controls; after two conceptual changes without transfer/new diagnosis revisit representation. New molecular tool requires costed proposal and user approval."
+    },
+    {
+      "id": "LT2",
+      "parent": "LT1",
+      "related": [
+        "GUI2",
+        "J3",
+        "T9",
+        "V8",
+        "C3B1"
+      ],
+      "status": "paired_demo_catalog_delivered_micro_results_complete_integrated_campaign_running",
+      "hypothesis": "The selected Langevin motion transfers to existing molecular assembly and useful catalysis without destroying membranes or common-bath function",
+      "test": "Twelve full-horizon paired historical GUI inputs, four selected Langevin dt/2 controls preserving reaction/observer intervals; two workers,16 tasks. Two short pilots first. Native GUI12 actions and restart for Brownian/Langevin J3. No chemical parameter changed.",
+      "cost": "Zero new chemical primitive/state/port/tool/gene/particle. Existing velocity model extended to membrane/membrane_bath/coupled_bath; passive thermal audit, signed scenarios and source-frozen report.",
+      "counterexample": "Faster filling loses functional transfer or boundary integrity, kinetic heating is hidden, selected single-seed microresults called robust, or a changed motion keeps a historical success label",
+      "missing_proof": "Full J3 paired cohort and selected integrated fine control pending. No convergence certificate, global adoption, reliable G10 amplification, L synthesis or viability.",
+      "evidence": "research/BATCH_23_PLAN.md",
+      "results": "research/BATCH_23.md",
+      "campaign_recipe": "research/campaign_recipes/LT2_20261030T065759494210Z/manifest.json",
+      "pilot_recipe": "research/campaign_recipes/LT2pilot_20261030T065129203595Z/manifest.json",
+      "conclusion": "Six main microtrials complete: T7 G1->1; C3B1 G/F2/3->4/5, catalyzed-used13->29 including expressed-used13->19; V8 first regular contour184->41, final contours10+14 vs11. Single-seed fine controls vary; thermal transients retained. Default Brownian preserved.",
+      "health_gate": "Read complete16-task cohort without more motion grid, then T9 mechanism interpretation. New molecular functional tool requires costed proposal and explicit user approval."
     }
   ]
 }

@@ -2,7 +2,8 @@
 
 ## Mouvement réactif expérimental — LT1
 
-Le scénario peut contenir une clé racine `mechanics` pour le seul modèle `copy` :
+Le scénario peut contenir une clé racine `mechanics` pour les modèles `copy`,
+`membrane`, `membrane_bath` et `coupled_bath` (extension LT2) :
 `{"motion":"langevin","mass":1.0,"damping":0.1,"dpd_cutoff":1.0}`.
 `dpd_cutoff` est un paramètre commun du conteneur mécanique, sans effet dans
 Langevin ; DPD reste réservé au modèle inerte `mixing`. La température vient
@@ -15,12 +16,17 @@ libération peuvent changer les forces sans produire d'événement de ligation.
 La reprise conserve vitesses, cache et PRNG. `MotionAudit` lit passivement la
 température cinétique/mouvement et sauvegarde son état avec le travailleur ;
 il ne rescale jamais les vitesses. Les signatures physiques GUI incluent
-`mechanics` lorsque présent. Les six presets historiques restent inchangés.
+`mechanics` lorsque présent. Les six presets historiques restent inchangés et
+six variantes Langevin comparables sont accessibles dans la GUI. Les vues
+des sous-chimies du bain intégré sont resynchronisées avant forces/réactions ;
+les tests incluent cache forcé, observateurs passifs et reprise des hooks étendus.
 
 Le transfert LT1 est achevé6/6, voir [bilan](research/BATCH_22.md). Gains de
 séquences F testés sous réactions constantes ; aucun transfert membrane/catalyse
-ni adoption du nouveau mouvement par défaut. Le contrat d'invalidation s'applique
-avant tout futur élargissement à un autre hook.
+ni adoption du nouveau mouvement par défaut dans ce lot. LT2 teste désormais
+les démos membrane/catalyse et J3 sous ce mouvement, sans adoption anticipée.
+Voir [lot23](research/BATCH_23.md). Le contrat d'invalidation s'applique à tous
+ces hooks réactifs, même si aucune ligation n'est rapportée.
 
 ## Nouveau client durable GUI1
 

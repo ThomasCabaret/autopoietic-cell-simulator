@@ -38,4 +38,9 @@ class DemoCatalog:
         cfg=load(path)
         if dynamics_hash(cfg)!=variant['dynamics_sha256']:raise ValueError('Le scénario de démo a changé : régénérer et vérifier le catalogue')
         if cfg['seed']!=variant['seed']:raise ValueError('Graine incohérente')
-        return dict(variant),dict(self.demos[variant['demo']]),cfg
+        info=dict(self.demos[variant['demo']])
+        presentation=variant.get('presentation',{})
+        if set(presentation)-{'conditions','observe','evidence'}:
+            raise ValueError('Champs de présentation de variante inconnus')
+        info.update(presentation)
+        return dict(variant),info,cfg

@@ -48,6 +48,8 @@ def prepare(plan_path,parent):
         shutil.copyfile(ROOT/'scripts/mixing_report.py',runtime/'mixing_report.py')
     if plan.get('motion_report',False):
         shutil.copyfile(ROOT/'scripts/motion_report.py',runtime/'motion_report.py')
+    if plan.get('demo_motion_report',False):
+        shutil.copyfile(ROOT/'scripts/demo_motion_report.py',runtime/'demo_motion_report.py')
     hashes={p.relative_to(runtime).as_posix():digest(p) for p in runtime.rglob('*.py')}
     manifest=dict(version=1,name=plan.get('name','campaign'),created=time.time(),tasks=tasks,
         workers=workers,checkpoint_seconds=interval,kinetic_window=window,
@@ -56,6 +58,7 @@ def prepare(plan_path,parent):
         population_audit=bool(plan.get('population_audit',False)),population_interval=population_interval,
         mixing_report=bool(plan.get('mixing_report',False)),
         motion_report=bool(plan.get('motion_report',False)),
+        demo_motion_report=bool(plan.get('demo_motion_report',False)),
         record_trajectory=bool(plan.get('record_trajectory',False)),source_sha256=hashes,
         comparison_policy=plan.get('comparison_policy','Separate candidates; no common chemistry inferred'),
         plan_sha256=digest(plan_path))
@@ -148,6 +151,8 @@ def run(folder,retry_failed=False):
             subprocess.run([sys.executable,str(folder/'runtime/mixing_report.py'),str(folder)],check=True)
         if manifest.get('motion_report',False):
             subprocess.run([sys.executable,str(folder/'runtime/motion_report.py'),str(folder)],check=True)
+        if manifest.get('demo_motion_report',False):
+            subprocess.run([sys.executable,str(folder/'runtime/demo_motion_report.py'),str(folder)],check=True)
         return 1 if failures or final['counts']['failed'] else 0
 
 

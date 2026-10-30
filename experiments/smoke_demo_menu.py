@@ -33,13 +33,13 @@ def main():
             assert (Path(packet['path'])/'demo.json').exists()
             assert packet['observations']['time']==0.
             rows.append(dict(id=key,beads=len(f.positions),seed=packet['config']['seed'],paused_initial_state=True))
-            if key=='integrated_s2':
+            if key in ('integrated_s2','integrated_s2_langevin'):
                 initial=f.positions.copy();window.single_step();wait(lambda:window.packet['frame'].step==1)
                 assert window.packet['paused'];window.toggle_pause()
                 wait(lambda:window.packet['frame'].time>=.1)
                 window.command('pause',True);wait(lambda:window.packet['paused'])
                 assert window.packet['observations']['rows']
-                window.save_image(out/'integrated.png');window.grab().save(str(out/'integrated_interface.png'))
+                window.save_image(out/f'{key}.png');window.grab().save(str(out/f'{key}_interface.png'))
                 window.restart();wait(lambda:window.packet is not None)
                 assert window.active_demo['variant']['id']==key and window.packet['paused']
                 np.testing.assert_array_equal(window.packet['frame'].positions,initial)

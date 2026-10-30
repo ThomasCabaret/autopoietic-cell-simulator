@@ -31,7 +31,7 @@ def execute(folder,task_id):
             track_performance=manifest.get('motion_report',False)
             performance=getattr(obs,'campaign_performance',dict(history=[dict(time=sim.time,step=sim.step_index,compute_seconds=0.)],compute_seconds=0.))
             motion_audit=None
-            if sim.motion is not None and sim.config['model']=='copy':
+            if sim.motion is not None and sim.config['model']!='mixing':
                 from .motion import MotionAudit
                 motion_audit=MotionAudit(sim,getattr(obs,'campaign_motion_state',None))
                 sim.listeners.append(motion_audit)

@@ -1,10 +1,32 @@
-# Santé du projet —29 octobre2026
+# Santé du projet —30 octobre2026
 
 Cette évaluation vise la faisabilité globale et le volume du travail, pas le
 nombre de simulations positives. Elle doit évoluer avec les résultats. La cible
 est une cellule construite qui maintient et refabrique ses composants depuis
 une nourriture simple, avec énergie externe déclarée. Apparition spontanée,
 division et évolution ouverte ne sont pas des conditions ajoutées à cette cible.
+
+## Transfert visuel et physique LT2, en cours
+
+L'utilisateur demande le mouvement dans les démos et les cas actuels avant
+de reprendre les priorités. Un seul transfert borné :16 essais automatiques,
+aucune nouvelle conception chimique. Six références conservées, six candidats
+visibles, mêmes positions initiales et lois ; conditions/risques explicités.
+Les premiers transferts micro sont positifs mais à une graine. Le changement
+de mouvement modifie les contacts et l'énergie : il reste une hypothèse physique,
+pas une optimisation logicielle indépendante de la chimie.
+
+L'échauffement initial mesuré et les écarts au pas fin ne doivent pas être
+masqués. Aucune instabilité numérique dans les pilotes ; cela ne garantit
+pas les membranes ou les fonctions à long terme. Le J3 intégré reste à lire
+avec plusieurs graines avant adoption. Pas de promesse de temps de renouvellement.
+Le résultat réutilisable est un comparateur visible et des recettes figées,
+même si le mouvement échoue. Voir BATCH_23.md pour premiers résultats et sources.
+
+Horizon de réévaluation : fin de ces16 tâches, sans grille de frottements
+supplémentaire par défaut. Puis T9, concurrence et finition des fragments ;
+les critères de révision après deux changements conceptuels sans transfert
+restent applicables. Aucun nouveau gène/outil, ni coût de dépendance ajouté.
 
 ## Réévaluation après les44 essais P10/MIX1/MIX2/LT1
 

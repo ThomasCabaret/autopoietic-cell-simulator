@@ -34,7 +34,7 @@ def origins():
 
 
 def descriptions():
-    return [dict(id='integrated',title='Bain intégré actuel',level='Intégration partielle · priorité de lecture',
+    result=[dict(id='integrated',title='Bain intégré actuel',level='Intégration partielle · priorité de lecture',
         summary='Membrane, gènes, outils et précurseurs dans un même bain.',
         prepared='219 molécules membranaires en anneau + 24 libres ; 16 G001 et 16 F001 déjà construits, 48 monomères F, précurseurs P/R libres. 2 118 billes au total.',
         observe='Voir la membrane et son contenu, zoomer sur une chaîne, suivre ses liaisons. Les outils fabriquent des composants ; leur incorporation et les nouvelles chaînes restent rares.',
@@ -66,18 +66,43 @@ def descriptions():
         conditions='Température 0,08 ; graine 0 ; aucun ruban initial replié. Les lois restent celles de la référence V8 à petits contours.',
         look='Observer d’abord l’ensemble à vitesse maximale, puis ralentir lors de l’assemblage. Les contours fermés sont identifiés après coup, sans guider la dynamique.',
         evidence='research/BATCH_03.md')]
+    questions=dict(
+        integrated='Langevin améliore-t-il le transfert utile sans dégrader la membrane, la rétention et les outils ? La membrane de départ est préparée.',
+        material_cycle='Le mouvement accéléré conserve-t-il G → F exprimé → composants fabriqués puis réellement réutilisés ?',
+        binary_copy='Les rencontres supplémentaires produisent-elles des copies complètes libérées ou surtout des fragments concurrents ?',
+        free_membrane='Les molécules isolées ferment-elles encore des contours avec inertie ? Aucune chaîne latérale ne doit être préparée.')
+    for item in result:item['question']=questions[item['id']]
+    return result
+
+
+def langevin_variant(config):
+    cfg=resolve(config)
+    cfg['mechanics']=dict(motion='langevin',mass=1.,damping=.1,dpd_cutoff=1.)
+    cfg['name']+=' · Langevin candidat';cfg['branch']='LT2'
+    return resolve(cfg)
 
 
 def build():
     variants=[]
     for key,demo,title,cfg,origin,task,beads in origins():
-        cfg=resolve(cfg);path=f'demonstrators/configs/demo_{key}.json'
-        (ROOT/path).write_text(json.dumps(cfg,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
-        variants.append(dict(id=key,demo=demo,title=title,seed=cfg['seed'],config=path,beads=beads,
-            source=origin,source_task=task,source_sha256=hashlib.sha256((ROOT/origin).read_bytes()).hexdigest(),
-            dynamics_sha256=signature(cfg),view_speed=0.))
+        for inertial in (False,True):
+            resolved=langevin_variant(cfg) if inertial else resolve(cfg)
+            variant_key=key+'_langevin' if inertial else key
+            path=f'demonstrators/configs/demo_{variant_key}.json'
+            (ROOT/path).write_text(json.dumps(resolved,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+            variant=dict(id=variant_key,demo=demo,title=(f"Graine {resolved['seed']} · Langevin · candidat" if inertial else title+' · Brownien · référence'),
+                seed=resolved['seed'],config=path,beads=beads,source=origin,source_task=task,
+                source_sha256=hashlib.sha256((ROOT/origin).read_bytes()).hexdigest(),
+                dynamics_sha256=signature(resolved),view_speed=0.,comparison_reference=key,
+                motion='langevin' if inertial else 'brownian')
+            if inertial:
+                variant['presentation']=dict(
+                    conditions=f"Variante expérimentale : Langevin, masse 1, frottement 0,1 ; température {resolved['chemistry']['temperature']:g}, dt {resolved['engine']['dt']:g}. Même matériel initial et mêmes lois chimiques que la référence. Le cycle externe éventuel est conservé.",
+                    observe='Comparer avec le choix Brownien de la même graine : déplacement, durée des contacts, chaînes libérées, activité et membrane. Le résultat de la référence historique ne garantit pas celui de ce candidat.',
+                    evidence='research/BATCH_23.md')
+            variants.append(variant)
     from visualizer.demos import simulator_hashes
-    catalog=dict(version=1,date='2026-10-29',recommended='integrated_s2',simulator_sha256=simulator_hashes(),
+    catalog=dict(version=1,date='2026-10-30',recommended='integrated_s2',simulator_sha256=simulator_hashes(),
         policy='Live simulations from preserved initial inputs. Selected illustrative seeds, not a robustness claim. No trajectories/checkpoints bundled.',
         demos=descriptions(),variants=variants)
     (ROOT/'demonstrators/catalog.json').write_text(json.dumps(catalog,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
@@ -97,6 +122,14 @@ def verify():
             assert sim.chemistry.offset==486 and sim.chemistry.genetics.n==816
         elif key=='free_membrane':assert all(not edges for edges in sim.chemistry.edges)
         rows.append(dict(id=key,beads=beads,source_dynamics_identical=True,temperature=cfg['chemistry']['temperature']))
+        _,info,inertial=catalog.get(key+'_langevin');other=Simulation(inertial)
+        assert inertial['chemistry']==cfg['chemistry'] and inertial['engine']==cfg['engine']
+        assert signature(inertial)!=signature(original)
+        import numpy as np
+        np.testing.assert_array_equal(sim.chemistry.pos,other.chemistry.pos)
+        assert other.motion is not None and info['question']
+        rows.append(dict(id=key+'_langevin',beads=beads,initial_positions_identical=True,
+            chemical_laws_identical=True,temperature=inertial['chemistry']['temperature']))
     return rows
 
 

@@ -147,6 +147,12 @@ Qt/OpenGL d'interaction et capture ; aucune modification du paquet `simulator/`.
 Validation du catalogue GUI2 :111 tests logiciels et7 historiques passent ;
 six préréglages vérifiés et ouverts via leurs actions Qt. Vidéo hors du lot.
 
+Lot23 : les six références ont chacune une variante Langevin identifiée,
+soit douze choix. La fiche affiche l'enjeu de comparaison et les conditions
+propres au mouvement ; les succès historiques ne sont pas attribués au candidat.
+Pause initiale, lecture et reprise exacte des deux mouvements de J3 vérifiées
+dans la GUI native. Voir [démos](DEMOS.md) et [bilan](../research/BATCH_23.md).
+
 `python experiments/benchmark_visualizer.py` mesure uniquement le rendu sur
 scènes synthétiques, avec upload des buffers et fin du travail GPU. Premier
 relevé Intel UHD,1920×1080 :2000 billes/1999 liens ≈0,81ms ;10000/9999 ≈2,56ms ;

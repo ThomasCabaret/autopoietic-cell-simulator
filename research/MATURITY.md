@@ -1,4 +1,25 @@
-# Maturité — transfert cinétique partiel, copie longue encore fragile
+# Maturité — Langevin visible et premiers transferts, verdict intégré en attente
+
+Lot23,30 octobre2026 :12 choix GUI vérifiés, Brownien/Langevin pour chaque scène
+actuelle.136 tests logiciels +7 historiques réussis, pause/lecture/recommencement
+natif vérifié sous les deux mouvements. Cette validation UI n'est pas un essai
+de viabilité. Même matériel et lois, zéro nouvel outil/gène/particule.
+
+Six essais micro complets : T7 conserve1 G, C3B1 produit davantage de G/F et
+de composants utilisés, V8 forme un premier contour plus tôt depuis molécules
+isolées. Ce sont des graines illustratives, pas des rendements robustes. Les
+écarts aux pas fins et le transitoire thermique sont conservés.9/16 achevés,
+0 erreur ; sept tâches intégrées encore inachevées.16 tâches LT2
+au total, trois microcontrôles fins et sept tâches intégrées inclus ; la
+compatibilité globale avec J3 reste à lire. Voir BATCH_23.md.
+
+Sous-système C3B1 : transfert d'un F exprimé vers des produits utilisés observé
+avec Langevin. Les différentes microchimies ne deviennent pas un univers commun
+par l'emploi du même intégrateur. Aucune nouvelle preuve de maintien, synthèse L
+ou homéostasie ; copie longue et parasites T9 restent ouverts. Mouvement candidat,
+pas remplacement silencieux des références historiques.
+
+## Clôture précédente — LT1
 
 Clôture lot22,29 octobre2026 : les38 essais P10/MIX1/MIX2 et les6 contre-tests
 LT1 sont terminés, sources vérifiées. Aucun calcul de ce lot encore actif.

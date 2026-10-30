@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-10-29",
+  "date": "2026-10-30",
   "recommended": "integrated_s2",
   "simulator_sha256": {
     "simulator/__init__.py": "bf5a7a5cafdf7076cbc3cc9d8992895e4a8c217621ea024645a061a3531281a9",
@@ -8,17 +8,17 @@
     "simulator/assembly.py": "4bd703a271102d5ca6a7ae3c6d0109ae158617fef8136b4f8ba5d5456d092034",
     "simulator/boundary_audit.py": "7d516eb25d60c2e890bfc76073603e579cb1759683b6c961b8e162bb08c119e2",
     "simulator/campaign_io.py": "91168626096f934af463a1c4af918a7e63c23207feccb77046d681717e7d11ec",
-    "simulator/campaign_worker.py": "956f7dfc1dd588e0c0dcc2c216778705d942f1d4f313b122bb96a58601fa9d1b",
+    "simulator/campaign_worker.py": "b6c95f97d7ce643a6d16df5b19a3d7c7e493788b1b36cb9ba6d8145d189ed9ff",
     "simulator/catalysis.py": "bf0f4c35e7c96dde717a29645ce39c628fa2f3a907441f2b706db550c637c4a2",
     "simulator/checkpoint.py": "c02a0847a625dcbfae5a590034b1d22f8b641da4a333b2dc707f5a16a8672afc",
     "simulator/cli.py": "2b4ba9fec940173ea9bd990483aa39c38b9b7f07b5af5b23811313d3b94d62f6",
-    "simulator/config.py": "617b11987a3360261c06170997d397301b32444fda54747367f3123d8afe95ec",
+    "simulator/config.py": "bf11a011ed22f2ffa52cf19fd38fdaed461e1d99ac4ac433fdd909d5008e9a3b",
     "simulator/contact_exchange.py": "07d5dd04d0daab0d90e223e09a84799f220dcbe3d625d36536d8ee3c2dbbbb51",
     "simulator/copy.py": "87b4e37c7bf4f15f314dff5d9e8e15378e5e35c71255f8c82e10db181ff4946d",
     "simulator/coupled_bath.py": "2e870dde3d2471a2f60aeb66e7217b4750e6a43380d1a905bf21433f35f09977",
     "simulator/docking.py": "db8daba23c23e293d7176d9a193d26139015b086b396a3a298650bfda06b3759",
     "simulator/dual_faces.py": "dc7c31049fc5e6c7c1b97b194418de52fe32a19d5ab5cc1909c5c63c929929fa",
-    "simulator/engine.py": "aa54f1123838447deba2c39899d7a9d86f057d4e955afdc653f90ef702318ca5",
+    "simulator/engine.py": "cb64c398c7feb187a4f2e79701bed827195f6d7972d37fc23fc3d2188e5d2421",
     "simulator/genetic_audit.py": "2f2a83bb725d4a972367cdd6bd435955415200c47b688ccb69af06dede2eb308",
     "simulator/initial.py": "ecc0cdce037a2a38af2a9885ad323bce7f5752331f85a908f9643c34abe4c3b0",
     "simulator/kinetics.py": "61107d58dcda22f1f8dff2fe32f94b2d129d8ddd18cb16cb597081b1337a71d4",
@@ -50,7 +50,8 @@
       "limits": "La membrane est préparée et peut se dégrader. Ses molécules ne sont pas fabriquées. Stock de nourriture fini, sans apport continu, homéostasie ni cellule viable démontrés.",
       "conditions": "Température 0,08 ; cycle externe 200 / 15. Les trois graines sont celles de J3. La graine 2 est choisie pour montrer un outil exprimé produisant de la matière ensuite utilisée, pas pour établir une fréquence de réussite.",
       "look": "Commencer par la vue globale (F), puis zoomer au centre. Cliquer une bille et ouvrir l’onglet Explorer pour suivre son assemblage. À vitesse maximale, le calcul peut prendre plusieurs minutes ; aucune animation n’est précalculée.",
-      "evidence": "research/BATCH_16_RESULTS.md"
+      "evidence": "research/BATCH_16_RESULTS.md",
+      "question": "Langevin améliore-t-il le transfert utile sans dégrader la membrane, la rétention et les outils ? La membrane de départ est préparée."
     },
     {
       "id": "material_cycle",
@@ -62,7 +63,8 @@
       "limits": "Pas de membrane. Température différente du bain intégré : cette réussite séparée n’établit pas leur compatibilité complète. Ni alimentation continue ni renouvellement durable.",
       "conditions": "Température 0,6 ; cycle externe 200 / 15 ; graine 1 sélectionnée parmi les essais du lot 8 pour illustrer le transfert. Même scénario physique que l’essai archivé.",
       "look": "Laisser avancer au maximum, puis mettre en pause ou ralentir. Les compteurs distinguent les nouveaux produits des structures préparées ; les flashes montrent les changements de liens.",
-      "evidence": "research/BATCH_08.md"
+      "evidence": "research/BATCH_08.md",
+      "question": "Le mouvement accéléré conserve-t-il G → F exprimé → composants fabriqués puis réellement réutilisés ?"
     },
     {
       "id": "binary_copy",
@@ -74,7 +76,8 @@
       "limits": "Pas de traduction, de synthèse des dimères ou de membrane. La capacité à copier six symboles ici ne valide pas un génome long ou le circuit intégré.",
       "conditions": "Température 0,6 ; cycle externe 200 / 15 ; graine 0 du témoin T7 historique. La libération est aidée par le cycle fourni.",
       "look": "Passer en vitesse maximale jusqu’aux associations, puis ralentir et sélectionner la chaîne. Une copie complète exclut la chaîne initialement préparée.",
-      "evidence": "research/ENGINE_MIGRATION.md"
+      "evidence": "research/ENGINE_MIGRATION.md",
+      "question": "Les rencontres supplémentaires produisent-elles des copies complètes libérées ou surtout des fragments concurrents ?"
     },
     {
       "id": "free_membrane",
@@ -86,14 +89,15 @@
       "limits": "Ces petites vésicules ne sont pas la grande membrane du bain intégré : géométrie et paramètres distincts. Pas de contenu cellulaire, de synthèse membranaire ou de rétention validés ici.",
       "conditions": "Température 0,08 ; graine 0 ; aucun ruban initial replié. Les lois restent celles de la référence V8 à petits contours.",
       "look": "Observer d’abord l’ensemble à vitesse maximale, puis ralentir lors de l’assemblage. Les contours fermés sont identifiés après coup, sans guider la dynamique.",
-      "evidence": "research/BATCH_03.md"
+      "evidence": "research/BATCH_03.md",
+      "question": "Les molécules isolées ferment-elles encore des contours avec inertie ? Aucune chaîne latérale ne doit être préparée."
     }
   ],
   "variants": [
     {
       "id": "integrated_s2",
       "demo": "integrated",
-      "title": "Graine 2 · transfert observé",
+      "title": "Graine 2 · transfert observé · Brownien · référence",
       "seed": 2,
       "config": "demonstrators/configs/demo_integrated_s2.json",
       "beads": 2118,
@@ -101,12 +105,34 @@
       "source_task": "task0017",
       "source_sha256": "410a5a79bc2c58520e1dd2f3014b598e7ab5966f03ee855d0b3ea53c0d8a28d0",
       "dynamics_sha256": "de693377f3041aef2dc45c7baead0cc983e007610bced15f318c2b37ded9e47b",
-      "view_speed": 0.0
+      "view_speed": 0.0,
+      "comparison_reference": "integrated_s2",
+      "motion": "brownian"
+    },
+    {
+      "id": "integrated_s2_langevin",
+      "demo": "integrated",
+      "title": "Graine 2 · Langevin · candidat",
+      "seed": 2,
+      "config": "demonstrators/configs/demo_integrated_s2_langevin.json",
+      "beads": 2118,
+      "source": "research/campaign_recipes/J3_20261027T192723206222Z/manifest.json",
+      "source_task": "task0017",
+      "source_sha256": "410a5a79bc2c58520e1dd2f3014b598e7ab5966f03ee855d0b3ea53c0d8a28d0",
+      "dynamics_sha256": "a1ae43028bcafad65360f3450eabf2c1b0916f2f212cf1692860365ef96670bf",
+      "view_speed": 0.0,
+      "comparison_reference": "integrated_s2",
+      "motion": "langevin",
+      "presentation": {
+        "conditions": "Variante expérimentale : Langevin, masse 1, frottement 0,1 ; température 0.08, dt 0.002. Même matériel initial et mêmes lois chimiques que la référence. Le cycle externe éventuel est conservé.",
+        "observe": "Comparer avec le choix Brownien de la même graine : déplacement, durée des contacts, chaînes libérées, activité et membrane. Le résultat de la référence historique ne garantit pas celui de ce candidat.",
+        "evidence": "research/BATCH_23.md"
+      }
     },
     {
       "id": "integrated_s0",
       "demo": "integrated",
-      "title": "Graine 0",
+      "title": "Graine 0 · Brownien · référence",
       "seed": 0,
       "config": "demonstrators/configs/demo_integrated_s0.json",
       "beads": 2118,
@@ -114,12 +140,34 @@
       "source_task": "task0013",
       "source_sha256": "410a5a79bc2c58520e1dd2f3014b598e7ab5966f03ee855d0b3ea53c0d8a28d0",
       "dynamics_sha256": "c31c0cc07110d7f86a700aeebd6dbc673cb4b464cbcea4ec186d248fcca14d1c",
-      "view_speed": 0.0
+      "view_speed": 0.0,
+      "comparison_reference": "integrated_s0",
+      "motion": "brownian"
+    },
+    {
+      "id": "integrated_s0_langevin",
+      "demo": "integrated",
+      "title": "Graine 0 · Langevin · candidat",
+      "seed": 0,
+      "config": "demonstrators/configs/demo_integrated_s0_langevin.json",
+      "beads": 2118,
+      "source": "research/campaign_recipes/J3_20261027T192723206222Z/manifest.json",
+      "source_task": "task0013",
+      "source_sha256": "410a5a79bc2c58520e1dd2f3014b598e7ab5966f03ee855d0b3ea53c0d8a28d0",
+      "dynamics_sha256": "4721bbd587ea779dadb78fef6a56cda2d19dbb4ec8a52d4419ba273eb486a674",
+      "view_speed": 0.0,
+      "comparison_reference": "integrated_s0",
+      "motion": "langevin",
+      "presentation": {
+        "conditions": "Variante expérimentale : Langevin, masse 1, frottement 0,1 ; température 0.08, dt 0.002. Même matériel initial et mêmes lois chimiques que la référence. Le cycle externe éventuel est conservé.",
+        "observe": "Comparer avec le choix Brownien de la même graine : déplacement, durée des contacts, chaînes libérées, activité et membrane. Le résultat de la référence historique ne garantit pas celui de ce candidat.",
+        "evidence": "research/BATCH_23.md"
+      }
     },
     {
       "id": "integrated_s1",
       "demo": "integrated",
-      "title": "Graine 1",
+      "title": "Graine 1 · Brownien · référence",
       "seed": 1,
       "config": "demonstrators/configs/demo_integrated_s1.json",
       "beads": 2118,
@@ -127,12 +175,34 @@
       "source_task": "task0015",
       "source_sha256": "410a5a79bc2c58520e1dd2f3014b598e7ab5966f03ee855d0b3ea53c0d8a28d0",
       "dynamics_sha256": "5188999b48b852dbbf066fc96be124e135fa18320bb4c398ed18b1235b4214f7",
-      "view_speed": 0.0
+      "view_speed": 0.0,
+      "comparison_reference": "integrated_s1",
+      "motion": "brownian"
+    },
+    {
+      "id": "integrated_s1_langevin",
+      "demo": "integrated",
+      "title": "Graine 1 · Langevin · candidat",
+      "seed": 1,
+      "config": "demonstrators/configs/demo_integrated_s1_langevin.json",
+      "beads": 2118,
+      "source": "research/campaign_recipes/J3_20261027T192723206222Z/manifest.json",
+      "source_task": "task0015",
+      "source_sha256": "410a5a79bc2c58520e1dd2f3014b598e7ab5966f03ee855d0b3ea53c0d8a28d0",
+      "dynamics_sha256": "d3859010e21b98509e5096dc6e30f39ba37560e8972d8adb20d92113c9820abc",
+      "view_speed": 0.0,
+      "comparison_reference": "integrated_s1",
+      "motion": "langevin",
+      "presentation": {
+        "conditions": "Variante expérimentale : Langevin, masse 1, frottement 0,1 ; température 0.08, dt 0.002. Même matériel initial et mêmes lois chimiques que la référence. Le cycle externe éventuel est conservé.",
+        "observe": "Comparer avec le choix Brownien de la même graine : déplacement, durée des contacts, chaînes libérées, activité et membrane. Le résultat de la référence historique ne garantit pas celui de ce candidat.",
+        "evidence": "research/BATCH_23.md"
+      }
     },
     {
       "id": "material_cycle",
       "demo": "material_cycle",
-      "title": "Graine 1",
+      "title": "Graine 1 · Brownien · référence",
       "seed": 1,
       "config": "demonstrators/configs/demo_material_cycle.json",
       "beads": 102,
@@ -140,12 +210,34 @@
       "source_task": null,
       "source_sha256": "d1fc35d0daa59f2d46fda3a8976cbbf870eb02e2533658a708bc670ddec4a539",
       "dynamics_sha256": "5b28265cb7f7280e7f2df19129610a1a369e7d34285ea02abdf37f3daa8a549b",
-      "view_speed": 0.0
+      "view_speed": 0.0,
+      "comparison_reference": "material_cycle",
+      "motion": "brownian"
+    },
+    {
+      "id": "material_cycle_langevin",
+      "demo": "material_cycle",
+      "title": "Graine 1 · Langevin · candidat",
+      "seed": 1,
+      "config": "demonstrators/configs/demo_material_cycle_langevin.json",
+      "beads": 102,
+      "source": "research/engine_runs/C3Bexpress_s1_20261025T094654876859Z/scenario.json",
+      "source_task": null,
+      "source_sha256": "d1fc35d0daa59f2d46fda3a8976cbbf870eb02e2533658a708bc670ddec4a539",
+      "dynamics_sha256": "9f2b793108fa1dad3252e9451dd924210eeb6e4488bb28439ba16c7d090ad7c9",
+      "view_speed": 0.0,
+      "comparison_reference": "material_cycle",
+      "motion": "langevin",
+      "presentation": {
+        "conditions": "Variante expérimentale : Langevin, masse 1, frottement 0,1 ; température 0.6, dt 0.005. Même matériel initial et mêmes lois chimiques que la référence. Le cycle externe éventuel est conservé.",
+        "observe": "Comparer avec le choix Brownien de la même graine : déplacement, durée des contacts, chaînes libérées, activité et membrane. Le résultat de la référence historique ne garantit pas celui de ce candidat.",
+        "evidence": "research/BATCH_23.md"
+      }
     },
     {
       "id": "binary_copy",
       "demo": "binary_copy",
-      "title": "Graine 0",
+      "title": "Graine 0 · Brownien · référence",
       "seed": 0,
       "config": "demonstrators/configs/demo_binary_copy.json",
       "beads": 108,
@@ -153,12 +245,34 @@
       "source_task": null,
       "source_sha256": "919bea5d05fc24e29d6bbc507c0970e86df7356c9c9dc0e767f9a96dea29395c",
       "dynamics_sha256": "fb25c5be350b9404793ce256f8ffe467f5520d63c878d72ac551ee9961ec5b71",
-      "view_speed": 0.0
+      "view_speed": 0.0,
+      "comparison_reference": "binary_copy",
+      "motion": "brownian"
+    },
+    {
+      "id": "binary_copy_langevin",
+      "demo": "binary_copy",
+      "title": "Graine 0 · Langevin · candidat",
+      "seed": 0,
+      "config": "demonstrators/configs/demo_binary_copy_langevin.json",
+      "beads": 108,
+      "source": "research/engine_runs/Copie_binaire_composite_s0_20261023T140139872073Z/scenario.json",
+      "source_task": null,
+      "source_sha256": "919bea5d05fc24e29d6bbc507c0970e86df7356c9c9dc0e767f9a96dea29395c",
+      "dynamics_sha256": "6a6ca97128e9aa1287cc6ea24c29d690742774fe983a826bf747f23a8b6bc1c4",
+      "view_speed": 0.0,
+      "comparison_reference": "binary_copy",
+      "motion": "langevin",
+      "presentation": {
+        "conditions": "Variante expérimentale : Langevin, masse 1, frottement 0,1 ; température 0.6, dt 0.005. Même matériel initial et mêmes lois chimiques que la référence. Le cycle externe éventuel est conservé.",
+        "observe": "Comparer avec le choix Brownien de la même graine : déplacement, durée des contacts, chaînes libérées, activité et membrane. Le résultat de la référence historique ne garantit pas celui de ce candidat.",
+        "evidence": "research/BATCH_23.md"
+      }
     },
     {
       "id": "free_membrane",
       "demo": "free_membrane",
-      "title": "Graine 0",
+      "title": "Graine 0 · Brownien · référence",
       "seed": 0,
       "config": "demonstrators/configs/demo_free_membrane.json",
       "beads": 72,
@@ -166,7 +280,29 @@
       "source_task": null,
       "source_sha256": "7d61b20a202080e998a5caa8f005614b3ce81d486dce8fb1357f9c523df49556",
       "dynamics_sha256": "01c56b29caf101529a50a5348f49460ec6634da1db67448a06b7f149836ba7da",
-      "view_speed": 0.0
+      "view_speed": 0.0,
+      "comparison_reference": "free_membrane",
+      "motion": "brownian"
+    },
+    {
+      "id": "free_membrane_langevin",
+      "demo": "free_membrane",
+      "title": "Graine 0 · Langevin · candidat",
+      "seed": 0,
+      "config": "demonstrators/configs/demo_free_membrane_langevin.json",
+      "beads": 72,
+      "source": "research/engine_runs/Vesicules_depuis_des_molecules_isolees_s0_20261023T153753630959Z/scenario.json",
+      "source_task": null,
+      "source_sha256": "7d61b20a202080e998a5caa8f005614b3ce81d486dce8fb1357f9c523df49556",
+      "dynamics_sha256": "ab9d34af6505b9eb2c13d4c01f01c7a9a2c591557d5bebca87e1abb1f2d42767",
+      "view_speed": 0.0,
+      "comparison_reference": "free_membrane",
+      "motion": "langevin",
+      "presentation": {
+        "conditions": "Variante expérimentale : Langevin, masse 1, frottement 0,1 ; température 0.08, dt 0.002. Même matériel initial et mêmes lois chimiques que la référence. Le cycle externe éventuel est conservé.",
+        "observe": "Comparer avec le choix Brownien de la même graine : déplacement, durée des contacts, chaînes libérées, activité et membrane. Le résultat de la référence historique ne garantit pas celui de ce candidat.",
+        "evidence": "research/BATCH_23.md"
+      }
     }
   ]
 }

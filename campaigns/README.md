@@ -1,5 +1,22 @@
 # Campagnes différées
 
+**LT2 —30 octobre2026, transfert aux démos** :16 essais, deux travailleurs,
+sources figées ; six paires de scènes Brownien/Langevin, puis contrôles de
+pas sélectionnés (leur ordre met les microdémos en premier). Le pas réduit
+conserve les intervalles physiques des réactions/observations. Pas de changement
+de lois, gène ou outil ; les graines micro sont illustratives. Voir
+[plan](../research/BATCH_23_PLAN.md) et [état/bilan](../research/BATCH_23.md).
+
+- `demo_motion_status.bat` : état et rapport progressif source-figé.
+- `stop_demo_motion.bat` / `resume_demo_motion.bat` : pause/reprise avec checkpoint.
+- `analyze_demo_motion.bat` : analyse des résultats disponibles ; cohorte complète
+  indiquée explicitement, aucune extrapolation des tâches encore en cours.
+- `start_demo_motion.bat` : une nouvelle campagne, jamais l'écrasement de l'actuelle.
+
+Pointeur indépendant `outputs/demo_motion_campaigns/latest.txt`. Rapport final
+`demo_motion_analysis.md/json` généré automatiquement. Les recettes LT2/pilotes
+figurent dans `research/campaign_recipes` ; aucun résultat brut dans Git.
+
 **Clôture lot22 —29 octobre2026** : P10 terminé10/10, MIX1 terminé10/10,
 MIX2 terminé18/18, puis LT1 terminé6/6, sans erreur. Aucune de ces campagnes
 n'est active. [Bilan scientifique et provenance](../research/BATCH_22.md).

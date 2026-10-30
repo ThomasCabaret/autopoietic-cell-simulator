@@ -6,6 +6,17 @@ n'ont de sens qu'à l'échelle des assemblages. Concevoir une chimie, fournir
 
 ## Ce qui invaliderait une démonstration
 
+Lot23 : extension du même Langevin aux membranes et au bain couplé, sans autre
+force ou réaction. Audit thermique passif pour tous ces hooks ; le cache est
+invalidé après chaque tick réactif. Tests de cache, passivité et reprise sur
+les quatre hooks étendus. La classification des contours, produits utiles et
+temps de premier événement reste exclusivement analytique. Les variantes GUI
+ont des signatures distinctes, aucun succès emprunté aux sources historiques.
+Masse/frottement et deux vitesses par bille sont le coût physique déjà déclaré ;
+zéro type/port/état/gène supplémentaire, même budget de particules. Cycle et
+thermostat externes conservés et déclarés ; aucune correction de température
+depuis l'observateur. Voir BATCH_23_PLAN.md/BATCH_23.md.
+
 État lot22 : [bilan complet](BATCH_22.md). Le candidat LT1 ajoute Langevin
 au hook copy, sans lecture d'assemblage : vitesse et thermostat indépendant
 par bille, forces existantes entre liens explicites et voisins de portée finie.

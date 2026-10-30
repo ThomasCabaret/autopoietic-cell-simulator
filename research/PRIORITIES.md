@@ -1,4 +1,22 @@
-# Priorités actuelles — T9, concurrence des fragments après transfert LT1
+# Priorités actuelles — lire LT2, puis reprendre T9
+
+30 octobre2026 : demande utilisateur de voir Langevin dans les microdémos et
+les scènes actuelles. Douze choix GUI (six paires), conditions et enjeu explicites.
+LT2 lancé16 essais, deux travailleurs, pointeur séparé demo_motion_campaigns.
+Les six essais micro principaux et leurs trois contrôles fins sont achevés ;
+les sept tâches J3 intégrées restent à lire.0 erreur au bilan9/16.
+Voir [plan](BATCH_23_PLAN.md), [bilan progressif](BATCH_23.md),
+`demo_motion_status.bat`. Pas d'adoption globale avant cette lecture.
+
+Progrès sélectionnés : T7 conserve1 G libéré ; C3B1 passe2G/3F à4G/5F et13 à29
+composants catalysés utilisés ; V8 ferme plus tôt sur cette graine. Écarts aux
+pas fins et échauffement mesurés, pas de robustesse déduite d'une graine.
+Ne pas changer les sources/lois du lot en cours. Aucun outil supplémentaire.
+À la clôture, interprétation de compatibilité puis T9 ; pas de grille inerte
+ou de réglages de rendement ajoutés automatiquement. Les références browniennes
+restent accessibles et le défaut existant est conservé.
+
+## État après LT1, avant la demande de transfert visuel
 
 29 octobre2026, clôture lot22 : P10/MIX1/MIX2 achevés38/38, analysés avec
 contrôle des sources ; LT1 achevé6/6, sans erreur. Aucune de ces campagnes

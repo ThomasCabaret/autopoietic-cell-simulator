@@ -1,7 +1,9 @@
 # Démos représentatives accessibles dans la GUI
 
-Catalogue du 29 octobre 2026. Lancer `visualizer.bat`, puis **Démos → Bain intégré
-actuel → Graine 2 · transfert observé** pour commencer. Le bouton **Démos** de
+Catalogue du 30 octobre 2026. Lancer `visualizer.bat`, puis **Démos → Bain intégré
+actuel → Graine 2 · Langevin · candidat** pour examiner le nouveau mouvement.
+Le choix **Graine 2 · transfert observé · Brownien · référence** conserve la
+référence historique. Le bouton **Démos** de
 la barre d'outils ouvre le même catalogue. Aucun chemin JSON à chercher.
 
 Chaque choix recalcule la simulation depuis son état initial, en pause. Cliquer
@@ -11,7 +13,20 @@ du pas numérique ; ralentir ensuite pour examiner les liaisons. **F** revient
 à la vue globale. L'onglet **Explorer** contient filtres, sélection et suivi ;
 l'onglet **Démo** explique l'essai, ses limites et ses mesures en direct.
 
-## Quatre démos, six préréglages
+## Quatre démos, douze préréglages comparables
+
+Chacune des six scènes a maintenant deux versions : **Brownien · référence**
+et **Langevin · candidat**, y compris les trois graines du bain intégré.
+Même matériel, positions initiales, lois chimiques, température, horizon et pas ;
+Langevin ajoute des vitesses et une inertie avec masse1/frottement0,1.
+Les trajectoires et tirages aléatoires divergent ensuite. Le défaut historique
+reste brownien ; aucune réussite historique n'est attribuée au candidat.
+
+La fiche **Enjeu de la comparaison** précise la fonction à préserver : copies
+libérées, F exprimé réellement actif, composants utilisés, membrane et transport.
+Les conditions et la référence interne s'adaptent à la variante.
+Voir [protocole](../research/BATCH_23_PLAN.md) et [bilan](../research/BATCH_23.md).
+Les résultats ne servent jamais à ajuster les lois pendant la simulation.
 
 | Démo | Billes | Rôle et départ | Limite essentielle |
 |---|---:|---|---|
@@ -54,7 +69,10 @@ inconnu, pas une fermeture supposée.
 `demonstrators/catalog.json` décrit les fiches, graines, sources et signatures.
 Les `demonstrators/configs/demo_*.json` sont des scénarios résolus dérivés des
 entrées archivées, sans nouvelles règles ou liens forcés. Les champs de dynamique
-modèle/graine/horizon/moteur/chimie sont comparés aux sources. Le chargement
+modèle/graine/horizon/moteur/chimie sont comparés aux sources pour les références.
+Les variantes gardent chimie et moteur identiques et ajoutent explicitement
+`mechanics` dans leur signature ; les positions initiales sont vérifiées égales.
+Le chargement
 refuse une signature modifiée au lieu de garder silencieusement la même étiquette.
 Chaque session écrit son scénario, ses sources moteur et un `demo.json` local.
 Les sources historiques restent intactes ; aucune trajectoire ou checkpoint
@@ -69,16 +87,18 @@ python experiments/prepare_demo_catalog.py verify
 
 Le contrôle vérifie notamment 16 G/F complets préparés pour J3, aucun F complet
 préparé pour C3B1 et aucune liaison latérale initiale pour V8. Les validations
-GUI ouvrent les six choix via leurs actions Qt, vérifient la pause initiale,
-font jouer le bain intégré et retrouvent exactement son état initial au
+GUI ouvrent les douze choix via leurs actions Qt, vérifient la pause initiale,
+font jouer les deux mouvements du bain intégré et retrouvent exactement leur état initial au
 recommencement. Elles ne constituent pas une nouvelle campagne complète à 1200.
 Les réussites de long horizon citées proviennent des expériences référencées.
 
 Vidéo, relecture avancée et courbes sont reportées pour spécification ultérieure.
 Elles ne conditionnent pas l'utilisation actuelle de ces démos.
 
-Validation du lot : 111 tests logiciels et 7 historiques réussis, plus le test
-Qt/OpenGL natif des six entrées et du démarrage/pause/recommencement de J3.
+Validation du lot23 :136 tests logiciels et7 historiques réussis, plus le test
+Qt/OpenGL natif des douze entrées et du démarrage/pause/recommencement de J3
+avec les deux mouvements. Les comparaisons de long horizon sont une campagne
+scientifique séparée ; la validation de menu ne les remplace pas.
 
 Le catalogue conserve aussi les empreintes du code moteur utilisé pour cette
 sélection. Si ce code change, les démos demandent une révision du catalogue

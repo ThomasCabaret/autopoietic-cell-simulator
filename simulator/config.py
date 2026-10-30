@@ -34,8 +34,8 @@ def resolve(raw):
         raise ValueError("Unknown chemical hook: " + str(model))
     if 'mechanics' in raw:
         settings=raw['mechanics']
-        if model!='copy' or not isinstance(settings,dict) or set(settings)-{'motion','mass','damping','dpd_cutoff'}:
-            raise ValueError('Experimental reactive mechanics currently requires the copy hook')
+        if model not in ('copy','membrane','membrane_bath','coupled_bath') or not isinstance(settings,dict) or set(settings)-{'motion','mass','damping','dpd_cutoff'}:
+            raise ValueError('Experimental mechanics requires a supported reactive hook')
         settings={**dict(motion='langevin',mass=1.,damping=.1,dpd_cutoff=1.),**settings}
         if settings['motion']!='langevin' or any(type(settings[k]) not in (int,float) or not math.isfinite(settings[k]) or settings[k]<=0 for k in ('mass','damping','dpd_cutoff')):
             raise ValueError('Only positive-mass Langevin reactive trials are enabled')

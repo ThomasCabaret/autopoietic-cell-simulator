@@ -194,7 +194,7 @@ class MainWindow(Q.QMainWindow):
         self.demo_level=Q.QLabel('Choisir une démo dans le menu Démos.');self.demo_level.setWordWrap(True)
         self.demo_level.setStyleSheet('color:#5ed7c3;');card_layout.addWidget(self.demo_level)
         self.demo_fields={}
-        for key,title in [('summary','Ce que montre cette démo'),('prepared','État initial préparé'),
+        for key,title in [('summary','Ce que montre cette démo'),('question','Enjeu de la comparaison'),('prepared','État initial préparé'),
                           ('observe','À observer'),('limits','Limites actuelles'),('conditions','Conditions'),('look','Comment regarder')]:
             group=Q.QGroupBox(title);box=Q.QVBoxLayout(group);label=Q.QLabel('—');label.setWordWrap(True)
             label.setTextInteractionFlags(QtCore.Qt.TextSelectableByMouse);box.addWidget(label)

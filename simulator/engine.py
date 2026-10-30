@@ -19,7 +19,7 @@ class Simulation:
         self.motion=None
         motion_settings=self.config.get('mechanics',self.chemistry.config)
         if motion_settings.get('motion','brownian')!='brownian':
-            if self.config['model'] not in ('mixing','copy'):raise ValueError('Unsupported inertial hook')
+            if self.config['model'] not in ('mixing','copy','membrane','membrane_bath','coupled_bath'):raise ValueError('Unsupported inertial hook')
             from .motion import InertialMotion
             self.motion=InertialMotion(self.chemistry,self.rng,motion_settings)
             self.chemistry.motion_state=self.motion

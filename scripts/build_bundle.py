@@ -34,6 +34,10 @@ def main():
         'experiments/review_completed_campaigns.py','campaigns/transfer.json',
         'start_transfer.bat','transfer_status.bat','stop_transfer.bat',
         'resume_transfer.bat','analyze_transfer.bat'))
+    files.update(ROOT/p for p in ('research/BATCH_23_PLAN.md','research/BATCH_23.md',
+        'experiments/prepare_demo_motion.py','scripts/demo_motion_report.py',
+        'campaigns/demo_motion.json','start_demo_motion.bat','demo_motion_status.bat',
+        'stop_demo_motion.bat','resume_demo_motion.bat','analyze_demo_motion.bat'))
     files.update(ROOT/p for p in ('README.md','SIMULATOR_ARCHITECTURE.md','requirements.txt',
         'CONTRIBUTING.md','GIT_SETUP.md','THIRD_PARTY_NOTICES.md',
         '.gitignore','.gitattributes','.editorconfig',
