@@ -1,5 +1,17 @@
 # Architecture du simulateur partagé
 
+## Candidat de potentiel lié MD2
+
+Les scénarios membrane/membrane_bath (y compris le sous-scénario L du bain
+couplé) peuvent préciser `bound_port_geometry: true`. Clé absente par défaut,
+donc aucun changement de configuration résolue pour les anciennes recettes.
+Le modèle exige face_docking. Le noyau `bound_port_force` utilise la même
+géométrie et les mêmes epsilon/width que l'attraction libre, avec continuation
+harmonique liée. `_face_mechanics` conserve seulement les rungs dans ce mode ;
+les forces de ports remplacent les anciens termes latéraux au lieu de s'y ajouter.
+Pas d'autre ordonnanceur ni de nouvelle dépendance graphique. Les analyses
+de ports finaux sont passives et fondées sur les checkpoints. Voir research/BATCH_25.md.
+
 ## Mouvement réactif expérimental — LT1
 
 Le scénario peut contenir une clé racine `mechanics` pour les modèles `copy`,

@@ -67,6 +67,36 @@ def free_faces(n,links):
     return free
 
 
+@njit(cache=True,nogil=True)
+def bound_port_force(pos,links,long,short,epsilon,width):
+    """Harmonic continuation of the existing free-port potential at q=0.
+
+    Explicit bonded four-bead motifs only; no component or contour read.
+    Replaces row springs/angles in the opt-in candidate, never adds to them.
+    """
+    n=len(pos)//2
+    head,tail,tangent,lengths=port_geometry(pos,n,long,short)
+    force=np.zeros_like(pos);energy=0.
+    stiffness=epsilon*(1-np.exp(-8.))/(width*width)
+    offset=-epsilon*(1-9*np.exp(-8.))
+    for k in range(len(links)):
+        i,j,a,b=links[k]
+        hx,hy=head[j,b,0]-head[i,a,0],head[j,b,1]-head[i,a,1]
+        tx,ty=tail[j,b,0]-tail[i,a,0],tail[j,b,1]-tail[i,a,1]
+        energy+=offset+.5*stiffness*(hx*hx+hy*hy+tx*tx+ty*ty)
+        for unit,face,sign in ((i,a,1.),(j,b,-1.)):
+            fx,fy=sign*stiffness*hx,sign*stiffness*hy
+            gx,gy=sign*stiffness*tx,sign*stiffness*ty
+            s=2*face-1
+            vx=s*(long/2*fy+short/2*gy);vy=-s*(long/2*fx+short/2*gx)
+            nx,ny=tangent[unit,1],-tangent[unit,0]
+            dot=vx*nx+vy*ny
+            cx,cy=(vx-dot*nx)/lengths[unit],(vy-dot*ny)/lengths[unit]
+            force[unit,0]+=fx-cx;force[unit,1]+=fy-cy
+            force[n+unit,0]+=gx+cx;force[n+unit,1]+=gy+cy
+    return force,energy
+
+
 def update_faces(pos,links,config,rng,neighbors,interval):
     n=len(pos)//2
     long,short=1.,config['short_length']

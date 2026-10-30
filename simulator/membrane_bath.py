@@ -7,7 +7,7 @@ import math
 import numpy as np
 from numba import njit
 from .membrane import MembraneChemistry
-from .docking import update_faces,docking_force
+from .docking import update_faces,docking_force,bound_port_force
 from .config import MEMBRANE_DEFAULTS
 from .observations import components,area
 from .contact_exchange import exchange_faces
@@ -121,6 +121,9 @@ class MembraneBathChemistry(MembraneChemistry):
 
     def extra_forces(self,neighbors):
         force=np.zeros_like(self.pos);n=self.n
+        if self.config.get('bound_port_geometry',False):
+            force[:2*n]+=bound_port_force(self.pos[:2*n],np.asarray(self.face_links,dtype=np.int64).reshape(-1,4),
+                self.long,self.short,self.config['dock_energy'],self.config['dock_width'])[0]
         if self.config['dock_energy']:
             pairs=neighbors.pairs(self.pos[:n],self.long+4*self.config['dock_width'],'face_force')
             force[:2*n]+=docking_force(self.pos[:2*n],pairs,self.faces_free,self.long,self.short,

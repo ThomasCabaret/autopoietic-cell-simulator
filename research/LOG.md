@@ -1049,3 +1049,38 @@ ces états cohérents, puis vérifier molécules libres/insertion/bain. Pas de n
 outil/gène ni loi corrigée ici, aucun budget de particules ajouté. T9 ensuite.
 Arbre, santé, maturité, priorités, localité et recettes actualisés. LT2/MD1
 entièrement achevés, aucun calcul encore actif à la remise de main, aucun push.
+
+### Lot25 — MD2, potentiel lié cohérent et transfert lancé
+
+Suite autorisée. Plan BATCH_25_PLAN.md avant code/essais : continuation harmonique
+du même motif H/T que l'attraction libre. Coefficient et offset dérivés des
+epsilon/width existants, aucune raideur indépendante, aucun outil/gène ajouté.
+Deux ressorts latéraux/quatre angles retirés par contact dans cette variante,
+rungs conservés. Forces sur quatre billes par Jacobien exact ; option absente
+préserve les anciennes configurations et lois. Langevin et taux inchangés.
+
+Gradient, quantité de mouvement, couple, raccordement et reprise exacte vérifiés.
+Suite141 tests puis un test de reprise couplée ajouté réussi, soit142 distincts,
+et7 historiques. Préfixe brownien P10 à50 bit-identique,12 signatures physiques
+de presets conservées, empreintes moteur/catalogue révisées sans nouvelle démo.
+
+Six paires locales préparées : graines0/1/2 ancien/nouveau, coupure externe
+fixée à10, recapture suivie jusqu'à12. Nouvelles fractions liées/capturables100%
+dans6–10, contre85,25/100/100% ; recaptures observées pour les deux candidats.
+La porte fixée passe ; ce n'est pas une réfutation de toutes les anciennes
+références. Script prépare, exporte et lance automatiquement15 essais figés,
+deux travailleurs, checkpoints30s, pointeur coherent_contacts_campaigns distinct.
+Garde ajoutée contre les relances actives, source antérieure exacte préservée.
+
+Les cinq essais V8 sont achevés : nouveaux contours depuis dimères isolés sur
+trois graines, fraction régulière97,5/98,1/94,0% vs94,5/88,9/86,6% anciennes
+(graine0 LT2 explicitement réutilisée). Première fermeture20/10/59 vs41/41/49,
+donc une métrique régresse sur une graine. Tous les contacts liés nouveaux
+finaux sont capturables ; anciens1/2≈82/77%. Température tardive nouvelle proche
+de0,08, sans ajustement de bruit ni rescaling. Les grands bains à sondes et J3
+restent à lire, pas de conclusion de maintien ou d'adoption automatique.
+
+Arbre, priorité de transfert MD2, maturité, santé, localité et architecture
+actualisés. Recettes/sources seules versionnées, données/figures/protocoles
+complets locaux conservés. Prochaine décision après les15 essais, puis T9
+si transfert ; aucune protéine supplémentaire sans accord. Aucun push.

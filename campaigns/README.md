@@ -1,5 +1,21 @@
 # Campagnes différées
 
+**MD2 en cours — lot25** :15 tâches de transfert d'un potentiel lié cohérent,
+deux travailleurs, checkpoints30s. La porte locale à trois graines a préparé
+et lancé la campagne automatiquement après ses critères figés. Aucun nouveau
+gène/outil ; Langevin et les taux de réaction restent identiques. Voir
+[plan](../research/BATCH_25_PLAN.md) et [bilan](../research/BATCH_25.md).
+
+`coherent_contacts_status.bat`, `stop_coherent_contacts.bat`,
+`resume_coherent_contacts.bat`, `analyze_coherent_contacts.bat` ciblent le
+pointeur séparé `outputs/coherent_contacts_campaigns/latest.txt`.
+`start_coherent_contacts.bat` crée un nouveau lot depuis le plan figé et refuse
+un doublon actif ; pour refaire la porte locale plutôt que réutiliser le plan,
+`python experiments/coherent_contact_gate.py --prepare-campaign`.
+Ni adoption globale ni recherche de paramètres automatique après les15 tâches.
+
+## Historique avant MD2
+
 **Clôture lot24** : LT2 terminé16/16 ; MD1 terminé5/5,0 erreur, aucun essai
 encore actif. [Bilan LT2](../research/BATCH_23_RESULTS.md),
 [diagnostic MD1](../research/BATCH_24.md). La priorité suivante est un contact

@@ -1020,13 +1020,18 @@
         "J3",
         "T9"
       ],
-      "status": "proposed_not_implemented_local_contact_consistency",
-      "hypothesis": "Reusing compatible four-bead H/T port geometry in bound and free states permits recapture under efficient mixing without globally irreversible contacts",
-      "test": "First one local contact with passive geometry and rupture/rebinding checks, then isolated molecules, internal insertion and large coupled bath under frozen laws and timestep controls",
-      "cost": "Not implemented. Prefer reuse of existing local geometry; any new stiffness/state/helper must be declared and ablated, no extra functional protein authorized.",
+      "status": "implemented_local_gate_passed_V8_three_seed_transfer_large_baths_running",
+      "hypothesis": "Harmonic continuation of free H/T port geometry in the bound state prevents geometric drift while retaining spontaneous assembly and turnover under Langevin",
+      "test": "Gradient/momentum/torque and stateful checkpoint checks,6 local pair trials with fixed cut10 then automated15-task gate. V8 three new seeds/two old, three paired large probe baths, three new J3 plus selected fine seed0. Old LT2 controls explicitly reused.",
+      "cost": "One opt-in bound-potential choice. Four-bead explicit bond motif, stiffness/offset derived from existing epsilon/width; replaces2 row springs+4 weak angles. Zero new type/state/port/gene/tool/particle.",
       "counterexample": "Stiffening locks curvature or prevents growth/exchange, apparent success relies only on no-off prepared ring, or a contour detector repairs bonds",
-      "missing_proof": "All MD2 dynamics and downstream transfer untested.",
-      "evidence": "research/BATCH_24.md"
+      "missing_proof": "Large-membrane insertion/retention and coupled J3 results pending; no global adoption, full chemistry convergence, viable maintenance or reliable long-G amplification.",
+      "evidence": "research/BATCH_25_PLAN.md",
+      "results": "research/BATCH_25.md",
+      "campaign_recipe": "research/campaign_recipes/MD2_20261030T115427443420Z/manifest.json",
+      "recipe": "research/BATCH_25_RECIPES.json",
+      "conclusion": "New local3/3 have100% bound/capture-compatible samples6-10 and rebind after cut; old85.25/100/100%, all also rebind. New free V8 closure97.5/98.1/94.0% vsold94.5/88.9/86.6%; first closure20/10/59 vs41/41/49. Not all metrics improve. New final linked ports100% compatible; large transfer pending.",
+      "health_gate": "Read complete15-task transfer, retain failures, no per-function tuning. After two conceptual changes without transfer or new diagnosis revisit representation; T9 after mechanical decision. No additional molecular tool without approval."
     }
   ]
 }

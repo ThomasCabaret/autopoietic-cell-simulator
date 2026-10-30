@@ -1,0 +1,487 @@
+{
+  "schema_version": 1,
+  "campaign_recipe": "research/campaign_recipes/MD2_20261030T115427443420Z",
+  "gate_passed": true,
+  "criteria": "All3 new >=90% bound and capture-compatible during6-10, all bound before fixed external cut10, >=2/3 recaptured by12; no instability.",
+  "inputs": [
+    {
+      "seed": 0,
+      "new": false,
+      "scenario": {
+        "schema_version": 1,
+        "model": "membrane",
+        "name": "MD2_local_False",
+        "branch": "MD2",
+        "seed": 0,
+        "duration": 12.0,
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 5,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        },
+        "chemistry": {
+          "units": 2,
+          "initial": "straight",
+          "short_length": 0.98,
+          "bonding": true,
+          "end_attraction": 4.0,
+          "cooperative_rows": false,
+          "oriented_ports": false,
+          "port_epsilon": 0.6,
+          "temperature": 0.08,
+          "face_docking": true,
+          "dock_energy": 4.0,
+          "dock_width": 0.3,
+          "dock_capture": 0.25,
+          "dock_rate": 25.0,
+          "bond_off_rate": 0.0,
+          "break_extension": 0.35,
+          "box": [
+            8.0,
+            8.0
+          ],
+          "fragment_size": 2
+        }
+      },
+      "initial_positions": [
+        [
+          3.0,
+          4.0
+        ],
+        [
+          3.9998816778082587,
+          4.0
+        ],
+        [
+          3.0099988167780825,
+          3.3500769094246317
+        ],
+        [
+          3.989882861030176,
+          3.3500769094246317
+        ]
+      ],
+      "initial_face_links": [
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "forced_cut_time": 10.0,
+      "compatible_fraction": 0.8525,
+      "recapture_event": true,
+      "recapture_time": 10.01
+    },
+    {
+      "seed": 0,
+      "new": true,
+      "scenario": {
+        "schema_version": 1,
+        "model": "membrane",
+        "name": "MD2_local_True",
+        "branch": "MD2",
+        "seed": 0,
+        "duration": 12.0,
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 5,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        },
+        "chemistry": {
+          "units": 2,
+          "initial": "straight",
+          "short_length": 0.98,
+          "bonding": true,
+          "end_attraction": 4.0,
+          "cooperative_rows": false,
+          "oriented_ports": false,
+          "port_epsilon": 0.6,
+          "temperature": 0.08,
+          "face_docking": true,
+          "dock_energy": 4.0,
+          "dock_width": 0.3,
+          "dock_capture": 0.25,
+          "dock_rate": 25.0,
+          "bond_off_rate": 0.0,
+          "break_extension": 0.35,
+          "box": [
+            8.0,
+            8.0
+          ],
+          "bound_port_geometry": true,
+          "fragment_size": 2
+        }
+      },
+      "initial_positions": [
+        [
+          3.0,
+          4.0
+        ],
+        [
+          3.9998816778082587,
+          4.0
+        ],
+        [
+          3.0099988167780825,
+          3.3500769094246317
+        ],
+        [
+          3.989882861030176,
+          3.3500769094246317
+        ]
+      ],
+      "initial_face_links": [
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "forced_cut_time": 10.0,
+      "compatible_fraction": 1.0,
+      "recapture_event": true,
+      "recapture_time": 10.01
+    },
+    {
+      "seed": 1,
+      "new": false,
+      "scenario": {
+        "schema_version": 1,
+        "model": "membrane",
+        "name": "MD2_local_False",
+        "branch": "MD2",
+        "seed": 1,
+        "duration": 12.0,
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 5,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        },
+        "chemistry": {
+          "units": 2,
+          "initial": "straight",
+          "short_length": 0.98,
+          "bonding": true,
+          "end_attraction": 4.0,
+          "cooperative_rows": false,
+          "oriented_ports": false,
+          "port_epsilon": 0.6,
+          "temperature": 0.08,
+          "face_docking": true,
+          "dock_energy": 4.0,
+          "dock_width": 0.3,
+          "dock_capture": 0.25,
+          "dock_rate": 25.0,
+          "bond_off_rate": 0.0,
+          "break_extension": 0.35,
+          "box": [
+            8.0,
+            8.0
+          ],
+          "fragment_size": 2
+        }
+      },
+      "initial_positions": [
+        [
+          3.0,
+          4.0
+        ],
+        [
+          3.9998816778082587,
+          4.0
+        ],
+        [
+          3.0099988167780825,
+          3.3500769094246317
+        ],
+        [
+          3.989882861030176,
+          3.3500769094246317
+        ]
+      ],
+      "initial_face_links": [
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "forced_cut_time": 10.0,
+      "compatible_fraction": 1.0,
+      "recapture_event": true,
+      "recapture_time": 10.03
+    },
+    {
+      "seed": 1,
+      "new": true,
+      "scenario": {
+        "schema_version": 1,
+        "model": "membrane",
+        "name": "MD2_local_True",
+        "branch": "MD2",
+        "seed": 1,
+        "duration": 12.0,
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 5,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        },
+        "chemistry": {
+          "units": 2,
+          "initial": "straight",
+          "short_length": 0.98,
+          "bonding": true,
+          "end_attraction": 4.0,
+          "cooperative_rows": false,
+          "oriented_ports": false,
+          "port_epsilon": 0.6,
+          "temperature": 0.08,
+          "face_docking": true,
+          "dock_energy": 4.0,
+          "dock_width": 0.3,
+          "dock_capture": 0.25,
+          "dock_rate": 25.0,
+          "bond_off_rate": 0.0,
+          "break_extension": 0.35,
+          "box": [
+            8.0,
+            8.0
+          ],
+          "bound_port_geometry": true,
+          "fragment_size": 2
+        }
+      },
+      "initial_positions": [
+        [
+          3.0,
+          4.0
+        ],
+        [
+          3.9998816778082587,
+          4.0
+        ],
+        [
+          3.0099988167780825,
+          3.3500769094246317
+        ],
+        [
+          3.989882861030176,
+          3.3500769094246317
+        ]
+      ],
+      "initial_face_links": [
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "forced_cut_time": 10.0,
+      "compatible_fraction": 1.0,
+      "recapture_event": true,
+      "recapture_time": 10.03
+    },
+    {
+      "seed": 2,
+      "new": false,
+      "scenario": {
+        "schema_version": 1,
+        "model": "membrane",
+        "name": "MD2_local_False",
+        "branch": "MD2",
+        "seed": 2,
+        "duration": 12.0,
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 5,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        },
+        "chemistry": {
+          "units": 2,
+          "initial": "straight",
+          "short_length": 0.98,
+          "bonding": true,
+          "end_attraction": 4.0,
+          "cooperative_rows": false,
+          "oriented_ports": false,
+          "port_epsilon": 0.6,
+          "temperature": 0.08,
+          "face_docking": true,
+          "dock_energy": 4.0,
+          "dock_width": 0.3,
+          "dock_capture": 0.25,
+          "dock_rate": 25.0,
+          "bond_off_rate": 0.0,
+          "break_extension": 0.35,
+          "box": [
+            8.0,
+            8.0
+          ],
+          "fragment_size": 2
+        }
+      },
+      "initial_positions": [
+        [
+          3.0,
+          4.0
+        ],
+        [
+          3.9998816778082587,
+          4.0
+        ],
+        [
+          3.0099988167780825,
+          3.3500769094246317
+        ],
+        [
+          3.989882861030176,
+          3.3500769094246317
+        ]
+      ],
+      "initial_face_links": [
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "forced_cut_time": 10.0,
+      "compatible_fraction": 1.0,
+      "recapture_event": true,
+      "recapture_time": 10.01
+    },
+    {
+      "seed": 2,
+      "new": true,
+      "scenario": {
+        "schema_version": 1,
+        "model": "membrane",
+        "name": "MD2_local_True",
+        "branch": "MD2",
+        "seed": 2,
+        "duration": 12.0,
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 5,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        },
+        "chemistry": {
+          "units": 2,
+          "initial": "straight",
+          "short_length": 0.98,
+          "bonding": true,
+          "end_attraction": 4.0,
+          "cooperative_rows": false,
+          "oriented_ports": false,
+          "port_epsilon": 0.6,
+          "temperature": 0.08,
+          "face_docking": true,
+          "dock_energy": 4.0,
+          "dock_width": 0.3,
+          "dock_capture": 0.25,
+          "dock_rate": 25.0,
+          "bond_off_rate": 0.0,
+          "break_extension": 0.35,
+          "box": [
+            8.0,
+            8.0
+          ],
+          "bound_port_geometry": true,
+          "fragment_size": 2
+        }
+      },
+      "initial_positions": [
+        [
+          3.0,
+          4.0
+        ],
+        [
+          3.9998816778082587,
+          4.0
+        ],
+        [
+          3.0099988167780825,
+          3.3500769094246317
+        ],
+        [
+          3.989882861030176,
+          3.3500769094246317
+        ]
+      ],
+      "initial_face_links": [
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "forced_cut_time": 10.0,
+      "compatible_fraction": 1.0,
+      "recapture_event": true,
+      "recapture_time": 10.01
+    }
+  ],
+  "gate_executed_driver_sha256": "2652769c7dcdff1f584ed6056e53ac78189fb57f446e6447cc44fa3ddcb41894",
+  "preserved_driver_sha256": {
+    "coherent_contact_gate.py": "86ff7ec35a619be50ec3c72e2c2f85b2ed1e932eb71908a182071dfda463e9b7",
+    "gate_run_driver.py": "2652769c7dcdff1f584ed6056e53ac78189fb57f446e6447cc44fa3ddcb41894",
+    "prepare_coherent_contacts.py": "f478bd3521d61123c20dea2e65461e4db59fd7b4ef6ec2560e5dcc60866c1cdb"
+  },
+  "invocation": "python experiments/coherent_contact_gate.py --prepare-campaign",
+  "scope": "Compact inputs and selected scalar outcomes, not trajectories/full results. Gate driver used before duplicate guard is preserved exactly. Current gate adds active-campaign guard; dynamics unchanged. Complete local protocols remain under ignored outputs/. Restore the main recipe for exact frozen transfer laws."
+}

@@ -37,7 +37,7 @@ def metrics_summary(metrics,cfg):
         result.update(closed_sets_ever=metrics['closed_sets_ever'],final_closed=metrics['final_closed'],
             regular_closed_fraction=sum(bool(r['closed']) for r in h)/len(h) if h else None,
             first_closed=passage([dict(time=r['time'],hit=bool(r['closed'])) for r in h],'hit',cfg['duration']))
-    m=metrics.get('membrane')
+    m=metrics if cfg['model']=='membrane_bath' else metrics.get('membrane')
     if m:
         h=regular(m['history'],interval)
         result.update(regular_parent_closed_fraction=sum(r['parent_closed'] for r in h)/len(h) if h else None,
@@ -45,6 +45,8 @@ def metrics_summary(metrics,cfg):
             final_parent_closed=m['final_parent_closed'],inserted_into_closed_parent_ever=m['inserted_into_closed_parent_ever'],
             persistent_inserted_10=m['persistent_inserted_10'],final_inside_counts=metrics.get('final_inside_counts'),
             sampled_crossings=metrics.get('sampled_crossings'))
+        result.update(retained_escape_fraction=m.get('retained_escape_fraction'),
+            permeable_entry_fraction=m.get('permeable_entry_fraction'))
     return result
 
 
@@ -62,6 +64,23 @@ def analyze(folder):
                 raise AssertionError('Evidence provenance/completion mismatch')
             row.update(metrics=metrics_summary(evidence['metrics'],cfg),elapsed_seconds=evidence['elapsed_seconds'],
                 result_sha256=hashlib.sha256((folder/state['result']).read_bytes()).hexdigest())
+            if cfg['model'] in ('membrane','membrane_bath','coupled_bath') and (cfg['model']!='coupled_bath' or cfg['chemistry']['include_membrane']):
+                import numpy as np
+                from simulator.docking import port_geometry
+                mc=cfg['chemistry'].get('membrane',cfg['chemistry'])
+                if cfg['model']=='coupled_bath':
+                    from simulator.coupled_bath import membrane_config
+                    mc=membrane_config(cfg['chemistry'])
+                with np.load(folder/state['checkpoint'],allow_pickle=False) as checkpoint:
+                    meta=json.loads(str(checkpoint['metadata']))
+                    if meta['source_sha256']!=expected or meta['config']!=cfg:raise AssertionError('Checkpoint provenance mismatch')
+                    chemical=meta['chemistry'].get('membrane',meta['chemistry'])
+                    links=chemical.get('face_links',[]);n=mc['units']
+                    head,tail,_,_=port_geometry(checkpoint['positions'][:2*n],n,1.,mc['short_length'])
+                    q=[float(np.sum((head[j,b]-head[i,a])**2)+np.sum((tail[j,b]-tail[i,a])**2)) for i,j,a,b in links]
+                row['final_bound_geometry']=dict(links=len(q),mean_q=float(np.mean(q)) if q else None,
+                    capture_compatible_fraction=float(np.mean(np.array(q)<mc['dock_capture']**2)) if q else None,
+                    scope='Final explicit bound contacts only, not time-averaged or a membrane classification.')
         if state.get('motion_audit'):
             a=json.loads((folder/state['motion_audit']).read_text(encoding='utf-8'));h=a['history']
             row['thermal_range']=[min(r['kinetic_temperature'] for r in h),max(r['kinetic_temperature'] for r in h)] if h else None

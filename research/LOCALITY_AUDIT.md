@@ -6,6 +6,16 @@ n'ont de sens qu'à l'échelle des assemblages. Concevoir une chimie, fournir
 
 ## Ce qui invaliderait une démonstration
 
+Lot25 MD2 : potentiel harmonique sur deux ports de deux dimères explicitement
+liés, quatre billes, Jacobien exact. Ne lit ni contour, composante, taille ou
+rôle biologique. Remplace deux ressorts/quatre angles latéraux ; les rungs
+internes restent. Coefficient dérivé de l'attraction libre existante, pas de
+nouvelle constante fonctionnelle. Un choix de potentiel explicite, zéro nouvel
+alphabet/état/port/gène/outil. Dissociation et échange restent actifs en transfert.
+La coupure à10 du seul lien de la paire locale est un forçage externe déclaré,
+fixé avant calcul, jamais une réaction décidée par les mesures. Les observateurs
+et la porte entre expériences ne pilotent aucune trajectoire. Voir BATCH_25_PLAN.md.
+
 Lot24 : aucun changement des forces/réactions de production. La loupe remplace
 temporairement l'appel update_faces par un observateur qui appelle l'original
 exactement une fois, sans tirage PRNG supplémentaire ; préfixes LT2 et tests de

@@ -1,6 +1,6 @@
 param(
     [ValidateSet('Start','Status','Stop','Resume','Analyze')][string]$Action='Status',
-    [ValidateSet('mixing','motion','transfer','demo_motion','membrane_diagnostic')][string]$Bench='mixing'
+    [ValidateSet('mixing','motion','transfer','demo_motion','membrane_diagnostic','coherent_contacts')][string]$Bench='mixing'
 )
 $ErrorActionPreference='Stop'
 $projectRoot=Split-Path -Parent $PSScriptRoot
@@ -8,7 +8,7 @@ Set-Location -LiteralPath $projectRoot
 $pythonPath=Join-Path $projectRoot '.venv\Scripts\python.exe'
 if (-not (Test-Path -LiteralPath $pythonPath)) { $pythonPath=(Get-Command python).Source }
 $parent=Join-Path $projectRoot "outputs\${Bench}_campaigns"
-$report=if ($Bench -eq 'motion') { 'motion_report.py' } elseif ($Bench -eq 'transfer') { 'population_report.py' } elseif ($Bench -in @('demo_motion','membrane_diagnostic')) { 'demo_motion_report.py' } else { 'mixing_report.py' }
+$report=if ($Bench -eq 'motion') { 'motion_report.py' } elseif ($Bench -eq 'transfer') { 'population_report.py' } elseif ($Bench -in @('demo_motion','membrane_diagnostic','coherent_contacts')) { 'demo_motion_report.py' } else { 'mixing_report.py' }
 $latest=Join-Path $parent 'latest.txt'
 $controller=Join-Path $PSScriptRoot 'campaign.py'
 if ($Action -eq 'Start') {

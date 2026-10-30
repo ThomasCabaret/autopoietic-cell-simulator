@@ -47,6 +47,13 @@ def main():
         'resume_membrane_diagnostic.bat','analyze_membrane_diagnostic.bat'))
     files.update(p for p in (ROOT/'research/abstract_runs/MD1_loupe_20261030T110121719037Z').glob('*')
                  if p.suffix=='.py' or p.name=='recipe.json')
+    files.update(ROOT/p for p in ('research/BATCH_25_PLAN.md','research/BATCH_25.md',
+        'research/BATCH_25_RECIPES.json','experiments/prepare_coherent_contacts.py',
+        'experiments/coherent_contact_gate.py','campaigns/coherent_contacts.json',
+        'start_coherent_contacts.bat','coherent_contacts_status.bat','stop_coherent_contacts.bat',
+        'resume_coherent_contacts.bat','analyze_coherent_contacts.bat'))
+    files.update(p for p in (ROOT/'research/abstract_runs/MD2_local_gate_20261030T115427390878Z').glob('*')
+                 if p.suffix=='.py' or p.name=='recipe.json')
     files.update(ROOT/p for p in ('README.md','SIMULATOR_ARCHITECTURE.md','requirements.txt',
         'CONTRIBUTING.md','GIT_SETUP.md','THIRD_PARTY_NOTICES.md',
         '.gitignore','.gitattributes','.editorconfig',

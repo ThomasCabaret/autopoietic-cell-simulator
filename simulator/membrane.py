@@ -3,7 +3,7 @@ import numpy as np
 from .reference import degree, normals, local_port_free, port_attraction, add_force
 from .physics import orientation_kernel
 from .physics import attraction_kernel
-from .docking import free_faces,update_faces,docking_force
+from .docking import free_faces,update_faces,docking_force,bound_port_force
 
 class MembraneChemistry:
     def __init__(self, config, rng):
@@ -141,9 +141,13 @@ class MembraneChemistry:
     def extra_forces(self, neighbors):
         pos, n = self.pos, self.n
         if self.config.get('face_docking',False):
-            if self.config['dock_energy']==0.: return np.zeros_like(pos)
+            if self.config.get('bound_port_geometry',False):
+                force=bound_port_force(pos,np.asarray(self.face_links,dtype=np.int64).reshape(-1,4),self.long,self.short,
+                    self.config['dock_energy'],self.config['dock_width'])[0]
+            else:force=np.zeros_like(pos)
+            if self.config['dock_energy']==0.: return force
             pairs=neighbors.pairs(pos[:n],self.long+4*self.config['dock_width'],'face_force')
-            return docking_force(pos,pairs,self.faces_free,self.long,self.short,
+            return force+docking_force(pos,pairs,self.faces_free,self.long,self.short,
                                  self.config['dock_energy'],self.config['dock_width'],self.face_partners)[0]
         force = np.zeros_like(pos)
         for row, length in enumerate((self.long, self.short)):
@@ -190,6 +194,10 @@ class MembraneChemistry:
         n=self.n
         springs=[(i,n+i,180.,self.shaft) for i in range(n)]
         angles=[]
+        if self.config.get('bound_port_geometry',False):
+            self.springs=np.asarray(springs,dtype=float).reshape(-1,4)
+            self.angles=np.empty((0,5))
+            return
         for row,length in enumerate((self.long,self.short)):
             offset,other=row*n,(1-row)*n
             for i,j in sorted(self.edges[row]):

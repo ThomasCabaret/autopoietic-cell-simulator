@@ -1,4 +1,19 @@
-# Maturité — régression intégrée localisée, correction encore à démontrer
+# Maturité — contact cohérent testé localement, transfert intégré en cours
+
+Lot25 : nouveau potentiel lié dérivé du même motif H/T que la capture libre,
+sans nouvelle raideur indépendante. Gradient, résultante, couple et reprise
+vérifiés ;142 tests logiciels distincts et7 historiques couverts avec succès.
+Porte locale3/3 nouvelle, mais anciennes références également bonnes sur2/3 :
+pas encore preuve d'une amélioration robuste des ouvertures rares.
+
+15 tâches MD2 lancées, cinq essais V8 achevés : transfert depuis molécules
+isolées sur trois graines, davantage d'observations avec contour mais pas
+d'amélioration de tous les indicateurs. Insertion, rétention et restauration du grand bain restent
+à lire. Niveau démontré : motif local et premiers transferts séparés, pas
+maintien cellulaire. Zéro espèce/état/port/gène/outil ajouté ; les anciennes
+références et démos restent physiquement inchangées. Voir BATCH_25.md.
+
+## Bilan précédent — diagnostic MD1
 
 LT2 achevé16/16. Les gains micro sont confirmés dans leur domaine, mais la
 membrane J3 sous Langevin ne reste fermée que2,6/23,6/74,2% contre73,2/79,1/78,6%

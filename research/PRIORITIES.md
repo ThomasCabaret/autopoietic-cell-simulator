@@ -1,4 +1,20 @@
-# Priorités actuelles — géométrie des contacts membranaires sous Langevin, puis T9
+# Priorités actuelles — lire le transfert MD2, puis décision mécanique/T9
+
+Lot25 : motif local cohérent implémenté, porte locale passée3/3, six témoins
+conservés,15 essais de transfert lancés sous sources figées. Langevin et tous
+les taux de réaction restent identiques. Suivi `coherent_contacts_status.bat` ;
+voir [plan](BATCH_25_PLAN.md), [bilan](BATCH_25.md). Pas d'adoption générale avant
+lecture de la cohorte, pas de balayage de raideur par fonction.
+
+Les trois V8 nouvelles s'assemblent depuis molécules isolées ; continuité
+observée accrue sur trois graines, première fermeture plus tardive sur une.
+Les
+sondes, insertion et trois bains J3 restent à lire. Priorité : vérifier que
+le raccordement géométrique préserve échange/rétention et restaure le grand bain,
+puis revenir à T9. Les réussites de paire préparée ne prouvent pas une membrane.
+Aucun nouveau type/outil/gène, aucune nouvelle dépendance causale.
+
+## Historique après MD1
 
 LT2 achevé16/16,0 erreur. [Bilan complet](BATCH_23_RESULTS.md) : le grand bain
 régresse dans deux graines, malgré les progrès micro. Langevin reste la base

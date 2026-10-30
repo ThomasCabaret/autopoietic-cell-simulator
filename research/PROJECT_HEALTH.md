@@ -8,6 +8,21 @@ division et évolution ouverte ne sont pas des conditions ajoutées à cette cib
 
 ## Lecture finale LT2 et diagnostic MD1
 
+Lot25 MD2 en cours : un remplacement de potentiel lié, dérivé des paramètres
+de ports existants, évite d'empiler une force et une nouvelle raideur spécifique.
+La porte locale passe, sans contre-exemple sur toutes les anciennes graines ;
+les petites V8 commencent à transférer le motif. La santé reste conditionnelle
+à l'insertion/rétention et au grand bain, pas au nombre de tests logiciels.
+Une rigidification excessive ou une injection d'énergie lors des échanges est
+un risque concret. Les15 essais figés sont le prochain horizon de décision,
+sans grille supplémentaire automatique. Voir BATCH_25.md.
+
+Un changement conceptuel mécanique depuis le diagnostic MD1, zéro nouvel outil
+fonctionnel ou dépendance. Le budget de particules du bain cellulaire est
+inchangé ; les534 billes des sondes sont un banc séparé. Si le second changement
+conceptuel ne réduit plus l'incertitude ou n'apporte aucun transfert, revoir
+la représentation avant de poursuivre. Aucun délai de cellule viable garanti.
+
 LT2 terminé16/16. La régression membranaire intégrée0/1 est un risque concret
 que les seuls succès micro auraient masqué. Le mouvement n'est pas rétrogradé
 pour sauver des rendements : la priorité est la cohérence chimico-mécanique des

@@ -42,9 +42,16 @@ def resolve(raw):
         raw['mechanics']=settings
     defaults = copy.deepcopy(MODELS[model][1])
     chemistry = raw.get("chemistry", {})
-    if set(chemistry) - set(defaults) - {"box", "fragment_size"}:
-        raise ValueError("Unknown chemistry keys: " + str(sorted(set(chemistry)-set(defaults)-{"box","fragment_size"})))
+    extras={"box", "fragment_size"}
+    if model in ('membrane','membrane_bath'):extras.add('bound_port_geometry')
+    if set(chemistry) - set(defaults) - extras:
+        raise ValueError("Unknown chemistry keys: " + str(sorted(set(chemistry)-set(defaults)-extras)))
     defaults.update(chemistry)
+    if 'bound_port_geometry' in defaults:
+        if type(defaults['bound_port_geometry']) is not bool:
+            raise ValueError('bound_port_geometry must be boolean')
+        if defaults['bound_port_geometry'] and not defaults.get('face_docking',False):
+            raise ValueError('Bound port geometry requires face docking')
     engine = {"dt": .005 if model=="copy" else .002, "spatial":"tree", "skin":.25,
               "sample_every":100 if model=="copy" else 200, "reaction_every":5}
     if set(raw.get("engine",{}))-set(engine):
