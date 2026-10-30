@@ -6,7 +6,27 @@ est une cellule construite qui maintient et refabrique ses composants depuis
 une nourriture simple, avec énergie externe déclarée. Apparition spontanée,
 division et évolution ouverte ne sont pas des conditions ajoutées à cette cible.
 
-## Transfert visuel et physique LT2, en cours
+## Lecture finale LT2 et diagnostic MD1
+
+LT2 terminé16/16. La régression membranaire intégrée0/1 est un risque concret
+que les seuls succès micro auraient masqué. Le mouvement n'est pas rétrogradé
+pour sauver des rendements : la priorité est la cohérence chimico-mécanique des
+contacts. Les données de fermeture/insertion et d'usage réel des produits passent
+avant le nombre de réactions ou le débit du moteur. Voir BATCH_23_RESULTS.md.
+
+MD1 réduit l'incertitude : la première perte durable sélectionnée survient
+sans étirement excessif, sur des ports déjà hors géométrie de recapture.
+La loupe reproduit exactement LT2. Aucun blocage irréversible de principe établi ;
+la correction doit encore préserver molécules libres, insertion et souplesse.
+Pas de garantie que toutes les graines aient la même cause, pas de délai viable.
+
+Volume borné : cinq essais courts et un rejeu de diagnostic. Prochain jalon
+de conception MD2 : géométrie cohérente d'un contact, puis transfert. Après
+deux changements conceptuels sans transfert ni diagnostic nouveau, revoir la
+représentation. Ne pas ajouter une protéine ou une suite de frottements pour
+éviter ce choix. T9 reste ensuite prioritaire. Aucun coût causal supplémentaire.
+
+## Historique — transfert visuel et physique LT2 en cours
 
 L'utilisateur demande le mouvement dans les démos et les cas actuels avant
 de reprendre les priorités. Un seul transfert borné :16 essais automatiques,

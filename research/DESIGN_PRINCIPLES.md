@@ -23,6 +23,14 @@ aux besoins détectés de la cellule.
 
 ## Ne pas confondre localité, simplicité et flexibilité
 
+Précision utilisateur après LT2 : une cinétique de mélange efficace est une
+base de travail fondamentale. L'accélération de réactions parasites révèle
+un problème de chimie à résoudre ; ralentir le mouvement ne le résout pas.
+Conserver les références historiques pour comparer, mais ne pas les utiliser
+pour masquer un défaut révélé par le mouvement choisi. Distinguer l'instabilité
+numérique, qui demande une correction technique, de la fragilité d'une structure
+ou d'une sélectivité, qui demande un diagnostic et une conception locale.
+
 Trois propriétés distinctes doivent être évaluées : localité des lois,
 coût des primitives/helpers, diversité des fonctions obtenues sous ces lois.
 Une règle locale différente par démonstrateur peut respecter la première tout

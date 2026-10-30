@@ -6,6 +6,16 @@ n'ont de sens qu'à l'échelle des assemblages. Concevoir une chimie, fournir
 
 ## Ce qui invaliderait une démonstration
 
+Lot24 : aucun changement des forces/réactions de production. La loupe remplace
+temporairement l'appel update_faces par un observateur qui appelle l'original
+exactement une fois, sans tirage PRNG supplémentaire ; préfixes LT2 et tests de
+passivité vérifiés. Son déclencheur temporel et ses identités de contact ne sont
+jamais accessibles aux lois. Capture bornée à six molécules effectivement
+sélectionnées, sous plafond24, de39,53 à45,53 ; classification des ruptures et
+géométrie des ports uniquement en lecture. MD1 inclut deux ablations déclarées
+de paramètres chimiques, conservées comme candidats séparés de diagnostic.
+Langevin reste la base de travail ; aucune protéine ou fonction globale ajoutée.
+
 Lot23 : extension du même Langevin aux membranes et au bain couplé, sans autre
 force ou réaction. Audit thermique passif pour tous ces hooks ; le cache est
 invalidé après chaque tick réactif. Tests de cache, passivité et reprise sur

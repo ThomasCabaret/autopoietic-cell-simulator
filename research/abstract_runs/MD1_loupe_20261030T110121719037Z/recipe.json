@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "campaign_recipe": "research/campaign_recipes/MD1_20261030T105849083917Z",
+  "replay_reference": "research/campaign_recipes/LT2_20261030T065759494210Z",
+  "driver_sha256": {
+    "experiments/prepare_membrane_diagnostic.py": "bfb470221bf097460ed2b75de5f157803fb00547211450c196404d2e18ee718e",
+    "experiments/probe_membrane_failure.py": "2fe651f557aa1f1efef6e592d2a0fefba8e4d2648dff957b2b9b9661fd25ec8c",
+    "experiments/analyze_membrane_loupe.py": "3ba2aba4efe35247492786564bd50784c228f1e7b3ddec12601921d88551ddde",
+    "experiments/review_langevin_transfer.py": "041743aeb8ba7072fc245cac72f4bcd6ba1439f6e6439a1e8af8e0b325119859"
+  },
+  "commands": [
+    "python experiments/probe_membrane_failure.py --campaign OUTPUTS_RESTORED_LT2",
+    "python experiments/analyze_membrane_loupe.py CAPTURE_FOLDER/loupe.json"
+  ],
+  "local_capture": "outputs/membrane_loupes/MD1_selected_loupe_s0_20261030T110121719037Z",
+  "capture_policy": {
+    "target_time": [
+      40.5,
+      41.5
+    ],
+    "before": 1.0,
+    "after": 5.0,
+    "sample_interval": 0.01,
+    "max_units": 24,
+    "actual_units": 6,
+    "frames": 601,
+    "max_events": 64
+  },
+  "scope": "Frozen code references, not bulk data. Restore/run LT2 recipe to reconstruct its complete result before prefix-verified selected replay. Invoke project experiment paths; captured .py files preserve exact source bytes. No simulation or observer labels drive chemistry."
+}

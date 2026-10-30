@@ -28,6 +28,12 @@ Les conditions et la référence interne s'adaptent à la variante.
 Voir [protocole](../research/BATCH_23_PLAN.md) et [bilan](../research/BATCH_23.md).
 Les résultats ne servent jamais à ajuster les lois pendant la simulation.
 
+LT2 est désormais achevé16/16. Les microdémos se transfèrent, mais le grand
+bain Langevin perd fortement sa continuité membranaire dans deux graines sur
+trois. Ces échecs restent visibles, sans remplacement par une graine favorable.
+Voir [résultats complets](../research/BATCH_23_RESULTS.md). Langevin reste la
+base de recherche ; le diagnostic membranaire MD1 précède la reprise de T9.
+
 | Démo | Billes | Rôle et départ | Limite essentielle |
 |---|---:|---|---|
 | Bain intégré actuel, J3 |2118|Grande membrane,16 G001 et16 F001 déjà construits, monomères et précurseurs ; même bain|Intégration partielle, pas une cellule viable ni un renouvellement complet|

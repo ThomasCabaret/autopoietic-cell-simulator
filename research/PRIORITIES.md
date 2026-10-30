@@ -1,4 +1,27 @@
-# Priorités actuelles — lire LT2, puis reprendre T9
+# Priorités actuelles — géométrie des contacts membranaires sous Langevin, puis T9
+
+LT2 achevé16/16,0 erreur. [Bilan complet](BATCH_23_RESULTS.md) : le grand bain
+régresse dans deux graines, malgré les progrès micro. Langevin reste la base
+de travail ; ne pas ralentir le mélange pour cacher les défauts des réactions.
+
+Lot24 MD1 : cinq contrôles précoces à80 achevés5/5 sans erreur, plus une loupe passive sélectionnée.
+Le contact qui ouvre durablement la graine0 se perd aléatoirement à40,53 avec
+des longueurs presque au repos mais des ports déjà très désalignés : q1,28
+contre seuil de recapture0,0625. Aucune recapture dans la fenêtre suivante.
+Le problème identifié est une incohérence entre géométrie liée et capture libre.
+Voir [plan](BATCH_24_PLAN.md), [diagnostic](BATCH_24.md),
+`membrane_diagnostic_status.bat`. Aucun nouveau gène ou outil.
+
+1. Tester un contact local cohérent MD2 après le bilan MD1, en
+   réutilisant la géométrie H/T des ports. Ne pas rendre globalement les liens
+   irréversibles sans tester échange/insertion et assemblage depuis molécules libres.
+2. Transférer ce motif aux petites membranes et au grand bain, avec contrôles
+   de pas et de renouvellement. Aucune conclusion à partir de la seule graine2.
+3. Reprendre T9 : finition et concurrence des fragments, puis fonctions diverses
+   et fermeture constructive. Nouvelle machine fonctionnelle soumise à proposition
+   et accord utilisateur, jamais ajoutée par défaut.
+
+## Historique — transfert LT2 avant lecture complète
 
 30 octobre2026 : demande utilisateur de voir Langevin dans les microdémos et
 les scènes actuelles. Douze choix GUI (six paires), conditions et enjeu explicites.

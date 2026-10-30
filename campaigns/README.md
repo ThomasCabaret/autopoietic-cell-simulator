@@ -1,5 +1,21 @@
 # Campagnes différées
 
+**Clôture lot24** : LT2 terminé16/16 ; MD1 terminé5/5,0 erreur, aucun essai
+encore actif. [Bilan LT2](../research/BATCH_23_RESULTS.md),
+[diagnostic MD1](../research/BATCH_24.md). La priorité suivante est un contact
+membranaire local dont les géométries liée/libre soient cohérentes, avant T9.
+
+MD1 utilise `membrane_diagnostic.json`, cinq contrôles sélectionnés de graine0
+jusqu'à80 ; les ablations ne sont pas des corrections adoptées. Commandes :
+`membrane_diagnostic_status.bat`, `analyze_membrane_diagnostic.bat`,
+`stop_membrane_diagnostic.bat`, `resume_membrane_diagnostic.bat` ;
+`start_membrane_diagnostic.bat` crée une nouvelle campagne. Pointeur séparé
+`outputs/membrane_diagnostic_campaigns/latest.txt`, sources et rapport figés,
+checkpoints30s, deux travailleurs. Le rapport réutilise l'analyse LT2 générique ;
+son en-tête historique n'est pas l'identifiant du plan MD1, donné par le manifeste.
+
+## Historique des lancements
+
 **LT2 —30 octobre2026, transfert aux démos** :16 essais, deux travailleurs,
 sources figées ; six paires de scènes Brownien/Langevin, puis contrôles de
 pas sélectionnés (leur ordre met les microdémos en premier). Le pas réduit

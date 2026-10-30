@@ -1,5 +1,10 @@
 # Lot23 — comparaison Langevin des démos actuelles
 
+**Clôture :16/16 terminés,0 erreur.** Voir [résultats complets](BATCH_23_RESULTS.md).
+Deux graines intégrées montrent une forte perte de fermeture sous Langevin ;
+la priorité du lot24 est désormais d'en diagnostiquer le mécanisme. Le bilan
+partiel conservé ci-dessous ne vaut plus statut courant de la campagne.
+
 30 octobre2026. [Plan préalable](BATCH_23_PLAN.md). Les six scènes historiques
 restent disponibles et six variantes Langevin sont ajoutées, avec le même
 matériel et les mêmes lois chimiques. La fiche expose l'enjeu et distingue

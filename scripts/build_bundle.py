@@ -38,6 +38,15 @@ def main():
         'experiments/prepare_demo_motion.py','scripts/demo_motion_report.py',
         'campaigns/demo_motion.json','start_demo_motion.bat','demo_motion_status.bat',
         'stop_demo_motion.bat','resume_demo_motion.bat','analyze_demo_motion.bat'))
+    files.update(ROOT/p for p in ('research/BATCH_23_RESULTS.md','research/BATCH_24_PLAN.md',
+        'research/BATCH_24.md','research/BATCH_24_RECIPES.json',
+        'experiments/prepare_membrane_diagnostic.py','experiments/probe_membrane_failure.py',
+        'experiments/analyze_membrane_loupe.py','experiments/review_langevin_transfer.py',
+        'campaigns/membrane_diagnostic.json','start_membrane_diagnostic.bat',
+        'membrane_diagnostic_status.bat','stop_membrane_diagnostic.bat',
+        'resume_membrane_diagnostic.bat','analyze_membrane_diagnostic.bat'))
+    files.update(p for p in (ROOT/'research/abstract_runs/MD1_loupe_20261030T110121719037Z').glob('*')
+                 if p.suffix=='.py' or p.name=='recipe.json')
     files.update(ROOT/p for p in ('README.md','SIMULATOR_ARCHITECTURE.md','requirements.txt',
         'CONTRIBUTING.md','GIT_SETUP.md','THIRD_PARTY_NOTICES.md',
         '.gitignore','.gitattributes','.editorconfig',

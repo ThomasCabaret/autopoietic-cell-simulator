@@ -294,7 +294,9 @@
       "missing_proof": "No local completion/recycling mechanism yet restores reliable long-G amplification. Avoid sequestration of complete tools; additional protein requires user approval.",
       "related": [
         "P10",
-        "LT1"
+        "LT1",
+        "MD1",
+        "MD2"
       ],
       "results": "research/BATCH_22.md"
     },
@@ -976,18 +978,55 @@
         "V8",
         "C3B1"
       ],
-      "status": "paired_demo_catalog_delivered_micro_results_complete_integrated_campaign_running",
+      "status": "sixteen_complete_micro_transfer_integrated_membrane_regression",
       "hypothesis": "The selected Langevin motion transfers to existing molecular assembly and useful catalysis without destroying membranes or common-bath function",
       "test": "Twelve full-horizon paired historical GUI inputs, four selected Langevin dt/2 controls preserving reaction/observer intervals; two workers,16 tasks. Two short pilots first. Native GUI12 actions and restart for Brownian/Langevin J3. No chemical parameter changed.",
       "cost": "Zero new chemical primitive/state/port/tool/gene/particle. Existing velocity model extended to membrane/membrane_bath/coupled_bath; passive thermal audit, signed scenarios and source-frozen report.",
       "counterexample": "Faster filling loses functional transfer or boundary integrity, kinetic heating is hidden, selected single-seed microresults called robust, or a changed motion keeps a historical success label",
-      "missing_proof": "Full J3 paired cohort and selected integrated fine control pending. No convergence certificate, global adoption, reliable G10 amplification, L synthesis or viability.",
+      "missing_proof": "Integrated compatibility fails in seeds0/1; no useful incorporation from expressed F under Langevin by1200. No convergence certificate or viable common chemistry.",
       "evidence": "research/BATCH_23_PLAN.md",
-      "results": "research/BATCH_23.md",
+      "results": "research/BATCH_23_RESULTS.md",
       "campaign_recipe": "research/campaign_recipes/LT2_20261030T065759494210Z/manifest.json",
       "pilot_recipe": "research/campaign_recipes/LT2pilot_20261030T065129203595Z/manifest.json",
-      "conclusion": "Six main microtrials complete: T7 G1->1; C3B1 G/F2/3->4/5, catalyzed-used13->29 including expressed-used13->19; V8 first regular contour184->41, final contours10+14 vs11. Single-seed fine controls vary; thermal transients retained. Default Brownian preserved.",
-      "health_gate": "Read complete16-task cohort without more motion grid, then T9 mechanism interpretation. New molecular functional tool requires costed proposal and explicit user approval."
+      "conclusion": "All16 complete. J3 closure73/79/79% Brownian ->3/24/74% Langevin, incorporated18/18/26 ->9/7/32. Micro improvements remain scoped. Seed2 fine does not address0/1 failure.",
+      "health_gate": "Keep efficient Langevin as working base, diagnose and repair chemical fragility instead of hiding parasites by slowing motion. MD1 then coherent-contact MD2 before T9."
+    },
+    {
+      "id": "MD1",
+      "parent": "LT2",
+      "related": [
+        "J3",
+        "V8",
+        "T9"
+      ],
+      "status": "five_complete_passive_loupe_verified_bound_free_geometry_mismatch",
+      "hypothesis": "Early large-membrane failure follows random dissociation and failed recapture rather than an accepted exchange or excessive initial bond stretch",
+      "test": "Seed0 at80, five controls: Langevin/Brownian/no-random-off/no-exchange/fine-dt preserving reaction interval. One selected exact-prefix replay, <=24 local molecules for1-before/5-after loss near41.",
+      "cost": "No added chemical primitive/state/port/tool/gene/particle; two existing-parameter ablations are separate diagnostic laws. Passive function wrapper and bounded local observation.",
+      "counterexample": "Loss caused by excessive stretch or earlier accepted exchange, probe changes RNG/positions, or a short no-off survival is declared maintained insertable membrane",
+      "missing_proof": "Same cause across seeds, convergence, compatible revised contact, molecular self-assembly and insertion after revision, long maintenance.",
+      "evidence": "research/BATCH_24_PLAN.md",
+      "results": "research/BATCH_24.md",
+      "campaign_recipe": "research/campaign_recipes/MD1_20261030T105849083917Z/manifest.json",
+      "recipe": "research/BATCH_24_RECIPES.json",
+      "conclusion": "Five complete. Closure38.5/79.5/100/75.8/79.5% for base/Brownian/no-off/no-exchange/fine at80. Selected loss40.53 has extension0.02375<0.35 but q1.278 versus capture0.0625; no recapture in5 units. Histories exactly match archived LT2 prefix;6 molecules/601 local frames. Accepted exchange occurs only after1195.",
+      "health_gate": "One coherent local bound/free port mechanism, then isolated molecules/insertion/common bath; no indefinite damping or off-rate grid."
+    },
+    {
+      "id": "MD2",
+      "parent": "MD1",
+      "related": [
+        "V8",
+        "J3",
+        "T9"
+      ],
+      "status": "proposed_not_implemented_local_contact_consistency",
+      "hypothesis": "Reusing compatible four-bead H/T port geometry in bound and free states permits recapture under efficient mixing without globally irreversible contacts",
+      "test": "First one local contact with passive geometry and rupture/rebinding checks, then isolated molecules, internal insertion and large coupled bath under frozen laws and timestep controls",
+      "cost": "Not implemented. Prefer reuse of existing local geometry; any new stiffness/state/helper must be declared and ablated, no extra functional protein authorized.",
+      "counterexample": "Stiffening locks curvature or prevents growth/exchange, apparent success relies only on no-off prepared ring, or a contour detector repairs bonds",
+      "missing_proof": "All MD2 dynamics and downstream transfer untested.",
+      "evidence": "research/BATCH_24.md"
     }
   ]
 }

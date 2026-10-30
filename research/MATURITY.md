@@ -1,4 +1,21 @@
-# Maturité — Langevin visible et premiers transferts, verdict intégré en attente
+# Maturité — régression intégrée localisée, correction encore à démontrer
+
+LT2 achevé16/16. Les gains micro sont confirmés dans leur domaine, mais la
+membrane J3 sous Langevin ne reste fermée que2,6/23,6/74,2% contre73,2/79,1/78,6%
+sur les trois graines browniennes. Aucun produit de F exprimé utilisé dans
+le grand bain Langevin à1200, même dans le contrôle fin choisi. Pas de viabilité.
+
+Lot24 MD1 achevé5/5 sans erreur, aucun calcul encore actif. Loupe passive et
+préfixes LT2 reproduits exactement ; un contact peut
+rester lié avec ports désalignés, se dissocier sans étirement excessif et devenir
+non recapturable. Diagnostic local concret, pas encore loi corrigée. Les cinq
+contre-tests courts MD1 vérifient la portée de cette explication, sans supprimer
+le besoin de tests de transfert et de pas. Voir BATCH_23_RESULTS.md/BATCH_24.md.
+Deux tests de passivité/budget ajoutés et réussis. Aucun changement des lois
+de production, nouvelle primitive, espèce, outil ou particule. Langevin demeure
+la base de travail, les anciennes références restent conservées.
+
+## Historique — livraison et premier bilan partiel LT2
 
 Lot23,30 octobre2026 :12 choix GUI vérifiés, Brownien/Langevin pour chaque scène
 actuelle.136 tests logiciels +7 historiques réussis, pause/lecture/recommencement

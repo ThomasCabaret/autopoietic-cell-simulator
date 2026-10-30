@@ -1019,3 +1019,33 @@ préservé, ni convergence quantitative ni origine thermique établies.
 Arbre, priorités, maturité, santé et audit de localité actualisés. Le modèle
 commun viable et T9 restent ouverts ; pas de nouvelle dépendance causale,
 pas de nouveau gène ou budget de particules. Pas de push.
+
+### 30 octobre2026 — lot24, LT2 clos et diagnostic MD1 achevé
+
+Demande de reprise après achèvement. LT2 terminé16/16, sources/scénarios/hashes
+vérifiés : gains micro conservés, mais grande membrane dégradée sous Langevin
+sur graines0/1 (fermeture2,6/23,6% contre73,2/79,1%). Aucun produit exprimé
+incorporé dans le grand bain Langevin à1200. BATCH_23_RESULTS.md donne le bilan
+complet ; graphiques/résultats restent locaux. La priorité effective devient
+la continuité du grand contour, sans ralentir le mélange pour cacher la fragilité.
+
+Plan BATCH_24_PLAN.md avant contre-tests. MD1 cinq essais à80 sur graine0,
+achevés5/5 sans erreur : fermeture38,5% base,79,5% Brownien,100% sans perte
+aléatoire,75,8% sans routine d'échange,79,5% au pas mécanique fin. Ablations
+diagnostiques distinctes, pas de correction adoptée. Contrôleur initial arrêté
+par le bac à sable sans résultat ; reprise autorisée hors bac, traces conservées.
+
+Loupe passive sélectionnée : perte47–48 à40,53, extension0,02375 contre seuil0,35,
+mais ports déjà désalignés q1,267 avant rupture, seuil capture0,0625. Aucun
+retour en géométrie de capture ni reformation pendant5 unités. Six molécules,
+601 frames locales, budget et passivité testés2/2. Historiques membrane/génétique
+et événements identiques aux préfixes LT2 à80.367 ruptures rapportées,308 pertes
+nettes aléatoires, autres cas réformés dans le tick non tous classables. Les
+échanges acceptés de la référence sont postérieurs à1195, pas cause de l'ouverture41.
+
+Diagnostic : géométrie liée et capture libre ne privilégient pas la même
+configuration. Nouvelle priorité MD2 : réutiliser le motif local H/T pour rendre
+ces états cohérents, puis vérifier molécules libres/insertion/bain. Pas de nouvel
+outil/gène ni loi corrigée ici, aucun budget de particules ajouté. T9 ensuite.
+Arbre, santé, maturité, priorités, localité et recettes actualisés. LT2/MD1
+entièrement achevés, aucun calcul encore actif à la remise de main, aucun push.
