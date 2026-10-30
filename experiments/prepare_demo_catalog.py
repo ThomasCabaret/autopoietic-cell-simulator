@@ -33,6 +33,46 @@ def origins():
     return items
 
 
+def current_origins():
+    source='research/campaign_recipes/MD2_20261030T115427443420Z/manifest.json'
+    data=json.loads((ROOT/source).read_text(encoding='utf-8'));items=[]
+    for group,prefix,label,beads in (
+        ('current_cell','MD2_bath_new','Cellule construite',2118),
+        ('current_free','MD2_free_new','Assemblage depuis molécules libres',72),
+        ('current_probes','MD2_probes_new','Insertion et sondes',534)):
+        for seed in (2,0,1):
+            task=next(t for t in data['tasks'] if t['label']==f'{prefix}_s{seed}')
+            items.append((f'{group}_s{seed}',group,f'Graine {seed}',copy.deepcopy(task['scenario']),source,task['id'],beads))
+    return items
+
+
+def current_descriptions():
+    common=dict(conditions='Langevin, masse 1, frottement 0,1 ; température 0,08, dt 0,002 ; contacts liés/libres cohérents MD2. Paramètres identiques à la recette étudiée, sans réglage de la vue.',
+        evidence='research/BATCH_25_RESULTS.md',archive=False)
+    return [dict(common,id='current_cell',title='Cellule construite · état actuel',level='Candidat MD2 · bain le plus intégré',
+        summary='Membrane, gènes, outils et précurseurs dans un même bain sous Langevin.',
+        question='Voir la tenue de la membrane et les vrais transferts de matière ; les nouvelles chaînes fonctionnelles restent le prochain verrou.',
+        prepared='219 molécules L en anneau et 24 libres internes ; 16 G001 et 16 F001 complets préparés, 48 monomères F et précurseurs P/R. Total : 2 118 billes.',
+        observe='Des outils initialement construits fabriquent des composants réellement utilisés. Fermeture régulière observée : 85,5 / 72,8 / 86,9 % sur graines 0 / 1 / 2 ; nouveaux G libérés : 0 / 1 / 1 ; aucun nouveau F complet libéré à 1 200.',
+        limits='Cellule initialement construite, pas cellule viable démontrée : outils non renouvelés, L non synthétisés, pas de flux de nourriture, d’homéostasie ou division. Ouvertures réelles laissées visibles. Départ à t=0, pas de film précalculé.',
+        conditions=common['conditions']+' Cycle externe 200 / 15. Graine 2 recommandée pour illustrer une copie G et une bonne tenue ; choix illustratif, les trois graines restent accessibles.',
+        look='Jouer en Maximum, vue globale puis zoom au centre. Sélectionner une bille et suivre ses partenaires dans Explorer. Le grand bain peut demander des dizaines de minutes pour 1 200 ; les copies G sont rares, aucune copie F à promettre.'),
+      dict(common,id='current_free',title='Membranes · molécules libres',level='MD2 · sous-système séparé, trois graines',
+        summary='Les contacts actuels assemblent 36 molécules isolées en petits contours.',
+        question='Vérifier l’assemblage sans chaîne ou contour déjà préparé, avec la même forme de potentiel de ports.',
+        prepared='36 dimères H/T construits et dispersés ; aucune liaison latérale initiale. Total : 72 billes.',
+        observe='Premiers contours observés à 20 / 10 / 59 selon graine 0 / 1 / 2, puis associations et ruptures réelles. Les trois essais ferment des contours ; tailles et nombres finaux varient.',
+        limits='Les dimères sont fournis. Petits contours à géométrie différente de la grande membrane ; pas de contenu cellulaire, de fabrication de L ou de rétention prouvée par cette scène.',
+        look='C’est la scène rapide pour commencer. Jouer en Maximum, puis ralentir et zoomer sur une extrémité. Les contours sont reconnus par l’observateur, jamais refermés par un contrôleur.'),
+      dict(common,id='current_probes',title='Membrane · insertion et passages',level='MD2 · contrôle séparé L et sondes',
+        summary='Grande membrane préparée, molécules L libres internes et deux familles de sondes.',
+        question='Observer l’insertion locale et les passages sélectifs, y compris les défauts qui persistent.',
+        prepared='219 dimères L en anneau et 24 libres internes ; 24 sondes retenues initialement internes et 24 perméables initialement externes. Total : 534 billes, sans gène ou outil protéique.',
+        observe='Insertions persistantes observées : 1 / 1 / 2 sur graines 0 / 1 / 2. La graine 1 se dégrade durablement après 224 ; elle est conservée. Les compteurs affichent les entrées/sorties effectivement observées.',
+        limits='Frontière non classable = inconnu, pas étanchéité supposée. Zéro sortie observée ne garantit rien pendant ces périodes. Sondes de contrôle, pas synthèse de nourriture ni cellule intégrée.',
+        look='Zoomer sur une molécule L libre près de la membrane et activer le suivi. Filtrer les sondes dans Explorer. La graine 2 montre deux insertions persistantes ; la graine 1 montre un échec important.')]
+
+
 def descriptions():
     result=[dict(id='integrated',title='Bain intégré actuel',level='Intégration partielle · priorité de lecture',
         summary='Membrane, gènes, outils et précurseurs dans un même bain.',
@@ -84,6 +124,12 @@ def langevin_variant(config):
 
 def build():
     variants=[]
+    for key,demo,title,cfg,origin,task,beads in current_origins():
+        cfg=resolve(cfg);path=f'demonstrators/configs/demo_{key}.json'
+        (ROOT/path).write_text(json.dumps(cfg,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+        variants.append(dict(id=key,demo=demo,title=title,seed=cfg['seed'],config=path,beads=beads,
+            source=origin,source_task=task,source_sha256=hashlib.sha256((ROOT/origin).read_bytes()).hexdigest(),
+            dynamics_sha256=signature(cfg),view_speed=0.,motion='langevin'))
     for key,demo,title,cfg,origin,task,beads in origins():
         for inertial in (False,True):
             resolved=langevin_variant(cfg) if inertial else resolve(cfg)
@@ -102,9 +148,11 @@ def build():
                     evidence='research/BATCH_23.md')
             variants.append(variant)
     from visualizer.demos import simulator_hashes
-    catalog=dict(version=1,date='2026-10-30',recommended='integrated_s2',simulator_sha256=simulator_hashes(),
+    archived=descriptions()
+    for info in archived:info['archive']=True
+    catalog=dict(version=1,date='2026-10-30',recommended='current_cell_s2',simulator_sha256=simulator_hashes(),
         policy='Live simulations from preserved initial inputs. Selected illustrative seeds, not a robustness claim. No trajectories/checkpoints bundled.',
-        demos=descriptions(),variants=variants)
+        demos=current_descriptions()+archived,variants=variants)
     (ROOT/'demonstrators/catalog.json').write_text(json.dumps(catalog,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
 
 
@@ -130,6 +178,16 @@ def verify():
         assert other.motion is not None and info['question']
         rows.append(dict(id=key+'_langevin',beads=beads,initial_positions_identical=True,
             chemical_laws_identical=True,temperature=inertial['chemistry']['temperature']))
+    for key,_,_,original,source,task,beads in current_origins():
+        variant,info,cfg=catalog.get(key)
+        assert signature(cfg)==signature(original)
+        assert hashlib.sha256((ROOT/source).read_bytes()).hexdigest()==variant['source_sha256']
+        sim=Simulation(cfg);m=sim.chemistry.membrane if cfg['model']=='coupled_bath' else sim.chemistry
+        assert len(sim.chemistry.pos)==beads and m.config['bound_port_geometry']
+        assert sim.motion is not None and not info['archive']
+        if key.startswith('current_free'):assert m.edges==[set(),set()]
+        if key.startswith('current_probes'):assert m.config['retained_probes']==m.config['permeable_probes']==24
+        rows.append(dict(id=key,beads=beads,source_dynamics_identical=True,current=True))
     return rows
 
 

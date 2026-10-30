@@ -1,4 +1,30 @@
-# Priorités actuelles — lire le transfert MD2, puis décision mécanique/T9
+# Priorités actuelles — T9 dans le bain MD2, démos actuelles disponibles
+
+MD2 terminé15/15,0 erreur. La fermeture du grand bain progresse sur trois
+graines ; F nouveau reste nul, même complet encore apparié. Le stock global
+de F composites monomères reste194/191/204 : ne pas supposer son épuisement,
+ni confondre ce stock global avec l'accès local. Voir BATCH_25_RESULTS.md.
+
+Lot26 : neuf presets MD2 exacts promus dans la GUI,12 références conservées,
+21 choix natifs vérifiés. `visualizer.bat` → Démos → État actuel · bain intégré
+ouvre la graine2 illustrative, avec ses limites affichées. Aucune nouvelle
+loi ou campagne dans cette consolidation. Voir BATCH_26.md.
+
+1. T9 : séparer rencontres, éligibilité G/F, attente de ligation et finition
+   des fragments dans le bain actuel ; comparer les gardes locaux avec les
+   outils complets pour éviter leur séquestration. Retirer le seul garde
+   monomère n'avait pas résolu le garde indépendant degré(F)=0.
+2. Réparation/insertion : garder le cas à sondes graine1, ouverture durable224
+   après échange223,61 (association, pas causalité prouvée). Loupe localisable
+   et comparaison des produits de l'échange, sans réparer un contour global.
+3. Diversité des outils, fabrication de L et maintien avec flux/homéostasie :
+   verrous de recherche toujours ouverts, pas simples tâches techniques garanties.
+
+Langevin et les contacts MD2 sont la base explicite des nouveaux essais.
+Anciennes recettes inchangées. Nouvelle machine fonctionnelle seulement après
+proposition et accord utilisateur ; pas de nouveau gène par défaut.
+
+## Historique avant lecture complète MD2
 
 Lot25 : motif local cohérent implémenté, porte locale passée3/3, six témoins
 conservés,15 essais de transfert lancés sous sources figées. Langevin et tous

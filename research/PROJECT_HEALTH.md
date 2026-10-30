@@ -8,6 +8,27 @@ division et évolution ouverte ne sont pas des conditions ajoutées à cette cib
 
 ## Lecture finale LT2 et diagnostic MD1
 
+Clôture MD2/lot26 :15 essais terminés sans erreur, démos actuelles source-exactes
+et passivité graphique vérifiées. Amélioration nette de fermeture du grand bain,
+mais F nouveau0/3 et un contrôle d'insertion encore dégradé. Recensement final :
+194/191/204 monomères F actifs dans le monde,16 F complets préparés persistants,
+4/5/5 nouveaux fragments F2, aucun F3 nouveau. Ce n'est pas une pénurie globale ;
+l'accès local et l'éligibilité doivent être mesurés avant d'augmenter le stock.
+
+La trajectoire de recherche est plus informative, sans nouveau helper ajouté
+dans ce lot. Elle ne permet pas encore de réduire copie, diversité des fonctions,
+synthèse L et homéostasie à une liste de corrections indépendantes certaines.
+La viabilité dépend de leur réalisation et de leurs compatibilités. Division
+reste reportée, sans l'ajouter comme condition actuelle.
+
+Prochain jalon : motif local T9 autorisant la finition utile et préservant les
+outils complets, avec témoin d'interférence et classification cinétique. Le cas
+à sondes a une cible de loupe concrète autour de223,61 ; pas d'obstacle futur
+volontairement ignoré. Les critères de réexamen après deux changements sans
+transfert ni diagnostic nouveau restent applicables. Voir BATCH_25_RESULTS.md.
+
+## Historique — MD2 en cours
+
 Lot25 MD2 en cours : un remplacement de potentiel lié, dérivé des paramètres
 de ports existants, évite d'empiler une force et une nouvelle raideur spécifique.
 La porte locale passe, sans contre-exemple sur toutes les anciennes graines ;

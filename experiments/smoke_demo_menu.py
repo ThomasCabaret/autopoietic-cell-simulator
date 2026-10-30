@@ -23,6 +23,8 @@ def main():
             if predicate():return
         raise AssertionError('Demo menu timed out')
     try:
+        window.current_demo_action.trigger();wait(lambda:window.packet is not None)
+        assert window.active_demo['variant']['id']==window.catalog.data['recommended']
         for key in window.catalog.variants:
             window.demo_actions[key].trigger()
             wait(lambda:window.packet is not None)
@@ -33,18 +35,22 @@ def main():
             assert (Path(packet['path'])/'demo.json').exists()
             assert packet['observations']['time']==0.
             rows.append(dict(id=key,beads=len(f.positions),seed=packet['config']['seed'],paused_initial_state=True))
-            if key in ('integrated_s2','integrated_s2_langevin'):
+            if key in ('integrated_s2','integrated_s2_langevin','current_cell_s2','current_free_s2','current_probes_s2'):
                 initial=f.positions.copy();window.single_step();wait(lambda:window.packet['frame'].step==1)
                 assert window.packet['paused'];window.toggle_pause()
                 wait(lambda:window.packet['frame'].time>=.1)
                 window.command('pause',True);wait(lambda:window.packet['paused'])
                 assert window.packet['observations']['rows']
+                if key.startswith('current_'):
+                    from simulator.engine import Simulation
+                    headless=Simulation(window.packet['config']);headless.advance(window.packet['frame'].step)
+                    np.testing.assert_array_equal(headless.chemistry.pos.astype(np.float32),window.packet['frame'].positions)
                 window.save_image(out/f'{key}.png');window.grab().save(str(out/f'{key}_interface.png'))
                 window.restart();wait(lambda:window.packet is not None)
                 assert window.active_demo['variant']['id']==key and window.packet['paused']
                 np.testing.assert_array_equal(window.packet['frame'].positions,initial)
         report=dict(menu_actions=rows,integrated_step_play_pause=True,restart_exact_initial_state=True,
-            native_qt_opengl=True,errors=errors,
+            native_qt_opengl=True,current_frames_equal_headless=True,errors=errors,
             scope='Initial-state and short playback checks only. No full-horizon success or new biological evidence claimed.')
         (out/'report.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8');print(json.dumps(report))
     finally:window.close();app.processEvents()

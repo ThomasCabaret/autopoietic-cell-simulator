@@ -214,14 +214,20 @@ class MainWindow(Q.QMainWindow):
         file.addAction(self.action('Sauver un checkpoint',lambda:self.command('checkpoint')))
         file.addAction(self.action('Quitter',self.close))
         self.demo_menu=self.menuBar().addMenu('Démos');self.demo_actions={}
+        self.current_demo_action=self.action('État actuel · bain intégré',lambda checked=False:self.load_demo(self.catalog.data['recommended']))
+        self.demo_menu.addAction(self.current_demo_action);self.demo_menu.addSeparator();archive_menu=None
         for demo in self.catalog.data['demos']:
             variants=[v for v in self.catalog.data['variants'] if v['demo']==demo['id']]
-            target=self.demo_menu.addMenu(demo['title']) if len(variants)>1 else self.demo_menu
+            parent=self.demo_menu
+            if demo.get('archive',False):
+                if archive_menu is None:archive_menu=self.demo_menu.addMenu('Références et sous-systèmes')
+                parent=archive_menu
+            target=parent.addMenu(demo['title']) if len(variants)>1 else parent
             for variant in variants:
                 text=variant['title'] if len(variants)>1 else demo['title']
                 action=self.action(text,lambda checked=False,key=variant['id']:self.load_demo(key))
                 action.setToolTip(demo['summary']);target.addAction(action);self.demo_actions[variant['id']]=action
-            if demo['id']=='integrated':self.demo_menu.addSeparator()
+            if demo['id']=='integrated':parent.addSeparator()
         button=Q.QToolButton();button.setText('Démos');button.setMenu(self.demo_menu)
         button.setPopupMode(Q.QToolButton.InstantPopup);self.toolbar.insertWidget(self.toolbar.actions()[0],button)
         view=self.menuBar().addMenu('Vue');view.addAction(self.dock.toggleViewAction())

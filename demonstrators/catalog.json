@@ -1,7 +1,7 @@
 {
   "version": 1,
   "date": "2026-10-30",
-  "recommended": "integrated_s2",
+  "recommended": "current_cell_s2",
   "simulator_sha256": {
     "simulator/__init__.py": "bf5a7a5cafdf7076cbc3cc9d8992895e4a8c217621ea024645a061a3531281a9",
     "simulator/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
@@ -41,6 +41,48 @@
   "policy": "Live simulations from preserved initial inputs. Selected illustrative seeds, not a robustness claim. No trajectories/checkpoints bundled.",
   "demos": [
     {
+      "conditions": "Langevin, masse 1, frottement 0,1 ; température 0,08, dt 0,002 ; contacts liés/libres cohérents MD2. Paramètres identiques à la recette étudiée, sans réglage de la vue. Cycle externe 200 / 15. Graine 2 recommandée pour illustrer une copie G et une bonne tenue ; choix illustratif, les trois graines restent accessibles.",
+      "evidence": "research/BATCH_25_RESULTS.md",
+      "archive": false,
+      "id": "current_cell",
+      "title": "Cellule construite · état actuel",
+      "level": "Candidat MD2 · bain le plus intégré",
+      "summary": "Membrane, gènes, outils et précurseurs dans un même bain sous Langevin.",
+      "question": "Voir la tenue de la membrane et les vrais transferts de matière ; les nouvelles chaînes fonctionnelles restent le prochain verrou.",
+      "prepared": "219 molécules L en anneau et 24 libres internes ; 16 G001 et 16 F001 complets préparés, 48 monomères F et précurseurs P/R. Total : 2 118 billes.",
+      "observe": "Des outils initialement construits fabriquent des composants réellement utilisés. Fermeture régulière observée : 85,5 / 72,8 / 86,9 % sur graines 0 / 1 / 2 ; nouveaux G libérés : 0 / 1 / 1 ; aucun nouveau F complet libéré à 1 200.",
+      "limits": "Cellule initialement construite, pas cellule viable démontrée : outils non renouvelés, L non synthétisés, pas de flux de nourriture, d’homéostasie ou division. Ouvertures réelles laissées visibles. Départ à t=0, pas de film précalculé.",
+      "look": "Jouer en Maximum, vue globale puis zoom au centre. Sélectionner une bille et suivre ses partenaires dans Explorer. Le grand bain peut demander des dizaines de minutes pour 1 200 ; les copies G sont rares, aucune copie F à promettre."
+    },
+    {
+      "conditions": "Langevin, masse 1, frottement 0,1 ; température 0,08, dt 0,002 ; contacts liés/libres cohérents MD2. Paramètres identiques à la recette étudiée, sans réglage de la vue.",
+      "evidence": "research/BATCH_25_RESULTS.md",
+      "archive": false,
+      "id": "current_free",
+      "title": "Membranes · molécules libres",
+      "level": "MD2 · sous-système séparé, trois graines",
+      "summary": "Les contacts actuels assemblent 36 molécules isolées en petits contours.",
+      "question": "Vérifier l’assemblage sans chaîne ou contour déjà préparé, avec la même forme de potentiel de ports.",
+      "prepared": "36 dimères H/T construits et dispersés ; aucune liaison latérale initiale. Total : 72 billes.",
+      "observe": "Premiers contours observés à 20 / 10 / 59 selon graine 0 / 1 / 2, puis associations et ruptures réelles. Les trois essais ferment des contours ; tailles et nombres finaux varient.",
+      "limits": "Les dimères sont fournis. Petits contours à géométrie différente de la grande membrane ; pas de contenu cellulaire, de fabrication de L ou de rétention prouvée par cette scène.",
+      "look": "C’est la scène rapide pour commencer. Jouer en Maximum, puis ralentir et zoomer sur une extrémité. Les contours sont reconnus par l’observateur, jamais refermés par un contrôleur."
+    },
+    {
+      "conditions": "Langevin, masse 1, frottement 0,1 ; température 0,08, dt 0,002 ; contacts liés/libres cohérents MD2. Paramètres identiques à la recette étudiée, sans réglage de la vue.",
+      "evidence": "research/BATCH_25_RESULTS.md",
+      "archive": false,
+      "id": "current_probes",
+      "title": "Membrane · insertion et passages",
+      "level": "MD2 · contrôle séparé L et sondes",
+      "summary": "Grande membrane préparée, molécules L libres internes et deux familles de sondes.",
+      "question": "Observer l’insertion locale et les passages sélectifs, y compris les défauts qui persistent.",
+      "prepared": "219 dimères L en anneau et 24 libres internes ; 24 sondes retenues initialement internes et 24 perméables initialement externes. Total : 534 billes, sans gène ou outil protéique.",
+      "observe": "Insertions persistantes observées : 1 / 1 / 2 sur graines 0 / 1 / 2. La graine 1 se dégrade durablement après 224 ; elle est conservée. Les compteurs affichent les entrées/sorties effectivement observées.",
+      "limits": "Frontière non classable = inconnu, pas étanchéité supposée. Zéro sortie observée ne garantit rien pendant ces périodes. Sondes de contrôle, pas synthèse de nourriture ni cellule intégrée.",
+      "look": "Zoomer sur une molécule L libre près de la membrane et activer le suivi. Filtrer les sondes dans Explorer. La graine 2 montre deux insertions persistantes ; la graine 1 montre un échec important."
+    },
+    {
       "id": "integrated",
       "title": "Bain intégré actuel",
       "level": "Intégration partielle · priorité de lecture",
@@ -51,7 +93,8 @@
       "conditions": "Température 0,08 ; cycle externe 200 / 15. Les trois graines sont celles de J3. La graine 2 est choisie pour montrer un outil exprimé produisant de la matière ensuite utilisée, pas pour établir une fréquence de réussite.",
       "look": "Commencer par la vue globale (F), puis zoomer au centre. Cliquer une bille et ouvrir l’onglet Explorer pour suivre son assemblage. À vitesse maximale, le calcul peut prendre plusieurs minutes ; aucune animation n’est précalculée.",
       "evidence": "research/BATCH_16_RESULTS.md",
-      "question": "Langevin améliore-t-il le transfert utile sans dégrader la membrane, la rétention et les outils ? La membrane de départ est préparée."
+      "question": "Langevin améliore-t-il le transfert utile sans dégrader la membrane, la rétention et les outils ? La membrane de départ est préparée.",
+      "archive": true
     },
     {
       "id": "material_cycle",
@@ -64,7 +107,8 @@
       "conditions": "Température 0,6 ; cycle externe 200 / 15 ; graine 1 sélectionnée parmi les essais du lot 8 pour illustrer le transfert. Même scénario physique que l’essai archivé.",
       "look": "Laisser avancer au maximum, puis mettre en pause ou ralentir. Les compteurs distinguent les nouveaux produits des structures préparées ; les flashes montrent les changements de liens.",
       "evidence": "research/BATCH_08.md",
-      "question": "Le mouvement accéléré conserve-t-il G → F exprimé → composants fabriqués puis réellement réutilisés ?"
+      "question": "Le mouvement accéléré conserve-t-il G → F exprimé → composants fabriqués puis réellement réutilisés ?",
+      "archive": true
     },
     {
       "id": "binary_copy",
@@ -77,7 +121,8 @@
       "conditions": "Température 0,6 ; cycle externe 200 / 15 ; graine 0 du témoin T7 historique. La libération est aidée par le cycle fourni.",
       "look": "Passer en vitesse maximale jusqu’aux associations, puis ralentir et sélectionner la chaîne. Une copie complète exclut la chaîne initialement préparée.",
       "evidence": "research/ENGINE_MIGRATION.md",
-      "question": "Les rencontres supplémentaires produisent-elles des copies complètes libérées ou surtout des fragments concurrents ?"
+      "question": "Les rencontres supplémentaires produisent-elles des copies complètes libérées ou surtout des fragments concurrents ?",
+      "archive": true
     },
     {
       "id": "free_membrane",
@@ -90,10 +135,137 @@
       "conditions": "Température 0,08 ; graine 0 ; aucun ruban initial replié. Les lois restent celles de la référence V8 à petits contours.",
       "look": "Observer d’abord l’ensemble à vitesse maximale, puis ralentir lors de l’assemblage. Les contours fermés sont identifiés après coup, sans guider la dynamique.",
       "evidence": "research/BATCH_03.md",
-      "question": "Les molécules isolées ferment-elles encore des contours avec inertie ? Aucune chaîne latérale ne doit être préparée."
+      "question": "Les molécules isolées ferment-elles encore des contours avec inertie ? Aucune chaîne latérale ne doit être préparée.",
+      "archive": true
     }
   ],
   "variants": [
+    {
+      "id": "current_cell_s2",
+      "demo": "current_cell",
+      "title": "Graine 2",
+      "seed": 2,
+      "config": "demonstrators/configs/demo_current_cell_s2.json",
+      "beads": 2118,
+      "source": "research/campaign_recipes/MD2_20261030T115427443420Z/manifest.json",
+      "source_task": "task0014",
+      "source_sha256": "089cb54b318a73c2808cf9e4c394090deb5b3b00b89ec799ad6bc8f69df0d05c",
+      "dynamics_sha256": "dbfd7c3c7a8eb51af00a20ee93b248a0371e3c44e8c38fd6b3c54df6cc570ecd",
+      "view_speed": 0.0,
+      "motion": "langevin"
+    },
+    {
+      "id": "current_cell_s0",
+      "demo": "current_cell",
+      "title": "Graine 0",
+      "seed": 0,
+      "config": "demonstrators/configs/demo_current_cell_s0.json",
+      "beads": 2118,
+      "source": "research/campaign_recipes/MD2_20261030T115427443420Z/manifest.json",
+      "source_task": "task0011",
+      "source_sha256": "089cb54b318a73c2808cf9e4c394090deb5b3b00b89ec799ad6bc8f69df0d05c",
+      "dynamics_sha256": "cf2975ae60be26c62cc9b45647897bd2b621249fd1b748e37a47adbf449e96e8",
+      "view_speed": 0.0,
+      "motion": "langevin"
+    },
+    {
+      "id": "current_cell_s1",
+      "demo": "current_cell",
+      "title": "Graine 1",
+      "seed": 1,
+      "config": "demonstrators/configs/demo_current_cell_s1.json",
+      "beads": 2118,
+      "source": "research/campaign_recipes/MD2_20261030T115427443420Z/manifest.json",
+      "source_task": "task0013",
+      "source_sha256": "089cb54b318a73c2808cf9e4c394090deb5b3b00b89ec799ad6bc8f69df0d05c",
+      "dynamics_sha256": "4031fd03b01ab813902d991f8cc4aa38a7d1203c35baf6b4613197965fded2d9",
+      "view_speed": 0.0,
+      "motion": "langevin"
+    },
+    {
+      "id": "current_free_s2",
+      "demo": "current_free",
+      "title": "Graine 2",
+      "seed": 2,
+      "config": "demonstrators/configs/demo_current_free_s2.json",
+      "beads": 72,
+      "source": "research/campaign_recipes/MD2_20261030T115427443420Z/manifest.json",
+      "source_task": "task0003",
+      "source_sha256": "089cb54b318a73c2808cf9e4c394090deb5b3b00b89ec799ad6bc8f69df0d05c",
+      "dynamics_sha256": "115b96757fcf8c399afafdcc652f1a171a0ff802fb64f6e3c077010301cb124c",
+      "view_speed": 0.0,
+      "motion": "langevin"
+    },
+    {
+      "id": "current_free_s0",
+      "demo": "current_free",
+      "title": "Graine 0",
+      "seed": 0,
+      "config": "demonstrators/configs/demo_current_free_s0.json",
+      "beads": 72,
+      "source": "research/campaign_recipes/MD2_20261030T115427443420Z/manifest.json",
+      "source_task": "task0000",
+      "source_sha256": "089cb54b318a73c2808cf9e4c394090deb5b3b00b89ec799ad6bc8f69df0d05c",
+      "dynamics_sha256": "bdaa1ce1efaad4d88435201597afc1bf03bb991ccfa8a6180b32a08a2a209cbd",
+      "view_speed": 0.0,
+      "motion": "langevin"
+    },
+    {
+      "id": "current_free_s1",
+      "demo": "current_free",
+      "title": "Graine 1",
+      "seed": 1,
+      "config": "demonstrators/configs/demo_current_free_s1.json",
+      "beads": 72,
+      "source": "research/campaign_recipes/MD2_20261030T115427443420Z/manifest.json",
+      "source_task": "task0001",
+      "source_sha256": "089cb54b318a73c2808cf9e4c394090deb5b3b00b89ec799ad6bc8f69df0d05c",
+      "dynamics_sha256": "fa74a05f1957ba6324994958866ea7635ed5de0ba4e5ad2694287ebd76ed06e5",
+      "view_speed": 0.0,
+      "motion": "langevin"
+    },
+    {
+      "id": "current_probes_s2",
+      "demo": "current_probes",
+      "title": "Graine 2",
+      "seed": 2,
+      "config": "demonstrators/configs/demo_current_probes_s2.json",
+      "beads": 534,
+      "source": "research/campaign_recipes/MD2_20261030T115427443420Z/manifest.json",
+      "source_task": "task0010",
+      "source_sha256": "089cb54b318a73c2808cf9e4c394090deb5b3b00b89ec799ad6bc8f69df0d05c",
+      "dynamics_sha256": "d16ede11acf454589203bff57a9dbc8c581076bbf30c3fe3d745b7a8309a5caf",
+      "view_speed": 0.0,
+      "motion": "langevin"
+    },
+    {
+      "id": "current_probes_s0",
+      "demo": "current_probes",
+      "title": "Graine 0",
+      "seed": 0,
+      "config": "demonstrators/configs/demo_current_probes_s0.json",
+      "beads": 534,
+      "source": "research/campaign_recipes/MD2_20261030T115427443420Z/manifest.json",
+      "source_task": "task0006",
+      "source_sha256": "089cb54b318a73c2808cf9e4c394090deb5b3b00b89ec799ad6bc8f69df0d05c",
+      "dynamics_sha256": "e4c11c227d199206580e37e9b40d68bdc1ed31578f1006af6b5a2251aef0f159",
+      "view_speed": 0.0,
+      "motion": "langevin"
+    },
+    {
+      "id": "current_probes_s1",
+      "demo": "current_probes",
+      "title": "Graine 1",
+      "seed": 1,
+      "config": "demonstrators/configs/demo_current_probes_s1.json",
+      "beads": 534,
+      "source": "research/campaign_recipes/MD2_20261030T115427443420Z/manifest.json",
+      "source_task": "task0008",
+      "source_sha256": "089cb54b318a73c2808cf9e4c394090deb5b3b00b89ec799ad6bc8f69df0d05c",
+      "dynamics_sha256": "fdfb4301f5688fb156d85462f274785db2caaeb4282aafb10750db3a0149cc6d",
+      "view_speed": 0.0,
+      "motion": "langevin"
+    },
     {
       "id": "integrated_s2",
       "demo": "integrated",

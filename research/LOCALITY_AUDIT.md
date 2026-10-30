@@ -6,6 +6,16 @@ n'ont de sens qu'à l'échelle des assemblages. Concevoir une chimie, fournir
 
 ## Ce qui invaliderait une démonstration
 
+Lot26 GUI3 : les neuf scénarios actuels ont la signature exacte du manifeste
+MD2. Aucun réglage pour améliorer le rendu, aucune trajectoire précalculée.
+Les positions affichées correspondent exactement au moteur headless au même
+pas, pause/lecture/reprise vérifiées ; les compteurs ne consomment pas de PRNG.
+Les ensembles initiaux G/F/anneau servent à préparer et à mesurer, pas à guider
+une réparation ou un choix de réaction. Les sondes inconnaissables affichent
+« non classable ». Le cas dégradé est conservé dans le catalogue. Aucun ajout
+de loi, helper, outil, gène ou coût causal ; même budget2118 du grand bain.
+Les fonctions de contour et recensement final F restent purement analytiques.
+
 Lot25 MD2 : potentiel harmonique sur deux ports de deux dimères explicitement
 liés, quatre billes, Jacobien exact. Ne lit ni contour, composante, taille ou
 rôle biologique. Remplace deux ressorts/quatre angles latéraux ; les rungs

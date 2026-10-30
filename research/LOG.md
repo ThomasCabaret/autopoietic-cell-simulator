@@ -1084,3 +1084,34 @@ Arbre, priorité de transfert MD2, maturité, santé, localité et architecture
 actualisés. Recettes/sources seules versionnées, données/figures/protocoles
 complets locaux conservés. Prochaine décision après les15 essais, puis T9
 si transfert ; aucune protéine supplémentaire sans accord. Aucun push.
+
+### Lot26 — clôture MD2, inventaire F et démos actuelles
+
+Demande : lire l'état, progresser et rendre l'état actuel inspectable dans la
+GUI. MD2 achevé15/15 sans erreur, sources/scénarios/hashes vérifiés. Fermeture
+J3 restaurée85,5/72,8/86,9% contre2,6/23,6/74,2% LT2 Langevin ;0/1/1 nouveaux
+G, aucun F nouveau complet même apparié. Inventaire passif depuis checkpoints :
+194/191/204 monomères F actifs,16 F3 préparés persistants et4/5/5 nouveaux F2.
+Pas de pénurie globale démontrée, accès local/éligibilité/finition à séparer.
+Sondes : une graine reste sévèrement ouverte, échange223,61 avant perte224,
+association seulement. BATCH_25_RESULTS.md garde réussites et limites.
+
+Plan BATCH_26_PLAN.md avant édition. Neuf presets MD2 exacts ajoutés, les trois
+graines pour bain construit, V8 isolées et grande membrane à sondes. Raccourci
+Démos → État actuel · bain intégré, graine2 illustrative ; les12 anciennes
+entrées gardent leurs scénarios/signatures sous Références et sous-systèmes.
+Les fiches déclarent préparation, forçages, résultats et limites, sans changement
+physique ou de matériel. Compteurs passifs de sondes ajoutés ; inconnu reste
+non classable, pas zéro fuite ni inventaire actuel supposé.
+
+143 tests logiciels et7 historiques réussis.21 actions Qt vérifiées, raccourci
+recommandé, pause/lecture/recommencement exact. Positions des trois scènes
+actuelles égales exactement aux positions float32 headless au même pas ;
+captures inspectées. Aucun rendu, filtre ou compteur ne pilote le moteur.
+
+Priorité T9 rétablie avec contrôles d'interférence sur outils complets ; défaut
+d'insertion secondaire explicite MD3. Synthèse L, diversité, flux/homéostasie
+restent des recherches, pas une garantie de corrections techniques indépendantes.
+Arbre, santé, maturité, priorités et audit actualisés. Aucun nouveau long essai,
+aucune nouvelle loi, aucun outil/gène/particule, aucun calcul encore actif et
+aucun push à la remise de main.

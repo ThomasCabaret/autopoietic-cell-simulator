@@ -287,18 +287,18 @@
       "id": "T9",
       "parent": "T7",
       "hypothesis": "Local caps or reversible turnover can reduce persistent short parasitic products and support sustained full generations",
-      "status": "priority_structural_fragment_competition_diagnosed_mechanism_pending",
+      "status": "current_priority_after_MD2_F_no_new_complete_despite_global_monomers",
       "priority": "P1",
       "test": "Ablate caps and local bond turnover separately; compare full descendant generations and fragment-size distributions at matched duration and pools",
       "counterexample": "Turnover destroys full templates as quickly as parasites; caps merely shorten the target",
-      "missing_proof": "No local completion/recycling mechanism yet restores reliable long-G amplification. Avoid sequestration of complete tools; additional protein requires user approval.",
+      "missing_proof": "Current J3 has abundant global F monomers but no new F3; local access/eligibility and completion must be separated. No selected repair rule validated; protect complete tools against recapture.",
       "related": [
         "P10",
         "LT1",
         "MD1",
         "MD2"
       ],
-      "results": "research/BATCH_22.md"
+      "results": "research/BATCH_25_RESULTS.md"
     },
     {
       "id": "V8",
@@ -1020,18 +1020,51 @@
         "J3",
         "T9"
       ],
-      "status": "implemented_local_gate_passed_V8_three_seed_transfer_large_baths_running",
+      "status": "fifteen_complete_large_bath_improved_F_renewal_absent_probe_failure_retained",
       "hypothesis": "Harmonic continuation of free H/T port geometry in the bound state prevents geometric drift while retaining spontaneous assembly and turnover under Langevin",
       "test": "Gradient/momentum/torque and stateful checkpoint checks,6 local pair trials with fixed cut10 then automated15-task gate. V8 three new seeds/two old, three paired large probe baths, three new J3 plus selected fine seed0. Old LT2 controls explicitly reused.",
       "cost": "One opt-in bound-potential choice. Four-bead explicit bond motif, stiffness/offset derived from existing epsilon/width; replaces2 row springs+4 weak angles. Zero new type/state/port/gene/tool/particle.",
       "counterexample": "Stiffening locks curvature or prevents growth/exchange, apparent success relies only on no-off prepared ring, or a contour detector repairs bonds",
-      "missing_proof": "Large-membrane insertion/retention and coupled J3 results pending; no global adoption, full chemistry convergence, viable maintenance or reliable long-G amplification.",
+      "missing_proof": "No complete new F in integrated MD2 by1200, no viable maintenance or L synthesis; severe probe-seed1 failure remains. No quantitative convergence proof.",
       "evidence": "research/BATCH_25_PLAN.md",
-      "results": "research/BATCH_25.md",
+      "results": "research/BATCH_25_RESULTS.md",
       "campaign_recipe": "research/campaign_recipes/MD2_20261030T115427443420Z/manifest.json",
       "recipe": "research/BATCH_25_RECIPES.json",
-      "conclusion": "New local3/3 have100% bound/capture-compatible samples6-10 and rebind after cut; old85.25/100/100%, all also rebind. New free V8 closure97.5/98.1/94.0% vsold94.5/88.9/86.6%; first closure20/10/59 vs41/41/49. Not all metrics improve. New final linked ports100% compatible; large transfer pending.",
-      "health_gate": "Read complete15-task transfer, retain failures, no per-function tuning. After two conceptual changes without transfer or new diagnosis revisit representation; T9 after mechanical decision. No additional molecular tool without approval."
+      "conclusion": "J3 closure85.5/72.8/86.9% vsold2.6/23.6/74.2%, incorporated12/15/31 vs9/7/32, newG0/1/1 and newF0/0/0. New large probes closure86.6/15.7/79.3%, persistent L1/1/2. Final global free active F194/191/204, only prepared F3 and4/5/5 new F2 fragments.",
+      "health_gate": "Use MD2 as current explicit baseline; prioritize kinetic eligibility and T9 completion with complete-tool sequestration control. Probe failure has concrete loupe target; do not promise all remaining research is routine engineering."
+    },
+    {
+      "id": "GUI3",
+      "parent": "GUI2",
+      "related": [
+        "MD2",
+        "T9"
+      ],
+      "status": "current_MD2_catalog_delivered_21_entries_native_and_headless_verified",
+      "hypothesis": "Source-exact current demos with visible prepared material and failures let the user inspect the model before more chemistry work",
+      "test": "Nine MD2 inputs compared to frozen manifest;21 entries Qt-tested, recommended action, pause/play/restart, current positions exactly equal headless float32 frames; passive probe readout including unknown state.",
+      "cost": "No chemical primitive, tool, law, initial particle, forcing or engine change. Nine JSON inputs, menu curation and observer-derived display only.",
+      "counterexample": "Prepared chains are counted as new, old success assigned to current physics, probe failure hidden, or graphics move particles/control reactions",
+      "missing_proof": "No new chemical success from UI; advanced replay/video still deferred; integrated F renewal, full maintenance and diverse chemistry unproven.",
+      "evidence": "research/BATCH_26_PLAN.md",
+      "results": "research/BATCH_26.md",
+      "conclusion": "Current cell/free membrane/probe groups have all3 seeds, recommended current_cell_s2 illustrative. Historical12 entries preserved under references.150 software/historical tests pass; native21 entries and exact current frames checked."
+    },
+    {
+      "id": "MD3",
+      "parent": "MD2",
+      "related": [
+        "T9",
+        "V8",
+        "J3"
+      ],
+      "status": "proposed_probe_insertion_failure_diagnostic_not_implemented",
+      "hypothesis": "Loose exchange-product geometry may contribute to persistent opening despite coherent bound contacts",
+      "test": "Bounded passive loupe around accepted exchange223.61 and persistent opening224 in MD2 probes seed1; inspect local six-bead product geometry/energy and recovery, with matched no-exchange control if needed",
+      "cost": "No implementation or added tool; propose local revision only after causal diagnosis. Explicit source-frozen controls required.",
+      "counterexample": "Opening precedes exchange, other contacts cause loss, mere temporal association is called causality, or a contour is repaired globally",
+      "missing_proof": "Causal role, local revised reaction and transfer/retention tests unproven.",
+      "evidence": "research/BATCH_25_RESULTS.md"
     }
   ]
 }

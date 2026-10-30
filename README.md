@@ -3,8 +3,12 @@
 **Interface durable et démos du projet** : exécuter `install_visualizer.bat` une fois,
 puis `visualizer.bat`. Fenêtre Qt, rendu OpenGL par lots, navigation, filtres,
 sélection/suivi, transformations et export PNG. Elle démarre en pause après
-ouverture d'un scénario. Aller dans **Démos → Bain intégré actuel → Graine2**
-pour la vue d'ensemble, ou choisir un sous-système. [Catalogue et limites](docs/DEMOS.md).
+ouverture d'un scénario. Aller dans **Démos → État actuel · bain intégré**
+pour la vue d'ensemble sous Langevin avec contacts cohérents MD2, ou choisir
+**Membranes · molécules libres** pour un essai plus rapide. Les références
+anciennes restent rangées séparément. [Catalogue et limites](docs/DEMOS.md).
+Le bain courant est construit et son renouvellement reste incomplet : la
+membrane progresse, mais aucun F nouveau complet n'a été observé dans MD2 à1200.
 La visualisation essentielle est disponible ; la vidéo et les outils avancés
 seront spécifiés plus tard. [Guide de la GUI](docs/VISUALIZER.md).
 Les lanceurs Pygame historiques ci-dessous sont conservés.

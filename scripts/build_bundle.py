@@ -54,6 +54,8 @@ def main():
         'resume_coherent_contacts.bat','analyze_coherent_contacts.bat'))
     files.update(p for p in (ROOT/'research/abstract_runs/MD2_local_gate_20261030T115427390878Z').glob('*')
                  if p.suffix=='.py' or p.name=='recipe.json')
+    files.update(ROOT/p for p in ('research/BATCH_25_RESULTS.md','research/BATCH_26_PLAN.md',
+        'research/BATCH_26.md','experiments/review_coherent_contacts.py'))
     files.update(ROOT/p for p in ('README.md','SIMULATOR_ARCHITECTURE.md','requirements.txt',
         'CONTRIBUTING.md','GIT_SETUP.md','THIRD_PARTY_NOTICES.md',
         '.gitignore','.gitattributes','.editorconfig',

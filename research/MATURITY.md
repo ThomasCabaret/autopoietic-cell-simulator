@@ -1,4 +1,20 @@
-# Maturité — contact cohérent testé localement, transfert intégré en cours
+# Maturité — mécanique améliorée, renouvellement F toujours non démontré
+
+MD2 achevé15/15,0 erreur. Grand bain fermé85,5/72,8/86,9% des observations
+régulières contre2,6/23,6/74,2% sous l'ancien contact Langevin. La mécanique
+se transfère, mais aucun F nouveau complet n'apparaît à1200, même encore lié.
+Le stock global de monomères F reste élevé ; accès/éligibilité/finition à diagnostiquer.
+Insertion/rétention restent fragiles dans un cas à sondes, non masqué.
+
+Lot26 : démos du candidat actuel accessibles, neuf presets sources MD2 exacts,
+21 choix et positions GUI identiques au moteur sans interface vérifiés.
+143 tests logiciels et7 historiques réussis. Progrès d'inspection et de
+consolidation, aucune nouvelle loi, gène/outil ou preuve de maintien. Anneau,
+gènes et outils de départ construits, synthèse de L/homéostasie/diversité ouvertes.
+Les verrous sont plus précis ; leur résolution conjointe n'est pas garantie.
+Voir BATCH_25_RESULTS.md/BATCH_26.md.
+
+## Historique — lancement MD2
 
 Lot25 : nouveau potentiel lié dérivé du même motif H/T que la capture libre,
 sans nouvelle raideur indépendante. Gradient, résultante, couple et reprise

@@ -1,5 +1,14 @@
 # Campagnes différées
 
+**MD2 achevé15/15,0 erreur**, aucun contrôleur actif. Voir
+[résultats complets](../research/BATCH_25_RESULTS.md). Les scènes exactes sont
+maintenant dans `visualizer.bat` → Démos → État actuel · bain intégré,
+avec toutes les graines et les limites. Le lot26 n'ajoute aucun long calcul.
+Prochaine priorité scientifique : T9/éligibilité/finition F sous le candidat
+actuel, le défaut de réparation/insertion restant explicite.
+
+## Historique du lancement MD2
+
 **MD2 en cours — lot25** :15 tâches de transfert d'un potentiel lié cohérent,
 deux travailleurs, checkpoints30s. La porte locale à trois graines a préparé
 et lancé la campagne automatiquement après ses critères figés. Aucun nouveau

@@ -1,5 +1,49 @@
 # Démos représentatives accessibles dans la GUI
 
+## État actuel — MD2,21 choix vérifiés
+
+Relancer **`visualizer.bat`**, puis **Démos → État actuel · bain intégré**.
+Ce raccourci ouvre **Cellule construite · état actuel, graine2**, en pause à t=0,
+avec Langevin et les contacts liés/libres cohérents. Cliquer **Jouer**, laisser
+la vitesse **Maximum**, zoomer à la molette et glisser pour déplacer la vue.
+**F** revient à la vue globale ; **Explorer** propose filtres, sélection et suivi.
+
+| Scène actuelle | Billes | Ce qu'on peut examiner |
+| --- | ---: | --- |
+| Cellule construite · état actuel | 2118 | Membrane, outils et gènes préparés, fabrication et usage de composants ; copie G rare, F non renouvelé |
+| Membranes · molécules libres | 72 | Assemblage depuis36 dimères isolés, sans chaîne préassemblée ; scène plus rapide |
+| Membrane · insertion et passages | 534 | Grande membrane préparée,24 L internes libres et48 sondes ; insertions locales et passages observés |
+
+Chaque scène propose les trois graines2/0/1, exactement celles de la campagne
+MD2. La graine2 recommandée du grand bain a une copie G observée et une bonne
+tenue membranaire ; c'est un choix illustratif, pas une fréquence de succès.
+La graine1 du contrôle à sondes garde son échec durable après224. Les ouvertures,
+défauts et valeurs non classables restent visibles.
+
+Le grand bain peut demander des dizaines de minutes pour atteindre1200 unités
+simulées. Il est recalculé en direct, pas rejoué depuis un film ou un checkpoint
+avantageux. Pour un premier regard rapide, choisir les molécules libres.
+Les fiches indiquent matériel préparé, conditions, résultats mesurés et limites.
+
+Les neuf nouveaux préréglages ont des signatures exactement égales au manifeste
+MD2. Les12 choix antérieurs sont accessibles sous **Références et sous-systèmes**,
+sans modification de leur dynamique. Ne pas additionner les réussites des
+sous-systèmes chauds, des petites V8 et du bain intégré en une cellule viable.
+
+La membrane, les16 G001 et16 F001 sont construits au départ dans le grand bain.
+Ils ne comptent pas comme nouveaux produits. Ni synthèse de L depuis la
+nourriture, flux continu, homéostasie ou maintien autonome n'est démontré.
+Les compteurs des sondes sont passifs ; « non classable » reste inconnu,
+et zéro sortie observée ne garantit pas l'étanchéité pendant ces périodes.
+
+Validation :143 tests logiciels et7 historiques,21 actions Qt natives,
+pause/lecture/recommencement exact. Les images actuelles coïncident exactement
+avec les positions float32 du moteur sans interface au même pas. Aucune
+information de caméra, contour ou résultat ne pilote les lois. Sources et
+bilans : [MD2](../research/BATCH_25_RESULTS.md), [lot26](../research/BATCH_26.md).
+
+## Historique — catalogue GUI2/LT2 et références conservées
+
 Catalogue du 30 octobre 2026. Lancer `visualizer.bat`, puis **Démos → Bain intégré
 actuel → Graine 2 · Langevin · candidat** pour examiner le nouveau mouvement.
 Le choix **Graine 2 · transfert observé · Brownien · référence** conserve la

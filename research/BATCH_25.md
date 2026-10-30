@@ -1,5 +1,9 @@
 # Lot25 — MD2, contacts liés et libres géométriquement cohérents
 
+**Clôture :15/15 terminés,0 erreur, aucun contrôleur actif.**
+[Résultats complets](BATCH_25_RESULTS.md), [démos actuelles](BATCH_26.md).
+Le bilan partiel conservé ci-dessous décrit le lancement, pas le statut courant.
+
 Suite autorisée après MD1. [Plan figé](BATCH_25_PLAN.md). Un seul nouveau
 potentiel de contact, Langevin conservé, aucun nouvel outil fonctionnel.
 

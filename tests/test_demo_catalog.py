@@ -15,8 +15,8 @@ from simulator.runner import make_observer
 class DemoCatalogTests(unittest.TestCase):
     def test_all_presets_match_research_inputs_and_declared_initial_material(self):
         from experiments.prepare_demo_catalog import verify
-        rows=verify();self.assertEqual(len(rows),12)
-        catalog=DemoCatalog();self.assertEqual(catalog.data['recommended'],'integrated_s2')
+        rows=verify();self.assertEqual(len(rows),21)
+        catalog=DemoCatalog();self.assertEqual(catalog.data['recommended'],'current_cell_s2')
         _,_,cfg=catalog.get('integrated_s2');sim=Simulation(cfg);g=sim.chemistry.genetics
         prepared_g=1+sum(q['family']==0 and q['backbone'] and len(q['units'])==3 for q in g.initial_groups)
         prepared_f=sum(q['family']==1 and q['backbone'] and len(q['units'])==3 for q in g.initial_groups)
@@ -62,3 +62,16 @@ class DemoCatalogTests(unittest.TestCase):
         self.assertEqual(rows['Nouveaux F libérés'],0)
         self.assertEqual(before,obs.summary());np.testing.assert_array_equal(pos,sim.chemistry.pos)
         self.assertEqual(rng,sim.rng.bit_generator.state)
+
+    def test_current_probe_readout_is_passive_and_preserves_unknown_states(self):
+        _,_,cfg=DemoCatalog().get('current_probes_s2');cfg['duration']=.25
+        sim=Simulation(cfg);other=Simulation(cfg);obs=make_observer(sim.config,False);sim.listeners.append(obs)
+        sim.advance(sim.target_step);other.advance(other.target_step)
+        before=copy.deepcopy(obs.summary());rng=copy.deepcopy(sim.rng.bit_generator.state)
+        rows=dict(live_observations(obs)['rows'])
+        self.assertIn('Sondes retenues dedans',rows);self.assertIn('Sondes perméables entrées',rows)
+        self.assertEqual(before,obs.summary());self.assertEqual(rng,sim.rng.bit_generator.state)
+        np.testing.assert_array_equal(sim.chemistry.pos,other.chemistry.pos)
+        self.assertEqual(sim.rng.bit_generator.state,other.rng.bit_generator.state)
+        obs.history[-1]['envelope_valid']=False
+        self.assertEqual(dict(live_observations(obs)['rows'])['Sondes retenues dedans'],'non classable')
