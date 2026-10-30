@@ -1,5 +1,11 @@
 # Maturité — mécanique améliorée, renouvellement F toujours non démontré
 
+Lot28 : atlas de l'architecture cible livré avec rôles et limites distincts,
+aucune nouvelle capacité chimique. T9E corrigé terminé12/12 ; aucun F nouveau
+libéré dans le contrôle expression pour ancien ou nouveau, porte de transfert
+refusée. Aucun grand bain T9E testé. La démonstration MD2 et les verrous restent
+inchangés ; schéma causal et budget nominal ne prouvent pas le maintien.
+
 Lot27 : T9E expérimental, pas adopté. Contrôle local de finition F2 obtenu sous
 tirages conditionnés ; les bouts de F3 capturent aussi, donc l'interférence est
 un risque confirmé à mesurer. Campagne12+4 conditionnels en cours, zéro nouvelle

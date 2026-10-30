@@ -1075,17 +1075,33 @@
         "C3B1",
         "GUI3"
       ],
-      "status": "twelve_screening_trials_running_then_four_conditional_transfers",
+      "status": "twelve_complete_screening_gate_refused_no_transfer",
       "hypothesis": "Permitting local F endpoint recapture enables fragment completion without unacceptable complete-tool sequestration",
       "test": "One fixed opt-in gate;12 old/end x expression/prepared tool x3seeds at1200, then at most4 MD2 transfers if prospective gate passes; frozen two-worker follow-up,24h cap",
       "cost": "One discrete degree guard and GF XOR exemption, cooperation anchored on local G; zero new type/state/port/rate/tool/gene/particle. Passive per-degree and prepared-site audit only.",
       "counterexample": "Complete F tools trapped on genes, G copying or useful incorporation lost, endpoint binding unable to finish fragments, or success needs new function-specific rules",
-      "missing_proof": "Kinetic benefit, long-strand restoration, integrated transfer and sustained renewal remain untested; ideal contacts only condition accepted draws",
+      "missing_proof": "No F improvement in the small expression cohort; integrated transfer not triggered. Long-strand restoration and sustained renewal remain open; ideal contacts only condition accepted draws",
       "evidence": "research/BATCH_27_PLAN.md",
       "results": "research/BATCH_27.md",
       "recipe": "research/BATCH_27_RECIPES.json",
       "campaign_recipe": "research/campaign_recipes/T9EA_20261030T164244840888Z/manifest.json",
-      "health_gate": "Read full cohorts; gate selects transfer only, never adopts automatically. Stop for interpretation after rejection/B, no unbounded rate search. Preserve technical failed predecessor separately."
+      "health_gate": "Read full cohorts; gate selects transfer only, never adopts automatically. Stop for interpretation after rejection/B, no unbounded rate search. Preserve technical failed predecessor separately.",
+      "conclusion": "All12 corrected trials complete without errors; expression newF0/0/0 for old and endpoint candidate, screening refuses B4. No new chemistry adopted in demos. Requires kinetic interpretation, not automatic additional tuning."
+    },
+    {
+      "id": "MAP1",
+      "parent": "C0B",
+      "related": ["GUI3", "T9E"],
+      "status": "generated_vector_metabolism_atlas_delivered",
+      "hypothesis": "A readable code-generated target network exposes dependencies and missing mechanisms early, without conflating the blueprint with current demos",
+      "test": "Read canonical C0B roles, material reactions and nominal budget; SVG/HTML with all12 reactions and separate genes, deterministic output,9 diagram/design checks, JS syntax and static visual QA",
+      "cost": "Documentation and generation code only; zero elementary type, local law, tool, gene or particle added. No engine or demo changed.",
+      "counterexample": "Unassigned gene sequences presented as functional,24-base budget treated as validated length, recycled fragments silently discarded, or abstract XYZ/EW notation called implemented chemistry",
+      "missing_proof": "All molecular viability limitations remain; browser local-file policy prevented interactive QA, static SVG inspected",
+      "evidence": "research/BATCH_28_PLAN.md",
+      "results": "research/BATCH_28.md",
+      "source": "research/metabolism_map.json",
+      "artifact": "docs/metabolism/metabolism.svg"
     }
   ]
 }

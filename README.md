@@ -1,5 +1,11 @@
 # Simulateur de chimie locale
 
+**Atlas du métabolisme visé** : double-cliquer sur `metabolism.bat`, ou ouvrir
+[la planche SVG](docs/metabolism/metabolism.svg) / [la page navigable](docs/metabolism/index.html).
+Trois gènes détaillés, apports, synthèses, copie, expression, membrane et déchets ;
+la cible est distinguée des capacités actuelles. Sources modifiables et commande
+de génération dans [docs/metabolism](docs/metabolism/README.md).
+
 **Interface durable et démos du projet** : exécuter `install_visualizer.bat` une fois,
 puis `visualizer.bat`. Fenêtre Qt, rendu OpenGL par lots, navigation, filtres,
 sélection/suivi, transformations et export PNG. Elle démarre en pause après

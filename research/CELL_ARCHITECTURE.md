@@ -2,6 +2,27 @@
 
 ## Cible révisée au lot7 — trois synthétases, trois gènes
 
+### Atlas de conception et organisation génétique — lot28
+
+[Planche vectorielle générée](../docs/metabolism/metabolism.svg),
+[page navigable](../docs/metabolism/index.html), [sources et reconstruction](../docs/metabolism/README.md).
+La carte expose C0B comme une hypothèse de travail, avec son écart au candidat
+P/R+L réellement simulé. Elle n'ajoute ni loi ni nouvelle fonction à celui-ci.
+
+Le choix courant est **un brin indépendant par gène** : gN, gA et gL sont trois
+espèces de polymères, chacune pouvant être présente en plusieurs exemplaires.
+« Génome » désigne leur ensemble ; aucun chromosome concaténé, promoteur ou
+ribosome supplémentaire n'est supposé acquis. Copie et expression reposent
+sur les motifs locaux génériques ; initiation, finition, libération et fidélité
+restent à vérifier. L'existence de bouts ne garantit pas ces fonctions.
+
+Le budget nominal pose24 bases par gène, donc72 pour un exemplaire de chaque
+espèce,144 avec deux copies/gène. Ce sont des **symboles sur des brins simples**,
+pas24 paires permanentes ni des séquences fonctionnelles trouvées. Les longueurs
+12/24/48 restent des hypothèses ; la traduction envisagée est un symbole pour
+un monomère F, sans code à triplets. La démo MD2 contient seulement001, de3 bases,
+avec16 copies génétiques initiales. Les trois fonctions distinctes restent ouvertes.
+
 25 octobre2026. [Spécification calculable](minimal_cell_spec.json),
 [interactions et risques](CELL_INTERACTIONS.md), [tests futurs](INTEGRATION_TESTS.json),
 [bilan](BATCH_07.md). L'ancien schéma C0 est conservé plus bas comme historique.

@@ -1137,3 +1137,26 @@ Deux pilotes corrigés passés. BATCH_27.md et RECIPES gardent les identités.
 
 Arbre, priorités, santé, maturité et audit actualisés ; MD3 différé, pas de
 nouveau succès intégré revendiqué avant cohortes. Données locales, aucun push.
+
+### Lot28 — atlas métabolique généré et génome cible explicité
+
+Demande utilisateur : diagramme lisible, esthétique, complet et révisable par
+code du métabolisme prévu ; chaque gène comme espèce. C0B prévoit gN/gA/gL,
+24 bases par brin dans le budget nominal, séquences non trouvées. Un brin/gène,
+copies multiples, pas de duplex permanent ni de codons supposés. Le modèle
+actuel001×16 reste distinct de ces trois fonctions. CELL_ARCHITECTURE clarifié.
+
+Générateur Python, annotations JSON séparées, source canonique existante pour
+les12 réactions et quantités, SVG vectoriel et HTML autonome avec navigation,
+focus et impression ; metabolism.bat reconstruit avant ouverture. Précurseurs,
+énergie et W, matrice/catalyseur conservés, synthèses N/A/L, insertion et rétention,
+flux au bord visés, recyclage/homéostasie manquants. Aucune loi ou machine ajoutée.
+Pas de changement des scénarios, du moteur ou des archives. Neuf contrôles carte
+et audit passés, JS valide, SVG rendu/inspecté. Navigateur intégré bloque file://,
+aucun contournement, QA interactive non revendiquée ; aperçu local conservé.
+
+T9E lu pour garder la carte à jour :12/12 sans erreur, expression F0/0/0 dans
+les deux variantes, porte refusée, B4 non lancé, aucun calcul actif. Pas de
+nouvelle analyse mécanistique ou campagne ; prochain jalon scientifique inchangé.
+Arbre, priorités, santé et maturité mis à jour ; niveau moléculaire inchangé.
+Code, annotations, SVG/HTML et documents versionnés ; données locales, pas de push.

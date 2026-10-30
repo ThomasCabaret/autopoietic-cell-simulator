@@ -1,0 +1,345 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2080" height="1480" viewBox="0 0 2080 1480" role="img" aria-labelledby="map-title map-desc">
+<title id="map-title">La cellule qui se refabrique</title>
+<desc id="map-desc">Trois gènes séparés, trois synthétases visées. Précurseurs et énergie alimentent copie, expression et membrane. Spécification conditionnelle, séquences inconnues et recyclage non résolu.</desc>
+<metadata id="map-data">{&quot;specification&quot;: &quot;C0B_three_synthases_v1&quot;, &quot;provenance&quot;: {&quot;research/minimal_cell_spec.json&quot;: &quot;51e01e8dac0ef8247ab97007df84e7cec8128a876319497a1b9e2c1ff5be3d8e&quot;, &quot;research/metabolism_map.json&quot;: &quot;ed395c1f4548d8216daa40d44a86dfb218a57ab1e89712e9f239cd213cac3513&quot;, &quot;demonstrators/configs/demo_current_cell_s2.json&quot;: &quot;9c4b6ca12a756c9ea6074a053f48b230f5c84183ff9edebfb1255d3bd5f6c8bc&quot;, &quot;experiments/audit_cell_design.py&quot;: &quot;cdfe8d1d74c6dce28e373b37899751690a431f4040d977a2a9ad5bd97674f87a&quot;, &quot;experiments/build_metabolism_map.py&quot;: &quot;cc3b1aa5f63ef44f7ab0d734235a08b599cd4b60b8ab53c70decc2a11a3c768f&quot;, &quot;docs/metabolism/viewer.html.in&quot;: &quot;7582446dc1d01cb332e87bfb4f4db6217245262b9a8daccdece1b04e35af9f0a&quot;}, &quot;network&quot;: {&quot;masses&quot;: {&quot;X&quot;: [1, 0, 0, 0], &quot;Y&quot;: [0, 1, 0, 0], &quot;Z&quot;: [0, 0, 1, 0], &quot;E&quot;: [0, 0, 0, 1], &quot;W&quot;: [0, 0, 0, 1], &quot;N0&quot;: [1, 1, 0, 0], &quot;N1&quot;: [1, 0, 1, 0], &quot;A0&quot;: [1, 1, 0, 0], &quot;A1&quot;: [1, 0, 1, 0], &quot;L&quot;: [2, 0, 0, 0], &quot;gN&quot;: [24, 12, 12, 0], &quot;EN&quot;: [24, 12, 12, 0], &quot;gA&quot;: [24, 12, 12, 0], &quot;EA&quot;: [24, 12, 12, 0], &quot;gL&quot;: [24, 12, 12, 0], &quot;EL&quot;: [24, 12, 12, 0], &quot;L_surface&quot;: [2, 0, 0, 0]}, &quot;reactions&quot;: [{&quot;id&quot;: &quot;make_N0&quot;, &quot;inputs&quot;: {&quot;X&quot;: 1, &quot;Y&quot;: 1, &quot;E&quot;: 1}, &quot;outputs&quot;: {&quot;N0&quot;: 1, &quot;W&quot;: 1}, &quot;catalysts&quot;: [&quot;EN&quot;], &quot;kind&quot;: &quot;synthesis&quot;}, {&quot;id&quot;: &quot;make_N1&quot;, &quot;inputs&quot;: {&quot;X&quot;: 1, &quot;Z&quot;: 1, &quot;E&quot;: 1}, &quot;outputs&quot;: {&quot;N1&quot;: 1, &quot;W&quot;: 1}, &quot;catalysts&quot;: [&quot;EN&quot;], &quot;kind&quot;: &quot;synthesis&quot;}, {&quot;id&quot;: &quot;make_A0&quot;, &quot;inputs&quot;: {&quot;X&quot;: 1, &quot;Y&quot;: 1, &quot;E&quot;: 1}, &quot;outputs&quot;: {&quot;A0&quot;: 1, &quot;W&quot;: 1}, &quot;catalysts&quot;: [&quot;EA&quot;], &quot;kind&quot;: &quot;synthesis&quot;}, {&quot;id&quot;: &quot;make_A1&quot;, &quot;inputs&quot;: {&quot;X&quot;: 1, &quot;Z&quot;: 1, &quot;E&quot;: 1}, &quot;outputs&quot;: {&quot;A1&quot;: 1, &quot;W&quot;: 1}, &quot;catalysts&quot;: [&quot;EA&quot;], &quot;kind&quot;: &quot;synthesis&quot;}, {&quot;id&quot;: &quot;make_L&quot;, &quot;inputs&quot;: {&quot;X&quot;: 2, &quot;E&quot;: 1}, &quot;outputs&quot;: {&quot;L&quot;: 1, &quot;W&quot;: 1}, &quot;catalysts&quot;: [&quot;EL&quot;], &quot;kind&quot;: &quot;synthesis&quot;}, {&quot;id&quot;: &quot;copy_gN&quot;, &quot;inputs&quot;: {&quot;N0&quot;: 12, &quot;N1&quot;: 12, &quot;E&quot;: 23}, &quot;outputs&quot;: {&quot;gN&quot;: 1, &quot;W&quot;: 23}, &quot;catalysts&quot;: [&quot;gN&quot;], &quot;kind&quot;: &quot;polymer&quot;, &quot;family&quot;: &quot;genetic&quot;}, {&quot;id&quot;: &quot;express_EN&quot;, &quot;inputs&quot;: {&quot;A0&quot;: 12, &quot;A1&quot;: 12, &quot;E&quot;: 23}, &quot;outputs&quot;: {&quot;EN&quot;: 1, &quot;W&quot;: 23}, &quot;catalysts&quot;: [&quot;gN&quot;], &quot;kind&quot;: &quot;polymer&quot;, &quot;family&quot;: &quot;functional&quot;}, {&quot;id&quot;: &quot;copy_gA&quot;, &quot;inputs&quot;: {&quot;N0&quot;: 12, &quot;N1&quot;: 12, &quot;E&quot;: 23}, &quot;outputs&quot;: {&quot;gA&quot;: 1, &quot;W&quot;: 23}, &quot;catalysts&quot;: [&quot;gA&quot;], &quot;kind&quot;: &quot;polymer&quot;, &quot;family&quot;: &quot;genetic&quot;}, {&quot;id&quot;: &quot;express_EA&quot;, &quot;inputs&quot;: {&quot;A0&quot;: 12, &quot;A1&quot;: 12, &quot;E&quot;: 23}, &quot;outputs&quot;: {&quot;EA&quot;: 1, &quot;W&quot;: 23}, &quot;catalysts&quot;: [&quot;gA&quot;], &quot;kind&quot;: &quot;polymer&quot;, &quot;family&quot;: &quot;functional&quot;}, {&quot;id&quot;: &quot;copy_gL&quot;, &quot;inputs&quot;: {&quot;N0&quot;: 12, &quot;N1&quot;: 12, &quot;E&quot;: 23}, &quot;outputs&quot;: {&quot;gL&quot;: 1, &quot;W&quot;: 23}, &quot;catalysts&quot;: [&quot;gL&quot;], &quot;kind&quot;: &quot;polymer&quot;, &quot;family&quot;: &quot;genetic&quot;}, {&quot;id&quot;: &quot;express_EL&quot;, &quot;inputs&quot;: {&quot;A0&quot;: 12, &quot;A1&quot;: 12, &quot;E&quot;: 23}, &quot;outputs&quot;: {&quot;EL&quot;: 1, &quot;W&quot;: 23}, &quot;catalysts&quot;: [&quot;gL&quot;], &quot;kind&quot;: &quot;polymer&quot;, &quot;family&quot;: &quot;functional&quot;}, {&quot;id&quot;: &quot;insert_L&quot;, &quot;inputs&quot;: {&quot;L&quot;: 1}, &quot;outputs&quot;: {&quot;L_surface&quot;: 1}, &quot;catalysts&quot;: [], &quot;kind&quot;: &quot;insertion&quot;}], &quot;seeds&quot;: [&quot;gN&quot;, &quot;EN&quot;, &quot;gA&quot;, &quot;EA&quot;, &quot;gL&quot;, &quot;EL&quot;, &quot;L_surface&quot;], &quot;essentials&quot;: [&quot;N0&quot;, &quot;N1&quot;, &quot;A0&quot;, &quot;A1&quot;, &quot;L&quot;, &quot;L_surface&quot;, &quot;gN&quot;, &quot;EN&quot;, &quot;gA&quot;, &quot;EA&quot;, &quot;gL&quot;, &quot;EL&quot;], &quot;length&quot;: 24, &quot;roles&quot;: [{&quot;id&quot;: &quot;N&quot;, &quot;gene&quot;: &quot;gN&quot;, &quot;tool&quot;: &quot;EN&quot;, &quot;products&quot;: [&quot;N0&quot;, &quot;N1&quot;], &quot;status&quot;: &quot;hypothesis&quot;}, {&quot;id&quot;: &quot;A&quot;, &quot;gene&quot;: &quot;gA&quot;, &quot;tool&quot;: &quot;EA&quot;, &quot;products&quot;: [&quot;A0&quot;, &quot;A1&quot;], &quot;status&quot;: &quot;hypothesis&quot;}, {&quot;id&quot;: &quot;L&quot;, &quot;gene&quot;: &quot;gL&quot;, &quot;tool&quot;: &quot;EL&quot;, &quot;products&quot;: [&quot;L&quot;], &quot;status&quot;: &quot;hypothesis&quot;}]}}</metadata>
+<defs>
+<marker id="arrow-19313b" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#19313b" stroke-width="2"/></marker>
+<marker id="arrow-667b80" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#667b80" stroke-width="2"/></marker>
+<marker id="arrow-b5812d" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#b5812d" stroke-width="2"/></marker>
+<marker id="arrow-b96d53" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#b96d53" stroke-width="2"/></marker>
+<marker id="arrow-147e9a" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#147e9a" stroke-width="2"/></marker>
+<marker id="arrow-7850a6" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#7850a6" stroke-width="2"/></marker>
+<marker id="arrow-278568" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#278568" stroke-width="2"/></marker>
+<linearGradient id="cell-fill" x2="0" y2="1"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#f1f6f2"/></linearGradient>
+<style>text{font-family:"Segoe UI",Arial,sans-serif} .lane{transition:opacity .18s} .map-focus .lane:not(.selected){opacity:.16} .role-hit{cursor:pointer}</style></defs>
+<rect x="0" y="0" width="2080" height="1480" rx="0" fill="#f5f3ed" stroke="none" stroke-width="1"/>
+<text x="60" y="56" font-size="16" fill="#667b80" font-weight="600" text-anchor="start" letter-spacing="3">AUTOPOIETIC CELL SIMULATOR</text>
+<text x="60" y="117" font-size="52" fill="#19313b" font-weight="650" text-anchor="start">La cellule qui se refabrique</text>
+<text x="62" y="155" font-size="22" fill="#667b80" font-weight="400" text-anchor="start">Atlas du métabolisme visé · architecture C0B · cellule construite au départ</text>
+<rect x="1410" y="35" width="610" height="143" rx="20" fill="#e6ede6" stroke="none" stroke-width="1"/>
+<text x="1435" y="70" font-size="30" fill="#19313b" font-weight="650" text-anchor="start">3 GÈNES  /  72 BASES</text>
+<text x="1435" y="103" font-size="18" fill="#667b80" font-weight="400" text-anchor="start">24 bases par brin · hypothèse de dimensionnement</text>
+<text x="1435" y="131" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">Séquences à concevoir · une famille binaire · pas de codons</text>
+<rect x="60" y="192" width="224" height="30" rx="15" fill="#19313b" stroke="none" stroke-width="1"/>
+<text x="172.0" y="213" font-size="14" fill="white" font-weight="600" text-anchor="middle">CIBLE CONDITIONNELLE</text>
+<text x="308" y="214" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">Traits colorés : matière</text>
+<path d="M550 207 H602" fill="none" stroke="#b5812d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-b5812d)" stroke-dasharray="7 7"/>
+<text x="620" y="214" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">Catalyse : outil conservé</text>
+<text x="1010" y="214" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">Matrice conservée ≠ matière du produit</text>
+<text x="2020" y="214" font-size="16" fill="#667b80" font-weight="400" text-anchor="end">2026-10-30 · révision 01</text>
+<rect x="274" y="266" width="1502" height="900" rx="64" fill="url(#cell-fill)" stroke="#9fbdad" stroke-width="3"/>
+<rect x="287" y="279" width="1476" height="874" rx="54" fill="none" stroke="#d0ddd2" stroke-width="2"/>
+<text x="320" y="308" font-size="16" fill="#507664" font-weight="600" text-anchor="start">INTÉRIEUR · membrane, gènes et outils construits au départ</text>
+<text x="60" y="307" font-size="16" fill="#667b80" font-weight="600" text-anchor="start" letter-spacing="2">EXTÉRIEUR</text>
+<text x="1810" y="307" font-size="16" fill="#667b80" font-weight="600" text-anchor="start" letter-spacing="2">SORTIES</text>
+<rect x="55" y="368" width="174" height="238" rx="22" fill="white" stroke="#dbdfd6" stroke-width="1"/>
+<text x="78" y="403" font-size="25" fill="#19313b" font-weight="600" text-anchor="start">Apports</text>
+<circle cx="90" cy="440" r="12" fill="#19313b" stroke="none" stroke-width="1"/>
+<text x="119" y="447" font-size="22" fill="#19313b" font-weight="600" text-anchor="start">X</text>
+<circle cx="90" cy="481" r="12" fill="#19313b" stroke="none" stroke-width="1"/>
+<text x="119" y="488" font-size="22" fill="#19313b" font-weight="600" text-anchor="start">Y</text>
+<circle cx="90" cy="522" r="12" fill="#19313b" stroke="none" stroke-width="1"/>
+<text x="119" y="529" font-size="22" fill="#19313b" font-weight="600" text-anchor="start">Z</text>
+<circle cx="90" cy="563" r="12" fill="#b5812d" stroke="none" stroke-width="1"/>
+<text x="119" y="570" font-size="22" fill="#b5812d" font-weight="600" text-anchor="start">E</text>
+<text x="60" y="650" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">Création au bord</text>
+<text x="60" y="676" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">du domaine, puis</text>
+<text x="60" y="702" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">diffusion.</text>
+<text x="60" y="751" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">Débits réglables,</text>
+<text x="60" y="777" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">concentrations</text>
+<text x="60" y="803" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">non garanties.</text>
+<path d="M230 450 H320 Q340 450 340 430 V352 Q340 340 355 340 H1660" fill="none" stroke="#19313b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-19313b)"/>
+<text x="390" y="332" font-size="16" fill="#667b80" font-weight="600" text-anchor="start">PRÉCURSEURS X / Y / Z  ·  réservoir partagé</text>
+<path d="M230 565 H310 Q322 565 322 550 V380 Q322 366 338 366 H1620" fill="none" stroke="#b5812d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-b5812d)"/>
+<text x="1135" y="359" font-size="15" fill="#b5812d" font-weight="400" text-anchor="start">E activé · apport externe déclaré</text>
+<rect x="1810" y="377" width="214" height="180" rx="22" fill="#f5e8df" stroke="none" stroke-width="1"/>
+<text x="1834" y="419" font-size="40" fill="#b96d53" font-weight="600" text-anchor="start">W</text>
+<text x="1834" y="455" font-size="17" fill="#b96d53" font-weight="400" text-anchor="start">Porteur déchargé</text>
+<text x="1834" y="479" font-size="17" fill="#b96d53" font-weight="400" text-anchor="start">issu des synthèses,</text>
+<text x="1834" y="503" font-size="17" fill="#b96d53" font-weight="400" text-anchor="start">copies et expressions.</text>
+<path d="M1744 466 H1801" fill="none" stroke="#b96d53" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-b96d53)"/>
+<text x="1810" y="598" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">Diffusion vers dehors,</text>
+<text x="1810" y="624" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">puis absorption au</text>
+<text x="1810" y="650" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">bord du domaine.</text>
+<text x="1715" y="453" font-size="21" fill="#b96d53" font-weight="600" text-anchor="start">W</text>
+<text x="1810" y="729" font-size="17" fill="#b96d53" font-weight="400" text-anchor="start">E → W conserve</text>
+<text x="1810" y="755" font-size="17" fill="#b96d53" font-weight="400" text-anchor="start">le porteur ; l’énergie</text>
+<text x="1810" y="781" font-size="17" fill="#b96d53" font-weight="400" text-anchor="start">est dissipée.</text>
+<path d="M505 340 V408" fill="none" stroke="#19313b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-19313b)"/>
+<path d="M615 366 V408" fill="none" stroke="#b5812d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-b5812d)"/>
+<path d="M985 340 V408" fill="none" stroke="#19313b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-19313b)"/>
+<path d="M1095 366 V408" fill="none" stroke="#b5812d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-b5812d)"/>
+<path d="M1465 340 V408" fill="none" stroke="#19313b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-19313b)"/>
+<path d="M1575 366 V408" fill="none" stroke="#b5812d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-b5812d)"/>
+<g class="lane role-hit" data-role="N"><title>gN → EN : Synthétase de nucléotides. Séquence non assignée ; fonction visée.</title>
+<path d="M430 780 H389 V481 H406" fill="none" stroke="#b5812d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-b5812d)" stroke-dasharray="7 7"/>
+<text x="394" y="714" font-size="15" fill="#b5812d" font-weight="400" text-anchor="middle">catalyse</text>
+<rect x="405" y="412" width="310" height="130" rx="18" fill="white" stroke="#d9e1dc" stroke-width="1"/>
+<text x="427" y="441" font-size="16" fill="#147e9a" font-weight="600" text-anchor="start">01  /  NUCLÉOTIDES</text>
+<g id="reaction-make_N0">
+<text x="427" y="476" font-size="20" fill="#19313b" font-weight="500" text-anchor="start">X + Y + E  →  N0 + W</text>
+</g>
+<g id="reaction-make_N1">
+<text x="427" y="505" font-size="20" fill="#19313b" font-weight="500" text-anchor="start">X + Z + E  →  N1 + W</text>
+</g>
+<text x="427" y="526" font-size="15" fill="#667b80" font-weight="400" text-anchor="start">Sélectivité à concevoir</text>
+<path d="M560 545 V578" fill="none" stroke="#147e9a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-147e9a)"/>
+<rect x="459" y="582" width="202" height="87" rx="21" fill="#147e9a" stroke="none" stroke-width="1"/>
+<text x="560" y="618" font-size="30" fill="white" font-weight="600" text-anchor="middle">N0 / N1</text>
+<text x="560" y="647" font-size="15" fill="white" font-weight="400" text-anchor="middle">monomères de l&#x27;information</text>
+<g id="species-EN">
+<rect x="430" y="740" width="260" height="82" rx="20" fill="white" stroke="#d4ddda" stroke-width="1"/>
+<text x="455" y="775" font-size="30" fill="#147e9a" font-weight="600" text-anchor="start">EN</text>
+<text x="455" y="801" font-size="16" fill="#667b80" font-weight="400" text-anchor="start">outil à renouveler</text>
+<path d="M612 778 L631 759 L650 790 L670 768" fill="none" stroke="#147e9a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="612" cy="778" r="5" fill="white" stroke="#147e9a" stroke-width="2"/>
+<circle cx="631" cy="759" r="5" fill="white" stroke="#147e9a" stroke-width="2"/>
+<circle cx="650" cy="790" r="5" fill="white" stroke="#147e9a" stroke-width="2"/>
+<circle cx="670" cy="768" r="5" fill="white" stroke="#147e9a" stroke-width="2"/>
+</g>
+<g id="reaction-express_EN">
+<path d="M560 943 V824" fill="none" stroke="#667b80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-667b80)"/>
+<circle cx="560" cy="887" r="8" fill="white" stroke="#147e9a" stroke-width="2"/>
+<text x="577" y="857" font-size="16" fill="#667b80" font-weight="400" text-anchor="start">expression directe</text>
+<text x="577" y="925" font-size="15" fill="#667b80" font-weight="400" text-anchor="start">matrice conservée</text>
+</g>
+<g id="species-gN">
+<rect x="405" y="947" width="310" height="141" rx="20" fill="white" stroke="#147e9a" stroke-width="1.5"/>
+<text x="428" y="982" font-size="30" fill="#147e9a" font-weight="600" text-anchor="start">gN</text>
+<text x="692" y="979" font-size="19" fill="#667b80" font-weight="400" text-anchor="end">24 bases*</text>
+<rect x="431.0" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="441.75" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="452.5" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="463.25" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="474.0" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="484.75" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="495.5" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="506.25" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="517.0" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="527.75" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="538.5" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="549.25" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="560.0" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="570.75" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="581.5" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="592.25" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="603.0" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="613.75" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="624.5" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="635.25" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="646.0" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="656.75" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="667.5" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="678.25" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<text x="428" y="1045" font-size="18" fill="#19313b" font-weight="400" text-anchor="start">Séquence à concevoir</text>
+<text x="428" y="1072" font-size="16" fill="#667b80" font-weight="400" text-anchor="start">Un brin distinct · copies séparées</text>
+</g>
+<g id="reaction-copy_gN">
+<path d="M560 1125 V1093" fill="none" stroke="#147e9a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-147e9a)"/>
+</g>
+</g>
+<g class="lane role-hit" data-role="A"><title>gA → EA : Synthétase des monomères F. Séquence non assignée ; fonction visée.</title>
+<path d="M910 780 H869 V481 H886" fill="none" stroke="#b5812d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-b5812d)" stroke-dasharray="7 7"/>
+<text x="874" y="714" font-size="15" fill="#b5812d" font-weight="400" text-anchor="middle">catalyse</text>
+<rect x="885" y="412" width="310" height="130" rx="18" fill="white" stroke="#d9e1dc" stroke-width="1"/>
+<text x="907" y="441" font-size="16" fill="#7850a6" font-weight="600" text-anchor="start">02  /  ACIDES AMINÉS</text>
+<g id="reaction-make_A0">
+<text x="907" y="476" font-size="20" fill="#19313b" font-weight="500" text-anchor="start">X + Y + E  →  A0 + W</text>
+</g>
+<g id="reaction-make_A1">
+<text x="907" y="505" font-size="20" fill="#19313b" font-weight="500" text-anchor="start">X + Z + E  →  A1 + W</text>
+</g>
+<text x="907" y="526" font-size="15" fill="#667b80" font-weight="400" text-anchor="start">Sélectivité à concevoir</text>
+<path d="M1040 545 V578" fill="none" stroke="#7850a6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-7850a6)"/>
+<rect x="939" y="582" width="202" height="87" rx="21" fill="#7850a6" stroke="none" stroke-width="1"/>
+<text x="1040" y="618" font-size="30" fill="white" font-weight="600" text-anchor="middle">A0 / A1</text>
+<text x="1040" y="647" font-size="15" fill="white" font-weight="400" text-anchor="middle">monomères des outils</text>
+<g id="species-EA">
+<rect x="910" y="740" width="260" height="82" rx="20" fill="white" stroke="#d4ddda" stroke-width="1"/>
+<text x="935" y="775" font-size="30" fill="#7850a6" font-weight="600" text-anchor="start">EA</text>
+<text x="935" y="801" font-size="16" fill="#667b80" font-weight="400" text-anchor="start">outil à renouveler</text>
+<path d="M1092 778 L1111 759 L1130 790 L1150 768" fill="none" stroke="#7850a6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="1092" cy="778" r="5" fill="white" stroke="#7850a6" stroke-width="2"/>
+<circle cx="1111" cy="759" r="5" fill="white" stroke="#7850a6" stroke-width="2"/>
+<circle cx="1130" cy="790" r="5" fill="white" stroke="#7850a6" stroke-width="2"/>
+<circle cx="1150" cy="768" r="5" fill="white" stroke="#7850a6" stroke-width="2"/>
+</g>
+<g id="reaction-express_EA">
+<path d="M1040 943 V824" fill="none" stroke="#667b80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-667b80)"/>
+<circle cx="1040" cy="887" r="8" fill="white" stroke="#7850a6" stroke-width="2"/>
+<text x="1057" y="857" font-size="16" fill="#667b80" font-weight="400" text-anchor="start">expression directe</text>
+<text x="1057" y="925" font-size="15" fill="#667b80" font-weight="400" text-anchor="start">matrice conservée</text>
+</g>
+<g id="species-gA">
+<rect x="885" y="947" width="310" height="141" rx="20" fill="white" stroke="#7850a6" stroke-width="1.5"/>
+<text x="908" y="982" font-size="30" fill="#7850a6" font-weight="600" text-anchor="start">gA</text>
+<text x="1172" y="979" font-size="19" fill="#667b80" font-weight="400" text-anchor="end">24 bases*</text>
+<rect x="911.0" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="921.75" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="932.5" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="943.25" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="954.0" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="964.75" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="975.5" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="986.25" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="997.0" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1007.75" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1018.5" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1029.25" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1040.0" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1050.75" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1061.5" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1072.25" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1083.0" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1093.75" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1104.5" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1115.25" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1126.0" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1136.75" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1147.5" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1158.25" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<text x="908" y="1045" font-size="18" fill="#19313b" font-weight="400" text-anchor="start">Séquence à concevoir</text>
+<text x="908" y="1072" font-size="16" fill="#667b80" font-weight="400" text-anchor="start">Un brin distinct · copies séparées</text>
+</g>
+<g id="reaction-copy_gA">
+<path d="M1040 1125 V1093" fill="none" stroke="#147e9a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-147e9a)"/>
+</g>
+</g>
+<g class="lane role-hit" data-role="L"><title>gL → EL : Synthétase de lipides. Séquence non assignée ; fonction visée.</title>
+<path d="M1390 780 H1349 V481 H1366" fill="none" stroke="#b5812d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-b5812d)" stroke-dasharray="7 7"/>
+<text x="1354" y="714" font-size="15" fill="#b5812d" font-weight="400" text-anchor="middle">catalyse</text>
+<rect x="1365" y="412" width="310" height="130" rx="18" fill="white" stroke="#d9e1dc" stroke-width="1"/>
+<text x="1387" y="441" font-size="16" fill="#278568" font-weight="600" text-anchor="start">03  /  LIPIDES</text>
+<g id="reaction-make_L">
+<text x="1387" y="476" font-size="20" fill="#19313b" font-weight="500" text-anchor="start">2 X + E  →  L + W</text>
+</g>
+<text x="1387" y="526" font-size="15" fill="#667b80" font-weight="400" text-anchor="start">Synthèse à réaliser</text>
+<path d="M1520 545 V578" fill="none" stroke="#278568" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-278568)"/>
+<rect x="1419" y="582" width="202" height="87" rx="21" fill="#278568" stroke="none" stroke-width="1"/>
+<text x="1520" y="618" font-size="30" fill="white" font-weight="600" text-anchor="middle">L</text>
+<text x="1520" y="647" font-size="15" fill="white" font-weight="400" text-anchor="middle">composants de la frontière</text>
+<g id="species-EL">
+<rect x="1390" y="740" width="260" height="82" rx="20" fill="white" stroke="#d4ddda" stroke-width="1"/>
+<text x="1415" y="775" font-size="30" fill="#278568" font-weight="600" text-anchor="start">EL</text>
+<text x="1415" y="801" font-size="16" fill="#667b80" font-weight="400" text-anchor="start">outil à renouveler</text>
+<path d="M1572 778 L1591 759 L1610 790 L1630 768" fill="none" stroke="#278568" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="1572" cy="778" r="5" fill="white" stroke="#278568" stroke-width="2"/>
+<circle cx="1591" cy="759" r="5" fill="white" stroke="#278568" stroke-width="2"/>
+<circle cx="1610" cy="790" r="5" fill="white" stroke="#278568" stroke-width="2"/>
+<circle cx="1630" cy="768" r="5" fill="white" stroke="#278568" stroke-width="2"/>
+</g>
+<g id="reaction-express_EL">
+<path d="M1520 943 V824" fill="none" stroke="#667b80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-667b80)"/>
+<circle cx="1520" cy="887" r="8" fill="white" stroke="#278568" stroke-width="2"/>
+<text x="1537" y="857" font-size="16" fill="#667b80" font-weight="400" text-anchor="start">expression directe</text>
+<text x="1537" y="925" font-size="15" fill="#667b80" font-weight="400" text-anchor="start">matrice conservée</text>
+</g>
+<g id="species-gL">
+<rect x="1365" y="947" width="310" height="141" rx="20" fill="white" stroke="#278568" stroke-width="1.5"/>
+<text x="1388" y="982" font-size="30" fill="#278568" font-weight="600" text-anchor="start">gL</text>
+<text x="1652" y="979" font-size="19" fill="#667b80" font-weight="400" text-anchor="end">24 bases*</text>
+<rect x="1391.0" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1401.75" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1412.5" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1423.25" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1434.0" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1444.75" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1455.5" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1466.25" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1477.0" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1487.75" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1498.5" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1509.25" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1520.0" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1530.75" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1541.5" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1552.25" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1563.0" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1573.75" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1584.5" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1595.25" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1606.0" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1616.75" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1627.5" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<rect x="1638.25" y="1001" width="7.75" height="16" rx="3" fill="#d3dfdc" stroke="none" stroke-width="1"/>
+<text x="1388" y="1045" font-size="18" fill="#19313b" font-weight="400" text-anchor="start">Séquence à concevoir</text>
+<text x="1388" y="1072" font-size="16" fill="#667b80" font-weight="400" text-anchor="start">Un brin distinct · copies séparées</text>
+</g>
+<g id="reaction-copy_gL">
+<path d="M1520 1125 V1093" fill="none" stroke="#147e9a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-147e9a)"/>
+</g>
+</g>
+<path d="M1145 625 H1257 Q1275 625 1275 644 V875 Q1275 887 1260 887 H560" fill="none" stroke="#f5f3ed" stroke-width="11.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1145 625 H1257 Q1275 625 1275 644 V875 Q1275 887 1260 887 H560" fill="none" stroke="#7850a6" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1275 887 H1520" fill="none" stroke="#7850a6" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="560" cy="887" r="6" fill="#7850a6" stroke="none" stroke-width="1"/>
+<circle cx="1040" cy="887" r="6" fill="#7850a6" stroke="none" stroke-width="1"/>
+<circle cx="1520" cy="887" r="6" fill="#7850a6" stroke="none" stroke-width="1"/>
+<rect x="650" y="861" width="357" height="29" rx="8" fill="#f1ecf7" stroke="none" stroke-width="1"/>
+<text x="828" y="882" font-size="15" fill="#7850a6" font-weight="400" text-anchor="middle">A0/A1 + E → chacun des trois outils + W</text>
+<path d="M455 625 H352 Q336 625 336 642 V1110 Q336 1125 353 1125 H1530" fill="none" stroke="#f5f3ed" stroke-width="11.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M455 625 H352 Q336 625 336 642 V1110 Q336 1125 353 1125 H1530" fill="none" stroke="#147e9a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="560" cy="1125" r="5" fill="#147e9a" stroke="none" stroke-width="1"/>
+<circle cx="1040" cy="1125" r="5" fill="#147e9a" stroke="none" stroke-width="1"/>
+<circle cx="1520" cy="1125" r="5" fill="#147e9a" stroke="none" stroke-width="1"/>
+<text x="1009" y="1150" font-size="17" fill="#147e9a" font-weight="400" text-anchor="middle">Copie : gᵢ + N0/N1 + E → gᵢ + nouvelle copie gᵢ + W</text>
+<g id="reaction-insert_L">
+<path d="M1626 625 H1710 Q1746 625 1746 652 V973" fill="none" stroke="#278568" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-278568)"/>
+<text x="1773" y="894" font-size="16" fill="#278568" font-weight="400" text-anchor="start">L arrive depuis</text>
+<text x="1773" y="918" font-size="16" fill="#278568" font-weight="400" text-anchor="start">l’intérieur ; échange</text>
+<text x="1773" y="942" font-size="16" fill="#278568" font-weight="400" text-anchor="start">local et refermeture.</text>
+<circle cx="1740" cy="990" r="6" fill="#278568" stroke="none" stroke-width="1"/>
+<circle cx="1756" cy="990" r="5" fill="#9ec9b1" stroke="none" stroke-width="1"/>
+<path d="M1740 990 H1756" fill="none" stroke="#278568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="1740" cy="1007" r="6" fill="#278568" stroke="none" stroke-width="1"/>
+<circle cx="1756" cy="1007" r="5" fill="#9ec9b1" stroke="none" stroke-width="1"/>
+<path d="M1740 1007 H1756" fill="none" stroke="#278568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="1740" cy="1024" r="6" fill="#278568" stroke="none" stroke-width="1"/>
+<circle cx="1756" cy="1024" r="5" fill="#9ec9b1" stroke="none" stroke-width="1"/>
+<path d="M1740 1024 H1756" fill="none" stroke="#278568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="1740" cy="1041" r="6" fill="#278568" stroke="none" stroke-width="1"/>
+<circle cx="1756" cy="1041" r="5" fill="#9ec9b1" stroke="none" stroke-width="1"/>
+<path d="M1740 1041 H1756" fill="none" stroke="#278568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="1740" cy="1058" r="6" fill="#278568" stroke="none" stroke-width="1"/>
+<circle cx="1756" cy="1058" r="5" fill="#9ec9b1" stroke="none" stroke-width="1"/>
+<path d="M1740 1058 H1756" fill="none" stroke="#278568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="1740" cy="1075" r="6" fill="#278568" stroke="none" stroke-width="1"/>
+<circle cx="1756" cy="1075" r="5" fill="#9ec9b1" stroke="none" stroke-width="1"/>
+<path d="M1740 1075 H1756" fill="none" stroke="#278568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="1740" cy="1092" r="6" fill="#278568" stroke="none" stroke-width="1"/>
+<circle cx="1756" cy="1092" r="5" fill="#9ec9b1" stroke="none" stroke-width="1"/>
+<path d="M1740 1092 H1756" fill="none" stroke="#278568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="1740" cy="1109" r="6" fill="#278568" stroke="none" stroke-width="1"/>
+<circle cx="1756" cy="1109" r="5" fill="#9ec9b1" stroke="none" stroke-width="1"/>
+<path d="M1740 1109 H1756" fill="none" stroke="#278568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text x="1808" y="1072" font-size="16" fill="#278568" font-weight="600" text-anchor="start">FRONTIÈRE DE L</text>
+<text x="1810" y="1101" font-size="16" fill="#667b80" font-weight="400" text-anchor="start">Retient N/A, gènes</text>
+<text x="1810" y="1124" font-size="16" fill="#667b80" font-weight="400" text-anchor="start">et outils ; laisse</text>
+<text x="1810" y="1147" font-size="16" fill="#667b80" font-weight="400" text-anchor="start">passer les apports.</text>
+<text x="335" y="1199" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">* Nominal : 3 espèces de gènes × 24 bases ; 2 copies/gène → 144 bases présentes. Budget global : 2 406 billes.</text>
+<rect x="60" y="1240" width="620" height="200" rx="18" fill="white" stroke="#dce2da" stroke-width="1"/>
+<rect x="710" y="1240" width="620" height="200" rx="18" fill="white" stroke="#dce2da" stroke-width="1"/>
+<rect x="1360" y="1240" width="660" height="200" rx="18" fill="white" stroke="#dce2da" stroke-width="1"/>
+<text x="84" y="1274" font-size="17" fill="#19313b" font-weight="600" text-anchor="start">01 / FERMETURE CAUSALE VISÉE</text>
+<text x="84" y="1307" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">EN produit les N : copies de gN, gA et gL.</text>
+<text x="84" y="1332" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">EA produit les A : chaînes EN, EA et EL, y compris elle-même.</text>
+<text x="84" y="1357" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">EL produit L : renouvellement de la frontière.</text>
+<text x="84" y="1382" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">Matrices et catalyseurs conservés ; réactifs + énergie requis.</text>
+<text x="84" y="1407" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">Énergie formelle : 1 E/dimère, 23 E/chaîne de 24 unités.</text>
+<text x="84" y="1432" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">Copie/expression : motifs locaux génériques, sans outil dédié.</text>
+<text x="734" y="1274" font-size="17" fill="#19313b" font-weight="600" text-anchor="start">02 / DÉCHETS, RECYCLAGE &amp; LIMITES</text>
+<text x="734" y="1307" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">W sort ; fragments et constituants usés restent à traiter.</text>
+<text x="734" y="1332" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">Fragments → précurseurs : mécanisme de recyclage à choisir.</text>
+<text x="734" y="1357" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">Pas de sortie magique des gros déchets, pas de gène ajouté.</text>
+<text x="734" y="1382" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">Homéostasie : éviter accumulation et extinction des gènes.</text>
+<text x="734" y="1407" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">X/Y/Z et E/W : notation cible, pas encore la chimie du moteur.</text>
+<text x="1384" y="1274" font-size="17" fill="#19313b" font-weight="600" text-anchor="start">03 / CE QUI TOURNE AUJOURD’HUI</text>
+<text x="1384" y="1307" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">MD2 / Langevin : un gène 001 de 3 bases, 16 copies initiales.</text>
+<text x="1384" y="1332" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">Membrane + G/F couplés ; aucun F nouveau complet à1200.</text>
+<text x="1384" y="1357" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">T9E :12 essais achevés ; transfert intégré non déclenché.</text>
+<text x="1384" y="1382" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">Trois synthétases distinctes, L synthétisé et flux : non acquis.</text>
+<text x="1384" y="1407" font-size="17" fill="#667b80" font-weight="400" text-anchor="start">Départ construit autorisé ≠ renouvellement démontré.</text>
+<text x="60" y="1466" font-size="14" fill="#667b80" font-weight="400" text-anchor="start">CARTE DE CONCEPTION · aucune reconnaissance de gène ou de cellule entière dans les lois · les noms EN/EA/EL désignent des assemblages à concevoir</text>
+<text x="2020" y="1466" font-size="14" fill="#667b80" font-weight="400" text-anchor="end">Sources + génération : docs/metabolism</text>
+</svg>

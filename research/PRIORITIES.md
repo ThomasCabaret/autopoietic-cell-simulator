@@ -1,5 +1,14 @@
 # Priorités actuelles — T9 dans le bain MD2, démos actuelles disponibles
 
+Lot28 documentaire : atlas généré disponible via metabolism.bat, trois gènes
+visés et déchets/recyclage manquants explicités, aucune loi changée. T9E est
+désormais terminé12/12 sans erreur dans la cohorte corrigée ; porte refusée
+(F en expression non amélioré), quatre transferts non lancés, aucun calcul actif.
+La prochaine recherche reste l'interprétation des contacts/ligations et de la
+constructibilité sous T9, pas une nouvelle grille automatique. Voir BATCH_28.md.
+
+## Historique du lancement T9E
+
 Lot27 : T9E en cours sous lois figées,12 essais de finition/interférence puis
 au plus4 transferts sélectionnés automatiquement. Ne pas modifier le candidat
 en cours ni lancer une autre grille. Lire `expression_status.bat`, BATCH_27.md

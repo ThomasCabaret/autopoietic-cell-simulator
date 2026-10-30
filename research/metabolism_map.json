@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "reviewed": "2026-10-30",
+  "specification": "research/minimal_cell_spec.json",
+  "title": "La cellule qui se refabrique",
+  "subtitle": "Atlas du métabolisme visé · architecture C0B · cellule construite au départ",
+  "genome": {
+    "organization": "one_strand_per_gene",
+    "length_source": "nominal_sizing_assumption",
+    "sequences": {"gN": null, "gA": null, "gL": null},
+    "convention": "Bases binaires sur un brin ; appariements transitoires, pas de duplex permanent exigé."
+  },
+  "roles": {
+    "N": {"color": "#147e9a", "name": "Nucléotides", "description": "monomères de l'information", "enzyme": "Synthétase de nucléotides", "status": "Sélectivité à concevoir"},
+    "A": {"color": "#7850a6", "name": "Acides aminés", "description": "monomères des outils", "enzyme": "Synthétase des monomères F", "status": "Sélectivité à concevoir"},
+    "L": {"color": "#278568", "name": "Lipides", "description": "composants de la frontière", "enzyme": "Synthétase de lipides", "status": "Synthèse à réaliser"}
+  },
+  "current": {
+    "scenario": "demonstrators/configs/demo_current_cell_s2.json",
+    "baseline": "MD2 / Langevin",
+    "evidence": ["research/BATCH_25_RESULTS.md", "research/BATCH_27.md"],
+    "notes": [
+      "Membrane + G/F couplés ; aucun F nouveau complet à1200.",
+      "T9E :12 essais achevés ; transfert intégré non déclenché.",
+      "Trois synthétases distinctes, L synthétisé et flux : non acquis.",
+      "Départ construit autorisé ≠ renouvellement démontré."
+    ]
+  },
+  "contracts": {
+    "transport": "Flux au bord du domaine ; diffusion libre jusqu'à la cellule. Ni stock interne ni concentration locale ne pilotent l'apport.",
+    "energy": "E/W est une comptabilité cible. Dans le moteur actuel, activation et cycle externe ne sont pas des molécules E/W simulées.",
+    "recycling": "Gènes, outils et lipides usés ou fragments : voie de recyclage et sorties de matière à concevoir. Aucun nouveau gène supposé acquis.",
+    "closure": "Les réactions dépendent conjointement des substrats, des matrices/catalyseurs et de l'énergie. Une fermeture de graphe ne prouve pas la viabilité.",
+    "alphabet": "X/Y/Z/E/W est la notation abstraite C0B. L'implémentation actuelle utilise P_G/P_F/R0/R1 et les constituants L ; leur unification matérielle reste ouverte."
+  },
+  "sources": ["research/CELL_ARCHITECTURE.md", "research/CELL_INTERACTIONS.md", "research/OPEN_BOUNDARY.md", "research/HOMEOSTASIS.md"],
+  "visual_inspiration": "https://www.roche.com/about/roche-global-citizenship/science-education/biochemical-pathways"
+}

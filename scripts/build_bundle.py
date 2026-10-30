@@ -63,6 +63,10 @@ def main():
         'scripts/expression_followup.py','scripts/expression.ps1',
         'campaigns/expression_endpoints.json','campaigns/expression_transfer.json',
         'start_expression.bat','expression_status.bat','stop_expression.bat','resume_expression.bat'))
+    files.update(ROOT/p for p in ('research/BATCH_28_PLAN.md','research/BATCH_28.md',
+        'research/metabolism_map.json','experiments/build_metabolism_map.py','metabolism.bat',
+        'docs/metabolism/README.md','docs/metabolism/viewer.html.in',
+        'docs/metabolism/index.html','docs/metabolism/metabolism.svg'))
     files.update(ROOT/p for p in ('README.md','SIMULATOR_ARCHITECTURE.md','requirements.txt',
         'CONTRIBUTING.md','GIT_SETUP.md','THIRD_PARTY_NOTICES.md',
         '.gitignore','.gitattributes','.editorconfig',

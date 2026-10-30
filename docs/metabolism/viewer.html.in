@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La cellule qui se refabrique — atlas du métabolisme</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#192d35;color:#e5ece9;font:14px 'Segoe UI',Arial,sans-serif}
+header{height:64px;padding:0 24px;display:flex;align-items:center;gap:12px;border-bottom:1px solid #3c5057;background:#192d35}
+header strong{font-size:15px;letter-spacing:.04em;margin-right:auto}button,a{font:inherit;color:inherit;background:#2a4149;border:1px solid #51656a;padding:8px 13px;border-radius:8px;text-decoration:none;cursor:pointer}button:hover,a:hover,button[aria-pressed=true]{background:#49615f}button:focus-visible,a:focus-visible{outline:2px solid #e4bc6b;outline-offset:3px}
+.sep{width:1px;height:23px;background:#53666b;margin:0 4px}.hint{font-size:12px;color:#b3c3c3;padding:8px 24px;display:flex;justify-content:space-between;height:34px}
+#viewport{height:calc(100vh - 98px);padding:18px;overflow:hidden;display:flex;align-items:center;justify-content:center;touch-action:none;cursor:grab}
+#viewport:active{cursor:grabbing}#paper{width:min(100%,calc((100vh - 134px)*1.4054));transform-origin:center;flex:none;box-shadow:0 12px 50px #07171c80;background:#f5f3ed}svg{display:block;width:100%;height:auto}
+@media(max-width:1000px){header{height:auto;min-height:64px;flex-wrap:wrap;padding:12px;gap:6px}header strong{flex-basis:100%}.hint{display:none}#viewport{height:calc(100vh - 118px)}#paper{width:100%}}
+@media print{@page{size:A3 landscape;margin:0}body{background:white}header,.hint{display:none}#viewport{height:auto;padding:0;display:block;overflow:visible}#paper{width:100%;transform:none!important;box-shadow:none}svg{width:100%;height:auto}.map-focus .lane:not(.selected){opacity:1}}
+</style>
+<header>
+<strong>ATLAS / CELLULE MINIMALE</strong>
+<button data-focus="" aria-pressed="true">Vue complète</button><button data-focus="N" aria-pressed="false">gN</button><button data-focus="A" aria-pressed="false">gA</button><button data-focus="L" aria-pressed="false">gL</button>
+<span class="sep"></span><button id="minus" aria-label="Dézoomer">−</button><button id="fit">Cadrer</button><button id="plus" aria-label="Zoomer">+</button>
+<a href="metabolism.svg" download>SVG vectoriel</a><button id="print">Imprimer / PDF</button>
+</header>
+<div class="hint"><span>Molette : zoom · glisser : déplacer · cliquer une voie : isoler · Échap : vue complète</span><span>Architecture visée, pas une cellule déjà réalisée.</span></div>
+<main id="viewport"><div id="paper"><!-- GENERATED_MAP --></div></main>
+<script>
+const paper=document.querySelector('#paper'),viewport=document.querySelector('#viewport'),svg=paper.querySelector('svg');
+let z=1,x=0,y=0,drag=null,moved=false;
+function transform(){paper.style.transform=`translate(${x}px,${y}px) scale(${z})`}
+function fit(){z=1;x=y=0;transform()}
+function zoom(f){z=Math.min(5,Math.max(.6,z*f));transform()}
+function focus(role){svg.classList.toggle('map-focus',!!role);svg.querySelectorAll('.lane').forEach(g=>g.classList.toggle('selected',g.dataset.role===role));document.querySelectorAll('[data-focus]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.focus===role)))}
+document.querySelectorAll('[data-focus]').forEach(b=>b.onclick=()=>focus(b.dataset.focus));
+svg.querySelectorAll('.role-hit').forEach(g=>g.addEventListener('click',()=>{if(!moved)focus(g.dataset.role)}));
+document.querySelector('#minus').onclick=()=>zoom(1/1.2);document.querySelector('#plus').onclick=()=>zoom(1.2);document.querySelector('#fit').onclick=fit;document.querySelector('#print').onclick=()=>window.print();
+viewport.addEventListener('wheel',e=>{e.preventDefault();zoom(e.deltaY<0?1.12:1/1.12)},{passive:false});
+viewport.addEventListener('pointerdown',e=>{drag={px:e.clientX,py:e.clientY,x,y};moved=false;viewport.setPointerCapture(e.pointerId)});
+viewport.addEventListener('pointermove',e=>{if(!drag)return;const dx=e.clientX-drag.px,dy=e.clientY-drag.py;moved||=Math.abs(dx)+Math.abs(dy)>4;x=drag.x+dx;y=drag.y+dy;transform()});
+viewport.addEventListener('pointerup',e=>{if(drag&&!moved){const hit=document.elementFromPoint(e.clientX,e.clientY)?.closest('.role-hit');if(hit)focus(hit.dataset.role)}drag=null});
+window.addEventListener('keydown',e=>{if(e.key==='Escape'){focus('');fit()}if(e.key==='0')fit()});window.addEventListener('resize',fit);
+</script>
+</html>

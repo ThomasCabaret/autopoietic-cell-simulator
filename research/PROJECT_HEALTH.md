@@ -6,6 +6,14 @@ est une cellule construite qui maintient et refabrique ses composants depuis
 une nourriture simple, avec énergie externe déclarée. Apparition spontanée,
 division et évolution ouverte ne sont pas des conditions ajoutées à cette cible.
 
+Lot28 : l'atlas rend visibles trois séquences fonctionnelles encore inconnues,
+la fabrication L, le recyclage, les flux et l'homéostasie non réalisés. Il ne
+réduit pas ces verrous à des corrections techniques certaines. La cible3 gènes
+et24 bases/gène reste un dimensionnement conditionnel, pas une solution trouvée.
+T9E achevé n'améliore pas le contrôle d'expression ; le suivi a épargné les
+quatre transferts non justifiés. Interpréter ces motifs avant une seconde
+modification conceptuelle. Ni nouvelle protéine ni campagne ajoutée pour la carte.
+
 ## Lecture finale LT2 et diagnostic MD1
 
 Lot27 ajoute une intervention conceptuelle bornée T9E, motivée par le garde
