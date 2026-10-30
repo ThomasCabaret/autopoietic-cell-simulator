@@ -28,6 +28,15 @@ class GeneticAudit:
             ligation_double_paired=0,ligation_eligible_F=0,ligation_eligible_G=0,
             precursor_capture_near=0,precursor_capture_eligible=0,
             assembly_near=0,assembly_catalytic_eligible=0)
+        # Prepared identities are observer-only: never supplied to reactions.
+        prepared=[q for group in c.initial_groups if group['family']==1 and group['backbone']
+                  for q in group['units']]
+        counts['prepared_F_sites']=len(prepared)
+        counts['prepared_F_paired_sites']=int(sum(c.pairing[q]>=0 for q in prepared))
+        for d in range(3):
+            mask=active&(c.families==1)&(deg==d)
+            counts[f'unpaired_F_degree_{d}']=int(np.count_nonzero(mask&(c.pairing<0)))
+            counts[f'paired_F_degree_{d}']=int(np.count_nonzero(mask&(c.pairing>=0)))
         for i,j in enumerate(c.pairing):
             if j>i:counts['paired_GF' if c.families[i]!=c.families[j] else 'paired_GG']+=1
         if cat is not None:counts['occupied_precursor_sites']=int(np.count_nonzero(cat.site_bound>=0))
@@ -46,15 +55,22 @@ class GeneticAudit:
             if c.families[i]==1 and c.families[j]==1:reject('recognition','FF');continue
             if c.families[i]!=c.families[j]:
                 g,f=(i,j) if c.families[i]==0 else (j,i)
-                if deg[g]==0 or deg[f]!=0:reject('recognition','family_degree');continue
-            if cfg.get('monomer_only_capture',False) and not ((deg[i]>0)!=(deg[j]>0)):
+                key=f'recognition_GF_geometric_F_degree_{deg[f]}'
+                counts[key]=counts.get(key,0)+1
+                if deg[g]==0 or deg[f]>(1 if cfg.get('gf_end_capture',False) else 0):reject('recognition','family_degree');continue
+            end_contact=cfg.get('gf_end_capture',False) and c.families[i]!=c.families[j]
+            if cfg.get('monomer_only_capture',False) and not end_contact and not ((deg[i]>0)!=(deg[j]>0)):
                 reject('recognition','monomer_gate');continue
             if cfg.get('product_cooperativity',False):
                 support,incoming=(i,j) if deg[i]>0 else (j,i)
+                if end_contact:support,incoming=g,f
                 linked=[b if a==support else a for a,b in c.edges if a==support or b==support]
                 if any(c.families[c.pairing[q]]!=c.families[incoming] for q in linked if c.pairing[q]>=0):
                     reject('recognition','cooperativity');continue
             counts['recognition_eligible_GF' if c.families[i]!=c.families[j] else 'recognition_eligible_GG']+=1
+            if c.families[i]!=c.families[j]:
+                key=f'recognition_eligible_GF_F_degree_{deg[f]}'
+                counts[key]=counts.get(key,0)+1
         for i,j in sorted(c.edges):
             if c.families[i]!=0 or c.families[j]!=0:continue
             a,b=int(c.pairing[i]),int(c.pairing[j])

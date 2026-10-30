@@ -135,12 +135,14 @@ class CopyChemistry:
                 continue
             if families[i] != families[j]:
                 g, f = (i, j) if families[i] == 0 else (j, i)
-                if deg[g] == 0 or deg[f] != 0:
+                if deg[g] == 0 or deg[f] > (1 if config.get('gf_end_capture',False) else 0):
                     continue
-            if config.get("monomer_only_capture", False) and not ((deg[i] > 0) != (deg[j] > 0)):
+            end_contact=config.get('gf_end_capture',False) and families[i]!=families[j]
+            if config.get("monomer_only_capture", False) and not end_contact and not ((deg[i] > 0) != (deg[j] > 0)):
                 continue
             if config.get("product_cooperativity", False):
                 support, incoming = (i, j) if deg[i] > 0 else (j, i)
+                if end_contact:support,incoming=g,f
                 linked_neighbors = [b if a == support else a for a, b in edges if a == support or b == support]
                 bound_kinds = [families[pairing[q]] for q in linked_neighbors if pairing[q] >= 0]
                 if any(kind != families[incoming] for kind in bound_kinds):

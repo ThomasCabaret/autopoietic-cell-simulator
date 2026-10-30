@@ -1,5 +1,13 @@
 # Campagnes différées
 
+**T9E/lot27 en cours** : comparaison12 petites boîtes, puis au plus4 grands
+bains sélectionnés automatiquement par une porte de finition/interférence.
+Deux travailleurs, budget24h, checkpoint30s ; sources des deux phases figées.
+Suivre `expression_status.bat`, pause `stop_expression.bat`, reprise explicite
+`resume_expression.bat`. `start_expression.bat` crée un nouveau lot et refuse
+un doublon actif. Aucun retry des erreurs. Voir [plan](../research/BATCH_27_PLAN.md)
+et [état](../research/BATCH_27.md). Les démos restent MD2/Langevin, T9E opt-in.
+
 **MD2 achevé15/15,0 erreur**, aucun contrôleur actif. Voir
 [résultats complets](../research/BATCH_25_RESULTS.md). Les scènes exactes sont
 maintenant dans `visualizer.bat` → Démos → État actuel · bain intégré,

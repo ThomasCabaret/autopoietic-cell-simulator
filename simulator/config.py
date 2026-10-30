@@ -43,6 +43,7 @@ def resolve(raw):
     defaults = copy.deepcopy(MODELS[model][1])
     chemistry = raw.get("chemistry", {})
     extras={"box", "fragment_size"}
+    if model=='copy':extras.add('gf_end_capture')
     if model in ('membrane','membrane_bath'):extras.add('bound_port_geometry')
     if set(chemistry) - set(defaults) - extras:
         raise ValueError("Unknown chemistry keys: " + str(sorted(set(chemistry)-set(defaults)-extras)))
@@ -81,6 +82,10 @@ def resolve(raw):
     if 'box' in defaults and (len(defaults['box'])!=2 or any(not math.isfinite(x) or x<=1.2 for x in defaults['box'])):
         raise ValueError('box requires two lengths greater than 1.2')
     if model=='copy':
+        if type(defaults.get('gf_end_capture',False)) is not bool:
+            raise ValueError('gf_end_capture must be boolean')
+        if defaults.get('gf_end_capture',False) and defaults['dual_faces']:
+            raise ValueError('GF end capture has not been implemented for dual faces')
         if defaults['rung_catalysis'] and not defaults['constructible']:
             raise ValueError('Rung catalysis requires constructible precursors')
         if defaults['rung_catalytic_rate']<0:

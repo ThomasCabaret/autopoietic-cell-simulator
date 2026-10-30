@@ -8,6 +8,17 @@ division et évolution ouverte ne sont pas des conditions ajoutées à cette cib
 
 ## Lecture finale LT2 et diagnostic MD1
 
+Lot27 ajoute une intervention conceptuelle bornée T9E, motivée par le garde
+qui interdit la recapture des fragments. Le contre-exemple aval (séquestration
+des outils complets) est testé avant le grand bain, avec critères de transfert
+programmés. Ni la petite boîte ni le contrôle idéal ne garantissent le maintien.
+Le prochain horizon de décision est la cohorte A puis éventuellement B ; pas
+de balayage indéfini. Si le motif ne transfère pas, distinguer accès/géométrie
+et défaut de représentation avant une seconde retouche. Une machine processive
+reste une option à proposer à l'utilisateur, pas un ajout déjà autorisé.
+La correction IO Windows est technique, pas une avancée de chimie ; données
+interrompues conservées. Aucun calendrier de cellule viable garanti.
+
 Clôture MD2/lot26 :15 essais terminés sans erreur, démos actuelles source-exactes
 et passivité graphique vérifiées. Amélioration nette de fermeture du grand bain,
 mais F nouveau0/3 et un contrôle d'insertion encore dégradé. Recensement final :

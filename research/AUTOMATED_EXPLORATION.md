@@ -40,3 +40,11 @@ analyse → éventuellement N2. Six nouveaux essais maximum, deux travailleurs.
 Le critère d'alerte N1 était déjà déclaré ; le suivi N2 est annoncé après lecture
 de deux essais sur six, avant la cohorte fine et ses décisions. À la fin,
 interpréter T9 ou les cadences ; aucune nouvelle chimie inventée automatiquement.
+
+T9E/lot27 : `scripts/expression_followup.py`,12 comparaisons petites boîtes,
+puis au plus4 transferts MD2 si finition améliorée et contrôle outil préservé.
+Sources des deux phases figées avant A ; seuils de BATCH_27_PLAN.md, deux
+travailleurs, plafond24h, rapport et son hash journalisés, arrêt pour interpréter.
+Un résultat favorable ne modifie pas les démos ni la référence MD2. Échec,
+interruption et pause arrêtent le suivi ; reprise explicite seulement, aucun
+retry d'une tâche échouée. Pas de recherche de taux ou nouvelle loi automatique.

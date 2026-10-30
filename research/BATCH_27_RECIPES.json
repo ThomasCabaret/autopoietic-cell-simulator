@@ -1,0 +1,76 @@
+{
+  "job": "outputs/expression_followups/followup_20261030T164244840888Z",
+  "job_sha256": "cdab8b23fa78c63b95c468be104816a05f03363c98faa65b4bde920ea878f533",
+  "frozen_orchestration": {
+    "version": 1,
+    "campaigns": [
+      "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\expression_followups\\followup_20261030T164244840888Z\\A\\campaign_20261030T164245231557Z",
+      "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\expression_followups\\followup_20261030T164244840888Z\\B\\campaign_20261030T164245849414Z"
+    ],
+    "source_sha256": {
+      "simulator/assembly.py": "4bd703a271102d5ca6a7ae3c6d0109ae158617fef8136b4f8ba5d5456d092034",
+      "simulator/boundary_audit.py": "7d516eb25d60c2e890bfc76073603e579cb1759683b6c961b8e162bb08c119e2",
+      "simulator/campaign_io.py": "d9824e1fb0e0651ef36091159d108313fd510b727b41e1b5b187b670b6db1322",
+      "simulator/campaign_worker.py": "b6c95f97d7ce643a6d16df5b19a3d7c7e493788b1b36cb9ba6d8145d189ed9ff",
+      "simulator/catalysis.py": "bf0f4c35e7c96dde717a29645ce39c628fa2f3a907441f2b706db550c637c4a2",
+      "simulator/checkpoint.py": "c02a0847a625dcbfae5a590034b1d22f8b641da4a333b2dc707f5a16a8672afc",
+      "simulator/cli.py": "2b4ba9fec940173ea9bd990483aa39c38b9b7f07b5af5b23811313d3b94d62f6",
+      "simulator/config.py": "abf164ff0942bd31919ac540aa75247213903e1b6200caa4e13a8e9f68ce4ad0",
+      "simulator/contact_exchange.py": "07d5dd04d0daab0d90e223e09a84799f220dcbe3d625d36536d8ee3c2dbbbb51",
+      "simulator/copy.py": "5d1f1498373b6ee2dedd645eb0b386014e038eedf70e2012ccf934f3cf52abf9",
+      "simulator/coupled_bath.py": "2e870dde3d2471a2f60aeb66e7217b4750e6a43380d1a905bf21433f35f09977",
+      "simulator/docking.py": "c044d11d06f8794a0a8427e9823d8b2798c92ef735e67f2a7109ade8605a98f2",
+      "simulator/dual_faces.py": "dc7c31049fc5e6c7c1b97b194418de52fe32a19d5ab5cc1909c5c63c929929fa",
+      "simulator/engine.py": "cb64c398c7feb187a4f2e79701bed827195f6d7972d37fc23fc3d2188e5d2421",
+      "simulator/genetic_audit.py": "d7f857e510d1a8dd43b771c4efb0edfc0125ce91503e01b144c618500d1a9875",
+      "simulator/initial.py": "ecc0cdce037a2a38af2a9885ad323bce7f5752331f85a908f9643c34abe4c3b0",
+      "simulator/kinetics.py": "61107d58dcda22f1f8dff2fe32f94b2d129d8ddd18cb16cb597081b1337a71d4",
+      "simulator/membrane.py": "69e276f95493232176656132035cf2954b87c018387597944effd4594b5ddfb7",
+      "simulator/membrane_bath.py": "b900a91d99a6c393716f32569616dc7c9c472488fc2e180f1478d8c14d5138b9",
+      "simulator/mixing.py": "322649722f90941232cba4a50090791d60a6f6e0832b945774a1df2ef1fb4a32",
+      "simulator/motion.py": "cc9816c080b107b56d470d756e8b564a590c6ff725d4eae9472163988514684f",
+      "simulator/observations.py": "f250f30138aa263acbb66813e648c5b1751143fc5e9577f35c0598c99d533954",
+      "simulator/physics.py": "d8364c7fb784db08e2f9fe0b3f549abb69246e402c681b06293d85058a7aa464",
+      "simulator/plots.py": "96b1f61f29c551c39e4b84af5914c78ef4dea97b82d7cac734698c6526b51383",
+      "simulator/polymer_population.py": "c9591228698f42072f32db994c801a899d370f365385200e9ea6de200b66f29c",
+      "simulator/precursors.py": "dbabe84042b28b1f6a9c407b5dc3770a9fc0a27167c8f33c5c8eadbf7dbb593f",
+      "simulator/reference.py": "347618abbab85e3991f8b0fd771e2502f554a042db5f7b3140182ea04eb868bc",
+      "simulator/registry.py": "8aff30498e0ec213e8a4aeca68df3e06db864a76d6e9b17027a4e45815f36fcd",
+      "simulator/runner.py": "e71cda264ee7a780034a0db96b13ffe5fa49c405f002dca376ca36c8e96d77a9",
+      "simulator/spatial.py": "e0f831e3ac3adcf624721244a83ec23dd7b5a11b0137015ee39ddd367e27649f",
+      "simulator/substrates.py": "705561e0093da0513d3221947ba01b726e7789ffdca4ed9e3c64595c3899859d",
+      "simulator/viewer.py": "85ae7d0e9fb13dcbf70a64232635c00d7a6f871809a864fe2b643a630f2632c3",
+      "simulator/__init__.py": "bf5a7a5cafdf7076cbc3cc9d8992895e4a8c217621ea024645a061a3531281a9",
+      "simulator/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+      "scripts/campaign.py": "738adbc289f19100bfcabded04113af154b16835da8210de21d295fa5f15a77e",
+      "scripts/expression_followup.py": "89b4f9c58af40b34032ad1a15c078635b0dc2973d28db188d6e779e09681c224"
+    },
+    "manifests": {
+      "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\expression_followups\\followup_20261030T164244840888Z\\A\\campaign_20261030T164245231557Z": "42b5b662711579fd933586283fbdbbd094e98452faca2ef6c0a9899ddbcb3f04",
+      "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\expression_followups\\followup_20261030T164244840888Z\\B\\campaign_20261030T164245849414Z": "d498f198fa51f10024ca768b9d8ced9d1bf68e2ac5d12f1b1347fc572c07f624"
+    },
+    "baseline_recipe": "C:\\CodeProjects\\autopoietic_cell_simulation\\research\\campaign_recipes\\MD2_20261030T115427443420Z",
+    "baseline_manifest_sha256": "089cb54b318a73c2808cf9e4c394090deb5b3b00b89ec799ad6bc8f69df0d05c",
+    "max_tasks": 16,
+    "workers": 2,
+    "max_wall_seconds": 86400,
+    "gate": "T9E_v1_BATCH_27_PLAN",
+    "after": "Stop for interpretation, no automatic new chemistry/retries"
+  },
+  "recipes": [
+    "research/campaign_recipes/T9EA_20261030T164244840888Z",
+    "research/campaign_recipes/T9EB_20261030T164244840888Z"
+  ],
+  "rejected_technical_job": "outputs/expression_followups/followup_20261030T163413128888Z",
+  "rejected_technical_recipes": [
+    "research/campaign_recipes/T9EA_20261030T163413128888Z",
+    "research/campaign_recipes/T9EB_20261030T163413128888Z"
+  ],
+  "pilots": [
+    "research/campaign_recipes/T9Epilot_20261030T163103099806Z",
+    "research/campaign_recipes/T9Epilot_20261030T164209998198Z"
+  ],
+  "local_control": "outputs/diagnostics/T9E_local_20261030T163016689411Z",
+  "archived_reference_control": "outputs/diagnostics/T9E_reference_20261030T163215056447Z",
+  "scope": "Code/config/source recipes only; raw partial and new run evidence stays local. Failed job not pooled with replacement cohort. Root orchestration sources are versioned and match hashes below."
+}

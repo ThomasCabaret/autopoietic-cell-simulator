@@ -13,6 +13,11 @@ La visualisation essentielle est disponible ; la vidéo et les outils avancés
 seront spécifiés plus tard. [Guide de la GUI](docs/VISUALIZER.md).
 Les lanceurs Pygame historiques ci-dessous sont conservés.
 
+Recherche en cours : campagne T9E de finition des fragments et d'interférence
+avec les outils, suivie d'un transfert intégré conditionnel. État par
+`expression_status.bat`, pause par `stop_expression.bat`. Cette variante reste
+expérimentale ; les démos ci-dessus gardent MD2/Langevin. [Lot27](research/BATCH_27.md).
+
 Un moteur CPU commun pour les campagnes sans fenêtre et les démonstrateurs
 interactifs. Les lois de copie/expression et de membrane sont des modules séparés.
 

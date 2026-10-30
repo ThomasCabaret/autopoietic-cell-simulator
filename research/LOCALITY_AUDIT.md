@@ -229,3 +229,21 @@ supplémentaire ; défaut5 exact vérifié. Le suivi conditionnel utilise des ra
 globaux pour choisir **une nouvelle expérience**, avec sources figées avant sa
 trajectoire. C'est une intervention expérimentale externe, jamais une décision
 de la cellule, une rétroaction dans ses réactions ou une preuve d'homéostasie.
+
+## T9E — recapture d'extrémités F, candidat opt-in
+
+`gf_end_capture=true` remplace degré(F)=0 par degré(F)<=1 sur les contacts G/F
+et dispense ces contacts du XOR monomère. Le support reste G avec degré>0.
+La coopération est évaluée sur les voisins directement liés au G, comme pour
+un F monomère auparavant. Même reconnaissance0,3, états de saturation,
+symboles, orientation, ports, taux et forces. Aucun test de longueur, séquence,
+gène, outil entier, produit ou contour. Option absente/false garde la référence.
+Coût : un choix de garde, zéro type/état physique/port/taux/helper/gène ajouté.
+F interne de degré2 reste exclu, y compris si un observateur le juge incomplet.
+
+Le recensement des sites F préparés et des degrés est purement passif ; il
+ne parvient jamais au hook. Les contrôles idéaux conditionnent explicitement
+un tirage accepté, sans prétendre mesurer une cinétique. La production garde
+son PRNG normal. L'automate choisit entre essais sources figées, pas dans un bain.
+Un F complet peut recapturer par ses bouts : mesurer sa séquestration est un
+contre-test, pas un label de protection introduit dans les lois.

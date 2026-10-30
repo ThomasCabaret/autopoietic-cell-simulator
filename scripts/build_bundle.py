@@ -56,6 +56,13 @@ def main():
                  if p.suffix=='.py' or p.name=='recipe.json')
     files.update(ROOT/p for p in ('research/BATCH_25_RESULTS.md','research/BATCH_26_PLAN.md',
         'research/BATCH_26.md','experiments/review_coherent_contacts.py'))
+    files.update(ROOT/p for p in ('research/BATCH_27_PLAN.md','research/BATCH_27.md',
+        'research/BATCH_27_RECIPES.json','experiments/prepare_expression_campaign.py',
+        'experiments/diagnose_endpoint_capture.py','experiments/diagnose_fragment_capture.py',
+        'experiments/verify_endpoint_reference.py','experiments/pilot_expression_endpoints.py',
+        'scripts/expression_followup.py','scripts/expression.ps1',
+        'campaigns/expression_endpoints.json','campaigns/expression_transfer.json',
+        'start_expression.bat','expression_status.bat','stop_expression.bat','resume_expression.bat'))
     files.update(ROOT/p for p in ('README.md','SIMULATOR_ARCHITECTURE.md','requirements.txt',
         'CONTRIBUTING.md','GIT_SETUP.md','THIRD_PARTY_NOTICES.md',
         '.gitignore','.gitattributes','.editorconfig',

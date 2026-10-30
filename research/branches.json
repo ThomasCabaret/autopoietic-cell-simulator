@@ -287,7 +287,7 @@
       "id": "T9",
       "parent": "T7",
       "hypothesis": "Local caps or reversible turnover can reduce persistent short parasitic products and support sustained full generations",
-      "status": "current_priority_after_MD2_F_no_new_complete_despite_global_monomers",
+      "status": "T9E_endpoint_candidate_comparison_in_progress",
       "priority": "P1",
       "test": "Ablate caps and local bond turnover separately; compare full descendant generations and fragment-size distributions at matched duration and pools",
       "counterexample": "Turnover destroys full templates as quickly as parasites; caps merely shorten the target",
@@ -296,7 +296,8 @@
         "P10",
         "LT1",
         "MD1",
-        "MD2"
+        "MD2",
+        "T9E"
       ],
       "results": "research/BATCH_25_RESULTS.md"
     },
@@ -1065,6 +1066,26 @@
       "counterexample": "Opening precedes exchange, other contacts cause loss, mere temporal association is called causality, or a contour is repaired globally",
       "missing_proof": "Causal role, local revised reaction and transfer/retention tests unproven.",
       "evidence": "research/BATCH_25_RESULTS.md"
+    },
+    {
+      "id": "T9E",
+      "parent": "T9",
+      "related": [
+        "MD2",
+        "C3B1",
+        "GUI3"
+      ],
+      "status": "twelve_screening_trials_running_then_four_conditional_transfers",
+      "hypothesis": "Permitting local F endpoint recapture enables fragment completion without unacceptable complete-tool sequestration",
+      "test": "One fixed opt-in gate;12 old/end x expression/prepared tool x3seeds at1200, then at most4 MD2 transfers if prospective gate passes; frozen two-worker follow-up,24h cap",
+      "cost": "One discrete degree guard and GF XOR exemption, cooperation anchored on local G; zero new type/state/port/rate/tool/gene/particle. Passive per-degree and prepared-site audit only.",
+      "counterexample": "Complete F tools trapped on genes, G copying or useful incorporation lost, endpoint binding unable to finish fragments, or success needs new function-specific rules",
+      "missing_proof": "Kinetic benefit, long-strand restoration, integrated transfer and sustained renewal remain untested; ideal contacts only condition accepted draws",
+      "evidence": "research/BATCH_27_PLAN.md",
+      "results": "research/BATCH_27.md",
+      "recipe": "research/BATCH_27_RECIPES.json",
+      "campaign_recipe": "research/campaign_recipes/T9EA_20261030T164244840888Z/manifest.json",
+      "health_gate": "Read full cohorts; gate selects transfer only, never adopts automatically. Stop for interpretation after rejection/B, no unbounded rate search. Preserve technical failed predecessor separately."
     }
   ]
 }

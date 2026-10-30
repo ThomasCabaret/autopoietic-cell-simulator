@@ -1,5 +1,11 @@
 # Maturité — mécanique améliorée, renouvellement F toujours non démontré
 
+Lot27 : T9E expérimental, pas adopté. Contrôle local de finition F2 obtenu sous
+tirages conditionnés ; les bouts de F3 capturent aussi, donc l'interférence est
+un risque confirmé à mesurer. Campagne12+4 conditionnels en cours, zéro nouvelle
+fonction intégrée revendiquée. Les démos et le bilan MD2 ci-dessous restent la
+référence. Aucun nouvel outil/gène/type ni modification du bruit.
+
 MD2 achevé15/15,0 erreur. Grand bain fermé85,5/72,8/86,9% des observations
 régulières contre2,6/23,6/74,2% sous l'ancien contact Langevin. La mécanique
 se transfère, mais aucun F nouveau complet n'apparaît à1200, même encore lié.

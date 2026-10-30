@@ -1115,3 +1115,25 @@ restent des recherches, pas une garantie de corrections techniques indépendante
 Arbre, santé, maturité, priorités et audit actualisés. Aucun nouveau long essai,
 aucune nouvelle loi, aucun outil/gène/particule, aucun calcul encore actif et
 aucun push à la remise de main.
+
+### Lot27 — T9E et exploration conditionnelle
+
+Demande : confirmer les démos Langevin et industrialiser les tests utiles. Les
+démo actuelles restent MD2, option T9E absente ; trois préfixes intégrés de5
+exactement reproduits face aux sources archivées, catalogue21 recertifié.
+
+T9E autorise F de degré0/1 sur G lié ; aucune longueur/identité entière.
+Contrôle idéal : F2 reçoit la liaison manquante, mais F3 complet peut capturer
+ses bouts. Un choix discret sans outil/gène/type/port/taux ajouté. Audit
+passif des gardes, degrés, sites préparés, ligation et activité aval.
+
+Plan prospectif12 comparaisons puis4 transferts MD2 conditionnels, deux
+travailleurs,24h maximum ; critères et sources des phases figés avant A.
+Sélection automatique, zéro adaptation dans une trajectoire, arrêt pour
+interprétation. Premier job arrêté après WinError5 du statut Windows, un
+échec technique/deux tâches partielles conservés ; nouveau job explicite,
+rename atomique borné sans relecture d’un pas physique ni retry d’un essai.
+Deux pilotes corrigés passés. BATCH_27.md et RECIPES gardent les identités.
+
+Arbre, priorités, santé, maturité et audit actualisés ; MD3 différé, pas de
+nouveau succès intégré revendiqué avant cohortes. Données locales, aucun push.

@@ -1,5 +1,5 @@
 """Atomic campaign records and OS-released locks; no simulation dynamics."""
-import json,os,uuid
+import json,os,time,uuid
 from contextlib import contextmanager
 from pathlib import Path
 
@@ -13,7 +13,14 @@ def write(path,value):
     path=Path(path);path.parent.mkdir(parents=True,exist_ok=True)
     tmp=path.with_name(path.name+'.'+uuid.uuid4().hex+'.tmp')
     tmp.write_text(json.dumps(value,indent=2,ensure_ascii=False,allow_nan=False),encoding='utf-8')
-    tmp.replace(path)
+    # Windows readers/antivirus can briefly deny rename of an otherwise writable
+    # destination. Retry this one atomic IO transaction, never a simulation task.
+    for attempt in range(7):
+        try:
+            tmp.replace(path);return
+        except PermissionError:
+            if os.name!='nt' or attempt==6:raise
+            time.sleep(.01*2**attempt)
 
 
 @contextmanager

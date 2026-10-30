@@ -1,5 +1,13 @@
 # Priorités actuelles — T9 dans le bain MD2, démos actuelles disponibles
 
+Lot27 : T9E en cours sous lois figées,12 essais de finition/interférence puis
+au plus4 transferts sélectionnés automatiquement. Ne pas modifier le candidat
+en cours ni lancer une autre grille. Lire `expression_status.bat`, BATCH_27.md
+et BATCH_27_PLAN.md. Erreur IO du premier job conservée, relance technique
+explicite sous nouvelle recette ; aucun succès chimique déduit des pilotes.
+Priorité immédiate : analyser A/porte/B puis décider, pas une intervention
+manuelle entre les étapes calculables. Les démos restent MD2/Langevin.
+
 MD2 terminé15/15,0 erreur. La fermeture du grand bain progresse sur trois
 graines ; F nouveau reste nul, même complet encore apparié. Le stock global
 de F composites monomères reste194/191/204 : ne pas supposer son épuisement,
