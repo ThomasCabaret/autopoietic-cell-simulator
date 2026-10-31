@@ -1,5 +1,20 @@
 # Maturité — mécanique améliorée, renouvellement F toujours non démontré
 
+Clôture lot31 :12/12 terminés. Le chemin complet de matière recyclée vers un
+nouveau squelette apparaît sous full sur2/3 graines. Protected échoue au
+critère de réemploi, donc aucun transfert MD2 ; survie G001 et catalyse passent.
+W-02/W-03 restent25% : sous-cas réel mais compromis protection/réemploi non
+résolu, aucune régulation ou sortie ouverte. Aucun calcul encore actif.
+
+Lot31 : RV1 ajoute une vraie voie de pertes/réemploi sous option séparée.
+W-02/W-03 :25% pour mécanisme et trajet contrôlé avec vrais atomes, pas pour
+recyclage spontané ou intégré. H-06 et homéostasie restent0 : protection locale
+testée, survie/renouvellement rare non établis.12 essais achevés,4 transferts
+conditionnels refusés ; pas de succès intégré. Zéro type/outil/gène ajouté, quatre taux
+et un facteur de protection déclarés.172 tests complets et contrôle de progrès
+passés ; MD2 conservé exactement sur trois préfixes. La diversité fonctionnelle
+et L restent des risques conceptuels, pas des finitions garanties.
+
 Lot30 : [suivi par sous-but](CELL_CHECKLIST_COMPACT.md), séparant concepts et
 preuves.42 points, paliers0/25/50/75/100%, min–max par domaine, pas de score
 global ni d'estimation de travail restant. Aucune nouvelle preuve dynamique.

@@ -73,6 +73,11 @@ def main():
         'research/CONCEPT_FIRST.md','research/MACROMOLECULE_HOMEOSTASIS.md',
         'research/cell_checklist.json','research/CELL_CHECKLIST.md','research/CELL_CHECKLIST_COMPACT.md',
         'experiments/cell_readiness.py','cell_status.bat'))
+    files.update(ROOT/p for p in ('research/BATCH_31_PLAN.md','research/BATCH_31.md',
+        'research/BATCH_31_RECIPES.json','experiments/prepare_recycling_campaign.py',
+        'experiments/review_recycling.py','experiments/audit_recycling_material.py','scripts/recycling_followup.py','scripts/recycling.ps1',
+        'campaigns/recycling_local.json','campaigns/recycling_transfer.json',
+        'start_recycling.bat','recycling_status.bat','stop_recycling.bat','resume_recycling.bat'))
     files.update(ROOT/p for p in ('README.md','SIMULATOR_ARCHITECTURE.md','requirements.txt',
         'CONTRIBUTING.md','GIT_SETUP.md','THIRD_PARTY_NOTICES.md',
         '.gitignore','.gitattributes','.editorconfig',

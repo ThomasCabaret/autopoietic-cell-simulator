@@ -4,6 +4,13 @@
 [campagnes futures](INTEGRATION_TESTS.json). Les lignes ci-dessous sont des
 **obligations à tester**, pas une matrice déjà implémentée et validée.
 
+RV1, lot31 : pertes de squelette puis dissociation d'un P–R isolé/libre de
+ligand, sans nouveau partenaire biologique. Le P/R réel récupéré retrouve le
+profil perméable libre ; la catalyse existante peut le réassembler. Comparer
+le réemploi utile à l'ablation sans dissociation et aux pertes d'outils/gènes,
+sans considérer la seule fragmentation comme élimination. Pas d'export par
+bord ouvert ni de protection par identité de gène. Voir BATCH_31.md.
+
 Lot8 : capture P/R, libération et transfert vers G/F sont testés sous C3B1,
 avec3/3 incorporations,2/3 copies G complètes issues des produits et1/3
 renouvellement de F. Le contrôle délié peut se réexprimer en enzyme : une classe

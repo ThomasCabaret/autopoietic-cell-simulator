@@ -1210,3 +1210,44 @@ Méthode intégrée dans AGENTS, DESIGN_PRINCIPLES et le skill local via une mis
 passés, vues et liens cohérents. cell_status.bat affiche ce bilan. Arbre,
 priorités, santé/maturité et liens d'architecture/atlas actualisés. Sources et
 documents versionnés, résultats volumineux locaux ; commit sans push.
+
+### Lot31 — voie RV1 de pertes et réemploi des vrais atomes
+
+31 octobre2026. Un verrou conceptuel du registre devient un candidat testable :
+rupture des liens locaux G/F, puis dissociation P–R isolé sans appariement/ligand.
+Protection d'un lien par occupation directe ; quatre taux et un facteur,
+zéro type/port/gène/outil/atome ajouté. Positions, vitesses et symbole du vrai R
+conservés. Aide cinétique de changement de liaison, pas énergie calibrée.
+
+Moteur et cadence partagés, option absente dans MD2/démos. Census réversible
+passif : stock courant initiaux inclus, chronologie réelle des IDs relâchés,
+réassemblés et réincorporés. Pas de faux nouveaux F/générations depuis les
+anciens IDs. Contrôle géométrique du cycle matériel, taux nuls sans PRNG,
+tree/brute, reprise/relecture et profil de perméabilité testés. Préfixes MD2 t5
+exactement conservés sur trois graines, catalogue21 entrées recertifié.
+172 tests complets passent et test supplémentaire de la colonne progrès passe.
+Première suite bloquée par le dossier temporaire sandbox ; relance hors sandbox
+réussie, sans changer une loi. Premier commit local c13b55b, aucun push.
+
+Deux phases préparées et sources figées avant lancement :12 ablations petit
+bain150 billes/t1200 puis4 transferts MD2 conditionnels, deux travailleurs24h,
+pas de retry scientifique ou de réglage après lecture. Le superviseur existant
+est réutilisé avec collecteur/porte injectés et garde ses contrôles historiques.
+Les12 premiers ne nécessitent pas de micromanagement conversationnel.
+
+Lecture partielle2/12 : témoin graine0 G7/F5, backbone G3/F0 malgré43 formations
+catalysées contre38,14 ruptures ; matière F en18 monomères/9 dimères. Invariants
+valides. Cela montre le risque de fragmentation sans prouver un effet robuste.
+Full/protected en cours ; ne pas anticiper leur résultat ni ouvrir B manuellement.
+W-02/W-03 sous-cas25%, H-06/homéostasie0%, diversité/L toujours ouvertes.
+Arbre, checklist avec deltas, priorités/santé, architecture, contrats et audit
+actualisés. Suivi recycling_status.bat et review_recycling.py ; données locales.
+
+Clôture du même lot :12/12 achevés, zéro erreur, aucun calcul actif. Full :
+réassemblages stricts13/3/9 puis réincorporations3/0/1 ; protected0/0/1 puis
+0/0/0. G001 protected4/6/4 et catalyse103/157/151 : survie/activité passent,
+matière échoue, porte refuse B4. Aucun choix rétroactif de full. Audit passif
+de topologie retrouve exactement les12 états finaux et recoupe les compteurs.
+Protected graine2 réutilise un R recyclé avec P non recyclé, distinct du critère
+strict. Cycles de monomères gonflent la catalyse ; fragments F2 encore actifs.
+Le bilan final et le registre priment sur les lectures partielles conservées.

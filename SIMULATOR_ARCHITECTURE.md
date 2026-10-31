@@ -1,5 +1,22 @@
 # Architecture du simulateur partagé
 
+## Recyclage local exploratoire RV1
+
+`copy` et la partie génétique de `coupled_bath` acceptent l'option
+`bond_turnover` : `backbone_g`, `backbone_f`, `rung_g`, `rung_f`, `protection`.
+Elle est absente par défaut ; taux nuls ne consomment aucun tirage supplémentaire.
+`turnover.py` intervient au début du tick existant, avant formation P/R, puis
+journalise les formations effectives. Le moteur, l'intégrateur et leur cadence
+restent communs. La rupture ne déplace/supprime aucun atome ni ne réinitialise
+sa vitesse ; la mécanique est rafraîchie par les chemins existants.
+
+`make_copy_observer` choisit le census réversible pour cette option et refuse
+les métriques de filiation irréversible. Les journaux de transitions sont
+uniquement lus par `recycling_observations.py` ; jamais de retour vers les lois.
+Les checkpoints conservent ces journaux et le census, y compris en bain imbriqué.
+Le client GUI affiche alors les stocks actuels initiaux inclus. Les démos
+actuelles n'activent pas RV1. Voir [lot31](research/BATCH_31.md).
+
 ## Candidat de potentiel lié MD2
 
 Les scénarios membrane/membrane_bath (y compris le sous-scénario L du bain

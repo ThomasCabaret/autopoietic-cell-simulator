@@ -1,26 +1,26 @@
 # Checklist compacte — cellule construite maintenue
 
-Révision 1 · revue 2026-10-31 · 42 sous-buts · MD2 / Langevin ; T9E non adopté ; C0B demeure conditionnel
+Révision 2 · revue 2026-10-31 · 42 sous-buts · MD2 / Langevin inchangé ; RV1 terminé, protection non retenue et transfert refusé
 
 **Pourcentages = paliers de preuve**, pas effort accompli ni probabilité de réussite. Les plages indiquent min–max des sous-buts ; aucune moyenne globale.
 0% non observé ·25% sous-cas ·50% séparé ·75% couplage partiel ·100% critère satisfait sur son domaine.
 Concept : « à fermer » signale au moins un maillon essentiel manquant ; un draft décrit reste hypothétique.
 
-| Domaine | Points | Concept | Preuve min–max | Trous conceptuels |
-| --- | ---: | --- | ---: | --- |
-| Lois et fonctions des outils | 3 | à fermer | 0–75% | F-01, F-02 |
-| Fabrication N / A | 3 | à fermer | 25–75% | S-03 |
-| Fabrication des lipides | 1 | à fermer | 0% | S-04 |
-| Copie et information | 5 | à fermer | 0–75% | R-02, R-04, R-05 |
-| Traduction et outils renouvelés | 4 | à fermer | 0–25% | T-02, T-04 |
-| Membrane et insertion | 5 | à fermer | 25–75% | M-04, M-05 |
-| Apports et transport | 3 | à fermer | 0–75% | E-03 |
-| Énergie et retour des cycles | 2 | à fermer | 25% | Q-01, Q-02 |
-| Déchets et recyclage | 4 | à fermer | 0% | W-02, W-03, W-04 |
-| Homéostasie des petites espèces | 2 | drafts décrits | 0% | — |
-| Homéostasie des polymères | 4 | à fermer | 0% | H-03, H-04, H-05, H-06 |
-| Compatibilité et maintien | 4 | à fermer | 0–25% | C-01, C-03, C-04 |
-| Calcul et observabilité | 2 | drafts décrits | 25–100% | — |
+| Domaine | Points | Concept | Preuve min–max | Trous conceptuels | Progrès du dernier lot |
+| --- | ---: | --- | ---: | --- | --- |
+| Lois et fonctions des outils | 3 | à fermer | 0–75% | F-01, F-02 | — |
+| Fabrication N / A | 3 | à fermer | 25–75% | S-03 | — |
+| Fabrication des lipides | 1 | à fermer | 0% | S-04 | — |
+| Copie et information | 5 | à fermer | 0–75% | R-02, R-04, R-05 | — |
+| Traduction et outils renouvelés | 4 | à fermer | 0–25% | T-02, T-04 | — |
+| Membrane et insertion | 5 | à fermer | 25–75% | M-04, M-05 | — |
+| Apports et transport | 3 | à fermer | 0–75% | E-03 | — |
+| Énergie et retour des cycles | 2 | à fermer | 25% | Q-01, Q-02 | — |
+| Déchets et recyclage | 4 | à fermer | 0–25% | W-02, W-03, W-04 | W-02 : Rupture locale et12 essais achevés ; protection/réemploi non validés. ; W-03 : Trajet réel vers le squelette sous RV1 full2/3 ; variante protégée refusée. |
+| Homéostasie des petites espèces | 2 | drafts décrits | 0% | — | — |
+| Homéostasie des polymères | 4 | à fermer | 0% | H-03, H-04, H-05, H-06 | H-06 : G001 présents3/3 à1200, mais compromis protection/recyclage non résolu. |
+| Compatibilité et maintien | 4 | à fermer | 0–25% | C-01, C-03, C-04 | — |
+| Calcul et observabilité | 2 | drafts décrits | 25–100% | — | O-02 : Census réversible passif, reprise et témoins exacts ; colonne progrès générée. |
 
 **Trous conceptuels prioritaires au présent bilan :**
 

@@ -91,6 +91,12 @@ compact (ou ses lignes modifiées avec lien au tableau complet), les régression
 le trou conceptuel prioritaire et le prochain jalon. Mettre aussi à jour arbre,
 journal, priorités et santé ; garder les résultats volumineux locaux.
 
+Inclure une colonne « Progrès du dernier lot » : `last_batch_progress` associe
+les IDs affectés à un changement concret, une preuve ou un essai encore en cours.
+Réinitialiser ces notes à chaque lot ; l'historique des révisions et les bilans
+conservent les anciens deltas. Une implémentation, un contrôle idéal et une
+campagne lancée doivent rester distingués d'un transfert dynamique obtenu.
+
 Les mesures globales de concentration, nombre de gènes/protéines, activité,
 longueur ou stocks ne peuvent jamais devenir des commandes du simulateur.
 Le registre et ses paliers sont de l'observation/planification seulement.

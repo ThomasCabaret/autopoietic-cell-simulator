@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "revision": 1,
+  "revision": 2,
   "reviewed": "2026-10-31",
-  "candidate": "MD2 / Langevin ; T9E non adopté ; C0B demeure conditionnel",
+  "candidate": "MD2 / Langevin inchangé ; RV1 terminé, protection non retenue et transfert refusé",
   "purpose": "Registre évolutif des capacités nécessaires à une cellule construite maintenue ; les pourcentages sont des paliers de preuve, pas un taux global de réussite.",
   "out_of_scope": [
     "origine spontanée de la cellule",
@@ -710,14 +710,15 @@
         "T-04"
       ],
       "concept": "gap",
-      "mechanism": "Réversibilité de liaisons, érosion de bouts accessibles ou catalyse locale de clivage.",
-      "concept_gap": "Protection des gènes/outils utiles et choix des taux/motifs manquent ; un recycleur éventuel doit être refabriqué.",
-      "proof": "none",
-      "scope": "Pas de recyclage de squelette G/F dans le candidat.",
+      "mechanism": "RV1 : taux locaux de rupture G/F sur chaque lien de squelette, protection par appariement ou ligand sur un des deux sites.",
+      "concept_gap": "Les pertes peuvent détruire les outils et derniers gènes ; sélectivité utile et maintien non démontrés.",
+      "proof": "subcase",
+      "scope": "Ruptures locales sous quatre variantes x3 graines ; full réincorpore des composites recyclés2/3, protected0/3. Pas de dégradation sélective ni de validation intégrée.",
       "references": [
-        "research/MACROMOLECULE_HOMEOSTASIS.md"
+        "research/MACROMOLECULE_HOMEOSTASIS.md",
+        "research/BATCH_31.md"
       ],
-      "next_test": "Comparer pertes sur bons outils, fragments et dernières copies avec réutilisation réelle.",
+      "next_test": "Mesurer exposition locale des fragments et flux utile, pas cycles de formation ; aucune grille ni transfert automatique après refus.",
       "essential": true
     },
     {
@@ -732,15 +733,16 @@
       ],
       "renewal_needs": [],
       "concept": "gap",
-      "mechanism": "Après clivage du squelette, dissocier des composites en précurseurs libres exportables.",
-      "concept_gap": "Le monomère P–R reste retenu ; dissociation de rung et états de sortie non implémentés.",
-      "proof": "none",
-      "scope": "Aucune voie d’évacuation de l’excès de matière assemblée.",
+      "mechanism": "RV1 dissocie un P–R isolé, non apparié et sans ligand ; P/R physiques demeurent disponibles à la catalyse, avec leurs symboles et vitesses.",
+      "concept_gap": "Réemploi sous mouvement normal, évacuation effective et récupération d’un excès retenu non démontrés ; aucun bord ouvert.",
+      "proof": "subcase",
+      "scope": "Vrais atomes conservés ; full réincorpore des composites à deux atomes issus de polymères2/3 graines, protected0/3 ; recyclage partiel d’un R observé. Pas de sortie ouverte ou de robustesse intégrée.",
       "references": [
         "research/MACROMOLECULE_HOMEOSTASIS.md",
-        "simulator/assembly.py"
+        "simulator/assembly.py",
+        "research/BATCH_31.md"
       ],
-      "next_test": "Tracer un polymère jusqu’à son réemploi ou à sa matière effectivement sortie.",
+      "next_test": "Distinguer cycle futile, piégeage de fragments et réemploi productif ; transférer seulement un candidat justifié sans assouplir la porte RV1.",
       "essential": true
     },
     {
@@ -896,15 +898,16 @@
       ],
       "renewal_needs": [],
       "concept": "gap",
-      "mechanism": "Stabilité chimique, protection par occupation/conformation et copies redondantes ; jamais un label de gène sauvé.",
+      "mechanism": "RV1 compare taux G/F différents et protection des liens dont un site est directement apparié/occupé ; redondance initiale explicite.",
       "concept_gap": "Pas de mécanisme sélectif sûr ni de garantie sur un stock rare ; toute dernière information perdue reste perdue.",
       "proof": "none",
-      "scope": "Aucune dégradation/récupération complète testée.",
+      "scope": "Protected conserve4/6/4 G001 à1200, mais réincorporation stricte0/0/0 ; quatre copies initiales, pas test de dernier gène ni de récupération sous perturbation.",
       "references": [
         "research/HOMEOSTASIS.md",
-        "research/MACROMOLECULE_HOMEOSTASIS.md"
+        "research/MACROMOLECULE_HOMEOSTASIS.md",
+        "research/BATCH_31.md"
       ],
-      "next_test": "Coupler perte locale et copie aux faibles effectifs, avec risque d’extinction et censure explicites.",
+      "next_test": "Diagnostiquer le compromis local et mesurer les faibles effectifs seulement après un réemploi utile sous protection.",
       "essential": true
     },
     {
@@ -1049,7 +1052,8 @@
       "scope": "Fonction logicielle validée pour les références présentes, pas pour toutes les futures chimies.",
       "references": [
         "research/BATCH_26.md",
-        "research/BATCH_27.md"
+        "research/BATCH_27.md",
+        "research/BATCH_31.md"
       ],
       "next_test": "Conserver les contrôles sans observateur, reprise exacte et signatures à chaque changement concerné.",
       "essential": true
@@ -1081,6 +1085,17 @@
       "revision": 1,
       "date": "2026-10-31",
       "reason": "Demande utilisateur : inventaire conceptuel complet, interdépendances, homéostasie des polymères et compte rendu calibré par lot ; aucune nouvelle preuve dynamique."
+    },
+    {
+      "revision": 2,
+      "date": "2026-10-31",
+      "reason": "RV1 réalise clivage/dissociation et réemploi spontané dans2/3 petits bains full ;12 essais achevés, porte protected refusée, aucun transfert ou maintien. W-02/W-03 sous-cas25%, H-06 inchangé0%. Colonne progrès ajoutée."
     }
-  ]
+  ],
+  "last_batch_progress": {
+    "W-02": "Rupture locale et12 essais achevés ; protection/réemploi non validés.",
+    "W-03": "Trajet réel vers le squelette sous RV1 full2/3 ; variante protégée refusée.",
+    "H-06": "G001 présents3/3 à1200, mais compromis protection/recyclage non résolu.",
+    "O-02": "Census réversible passif, reprise et témoins exacts ; colonne progrès générée."
+  }
 }

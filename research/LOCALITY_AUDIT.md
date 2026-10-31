@@ -1,5 +1,23 @@
 # Fidélité à l'objectif : localité et risques de pilotage
 
+## RV1 — pertes locales, sans recycleur biologique primitif
+
+Sur un lien de squelette, deux supports voisins et leurs occupations directes
+déterminent le taux G/F et le facteur de protection. Pour P–R : degré nul du
+support, absence d'appariement et de ligand sur ce site. Voisinage borné par
+les ports existants ; aucune lecture de chaîne, séquence, contour ou quantité
+globale. Le degré est calculé depuis les liens locaux, pas depuis la longueur
+du composant. L'information G/F vient du type élémentaire de support.
+
+Coût : quatre taux et un facteur, zéro type/état physique/port/outil/gène/atome.
+Les changements d'énergie du potentiel ne sont pas calibrés : helper cinétique
+assumé. Positions/vitesses conservées ; vrais R avec symbole persistant. Les
+journaux et labels de recyclage sont des sorties passives, jamais des gardes.
+L'observateur peut reconnaître une chaîne cible mais n'en sauve aucune.
+Les comparaisons sans observateur et les taux nuls sont exacts, reprise et
+tree/brute contrôlés. Les scénarios à contacts préparés sont des contrôles
+mécaniques, pas des preuves d'émergence. Voir BATCH_31.md.
+
 Lot9,25 octobre2026. La cible est une implémentation locale de fonctions qui
 n'ont de sens qu'à l'échelle des assemblages. Concevoir une chimie, fournir
 énergie et conditions initiales ne dispense pas de cette contrainte.

@@ -50,10 +50,21 @@ class ReadinessTests(unittest.TestCase):
             self.assertEqual((g['low'],g['high']),(min(scores),max(scores)))
             self.assertEqual(g['points'],len(scores))
 
+    def test_progress_is_explicit_and_does_not_change_proof(self):
+        d=copy.deepcopy(load());before=[(r['low'],r['high']) for r in group_rows(d)]
+        d['last_batch_progress']={'W-02':'Contrôle local ; campagne encore en cours'}
+        validate(d)
+        self.assertIn('Progrès du dernier lot',views(d)['CELL_CHECKLIST_COMPACT.md'])
+        self.assertIn('Contrôle local ; campagne encore en cours',views(d)['CELL_CHECKLIST.md'])
+        self.assertEqual(before,[(r['low'],r['high']) for r in group_rows(d)])
+        d['last_batch_progress']['Z-99']='inconnu'
+        with self.assertRaises(ValueError):validate(d)
+
     def test_new_subgoals_and_traceable_splits_render_without_fixed_item_count(self):
         d=copy.deepcopy(load());old=next(r for r in d['items'] if r['id']=='O-01')
         new=copy.deepcopy(old);new.update(id='Z-01',label='Nouveau sous-but séparé')
         d['items'].remove(old);d['items'].append(new)
+        d.get('last_batch_progress',{}).pop('O-01',None)
         for r in d['items']:
             for field in ('needs','renewal_needs'):r[field]=['Z-01' if i=='O-01' else i for i in r[field]]
         d['retired'].append(dict(id='O-01',reason='Scission explicitée',replaced_by=['Z-01']))

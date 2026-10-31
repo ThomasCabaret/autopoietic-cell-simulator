@@ -111,7 +111,18 @@ d'outils actifs sur un court intervalle ne prouve pas une population bornée.
 - Annoncer avant calcul les bandes fonctionnelles, horizons de plusieurs
   renouvellements mesurés, perturbations et seuils d'extinction/censure.
 
-Ces tests devront être chiffrés après choix du mécanisme. Ni taux ni protéine
-de recyclage n'est choisi ici. Priorité : fermeture qualitative inhibition +
+Ces tests devront être chiffrés après choix du mécanisme. Au lot30, ni taux ni
+protéine de recyclage n'était choisi. Priorité : fermeture qualitative inhibition +
 pertes + protection + débouché des fragments, en parallèle de l'expressivité I0,
 avant une coûteuse stabilisation de réplication qui ignorerait ce verrou.
+
+## Premier candidat expérimental — RV1, lot31
+
+Le plan BATCH_31_PLAN.md fige quatre variantes de pertes locales, dont une
+dissociation P–R libérant la matière réelle et une protection par occupation.
+Implémenté sous option séparée, sans protéase ou autre outil supplémentaire.
+Le trajet contrôlé jusqu'au réemploi passe ; les12 essais normaux et les4
+transferts conditionnels comparent sa cinétique et ses dégâts. Un census dédié
+remplace la filiation irréversible. Ce candidat teste la partie pertes/débouché,
+pas le freinage, la régulation des copies ou l'export par frontière ouverte.
+Même une porte passée ne suffira donc pas à affirmer l'homéostasie.

@@ -1,10 +1,29 @@
-# Santé du projet —30 octobre2026
+# Santé du projet —31 octobre2026
 
 Cette évaluation vise la faisabilité globale et le volume du travail, pas le
 nombre de simulations positives. Elle doit évoluer avec les résultats. La cible
 est une cellule construite qui maintient et refabrique ses composants depuis
 une nourriture simple, avec énergie externe déclarée. Apparition spontanée,
 division et évolution ouverte ne sont pas des conditions ajoutées à cette cible.
+
+Lot31 : une intervention de conception RV1,16 essais maximum dont4 conditionnels,
+pas16 corrections conceptuelles. Le débouché matériel est maintenant réalisable
+localement dans un contrôle ; son efficacité et ses dégâts sur les fonctions
+doivent être confrontés aux12 essais, puis au bain commun si la porte passe.
+Ce progrès n'établit pas une homéostasie ni la possibilité certaine du maintien.
+Risque de destruction des derniers gènes et risque I0/L encore ouverts.
+Décision bornée A/B avant tout nouveau réglage ; si deux retouches ne donnent
+ni transfert ni diagnostic, réexaminer représentation/protection plutôt que
+prolonger une grille. Le moteur et le census restent réutilisables en cas d'échec.
+Quelques dizaines de lots restent une hypothèse conditionnelle, sans garantie
+de délai ; aucun résultat ici n'autorise à promettre la cellule en dix heures.
+
+Clôture RV1 :12 essais complets, B4 économisé par la porte refusée. Le cycle
+matériel transfère dans le petit bain full2/3, mais la protection n'offre pas
+le réemploi attendu. Risque mieux localisé, pas une impossibilité de principe.
+Ne pas masquer l'échec par le cumul de réactions, dominé en partie par des
+cycles monomères. Le jalon matériel avance ; I0/L et le compromis pertes/
+protection restent à éprouver avant un maintien intégré. Aucun calcul actif.
 
 Lot30 : le registre42 points rend explicites les inconnues conceptuelles et
 leurs dépendances. L'expressivité I0 et l'homéostasie des macromolécules sont des

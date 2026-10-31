@@ -1093,7 +1093,10 @@
     {
       "id": "MAP1",
       "parent": "C0B",
-      "related": ["GUI3", "T9E"],
+      "related": [
+        "GUI3",
+        "T9E"
+      ],
       "status": "generated_vector_metabolism_atlas_delivered",
       "hypothesis": "A readable code-generated target network exposes dependencies and missing mechanisms early, without conflating the blueprint with current demos",
       "test": "Read canonical C0B roles, material reactions and nominal budget; SVG/HTML with all12 reactions and separate genes, deterministic output,9 diagram/design checks, JS syntax and static visual QA",
@@ -1109,7 +1112,12 @@
     {
       "id": "FM1",
       "parent": "I0",
-      "related": ["C3B1", "C0B", "T9", "MAP1"],
+      "related": [
+        "C3B1",
+        "C0B",
+        "T9",
+        "MAP1"
+      ],
       "status": "mechanism_families_documented_no_new_tool_or_experiment",
       "hypothesis": "Small assemblages of local capture sites, conformation and bond-state changes can support reusable functions; functional diversity must be established before stabilizing long copying",
       "test": "Next milestone only: select common laws, compare distinct useful products, background, release, turnover and transfer, then express the same assembly; include L as a downstream falsifier",
@@ -1123,7 +1131,11 @@
     {
       "id": "RDY1",
       "parent": "C0B",
-      "related": ["FM1", "I0", "MAP1"],
+      "related": [
+        "FM1",
+        "I0",
+        "MAP1"
+      ],
       "status": "evolving_requirement_register_and_concept_first_method_delivered",
       "hypothesis": "Tracking all required functions and renewal dependencies, with conceptual gaps distinct from proof, prevents optimizing pieces of an architecture that has no plausible path to maintenance",
       "test": "42 stable subgoals,13 domains, reference/dependency checks, prospective I0-I9 planning links, calibrated proof stages without global mean, traceable additions/splits, generated compact/fine views and updated research skill",
@@ -1134,6 +1146,26 @@
       "results": "research/BATCH_30.md",
       "source": "research/cell_checklist.json",
       "concept_note": "research/MACROMOLECULE_HOMEOSTASIS.md"
+    },
+    {
+      "id": "RV1",
+      "parent": "RDY1",
+      "related": [
+        "FM1",
+        "MD2",
+        "C3B1"
+      ],
+      "status": "twelve_complete_material_path_full_two_seeds_protected_gate_refused",
+      "hypothesis": "Local backbone loss plus isolated-rung dissociation supplies reusable precursor atoms without a new enzyme or whole-chain decisions",
+      "test": "Four frozen ablations x3 seeds at1200, then at most4 selected MD2 transfers; survival/activity/material-path gate before B",
+      "cost": "Four rates and one protection factor; zero new type, port, gene, tool or atom. Kinetic helper not detailed balance; separate passive reversible census.",
+      "counterexample": "Only fragments accumulate, recycled atoms do not reincorporate, final genes disappear, useful catalysis collapses or irreversible counters falsely claim generations",
+      "missing_proof": "Protected does not reincorporate two-atom recycled composites; no integrated transfer, population regulation, rare-gene protection, open export or functional diversity/L synthesis.",
+      "evidence": "research/BATCH_31_PLAN.md",
+      "results": "research/BATCH_31.md",
+      "recipe": "research/BATCH_31_RECIPES.json",
+      "health_gate": "Stop after rejected A or completed B; no automatic tuning or adoption. Preserve MD2 demos and consider representation if useful losses cannot coexist with renewal.",
+      "conclusion": "All12 complete, invariants valid; full reassemblies13/3/9 and reincorporations3/0/1, protected0/0/1 and0/0/0. Protected G4/6/4, catalysis103/157/151; material gate refused, B4 not launched. No active work. Topology replay and strict census agree12/12."
     }
   ]
 }

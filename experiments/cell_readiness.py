@@ -38,6 +38,9 @@ def validate(data,check_paths=True):
     if set(groups)-{r['group'] for r in items.values()}:raise ValueError('Empty group')
     for focus in data.get('decision_focus',[]):
         if not focus.get('reason') or set(focus['items'])-set(items):raise ValueError('Invalid decision focus')
+    for key,note in data.get('last_batch_progress',{}).items():
+        if key not in items or not isinstance(note,str) or not note.strip():
+            raise ValueError('Invalid last-batch progress: '+key)
     if not data['history'] or data['history'][-1]['revision']!=data['revision']:
         raise ValueError('Revision requires a history entry')
     # Cycles are expected in biological renewal; deliberately no DAG test.
@@ -70,7 +73,9 @@ def group_rows(data):
         gaps=[r['id'] for r in members if r['concept']!='draft']
         status=('sans draft' if any(r['concept']=='none' for r in members) else 'à fermer') if gaps else 'drafts décrits'
         rows.append(dict(id=g['id'],label=g['label'],low=min(scores),high=max(scores),
-            points=len(members),gaps=gaps,concept=status))
+            points=len(members),gaps=gaps,concept=status,progress=' ; '.join(
+                r['id']+' : '+data.get('last_batch_progress',{})[r['id']] for r in members
+                if r['id'] in data.get('last_batch_progress',{})) or '—'))
     return rows
 
 
@@ -81,12 +86,12 @@ def compact(data):
         'Les plages indiquent min–max des sous-buts ; aucune moyenne globale.',
         '0% non observé ·25% sous-cas ·50% séparé ·75% couplage partiel ·100% critère satisfait sur son domaine.',
         'Concept : « à fermer » signale au moins un maillon essentiel manquant ; un draft décrit reste hypothétique.','',
-        '| Domaine | Points | Concept | Preuve min–max | Trous conceptuels |',
-        '| --- | ---: | --- | ---: | --- |']
+        '| Domaine | Points | Concept | Preuve min–max | Trous conceptuels | Progrès du dernier lot |',
+        '| --- | ---: | --- | ---: | --- | --- |']
     for r in group_rows(data):
         score=f"{r['low']}%" if r['low']==r['high'] else f"{r['low']}–{r['high']}%"
         gaps=', '.join(r['gaps']) or '—'
-        lines.append(f"| {r['label']} | {r['points']} | {r['concept']} | {score} | {gaps} |")
+        lines.append(f"| {r['label']} | {r['points']} | {r['concept']} | {score} | {gaps} | {r['progress']} |")
     lines+=['','**Trous conceptuels prioritaires au présent bilan :**','']
     for focus in data.get('decision_focus',[]):lines.append('- '+', '.join(focus['items'])+' : '+focus['reason'])
     lines+=['','Voir [draft des outils](FUNCTIONAL_MECHANISMS.md) et [homéostasie des polymères](MACROMOLECULE_HOMEOSTASIS.md).',
@@ -123,6 +128,8 @@ def fine(data):
                 '', '**Portée des preuves :** '+r['scope'],
                 '', '**Références :** '+(', '.join(f'[{p}](../{p})' for p in r['references']) or 'Aucune preuve dynamique.'),
                 '', '**Prochain test / décision :** '+r['next_test'],'']
+            if r['id'] in data.get('last_batch_progress',{}):
+                lines+=['**Progrès du dernier lot :** '+data['last_batch_progress'][r['id']],'']
     lines+=['## Évolution conservée','']
     for h in data['history']:lines.append(f"- Révision{h['revision']} ({h['date']}) : {h['reason']}")
     for r in data['retired']:lines.append(f"- Retiré {r['id']} : {r['reason']} → "+', '.join(r['replaced_by']))

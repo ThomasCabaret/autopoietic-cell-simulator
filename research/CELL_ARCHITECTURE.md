@@ -6,6 +6,12 @@ preuves, voir [la checklist compacte](CELL_CHECKLIST_COMPACT.md) et
 notamment pour le devenir des polymères et l'homéostasie ; aucune nouvelle
 machine de recyclage/régulation n'y est implicitement acquise.
 
+Lot31 : [RV1](BATCH_31.md) réalise sous option une voie locale de rupture puis
+dissociation P/R ; elle ne change pas les trois rôles/gènes cibles ni le budget
+atomique. Pas de protéase ajoutée. Le contrôle de trajet réussit ; efficacité,
+transfert, protection et évacuation restent à tester. La fermeture du réseau
+et la synthèse L ne sont pas établies par cette voie.
+
 ## Cible révisée au lot7 — trois synthétases, trois gènes
 
 ### Atlas de conception et organisation génétique — lot28

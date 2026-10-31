@@ -1,5 +1,23 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+**Clôture RV1 :12/12, zéro erreur, porte refusée, B4 non lancé, aucun calcul
+actif.** Full prouve le chemin matière polymère→P/R→composite→squelette sur2/3
+graines ; protected donne0 réincorporation stricte malgré survie G et activité.
+Ne pas lancer B ou une grille de taux à la main. I0/diversité et L reste le
+plus grand trou conceptuel, maintenant que le recyclage a une réalisation
+locale. Si l'on reprend RV1, motiver une loupe/exposition des fragments et
+mesurer le flux utile plutôt que le nombre de cycles monomères. Lire BATCH_31.md.
+
+Historique du lancement lot31 : RV1 choisit le plus petit contre-test du débouché des polymères :
+rupture de squelette puis dissociation locale P/R réutilisables. Implémentation
+et trajet contrôlé testés ;12 comparaisons et4 transferts conditionnels figés,
+superviseur actif, voir BATCH_31.md et recycling_status.bat. Ne pas changer
+ses taux ni lancer une seconde grille avant lecture. Les démos restent MD2.
+Lire A complète et sa porte, puis B seulement si justifié : matière réellement
+réincorporée, gènes encore présents et catalyse préservée. Après cette décision,
+revenir à I0/diversité et L ou motiver une loupe locale si le recyclage échoue.
+Pas de nouvelle machine ; pas d'homéostasie ni d'export ouvert acquis.
+
 Lot30 : choisir les prochains travaux depuis le [registre global](CELL_CHECKLIST_COMPACT.md)
 et CONCEPT_FIRST.md, pas seulement le dernier test local.42 sous-buts et leurs
 cycles de renouvellement sont explicités. Deux verrous conceptuels immédiats :

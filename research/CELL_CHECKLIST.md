@@ -1,6 +1,6 @@
 # Checklist détaillée — critères et dépendances
 
-Revue 2026-10-31 · révision1. Source : [cell_checklist.json](cell_checklist.json).
+Revue 2026-10-31 · révision2. Source : [cell_checklist.json](cell_checklist.json).
 [Tableau compact](CELL_CHECKLIST_COMPACT.md) · [Échelle et méthode](CONCEPT_FIRST.md).
 
 Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre acyclique de codage. Les cycles de renouvellement sont intentionnels. Une condition initiale construite peut amorcer un sous-cas sans fermer ces cycles.
@@ -539,40 +539,44 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 <a id="W-02"></a>
 ### W-02 — Clivage des polymères et récupération
 
-**Concept : esquisse à fermer · Preuve : 0% (non observé).**
+**Concept : esquisse à fermer · Preuve : 25% (sous-cas étayé).**
 
 **Aboutissement :** Chaînes usées/parasites donnent de vrais monomères réutilisables sans détruire le réseau utile.
 
-**Draft local :** Réversibilité de liaisons, érosion de bouts accessibles ou catalyse locale de clivage.
+**Draft local :** RV1 : taux locaux de rupture G/F sur chaque lien de squelette, protection par appariement ou ligand sur un des deux sites.
 
-**Manque / limite :** Protection des gènes/outils utiles et choix des taux/motifs manquent ; un recycleur éventuel doit être refabriqué.
+**Manque / limite :** Les pertes peuvent détruire les outils et derniers gènes ; sélectivité utile et maintien non démontrés.
 
 **Dépend de :** [F-01](#F-01), [Q-01](#Q-01), [H-06](#H-06) · **Pour renouveler :** [T-04](#T-04)
 
-**Portée des preuves :** Pas de recyclage de squelette G/F dans le candidat.
+**Portée des preuves :** Ruptures locales sous quatre variantes x3 graines ; full réincorpore des composites recyclés2/3, protected0/3. Pas de dégradation sélective ni de validation intégrée.
 
-**Références :** [research/MACROMOLECULE_HOMEOSTASIS.md](../research/MACROMOLECULE_HOMEOSTASIS.md)
+**Références :** [research/MACROMOLECULE_HOMEOSTASIS.md](../research/MACROMOLECULE_HOMEOSTASIS.md), [research/BATCH_31.md](../research/BATCH_31.md)
 
-**Prochain test / décision :** Comparer pertes sur bons outils, fragments et dernières copies avec réutilisation réelle.
+**Prochain test / décision :** Mesurer exposition locale des fragments et flux utile, pas cycles de formation ; aucune grille ni transfert automatique après refus.
+
+**Progrès du dernier lot :** Rupture locale et12 essais achevés ; protection/réemploi non validés.
 
 <a id="W-03"></a>
 ### W-03 — Débouché de la matière composite excédentaire
 
-**Concept : esquisse à fermer · Preuve : 0% (non observé).**
+**Concept : esquisse à fermer · Preuve : 25% (sous-cas étayé).**
 
 **Aboutissement :** La matière retenue peut être recyclée utilement ou rendue perméable puis exportée en excès.
 
-**Draft local :** Après clivage du squelette, dissocier des composites en précurseurs libres exportables.
+**Draft local :** RV1 dissocie un P–R isolé, non apparié et sans ligand ; P/R physiques demeurent disponibles à la catalyse, avec leurs symboles et vitesses.
 
-**Manque / limite :** Le monomère P–R reste retenu ; dissociation de rung et états de sortie non implémentés.
+**Manque / limite :** Réemploi sous mouvement normal, évacuation effective et récupération d’un excès retenu non démontrés ; aucun bord ouvert.
 
 **Dépend de :** [W-02](#W-02), [W-01](#W-01), [M-03](#M-03) · **Pour renouveler :** —
 
-**Portée des preuves :** Aucune voie d’évacuation de l’excès de matière assemblée.
+**Portée des preuves :** Vrais atomes conservés ; full réincorpore des composites à deux atomes issus de polymères2/3 graines, protected0/3 ; recyclage partiel d’un R observé. Pas de sortie ouverte ou de robustesse intégrée.
 
-**Références :** [research/MACROMOLECULE_HOMEOSTASIS.md](../research/MACROMOLECULE_HOMEOSTASIS.md), [simulator/assembly.py](../simulator/assembly.py)
+**Références :** [research/MACROMOLECULE_HOMEOSTASIS.md](../research/MACROMOLECULE_HOMEOSTASIS.md), [simulator/assembly.py](../simulator/assembly.py), [research/BATCH_31.md](../research/BATCH_31.md)
 
-**Prochain test / décision :** Tracer un polymère jusqu’à son réemploi ou à sa matière effectivement sortie.
+**Prochain test / décision :** Distinguer cycle futile, piégeage de fragments et réemploi productif ; transférer seulement un candidat justifié sans assouplir la porte RV1.
+
+**Progrès du dernier lot :** Trajet réel vers le squelette sous RV1 full2/3 ; variante protégée refusée.
 
 <a id="W-04"></a>
 ### W-04 — Pièges, agrégats et parasites
@@ -699,17 +703,19 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Aboutissement :** Les perturbations prévues ne font pas perdre irréversiblement une information/capacité essentielle à fréquence inacceptable.
 
-**Draft local :** Stabilité chimique, protection par occupation/conformation et copies redondantes ; jamais un label de gène sauvé.
+**Draft local :** RV1 compare taux G/F différents et protection des liens dont un site est directement apparié/occupé ; redondance initiale explicite.
 
 **Manque / limite :** Pas de mécanisme sélectif sûr ni de garantie sur un stock rare ; toute dernière information perdue reste perdue.
 
 **Dépend de :** [R-05](#R-05), [W-02](#W-02), [T-04](#T-04) · **Pour renouveler :** —
 
-**Portée des preuves :** Aucune dégradation/récupération complète testée.
+**Portée des preuves :** Protected conserve4/6/4 G001 à1200, mais réincorporation stricte0/0/0 ; quatre copies initiales, pas test de dernier gène ni de récupération sous perturbation.
 
-**Références :** [research/HOMEOSTASIS.md](../research/HOMEOSTASIS.md), [research/MACROMOLECULE_HOMEOSTASIS.md](../research/MACROMOLECULE_HOMEOSTASIS.md)
+**Références :** [research/HOMEOSTASIS.md](../research/HOMEOSTASIS.md), [research/MACROMOLECULE_HOMEOSTASIS.md](../research/MACROMOLECULE_HOMEOSTASIS.md), [research/BATCH_31.md](../research/BATCH_31.md)
 
-**Prochain test / décision :** Coupler perte locale et copie aux faibles effectifs, avec risque d’extinction et censure explicites.
+**Prochain test / décision :** Diagnostiquer le compromis local et mesurer les faibles effectifs seulement après un réemploi utile sous protection.
+
+**Progrès du dernier lot :** G001 présents3/3 à1200, mais compromis protection/recyclage non résolu.
 
 ## Compatibilité et maintien
 
@@ -825,10 +831,13 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** Fonction logicielle validée pour les références présentes, pas pour toutes les futures chimies.
 
-**Références :** [research/BATCH_26.md](../research/BATCH_26.md), [research/BATCH_27.md](../research/BATCH_27.md)
+**Références :** [research/BATCH_26.md](../research/BATCH_26.md), [research/BATCH_27.md](../research/BATCH_27.md), [research/BATCH_31.md](../research/BATCH_31.md)
 
 **Prochain test / décision :** Conserver les contrôles sans observateur, reprise exacte et signatures à chaque changement concerné.
+
+**Progrès du dernier lot :** Census réversible passif, reprise et témoins exacts ; colonne progrès générée.
 
 ## Évolution conservée
 
 - Révision1 (2026-10-31) : Demande utilisateur : inventaire conceptuel complet, interdépendances, homéostasie des polymères et compte rendu calibré par lot ; aucune nouvelle preuve dynamique.
+- Révision2 (2026-10-31) : RV1 réalise clivage/dissociation et réemploi spontané dans2/3 petits bains full ;12 essais achevés, porte protected refusée, aucun transfert ou maintien. W-02/W-03 sous-cas25%, H-06 inchangé0%. Colonne progrès ajoutée.
