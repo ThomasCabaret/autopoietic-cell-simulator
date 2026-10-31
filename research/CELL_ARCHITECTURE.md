@@ -1,5 +1,11 @@
 # Architectures de cellule : fermeture à concevoir, pas encore réalisée
 
+Pour l'inventaire évolutif des sous-buts, dépendances de renouvellement et
+preuves, voir [la checklist compacte](CELL_CHECKLIST_COMPACT.md) et
+[le registre détaillé](CELL_CHECKLIST.md). Ils complètent ce graphe chimique,
+notamment pour le devenir des polymères et l'homéostasie ; aucune nouvelle
+machine de recyclage/régulation n'y est implicitement acquise.
+
 ## Cible révisée au lot7 — trois synthétases, trois gènes
 
 ### Atlas de conception et organisation génétique — lot28

@@ -1,0 +1,1086 @@
+{
+  "schema_version": 1,
+  "revision": 1,
+  "reviewed": "2026-10-31",
+  "candidate": "MD2 / Langevin ; T9E non adopté ; C0B demeure conditionnel",
+  "purpose": "Registre évolutif des capacités nécessaires à une cellule construite maintenue ; les pourcentages sont des paliers de preuve, pas un taux global de réussite.",
+  "out_of_scope": [
+    "origine spontanée de la cellule",
+    "division cellulaire",
+    "immortalité ou survie infinie garantie",
+    "vidéo et relecture avancée"
+  ],
+  "groups": [
+    {
+      "id": "functions",
+      "label": "Lois et fonctions des outils"
+    },
+    {
+      "id": "monomers",
+      "label": "Fabrication N / A"
+    },
+    {
+      "id": "lipids",
+      "label": "Fabrication des lipides"
+    },
+    {
+      "id": "copy",
+      "label": "Copie et information"
+    },
+    {
+      "id": "expression",
+      "label": "Traduction et outils renouvelés"
+    },
+    {
+      "id": "membrane",
+      "label": "Membrane et insertion"
+    },
+    {
+      "id": "transport",
+      "label": "Apports et transport"
+    },
+    {
+      "id": "energy",
+      "label": "Énergie et retour des cycles"
+    },
+    {
+      "id": "waste",
+      "label": "Déchets et recyclage"
+    },
+    {
+      "id": "small",
+      "label": "Homéostasie des petites espèces"
+    },
+    {
+      "id": "large",
+      "label": "Homéostasie des polymères"
+    },
+    {
+      "id": "integration",
+      "label": "Compatibilité et maintien"
+    },
+    {
+      "id": "software",
+      "label": "Calcul et observabilité"
+    }
+  ],
+  "items": [
+    {
+      "id": "F-01",
+      "group": "functions",
+      "label": "Alphabet, ports et lois réutilisables",
+      "done_when": "Un petit jeu fixe de primitives construit tous les constituants et admet les fonctions requises sans règle par enzyme.",
+      "needs": [],
+      "renewal_needs": [],
+      "concept": "gap",
+      "mechanism": "Comparer alphabet P/R+L et modes de liaison/ports génériques ; garder l’identité des fonctions hors des primitives.",
+      "concept_gap": "Unification matérielle et coût des états N/A/L encore indéterminés.",
+      "proof": "subcase",
+      "scope": "Union de modules locaux, pas alphabet commun constructible complet.",
+      "references": [
+        "research/FUNCTIONAL_MECHANISMS.md",
+        "research/LOCALITY_AUDIT.md"
+      ],
+      "next_test": "Chercher un second produit utile puis L sous exactement les mêmes lois.",
+      "essential": true
+    },
+    {
+      "id": "F-02",
+      "group": "functions",
+      "label": "Fonctions distinctes depuis les assemblages",
+      "done_when": "Des assemblages différents donnent des productions distinctes utiles dans un bain commun, avec sélectivité mesurée.",
+      "needs": [
+        "F-01",
+        "F-03"
+      ],
+      "renewal_needs": [
+        "T-04"
+      ],
+      "concept": "gap",
+      "mechanism": "Disposer des sites/ports et des géométries qui favorisent différentes poses de réaction.",
+      "concept_gap": "Aucun couple EN/EA sélectif ni constructeur L sous une chimie fixe ; un assembleur polyvalent ne suffit pas.",
+      "proof": "none",
+      "scope": "Un seul motif P/R, pas bibliothèque sélective.",
+      "references": [
+        "research/FUNCTIONAL_MECHANISMS.md"
+      ],
+      "next_test": "Concevoir le motif minimal et son mauvais produit discriminant avant campagne.",
+      "essential": true
+    },
+    {
+      "id": "F-03",
+      "group": "functions",
+      "label": "Capture, catalyse, libération et réutilisation",
+      "done_when": "L’outil réalise des cycles utiles répétés sans être consommé, empoisonné ou alimenté par un bonus caché.",
+      "needs": [
+        "F-01",
+        "Q-01"
+      ],
+      "renewal_needs": [
+        "T-04"
+      ],
+      "concept": "draft",
+      "mechanism": "Sites saturables voisins recrutent deux réactifs ; jonction locale et changement d’affinité libèrent le produit.",
+      "concept_gap": "Helper de taux explicite ; généralisation aux autres réactions et sélectivité non démontrées.",
+      "proof": "coupled",
+      "scope": "MD2 : outils préparés catalysent des dimères effectivement incorporés ; pas renouvellement autonome.",
+      "references": [
+        "research/BATCH_25_RESULTS.md",
+        "research/BATCH_08.md"
+      ],
+      "next_test": "Comparer bon/mauvais substrat, helper ablaté et produit accumulé.",
+      "essential": true
+    },
+    {
+      "id": "S-01",
+      "group": "monomers",
+      "label": "Précurseurs vers monomères génétiques",
+      "done_when": "Les monomères G/N fabriqués depuis la nourriture déclarée entrent dans des copies utilisables avec le débit requis.",
+      "needs": [
+        "F-01",
+        "F-03",
+        "E-03",
+        "Q-01"
+      ],
+      "renewal_needs": [
+        "T-04"
+      ],
+      "concept": "draft",
+      "mechanism": "Un motif de capture favorise une liaison entre un support génétique libre et un reconnaisseur réel.",
+      "concept_gap": "Nourriture spécialisée P_G ; spécification XYZ et outil sélectif restent ouverts.",
+      "proof": "coupled",
+      "scope": "MD2 : produits catalysés incorporés dans G/F, seulement régime fini et courtes séquences.",
+      "references": [
+        "research/BATCH_25_RESULTS.md",
+        "simulator/assembly.py"
+      ],
+      "next_test": "Tracer la matière jusqu’aux copies puis renouveler le catalyseur sous les mêmes lois.",
+      "essential": true
+    },
+    {
+      "id": "S-02",
+      "group": "monomers",
+      "label": "Précurseurs vers monomères fonctionnels",
+      "done_when": "Les monomères F/A fabriqués entrent dans des outils actifs avec un débit suffisant pour renouveler les capacités.",
+      "needs": [
+        "F-01",
+        "F-03",
+        "E-03",
+        "Q-01"
+      ],
+      "renewal_needs": [
+        "T-04"
+      ],
+      "concept": "draft",
+      "mechanism": "Même assembleur P/R sur support fonctionnel ; le R donne le symbole réellement incorporé.",
+      "concept_gap": "Spécialisation P_F et absence de F nouveau complet dans le grand bain MD2.",
+      "proof": "coupled",
+      "scope": "Fabrication et incorporation partielle dans F sous MD2 ; aucune fermeture de renouvellement.",
+      "references": [
+        "research/BATCH_25_RESULTS.md",
+        "simulator/assembly.py"
+      ],
+      "next_test": "Vérifier que les produits atteignent un outil complet puis actif, pas un stock de fragments.",
+      "essential": true
+    },
+    {
+      "id": "S-03",
+      "group": "monomers",
+      "label": "État chimique correct et transfert du produit",
+      "done_when": "Chaque produit est utilisable directement dans l’étape aval sans conversion ni retouche des lois.",
+      "needs": [
+        "F-01",
+        "S-01",
+        "S-02",
+        "S-04"
+      ],
+      "renewal_needs": [],
+      "concept": "gap",
+      "mechanism": "Les ports et états de liaison du produit déterminent ses interactions et son usage suivant.",
+      "concept_gap": "Transfert P/R partiel connu ; états communs N/A/L et toutes les chaînes aval manquent.",
+      "proof": "subcase",
+      "scope": "C3B1 transfère un sous-réseau ; union finale non testée.",
+      "references": [
+        "research/BATCH_08.md",
+        "research/CELL_INTERACTIONS.md"
+      ],
+      "next_test": "Tester le même produit synthétisé dans la réaction suivante, avec mauvais état isomasse.",
+      "essential": true
+    },
+    {
+      "id": "S-04",
+      "group": "lipids",
+      "label": "Nourriture vers lipides polaires",
+      "done_when": "Des L fabriqués localement depuis les intrants déclarés s’insèrent et renouvellent la frontière.",
+      "needs": [
+        "F-01",
+        "F-02",
+        "F-03",
+        "E-03",
+        "Q-01"
+      ],
+      "renewal_needs": [
+        "T-04"
+      ],
+      "concept": "gap",
+      "mechanism": "Chercher une jonction orientée donnant deux extrémités aux interactions distinctes, sans label de lipide entier.",
+      "concept_gap": "Aucune voie matérielle locale P/R ou XYZ vers H/T choisie ; ni outil ni séquence trouvés.",
+      "proof": "none",
+      "scope": "L seulement fournis au départ.",
+      "references": [
+        "research/FUNCTIONAL_MECHANISMS.md",
+        "research/CELL_ARCHITECTURE.md"
+      ],
+      "next_test": "Dessiner le motif élémentaire, ses produits et le coût d’alphabet avant de le simuler.",
+      "essential": true
+    },
+    {
+      "id": "R-01",
+      "group": "copy",
+      "label": "Reconnaissance et alignement des bases",
+      "done_when": "Les bonnes unités s’apparient localement et permettent les ligations dans les conditions communes.",
+      "needs": [
+        "F-01",
+        "S-01",
+        "E-02",
+        "Q-01"
+      ],
+      "renewal_needs": [],
+      "concept": "draft",
+      "mechanism": "Symboles, orientation, saturation de sites et voisinage lié contrôlent appariement et ligation.",
+      "concept_gap": "Sélectivité en mélange long et cadence numérique à vérifier ; concordance des symboles est une loi choisie.",
+      "proof": "coupled",
+      "scope": "Copies G001 ponctuelles dans le bain MD2.",
+      "references": [
+        "research/BATCH_25_RESULTS.md",
+        "simulator/copy.py"
+      ],
+      "next_test": "Mesurer contacts admissibles, mauvais appariements et ligations utiles en mélange.",
+      "essential": true
+    },
+    {
+      "id": "R-02",
+      "group": "copy",
+      "label": "Finition, bouts et parasites de copie",
+      "done_when": "Des chaînes de la longueur fonctionnelle sont terminées sans domination de fragments ni allongements parasites.",
+      "needs": [
+        "R-01",
+        "S-01",
+        "E-02"
+      ],
+      "renewal_needs": [],
+      "concept": "gap",
+      "mechanism": "Pistes de finition par occupations locales des bouts, recapture ou processivité ; aucune longueur cible lue.",
+      "concept_gap": "Motif efficace non choisi ; les fragments sont de vrais concurrents et T9E n’améliore pas l’expression.",
+      "proof": "subcase",
+      "scope": "Contrôles de garde et fragments observés, pas solution générique.",
+      "references": [
+        "research/BATCH_22.md",
+        "research/BATCH_27.md",
+        "research/FUNCTIONAL_MECHANISMS.md"
+      ],
+      "next_test": "Localiser l’échec de finition avant de choisir une règle ou proposer une machine.",
+      "essential": true
+    },
+    {
+      "id": "R-03",
+      "group": "copy",
+      "label": "Libération et descendants réutilisables",
+      "done_when": "Des copies complètes libérées servent elles-mêmes de matrices sur plusieurs générations pertinentes.",
+      "needs": [
+        "R-02",
+        "Q-02"
+      ],
+      "renewal_needs": [],
+      "concept": "draft",
+      "mechanism": "Liaisons d’appariement réversibles ou cycle externe déclaré ; produits conservent leurs ports.",
+      "concept_gap": "Le cycle externe est une aide ; amplification de longue séquence et réutilisation robuste non obtenues.",
+      "proof": "subcase",
+      "scope": "Courtes copies et filiation observées ; population longue dominée par fragments.",
+      "references": [
+        "research/BATCH_22.md",
+        "research/BATCH_25_RESULTS.md"
+      ],
+      "next_test": "Suivre générations complètes et réserves sans confondre fragments templants et descendants utiles.",
+      "essential": true
+    },
+    {
+      "id": "R-04",
+      "group": "copy",
+      "label": "Cohabitation de tous les gènes",
+      "done_when": "Chaque gène nécessaire est copié dans le même bain sans extinction relative ni chimères envahissantes.",
+      "needs": [
+        "R-03",
+        "R-05",
+        "S-01",
+        "C-01",
+        "H-04"
+      ],
+      "renewal_needs": [],
+      "concept": "gap",
+      "mechanism": "Brins séparés, plusieurs copies, reconnaissance locale et partage des ressources.",
+      "concept_gap": "Pas de séquences fonctionnelles distinctes ni de mécanisme de répartition validé.",
+      "proof": "none",
+      "scope": "MD2 ne contient qu’une séquence001 en plusieurs exemplaires.",
+      "references": [
+        "research/CELL_ARCHITECTURE.md",
+        "research/INTEGRATION_TESTS.json"
+      ],
+      "next_test": "Concevoir le plus petit mélange de gènes distincts avec diagnostics de compétition.",
+      "essential": true
+    },
+    {
+      "id": "R-05",
+      "group": "copy",
+      "label": "Conservation de l’information riche",
+      "done_when": "Séquences et longueurs utiles restent présentes sur le domaine de maintien, erreurs et chimères comptées.",
+      "needs": [
+        "R-01",
+        "R-02",
+        "W-04",
+        "H-06"
+      ],
+      "renewal_needs": [],
+      "concept": "gap",
+      "mechanism": "Sélectivité de motifs et cinétiques locales ; aucun tri selon séquence entière par la dynamique.",
+      "concept_gap": "Fidélité de population, recyclage des parasites et prévention de dérive non fermés.",
+      "proof": "subcase",
+      "scope": "Recensements P10/LT1 montrent fragments et limites ; pas preuve d’information stable.",
+      "references": [
+        "research/BATCH_22.md",
+        "simulator/polymer_population.py"
+      ],
+      "next_test": "Suivre toutes les chaînes par type et longueur sur un horizon fixé, sans filtrage favorable.",
+      "essential": true
+    },
+    {
+      "id": "T-01",
+      "group": "expression",
+      "label": "Transfert G vers chaîne F",
+      "done_when": "Chaque séquence fonctionnelle code sa chaîne F avec le bon ordre sous les lois du bain commun.",
+      "needs": [
+        "R-01",
+        "S-02",
+        "F-01"
+      ],
+      "renewal_needs": [],
+      "concept": "draft",
+      "mechanism": "Recrutement local des monomères F sur G et ligation sur motifs voisins.",
+      "concept_gap": "Un symbole pour un monomère envisagé ; diversité et longueurs réelles non établies.",
+      "proof": "subcase",
+      "scope": "Expression courte démontrée dans C3B1 ; aucun F nouveau complet dans MD2.",
+      "references": [
+        "research/BATCH_08.md",
+        "research/BATCH_25_RESULTS.md"
+      ],
+      "next_test": "Transférer un outil à fonction établie, puis vérifier sa séquence et ses erreurs.",
+      "essential": true
+    },
+    {
+      "id": "T-02",
+      "group": "expression",
+      "label": "Libération, conformation et état actif",
+      "done_when": "La chaîne traduite se libère et atteint une géométrie fonctionnelle au lieu de rester attachée ou agrégée.",
+      "needs": [
+        "T-01",
+        "F-02",
+        "Q-02",
+        "C-01"
+      ],
+      "renewal_needs": [],
+      "concept": "gap",
+      "mechanism": "Occupation d’appariement modifie les préférences locales ; les forces réorganisent la chaîne après libération.",
+      "concept_gap": "Pas de répertoire de repliements ; mêmes préférences angulaires F0/F1 dans MD2.",
+      "proof": "subcase",
+      "scope": "Un outil court historique, pas famille commune de conformations.",
+      "references": [
+        "research/FUNCTIONAL_MECHANISMS.md",
+        "simulator/copy.py"
+      ],
+      "next_test": "Comparer la pose attendue et les événements locaux, puis activité après expression.",
+      "essential": true
+    },
+    {
+      "id": "T-03",
+      "group": "expression",
+      "label": "Outil exprimé vers métabolisme utile",
+      "done_when": "Un outil nouvellement exprimé fabrique un produit effectivement utilisé dans la même chimie.",
+      "needs": [
+        "T-02",
+        "S-03",
+        "F-03"
+      ],
+      "renewal_needs": [],
+      "concept": "draft",
+      "mechanism": "Même géométrie et ports pour outil préparé ou exprimé ; provenance identifiée seulement par l’observateur.",
+      "concept_gap": "Transfert historique limité à un outil ; grand bain actuel sans nouveau F complet.",
+      "proof": "subcase",
+      "scope": "C3B1 avait expression→catalyse→incorporation, pas acquis sous MD2.",
+      "references": [
+        "research/BATCH_08.md",
+        "research/BATCH_25_RESULTS.md"
+      ],
+      "next_test": "Réexprimer l’assemblage retenu et retrouver son activité aval sans intervention externe.",
+      "essential": true
+    },
+    {
+      "id": "T-04",
+      "group": "expression",
+      "label": "Renouvellement de tous les outils",
+      "done_when": "Toute capacité nécessaire, y compris un éventuel régulateur/recycleur, est refabriquée et active depuis la nourriture.",
+      "needs": [
+        "T-03",
+        "R-04",
+        "S-01",
+        "S-02",
+        "S-04",
+        "Q-01"
+      ],
+      "renewal_needs": [],
+      "concept": "gap",
+      "mechanism": "Gènes distincts et chaîne de fabrication fermée, départ construit pour amorcer les cycles.",
+      "concept_gap": "Outils sélectifs et dépendances des nouvelles aides non réalisés ; pas de machine gratuite.",
+      "proof": "none",
+      "scope": "Aucune fermeture complète des rôles EN/EA/EL.",
+      "references": [
+        "research/CELL_ARCHITECTURE.md",
+        "research/FUNCTIONAL_MECHANISMS.md"
+      ],
+      "next_test": "Tracer chaque outil ajouté jusqu’à son propre renouvellement avant adoption.",
+      "essential": true
+    },
+    {
+      "id": "M-01",
+      "group": "membrane",
+      "label": "Assemblage depuis molécules L isolées",
+      "done_when": "Des L individuels s’associent sans ruban préparé sous les mêmes lois que la frontière utile.",
+      "needs": [
+        "F-01",
+        "S-04"
+      ],
+      "renewal_needs": [],
+      "concept": "draft",
+      "mechanism": "Ports latéraux orientés et géométrie locale liée/libre cohérente.",
+      "concept_gap": "Petites V8 et grandes frontières ont encore des paramètres géométriques différents ; L ne sont pas fabriqués.",
+      "proof": "separate",
+      "scope": "V8 MD2 s’assemble à partir de dimères isolés sur trois graines, bain séparé.",
+      "references": [
+        "research/BATCH_25_RESULTS.md"
+      ],
+      "next_test": "Transférer aux L réellement fabriqués et à la géométrie commune requise.",
+      "essential": true
+    },
+    {
+      "id": "M-02",
+      "group": "membrane",
+      "label": "Frontière dimensionnée pour le contenu",
+      "done_when": "Une frontière contenant l’inventaire fonctionnel reste intègre sans petits bourgeons dominants ni fuite fatale.",
+      "needs": [
+        "M-01",
+        "C-02",
+        "E-03"
+      ],
+      "renewal_needs": [],
+      "concept": "draft",
+      "mechanism": "Courbure et souplesse issues des ports/liaisons locaux, départ en grande frontière permis.",
+      "concept_gap": "Inventaire cible inconnu, longueurs non trouvées ; trois bains ne prouvent pas robustesse générale.",
+      "proof": "coupled",
+      "scope": "MD2 grand bain2118 billes, membrane préparée, fermeture partielle.",
+      "references": [
+        "research/BATCH_25_RESULTS.md"
+      ],
+      "next_test": "Tester l’inventaire réellement nécessaire, ouvertures et charge sans consigne de contour.",
+      "essential": true
+    },
+    {
+      "id": "M-03",
+      "group": "membrane",
+      "label": "Perméabilité et rétention sélectives",
+      "done_when": "Apports et petits déchets passent tandis que stocks utiles sont retenus sans adsorption nuisible.",
+      "needs": [
+        "F-01",
+        "M-02"
+      ],
+      "renewal_needs": [],
+      "concept": "draft",
+      "mechanism": "Profil d’interaction dépend de l’état local P–R ; répulsion contre billes et segments L réels.",
+      "concept_gap": "Helper libre/lié explicite ; fuites et périodes de frontière inconnue, déchets futurs non transférés.",
+      "proof": "coupled",
+      "scope": "P/R libres/liés dans MD2 et sondes séparées ; pas étanchéité garantie.",
+      "references": [
+        "research/LOCALITY_AUDIT.md",
+        "research/BATCH_25_RESULTS.md"
+      ],
+      "next_test": "Comparer passages réels par classe et état en conservant les périodes non classables.",
+      "essential": true
+    },
+    {
+      "id": "M-04",
+      "group": "membrane",
+      "label": "Insertion depuis dedans et refermeture",
+      "done_when": "Des L nouvellement fabriqués à l’intérieur intègrent la frontière avec insertion et confinement conjoints.",
+      "needs": [
+        "S-04",
+        "M-02",
+        "M-03"
+      ],
+      "renewal_needs": [],
+      "concept": "gap",
+      "mechanism": "Échange de contacts latéraux locaux, puis relaxation mécanique ; une insertase serait une autre option payante.",
+      "concept_gap": "L actuellement préparés ; une graine à sondes reste dégradée, mécanisme de réparation à diagnostiquer.",
+      "proof": "coupled",
+      "scope": "Insertions rares de L préparés dans MD2 ; pas circuit synthèse L→membrane.",
+      "references": [
+        "research/BATCH_25_RESULTS.md"
+      ],
+      "next_test": "Analyser l’échange défectueux puis transférer de vrais L synthétisés, sans réparer un contour.",
+      "essential": true
+    },
+    {
+      "id": "M-05",
+      "group": "membrane",
+      "label": "Réparation et remplacement de frontière",
+      "done_when": "Les pertes et lésions sont compensées sans empêcher l’échange ni provoquer croissance incontrôlée.",
+      "needs": [
+        "M-04",
+        "H-05",
+        "Q-01"
+      ],
+      "renewal_needs": [
+        "S-04"
+      ],
+      "concept": "gap",
+      "mechanism": "Recapture réversible, échanges et flux équilibrés de constituants L.",
+      "concept_gap": "Réparation sous pertes, synthèse et recyclage L non fermés.",
+      "proof": "subcase",
+      "scope": "Contacts cohérents et recaptures locales, pas maintien de frontière renouvelée.",
+      "references": [
+        "research/BATCH_25_RESULTS.md",
+        "research/HOMEOSTASIS.md"
+      ],
+      "next_test": "Lésion locale prédéfinie avec nouveaux L, mesurer récupération et matière renouvelée.",
+      "essential": true
+    },
+    {
+      "id": "E-01",
+      "group": "transport",
+      "label": "Source et puits au bord extérieur",
+      "done_when": "Injection et absorption au bord conservatrices, flux réglables et nombres variables sans sauvetage interne.",
+      "needs": [
+        "F-01",
+        "O-02"
+      ],
+      "renewal_needs": [],
+      "concept": "draft",
+      "mechanism": "Création de précurseurs dans une couche de bord, diffusion puis absorption lors de la sortie.",
+      "concept_gap": "Convention de bord, tables dynamiques/IDs et calibration non implémentés.",
+      "proof": "none",
+      "scope": "Les bains actuels sont finis et à murs mécaniques.",
+      "references": [
+        "research/OPEN_BOUNDARY.md"
+      ],
+      "next_test": "Boîte sans cellule : flux, bilan matière, retour immédiat au bord et raffinement en dt.",
+      "essential": true
+    },
+    {
+      "id": "E-02",
+      "group": "transport",
+      "label": "Mélange et rencontres de toutes les classes",
+      "done_when": "Les espèces et agrégats atteignent leurs partenaires assez vite en temps réel sans déstabiliser les fonctions.",
+      "needs": [
+        "F-01",
+        "C-02"
+      ],
+      "renewal_needs": [],
+      "concept": "draft",
+      "mechanism": "Langevin inertiel local, forces transmises entre voisins liés, index spatial partagé.",
+      "concept_gap": "Les rencontres de la future bibliothèque et le coût d’un renouvellement complet restent inconnus.",
+      "proof": "coupled",
+      "scope": "Langevin transféré à MD2, benchmarks de mélange séparés.",
+      "references": [
+        "research/BATCH_22.md",
+        "research/BATCH_25_RESULTS.md"
+      ],
+      "next_test": "Mesurer contacts utiles par classe et durée, pas seulement dispersion spatiale.",
+      "essential": true
+    },
+    {
+      "id": "E-03",
+      "group": "transport",
+      "label": "Alimentation accessible et encombrement",
+      "done_when": "Le flux arrivant effectivement aux sites couvre les besoins sans dilution, adsorption ou surcharge incompatibles.",
+      "needs": [
+        "E-01",
+        "E-02",
+        "M-03",
+        "O-01"
+      ],
+      "renewal_needs": [],
+      "concept": "gap",
+      "mechanism": "Diffusion depuis le bord, consommation locale ; gradients admis et mesurés.",
+      "concept_gap": "Dimensionnement du domaine et régime de flux utile non établis pour la cellule cible.",
+      "proof": "subcase",
+      "scope": "Stocks et transport de bains fermés observés ; aucun apport ouvert.",
+      "references": [
+        "research/OPEN_BOUNDARY.md",
+        "research/KINETICS_AND_PERFORMANCE.md"
+      ],
+      "next_test": "Comparer flux entrants utiles, besoins et crowding à lois/précision fixées.",
+      "essential": true
+    },
+    {
+      "id": "Q-01",
+      "group": "energy",
+      "label": "Énergie, activation et aides déclarées",
+      "done_when": "Chaque cycle est alimenté par une ressource ou un forçage explicite avec bilan, aides et déchets cohérents.",
+      "needs": [
+        "F-01",
+        "E-01",
+        "W-01"
+      ],
+      "renewal_needs": [],
+      "concept": "gap",
+      "mechanism": "Choisir ressources activées ou protocole externe figé ; ne pas inventer une autonomie énergétique.",
+      "concept_gap": "E/W de C0B n’est pas le moteur ; travail du cycle et transitions d’affinité non calibrés.",
+      "proof": "subcase",
+      "scope": "Thermostat, activation et cycle externes déclarés ; bilan énergétique complet absent.",
+      "references": [
+        "research/CELL_ARCHITECTURE.md",
+        "research/LOCALITY_AUDIT.md"
+      ],
+      "next_test": "Établir le budget du motif retenu, puis ablater l’aide sans masquer un apport.",
+      "essential": true
+    },
+    {
+      "id": "Q-02",
+      "group": "energy",
+      "label": "Retour local et disponibilité après cycle",
+      "done_when": "Les outils/templates redeviennent utilisables sans reset global dépendant du succès observé.",
+      "needs": [
+        "Q-01",
+        "F-03"
+      ],
+      "renewal_needs": [],
+      "concept": "gap",
+      "mechanism": "Libération par états locaux de liaison et affinités ; cycle imposé seulement s’il est fixé et déclaré.",
+      "concept_gap": "Pas de cycle local générique testé pour toute la future bibliothèque ; aide périodique encore présente.",
+      "proof": "subcase",
+      "scope": "Libération de produit locale connue, libération génétique aidée par cycle externe.",
+      "references": [
+        "research/FUNCTIONAL_MECHANISMS.md",
+        "research/BATCH_08.md"
+      ],
+      "next_test": "Observer un cycle complet capture→produit→libération→réutilisation et compter ses ressources.",
+      "essential": true
+    },
+    {
+      "id": "W-01",
+      "group": "waste",
+      "label": "Petits déchets vers l’extérieur",
+      "done_when": "Les espèces de déchet produites passent puis quittent réellement le domaine sans intoxiquer les sites.",
+      "needs": [
+        "E-01",
+        "M-03",
+        "Q-01"
+      ],
+      "renewal_needs": [],
+      "concept": "draft",
+      "mechanism": "Déchets libres peu affins diffusent à travers la frontière puis vers le puits extérieur.",
+      "concept_gap": "Pas de W réel ni de sortie ouverte ; affinités et gradients à choisir.",
+      "proof": "none",
+      "scope": "Sondes perméables ne prouvent pas l’export d’un déchet métabolique.",
+      "references": [
+        "research/OPEN_BOUNDARY.md",
+        "research/CELL_INTERACTIONS.md"
+      ],
+      "next_test": "Produire le déchet dans la cellule puis mesurer export, stock et inhibition.",
+      "essential": true
+    },
+    {
+      "id": "W-02",
+      "group": "waste",
+      "label": "Clivage des polymères et récupération",
+      "done_when": "Chaînes usées/parasites donnent de vrais monomères réutilisables sans détruire le réseau utile.",
+      "needs": [
+        "F-01",
+        "Q-01",
+        "H-06"
+      ],
+      "renewal_needs": [
+        "T-04"
+      ],
+      "concept": "gap",
+      "mechanism": "Réversibilité de liaisons, érosion de bouts accessibles ou catalyse locale de clivage.",
+      "concept_gap": "Protection des gènes/outils utiles et choix des taux/motifs manquent ; un recycleur éventuel doit être refabriqué.",
+      "proof": "none",
+      "scope": "Pas de recyclage de squelette G/F dans le candidat.",
+      "references": [
+        "research/MACROMOLECULE_HOMEOSTASIS.md"
+      ],
+      "next_test": "Comparer pertes sur bons outils, fragments et dernières copies avec réutilisation réelle.",
+      "essential": true
+    },
+    {
+      "id": "W-03",
+      "group": "waste",
+      "label": "Débouché de la matière composite excédentaire",
+      "done_when": "La matière retenue peut être recyclée utilement ou rendue perméable puis exportée en excès.",
+      "needs": [
+        "W-02",
+        "W-01",
+        "M-03"
+      ],
+      "renewal_needs": [],
+      "concept": "gap",
+      "mechanism": "Après clivage du squelette, dissocier des composites en précurseurs libres exportables.",
+      "concept_gap": "Le monomère P–R reste retenu ; dissociation de rung et états de sortie non implémentés.",
+      "proof": "none",
+      "scope": "Aucune voie d’évacuation de l’excès de matière assemblée.",
+      "references": [
+        "research/MACROMOLECULE_HOMEOSTASIS.md",
+        "simulator/assembly.py"
+      ],
+      "next_test": "Tracer un polymère jusqu’à son réemploi ou à sa matière effectivement sortie.",
+      "essential": true
+    },
+    {
+      "id": "W-04",
+      "group": "waste",
+      "label": "Pièges, agrégats et parasites",
+      "done_when": "Les réactions hors voie ne capturent pas irréversiblement matière, outils ou information essentielle.",
+      "needs": [
+        "C-01",
+        "W-02",
+        "W-03",
+        "R-05"
+      ],
+      "renewal_needs": [],
+      "concept": "gap",
+      "mechanism": "Liaisons/accessibilités réversibles et compétition locale ; aucun tri par identité de bon produit.",
+      "concept_gap": "Parasites templants et agrégats peuvent être aussi protégés que les bons produits.",
+      "proof": "none",
+      "scope": "Fragments/pièges recensés comme échecs ; aucun mécanisme de récupération étayé.",
+      "references": [
+        "research/BATCH_22.md",
+        "research/HOMEOSTASIS.md"
+      ],
+      "next_test": "Introduire des produits hors voie et mesurer extinction, libération et retour de matière.",
+      "essential": true
+    },
+    {
+      "id": "H-01",
+      "group": "small",
+      "label": "Stocks de petites espèces bornés",
+      "done_when": "Chaque précurseur/monomère reste dans un domaine fonctionnel sous alimentation ouverte, même en excès.",
+      "needs": [
+        "E-01",
+        "W-01",
+        "W-03",
+        "F-03"
+      ],
+      "renewal_needs": [],
+      "concept": "draft",
+      "mechanism": "Consommation aval, export des espèces perméables et inhibition réversible par occupation de produit.",
+      "concept_gap": "Les rétroactions de produit ne sont pas implémentées ; saturation de débit seule insuffisante.",
+      "proof": "none",
+      "scope": "Un inventaire fermé et fini ne démontre pas l’homéostasie.",
+      "references": [
+        "research/HOMEOSTASIS.md"
+      ],
+      "next_test": "Excès initial et hausse d’apport figée : vérifier bornes, bilan et activité, avec ablations.",
+      "essential": true
+    },
+    {
+      "id": "H-02",
+      "group": "small",
+      "label": "Récupération après pénurie de petites espèces",
+      "done_when": "Après un manque annoncé, les pools et flux utiles reviennent sans injection interne d’outils ou de gènes.",
+      "needs": [
+        "H-01",
+        "E-03",
+        "T-04"
+      ],
+      "renewal_needs": [],
+      "concept": "draft",
+      "mechanism": "Apport externe rétabli, outils encore actifs et réserves convertibles reprennent la production.",
+      "concept_gap": "Domaine de récupération et coûts de réserve non mesurés.",
+      "proof": "none",
+      "scope": "Aucun essai de récupération sous source/puits réels.",
+      "references": [
+        "research/HOMEOSTASIS.md"
+      ],
+      "next_test": "Arrêt/reprise externe préprogrammé, stocks bas, puis délai de reprise et pertes irréversibles.",
+      "essential": true
+    },
+    {
+      "id": "H-03",
+      "group": "large",
+      "label": "Protéines/polymères F : population bornée et active",
+      "done_when": "Production et pertes de chaque classe F s’équilibrent sans accumulation ni perte d’activité essentielle.",
+      "needs": [
+        "T-04",
+        "W-02",
+        "W-03",
+        "Q-02",
+        "H-01"
+      ],
+      "renewal_needs": [],
+      "concept": "gap",
+      "mechanism": "Frein réversible de l’expression/production de A, combiné au recyclage local et à une protection suffisante.",
+      "concept_gap": "Sélectivité de la rétroaction et conservation des outils utiles non résolues ; séquestrer ne retire pas la matière.",
+      "proof": "none",
+      "scope": "Aucune régulation ni turnover de population F démontré.",
+      "references": [
+        "research/MACROMOLECULE_HOMEOSTASIS.md"
+      ],
+      "next_test": "Surplus puis manque de chaque outil ; suivre activité, nombre/longueur, matière et retour au régime.",
+      "essential": true
+    },
+    {
+      "id": "H-04",
+      "group": "large",
+      "label": "Chaque gène : copies bornées et exploitables",
+      "done_when": "Chaque espèce de gène persiste en copies utilisables bornées avec renouvellement et faible risque d’extinction annoncé.",
+      "needs": [
+        "R-04",
+        "R-05",
+        "W-02",
+        "H-06",
+        "H-01"
+      ],
+      "renewal_needs": [],
+      "concept": "gap",
+      "mechanism": "Frein de copie par contacts réversibles et renouvellement lent de liaisons accessibles ; redondance.",
+      "concept_gap": "Inhiber sans bloquer les matrices, éliminer sans perdre le dernier gène : compromis non fermé.",
+      "proof": "none",
+      "scope": "Stabilité des backbones initiaux n’est pas homéostasie génétique.",
+      "references": [
+        "research/MACROMOLECULE_HOMEOSTASIS.md"
+      ],
+      "next_test": "Perturber séparément chaque population de gènes ; mesurer reprise, parasites et extinction.",
+      "essential": true
+    },
+    {
+      "id": "H-05",
+      "group": "large",
+      "label": "Population L et taille de frontière bornées",
+      "done_when": "Les L libres/insérés et l’aire accessible restent compatibles avec le contenu sans croissance ou effondrement incontrôlés.",
+      "needs": [
+        "S-04",
+        "M-04",
+        "W-03",
+        "H-01"
+      ],
+      "renewal_needs": [],
+      "concept": "gap",
+      "mechanism": "Insertion, dissociation et production modulée par contacts locaux, sans consigne globale de rayon.",
+      "concept_gap": "Pas de production/perte équilibrées de L ni de recyclage compatible avec la barrière.",
+      "proof": "none",
+      "scope": "Un anneau initial stable ne démontre pas ce bilan.",
+      "references": [
+        "research/HOMEOSTASIS.md",
+        "research/CELL_ARCHITECTURE.md"
+      ],
+      "next_test": "Excès/déficit de L et perte locale sous production réelle ; suivre frontière et confinement.",
+      "essential": true
+    },
+    {
+      "id": "H-06",
+      "group": "large",
+      "label": "Protection, redondance et extinction",
+      "done_when": "Les perturbations prévues ne font pas perdre irréversiblement une information/capacité essentielle à fréquence inacceptable.",
+      "needs": [
+        "R-05",
+        "W-02",
+        "T-04"
+      ],
+      "renewal_needs": [],
+      "concept": "gap",
+      "mechanism": "Stabilité chimique, protection par occupation/conformation et copies redondantes ; jamais un label de gène sauvé.",
+      "concept_gap": "Pas de mécanisme sélectif sûr ni de garantie sur un stock rare ; toute dernière information perdue reste perdue.",
+      "proof": "none",
+      "scope": "Aucune dégradation/récupération complète testée.",
+      "references": [
+        "research/HOMEOSTASIS.md",
+        "research/MACROMOLECULE_HOMEOSTASIS.md"
+      ],
+      "next_test": "Coupler perte locale et copie aux faibles effectifs, avec risque d’extinction et censure explicites.",
+      "essential": true
+    },
+    {
+      "id": "C-01",
+      "group": "integration",
+      "label": "Interactions et non-interactions en mélange",
+      "done_when": "Réactions utiles et flux persistent ; collisions parasites restent réversibles ou récupérables sur le domaine visé.",
+      "needs": [
+        "F-02",
+        "R-04",
+        "T-04",
+        "M-03",
+        "W-04"
+      ],
+      "renewal_needs": [],
+      "concept": "gap",
+      "mechanism": "Affinités/ports locaux sélectifs, états liés masquant les sites ; tester les classes étrangères ensemble.",
+      "concept_gap": "Contrats globaux EN/EA/EL et nouveaux produits non validés ; pas d’orthogonalité acquise.",
+      "proof": "subcase",
+      "scope": "Cohabitation d’un sous-réseau MD2, pas de toutes les fonctions.",
+      "references": [
+        "research/CELL_INTERACTIONS.md",
+        "research/INTEGRATION_TESTS.json"
+      ],
+      "next_test": "Ajouter les espèces étrangères avec témoin d’encombrement et suivre séquestration, bons/mauvais produits.",
+      "essential": true
+    },
+    {
+      "id": "C-02",
+      "group": "integration",
+      "label": "Régime physique commun et robustesse numérique",
+      "done_when": "Mêmes lois/température/mouvement pour les fonctions ; résultats compatibles sous raffinement et perturbations annoncés.",
+      "needs": [
+        "F-01",
+        "E-02",
+        "O-02"
+      ],
+      "renewal_needs": [],
+      "concept": "draft",
+      "mechanism": "Paramètres figés, contrôle dt/cadence, thermique et fonctions utiles ; index spatial sans feedback.",
+      "concept_gap": "Raffinements sélectionnés ne prouvent pas convergence globale, futurs assemblages non transférés.",
+      "proof": "subcase",
+      "scope": "N1/LT2/MD2 caractérisent des écarts et régressions ; pas certification complète.",
+      "references": [
+        "research/KINETICS_AND_PERFORMANCE.md",
+        "research/BATCH_25_RESULTS.md"
+      ],
+      "next_test": "Figer horizon et observable physique puis comparer dt, cadence et petites perturbations.",
+      "essential": true
+    },
+    {
+      "id": "C-03",
+      "group": "integration",
+      "label": "Fermeture fonctionnelle et matérielle complète",
+      "done_when": "Tous les composants et outils requis sont réellement fabriqués et utilisables, sans dépendance interne préparée non renouvelée.",
+      "needs": [
+        "F-02",
+        "S-03",
+        "T-04",
+        "M-05",
+        "Q-01",
+        "W-03"
+      ],
+      "renewal_needs": [],
+      "concept": "gap",
+      "mechanism": "Départ construit amorce les cycles ; les fabrications/expressions se soutiennent ensuite sous une même chimie.",
+      "concept_gap": "Le graphe C0B se ferme sous hypothèses, pas les mécanismes réels ; nouveaux aides possibles encore non payés.",
+      "proof": "none",
+      "scope": "Audit de graphe conditionnel seulement, pas résultat moléculaire complet.",
+      "references": [
+        "research/CELL_ARCHITECTURE.md",
+        "research/FUNCTIONAL_MECHANISMS.md"
+      ],
+      "next_test": "Supprimer chaque fonction en contrôle et démontrer les dépendances par matière effectivement renouvelée.",
+      "essential": true
+    },
+    {
+      "id": "C-04",
+      "group": "integration",
+      "label": "Cellule maintenue avec renouvellement",
+      "done_when": "Sur horizon et perturbations fixés, toutes les fonctions et populations utiles restent bornées, récupèrent et se renouvellent depuis les apports.",
+      "needs": [
+        "C-03",
+        "C-01",
+        "C-02",
+        "H-01",
+        "H-02",
+        "H-03",
+        "H-04",
+        "H-05",
+        "H-06",
+        "E-03",
+        "W-01",
+        "O-01",
+        "O-02"
+      ],
+      "renewal_needs": [],
+      "concept": "gap",
+      "mechanism": "Combiner mécanismes fermés et flux ouverts, puis mesurer chaque famille essentielle et ses pertes.",
+      "concept_gap": "Plusieurs mécanismes conceptuels et moléculaires restent ouverts ; aucune estimation de délai ou de nombre de lots garantie.",
+      "proof": "none",
+      "scope": "Pas de cellule autopoïétique maintenue démontrée ; division hors périmètre.",
+      "references": [
+        "research/PROJECT_HEALTH.md",
+        "research/HOMEOSTASIS.md"
+      ],
+      "next_test": "Annoncer plusieurs temps de renouvellement, domaine d’apport, perturbations et critères par espèce.",
+      "essential": true
+    },
+    {
+      "id": "O-01",
+      "group": "software",
+      "label": "Coût réel et capacité du simulateur",
+      "done_when": "Le moteur contient l’inventaire utile et simule les renouvellements à un coût compatible avec les campagnes et la visualisation.",
+      "needs": [
+        "E-02",
+        "C-02"
+      ],
+      "renewal_needs": [],
+      "concept": "draft",
+      "mechanism": "Moteur partagé, arbres spatiaux, profilage et mesures par objectif utile plutôt que vitesse brute.",
+      "concept_gap": "Taille réelle des outils et temps de renouvellement complet inconnus ; pas de promesse inférieure à dix heures.",
+      "proof": "subcase",
+      "scope": "Benchmarks et scènes2118 billes, pas renouvellement cellulaire chronométré.",
+      "references": [
+        "research/KINETICS_AND_PERFORMANCE.md"
+      ],
+      "next_test": "Mesurer temps réel par remplacement utile et coût du flux, sans grossir dt ni ralentir la chimie.",
+      "essential": true
+    },
+    {
+      "id": "O-02",
+      "group": "software",
+      "label": "Observation passive, reproductibilité et inspection",
+      "done_when": "Cas de référence inspectables avec source figée, état/reprise, mesures passives et distinction préparé/nouveau.",
+      "needs": [],
+      "renewal_needs": [],
+      "concept": "draft",
+      "mechanism": "Observateurs séparés du moteur, checkpoints/PRNG, catalogues vérifiés, campagnes et captures ciblées.",
+      "concept_gap": "À réévaluer pour toute nouvelle observable ou nouveau mécanisme ; pas de vidéo/relecture avancée exigée ici.",
+      "proof": "target",
+      "scope": "Fonction logicielle validée pour les références présentes, pas pour toutes les futures chimies.",
+      "references": [
+        "research/BATCH_26.md",
+        "research/BATCH_27.md"
+      ],
+      "next_test": "Conserver les contrôles sans observateur, reprise exacte et signatures à chaque changement concerné.",
+      "essential": true
+    }
+  ],
+  "retired": [],
+  "decision_focus": [
+    {
+      "items": [
+        "F-01",
+        "F-02",
+        "S-04"
+      ],
+      "reason": "Fermer la famille de mécanismes pour des fonctions distinctes et la construction L."
+    },
+    {
+      "items": [
+        "W-02",
+        "W-03",
+        "H-03",
+        "H-04",
+        "H-06"
+      ],
+      "reason": "Fermer régulation, recyclage/export et protection des polymères avant de supposer le maintien possible."
+    }
+  ],
+  "history": [
+    {
+      "revision": 1,
+      "date": "2026-10-31",
+      "reason": "Demande utilisateur : inventaire conceptuel complet, interdépendances, homéostasie des polymères et compte rendu calibré par lot ; aucune nouvelle preuve dynamique."
+    }
+  ]
+}

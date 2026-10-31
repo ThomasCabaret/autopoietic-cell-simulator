@@ -1,5 +1,11 @@
 # Simulateur de chimie locale
 
+**État et sous-buts du projet** : [checklist compacte](research/CELL_CHECKLIST_COMPACT.md)
+et [registre détaillé](research/CELL_CHECKLIST.md), avec sous-buts et dépendances.
+`cell_status.bat` affiche le tableau ; source évolutive et paliers expliqués
+dans [la méthodologie](research/CONCEPT_FIRST.md). Les scores décrivent les preuves,
+pas un pourcentage global de cellule achevée.
+
 **Atlas du métabolisme visé** : double-cliquer sur `metabolism.bat`, ou ouvrir
 [la planche SVG](docs/metabolism/metabolism.svg) / [la page navigable](docs/metabolism/index.html).
 Trois gènes détaillés, apports, synthèses, copie, expression, membrane et déchets ;

@@ -1,5 +1,10 @@
 # Atlas du métabolisme visé
 
+Pour la liste fine des capacités et de leurs trous conceptuels, voir la
+[checklist compacte](../../research/CELL_CHECKLIST_COMPACT.md) et le
+[registre détaillé](../../research/CELL_CHECKLIST.md). La planche illustre les
+flux cibles ; elle ne remplace pas le suivi de recyclage/régulation et des preuves.
+
 Ouvrir [index.html](index.html), ou double-cliquer sur **metabolism.bat** à la
 racine : le lanceur régénère la page avant de l'ouvrir. La page est autonome,
 sans réseau, police téléchargée, serveur, installation web ou télémétrie.

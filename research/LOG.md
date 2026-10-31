@@ -1183,3 +1183,30 @@ et ses métadonnées/CLI ; aucune taille déduite de l'illustration. Contrôles 
 et audit9/9, rendu inspecté. Moteur, scénarios et anciennes preuves inchangés.
 Arbre, priorités, santé/maturité mis à jour ; le recentrage ne vaut pas nouvelle
 activité moléculaire. Sources/documents seulement, commit local sans push.
+
+### Lot30 — couverture conceptuelle, checklist et polymères bornés
+
+31 octobre2026. Demande : avoir un draft qualitatif des sous-buts et leurs
+interdépendances avant réglages techniques, checklist évolutive et bilan compact.
+42 points dans13 domaines, critères propres, dépendances fonctionnelles et de
+renouvellement (cycles admis), lacunes conceptuelles, preuves/portées/références
+et prochain test. Registre JSON canonique, deux vues générées, IDs stables et
+retraits/scissions tracés. Cas I0–I9 reliés pour planification, pas validation.
+
+Concept séparé de la preuve ; pourcentages0/25/50/75/100 sont des paliers de
+preuve, pas temps/effort/probabilité. Plages min–max sans moyenne globale. Les
+échecs recensés seuls ne valent pas mécanisme réussi. Logiciel100% circonscrit
+à ses références, aucun maintien biologique déduit. Les points découverts
+ultérieurement doivent être ajoutés et relus à chaque lot.
+
+Draft MACROMOLECULE_HOMEOSTASIS : inhibition réversible des naissances + pertes/
+recyclage locaux + protection et redondance. Cliver une chaîne laisse ses dimères
+retenus ; réemploi réel ou dissociation en précurseurs exportables nécessaire.
+Dernier gène, mauvaise sélectivité et pièges restent ouverts. Aucun régulateur,
+protéase, nouveau gène ou loi ajouté. Aucun calcul lancé ; pistes non validées.
+
+Méthode intégrée dans AGENTS, DESIGN_PRINCIPLES et le skill local via une mise
+à jour ciblée guidée par skill-creator. Skill valide,13 contrôles registre/audit
+passés, vues et liens cohérents. cell_status.bat affiche ce bilan. Arbre,
+priorités, santé/maturité et liens d'architecture/atlas actualisés. Sources et
+documents versionnés, résultats volumineux locaux ; commit sans push.

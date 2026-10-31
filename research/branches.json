@@ -1119,6 +1119,21 @@
       "evidence": "research/BATCH_29_PLAN.md",
       "results": "research/BATCH_29.md",
       "source": "research/FUNCTIONAL_MECHANISMS.md"
+    },
+    {
+      "id": "RDY1",
+      "parent": "C0B",
+      "related": ["FM1", "I0", "MAP1"],
+      "status": "evolving_requirement_register_and_concept_first_method_delivered",
+      "hypothesis": "Tracking all required functions and renewal dependencies, with conceptual gaps distinct from proof, prevents optimizing pieces of an architecture that has no plausible path to maintenance",
+      "test": "42 stable subgoals,13 domains, reference/dependency checks, prospective I0-I9 planning links, calibrated proof stages without global mean, traceable additions/splits, generated compact/fine views and updated research skill",
+      "cost": "Documentation/schema/rendering and skill update only; zero elementary state, chemical law, tool, gene, particle or campaign added",
+      "counterexample": "A conceptual label is counted as a chemical success, irreversible polymer accumulation hidden by finite inventory, or an averaged percentage masks missing lipid production/recycling",
+      "missing_proof": "Functional diversity, L construction, local polymer regulation/recycling/protection, open flux and integrated homeostasis remain unproved",
+      "evidence": "research/BATCH_30_PLAN.md",
+      "results": "research/BATCH_30.md",
+      "source": "research/cell_checklist.json",
+      "concept_note": "research/MACROMOLECULE_HOMEOSTASIS.md"
     }
   ]
 }

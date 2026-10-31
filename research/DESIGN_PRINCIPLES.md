@@ -46,6 +46,23 @@ helper spécifique reste une dette tant que sa réutilisation n'est pas établie
 
 ## Anticiper les incompatibilités avant un gros investissement
 
+Lire [CONCEPT_FIRST.md](CONCEPT_FIRST.md) et le registre cell_checklist.json
+avant de choisir un lot. Tous les sous-buts nécessaires doivent avoir soit
+un draft causal local, soit un trou explicitement nommé, avec leurs dépendances
+et renouvellement. Une inconnue conceptuelle susceptible d'invalider la cible
+passe devant une optimisation technique routinière ; un petit essai peut aussi
+servir à départager les idées. La checklist peut gagner/scinder des points,
+sans effacer leur historique ni transformer son changement de périmètre en succès.
+À la remise de main, fournir sa synthèse à jour : concept et preuve distincts,
+paliers calibrés, aucune moyenne globale cachant un maillon absent.
+
+L'homéostasie concerne aussi chaque classe de polymères : F actifs, copies de
+chaque gène, L et fragments. Lire MACROMOLECULE_HOMEOSTASIS.md. Plafonner un
+débit, épuiser des stocks fermés ou séquestrer l'excédent ne prouve pas des
+populations bornées et renouvelables. Fermer qualitativement production,
+recyclage/export et protection de l'information avant de supposer ce problème
+résolu. Toute machine ajoutée doit rester produite et renouvelée par le réseau.
+
 La fonction des assemblages est un jalon central, pas une propriété supposée
 pour après la stabilisation génétique. Lire FUNCTIONAL_MECHANISMS.md : avant
 de multiplier des corrections de copie, établir une famille plausible puis

@@ -1,5 +1,12 @@
 # Maturité — mécanique améliorée, renouvellement F toujours non démontré
 
+Lot30 : [suivi par sous-but](CELL_CHECKLIST_COMPACT.md), séparant concepts et
+preuves.42 points, paliers0/25/50/75/100%, min–max par domaine, pas de score
+global ni d'estimation de travail restant. Aucune nouvelle preuve dynamique.
+Les grands polymères ont une esquisse inhibition + pertes/recyclage + protection,
+mais ni sélectivité, ni dernier-gène, ni débouché de la matière ne sont fermés.
+L'homéostasie reste0% de preuve, petites et grandes espèces distinguées.
+
 Lot29 : clarification critique, pas de nouvelle preuve dynamique. Une petite
 chaîne peut recruter P/R, favoriser leur liaison via un helper local et libérer
 les produits ; la bibliothèque séquence→fonctions distinctes reste non prouvée.

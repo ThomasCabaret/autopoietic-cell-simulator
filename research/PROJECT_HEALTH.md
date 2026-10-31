@@ -6,6 +6,16 @@ est une cellule construite qui maintient et refabrique ses composants depuis
 une nourriture simple, avec énergie externe déclarée. Apparition spontanée,
 division et évolution ouverte ne sont pas des conditions ajoutées à cette cible.
 
+Lot30 : le registre42 points rend explicites les inconnues conceptuelles et
+leurs dépendances. L'expressivité I0 et l'homéostasie des macromolécules sont des
+risques structurels ouverts. Une famille qualitative de freinage/recyclage/
+protection est identifiée, mais sa sélectivité et sa fermeture ne sont pas
+établies ; le dernier gène perdu ne se récupère pas par un stock d'enzyme seul.
+Ne pas transformer cette piste en certitude de viabilité ni en date d'achèvement.
+La prochaine décision compare ces trous aux coûts d'un petit contre-test ;
+les réglages peuvent attendre si leur réussite ne réduit aucun risque aval.
+Les scores de preuve par sous-but ne sont pas une estimation du nombre de lots.
+
 Lot29 : l'expressivité des assemblages devient le verrou conceptuel prioritaire.
 Le candidat dispose d'un assembleur P/R générique et d'aides locales, mais pas
 d'une sélectivité EN/EA/L programmable démontrée. Même une copie parfaite ne

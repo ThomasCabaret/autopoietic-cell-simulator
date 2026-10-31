@@ -1,5 +1,15 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot30 : choisir les prochains travaux depuis le [registre global](CELL_CHECKLIST_COMPACT.md)
+et CONCEPT_FIRST.md, pas seulement le dernier test local.42 sous-buts et leurs
+cycles de renouvellement sont explicités. Deux verrous conceptuels immédiats :
+fonctions distinctes/fabrication L (F-01/F-02/S-04), et régulation des polymères
+avec recyclage, débouché de matière et protection des gènes (W-02/W-03/H-03/H-04/H-06).
+MACROMOLECULE_HOMEOSTASIS.md expose des familles de solutions et leurs échecs,
+pas une solution déjà choisie. Pas de nouvelle campagne, protéase ou régulateur.
+Chaque lot actualise les points affectés et ajoute ceux nouvellement découverts,
+puis rend le tableau compact et le prochain test discriminant.
+
 Lot29, priorité corrigée à la demande utilisateur : établir comment des petits
 assemblages peuvent porter des fonctions différentes sous des lois communes,
 avant de reprendre des réglages techniques de duplication. Lire

@@ -22,7 +22,17 @@
       "purpose": "EN/EA/EL selectivity",
       "inputs": "Same X/Y/Z/E bath; each prepared tool then all three",
       "require": "Different assemblies under common laws favor N/A/L bond states respectively",
-      "negative": "No-tool and rearranged/scrambled tools; neither substrate loss nor random product counts as useful synthesis"
+      "negative": "No-tool and rearranged/scrambled tools; neither substrate loss nor random product counts as useful synthesis",
+      "checklist_ids": [
+        "F-01",
+        "F-02",
+        "F-03",
+        "S-01",
+        "S-02",
+        "S-03",
+        "S-04",
+        "T-02"
+      ]
     },
     {
       "id": "I1",
@@ -30,7 +40,18 @@
       "purpose": "Multigene coexistence",
       "inputs": "Three distinct genes, both monomer families and tools",
       "require": "Each gene copied and each tool expressed, with ancestry; count chimeras and starvation",
-      "negative": "Single-gene reference plus each other gene, same total crowding and precursor inventory"
+      "negative": "Single-gene reference plus each other gene, same total crowding and precursor inventory",
+      "checklist_ids": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-04",
+        "R-05",
+        "T-01",
+        "T-04",
+        "H-04",
+        "H-06"
+      ]
     },
     {
       "id": "I2",
@@ -38,7 +59,13 @@
       "purpose": "Large flexible membrane",
       "inputs": "Prepared boundary at calculated radius; same local laws as free lipids",
       "require": "Boundary contains target inventory without budding into preferred tiny rings",
-      "negative": "Existing V8 curvature and near-flat/soft-curvature variants compared explicitly"
+      "negative": "Existing V8 curvature and near-flat/soft-curvature variants compared explicitly",
+      "checklist_ids": [
+        "M-01",
+        "M-02",
+        "C-02",
+        "O-01"
+      ]
     },
     {
       "id": "I3",
@@ -46,7 +73,12 @@
       "purpose": "Insertion from inside",
       "inputs": "Label newly made L analytically, initially inside a saturated prepared ring",
       "require": "Actual incorporation into existing boundary and resealing, not adsorption or a new internal vesicle",
-      "negative": "No exchange; reversible contact exchange; add insertase only if simpler route fails with diagnostic"
+      "negative": "No exchange; reversible contact exchange; add insertase only if simpler route fails with diagnostic",
+      "checklist_ids": [
+        "M-04",
+        "M-05",
+        "S-04"
+      ]
     },
     {
       "id": "I4",
@@ -54,7 +86,15 @@
       "purpose": "State-dependent permeability",
       "inputs": "Free X/Y/Z/E/W and bonded N/A plus polymers against the same boundary",
       "require": "Feed supply and waste removal compatible with low leakage of compounds; all rates measured",
-      "negative": "Fixed primitive-only contact profiles; no dynamic inside/outside labels or particle teleportation"
+      "negative": "Fixed primitive-only contact profiles; no dynamic inside/outside labels or particle teleportation",
+      "checklist_ids": [
+        "M-03",
+        "E-01",
+        "E-02",
+        "E-03",
+        "W-01",
+        "W-03"
+      ]
     },
     {
       "id": "I5",
@@ -62,7 +102,13 @@
       "purpose": "Product release and fouling",
       "inputs": "Each active tool, accumulating product and W, L plus membrane",
       "require": "Repeated turnover without coating genes/tools or permanent product binding",
-      "negative": "No affinity switch versus bond-occupancy release; no per-enzyme product identity shortcut"
+      "negative": "No affinity switch versus bond-occupancy release; no per-enzyme product identity shortcut",
+      "checklist_ids": [
+        "F-03",
+        "Q-01",
+        "Q-02",
+        "T-02"
+      ]
     },
     {
       "id": "I6",
@@ -70,7 +116,13 @@
       "purpose": "Fragments and parasitic polymers",
       "inputs": "Gene/protein fragments, unrelated polymers and wrong-state dimers",
       "require": "Quantify recycling, resource traps and undesired templating while preserving targets",
-      "negative": "No turnover; same loss imposed on complete and incomplete chains"
+      "negative": "No turnover; same loss imposed on complete and incomplete chains",
+      "checklist_ids": [
+        "W-02",
+        "W-03",
+        "W-04",
+        "R-05"
+      ]
     },
     {
       "id": "I7",
@@ -78,7 +130,16 @@
       "purpose": "Sustained replacement",
       "inputs": "Constructed cell with fixed food/fuel conditions and declared losses",
       "require": "New genes, active tools and boundary material replace losses; all three tool roles retained",
-      "negative": "Disable each synthesis or energy input; count total extinction of a fragmented gene separately"
+      "negative": "Disable each synthesis or energy input; count total extinction of a fragmented gene separately",
+      "checklist_ids": [
+        "T-03",
+        "T-04",
+        "S-03",
+        "S-04",
+        "C-03",
+        "C-04",
+        "M-05"
+      ]
     },
     {
       "id": "I8",
@@ -86,7 +147,13 @@
       "purpose": "Transport/metabolic budget",
       "inputs": "Required synthesis flux and measured permeability over actual boundary length",
       "require": "Import, waste export and catalytic capacities jointly exceed measured demand",
-      "negative": "Spatially matched bath without membrane; identical external reservoir conditions"
+      "negative": "Spatially matched bath without membrane; identical external reservoir conditions",
+      "checklist_ids": [
+        "E-03",
+        "O-01",
+        "Q-01",
+        "E-02"
+      ]
     },
     {
       "id": "I9",
@@ -94,7 +161,24 @@
       "purpose": "Weak homeostasis: bounded functional stocks and recoverable perturbations",
       "inputs": "Open constructed cell, fixed local feed/waste conditions, shortages/excesses and predefined loss perturbations",
       "require": "All essential classes stay in declared viable bands, recover after perturbation and maintain material balance without irreversible loss or accumulation",
-      "negative": "Finite closed inventory exhaustion is not homeostasis; ablate proposed feedback or recycling, report extinction and censoring; never restore missing genes externally"
+      "negative": "Finite closed inventory exhaustion is not homeostasis; ablate proposed feedback or recycling, report extinction and censoring; never restore missing genes externally",
+      "checklist_ids": [
+        "H-01",
+        "H-02",
+        "H-03",
+        "H-04",
+        "H-05",
+        "H-06",
+        "C-01",
+        "C-02",
+        "C-03",
+        "C-04",
+        "W-02",
+        "W-03",
+        "O-02"
+      ]
     }
-  ]
+  ],
+  "requirements_registry": "research/cell_checklist.json",
+  "checklist_link_scope": "Planning coverage only, never proof of completed tests"
 }

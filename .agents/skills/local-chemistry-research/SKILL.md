@@ -23,6 +23,22 @@ des lois réutilisables dont les assemblages portent les fonctions.
 
 ## Travail expérimental
 
+### Couverture des sous-buts et priorité conceptuelle
+
+Avant de choisir un lot, lire [CONCEPT_FIRST.md](../../../research/CONCEPT_FIRST.md)
+et le registre `research/cell_checklist.json`. Repérer les sous-buts sans draft
+local ou avec maillon essentiel manquant et leurs dépendances de renouvellement.
+Prioriser les risques conceptuels avant le réglage routinier ; un petit essai
+peut aussi départager les mécanismes. Ne pas considérer production, recyclage
+ou homéostasie des polymères comme acquis parce que les petites espèces sont régulables.
+
+À chaque remise de main, actualiser les points affectés, ajouter/scinder les
+sous-buts découverts avec IDs stables et trace des changements. Régénérer par
+`python experiments/cell_readiness.py build`, vérifier avec `check` et donner
+la synthèse compacte (ou lignes modifiées avec lien au tableau complet).
+Séparer statut conceptuel et paliers de preuve calibrés ; aucune moyenne globale,
+aucun pourcentage arbitraire d'effort restant. La checklist ne pilote jamais les lois.
+
 ### Contrat de conception à préserver entre agents
 
 Lire [les principes de conception](../../../research/DESIGN_PRINCIPLES.md)
@@ -122,9 +138,9 @@ Reprendre `research/branches.json` et `research/LOG.md` avant d'explorer. Ajoute
 une branche liée à son parent : hypothèse, changement minimal, résultat attendu,
 contre-exemple recherché et preuve qui manque. Conserver les échecs.
 
-Tester en priorité les deux familles demandées : copie d'information binaire
+Conserver comme références les deux familles initiales : copie d'information binaire
 dans des polymères de sous-unités composites ; courbure, association et fermeture
-de sous-unités composites en vésicules 2D. Chercher les primitives communes.
+de sous-unités composites en vésicules 2D. Chercher les primitives communes ; les priorités suivent le registre global, sans masquer un verrou aval.
 
 La cible élargie comprend aussi la traduction directe vers un second alphabet
 de polymères fonctionnels, leur organisation dépendante de la séquence, et la

@@ -45,6 +45,11 @@
 - At research handoff assess project health, future blockers and design effort
   in `research/PROJECT_HEALTH.md`. Distinguish automatic trials from conceptual
   changes; set decisive milestones and revisit a candidate that stops converging.
+- Follow `research/CONCEPT_FIRST.md` and maintain `research/cell_checklist.json`.
+  Inspect all required subgoals and renewal dependencies before choosing a lot;
+  prioritize unresolved conceptual mechanisms before routine tuning. Regenerate
+  the fine/compact checklist at handoff, report calibrated proof stages and
+  concept gaps separately, and preserve stable IDs when adding or splitting goals.
 - Keep the causal architecture, interaction/noninteraction contracts and particle
   budget current. Include imports, waste, membrane insertion, every added tool's
   gene and renewal, off-target reactions and mixed-environment controls. A closed

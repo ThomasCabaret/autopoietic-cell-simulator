@@ -1,5 +1,10 @@
 # Homéostasie faible : obligation de maintien, pas encore réalisée
 
+Complément lot30 : [homéostasie des polymères](MACROMOLECULE_HOMEOSTASIS.md)
+et points H-01 à H-06/W-01 à W-04 du [registre](CELL_CHECKLIST.md).
+Production freinée, clivage/recyclage et protection sont des pistes à fermer,
+pas des mécanismes acquis. Les F, chaque gène et L doivent être suivis séparément.
+
 27 octobre2026, intention précisée par l'utilisateur. Il ne faut pas une consigne
 exacte pour chaque concentration, mais un domaine où les stocks fonctionnels
 restent bornés et récupèrent après perturbation sans disparition irréversible
@@ -59,7 +64,8 @@ stationnaire doit concerner toutes les fonctions, pas une moyenne dominée par
 les lipides. La croissance seule n'est pas un renouvellement.
 
 État : obligation explicite et futurs tests, aucune homéostasie dynamique validée.
-Avant de construire un régulateur, terminer le diagnostic J2 du transport/domaine.
+Le prochain choix suit désormais le registre CONCEPT_FIRST ; l'ancienne priorité
+J2 de transport/domaine est historique, pas une consigne de relancer ses essais.
 
 Précision ultérieure de l'utilisateur : l'environnement final peut créer des
 précurseurs au bord du domaine et absorber les particules sortantes. Voir
