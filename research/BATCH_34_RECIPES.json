@@ -1,0 +1,6 @@
+{
+  "campaign": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\renewal_campaigns\\campaign_20261031T110654015735Z",
+  "recipe": "research/campaign_recipes/MIN1R_20261031T110654015735Z",
+  "plan": "research/BATCH_34_PLAN.md",
+  "note": "Configurations and frozen code only; raw results local, no automatic follow-up."
+}
