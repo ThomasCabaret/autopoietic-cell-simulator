@@ -7,7 +7,7 @@ cross-contact permeability; observer contours are not available to reactions.
 import numpy as np
 from .copy import CopyChemistry
 from .membrane_bath import MembraneBathChemistry, MembraneBathObserver, barrier_force, in_polygon
-from .observations import CopyObserver, components, area
+from .observations import make_copy_observer, components, area
 
 DEFAULTS=dict(temperature=.08,membrane={},genetics={},include_membrane=True,
               packet_offset=[27.5,0.],bound_contact=.55,bound_barrier_stiffness=80.,world_box=None)
@@ -153,7 +153,7 @@ class CoupledBathObserver:
         self.inside_counts={};self.valid_samples=0
 
     def __call__(self,time,c,events):
-        g=CopyObserver(genetics_config(self.config));g.record_trajectory=False
+        g=make_copy_observer(genetics_config(self.config));g.record_trajectory=False
         if self.genetic_state is not None:g.__dict__.update(self.genetic_state)
         c.genetics.observe(g,time,events);self.genetic_state=g.__dict__
         self.times.append(float(time))
@@ -201,7 +201,7 @@ class CoupledBathObserver:
         if getattr(self,'record_trajectory',True):self.frames.append(c.pos.copy())
 
     def summary(self):
-        g=CopyObserver(genetics_config(self.config));g.__dict__.update(self.genetic_state)
+        g=make_copy_observer(genetics_config(self.config));g.__dict__.update(self.genetic_state)
         gm=g.summary()
         membrane=None
         if self.membrane_state is not None:

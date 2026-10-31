@@ -4,6 +4,12 @@
 def live_observations(observer,observed_time=None):
     state=observer.__dict__;rows=[];measured=None
     genetic=state.get('genetic_state') if 'genetic_state' in state else state
+    if genetic and genetic.get('recycle_mode') and genetic.get('last'):
+        last=genetic['last'];measured=last['time']
+        rows.extend([('G cibles présents (initiaux inclus)',last['target_chains']['G']),
+            ('F cibles présents (initiaux inclus)',last['target_chains']['F']),
+            ('Réassemblages après recyclage',last['polymer_reassemblies']),
+            ('Réincorporations après recyclage',last['recycled_incorporations'])])
     if genetic and 'detached' in genetic:
         measured=genetic['history'][-1]['time'] if genetic.get('history') else None
         rows.extend([('Nouveaux G libérés',len(genetic['detached'])),
@@ -33,4 +39,4 @@ def live_observations(observer,observed_time=None):
         measured=state['history'][-1]['time'] if state.get('history') else None
         rows.append(('Contours fermés observés',len(state['closed_sets'])))
     return dict(time=measured if observed_time is None else observed_time,rows=rows,
-        note='Mesures des observateurs existants ; structures initiales exclues des nouveaux G/F. Ce ne sont pas des contrôles de dynamique.')
+        note='Mesures passives. Les compteurs nouveaux G/F excluent les structures initiales ; le census réversible les inclut explicitement.')

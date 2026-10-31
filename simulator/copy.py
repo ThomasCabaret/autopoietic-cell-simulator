@@ -6,6 +6,7 @@ from .substrates import Substrates
 from .dual_faces import react as dual_react,reflected_force
 from .assembly import RungAssembly
 from .initial import groups,place
+from .turnover import BondTurnover
 
 class CopyChemistry:
     def __init__(self, config, rng):
@@ -76,8 +77,11 @@ class CopyChemistry:
         self.copy_pairing=np.full(n,-1,dtype=np.int64)
         self.back_pairs=np.empty((0,2),dtype=np.int64)
         self.assembly=RungAssembly(self,rng) if config.get('constructible',False) else None
+        self.turnover=BondTurnover(config['bond_turnover']) if 'bond_turnover' in config else None
 
     def react(self, time, dt, neighbors):
+        if self.turnover is not None:self.turnover.react(self,time,dt)
+        assembly_start=len(self.assembly.events) if self.turnover is not None else 0
         if self.assembly is not None:self.assembly.react(self,time,dt,neighbors)
         if self.config.get('dual_faces',False):
             return self._finish(dt,neighbors,dual_react(self,time,dt,neighbors))
@@ -173,6 +177,7 @@ class CopyChemistry:
             if rng.random() < -np.expm1(-config.get("ligation_rate", 12.) * interval):
                 edges.add(pair)
                 events.append({"source": (i, j), "formed": pair})
+        if self.turnover is not None:self.turnover.formed(self,time,assembly_start,events)
         return self._finish(dt,neighbors,events)
 
     def _finish(self,dt,neighbors,events):
@@ -265,12 +270,14 @@ class CopyChemistry:
         if self.config.get('dual_faces',False):state['copy_pairing']=self.copy_pairing.tolist()
         if self.food is not None: state['food']=self.food.export()
         if self.assembly is not None:state['assembly']=self.assembly.export(self)
+        if self.turnover is not None:state['turnover_events']=self.turnover.events
         return state
 
     def restore(self, state):
         self.edges = {tuple(p) for p in state["edges"]}
         self.pairing = np.array(state["pairing"], dtype=np.int64)
         if self.assembly is not None:self.assembly.restore(self,state['assembly'])
+        if self.turnover is not None:self.turnover.events=list(state['turnover_events'])
         if self.config.get('dual_faces',False):
             self.copy_pairing=np.array(state['copy_pairing'],dtype=np.int64)
             self.back_pairs=np.array([(i,int(j)) for i,j in enumerate(self.copy_pairing) if j>i],dtype=np.int64).reshape(-1,2)

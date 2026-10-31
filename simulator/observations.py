@@ -2,6 +2,12 @@
 import numpy as np
 from .initial import groups
 
+def make_copy_observer(config):
+    if 'bond_turnover' in config:
+        from .recycling_observations import RecyclingObserver
+        return RecyclingObserver(config)
+    return CopyObserver(config)
+
 def components(n, edges):
     adj = [[] for _ in range(n)]
     for i, j in edges:
@@ -54,6 +60,8 @@ def area(points):
 
 class CopyObserver:
     def __init__(self, config):
+        if 'bond_turnover' in config:
+            raise ValueError('Reversible bonds require make_copy_observer, not irreversible lineage')
         self.target = config.get("sequence", "001011")
         self.initial_count = len(self.target)
         self.initial_groups=groups(config) if config.get('initial_assemblies') else []
