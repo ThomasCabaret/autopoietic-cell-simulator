@@ -93,7 +93,9 @@ def validate_job(job):
     return cfg
 
 
-def step(job):
+def step(job,collect_fn=None,decide_fn=None):
+    collect_fn=collect if collect_fn is None else collect_fn
+    decide_fn=decide if decide_fn is None else decide_fn
     cfg=validate_job(job);state=read(job/'state.json');stage=state['stage'];folder=Path(cfg['campaigns'][stage])
     def finish(phase,**values):
         state.update(phase=phase,updated=time.time(),**values);write(job/'state.json',state);return phase
@@ -105,7 +107,7 @@ def step(job):
         return finish('needs_attention',reason='24-hour wall budget reached; checkpoint pause requested, no further tests')
     if stage==1:
         evidence=Path(state['report_0'])
-        if digest(evidence)!=state['report_0_sha256'] or not decide(read(evidence)['rows'])['run_transfer']:
+        if digest(evidence)!=state['report_0_sha256'] or not decide_fn(read(evidence)['rows'])['run_transfer']:
             raise ValueError('Selected transfer gate evidence changed')
     snap=campaign_status(folder)
     if snap['counts']['failed'] or (any(snap['counts'][k] for k in ('paused','interrupted')) and not state.get('explicit_resume')):
@@ -113,8 +115,8 @@ def step(job):
         return finish('needs_attention',reason='Inspect errors/pauses/interruptions; no automatic retry')
     if snap['controller_active'] or any(t['worker_active'] for t in snap['tasks']):return finish(f'running_{stage}')
     if snap['counts']['complete']==len(snap['tasks']):
-        report=collect(folder)
-        if stage==0:report['decision']=decide(report['rows'])
+        report=collect_fn(folder)
+        if stage==0:report['decision']=decide_fn(report['rows'])
         dest=job/f'report_{stage}.json';write(dest,report)
         state[f'report_{stage}']=str(dest);state[f'report_{stage}_sha256']=digest(dest)
         if stage==1 or not report['decision']['run_transfer']:
@@ -132,10 +134,10 @@ def step(job):
     return finish('launching',launched=time.time(),controller_pid=p.pid)
 
 
-def run(job):
+def run(job,collect_fn=None,decide_fn=None):
     with lock(job/'followup.lock'):
         while True:
-            try:phase=step(job)
+            try:phase=step(job,collect_fn,decide_fn)
             except Exception:
                 import traceback
                 state=read(job/'state.json');state.update(phase='needs_attention',error=traceback.format_exc(),updated=time.time())
