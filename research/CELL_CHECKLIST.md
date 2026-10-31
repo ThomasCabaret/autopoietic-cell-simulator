@@ -1,6 +1,6 @@
 # Checklist détaillée — critères et dépendances
 
-Revue 2026-10-31 · révision3. Source : [cell_checklist.json](cell_checklist.json).
+Revue 2026-10-31 · révision4. Source : [cell_checklist.json](cell_checklist.json).
 [Tableau compact](CELL_CHECKLIST_COMPACT.md) · [Échelle et méthode](CONCEPT_FIRST.md).
 
 Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre acyclique de codage. Les cycles de renouvellement sont intentionnels. Une condition initiale construite peut amorcer un sous-cas sans fermer ces cycles.
@@ -58,13 +58,11 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Dépend de :** [F-01](#F-01), [Q-01](#Q-01) · **Pour renouveler :** [T-04](#T-04)
 
-**Portée des preuves :** MD2 : produits d’outils préparés incorporés ; MIN1 outil F01 minimal testé sur3 graines sans modifier les lois, expression/transfert en cours.
+**Portée des preuves :** MD2 avec outils préparés et MIN1R petit bain avec remplaçants entièrement reconstruits actifs3/3 ; un seul assembleur P/R, pas maintien cellulaire.
 
-**Références :** [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/BATCH_08.md](../research/BATCH_08.md), [research/BATCH_32.md](../research/BATCH_32.md)
+**Références :** [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/BATCH_08.md](../research/BATCH_08.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_34.md](../research/BATCH_34.md)
 
 **Prochain test / décision :** Lire MIN1 B complet, comparer produits effectivement utilisés des F exprimés, puis transfert dans le grand bain.
-
-**Progrès du dernier lot :** F01 préparé réalise des cycles G/F sur3 graines, plus court que F001 ; aucune loi ajoutée.
 
 ## Fabrication N / A
 
@@ -145,8 +143,6 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 **Références :** [research/FUNCTIONAL_MECHANISMS.md](../research/FUNCTIONAL_MECHANISMS.md), [research/CELL_ARCHITECTURE.md](../research/CELL_ARCHITECTURE.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/LIPID_CONSTRUCTION_DRAFT.md](../research/LIPID_CONSTRUCTION_DRAFT.md)
 
 **Prochain test / décision :** Choisir le candidat déclaré puis fabriquer de vrais H–T et les transférer aux mêmes ports MD2 sans conversion ; nouvelle pince seulement après proposition/accord.
-
-**Progrès du dernier lot :** Draft H/T→L via même co-recruteur, coût et contre-tests précisés ; non implémenté.
 
 ## Copie et information
 
@@ -250,7 +246,7 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 <a id="T-01"></a>
 ### T-01 — Transfert G vers chaîne F
 
-**Concept : draft décrit · Preuve : 25% (sous-cas étayé).**
+**Concept : draft décrit · Preuve : 50% (test séparé).**
 
 **Aboutissement :** Chaque séquence fonctionnelle code sa chaîne F avec le bon ordre sous les lois du bain commun.
 
@@ -260,13 +256,13 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Dépend de :** [R-01](#R-01), [S-02](#S-02), [F-01](#F-01) · **Pour renouveler :** —
 
-**Portée des preuves :** Expression courte démontrée dans C3B1 ; aucun F nouveau complet dans MD2.
+**Portée des preuves :** MIN1R sous MD2 sans membrane :11/13/12 F01 nouveaux avec outil construit ; MIN1 sans F initial reste fragile. Aucune capacité générale de traduction longue démontrée.
 
-**Références :** [research/BATCH_08.md](../research/BATCH_08.md), [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/BATCH_32.md](../research/BATCH_32.md)
+**Références :** [research/BATCH_08.md](../research/BATCH_08.md), [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_33.md](../research/BATCH_33.md), [research/BATCH_34.md](../research/BATCH_34.md)
 
-**Prochain test / décision :** Lire les9 essais MIN1 B courts/référence/sans gène, avant adoption de01 ou transfert membranaire.
+**Prochain test / décision :** Transférer le gène01/outilF01 au bain avec membrane et comparer aux préparations MD2 ; préserver le test d’information riche.
 
-**Progrès du dernier lot :** Comparaison d’expression01/001/sans gène lancée après porte A passée.
+**Progrès du dernier lot :** MIN1R : expression courte utile3/3, palier25→50 ; MIN1 sans outil reste non robuste.
 
 <a id="T-02"></a>
 ### T-02 — Libération, conformation et état actif
@@ -290,7 +286,7 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 <a id="T-03"></a>
 ### T-03 — Outil exprimé vers métabolisme utile
 
-**Concept : draft décrit · Preuve : 25% (sous-cas étayé).**
+**Concept : draft décrit · Preuve : 75% (couplage partiel).**
 
 **Aboutissement :** Un outil nouvellement exprimé fabrique un produit effectivement utilisé dans la même chimie.
 
@@ -300,13 +296,13 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Dépend de :** [T-02](#T-02), [S-03](#S-03), [F-03](#F-03) · **Pour renouveler :** —
 
-**Portée des preuves :** C3B1 avait expression→catalyse→incorporation, pas acquis sous MD2.
+**Portée des preuves :** MIN1R :30 F entièrement refaits depuis nourriture sur3 graines active,8 de ces remplaçants catalysent30 opérations ; boucle locale sous mêmes lois, sans membrane ni pertes.
 
-**Références :** [research/BATCH_08.md](../research/BATCH_08.md), [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/BATCH_32.md](../research/BATCH_32.md)
+**Références :** [research/BATCH_08.md](../research/BATCH_08.md), [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_33.md](../research/BATCH_33.md), [research/BATCH_34.md](../research/BATCH_34.md)
 
-**Prochain test / décision :** MIN1 B : F exprimé avant l’opération, produits G/F identifiés puis réellement incorporés, contrôle sans gène négatif.
+**Prochain test / décision :** Vérifier le même remplacement entier actif dans le bain avec L, puis sous pertes et flux déclarés.
 
-**Progrès du dernier lot :** Analyse passive des vrais produits G/F et de leur usage ; transfert B à lire.
+**Progrès du dernier lot :** F exprimés depuis vrais produits alimentaires actifs3/3, couplage limité25→75.
 
 <a id="T-04"></a>
 ### T-04 — Renouvellement de tous les outils
@@ -319,13 +315,34 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Manque / limite :** Outils sélectifs et dépendances des nouvelles aides non réalisés ; pas de machine gratuite.
 
-**Dépend de :** [T-03](#T-03), [R-04](#R-04), [S-01](#S-01), [S-02](#S-02), [S-04](#S-04), [Q-01](#Q-01) · **Pour renouveler :** —
+**Dépend de :** [T-03](#T-03), [R-04](#R-04), [S-01](#S-01), [S-02](#S-02), [S-04](#S-04), [Q-01](#Q-01), [T-05](#T-05) · **Pour renouveler :** —
 
 **Portée des preuves :** Aucune fermeture complète des rôles EN/EA/EL.
 
 **Références :** [research/CELL_ARCHITECTURE.md](../research/CELL_ARCHITECTURE.md), [research/FUNCTIONAL_MECHANISMS.md](../research/FUNCTIONAL_MECHANISMS.md)
 
 **Prochain test / décision :** Tracer chaque outil ajouté jusqu’à son propre renouvellement avant adoption.
+
+<a id="T-05"></a>
+### T-05 — Production de remplaçants fonctionnels du co-recruteur
+
+**Concept : draft décrit · Preuve : 50% (test séparé).**
+
+**Aboutissement :** Des F entièrement reconstruits depuis la nourriture maintiennent la fonction lors de pertes déclarées du stock initial, avec témoins et transfert aux conditions requises.
+
+**Draft local :** Un F construit fabrique P/R composites ; leur expression sur G produit un F dont chaque composite vient de nourriture, puis ses deux sites catalysent à nouveau.
+
+**Manque / limite :** Production de remplaçants seulement : ancien F non retiré ici, maintien sous pertes/membrane, énergie et robustesse de population non établis. Tous les autres outils relèvent de T-04.
+
+**Dépend de :** [T-03](#T-03), [S-02](#S-02), [S-03](#S-03) · **Pour renouveler :** [R-01](#R-01), [S-01](#S-01), [Q-01](#Q-01)
+
+**Portée des preuves :** MIN1R9/9 terminé : active10/10/10 F entièrement refaits dont5/2/1 actifs ; split3/5/0 dont1/3/0 actifs ; nogene négatif3/3. Pas membrane/pertes/régime ouvert.
+
+**Références :** [research/BATCH_34.md](../research/BATCH_34.md), [research/BATCH_34_PLAN.md](../research/BATCH_34_PLAN.md)
+
+**Prochain test / décision :** Transfert du même gène/outil court dans le bain membranaire MD2, témoins et produits inchangés ; ensuite pertes/flux.
+
+**Progrès du dernier lot :** 9/9 essais ;10/10/10 F entièrement refaits dont5/2/1 actifs, palier séparé50.
 
 ## Membrane et insertion
 
@@ -833,14 +850,15 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** Fonction logicielle validée pour les références présentes, pas pour toutes les futures chimies.
 
-**Références :** [research/BATCH_26.md](../research/BATCH_26.md), [research/BATCH_27.md](../research/BATCH_27.md), [research/BATCH_31.md](../research/BATCH_31.md), [research/BATCH_32.md](../research/BATCH_32.md)
+**Références :** [research/BATCH_26.md](../research/BATCH_26.md), [research/BATCH_27.md](../research/BATCH_27.md), [research/BATCH_31.md](../research/BATCH_31.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_33.md](../research/BATCH_33.md)
 
 **Prochain test / décision :** Conserver les contrôles sans observateur, reprise exacte et signatures à chaque changement concerné.
 
-**Progrès du dernier lot :** Analyse reproductible des flux par origine/famille et cohortes enchaînées.
+**Progrès du dernier lot :** Loupe bornée passive, reprise et deux rejeux exacts ; figure locale vérifiée.
 
 ## Évolution conservée
 
 - Révision1 (2026-10-31) : Demande utilisateur : inventaire conceptuel complet, interdépendances, homéostasie des polymères et compte rendu calibré par lot ; aucune nouvelle preuve dynamique.
 - Révision2 (2026-10-31) : RV1 réalise clivage/dissociation et réemploi spontané dans2/3 petits bains full ;12 essais achevés, porte protected refusée, aucun transfert ou maintien. W-02/W-03 sous-cas25%, H-06 inchangé0%. Colonne progrès ajoutée.
 - Révision3 (2026-10-31) : MIN1 simplifie l’outil P/R existant à deux unités sous lois MD2 : A12/12 et porte passée ; expression B9 en cours. Draft matériel L ajouté, aucune nouvelle fonction intégrée ou hausse de score anticipée.
+- Révision4 (2026-10-31) : MIN1 clos, deux rejeux exacts et loupe bornée ; MIN1R9/9 passe avec F entièrement neufs actifs3/3, sans loi ajoutée. T-05 ajouté puis séparé50%, T-01 court50%, T-03 couplage limité75%. Membrane/L/pertes/information riche restent ouverts.

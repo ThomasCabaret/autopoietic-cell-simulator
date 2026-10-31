@@ -1,6 +1,6 @@
 # Checklist compacte — cellule construite maintenue
 
-Révision 3 · revue 2026-10-31 · 42 sous-buts · MD2 / Langevin inchangé ; MIN1 A passé, expression B en cours ; RV1 non adopté
+Révision 4 · revue 2026-10-31 · 43 sous-buts · MD2 / Langevin inchangé ; MIN1R terminé : renouvellement local actif3/3, transfert membranaire à tester
 
 **Pourcentages = paliers de preuve**, pas effort accompli ni probabilité de réussite. Les plages indiquent min–max des sous-buts ; aucune moyenne globale.
 0% non observé ·25% sous-cas ·50% séparé ·75% couplage partiel ·100% critère satisfait sur son domaine.
@@ -8,11 +8,11 @@ Concept : « à fermer » signale au moins un maillon essentiel manquant ; un dr
 
 | Domaine | Points | Concept | Preuve min–max | Trous conceptuels | Progrès du dernier lot |
 | --- | ---: | --- | ---: | --- | --- |
-| Lois et fonctions des outils | 3 | à fermer | 0–75% | F-01, F-02 | F-03 : F01 préparé réalise des cycles G/F sur3 graines, plus court que F001 ; aucune loi ajoutée. |
+| Lois et fonctions des outils | 3 | à fermer | 0–75% | F-01, F-02 | — |
 | Fabrication N / A | 3 | à fermer | 25–75% | S-03 | — |
-| Fabrication des lipides | 1 | à fermer | 0% | S-04 | S-04 : Draft H/T→L via même co-recruteur, coût et contre-tests précisés ; non implémenté. |
+| Fabrication des lipides | 1 | à fermer | 0% | S-04 | — |
 | Copie et information | 5 | à fermer | 0–75% | R-02, R-04, R-05 | — |
-| Traduction et outils renouvelés | 4 | à fermer | 0–25% | T-02, T-04 | T-01 : Comparaison d’expression01/001/sans gène lancée après porte A passée. ; T-03 : Analyse passive des vrais produits G/F et de leur usage ; transfert B à lire. |
+| Traduction et outils renouvelés | 5 | à fermer | 0–75% | T-02, T-04 | T-01 : MIN1R : expression courte utile3/3, palier25→50 ; MIN1 sans outil reste non robuste. ; T-03 : F exprimés depuis vrais produits alimentaires actifs3/3, couplage limité25→75. ; T-05 : 9/9 essais ;10/10/10 F entièrement refaits dont5/2/1 actifs, palier séparé50. |
 | Membrane et insertion | 5 | à fermer | 25–75% | M-04, M-05 | — |
 | Apports et transport | 3 | à fermer | 0–75% | E-03 | — |
 | Énergie et retour des cycles | 2 | à fermer | 25% | Q-01, Q-02 | — |
@@ -20,7 +20,7 @@ Concept : « à fermer » signale au moins un maillon essentiel manquant ; un dr
 | Homéostasie des petites espèces | 2 | drafts décrits | 0% | — | — |
 | Homéostasie des polymères | 4 | à fermer | 0% | H-03, H-04, H-05, H-06 | — |
 | Compatibilité et maintien | 4 | à fermer | 0–25% | C-01, C-03, C-04 | — |
-| Calcul et observabilité | 2 | drafts décrits | 25–100% | — | O-02 : Analyse reproductible des flux par origine/famille et cohortes enchaînées. |
+| Calcul et observabilité | 2 | drafts décrits | 25–100% | — | O-02 : Loupe bornée passive, reprise et deux rejeux exacts ; figure locale vérifiée. |
 
 **Trous conceptuels prioritaires au présent bilan :**
 

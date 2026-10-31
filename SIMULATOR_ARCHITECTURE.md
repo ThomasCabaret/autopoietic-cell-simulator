@@ -1,5 +1,16 @@
 # Architecture du simulateur partagé
 
+## Loupe génétique passive optionnelle
+
+Les plans de campagne peuvent activer `ligation_loupe: {}` avec `genetic_audit`
+sur `copy`. L'observateur sélectionne au plus deux motifs locaux pour lire
+positions/liaisons/géométrie et événements réels dans une fenêtre bornée ; les
+captures et leur progression sont reprises avec l'audit. Il utilise ses propres
+calculs de voisinage et ne renvoie rien à la chimie. Aucun nouveau scheduler
+ni mode de rendu ; les captures restent des données locales de diagnostic.
+MIN1D vérifie égalité exacte des états physiques et métriques aux originaux.
+L'option est absente des démos ; voir research/BATCH_33.md.
+
 ## Recyclage local exploratoire RV1
 
 `copy` et la partie génétique de `coupled_bath` acceptent l'option

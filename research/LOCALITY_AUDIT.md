@@ -1,5 +1,15 @@
 # Fidélité à l'objectif : localité et risques de pilotage
 
+## MIN1D / MIN1R — observer puis tester un départ construit
+
+La loupe parcourt des liens pour **choisir une observation** ; ces données ne
+dirigent aucune réaction. Deux rejeux bit-exacts confirment sa passivité, avec
+captures/état bornés et checkpointables. Aucun contour/gène entier n'est lu
+par les lois. MIN1R change seulement les liens préparés du même outil F01,
+avec témoins de mêmes atomes/symboles/positions/PRNG. Les critères de F entièrement
+neuf et actif sont calculés après coup depuis les vrais IDs et événements.
+Coût chimique nul, aucune machine supplémentaire, aucune particule créée/supprimée.
+
 ## MIN1 — contrôle de taille du même assembleur
 
 Aucun hook ou observateur de simulation modifié : F01/F001/sites séparés sont

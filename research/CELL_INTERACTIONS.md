@@ -4,6 +4,12 @@
 [campagnes futures](INTEGRATION_TESTS.json). Les lignes ci-dessous sont des
 **obligations à tester**, pas une matrice déjà implémentée et validée.
 
+MIN1D/33 n'ajoute aucune interaction : il mesure les contacts simples/doubles
+et la géométrie réelle. MIN1R/34 ne change que les liens initiaux de F01/G01,
+avec matériel et positions identiques. Les outils entièrement nouveaux sont
+vérifiés sur leur activité ultérieure ; les fonctions L et les flux de bord
+restent absents de ce petit bain. Aucune nouvelle protéine ni loi croisée.
+
 MIN1/lot32 : petits assemblages du même co-recruteur, mêmes lois MD2. Les
 produits G/F sont suivis par IDs puis usage réel, pas par simple proximité.
 Le draft H/T→L explicite le risque de mauvais couples P–T/H–R et de séquestration

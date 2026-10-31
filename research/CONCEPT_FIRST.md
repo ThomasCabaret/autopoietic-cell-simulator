@@ -100,3 +100,14 @@ campagne lancée doivent rester distingués d'un transfert dynamique obtenu.
 Les mesures globales de concentration, nombre de gènes/protéines, activité,
 longueur ou stocks ne peuvent jamais devenir des commandes du simulateur.
 Le registre et ses paliers sont de l'observation/planification seulement.
+
+## Amorçage et remplacement matériel
+
+Un départ sans enzyme est un test d'amorçage, plus fort que le départ construit
+autorisé. Son échec ne suffit pas à rejeter le maintien d'une cellule déjà
+équipée. Réciproquement, la persistance d'un outil préparé ou l'expression depuis
+des monomères fournis ne prouve pas sa reconstruction depuis la nourriture.
+Compter un remplaçant entier dont tous les constituants composites sont
+réellement nouveaux, puis une opération fonctionnelle après sa construction
+et libération. Distinguer renouvellement ponctuel, sous pertes et maintien
+intégré ; conserver témoins déliés et sans gène, même s'ils réussissent à amorcer.

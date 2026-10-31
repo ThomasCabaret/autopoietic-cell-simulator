@@ -1289,3 +1289,49 @@ Lecture partielle suivante B4/9 : short graine1 sans F nouveau à1200, contrôle
 nogene graine0 négatif. Ne pas cacher ce cas derrière short graine0 positif.
 Amorçage sans F construit est un test plus fort que le départ cellulaire
 autorisé avec outils ; le renouvellement reste distinct et non présumé.
+
+### Lot33 — clôture MIN1, loupe et diagnostic exact
+
+MIN1 finit21/21 sans erreur ; B expression utile1/3 court et1/3 long, aucun F
+entièrement refait et aucune réincorporation F issue de F exprimé. Critères
+refusés, négatifs sans gène3/3. Pas de sélection rétroactive d'un succès.
+
+Deux rejeux sélectionnés01 graines0/1, sources et positions/liaisons/chimie/
+vitesses/cache/PRNG/métriques primaires exactement égaux aux originaux.
+Loupe passive optionnelle bornée à deux cibles,1 unité de temps,24 billes,
+128 enregistrements, état repris. Positif : doubleF à916,28, éligible916,37,
+ligation916,40 ; exposition0,13 dont0,04 admissible. Négatif : aucune doubleF
+pré-tick,1789,61 temps-arête de simpleF. Cibles manquées au sein d'un tick
+possibles ; diagnostic choisi, pas nouvelle estimation du taux de succès.
+
+Aucune correction des lois justifiée par ces cas.182 tests complets passent
+et trois préfixes MD2 exacts sont conservés ; catalogue recertifié. Figure
+code-générée inspectée, raw captures locales, commit8cbba6d sans push.
+
+### Lot34 — MIN1R, vrai renouvellement depuis un départ construit
+
+Nouveau plan après arrêt/lecture de MIN1 et MIN1D, pas prolongation de leur
+budget. Neuf essais active/split/nogene ×3, mêmes150 billes/symboles/positions/
+PRNG, seuls liens initiaux différents. Un F01 utilise deux des six composites
+déjà présents ; aucune nouvelle enzyme/loi/helper/gène. Sources/checkpoints
+figés, deux travailleurs, pas de troisième étape ou réglage automatique.
+
+Premiers4/9 : active graine0 G9/F11 nouveaux,10 F entièrement refaits dont5
+actifs ; split graine0 G9/F6,3 refaits dont1 actif ; nogene0 négatif ; active1
+G12/F13,10 refaits dont2 actifs. Deux cas positifs ne remplacent pas la lecture
+des neuf essais. Métabolisme→matériel d'un F entier→activité ultérieure est
+vérifié par vrais IDs et naissances antérieures ; aucun ancien outil compté.
+Trois tests du protocole supplémentaires passent, commitd5a00d7 sans push.
+
+T-05 ajouté pour ce renouvellement du co-recruteur, distinct de T-04 tous rôles.
+Checklist43 points et liens I7, priorités/santé/localité/architecture/méthode
+actualisés ; L, membrane couplée, pertes/homéostasie et information riche ouverts.
+Suivi renewal_status.bat, analyse review_renewal.py ; pas de changement des démos.
+
+Clôture MIN1R au même lot :9/9 sans erreur, contrôleur inactif et critères
+passés. Active G9/12/8, F11/13/12, entièrement refaits10/10/10 dont actifs5/2/1
+pour12/9/9 opérations. Split entiers3/5/0, actifs1/3/0 ; nogene négatif3/3.
+Figures et bilan final ajoutés, aucune promotion automatique ou nouvelle loi.
+T-05 séparé50%, T-01 court50%, T-03 couplage limité75% ; T-04 tous rôles et
+homéostasie restent0. Prochain transfert : même boucle dans le bain membranaire,
+puis L et pertes/flux. Les lectures partielles précédentes sont conservées.

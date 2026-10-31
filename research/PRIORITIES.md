@@ -1,5 +1,23 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+**Clôture MIN1R :9/9, zéro erreur, critères passés, aucun calcul actif.** Des
+F01 entièrement refaits depuis nourriture sont actifs3/3 sous MD2 dans le
+petit bain ; split réussit2/3, nogene négatif3/3. Prochain jalon : transférer
+le même gène/outil court dans le bain membranaire MD2 sans nouvelles lois et
+avec mesure de remplaçants entiers. Puis fabrication L selon le draft et
+compatibilité pertes/flux, sans appeler maintien cette boucle en stocks fermés.
+L'expressivité F-02 et l'information riche restent ouvertes. Voir BATCH_34.md.
+
+Lots33–34 : MIN1 terminé21/21, B non robuste et aucun F entièrement refait.
+Deux rejeux exacts avec loupe pointent la rareté du double motif F, pas une
+ligation lente après ce motif. MIN1R compare maintenant départ avec un F01,
+mêmes sites déliés et sans gène :9 essais figés, aucun changement de lois.
+Première graine positive vers un F entièrement neuf actif ; lire toute la
+cohorte via renewal_status.bat avant transfert au grand bain ou nouvelle loi.
+T-05 distingue ce remplacement ponctuel de T-04, tous les outils de la cellule.
+L/déchets/homéostasie/information riche restent ouverts. Aucun autre balayage
+ni nouvelle machine ajouté. Les passages « B en cours » ci-dessous sont historiques.
+
 Lot32 MIN1 : A12/12 achevé, zéro erreur, F01 préparé fabrique G/F sous les
 lois MD2, plus petit que F001 ; témoins déliés/bonus ablaté négatifs. Porte
 passée, B9 expression01/001/sans gène en cours. Lire minimal_tool_status.bat

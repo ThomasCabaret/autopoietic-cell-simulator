@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "revision": 3,
+  "revision": 4,
   "reviewed": "2026-10-31",
-  "candidate": "MD2 / Langevin inchangé ; MIN1 A passé, expression B en cours ; RV1 non adopté",
+  "candidate": "MD2 / Langevin inchangé ; MIN1R terminé : renouvellement local actif3/3, transfert membranaire à tester",
   "purpose": "Registre évolutif des capacités nécessaires à une cellule construite maintenue ; les pourcentages sont des paliers de preuve, pas un taux global de réussite.",
   "out_of_scope": [
     "origine spontanée de la cellule",
@@ -125,11 +125,12 @@
       "mechanism": "Sites saturables voisins recrutent deux réactifs ; jonction locale et changement d’affinité libèrent le produit.",
       "concept_gap": "Helper de taux explicite ; généralisation aux autres réactions et sélectivité non démontrées.",
       "proof": "coupled",
-      "scope": "MD2 : produits d’outils préparés incorporés ; MIN1 outil F01 minimal testé sur3 graines sans modifier les lois, expression/transfert en cours.",
+      "scope": "MD2 avec outils préparés et MIN1R petit bain avec remplaçants entièrement reconstruits actifs3/3 ; un seul assembleur P/R, pas maintien cellulaire.",
       "references": [
         "research/BATCH_25_RESULTS.md",
         "research/BATCH_08.md",
-        "research/BATCH_32.md"
+        "research/BATCH_32.md",
+        "research/BATCH_34.md"
       ],
       "next_test": "Lire MIN1 B complet, comparer produits effectivement utilisés des F exprimés, puis transfert dans le grand bain.",
       "essential": true
@@ -372,14 +373,16 @@
       "concept": "draft",
       "mechanism": "Recrutement local des monomères F sur G et ligation sur motifs voisins.",
       "concept_gap": "Un symbole pour un monomère envisagé ; diversité et longueurs réelles non établies.",
-      "proof": "subcase",
-      "scope": "Expression courte démontrée dans C3B1 ; aucun F nouveau complet dans MD2.",
+      "proof": "separate",
+      "scope": "MIN1R sous MD2 sans membrane :11/13/12 F01 nouveaux avec outil construit ; MIN1 sans F initial reste fragile. Aucune capacité générale de traduction longue démontrée.",
       "references": [
         "research/BATCH_08.md",
         "research/BATCH_25_RESULTS.md",
-        "research/BATCH_32.md"
+        "research/BATCH_32.md",
+        "research/BATCH_33.md",
+        "research/BATCH_34.md"
       ],
-      "next_test": "Lire les9 essais MIN1 B courts/référence/sans gène, avant adoption de01 ou transfert membranaire.",
+      "next_test": "Transférer le gène01/outilF01 au bain avec membrane et comparer aux préparations MD2 ; préserver le test d’information riche.",
       "essential": true
     },
     {
@@ -420,14 +423,16 @@
       "concept": "draft",
       "mechanism": "Même géométrie et ports pour outil préparé ou exprimé ; provenance identifiée seulement par l’observateur.",
       "concept_gap": "Transfert historique limité à un outil ; grand bain actuel sans nouveau F complet.",
-      "proof": "subcase",
-      "scope": "C3B1 avait expression→catalyse→incorporation, pas acquis sous MD2.",
+      "proof": "coupled",
+      "scope": "MIN1R :30 F entièrement refaits depuis nourriture sur3 graines active,8 de ces remplaçants catalysent30 opérations ; boucle locale sous mêmes lois, sans membrane ni pertes.",
       "references": [
         "research/BATCH_08.md",
         "research/BATCH_25_RESULTS.md",
-        "research/BATCH_32.md"
+        "research/BATCH_32.md",
+        "research/BATCH_33.md",
+        "research/BATCH_34.md"
       ],
-      "next_test": "MIN1 B : F exprimé avant l’opération, produits G/F identifiés puis réellement incorporés, contrôle sans gène négatif.",
+      "next_test": "Vérifier le même remplacement entier actif dans le bain avec L, puis sous pertes et flux déclarés.",
       "essential": true
     },
     {
@@ -441,7 +446,8 @@
         "S-01",
         "S-02",
         "S-04",
-        "Q-01"
+        "Q-01",
+        "T-05"
       ],
       "renewal_needs": [],
       "concept": "gap",
@@ -454,6 +460,33 @@
         "research/FUNCTIONAL_MECHANISMS.md"
       ],
       "next_test": "Tracer chaque outil ajouté jusqu’à son propre renouvellement avant adoption.",
+      "essential": true
+    },
+    {
+      "id": "T-05",
+      "group": "expression",
+      "label": "Production de remplaçants fonctionnels du co-recruteur",
+      "done_when": "Des F entièrement reconstruits depuis la nourriture maintiennent la fonction lors de pertes déclarées du stock initial, avec témoins et transfert aux conditions requises.",
+      "needs": [
+        "T-03",
+        "S-02",
+        "S-03"
+      ],
+      "renewal_needs": [
+        "R-01",
+        "S-01",
+        "Q-01"
+      ],
+      "concept": "draft",
+      "mechanism": "Un F construit fabrique P/R composites ; leur expression sur G produit un F dont chaque composite vient de nourriture, puis ses deux sites catalysent à nouveau.",
+      "concept_gap": "Production de remplaçants seulement : ancien F non retiré ici, maintien sous pertes/membrane, énergie et robustesse de population non établis. Tous les autres outils relèvent de T-04.",
+      "proof": "separate",
+      "scope": "MIN1R9/9 terminé : active10/10/10 F entièrement refaits dont5/2/1 actifs ; split3/5/0 dont1/3/0 actifs ; nogene négatif3/3. Pas membrane/pertes/régime ouvert.",
+      "references": [
+        "research/BATCH_34.md",
+        "research/BATCH_34_PLAN.md"
+      ],
+      "next_test": "Transfert du même gène/outil court dans le bain membranaire MD2, témoins et produits inchangés ; ensuite pertes/flux.",
       "essential": true
     },
     {
@@ -1061,7 +1094,8 @@
         "research/BATCH_26.md",
         "research/BATCH_27.md",
         "research/BATCH_31.md",
-        "research/BATCH_32.md"
+        "research/BATCH_32.md",
+        "research/BATCH_33.md"
       ],
       "next_test": "Conserver les contrôles sans observateur, reprise exacte et signatures à chaque changement concerné.",
       "essential": true
@@ -1103,13 +1137,17 @@
       "revision": 3,
       "date": "2026-10-31",
       "reason": "MIN1 simplifie l’outil P/R existant à deux unités sous lois MD2 : A12/12 et porte passée ; expression B9 en cours. Draft matériel L ajouté, aucune nouvelle fonction intégrée ou hausse de score anticipée."
+    },
+    {
+      "revision": 4,
+      "date": "2026-10-31",
+      "reason": "MIN1 clos, deux rejeux exacts et loupe bornée ; MIN1R9/9 passe avec F entièrement neufs actifs3/3, sans loi ajoutée. T-05 ajouté puis séparé50%, T-01 court50%, T-03 couplage limité75%. Membrane/L/pertes/information riche restent ouverts."
     }
   ],
   "last_batch_progress": {
-    "F-03": "F01 préparé réalise des cycles G/F sur3 graines, plus court que F001 ; aucune loi ajoutée.",
-    "T-01": "Comparaison d’expression01/001/sans gène lancée après porte A passée.",
-    "T-03": "Analyse passive des vrais produits G/F et de leur usage ; transfert B à lire.",
-    "S-04": "Draft H/T→L via même co-recruteur, coût et contre-tests précisés ; non implémenté.",
-    "O-02": "Analyse reproductible des flux par origine/famille et cohortes enchaînées."
+    "T-01": "MIN1R : expression courte utile3/3, palier25→50 ; MIN1 sans outil reste non robuste.",
+    "T-03": "F exprimés depuis vrais produits alimentaires actifs3/3, couplage limité25→75.",
+    "T-05": "9/9 essais ;10/10/10 F entièrement refaits dont5/2/1 actifs, palier séparé50.",
+    "O-02": "Loupe bornée passive, reprise et deux rejeux exacts ; figure locale vérifiée."
   }
 }

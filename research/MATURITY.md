@@ -1,4 +1,21 @@
-# Maturité — mécanique améliorée, renouvellement F toujours non démontré
+# Maturité — reconstruction complète locale, maintien intégré non démontré
+
+Clôture MIN1R :9/9 sans erreur. Active3/3 produit10/10/10 F entièrement neufs,
+dont5/2/1 catalysent ensuite ; split2/3 également positif, nogene négatif3/3.
+T-05 testé séparément50%, T-01 court50%, T-03 couplage limité75%, pas100% de
+la cellule. Progrès matériel réel sans primitive ajoutée ; aucun test de ce
+renouvellement avec membrane/pertes/flux, aucune homéostasie ou synthèse L.
+L'outil initial persiste : production de remplaçants actifs, pas mesure du
+remplacement sous pertes ou d'un demi-renouvellement de la population.
+Toutes campagnes du présent lot sont finies ; les mentions « en cours » suivent
+l'historique et ne sont pas le statut actuel.
+
+Lots33–34 : MIN1 achevé, amorçage utile1/3 short et1/3 long, sans remplacement
+entier. Diagnostic microscopique passif exact : attente de double capture,
+puis liaison rapide dans le positif. MIN1R déjà construit fournit un premier
+remplacement entier actif depuis nourriture dans une graine, témoin délié
+également positif plus tard. T-05 nouveau sous-cas25%, pas maintien ni robustesse
+avant cohortes complètes. Aucun nouveau succès intégré dans les démos MD2.
 
 Lot32 : fonction P/R existante simplifiée sous MD2, outil F01 préparé efficace
 sur3 graines ; A12/12, témoins séparés/sans bonus sans production à400. Les

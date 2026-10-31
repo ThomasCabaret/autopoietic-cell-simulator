@@ -168,3 +168,13 @@ si nécessaire. « Temporaire » concerne l'instrumentation active : les preuves
 capturées restent locales, ignorées par Git et conservées selon le contrat du
 projet, avec recettes et conclusions versionnées. Cette recommandation ne crée
 ni obligation de film à chaque lot ni nouveau mécanisme chimique validé.
+
+Implémentation MIN1D/lot33 : option de campagne `ligation_loupe` avec GKA sur
+copy. Deux premiers doubles motifs F **visibles avant tick**,1 unité de temps,
+cadence0,02,24 billes proches,128 enregistrements maximum et reprise exacte.
+Les expositions typées continuent en mémoire bornée, les positions ne sont pas
+enregistrées hors cible. Le négatif sans motif ne produit aucune image.
+Deux rejeux vérifient tous états/métriques primaires égaux aux baselines ;
+les captures sont des exemples choisis, pas une fréquence et peuvent manquer
+un événement entièrement contenu dans un tick. Après utilisation, désactiver
+l'option dans les campagnes où sa question n'est plus nécessaire.

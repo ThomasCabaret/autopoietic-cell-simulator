@@ -1177,17 +1177,54 @@
         "T9",
         "RV1"
       ],
-      "status": "twelve_prepared_trials_complete_gate_passed_nine_expression_trials_running",
+      "status": "all21_complete_B_screen_refused_no_robust_bootstrap",
       "hypothesis": "Two adjacent F sites suffice for existing P/R assembly; shorter genetic construction may transfer useful metabolism under unchanged MD2 laws",
       "test": "A long/short/split/no_boost x3 seeds at400 with equal material; gate then B01/001/nogene x3 at1200; no rate search or automatic promotion",
       "cost": "Zero new elementary type, state, port, rate, law, tool or gene; same-function connectivity controls, passive post-hoc product routes. Explicit no_boost ablation only.",
       "counterexample": "Short only works at ideal contacts, no product from one family, no reuse, failure to express or feed downstream despite better prepared-tool counts",
-      "missing_proof": "B pending, no integrated membrane transfer, no long information capacity, diverse functions, L synthesis, regulation or RV1 compatibility",
+      "missing_proof": "Robust bootstrap, whole material tool replacement, L, rich information, membrane transfer and regulation remain open; see MIN1D/MIN1R.",
       "evidence": "research/BATCH_32_PLAN.md",
       "results": "research/BATCH_32.md",
       "recipe": "research/BATCH_32_RECIPES.json",
-      "conclusion": "A12/12 error-free: short products56/60/59 vs long52/48/52; split/no_boost0/0/0. All short seeds G/F and repeated use; gate passes and B9 starts. Stocks finite, not stationary efficiency.",
+      "conclusion": "A12 passes; B9 complete, expression useful1/3 short and1/3 long, no food-derived whole F replacement or expressed F product incorporation. Nogene negative3/3. No demo promotion.",
       "health_gate": "Read all B then stop for interpretation, no third phase. Reuse existing assembler for H/T is a draft with explicit compatibility/energy/software costs; extra specialized tool requires approval."
+    },
+    {
+      "id": "MIN1D",
+      "parent": "MIN1",
+      "related": [
+        "T9",
+        "GUI3"
+      ],
+      "status": "two_selected_replays_exact_contact_bottleneck_diagnosed",
+      "hypothesis": "Failed expression may reflect missing double capture rather than a broken ligation geometry; inspect bounded real motifs before changing laws",
+      "test": "Exactly replay positive short0 and negative short1 at1200; compare every primary metric/physical state and record first2 pre-tick F double motifs with bounded context",
+      "cost": "Observation only, zero chemical primitive/state/port/rate/tool/gene; bounded128 records,24 atoms,1 time unit, existing GKA extended opt-in",
+      "counterexample": "Diagnostic changes RNG/physical trajectory, hides outside forces, assumes absence of pre-tick target means impossible reaction or uses observations to repair geometry",
+      "missing_proof": "Selected cases only, no frequency inference; actual rare-contact causes and population maintenance not fully resolved",
+      "evidence": "research/BATCH_33_PLAN.md",
+      "results": "research/BATCH_33.md",
+      "recipe": "research/BATCH_33_RECIPES.json",
+      "conclusion": "Both exact. Short0 first double at916.28, ligates916.40; F double exposure0.13 and eligible0.04 vs0/0 short1. New laws not justified from these cases."
+    },
+    {
+      "id": "MIN1R",
+      "parent": "MIN1",
+      "related": [
+        "MIN1D",
+        "MD2",
+        "C3B1"
+      ],
+      "status": "all9_complete_screen_passed_whole_food_derived_tool_active_three_seeds",
+      "hypothesis": "Existing constructed F01 supplies monomers needed for whole active replacement without changing laws, distinct from enzyme-free bootstrap",
+      "test": "active/split/nogene x3 seeds at1200, same150 atoms/symbols/positions/RNG; only initial F/G edges differ; require whole food-derived F then actual activity",
+      "cost": "No new law/type/state/port/rate/tool/gene; one existing F01 bonded using two of six prepared F monomers, sources frozen and matched controls",
+      "counterexample": "Only initial tool remains active, copied F uses prepared monomers, no new whole tool activity, nogene false positive or success requires unbounded food",
+      "missing_proof": "No membrane transfer, imposed losses, open food flux, long information capacity, L synthesis or homeostasis. One P/R function only.",
+      "evidence": "research/BATCH_34_PLAN.md",
+      "results": "research/BATCH_34.md",
+      "recipe": "research/BATCH_34_RECIPES.json",
+      "conclusion": "All9 complete no errors: active G9/12/8 F11/13/12 whole-food-F10/10/10 active5/2/1 operations12/9/9; split whole3/5/0 active1/3/0; nogene negative3/3. Criteria pass, no active runs or auto promotion."
     }
   ]
 }

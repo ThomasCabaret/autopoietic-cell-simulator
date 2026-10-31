@@ -1,5 +1,11 @@
 # Architectures de cellule : fermeture à concevoir, pas encore réalisée
 
+Lots33–34 : MIN1 ne prouve pas l'amorçage robuste sans F. MIN1R repart d'un
+seul F01 construit, matière inchangée, et mesure des F entièrement refaits
+depuis P/R libres puis actifs. Premières graines positives sous MD2 sans
+membrane ; ne pas confondre cette petite boucle avec la fermeture C0B ou le
+maintien intégré. T-05 couvre ce remplacement, T-04 tous les outils dont L.
+
 Lot32 : MIN1 compare le même co-recruteur sous sa forme minimale F01 et son
 gène01, sans ajouter une fonction. L'activité préparée passe3/3 ; expression
 et produits réellement utilisés sont en cours. Le draft

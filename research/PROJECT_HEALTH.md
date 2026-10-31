@@ -6,6 +6,26 @@ est une cellule construite qui maintient et refabrique ses composants depuis
 une nourriture simple, avec énergie externe déclarée. Apparition spontanée,
 division et évolution ouverte ne sont pas des conditions ajoutées à cette cible.
 
+Clôture MIN1R : boucler matériellement le même petit outil fonctionne3/3 avec
+départ construit, sans nouvelle règle ; contrôle sans gène négatif3/3. Cela
+réduit un vrai risque aval et donne un jalon de transfert concret, pas une
+preuve de tout le réseau. Le départ délié réussit aussi2/3 : ne pas imposer
+artificiellement la nécessité de la protéine préparée. Prochaine décision
+sur membrane commune, puis L et renouvellement sous pertes/flux. Deux choix
+de préparation et un diagnostic ont convergé localement, sans empilement de
+primitives ; ni délai de cellule complète ni absence de futurs blocages garantie.
+
+Lots33–34 : MIN1 B reste non robuste, sans F entier depuis nourriture. Deux
+diagnostics sélectionnés et exactement passifs localisent une rareté de double
+capture ; ils évitent une retouche prématurée des gardes. On distingue maintenant
+amorçage sans outil et remplacement depuis un départ construit. MIN1R mesure
+ce dernier avec9 essais, sans dette de primitives. Première graine montre un
+vrai F neuf actif, témoin délié aussi : convergence locale plausible, pas viabilité
+garantie. Prochain jalon borné : cohorte complète puis transfert avec membrane.
+Si cette voie ne conserve pas un renouvellement utile, réexaminer capture,
+compétition et représentation avant une grille. L et homéostasie demeurent des
+risques structurels ; une petite boucle protéique ne les résout pas.
+
 Lot32 : simplifier un mécanisme existant avant nouvelle loi. F01 suffit pour
 la catalyse G/F préparée sur3 graines ; pas de dette de primitives/gène ajoutée.
 La reconstruction courte doit être jugée par B9, après A12 gate passée ;

@@ -84,6 +84,14 @@ def main():
         'experiments/review_minimal_tools.py','scripts/minimal_tool_followup.py','scripts/minimal_tool.ps1',
         'campaigns/minimal_tool_prepared.json','campaigns/minimal_tool_expression.json',
         'start_minimal_tool.bat','minimal_tool_status.bat','stop_minimal_tool.bat','resume_minimal_tool.bat'))
+    files.update(ROOT/p for p in ('research/BATCH_33_PLAN.md','research/BATCH_33.md',
+        'research/BATCH_33_RECIPES.json','research/BATCH_33_LOUPE.png','research/BATCH_34_PLAN.md',
+        'research/BATCH_34.md','research/BATCH_34_RECIPES.json','experiments/inspect_min1_endpoints.py',
+        'experiments/prepare_minimal_diagnostic.py','experiments/review_minimal_diagnostic.py',
+        'experiments/render_minimal_loupe.py','experiments/prepare_renewal_campaign.py','experiments/review_renewal.py',
+        'campaigns/minimal_diagnostic.json','campaigns/minimal_renewal.json','scripts/minimal_batches.ps1',
+        'minimal_diagnostic_status.bat','start_renewal.bat','renewal_status.bat','stop_renewal.bat','resume_renewal.bat'))
+    files.update(ROOT/p for p in ('experiments/render_renewal_summary.py','research/BATCH_34_RENEWAL.png'))
     files.update(ROOT/p for p in ('README.md','SIMULATOR_ARCHITECTURE.md','requirements.txt',
         'CONTRIBUTING.md','GIT_SETUP.md','THIRD_PARTY_NOTICES.md',
         '.gitignore','.gitattributes','.editorconfig',

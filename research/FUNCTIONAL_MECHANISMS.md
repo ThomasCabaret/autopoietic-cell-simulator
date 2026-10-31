@@ -4,6 +4,13 @@
 mécanismes existants des hypothèses ; il ne déclare aucune nouvelle loi adoptée
 et ne constitue pas une autorisation d'ajouter une machine moléculaire.
 
+Clôture/complément lots33–34 : MIN1 B ne rend pas l'amorçage robuste ; les deux
+rejeux expliquent pourquoi une réussite préparée ne suffit pas. MIN1R finit9/9 :
+matière→F entièrement nouveau→activité dans3/3 graines avec outil initial,
+2/3 délié, contrôles sans gène négatifs3/3. L'ancien outil n'est pas retiré :
+production de remplaçants, pas maintien sous pertes. Aucune fonction/enzyme
+supplémentaire ajoutée. Voir BATCH_33.md et BATCH_34.md.
+
 Actualisation lot32 : MIN1 réduit le co-recruteur existant F001 à F01 sous les
 mêmes lois MD2. Outils préparés :56/60/59 produits contre52/48/52, témoins sans
 liaison ou bonus0/0/0 ; les deux familles G/F sont produites. L'expression du

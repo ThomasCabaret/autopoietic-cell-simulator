@@ -6,6 +6,13 @@ Simplification de l'assembleur existant, puis transfert expression→produit.
 Aucun nouveau type, loi, taux, port ou outil biologique ajouté au candidat MD2.
 La membrane et le moteur ne changent pas ; les démos restent inchangées.
 
+**Clôture :21/21 terminés, zéro erreur.** B ne passe pas les critères annoncés :
+expression utile1/3 pour01,1/3 pour001, aucune réincorporation F issue d'un F
+exprimé. Contrôles sans gène négatifs3/3. Aucun F entièrement refait depuis
+les précurseurs libres. Voir [diagnostic et tableau final](BATCH_33.md) et
+[test de renouvellement depuis un départ construit](BATCH_34.md). Les lectures
+partielles conservées plus bas ne constituent pas le bilan final.
+
 ## Pourquoi ce choix après RV1
 
 La diversité I0/L est le plus grand risque conceptuel. Le mécanisme actuel
