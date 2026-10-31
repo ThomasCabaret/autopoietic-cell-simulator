@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "revision": 2,
+  "revision": 3,
   "reviewed": "2026-10-31",
-  "candidate": "MD2 / Langevin inchangé ; RV1 terminé, protection non retenue et transfert refusé",
+  "candidate": "MD2 / Langevin inchangé ; MIN1 A passé, expression B en cours ; RV1 non adopté",
   "purpose": "Registre évolutif des capacités nécessaires à une cellule construite maintenue ; les pourcentages sont des paliers de preuve, pas un taux global de réussite.",
   "out_of_scope": [
     "origine spontanée de la cellule",
@@ -79,7 +79,8 @@
       "scope": "Union de modules locaux, pas alphabet commun constructible complet.",
       "references": [
         "research/FUNCTIONAL_MECHANISMS.md",
-        "research/LOCALITY_AUDIT.md"
+        "research/LOCALITY_AUDIT.md",
+        "research/BATCH_32.md"
       ],
       "next_test": "Chercher un second produit utile puis L sous exactement les mêmes lois.",
       "essential": true
@@ -102,7 +103,8 @@
       "proof": "none",
       "scope": "Un seul motif P/R, pas bibliothèque sélective.",
       "references": [
-        "research/FUNCTIONAL_MECHANISMS.md"
+        "research/FUNCTIONAL_MECHANISMS.md",
+        "research/BATCH_32.md"
       ],
       "next_test": "Concevoir le motif minimal et son mauvais produit discriminant avant campagne.",
       "essential": true
@@ -123,12 +125,13 @@
       "mechanism": "Sites saturables voisins recrutent deux réactifs ; jonction locale et changement d’affinité libèrent le produit.",
       "concept_gap": "Helper de taux explicite ; généralisation aux autres réactions et sélectivité non démontrées.",
       "proof": "coupled",
-      "scope": "MD2 : outils préparés catalysent des dimères effectivement incorporés ; pas renouvellement autonome.",
+      "scope": "MD2 : produits d’outils préparés incorporés ; MIN1 outil F01 minimal testé sur3 graines sans modifier les lois, expression/transfert en cours.",
       "references": [
         "research/BATCH_25_RESULTS.md",
-        "research/BATCH_08.md"
+        "research/BATCH_08.md",
+        "research/BATCH_32.md"
       ],
-      "next_test": "Comparer bon/mauvais substrat, helper ablaté et produit accumulé.",
+      "next_test": "Lire MIN1 B complet, comparer produits effectivement utilisés des F exprimés, puis transfert dans le grand bain.",
       "essential": true
     },
     {
@@ -223,15 +226,17 @@
         "T-04"
       ],
       "concept": "gap",
-      "mechanism": "Chercher une jonction orientée donnant deux extrémités aux interactions distinctes, sans label de lipide entier.",
-      "concept_gap": "Aucune voie matérielle locale P/R ou XYZ vers H/T choisie ; ni outil ni séquence trouvés.",
+      "mechanism": "Draft P/R+L : co-recrutement H/T libres par le même assemblage F, lien physique saturé H–T expose les ports MD2 ; alternative pince H/T ou états XYZ.",
+      "concept_gap": "Extension de capture/compatibilité non implémentée ni choisie ; mauvais couples, énergie et adaptation des partenaires de queue variables restent à tester ; C0B/XYZ distinct.",
       "proof": "none",
       "scope": "L seulement fournis au départ.",
       "references": [
         "research/FUNCTIONAL_MECHANISMS.md",
-        "research/CELL_ARCHITECTURE.md"
+        "research/CELL_ARCHITECTURE.md",
+        "research/BATCH_32.md",
+        "research/LIPID_CONSTRUCTION_DRAFT.md"
       ],
-      "next_test": "Dessiner le motif élémentaire, ses produits et le coût d’alphabet avant de le simuler.",
+      "next_test": "Choisir le candidat déclaré puis fabriquer de vrais H–T et les transférer aux mêmes ports MD2 sans conversion ; nouvelle pince seulement après proposition/accord.",
       "essential": true
     },
     {
@@ -371,9 +376,10 @@
       "scope": "Expression courte démontrée dans C3B1 ; aucun F nouveau complet dans MD2.",
       "references": [
         "research/BATCH_08.md",
-        "research/BATCH_25_RESULTS.md"
+        "research/BATCH_25_RESULTS.md",
+        "research/BATCH_32.md"
       ],
-      "next_test": "Transférer un outil à fonction établie, puis vérifier sa séquence et ses erreurs.",
+      "next_test": "Lire les9 essais MIN1 B courts/référence/sans gène, avant adoption de01 ou transfert membranaire.",
       "essential": true
     },
     {
@@ -418,9 +424,10 @@
       "scope": "C3B1 avait expression→catalyse→incorporation, pas acquis sous MD2.",
       "references": [
         "research/BATCH_08.md",
-        "research/BATCH_25_RESULTS.md"
+        "research/BATCH_25_RESULTS.md",
+        "research/BATCH_32.md"
       ],
-      "next_test": "Réexprimer l’assemblage retenu et retrouver son activité aval sans intervention externe.",
+      "next_test": "MIN1 B : F exprimé avant l’opération, produits G/F identifiés puis réellement incorporés, contrôle sans gène négatif.",
       "essential": true
     },
     {
@@ -1053,7 +1060,8 @@
       "references": [
         "research/BATCH_26.md",
         "research/BATCH_27.md",
-        "research/BATCH_31.md"
+        "research/BATCH_31.md",
+        "research/BATCH_32.md"
       ],
       "next_test": "Conserver les contrôles sans observateur, reprise exacte et signatures à chaque changement concerné.",
       "essential": true
@@ -1090,12 +1098,18 @@
       "revision": 2,
       "date": "2026-10-31",
       "reason": "RV1 réalise clivage/dissociation et réemploi spontané dans2/3 petits bains full ;12 essais achevés, porte protected refusée, aucun transfert ou maintien. W-02/W-03 sous-cas25%, H-06 inchangé0%. Colonne progrès ajoutée."
+    },
+    {
+      "revision": 3,
+      "date": "2026-10-31",
+      "reason": "MIN1 simplifie l’outil P/R existant à deux unités sous lois MD2 : A12/12 et porte passée ; expression B9 en cours. Draft matériel L ajouté, aucune nouvelle fonction intégrée ou hausse de score anticipée."
     }
   ],
   "last_batch_progress": {
-    "W-02": "Rupture locale et12 essais achevés ; protection/réemploi non validés.",
-    "W-03": "Trajet réel vers le squelette sous RV1 full2/3 ; variante protégée refusée.",
-    "H-06": "G001 présents3/3 à1200, mais compromis protection/recyclage non résolu.",
-    "O-02": "Census réversible passif, reprise et témoins exacts ; colonne progrès générée."
+    "F-03": "F01 préparé réalise des cycles G/F sur3 graines, plus court que F001 ; aucune loi ajoutée.",
+    "T-01": "Comparaison d’expression01/001/sans gène lancée après porte A passée.",
+    "T-03": "Analyse passive des vrais produits G/F et de leur usage ; transfert B à lire.",
+    "S-04": "Draft H/T→L via même co-recruteur, coût et contre-tests précisés ; non implémenté.",
+    "O-02": "Analyse reproductible des flux par origine/famille et cohortes enchaînées."
   }
 }

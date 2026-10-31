@@ -78,6 +78,12 @@ def main():
         'experiments/review_recycling.py','experiments/audit_recycling_material.py','scripts/recycling_followup.py','scripts/recycling.ps1',
         'campaigns/recycling_local.json','campaigns/recycling_transfer.json',
         'start_recycling.bat','recycling_status.bat','stop_recycling.bat','resume_recycling.bat'))
+    files.update(ROOT/p for p in ('research/BATCH_32_PLAN.md','research/BATCH_32.md',
+        'research/BATCH_32_RECIPES.json','research/BATCH_32_PREPARED.png','research/LIPID_CONSTRUCTION_DRAFT.md',
+        'experiments/prepare_minimal_tool_campaign.py','experiments/tool_product_flux.py',
+        'experiments/review_minimal_tools.py','scripts/minimal_tool_followup.py','scripts/minimal_tool.ps1',
+        'campaigns/minimal_tool_prepared.json','campaigns/minimal_tool_expression.json',
+        'start_minimal_tool.bat','minimal_tool_status.bat','stop_minimal_tool.bat','resume_minimal_tool.bat'))
     files.update(ROOT/p for p in ('README.md','SIMULATOR_ARCHITECTURE.md','requirements.txt',
         'CONTRIBUTING.md','GIT_SETUP.md','THIRD_PARTY_NOTICES.md',
         '.gitignore','.gitattributes','.editorconfig',

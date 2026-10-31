@@ -1166,6 +1166,28 @@
       "recipe": "research/BATCH_31_RECIPES.json",
       "health_gate": "Stop after rejected A or completed B; no automatic tuning or adoption. Preserve MD2 demos and consider representation if useful losses cannot coexist with renewal.",
       "conclusion": "All12 complete, invariants valid; full reassemblies13/3/9 and reincorporations3/0/1, protected0/0/1 and0/0/0. Protected G4/6/4, catalysis103/157/151; material gate refused, B4 not launched. No active work. Topology replay and strict census agree12/12."
+    },
+    {
+      "id": "MIN1",
+      "parent": "FM1",
+      "related": [
+        "I0",
+        "C3B1",
+        "MD2",
+        "T9",
+        "RV1"
+      ],
+      "status": "twelve_prepared_trials_complete_gate_passed_nine_expression_trials_running",
+      "hypothesis": "Two adjacent F sites suffice for existing P/R assembly; shorter genetic construction may transfer useful metabolism under unchanged MD2 laws",
+      "test": "A long/short/split/no_boost x3 seeds at400 with equal material; gate then B01/001/nogene x3 at1200; no rate search or automatic promotion",
+      "cost": "Zero new elementary type, state, port, rate, law, tool or gene; same-function connectivity controls, passive post-hoc product routes. Explicit no_boost ablation only.",
+      "counterexample": "Short only works at ideal contacts, no product from one family, no reuse, failure to express or feed downstream despite better prepared-tool counts",
+      "missing_proof": "B pending, no integrated membrane transfer, no long information capacity, diverse functions, L synthesis, regulation or RV1 compatibility",
+      "evidence": "research/BATCH_32_PLAN.md",
+      "results": "research/BATCH_32.md",
+      "recipe": "research/BATCH_32_RECIPES.json",
+      "conclusion": "A12/12 error-free: short products56/60/59 vs long52/48/52; split/no_boost0/0/0. All short seeds G/F and repeated use; gate passes and B9 starts. Stocks finite, not stationary efficiency.",
+      "health_gate": "Read all B then stop for interpretation, no third phase. Reuse existing assembler for H/T is a draft with explicit compatibility/energy/software costs; extra specialized tool requires approval."
     }
   ]
 }

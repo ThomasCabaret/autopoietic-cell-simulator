@@ -1,6 +1,6 @@
 # Checklist compacte — cellule construite maintenue
 
-Révision 2 · revue 2026-10-31 · 42 sous-buts · MD2 / Langevin inchangé ; RV1 terminé, protection non retenue et transfert refusé
+Révision 3 · revue 2026-10-31 · 42 sous-buts · MD2 / Langevin inchangé ; MIN1 A passé, expression B en cours ; RV1 non adopté
 
 **Pourcentages = paliers de preuve**, pas effort accompli ni probabilité de réussite. Les plages indiquent min–max des sous-buts ; aucune moyenne globale.
 0% non observé ·25% sous-cas ·50% séparé ·75% couplage partiel ·100% critère satisfait sur son domaine.
@@ -8,19 +8,19 @@ Concept : « à fermer » signale au moins un maillon essentiel manquant ; un dr
 
 | Domaine | Points | Concept | Preuve min–max | Trous conceptuels | Progrès du dernier lot |
 | --- | ---: | --- | ---: | --- | --- |
-| Lois et fonctions des outils | 3 | à fermer | 0–75% | F-01, F-02 | — |
+| Lois et fonctions des outils | 3 | à fermer | 0–75% | F-01, F-02 | F-03 : F01 préparé réalise des cycles G/F sur3 graines, plus court que F001 ; aucune loi ajoutée. |
 | Fabrication N / A | 3 | à fermer | 25–75% | S-03 | — |
-| Fabrication des lipides | 1 | à fermer | 0% | S-04 | — |
+| Fabrication des lipides | 1 | à fermer | 0% | S-04 | S-04 : Draft H/T→L via même co-recruteur, coût et contre-tests précisés ; non implémenté. |
 | Copie et information | 5 | à fermer | 0–75% | R-02, R-04, R-05 | — |
-| Traduction et outils renouvelés | 4 | à fermer | 0–25% | T-02, T-04 | — |
+| Traduction et outils renouvelés | 4 | à fermer | 0–25% | T-02, T-04 | T-01 : Comparaison d’expression01/001/sans gène lancée après porte A passée. ; T-03 : Analyse passive des vrais produits G/F et de leur usage ; transfert B à lire. |
 | Membrane et insertion | 5 | à fermer | 25–75% | M-04, M-05 | — |
 | Apports et transport | 3 | à fermer | 0–75% | E-03 | — |
 | Énergie et retour des cycles | 2 | à fermer | 25% | Q-01, Q-02 | — |
-| Déchets et recyclage | 4 | à fermer | 0–25% | W-02, W-03, W-04 | W-02 : Rupture locale et12 essais achevés ; protection/réemploi non validés. ; W-03 : Trajet réel vers le squelette sous RV1 full2/3 ; variante protégée refusée. |
+| Déchets et recyclage | 4 | à fermer | 0–25% | W-02, W-03, W-04 | — |
 | Homéostasie des petites espèces | 2 | drafts décrits | 0% | — | — |
-| Homéostasie des polymères | 4 | à fermer | 0% | H-03, H-04, H-05, H-06 | H-06 : G001 présents3/3 à1200, mais compromis protection/recyclage non résolu. |
+| Homéostasie des polymères | 4 | à fermer | 0% | H-03, H-04, H-05, H-06 | — |
 | Compatibilité et maintien | 4 | à fermer | 0–25% | C-01, C-03, C-04 | — |
-| Calcul et observabilité | 2 | drafts décrits | 25–100% | — | O-02 : Census réversible passif, reprise et témoins exacts ; colonne progrès générée. |
+| Calcul et observabilité | 2 | drafts décrits | 25–100% | — | O-02 : Analyse reproductible des flux par origine/famille et cohortes enchaînées. |
 
 **Trous conceptuels prioritaires au présent bilan :**
 

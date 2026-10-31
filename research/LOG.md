@@ -1251,3 +1251,41 @@ de topologie retrouve exactement les12 états finaux et recoupe les compteurs.
 Protected graine2 réutilise un R recyclé avec P non recyclé, distinct du critère
 strict. Cycles de monomères gonflent la catalyse ; fragments F2 encore actifs.
 Le bilan final et le registre priment sur les lectures partielles conservées.
+
+### Lot32 — MIN1, simplification puis expression du même assembleur
+
+31 octobre2026. Priorité I0/expression constructive : tester le noyau réel
+à deux F voisins avant d'ajouter une fonction ou de supposer trois unités
+nécessaires. Aucune nouvelle loi, état, type, port, outil ou gène additionnel.
+F001/F01+F0/sites séparés ont même composition ; no_boost est leur ablation
+explicite, pas un autre succès sous les mêmes lois. Toutes sources simulator
+et démos inchangées. Fonction existante seulement, pas répertoire programmable.
+
+A12/12 termine sans erreur : produits attribués52/48/52 long contre56/60/59
+short, témoins séparés/sans bonus0/0/0 ; short G/F sur3 graines et maximum
+21/19/30 opérations du même outil. Stocks presque épuisés60 : pas rendement
+stationnaire. Figure générée et inspectée, cas et critères prospectifs conservés.
+La porte passe, B9 commence automatiquement :01/001/sans gène ×3 graines,
+t1200. Pas de nouvel ajustement entre phases, pas de troisième étape implicite.
+
+Code post-hoc tool_product_flux relie vrais P/R, symboles, origine préparée/
+exprimée certifiée avant opération et incorporation. Il refuse recyclage et
+doubles naissances ; n'altère pas l'observation ou la dynamique. Cinq nouveaux
+tests,31 contrôles ciblés passants. Superviseur/checkpoints/source manifests
+existants réutilisés, raw local ; commit452f745 sans push.
+
+Première graine B01 : G1/F1 nouveaux,34 produits par F exprimé, deux G utilisés
+mais0 F utilisé ; B0010/0 et0 produit exprimé. Lecture partielle, fermeture
+F non acquise. Suivi minimal_tool_status.bat et review_minimal_tools.py.
+
+Draft L local : même co-recrutement H/T avec compatibilités et ports d'un vrai
+H–T, sans nouveau gène dans cette voie hypothétique. Les mauvais couples,
+énergie, état libre/lié et hypothèse informatique des queues n+i sont des
+obstacles nommés. Pas une implémentation, pas C0B/XYZ adopté ; pince spécialisée
+alternative requiert proposition/accord comme prévu. Arbre, checklist révision3
+avec progrès, principes fonctionnels, priorités/santé et contrats actualisés.
+
+Lecture partielle suivante B4/9 : short graine1 sans F nouveau à1200, contrôle
+nogene graine0 négatif. Ne pas cacher ce cas derrière short graine0 positif.
+Amorçage sans F construit est un test plus fort que le départ cellulaire
+autorisé avec outils ; le renouvellement reste distinct et non présumé.

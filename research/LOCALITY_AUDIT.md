@@ -1,5 +1,16 @@
 # Fidélité à l'objectif : localité et risques de pilotage
 
+## MIN1 — contrôle de taille du même assembleur
+
+Aucun hook ou observateur de simulation modifié : F01/F001/sites séparés sont
+des initialisations sous les lois MD2, no_boost leur ablation annoncée. La
+réaction lit toujours deux sites directement liés et deux ligands réels,
+jamais taille ou séquence cible. Les séquences complètes ne servent qu'à la
+préparation et à la mesure. La route préparé/exprimé→produit→usage est extraite
+passivement des données existantes ; aucune rétroaction sur le bain.
+Le plan/source/horizons/portes A/B sont figés avant calcul. Le draft H/T→L
+n'est pas une loi ajoutée, ni une nouvelle machine autorisée implicitement.
+
 ## RV1 — pertes locales, sans recycleur biologique primitif
 
 Sur un lien de squelette, deux supports voisins et leurs occupations directes

@@ -4,6 +4,12 @@
 [campagnes futures](INTEGRATION_TESTS.json). Les lignes ci-dessous sont des
 **obligations à tester**, pas une matrice déjà implémentée et validée.
 
+MIN1/lot32 : petits assemblages du même co-recruteur, mêmes lois MD2. Les
+produits G/F sont suivis par IDs puis usage réel, pas par simple proximité.
+Le draft H/T→L explicite le risque de mauvais couples P–T/H–R et de séquestration
+avant toute extension : aucun contact H/T avec F n'est encore ajouté. La
+matrice cible EN/EA/EL ci-dessous reste conditionnelle, distincte de cette voie.
+
 RV1, lot31 : pertes de squelette puis dissociation d'un P–R isolé/libre de
 ligand, sans nouveau partenaire biologique. Le P/R réel récupéré retrouve le
 profil perméable libre ; la catalyse existante peut le réassembler. Comparer

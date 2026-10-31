@@ -1,5 +1,13 @@
 # Architectures de cellule : fermeture à concevoir, pas encore réalisée
 
+Lot32 : MIN1 compare le même co-recruteur sous sa forme minimale F01 et son
+gène01, sans ajouter une fonction. L'activité préparée passe3/3 ; expression
+et produits réellement utilisés sont en cours. Le draft
+[H/T→L](LIPID_CONSTRUCTION_DRAFT.md) propose une voie matérielle au même outil
+et compare une pince distincte : aucune ne modifie encore la spécification
+C0B à trois rôles, ni ne démontre la construction de L. Les longueurs des
+autres outils restent inconnues ; ce gène2 n'est pas une prédiction globale.
+
 Pour l'inventaire évolutif des sous-buts, dépendances de renouvellement et
 preuves, voir [la checklist compacte](CELL_CHECKLIST_COMPACT.md) et
 [le registre détaillé](CELL_CHECKLIST.md). Ils complètent ce graphe chimique,

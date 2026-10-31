@@ -1,5 +1,14 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot32 MIN1 : A12/12 achevé, zéro erreur, F01 préparé fabrique G/F sous les
+lois MD2, plus petit que F001 ; témoins déliés/bonus ablaté négatifs. Porte
+passée, B9 expression01/001/sans gène en cours. Lire minimal_tool_status.bat
+et BATCH_32.md ; ne pas anticiper son transfert ou lancer une autre grille.
+Après B, essai aval dans le grand bain si justifié et choix de voie L :
+LIPID_CONSTRUCTION_DRAFT.md décrit réemploi du même co-recruteur H/T, ainsi
+que ses incompatibilités possibles. Aucun nouveau rôle/gène ni synthèse L
+adopté ; F-02 reste ouvert. RV1 conserve sa porte refusée.
+
 **Clôture RV1 :12/12, zéro erreur, porte refusée, B4 non lancé, aucun calcul
 actif.** Full prouve le chemin matière polymère→P/R→composite→squelette sur2/3
 graines ; protected donne0 réincorporation stricte malgré survie G et activité.

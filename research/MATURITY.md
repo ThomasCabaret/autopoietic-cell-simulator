@@ -1,5 +1,12 @@
 # Maturité — mécanique améliorée, renouvellement F toujours non démontré
 
+Lot32 : fonction P/R existante simplifiée sous MD2, outil F01 préparé efficace
+sur3 graines ; A12/12, témoins séparés/sans bonus sans production à400. Les
+deux types de monomères sortent du même petit motif ; pas deux fonctions
+sélectives ni L. Expression B9 en cours sous lois identiques, aucun score de
+renouvellement anticipé. Draft H/T→L plus précis, pas de preuve dynamique L.
+Le gène2 est candidat à cette seule fonction, pas taille prédite pour les autres.
+
 Clôture lot31 :12/12 terminés. Le chemin complet de matière recyclée vers un
 nouveau squelette apparaît sous full sur2/3 graines. Protected échoue au
 critère de réemploi, donc aucun transfert MD2 ; survie G001 et catalyse passent.

@@ -4,6 +4,16 @@
 mécanismes existants des hypothèses ; il ne déclare aucune nouvelle loi adoptée
 et ne constitue pas une autorisation d'ajouter une machine moléculaire.
 
+Actualisation lot32 : MIN1 réduit le co-recruteur existant F001 à F01 sous les
+mêmes lois MD2. Outils préparés :56/60/59 produits contre52/48/52, témoins sans
+liaison ou bonus0/0/0 ; les deux familles G/F sont produites. L'expression du
+même outil et l'usage des produits sont en cours de comparaison : première
+graine01 positive vers G, mais aucune réincorporation vers F dans cet essai.
+Voir BATCH_32.md. La [construction L](LIPID_CONSTRUCTION_DRAFT.md) a désormais
+un draft matériel H/T et une alternative de pince spécifique ; aucune nouvelle
+loi ou machine n'est implémentée. Un assembleur plus court ne prouve pas des
+fonctions différentes ni une bibliothèque programmable.
+
 ## 1. Quel problème faut-il résoudre ?
 
 La cellule cible doit fabriquer les **trois familles de petits constituants** :
@@ -78,7 +88,7 @@ localité de ce premier outil ne suffit pas à prouver l'expressivité du paradi
 | Petit gabarit ou pince de ligation | Affinités de sites et géométrie mettent deux réactifs en contact ; motif local favorise un lien ; produit perd son affinité | Co-recrutement, jonction et libération prototypés avec helper | Produire sélectivement deux produits utiles avec des assemblages différents et exactement les mêmes lois |
 | Repliement et poche | Types/ports et angles locaux imposent des préférences ; contacts à courte portée stabilisent une conformation ; la séquence organise les sites | Potentiels d'angle disponibles, pas de famille de poches validée dans le candidat commun | Comparer forme, occupation, taux et mauvais substrats ; une jolie forme sans flux utile n'est pas une enzyme |
 | Pince à charnière / travail mécanique | Fixation d'un ligand change localement un angle, une affinité ou une longueur de liaison ; les forces se propagent dans la chaîne | Hypothèse, pas un moteur exprimé démontré | Montrer déplacement/effort utile, libération et retour ; compter énergie et vérifier le cycle complet |
-| Clivage et recyclage | Deux sites imposent une contrainte sur une liaison précise, ou un voisinage catalytique facilite sa rupture ; fragments se libèrent | Non implémenté pour recycler G/F/L | Ne pas détruire indifféremment gènes, outils et nourriture ; vérifier bilan et réutilisation des produits |
+| Clivage et recyclage | Deux sites imposent une contrainte sur une liaison précise, ou un voisinage catalytique facilite sa rupture ; fragments se libèrent | RV1 teste des pertes locales G/F sans enzyme ; aucune pince de clivage ou voie L implémentée | Ne pas détruire indifféremment gènes, outils et nourriture ; vérifier bilan et réutilisation des produits |
 | Transfert/insertion | Contacts locaux avec un composant libre et une liaison cible favorisent un échange, puis libération | Insertion L par échange existe ; aucune insertase protéique construite | Tester insertion ET confinement, coût gène/outil si une machine devient nécessaire |
 | Marcheur processif sur polymère | Captures réversibles voisines, occupation locale des ports et cycle énergétique permettent des étapes répétées | Hypothèse, aucune polymérase ajoutée | Départ/arrêt par motifs locaux, pas de longueur cible connue ; produire et renouveler le marcheur lui-même |
 

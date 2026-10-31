@@ -6,6 +6,23 @@ est une cellule construite qui maintient et refabrique ses composants depuis
 une nourriture simple, avec énergie externe déclarée. Apparition spontanée,
 division et évolution ouverte ne sont pas des conditions ajoutées à cette cible.
 
+Lot32 : simplifier un mécanisme existant avant nouvelle loi. F01 suffit pour
+la catalyse G/F préparée sur3 graines ; pas de dette de primitives/gène ajoutée.
+La reconstruction courte doit être jugée par B9, après A12 gate passée ;
+ce sont21 essais maximum, pas21 interventions conceptuelles. La voie vers L
+a un draft local matériel : même co-recruteur, H/T libres, vrai lien puis
+ports MD2 ; capture parasite/énergie/queue variable sont des obstacles explicites,
+pas des opérations implicitement gratuites. La voie n'est pas implémentée.
+Prochain jalon décisif : expression→produit utile sous MD2, puis construction L
+et transfert sans changement des lois en aval. Un succès de gène2 ne résout
+pas information riche, répertoire, pertes ou homéostasie. Pas de délai garanti.
+
+B partiel : short graine0 exprime puis alimente G, graine1 aucun F nouveau ;
+l'activité d'un outil préparé ne garantit pas son amorçage. Le départ sans F
+de B est plus exigeant qu'une cellule construite déjà équipée : maintenir
+cette distinction, sans supposer pour autant le renouvellement acquis. Avant
+toute nouvelle grille, lire la cohorte et distinguer amorçage/renouvellement.
+
 Lot31 : une intervention de conception RV1,16 essais maximum dont4 conditionnels,
 pas16 corrections conceptuelles. Le débouché matériel est maintenant réalisable
 localement dans un contrôle ; son efficacité et ses dégâts sur les fonctions

@@ -48,3 +48,11 @@ travailleurs, plafond24h, rapport et son hash journalisés, arrêt pour interpr�
 Un résultat favorable ne modifie pas les démos ni la référence MD2. Échec,
 interruption et pause arrêtent le suivi ; reprise explicite seulement, aucun
 retry d'une tâche échouée. Pas de recherche de taux ou nouvelle loi automatique.
+
+MIN1/lot32 réutilise le même superviseur A→B :12 contrôles d'un assembleur
+préparé, puis9 suivis d'expression sélectionnés par la porte prospective.
+Sources des deux phases et collecteur figés ensemble,21 tâches maximum,
+deux travailleurs24h. L'analyse passive distingue familles et origine des
+produits puis usage en aval ; le critère final est calculable par review.
+Changer seulement un assemblage n'établit pas une fonction nouvelle ; garder
+séparés simplification, expression, produit utile et maintien.
