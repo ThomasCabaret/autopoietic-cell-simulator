@@ -10,11 +10,16 @@ from .reference import degree,normals,local_port_free
 
 
 class GeneticAudit:
-    def __init__(self,state=None,window=25.):
+    def __init__(self,state=None,window=25.,loupe=None):
         self.window=window;self.neighbors=Neighborhood()
         self.state=state or dict(version=1,last_time=None,last_counts={},windows={},first={},
             ticks=0,net_pairs_formed=0,net_pairs_lost=0,ligations=0,assembly=0,
             catalytic_assembly=0,pair_starts={},pair_episodes=[],max_pair_span=0.)
+        self.loupe=None
+        if loupe is not None:
+            from .ligation_loupe import LigationLoupe
+            self.loupe=LigationLoupe(loupe,self.state.get('loupe'))
+            self.state['loupe']=self.loupe.state
 
     def scan(self,c,time):
         n=c.n;cfg=c.config;active=c.rungs[:,1]>=0
@@ -124,12 +129,14 @@ class GeneticAudit:
     def attach(self,c):
         g=getattr(c,'genetics',c);original=g.react
         def observed(time,dt,neighbors):
+            if self.loupe is not None:self.loupe.before(g,time)
             before=self.scan(g,time);self.integrate(time)
             for name,count in before.items():
                 if count>0:self.state['first'].setdefault(name,float(time))
             old={(i,int(j)) for i,j in enumerate(g.pairing) if j>i}
             old_assembly=len(g.assembly.events) if g.assembly is not None else 0
             result=original(time,dt,neighbors)
+            if self.loupe is not None:self.loupe.after(g,time,result)
             after={(i,int(j)) for i,j in enumerate(g.pairing) if j>i}
             self.state['net_pairs_formed']+=len(after-old);self.state['net_pairs_lost']+=len(old-after)
             for pair in old-after:
@@ -154,9 +161,11 @@ class GeneticAudit:
         names=('recognition_eligible_GF','recognition_eligible_GG','ligation_eligible_F',
                'ligation_eligible_G','precursor_capture_eligible','assembly_catalytic_eligible')
         first={k:dict(time=self.state['first'].get(k,time),event=k in self.state['first'],measured=True) for k in names}
-        return dict(version=1,observed_time=duration,exposure=totals,first_passages=first,
+        result=dict(version=1,observed_time=duration,exposure=totals,first_passages=first,
             net_pairs_formed=self.state['net_pairs_formed'],net_pairs_lost=self.state['net_pairs_lost'],
             ligations=self.state['ligations'],assembled=self.state['assembly'],catalytic_assembled=self.state['catalytic_assembly'],
             max_completed_net_pair_span=self.state['max_pair_span'],
             right_censored_pairs=[dict(start=t,span=time-t) for t in self.state['pair_starts'].values()],
             scope='Pre-reaction counts, left-held between reaction ticks; motifs may change within a tick. Exclusions sequential, not independent causes. No observer feedback or exact hazard.',state=self.state)
+        if self.loupe is not None:result['ligation_loupe']=self.loupe.summary(time)
+        return result

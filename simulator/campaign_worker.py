@@ -43,7 +43,7 @@ def execute(folder,task_id):
             probe.attach(sim.chemistry)
             genetic=None
             if manifest.get('genetic_audit',False):
-                genetic=GeneticAudit(getattr(obs,'campaign_genetic_state',None),manifest['kinetic_window'])
+                genetic=GeneticAudit(getattr(obs,'campaign_genetic_state',None),manifest['kinetic_window'],manifest.get('ligation_loupe'))
                 genetic.attach(sim.chemistry)
             audit=None
             if manifest.get('boundary_audit',False):

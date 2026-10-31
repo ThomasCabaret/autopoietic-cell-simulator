@@ -30,6 +30,11 @@ def prepare(plan_path,parent):
             cfg=t['scenario'];g=cfg['chemistry'].get('genetics',cfg['chemistry'])
             if cfg['model'] not in ('copy','coupled_bath') or g.get('dual_faces') or g.get('food_pairs'):
                 raise ValueError('Genetic audit requires copy/coupled P/R without dual faces or X/Y')
+    if 'ligation_loupe' in plan:
+        from simulator.ligation_loupe import settings
+        settings(plan['ligation_loupe'])
+        if not plan.get('genetic_audit',False) or any(t['scenario']['model']!='copy' for t in tasks):
+            raise ValueError('Ligation loupe currently requires copy-only genetic audit')
     if plan.get('population_audit',False):
         from simulator.polymer_population import PopulationAudit
         for task in tasks:PopulationAudit(task['scenario'],interval=population_interval)
@@ -64,6 +69,7 @@ def prepare(plan_path,parent):
         plan_sha256=digest(plan_path))
     git=subprocess.run(['git','rev-parse','HEAD'],cwd=ROOT,text=True,capture_output=True)
     manifest['git_revision']=git.stdout.strip() if git.returncode==0 else None
+    if 'ligation_loupe' in plan:manifest['ligation_loupe']=plan['ligation_loupe']
     write(folder/'manifest.json',manifest)
     (folder/'manifest.sha256').write_text(digest(folder/'manifest.json'),encoding='ascii')
     shutil.copyfile(plan_path,folder/'plan.json')

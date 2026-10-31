@@ -1,0 +1,262 @@
+{
+  "name": "MIN1D selected exact replay with bounded molecular loupe",
+  "workers": 2,
+  "checkpoint_seconds": 30.0,
+  "kinetic_window": 25.0,
+  "record_trajectory": false,
+  "genetic_audit": true,
+  "ligation_loupe": {},
+  "tasks": [
+    {
+      "label": "MIN1D_short_s0",
+      "scenario": {
+        "schema_version": 1,
+        "model": "copy",
+        "name": "MIN1_B_short_s0",
+        "branch": "MIN1",
+        "seed": 0,
+        "duration": 1200.0,
+        "chemistry": {
+          "sequence": "01",
+          "alphabet": "01",
+          "free_units": 37,
+          "function_units": 36,
+          "activation": true,
+          "release": "cycle",
+          "period": 200.0,
+          "release_time": 15.0,
+          "template": true,
+          "backbone_angle": 20.0,
+          "box": [
+            12.0,
+            9.0
+          ],
+          "monomer_only_capture": true,
+          "product_cooperativity": true,
+          "functional_cosines": {
+            "0": 0.8,
+            "1": 0.8
+          },
+          "seed_family": 0,
+          "caps_symbol": -1,
+          "initial_min_separation": 0.6,
+          "local_off_rate": 0.2,
+          "ligation_rate": 12.0,
+          "ligation": true,
+          "temperature": 0.08,
+          "functional_bend_cosines": {},
+          "functional_bend_strength": 100.0,
+          "food_pairs": 0,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_reaction_radius": 0.25,
+          "food_reaction_rate": 0.2,
+          "food_activation": true,
+          "dual_faces": false,
+          "constructible": true,
+          "assembled_stock": false,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0001,
+          "rung_catalysis": true,
+          "rung_catalytic_rate": 20.0,
+          "initial_assemblies": [
+            {
+              "family": 0,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 0,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 0,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "0",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "0",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "1",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "0",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "1",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "1",
+              "backbone": false
+            }
+          ]
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        }
+      }
+    },
+    {
+      "label": "MIN1D_short_s1",
+      "scenario": {
+        "schema_version": 1,
+        "model": "copy",
+        "name": "MIN1_B_short_s1",
+        "branch": "MIN1",
+        "seed": 1,
+        "duration": 1200.0,
+        "chemistry": {
+          "sequence": "01",
+          "alphabet": "01",
+          "free_units": 37,
+          "function_units": 36,
+          "activation": true,
+          "release": "cycle",
+          "period": 200.0,
+          "release_time": 15.0,
+          "template": true,
+          "backbone_angle": 20.0,
+          "box": [
+            12.0,
+            9.0
+          ],
+          "monomer_only_capture": true,
+          "product_cooperativity": true,
+          "functional_cosines": {
+            "0": 0.8,
+            "1": 0.8
+          },
+          "seed_family": 0,
+          "caps_symbol": -1,
+          "initial_min_separation": 0.6,
+          "local_off_rate": 0.2,
+          "ligation_rate": 12.0,
+          "ligation": true,
+          "temperature": 0.08,
+          "functional_bend_cosines": {},
+          "functional_bend_strength": 100.0,
+          "food_pairs": 0,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_reaction_radius": 0.25,
+          "food_reaction_rate": 0.2,
+          "food_activation": true,
+          "dual_faces": false,
+          "constructible": true,
+          "assembled_stock": false,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0001,
+          "rung_catalysis": true,
+          "rung_catalytic_rate": 20.0,
+          "initial_assemblies": [
+            {
+              "family": 0,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 0,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 0,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "0",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "0",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "1",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "0",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "1",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "1",
+              "backbone": false
+            }
+          ]
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        }
+      }
+    }
+  ],
+  "references": {
+    "MIN1D_short_s0": {
+      "result": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\minimal_tool_followups\\followup_20261031T085258385313Z\\B\\campaign_20261031T085259497367Z\\tasks\\task0000\\attempts\\MIN1_B_short_s0_s0_20261031T092009598326Z\\result.json",
+      "result_sha256": "e0d719e6316fc7891867c5954ee08d4a6a039e959e292c4ee01b6542d1b6a194",
+      "checkpoint": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\minimal_tool_followups\\followup_20261031T085258385313Z\\B\\campaign_20261031T085259497367Z\\tasks\\task0000\\attempts\\MIN1_B_short_s0_s0_20261031T092009598326Z\\checkpoint.npz",
+      "checkpoint_sha256": "d77cdaa0ceca67e702ee528d92a8937739f2a3e5ecec70f37380cdca68e967e9"
+    },
+    "MIN1D_short_s1": {
+      "result": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\minimal_tool_followups\\followup_20261031T085258385313Z\\B\\campaign_20261031T085259497367Z\\tasks\\task0003\\attempts\\MIN1_B_short_s1_s1_20261031T092311320156Z\\result.json",
+      "result_sha256": "11f23f1a810d895b23f4c67fc91b4e4fbe1eb635ca42e7960ce1c101530c6ef8",
+      "checkpoint": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\minimal_tool_followups\\followup_20261031T085258385313Z\\B\\campaign_20261031T085259497367Z\\tasks\\task0003\\attempts\\MIN1_B_short_s1_s1_20261031T092311320156Z\\checkpoint.npz",
+      "checkpoint_sha256": "96d3f251ca41d2a1aa406c6485007b184f1b4fe810a5c066d94d723c11c12b18"
+    }
+  },
+  "comparison_policy": "Two selected diagnostic replays, not independent replication; BATCH_33_PLAN. No altered laws, horizon or initial conditions. Stop after diagnosis, no third candidate."
+}

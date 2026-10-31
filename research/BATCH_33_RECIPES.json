@@ -1,0 +1,11 @@
+{
+  "campaign": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\minimal_diagnostic_campaigns\\campaign_20261031T105040489269Z",
+  "recipe": "research/campaign_recipes/MIN1D_20261031T105040489269Z",
+  "reference_recipe": "research/campaign_recipes/MIN1B_20261031T085258385313Z",
+  "reference_result_hashes": {
+    "MIN1D_short_s0": "e0d719e6316fc7891867c5954ee08d4a6a039e959e292c4ee01b6542d1b6a194",
+    "MIN1D_short_s1": "11f23f1a810d895b23f4c67fc91b4e4fbe1eb635ca42e7960ce1c101530c6ef8"
+  },
+  "plan": "research/BATCH_33_PLAN.md",
+  "note": "Only code, configs and hashes tracked; captures/checkpoints/results local."
+}
