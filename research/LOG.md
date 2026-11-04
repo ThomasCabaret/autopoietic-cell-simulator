@@ -1369,3 +1369,14 @@ donc pas de promotion ni taux isotherme inféré. Recette/source/pilote conserv�
 données locales ignorées. S-04 sous-cas L1 séparé25%, aucun autre palier biologique
 augmenté. Lire MIN1M complet, puis traiter énergie L1 avant témoins/compétition
 P/R/H/T et insertion réelle. Pas de campagne longue supplémentaire lancée.
+
+### Lot37 — clôture après interruption du quota
+
+L2 code et campagnes repris sans relance.20 essais complets,0 erreur, un cas
+L1 réutilisé. Combiné19/21/21 L contre témoins0, mais tardif.138/.183/.087 et
+P95.456/.457/.453 : crible refusé, aucune phase suivante/promesse thermique.
+202 tests complets et trois préfixes MD2 bit-exacts avaient passé avant quota ;
+recette/sources/checkpoints figés conservés. Rapport/figure et checklistrev7
+ajoutés. MIN1M9/12 actif, deux graines avec remplaçants entiers utiles ; ne pas
+clôturer la porte sur cette lecture partielle. Prochain diagnostic : énergie
+initiale des F liés et transitions de capture, distinctes de la naissance H–T.

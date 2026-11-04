@@ -1,6 +1,6 @@
 # Checklist compacte — cellule construite maintenue
 
-Révision 6 · revue 2026-11-04 · 43 sous-buts · MD2 inchangé / MIN1M en cours ; L1 séparé : première fabrication H/T, dette énergétique diagnostiquée
+Révision 7 · revue 2026-11-04 · 43 sous-buts · MD2 / MIN1M9/12 en cours ; L2 terminé20/20, critères thermiques refusés
 
 **Pourcentages = paliers de preuve**, pas effort accompli ni probabilité de réussite. Les plages indiquent min–max des sous-buts ; aucune moyenne globale.
 0% non observé ·25% sous-cas ·50% séparé ·75% couplage partiel ·100% critère satisfait sur son domaine.
@@ -10,17 +10,17 @@ Concept : « à fermer » signale au moins un maillon essentiel manquant ; un dr
 | --- | ---: | --- | ---: | --- | --- |
 | Lois et fonctions des outils | 3 | à fermer | 0–75% | F-01, F-02 | — |
 | Fabrication N / A | 3 | à fermer | 25–75% | S-03 | — |
-| Fabrication des lipides | 1 | à fermer | 25% | S-04 | S-04 : 0→25 : prototype L1 séparé,22 H–T réellement formés et16 contacts ; pas de membrane cellulaire ni validation thermique. |
+| Fabrication des lipides | 1 | à fermer | 25% | S-04 | S-04 : L2 :19/21/21 L avec contrôle combiné, témoins négatifs ; critères thermiques refusés, palier25 inchangé. |
 | Copie et information | 5 | à fermer | 0–75% | R-02, R-04, R-05 | — |
-| Traduction et outils renouvelés | 5 | à fermer | 0–75% | T-02, T-04 | — |
+| Traduction et outils renouvelés | 5 | à fermer | 0–75% | T-02, T-04 | T-05 : MIN1M9/12 achevés sans erreur ; deux graines active ont de vrais F neufs actifs, cohorte incomplète. |
 | Membrane et insertion | 5 | à fermer | 25–75% | M-04, M-05 | — |
 | Apports et transport | 3 | à fermer | 0–75% | E-03 | — |
-| Énergie et retour des cycles | 2 | à fermer | 25% | Q-01, Q-02 | Q-01 : Loupe première naissance : +31,416 de potentiel, surtout cores F/L et axe ; coût énergétique à traiter. |
+| Énergie et retour des cycles | 2 | à fermer | 25% | Q-01, Q-02 | Q-01 : Variation locale d’énergie vérifiée ; naissance H–T seule ne ferme pas le bilan capture/repliement. |
 | Déchets et recyclage | 4 | à fermer | 0–25% | W-02, W-03, W-04 | — |
 | Homéostasie des petites espèces | 2 | drafts décrits | 0% | — | — |
 | Homéostasie des polymères | 4 | à fermer | 0% | H-03, H-04, H-05, H-06 | — |
 | Compatibilité et maintien | 4 | à fermer | 0–25% | C-01, C-03, C-04 | — |
-| Calcul et observabilité | 2 | drafts décrits | 25–100% | — | O-02 : 195 tests, trois préfixes MD2 exacts ; recette et diagnostic passif borné sauvegardés. |
+| Calcul et observabilité | 2 | drafts décrits | 25–100% | — | — |
 
 **Trous conceptuels prioritaires au présent bilan :**
 

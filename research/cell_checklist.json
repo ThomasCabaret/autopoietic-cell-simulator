@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "revision": 6,
+  "revision": 7,
   "reviewed": "2026-11-04",
-  "candidate": "MD2 inchangé / MIN1M en cours ; L1 séparé : première fabrication H/T, dette énergétique diagnostiquée",
+  "candidate": "MD2 / MIN1M9/12 en cours ; L2 terminé20/20, critères thermiques refusés",
   "purpose": "Registre évolutif des capacités nécessaires à une cellule construite maintenue ; les pourcentages sont des paliers de preuve, pas un taux global de réussite.",
   "out_of_scope": [
     "origine spontanée de la cellule",
@@ -236,7 +236,8 @@
         "research/CELL_ARCHITECTURE.md",
         "research/BATCH_32.md",
         "research/LIPID_CONSTRUCTION_DRAFT.md",
-        "research/BATCH_36.md"
+        "research/BATCH_36.md",
+        "research/BATCH_37.md"
       ],
       "next_test": "Traiter le coût local de la transition L1 puis témoins no_tool/split/no_boost et thermique ; ensuite compétition P/R et insertion des vrais produits, sans conversion externe.",
       "essential": true
@@ -486,7 +487,8 @@
       "references": [
         "research/BATCH_34.md",
         "research/BATCH_34_PLAN.md",
-        "research/BATCH_35.md"
+        "research/BATCH_35.md",
+        "research/BATCH_37.md"
       ],
       "next_test": "Lire MIN1M complet et son crible de coexistence membrane / nouveau F entier actif ; puis pertes réelles et maintien.",
       "essential": true
@@ -689,7 +691,8 @@
       "references": [
         "research/CELL_ARCHITECTURE.md",
         "research/LOCALITY_AUDIT.md",
-        "research/BATCH_36.md"
+        "research/BATCH_36.md",
+        "research/BATCH_37.md"
       ],
       "next_test": "Établir le budget du motif retenu, puis ablater l’aide sans masquer un apport.",
       "essential": true
@@ -1158,11 +1161,16 @@
       "revision": 6,
       "date": "2026-11-04",
       "reason": "Lot36 indépendant : vrai H/T variable et ports MD2 dans nouveau hook L1. Pilote unique22 produits,16 contacts, sans P/R ni expression ; dette thermique et saut de potentiel première naissance identifiés par loupe passive. S-04 sous-cas séparé25%, aucun maintien ou transfert membranaire anticipé."
+    },
+    {
+      "revision": 7,
+      "date": "2026-11-04",
+      "reason": "Clôture lot37 après interruption :20 nouveaux essais L2 et référence réutilisée, production utile mais deux alarmes thermiques. Aucun palier augmenté. MIN1M9/12, porte non évaluée."
     }
   ],
   "last_batch_progress": {
-    "S-04": "0→25 : prototype L1 séparé,22 H–T réellement formés et16 contacts ; pas de membrane cellulaire ni validation thermique.",
-    "Q-01": "Loupe première naissance : +31,416 de potentiel, surtout cores F/L et axe ; coût énergétique à traiter.",
-    "O-02": "195 tests, trois préfixes MD2 exacts ; recette et diagnostic passif borné sauvegardés."
+    "S-04": "L2 :19/21/21 L avec contrôle combiné, témoins négatifs ; critères thermiques refusés, palier25 inchangé.",
+    "Q-01": "Variation locale d’énergie vérifiée ; naissance H–T seule ne ferme pas le bilan capture/repliement.",
+    "T-05": "MIN1M9/12 achevés sans erreur ; deux graines active ont de vrais F neufs actifs, cohorte incomplète."
   }
 }

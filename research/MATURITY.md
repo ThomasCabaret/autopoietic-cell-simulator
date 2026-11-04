@@ -1,5 +1,10 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot37 : production L2 utile sur3 graines mais deux critères thermiques refusés.
+S-04 reste25%, Q-01 inchangé ; aucune adoption du combiné. MIN1M9/12 et porte
+non évaluée. Deux graines active achevées produisent déjà des F entièrement
+neufs actifs avec membrane ; cela ne remplace pas les trois contrôles complets.
+
 Lot36 : S-04 atteint25% pour un sous-cas **L1 séparé**, pas pour MD2.
 H/T réellement fabriqués et contacts MD2 réutilisés, mais une seule graine et
 fort échauffement. Une cause locale est identifiée, saut de potentiel au lien.

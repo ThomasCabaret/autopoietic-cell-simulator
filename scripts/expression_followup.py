@@ -104,7 +104,7 @@ def step(job,collect_fn=None,decide_fn=None):
     if state.get('first_launch') and time.time()-state['first_launch']>=cfg.get('max_wall_seconds',86400):
         (job/'STOP').write_text('wall budget reached')
         for path in cfg['campaigns']:(Path(path)/'STOP').write_text('wall budget reached')
-        return finish('needs_attention',reason='24-hour wall budget reached; checkpoint pause requested, no further tests')
+        return finish('needs_attention',reason=f"Wall budget {cfg.get('max_wall_seconds',86400):g}s reached; checkpoint pause requested, no further tests")
     if stage==1:
         evidence=Path(state['report_0'])
         if digest(evidence)!=state['report_0_sha256'] or not decide_fn(read(evidence)['rows'])['run_transfer']:

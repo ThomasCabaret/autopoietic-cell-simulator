@@ -1,6 +1,6 @@
 # Checklist détaillée — critères et dépendances
 
-Revue 2026-11-04 · révision6. Source : [cell_checklist.json](cell_checklist.json).
+Revue 2026-11-04 · révision7. Source : [cell_checklist.json](cell_checklist.json).
 [Tableau compact](CELL_CHECKLIST_COMPACT.md) · [Échelle et méthode](CONCEPT_FIRST.md).
 
 Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre acyclique de codage. Les cycles de renouvellement sont intentionnels. Une condition initiale construite peut amorcer un sous-cas sans fermer ces cycles.
@@ -140,11 +140,11 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** Un pilote L1 à100,64 billes :22 H–T, tous catalysés,16 contacts latéraux ; jusqu’à8 produits par paire de sites. Une graine sans contrôles dispersés, température cinétique nettement supérieure à la consigne. MD2 fournit toujours L préparés.
 
-**Références :** [research/FUNCTIONAL_MECHANISMS.md](../research/FUNCTIONAL_MECHANISMS.md), [research/CELL_ARCHITECTURE.md](../research/CELL_ARCHITECTURE.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/LIPID_CONSTRUCTION_DRAFT.md](../research/LIPID_CONSTRUCTION_DRAFT.md), [research/BATCH_36.md](../research/BATCH_36.md)
+**Références :** [research/FUNCTIONAL_MECHANISMS.md](../research/FUNCTIONAL_MECHANISMS.md), [research/CELL_ARCHITECTURE.md](../research/CELL_ARCHITECTURE.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/LIPID_CONSTRUCTION_DRAFT.md](../research/LIPID_CONSTRUCTION_DRAFT.md), [research/BATCH_36.md](../research/BATCH_36.md), [research/BATCH_37.md](../research/BATCH_37.md)
 
 **Prochain test / décision :** Traiter le coût local de la transition L1 puis témoins no_tool/split/no_boost et thermique ; ensuite compétition P/R et insertion des vrais produits, sans conversion externe.
 
-**Progrès du dernier lot :** 0→25 : prototype L1 séparé,22 H–T réellement formés et16 contacts ; pas de membrane cellulaire ni validation thermique.
+**Progrès du dernier lot :** L2 :19/21/21 L avec contrôle combiné, témoins négatifs ; critères thermiques refusés, palier25 inchangé.
 
 ## Copie et information
 
@@ -336,9 +336,11 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** MIN1R9/9 terminé : active10/10/10 F entièrement refaits dont5/2/1 actifs ; split3/5/0 dont1/3/0 actifs ; nogene négatif3/3. Pas membrane/pertes/régime ouvert.
 
-**Références :** [research/BATCH_34.md](../research/BATCH_34.md), [research/BATCH_34_PLAN.md](../research/BATCH_34_PLAN.md), [research/BATCH_35.md](../research/BATCH_35.md)
+**Références :** [research/BATCH_34.md](../research/BATCH_34.md), [research/BATCH_34_PLAN.md](../research/BATCH_34_PLAN.md), [research/BATCH_35.md](../research/BATCH_35.md), [research/BATCH_37.md](../research/BATCH_37.md)
 
 **Prochain test / décision :** Lire MIN1M complet et son crible de coexistence membrane / nouveau F entier actif ; puis pertes réelles et maintien.
+
+**Progrès du dernier lot :** MIN1M9/12 achevés sans erreur ; deux graines active ont de vrais F neufs actifs, cohorte incomplète.
 
 ## Membrane et insertion
 
@@ -513,11 +515,11 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** Thermostat, activation et cycle externes déclarés ; bilan énergétique complet absent.
 
-**Références :** [research/CELL_ARCHITECTURE.md](../research/CELL_ARCHITECTURE.md), [research/LOCALITY_AUDIT.md](../research/LOCALITY_AUDIT.md), [research/BATCH_36.md](../research/BATCH_36.md)
+**Références :** [research/CELL_ARCHITECTURE.md](../research/CELL_ARCHITECTURE.md), [research/LOCALITY_AUDIT.md](../research/LOCALITY_AUDIT.md), [research/BATCH_36.md](../research/BATCH_36.md), [research/BATCH_37.md](../research/BATCH_37.md)
 
 **Prochain test / décision :** Établir le budget du motif retenu, puis ablater l’aide sans masquer un apport.
 
-**Progrès du dernier lot :** Loupe première naissance : +31,416 de potentiel, surtout cores F/L et axe ; coût énergétique à traiter.
+**Progrès du dernier lot :** Variation locale d’énergie vérifiée ; naissance H–T seule ne ferme pas le bilan capture/repliement.
 
 <a id="Q-02"></a>
 ### Q-02 — Retour local et disponibilité après cycle
@@ -852,8 +854,6 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Prochain test / décision :** Conserver les contrôles sans observateur, reprise exacte et signatures à chaque changement concerné.
 
-**Progrès du dernier lot :** 195 tests, trois préfixes MD2 exacts ; recette et diagnostic passif borné sauvegardés.
-
 ## Évolution conservée
 
 - Révision1 (2026-10-31) : Demande utilisateur : inventaire conceptuel complet, interdépendances, homéostasie des polymères et compte rendu calibré par lot ; aucune nouvelle preuve dynamique.
@@ -862,3 +862,4 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 - Révision4 (2026-10-31) : MIN1 clos, deux rejeux exacts et loupe bornée ; MIN1R9/9 passe avec F entièrement neufs actifs3/3, sans loi ajoutée. T-05 ajouté puis séparé50%, T-01 court50%, T-03 couplage limité75%. Membrane/L/pertes/information riche restent ouverts.
 - Révision5 (2026-11-04) : MIN1M12 essais de transfert sous lois MD2 lancés, aucun résultat final anticipé. MIN1R validé ajouté aux démos avec recensement matériel passif ; pas de changement de palier.
 - Révision6 (2026-11-04) : Lot36 indépendant : vrai H/T variable et ports MD2 dans nouveau hook L1. Pilote unique22 produits,16 contacts, sans P/R ni expression ; dette thermique et saut de potentiel première naissance identifiés par loupe passive. S-04 sous-cas séparé25%, aucun maintien ou transfert membranaire anticipé.
+- Révision7 (2026-11-04) : Clôture lot37 après interruption :20 nouveaux essais L2 et référence réutilisée, production utile mais deux alarmes thermiques. Aucun palier augmenté. MIN1M9/12, porte non évaluée.

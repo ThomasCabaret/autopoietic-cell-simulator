@@ -1,5 +1,12 @@
 # Santé du projet —31 octobre2026
 
+Lot37 : échec thermique conservé plutôt qu’un succès de débit surévalué.
+Les ablations distinguent coût du contact et de la formation ; un transitoire
+persiste sans aucune synthèse, ce qui motive un diagnostic de préparation/
+capture. Une comparaison ciblée de deux mécanismes a réduit l’incertitude,
+pas établi la viabilité. Interpréter avant retouches ; les risques de fermeture
+énergétique, régulation, information et diversité restent ouverts.
+
 Lot36 : une contribution indépendante a levé le verrou des queues préassignées
 et réalisé H/T→L→association avec l'outil existant, sans nouvelle enzyme. Un
 pilote ne clôt pas la voie : l'échauffement a une cause maintenant explicite,

@@ -1,5 +1,11 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot37 clôturé : L2 terminé20/20 sans erreur, crible thermique refusé malgré
+production19/21/21 et témoins négatifs. Ne pas relancer la grille ni promouvoir.
+MIN1M9/12 en cours, zéro erreur, porte complète à attendre. Travail indépendant
+justifié : séparer énergie de préparation F et transitions de capture avant
+correction mécanique dérivée, sans nouvelle protéine ni changement de thermostat.
+
 **Lot36, travail indépendant achevé : L1 fabrique H/T, avec dette thermique.**
 Nouveau hook et vrais partenaires variables, même F01 préparé ; un pilote22
 produits,16 contacts latéraux. La loupe première naissance localise +31,416 de

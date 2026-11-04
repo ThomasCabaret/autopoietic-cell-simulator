@@ -140,6 +140,8 @@ def resolve(raw):
         if abs(defaults['record_interval']/defaults['contact_interval']-round(defaults['record_interval']/defaults['contact_interval']))>1e-7:
             raise ValueError('Record interval must be a multiple of the contact interval')
     elif model=='lipid_synthesis':
+        if defaults['formation_gate'] not in ('none','metropolis') or type(defaults['tool_lipid_contact']) not in (int,float) or defaults['tool_lipid_contact']<0:
+            raise ValueError('Invalid local lipid transition gate/contact')
         if type(defaults['food_units']) is not int or defaults['food_units']<1 or type(defaults['tool_count']) is not int or defaults['tool_count']<0:
             raise ValueError('Invalid lipid food/tool count')
         if len(defaults['box'])!=2 or any(type(v) not in (int,float) or not math.isfinite(v) or v<=1.2 for v in defaults['box']):

@@ -4,6 +4,7 @@ Separate candidate extension, not the integrated P/R/L chemistry. Prepared F
 uses CopyChemistry; capture uses PrecursorCapture unchanged except ligand types.
 Neither dynamics nor capture reads a complete tool, membrane or target product.
 """
+import copy
 import numpy as np
 from .copy import CopyChemistry
 from .precursors import PrecursorCapture
@@ -18,7 +19,8 @@ DEFAULTS=dict(temperature=.08,box=[12.,9.],food_units=24,tool_count=4,tool_linke
     food_ligand_energy=2.,food_ligand_width=.6,food_activation=True,
     short_length=.98,dock_width=.3,dock_energy=4.,dock_capture=.25,dock_rate=25.,
     bond_off_rate=.02,break_extension=.35,bonding=True,
-    contact_exchange_rate=.2,contact_exchange_capture=.8,terminal_exchange=True)
+    contact_exchange_rate=.2,contact_exchange_capture=.8,terminal_exchange=True,
+    formation_gate='none',tool_lipid_contact=.55)
 
 
 class HTPrecursorCapture(PrecursorCapture):
@@ -62,7 +64,11 @@ class LipidSynthesisChemistry:
         self.edges=set();self.pairing=np.full(self.n,-1,dtype=np.int64);self._views()
         self.capture=HTPrecursorCapture(self)
         # Same core F/F matrix, MD2 L/L .4 and bound F/L .55. Free H/T pass F.
-        self.contact=np.array([[.7,.28,0.,.55],[.28,0.,0.,.55],[0.,0.,.4,.4],[.55,.55,.4,.4]])
+        r=config['tool_lipid_contact']
+        self.contact=np.array([[.7,.28,0.,r],[.28,0.,0.,r],[0.,0.,.4,.4],[r,r,.4,.4]])
+        if config['formation_gate']=='metropolis':
+            self.transition_stats={key:dict(proposals=0,contact_time=0.,weighted_time=0.,positive_delta=0,
+                sum_positive_delta=0.,max_delta=None,min_delta=None,formed=0) for key in ('background','catalytic')}
         self.mobility=np.concatenate((np.full(self.prefix,.25),np.full(2*count,.4)))[:,None]
         self.springs=np.empty((0,4));self.angles=np.empty((0,5));self._mechanics()
 
@@ -98,10 +104,21 @@ class LipidSynthesisChemistry:
             sites=self.capture.support(a,b)
             catalyzed=all(q>=0 for q in sites) and tuple(sorted(sites)) in self.edges
             rate=self.config['rung_catalytic_rate'] if catalyzed else self.config['rung_formation_rate']
-            if self.rng.random()>=-np.expm1(-rate*interval):continue
+            factor=1.;delta=None
+            if self.config['formation_gate']=='metropolis':
+                from .transition_energy import formation_energy,thermal_factor
+                terms=formation_energy(self,a,b,neighbors);delta=sum(terms.values());factor=thermal_factor(delta,self.config['temperature'])
+                stats=self.transition_stats['catalytic' if catalyzed else 'background']
+                stats['proposals']+=1;stats['contact_time']+=interval;stats['weighted_time']+=interval*factor
+                stats['positive_delta']+=int(delta>0);stats['sum_positive_delta']+=max(delta,0.)
+                stats['max_delta']=delta if stats['max_delta'] is None else max(stats['max_delta'],delta)
+                stats['min_delta']=delta if stats['min_delta'] is None else min(stats['min_delta'],delta)
+            if self.rng.random()>=-np.expm1(-rate*factor*interval):continue
             self.lipids.bind(a,b);self.capture.categories[a]=self.capture.categories[b]=-1
             self.capture.release(a);self.capture.release(b)
             self.births.append(dict(time=float(time),head=a,tail=b,catalyzed=bool(catalyzed),sites=list(sites)))
+            if delta is not None:
+                stats['formed']+=1;self.births[-1].update(delta_U=delta,energy_factor=factor)
 
     def extra_forces(self,neighbors):
         self._views();force=self.capture.forces(self,ScopedNeighbors(neighbors,'HT:'))
@@ -121,8 +138,11 @@ class LipidSynthesisChemistry:
     def colors(self):
         return ([] if self.host is None else self.host.colors())+['#148e9c']*self.config['food_units']+['#df7947']*self.config['food_units']
 
-    def export(self):return dict(host=None if self.host is None else self.host.export(),capture=self.capture.export(),
-        lipids=self.lipids.export(),births=self.births,exchanges=self.exchanges)
+    def export(self):
+        result=dict(host=None if self.host is None else self.host.export(),capture=self.capture.export(),
+            lipids=self.lipids.export(),births=self.births,exchanges=self.exchanges)
+        if hasattr(self,'transition_stats'):result['transition_stats']=self.transition_stats
+        return result
 
     def restore(self,state):
         self._views()
@@ -131,6 +151,7 @@ class LipidSynthesisChemistry:
             self.host.springs=rows.copy();self.host.angles=self.angles.copy();self.host.restore(state['host'])
         self._views();self.lipids.restore(state['lipids']);self.capture.restore(self,state['capture'])
         self.births=list(state['births']);self.exchanges=list(state['exchanges']);self._mechanics()
+        if 'transition_stats' in state:self.transition_stats=copy.deepcopy(state['transition_stats'])
 
 
 class LipidSynthesisObserver:
@@ -139,6 +160,7 @@ class LipidSynthesisObserver:
 
     def __call__(self,time,c,events):
         self.times.append(float(time));self.births=list(c.births)
+        if hasattr(c,'transition_stats'):self.transition_stats=copy.deepcopy(c.transition_stats)
         self.history.append(dict(time=float(time),lipids=len(c.lipids.rungs),lateral_contacts=len(c.lipids.links),
             occupied_sites=int(np.count_nonzero(c.capture.site_bound>=0))))
         if getattr(self,'record_trajectory',True):self.frames.append(c.pos.copy())
@@ -148,7 +170,9 @@ class LipidSynthesisObserver:
         for e in self.births:
             if e['catalyzed']:
                 key=tuple(e['sites']);by_site[key]=by_site.get(key,0)+1
-        return dict(lipids_formed=len(self.births),catalyzed_lipids=sum(e['catalyzed'] for e in self.births),
+        result=dict(lipids_formed=len(self.births),catalyzed_lipids=sum(e['catalyzed'] for e in self.births),
             max_products_per_site_pair=max(by_site.values(),default=0),births=self.births,history=self.history,
             scope='Prepared existing F01 co-recruiter, H/T only. Same capture constants but extended ligand types. '
                 'No P/R competition, expression, full-cell membrane or maintenance proof. Products use real conserved H/T atom IDs.')
+        if hasattr(self,'transition_stats'):result['transition_stats']=self.transition_stats
+        return result

@@ -99,6 +99,10 @@ def main():
     files.update(ROOT/p for p in ('research/BATCH_36_PLAN.md','research/BATCH_36.md','research/BATCH_36_RECIPES.json',
         'research/BATCH_36_LIPIDS.png','experiments/pilot_lipid_synthesis.py','experiments/review_lipid_pilot.py',
         'experiments/render_lipid_pilot.py','experiments/diagnose_lipid_heat.py','campaigns/lipid_pilot.json'))
+    files.update(ROOT/p for p in ('research/BATCH_37_PLAN.md','research/BATCH_37.md','research/BATCH_37_RECIPES.json',
+        'research/BATCH_37_RESULTS.png','experiments/prepare_lipid_energy.py','experiments/review_lipid_energy.py',
+        'experiments/verify_lipid_reference.py','experiments/render_lipid_energy.py','scripts/lipid_energy_followup.py',
+        'campaigns/lipid_energy.json','start_lipid_energy.bat','lipid_energy_status.bat','stop_lipid_energy.bat','resume_lipid_energy.bat'))
     files.update(ROOT/p for p in ('README.md','SIMULATOR_ARCHITECTURE.md','requirements.txt',
         'CONTRIBUTING.md','GIT_SETUP.md','THIRD_PARTY_NOTICES.md',
         '.gitignore','.gitattributes','.editorconfig',

@@ -1,5 +1,12 @@
 # Fidélité à l'objectif : localité et risques de pilotage
 
+Lot37 L2 : ΔU calculé seulement pour les termes modifiés dans les rayons des
+forces (cores, capture, ports), plus un ressort axial. Indexation des liens
+locaux, aucun potentiel total du bain, contour ou observateur dans la décision.
+Les spectateurs distants n’affectent pas la porte ; comparaison mathématique
+au potentiel complet réservée aux tests. Zéro protéine/gène supplémentaire.
+Porte irréversible : ne garantit ni équilibre détaillé ni fermeture énergétique.
+
 Lot36 L1 : motif catalytique six billes (deux F composites voisins, H,T),
 occupation des ports et distances seulement. Les vrais liens H–T indexent les
 ports MD2 ; aucune composante, contour ou séquence entière dans les réactions.

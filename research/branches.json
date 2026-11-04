@@ -1265,6 +1265,24 @@
       "recipe": "research/BATCH_36_RECIPES.json",
       "conclusion": "Pilot22 actual H–T/22 catalyzed, max8 per local pair,16 lateral contacts,21/22 non-index tails. T_final.205/mean_late.251 vs target.08. First birth +31.416 potential mostly core22.670 and axial10.454; passive replay exact.195 tests pass.",
       "health_gate": "Stop after one pilot; diagnose local transition energy before more L1 sampling. Existing MIN1M unchanged in frozen sources; no default/demos promotion."
+    },
+    {
+      "id": "L2",
+      "parent": "L1",
+      "related": [
+        "MD2",
+        "MIN1M"
+      ],
+      "status": "twenty_complete_production_preserved_thermal_gate_refused",
+      "hypothesis": "Capture-compatible contacts and exact local formation-energy gate reduce heat without losing synthesis",
+      "test": "Four mechanism variants and three combined negative controls x3 at100;20 new trials plus reused frozen L1 reference0;1 worker,1h budget, automatic stop",
+      "cost": "Two optional law choices, no new tool/gene/elementary type/rate; finite-neighborhood energy delta and passive exposures. Membrane retention with changed bead contact not established.",
+      "counterexample": "Gate blocks all assembly, synthesis still overheats, potential is evaluated globally or a measurement drives chemistry",
+      "missing_proof": "Thermal bounds, capture/release/folding energy, P/R cohabitation, expression, membrane insertion, retention and homeostasis.",
+      "evidence": "research/BATCH_37_PLAN.md",
+      "results": "research/BATCH_37.md",
+      "recipe": "research/BATCH_37_RECIPES.json",
+      "conclusion": "20/20 no errors. Combined19/21/21 L,13/15/15 lateral links; negative controls0. Late T.138/.183/.087 and P95.456/.457/.453 fail prospective thermal criteria. No promotion or further phase."
     }
   ]
 }
