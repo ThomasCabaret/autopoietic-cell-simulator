@@ -92,6 +92,10 @@ def main():
         'campaigns/minimal_diagnostic.json','campaigns/minimal_renewal.json','scripts/minimal_batches.ps1',
         'minimal_diagnostic_status.bat','start_renewal.bat','renewal_status.bat','stop_renewal.bat','resume_renewal.bat'))
     files.update(ROOT/p for p in ('experiments/render_renewal_summary.py','research/BATCH_34_RENEWAL.png'))
+    files.update(ROOT/p for p in ('research/BATCH_35_PLAN.md','research/BATCH_35.md','research/BATCH_35_RECIPES.json',
+        'experiments/prepare_membrane_renewal.py','experiments/review_membrane_renewal.py',
+        'campaigns/membrane_renewal.json','scripts/membrane_renewal_followup.py','scripts/membrane_renewal.ps1',
+        'start_membrane_renewal.bat','membrane_renewal_status.bat','stop_membrane_renewal.bat','resume_membrane_renewal.bat'))
     files.update(ROOT/p for p in ('README.md','SIMULATOR_ARCHITECTURE.md','requirements.txt',
         'CONTRIBUTING.md','GIT_SETUP.md','THIRD_PARTY_NOTICES.md',
         '.gitignore','.gitattributes','.editorconfig',

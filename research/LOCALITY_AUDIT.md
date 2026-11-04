@@ -1,5 +1,12 @@
 # Fidélité à l'objectif : localité et risques de pilotage
 
+Lot35 MIN1M : aucun fichier du moteur ou des lois modifié. G01/F01 et
+témoins changent uniquement l'initialisation sous MD2. Collecteur et GUI
+reconnaissent des chaînes entières pour mesurer, jamais pour agir. Les nouveaux
+compteurs lisent les supports réellement nés et leur activité antérieurement
+certifiée ; ils n'ajoutent aucun tirage aléatoire ou retour vers la chimie.
+Coût : zéro primitive/gène/outil/helper supplémentaire. Cycle externe conservé.
+
 ## MIN1D / MIN1R — observer puis tester un départ construit
 
 La loupe parcourt des liens pour **choisir une observation** ; ces données ne

@@ -1225,6 +1225,25 @@
       "results": "research/BATCH_34.md",
       "recipe": "research/BATCH_34_RECIPES.json",
       "conclusion": "All9 complete no errors: active G9/12/8 F11/13/12 whole-food-F10/10/10 active5/2/1 operations12/9/9; split whole3/5/0 active1/3/0; nogene negative3/3. Criteria pass, no active runs or auto promotion."
+    },
+    {
+      "id": "MIN1M",
+      "parent": "MIN1R",
+      "related": [
+        "MD2",
+        "I0",
+        "RV1"
+      ],
+      "status": "twelve_frozen_membrane_transfer_trials_running_no_promotion",
+      "hypothesis": "Existing short G01/F01 reconstruction loop can coexist with the MD2 membrane without new laws",
+      "test": "active/noL/split/nogene x3 at1200; whole food-derived expressed F activity and >=70% regular membrane closure in same >=2 active seeds; nogene negative",
+      "cost": "Zero new primitive/type/state/port/rate/tool/gene. Initial architecture changed, same432 G/384 F supports;2118 beads with L/1632 without. Passive GUI material counters.",
+      "counterexample": "Only old enzyme works, newly expressed tools use prepared composites, membrane collapses or noL alone preserves material closure",
+      "missing_proof": "Transfer pending; no L construction, actual old-tool replacement under loss, homeostasis, open feed or rich information.",
+      "evidence": "research/BATCH_35_PLAN.md",
+      "results": "research/BATCH_35.md",
+      "recipe": "research/BATCH_35_RECIPES.json",
+      "health_gate": "12 tasks maximum,2 workers,24h then checkpoint pause; automatic report and stop for interpretation on either outcome, no retries or tuning"
     }
   ]
 }

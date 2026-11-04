@@ -1,6 +1,6 @@
 # Checklist détaillée — critères et dépendances
 
-Revue 2026-10-31 · révision4. Source : [cell_checklist.json](cell_checklist.json).
+Revue 2026-11-04 · révision5. Source : [cell_checklist.json](cell_checklist.json).
 [Tableau compact](CELL_CHECKLIST_COMPACT.md) · [Échelle et méthode](CONCEPT_FIRST.md).
 
 Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre acyclique de codage. Les cycles de renouvellement sont intentionnels. Une condition initiale construite peut amorcer un sous-cas sans fermer ces cycles.
@@ -262,8 +262,6 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Prochain test / décision :** Transférer le gène01/outilF01 au bain avec membrane et comparer aux préparations MD2 ; préserver le test d’information riche.
 
-**Progrès du dernier lot :** MIN1R : expression courte utile3/3, palier25→50 ; MIN1 sans outil reste non robuste.
-
 <a id="T-02"></a>
 ### T-02 — Libération, conformation et état actif
 
@@ -302,8 +300,6 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Prochain test / décision :** Vérifier le même remplacement entier actif dans le bain avec L, puis sous pertes et flux déclarés.
 
-**Progrès du dernier lot :** F exprimés depuis vrais produits alimentaires actifs3/3, couplage limité25→75.
-
 <a id="T-04"></a>
 ### T-04 — Renouvellement de tous les outils
 
@@ -338,11 +334,11 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** MIN1R9/9 terminé : active10/10/10 F entièrement refaits dont5/2/1 actifs ; split3/5/0 dont1/3/0 actifs ; nogene négatif3/3. Pas membrane/pertes/régime ouvert.
 
-**Références :** [research/BATCH_34.md](../research/BATCH_34.md), [research/BATCH_34_PLAN.md](../research/BATCH_34_PLAN.md)
+**Références :** [research/BATCH_34.md](../research/BATCH_34.md), [research/BATCH_34_PLAN.md](../research/BATCH_34_PLAN.md), [research/BATCH_35.md](../research/BATCH_35.md)
 
-**Prochain test / décision :** Transfert du même gène/outil court dans le bain membranaire MD2, témoins et produits inchangés ; ensuite pertes/flux.
+**Prochain test / décision :** Lire MIN1M complet et son crible de coexistence membrane / nouveau F entier actif ; puis pertes réelles et maintien.
 
-**Progrès du dernier lot :** 9/9 essais ;10/10/10 F entièrement refaits dont5/2/1 actifs, palier séparé50.
+**Progrès du dernier lot :** MIN1M : transfert avec membrane en campagne,12 essais figés ; palier50 inchangé.
 
 ## Membrane et insertion
 
@@ -753,9 +749,11 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** Cohabitation d’un sous-réseau MD2, pas de toutes les fonctions.
 
-**Références :** [research/CELL_INTERACTIONS.md](../research/CELL_INTERACTIONS.md), [research/INTEGRATION_TESTS.json](../research/INTEGRATION_TESTS.json)
+**Références :** [research/CELL_INTERACTIONS.md](../research/CELL_INTERACTIONS.md), [research/INTEGRATION_TESTS.json](../research/INTEGRATION_TESTS.json), [research/BATCH_35.md](../research/BATCH_35.md)
 
 **Prochain test / décision :** Ajouter les espèces étrangères avec témoin d’encombrement et suivre séquestration, bons/mauvais produits.
+
+**Progrès du dernier lot :** Même petit outil dans2118 billes MD2, contrôles noL/split/nogene ; aucune preuve anticipée.
 
 <a id="C-02"></a>
 ### C-02 — Régime physique commun et robustesse numérique
@@ -850,11 +848,11 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** Fonction logicielle validée pour les références présentes, pas pour toutes les futures chimies.
 
-**Références :** [research/BATCH_26.md](../research/BATCH_26.md), [research/BATCH_27.md](../research/BATCH_27.md), [research/BATCH_31.md](../research/BATCH_31.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_33.md](../research/BATCH_33.md)
+**Références :** [research/BATCH_26.md](../research/BATCH_26.md), [research/BATCH_27.md](../research/BATCH_27.md), [research/BATCH_31.md](../research/BATCH_31.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_33.md](../research/BATCH_33.md), [research/BATCH_35.md](../research/BATCH_35.md)
 
 **Prochain test / décision :** Conserver les contrôles sans observateur, reprise exacte et signatures à chaque changement concerné.
 
-**Progrès du dernier lot :** Loupe bornée passive, reprise et deux rejeux exacts ; figure locale vérifiée.
+**Progrès du dernier lot :** Trois démos MIN1R exactes ajoutées ; compteurs de F entièrement refaits et actifs,24 choix.
 
 ## Évolution conservée
 
@@ -862,3 +860,4 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 - Révision2 (2026-10-31) : RV1 réalise clivage/dissociation et réemploi spontané dans2/3 petits bains full ;12 essais achevés, porte protected refusée, aucun transfert ou maintien. W-02/W-03 sous-cas25%, H-06 inchangé0%. Colonne progrès ajoutée.
 - Révision3 (2026-10-31) : MIN1 simplifie l’outil P/R existant à deux unités sous lois MD2 : A12/12 et porte passée ; expression B9 en cours. Draft matériel L ajouté, aucune nouvelle fonction intégrée ou hausse de score anticipée.
 - Révision4 (2026-10-31) : MIN1 clos, deux rejeux exacts et loupe bornée ; MIN1R9/9 passe avec F entièrement neufs actifs3/3, sans loi ajoutée. T-05 ajouté puis séparé50%, T-01 court50%, T-03 couplage limité75%. Membrane/L/pertes/information riche restent ouverts.
+- Révision5 (2026-11-04) : MIN1M12 essais de transfert sous lois MD2 lancés, aucun résultat final anticipé. MIN1R validé ajouté aux démos avec recensement matériel passif ; pas de changement de palier.

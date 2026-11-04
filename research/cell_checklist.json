@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "revision": 4,
-  "reviewed": "2026-10-31",
-  "candidate": "MD2 / Langevin inchangé ; MIN1R terminé : renouvellement local actif3/3, transfert membranaire à tester",
+  "revision": 5,
+  "reviewed": "2026-11-04",
+  "candidate": "MD2 / Langevin inchangé ; MIN1R visible dans la GUI ; transfert membranaire MIN1M en cours",
   "purpose": "Registre évolutif des capacités nécessaires à une cellule construite maintenue ; les pourcentages sont des paliers de preuve, pas un taux global de réussite.",
   "out_of_scope": [
     "origine spontanée de la cellule",
@@ -484,9 +484,10 @@
       "scope": "MIN1R9/9 terminé : active10/10/10 F entièrement refaits dont5/2/1 actifs ; split3/5/0 dont1/3/0 actifs ; nogene négatif3/3. Pas membrane/pertes/régime ouvert.",
       "references": [
         "research/BATCH_34.md",
-        "research/BATCH_34_PLAN.md"
+        "research/BATCH_34_PLAN.md",
+        "research/BATCH_35.md"
       ],
-      "next_test": "Transfert du même gène/outil court dans le bain membranaire MD2, témoins et produits inchangés ; ensuite pertes/flux.",
+      "next_test": "Lire MIN1M complet et son crible de coexistence membrane / nouveau F entier actif ; puis pertes réelles et maintien.",
       "essential": true
     },
     {
@@ -970,7 +971,8 @@
       "scope": "Cohabitation d’un sous-réseau MD2, pas de toutes les fonctions.",
       "references": [
         "research/CELL_INTERACTIONS.md",
-        "research/INTEGRATION_TESTS.json"
+        "research/INTEGRATION_TESTS.json",
+        "research/BATCH_35.md"
       ],
       "next_test": "Ajouter les espèces étrangères avec témoin d’encombrement et suivre séquestration, bons/mauvais produits.",
       "essential": true
@@ -1095,7 +1097,8 @@
         "research/BATCH_27.md",
         "research/BATCH_31.md",
         "research/BATCH_32.md",
-        "research/BATCH_33.md"
+        "research/BATCH_33.md",
+        "research/BATCH_35.md"
       ],
       "next_test": "Conserver les contrôles sans observateur, reprise exacte et signatures à chaque changement concerné.",
       "essential": true
@@ -1142,12 +1145,16 @@
       "revision": 4,
       "date": "2026-10-31",
       "reason": "MIN1 clos, deux rejeux exacts et loupe bornée ; MIN1R9/9 passe avec F entièrement neufs actifs3/3, sans loi ajoutée. T-05 ajouté puis séparé50%, T-01 court50%, T-03 couplage limité75%. Membrane/L/pertes/information riche restent ouverts."
+    },
+    {
+      "revision": 5,
+      "date": "2026-11-04",
+      "reason": "MIN1M12 essais de transfert sous lois MD2 lancés, aucun résultat final anticipé. MIN1R validé ajouté aux démos avec recensement matériel passif ; pas de changement de palier."
     }
   ],
   "last_batch_progress": {
-    "T-01": "MIN1R : expression courte utile3/3, palier25→50 ; MIN1 sans outil reste non robuste.",
-    "T-03": "F exprimés depuis vrais produits alimentaires actifs3/3, couplage limité25→75.",
-    "T-05": "9/9 essais ;10/10/10 F entièrement refaits dont5/2/1 actifs, palier séparé50.",
-    "O-02": "Loupe bornée passive, reprise et deux rejeux exacts ; figure locale vérifiée."
+    "T-05": "MIN1M : transfert avec membrane en campagne,12 essais figés ; palier50 inchangé.",
+    "C-01": "Même petit outil dans2118 billes MD2, contrôles noL/split/nogene ; aucune preuve anticipée.",
+    "O-02": "Trois démos MIN1R exactes ajoutées ; compteurs de F entièrement refaits et actifs,24 choix."
   }
 }

@@ -1,5 +1,11 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot35 : MIN1R devient inspectable dans les démos, avec mêmes scénarios et
+compteurs de matière entière/activité. Le transfert MIN1M avec membrane tourne
+sur12 essais : aucun résultat final ni palier supplémentaire annoncé.
+La maturité chimique reste celle de MIN1R, petit bain couplé P/R seulement.
+Une campagne active ne constitue pas un nouveau succès d'intégration.
+
 Clôture MIN1R :9/9 sans erreur. Active3/3 produit10/10/10 F entièrement neufs,
 dont5/2/1 catalysent ensuite ; split2/3 également positif, nogene négatif3/3.
 T-05 testé séparément50%, T-01 court50%, T-03 couplage limité75%, pas100% de

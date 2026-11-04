@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-10-30",
+  "date": "2026-11-04",
   "recommended": "current_cell_s2",
   "simulator_sha256": {
     "simulator/__init__.py": "bf5a7a5cafdf7076cbc3cc9d8992895e4a8c217621ea024645a061a3531281a9",
@@ -84,6 +84,20 @@
       "observe": "Insertions persistantes observées : 1 / 1 / 2 sur graines 0 / 1 / 2. La graine 1 se dégrade durablement après 224 ; elle est conservée. Les compteurs affichent les entrées/sorties effectivement observées.",
       "limits": "Frontière non classable = inconnu, pas étanchéité supposée. Zéro sortie observée ne garantit rien pendant ces périodes. Sondes de contrôle, pas synthèse de nourriture ni cellule intégrée.",
       "look": "Zoomer sur une molécule L libre près de la membrane et activer le suivi. Filtrer les sondes dans Explorer. La graine 2 montre deux insertions persistantes ; la graine 1 montre un échec important."
+    },
+    {
+      "id": "current_renewal",
+      "title": "Catalyseurs reconstruits · progrès récent",
+      "level": "MD2 / MIN1R · boucle matérielle sans membrane",
+      "archive": false,
+      "summary": "De la nourriture à un nouveau catalyseur entier, puis à son activité.",
+      "question": "L’outil peut-il reconstruire des composants qui deviennent à leur tour un outil fonctionnel ?",
+      "prepared": "4 G01 et un F01 construits, quatre F monomères et précurseurs P/R libres. 150 billes, boîte12×9 ; aucun composant membranaire.",
+      "observe": "À1200 :10 F entièrement refaits depuis P/R dans chaque graine, dont5 /2 /1 actifs ensuite pour12 /9 /9 opérations. Première activité à392,68 /192,14 /395,92. Les compteurs distinguent nouveaux F, F entièrement refaits et activité ultérieure.",
+      "conditions": "Lois MD2 inchangées, Langevin masse1/frottement0,1, température0,08, dt0,002 ; cycle externe200/15. Trois graines intégrales, sans sélection de la plus favorable.",
+      "limits": "L’outil initial reste présent. Production de remplaçants fonctionnels, pas remplacement sous pertes ni maintien cellulaire. Stocks finis, pas membrane, synthèse L ou homéostasie. Gène très court, pas capacité informationnelle générale.",
+      "look": "Jouer en Maximum pour atteindre le premier outil neuf actif, puis ralentir et suivre une chaîne. Les F initiaux sont exclus des trois compteurs de nouveauté. La simulation repart réellement de t0 ; aucun film précalculé.",
+      "evidence": "research/BATCH_34.md"
     },
     {
       "id": "integrated",
@@ -266,6 +280,48 @@
       "source_task": "task0008",
       "source_sha256": "089cb54b318a73c2808cf9e4c394090deb5b3b00b89ec799ad6bc8f69df0d05c",
       "dynamics_sha256": "fdfb4301f5688fb156d85462f274785db2caaeb4282aafb10750db3a0149cc6d",
+      "view_speed": 0.0,
+      "motion": "langevin"
+    },
+    {
+      "id": "current_renewal_s0",
+      "demo": "current_renewal",
+      "title": "Graine 0",
+      "seed": 0,
+      "config": "demonstrators/configs/demo_current_renewal_s0.json",
+      "beads": 150,
+      "source": "research/campaign_recipes/MIN1R_20261031T110654015735Z/manifest.json",
+      "source_task": "task0000",
+      "source_sha256": "bbfab1ca4ca27a213fea9dd557192eec9c00b3f18a83375c944b9e1d05e47e8a",
+      "dynamics_sha256": "f0da4d7898509a949a61f0003fa26c6610b307283b96a9aa1ea667099b6cccc7",
+      "view_speed": 0.0,
+      "motion": "langevin"
+    },
+    {
+      "id": "current_renewal_s1",
+      "demo": "current_renewal",
+      "title": "Graine 1",
+      "seed": 1,
+      "config": "demonstrators/configs/demo_current_renewal_s1.json",
+      "beads": 150,
+      "source": "research/campaign_recipes/MIN1R_20261031T110654015735Z/manifest.json",
+      "source_task": "task0003",
+      "source_sha256": "bbfab1ca4ca27a213fea9dd557192eec9c00b3f18a83375c944b9e1d05e47e8a",
+      "dynamics_sha256": "af070bf233bc829d2736a44696b63137014a4110f6b07921aca54c2a808764c1",
+      "view_speed": 0.0,
+      "motion": "langevin"
+    },
+    {
+      "id": "current_renewal_s2",
+      "demo": "current_renewal",
+      "title": "Graine 2",
+      "seed": 2,
+      "config": "demonstrators/configs/demo_current_renewal_s2.json",
+      "beads": 150,
+      "source": "research/campaign_recipes/MIN1R_20261031T110654015735Z/manifest.json",
+      "source_task": "task0006",
+      "source_sha256": "bbfab1ca4ca27a213fea9dd557192eec9c00b3f18a83375c944b9e1d05e47e8a",
+      "dynamics_sha256": "cfd492909caca2090f98fd95db6cb57dd8d15a8f79886477a4d9ad55a66e869d",
       "view_speed": 0.0,
       "motion": "langevin"
     },

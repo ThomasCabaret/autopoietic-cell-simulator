@@ -73,6 +73,29 @@ def current_descriptions():
         look='Zoomer sur une molécule L libre près de la membrane et activer le suivi. Filtrer les sondes dans Explorer. La graine 2 montre deux insertions persistantes ; la graine 1 montre un échec important.')]
 
 
+def renewal_origins():
+    source='research/campaign_recipes/MIN1R_20261031T110654015735Z/manifest.json'
+    data=json.loads((ROOT/source).read_text(encoding='utf-8'));items=[]
+    for seed in range(3):
+        task=next(t for t in data['tasks'] if t['label']==f'MIN1R_active_s{seed}')
+        items.append((f'current_renewal_s{seed}','current_renewal',f'Graine {seed}',
+            copy.deepcopy(task['scenario']),source,task['id'],150))
+    return items
+
+
+def renewal_description():
+    return dict(id='current_renewal',title='Catalyseurs reconstruits · progrès récent',
+        level='MD2 / MIN1R · boucle matérielle sans membrane',archive=False,
+        summary='De la nourriture à un nouveau catalyseur entier, puis à son activité.',
+        question='L’outil peut-il reconstruire des composants qui deviennent à leur tour un outil fonctionnel ?',
+        prepared='4 G01 et un F01 construits, quatre F monomères et précurseurs P/R libres. 150 billes, boîte12×9 ; aucun composant membranaire.',
+        observe='À1200 :10 F entièrement refaits depuis P/R dans chaque graine, dont5 /2 /1 actifs ensuite pour12 /9 /9 opérations. Première activité à392,68 /192,14 /395,92. Les compteurs distinguent nouveaux F, F entièrement refaits et activité ultérieure.',
+        conditions='Lois MD2 inchangées, Langevin masse1/frottement0,1, température0,08, dt0,002 ; cycle externe200/15. Trois graines intégrales, sans sélection de la plus favorable.',
+        limits='L’outil initial reste présent. Production de remplaçants fonctionnels, pas remplacement sous pertes ni maintien cellulaire. Stocks finis, pas membrane, synthèse L ou homéostasie. Gène très court, pas capacité informationnelle générale.',
+        look='Jouer en Maximum pour atteindre le premier outil neuf actif, puis ralentir et suivre une chaîne. Les F initiaux sont exclus des trois compteurs de nouveauté. La simulation repart réellement de t0 ; aucun film précalculé.',
+        evidence='research/BATCH_34.md')
+
+
 def descriptions():
     result=[dict(id='integrated',title='Bain intégré actuel',level='Intégration partielle · priorité de lecture',
         summary='Membrane, gènes, outils et précurseurs dans un même bain.',
@@ -124,7 +147,7 @@ def langevin_variant(config):
 
 def build():
     variants=[]
-    for key,demo,title,cfg,origin,task,beads in current_origins():
+    for key,demo,title,cfg,origin,task,beads in current_origins()+renewal_origins():
         cfg=resolve(cfg);path=f'demonstrators/configs/demo_{key}.json'
         (ROOT/path).write_text(json.dumps(cfg,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
         variants.append(dict(id=key,demo=demo,title=title,seed=cfg['seed'],config=path,beads=beads,
@@ -150,9 +173,9 @@ def build():
     from visualizer.demos import simulator_hashes
     archived=descriptions()
     for info in archived:info['archive']=True
-    catalog=dict(version=1,date='2026-10-30',recommended='current_cell_s2',simulator_sha256=simulator_hashes(),
+    catalog=dict(version=1,date='2026-11-04',recommended='current_cell_s2',simulator_sha256=simulator_hashes(),
         policy='Live simulations from preserved initial inputs. Selected illustrative seeds, not a robustness claim. No trajectories/checkpoints bundled.',
-        demos=current_descriptions()+archived,variants=variants)
+        demos=current_descriptions()+[renewal_description()]+archived,variants=variants)
     (ROOT/'demonstrators/catalog.json').write_text(json.dumps(catalog,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
 
 
@@ -187,6 +210,14 @@ def verify():
         assert sim.motion is not None and not info['archive']
         if key.startswith('current_free'):assert m.edges==[set(),set()]
         if key.startswith('current_probes'):assert m.config['retained_probes']==m.config['permeable_probes']==24
+        rows.append(dict(id=key,beads=beads,source_dynamics_identical=True,current=True))
+    for key,_,_,original,source,task,beads in renewal_origins():
+        variant,info,cfg=catalog.get(key)
+        assert signature(cfg)==signature(original)
+        assert hashlib.sha256((ROOT/source).read_bytes()).hexdigest()==variant['source_sha256']
+        sim=Simulation(cfg)
+        assert len(sim.chemistry.pos)==beads==150 and not info['archive'] and sim.motion is not None
+        assert cfg['chemistry']['sequence']=='01'
         rows.append(dict(id=key,beads=beads,source_dynamics_identical=True,current=True))
     return rows
 

@@ -1,5 +1,15 @@
 # Santé du projet —31 octobre2026
 
+Lot35,4 novembre2026 : le jalon suivant confronte la même boucle matérielle
+au bain membranaire, sans nouvelle primitive ni tuning.12 trajectoires automatiques,
+un choix d'architecture initiale, pas12 corrections conceptuelles. Le plus petit
+contre-exemple noL distingue une incompatibilité avec L d'une dilution/organisation
+du grand bain ; positions initiales appariées mais vitesses/PRNG noL différents.
+La démonstration MIN1R est maintenant directement inspectable par l'utilisateur.
+Décision après cohorte entière : transfert puis L, ou diagnostic avant toute
+retouche. Les risques L/répertoire, régulation/protection et information riche
+restent structurels ; pas de délai garanti ni maintien autonome annoncé.
+
 Cette évaluation vise la faisabilité globale et le volume du travail, pas le
 nombre de simulations positives. Elle doit évoluer avec les résultats. La cible
 est une cellule construite qui maintient et refabrique ses composants depuis

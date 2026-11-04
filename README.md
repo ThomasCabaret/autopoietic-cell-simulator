@@ -25,10 +25,15 @@ La visualisation essentielle est disponible ; la vidéo et les outils avancés
 seront spécifiés plus tard. [Guide de la GUI](docs/VISUALIZER.md).
 Les lanceurs Pygame historiques ci-dessous sont conservés.
 
-Recherche en cours : campagne T9E de finition des fragments et d'interférence
-avec les outils, suivie d'un transfert intégré conditionnel. État par
-`expression_status.bat`, pause par `stop_expression.bat`. Cette variante reste
-expérimentale ; les démos ci-dessus gardent MD2/Langevin. [Lot27](research/BATCH_27.md).
+**Progrès récent visible** : **Démos → Catalyseurs reconstruits · progrès récent**
+montre les trois essais MIN1R validés. De nouveaux F entièrement construits
+depuis nourriture deviennent actifs ; les compteurs les distinguent des outils
+préparés. Petit bain sans membrane, stocks finis, pas maintien sous pertes.
+
+Recherche en cours : transfert de cette boucle courte vers le bain membranaire
+MD2,12 essais MIN1M sans nouvelle loi. État par `membrane_renewal_status.bat`,
+pause par `stop_membrane_renewal.bat`, reprise par `resume_membrane_renewal.bat`.
+Analyse automatique puis arrêt pour interprétation. [Lot35](research/BATCH_35.md).
 
 Un moteur CPU commun pour les campagnes sans fenêtre et les démonstrateurs
 interactifs. Les lois de copie/expression et de membrane sont des modules séparés.

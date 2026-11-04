@@ -1,6 +1,20 @@
 # Démos représentatives accessibles dans la GUI
 
-## État actuel — MD2,21 choix vérifiés
+## Progrès du4 novembre —24 choix
+
+**Démos → Catalyseurs reconstruits · progrès récent** présente les trois
+graines MIN1R validées :150 billes sans membrane, quatre G01 et un F01
+préparés, P/R libres. Chaque essai produit10 F entièrement refaits depuis
+nourriture ;5/2/1 deviennent actifs ensuite. Les deux compteurs dédiés
+excluent l'outil initial et les chaînes partiellement préparées. Première
+activité vers392,68/192,14/395,92 ; jouer en Maximum puis ralentir.
+
+L'outil initial demeure : production de remplaçants fonctionnels, pas maintien
+sous pertes. La démo membranaire recommandée reste MD2 ; le nouveau transfert
+MIN1M est encore en campagne, donc absent du catalogue. Aucun film précalculé
+ou réglage graphique de chimie. Voir [lot35](../research/BATCH_35.md).
+
+## Référence intégrée — MD2
 
 Relancer **`visualizer.bat`**, puis **Démos → État actuel · bain intégré**.
 Ce raccourci ouvre **Cellule construite · état actuel, graine2**, en pause à t=0,

@@ -1,5 +1,12 @@
 # Architectures de cellule : fermeture à concevoir, pas encore réalisée
 
+Lot35 : MIN1M teste l'architecture initiale courte du même co-recruteur :
+16 G01/16 F01,64 F monomères, stocks432 G/384 F,486 billes L. Total2118,
+inchangé au MD2. Aucun nouveau rôle ni gène fonctionnel ; L reste préparé.
+Ce cas n'adopte ni ne valide la cible conditionnelle à trois synthèses.
+Boucle complète depuis P/R visible dans la démo MIN1R sans membrane ;
+transfert membranaire en cours, pertes et maintien encore absents.
+
 Lots33–34 : MIN1 ne prouve pas l'amorçage robuste sans F. MIN1R repart d'un
 seul F01 construit, matière inchangée, et mesure des F entièrement refaits
 depuis P/R libres puis actifs. Premières graines positives sous MD2 sans

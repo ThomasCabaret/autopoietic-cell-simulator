@@ -1335,3 +1335,19 @@ Figures et bilan final ajoutés, aucune promotion automatique ou nouvelle loi.
 T-05 séparé50%, T-01 court50%, T-03 couplage limité75% ; T-04 tous rôles et
 homéostasie restent0. Prochain transfert : même boucle dans le bain membranaire,
 puis L et pertes/flux. Les lectures partielles précédentes sont conservées.
+
+### Lot35 — MIN1M et visibilité du progrès,4 novembre2026
+
+MIN1R9/9 revérifié, inactif. Plan12 transferts active/noL/split/nogene x3,
+t1200 et lois MD2 figées,2118 billes avec membrane. Générateur/collecteur et
+contrôles ajoutés, même ordonnanceur/cadre de supervision existant,2 travailleurs,
+24h de budget, checkpoints30s, décision automatique puis arrêt. Préfixe pilote
+t2 sans erreur en4,77s ; pas un résultat biologique. Positions/symboles égaux
+dans tous témoins ; noL tire moins de vitesses et n'a donc pas le même PRNG
+après initialisation. Pas de loi modifiée pour masquer cette différence.
+
+GUI : trois MIN1R exacts ajoutés,24 choix, intégration MD2 toujours recommandée.
+F entièrement alimentaires et actifs comptés passivement ; contrôles sur les
+trois checkpoints finaux retrouvent10/10/10 et5/2/1. Pas de promotion MIN1M
+anticipée. Checklistrévision5, paliers inchangés, arbre/priorités/santé à jour.
+Résultats volumineux locaux ; voir BATCH_35.md et membrane_renewal_status.bat.

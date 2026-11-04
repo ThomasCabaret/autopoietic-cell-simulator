@@ -23,6 +23,12 @@ def live_observations(observer,observed_time=None):
             used=set(genetic['assembly_incorporated'])
             rows.extend([('Dont catalysés',len(cat)),('Dont par F exprimés',len(expressed)),
                          ('Catalysés puis réutilisés',len(cat&used))])
+            births={int(e['support']):float(e['time']) for e in assembly['events']}
+            whole=sum(set(chain)<=births.keys() for chain in genetic['translated_detached'])
+            active={tuple(sorted(e['chain'])) for e in events if e['chain_kind']=='expressed' and e.get('chain') and
+                all(q in births and births[q]<e['time'] for q in e['chain'])}
+            rows.extend([('F entièrement refaits depuis nourriture',whole),
+                         ('Dont actifs après libération',len(active))])
     membrane=state.get('membrane_state')
     if membrane is None and state.get('history') and 'parent_closed' in state['history'][-1]:membrane=state
     if membrane and membrane.get('history'):

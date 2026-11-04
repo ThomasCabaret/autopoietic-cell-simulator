@@ -1,5 +1,15 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+**Lot35,4 novembre : MIN1M en cours,12 essais figés, aucune nouvelle loi.**
+Lire membrane_renewal_status.bat et le rapport automatique avant une autre
+campagne. Même boucle courte G01/F01 dans le bain MD2, avec noL/split/nogene.
+Nouveaux F entièrement alimentaires actifs + tenue de membrane dans les mêmes
+graines sont exigés. Arrêt après cohorte quelle que soit la porte, pas de grille.
+Les progrès MIN1R acquis sont désormais visibles dans la GUI, trois graines.
+Si transfert réussi : construction H/T→L et insertion sous lois communes ;
+sinon diagnostic contacts/dilution/membrane. Pertes, homéostasie et information
+riche restent des risques ouverts. Les clôtures ci-dessous sont historiques.
+
 **Clôture MIN1R :9/9, zéro erreur, critères passés, aucun calcul actif.** Des
 F01 entièrement refaits depuis nourriture sont actifs3/3 sous MD2 dans le
 petit bain ; split réussit2/3, nogene négatif3/3. Prochain jalon : transférer

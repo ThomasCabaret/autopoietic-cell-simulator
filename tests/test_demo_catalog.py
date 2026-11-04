@@ -15,7 +15,7 @@ from simulator.runner import make_observer
 class DemoCatalogTests(unittest.TestCase):
     def test_all_presets_match_research_inputs_and_declared_initial_material(self):
         from experiments.prepare_demo_catalog import verify
-        rows=verify();self.assertEqual(len(rows),21)
+        rows=verify();self.assertEqual(len(rows),24)
         catalog=DemoCatalog();self.assertEqual(catalog.data['recommended'],'current_cell_s2')
         _,_,cfg=catalog.get('integrated_s2');sim=Simulation(cfg);g=sim.chemistry.genetics
         prepared_g=1+sum(q['family']==0 and q['backbone'] and len(q['units'])==3 for q in g.initial_groups)
@@ -75,3 +75,17 @@ class DemoCatalogTests(unittest.TestCase):
         self.assertEqual(sim.rng.bit_generator.state,other.rng.bit_generator.state)
         obs.history[-1]['envelope_valid']=False
         self.assertEqual(dict(live_observations(obs)['rows'])['Sondes retenues dedans'],'non classable')
+
+    def test_food_derived_readout_requires_full_material_and_later_activity(self):
+        from types import SimpleNamespace
+        state=dict(detached=set(),translated_detached={(10,11),(12,13)},history=[dict(time=6.)],
+            assembly_state=dict(events=[dict(support=q,time=2.) for q in (10,11,12)]),
+            assembly_catalytic_events=[dict(support=20,catalyzed=True,chain_kind='expressed',chain=[10,11],time=5.),
+                dict(support=21,catalyzed=True,chain_kind='expressed',chain=[12,13],time=5.),
+                dict(support=22,catalyzed=True,chain_kind='expressed',chain=[10,12],time=1.)],
+            assembly_incorporated=set())
+        obs=SimpleNamespace(**state);before=copy.deepcopy(obs.__dict__)
+        rows=dict(live_observations(obs)['rows'])
+        self.assertEqual(rows['F entièrement refaits depuis nourriture'],1)
+        self.assertEqual(rows['Dont actifs après libération'],1)
+        self.assertEqual(obs.__dict__,before)

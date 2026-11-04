@@ -1,5 +1,11 @@
 # Interactions souhaitées, parasites et environnements — lot7
 
+Lot35 : interactions MD2 identiques, aucune nouvelle espèce ou table.
+MIN1M confronte de courts assemblages au même L ; noL/split/nogene séparent
+coexistence membranaire et amorçage. Les produits fabriqués doivent réellement
+devenir un F entier puis actif ; une hausse de dimères seuls ne satisfait pas
+ce test. Les flux de frontière et déchets restent hors de cette campagne.
+
 [Spécification](minimal_cell_spec.json), [graphe et budget](CELL_ARCHITECTURE.md),
 [campagnes futures](INTEGRATION_TESTS.json). Les lignes ci-dessous sont des
 **obligations à tester**, pas une matrice déjà implémentée et validée.
