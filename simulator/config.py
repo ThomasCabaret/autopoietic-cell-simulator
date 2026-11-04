@@ -43,7 +43,7 @@ def resolve(raw):
     defaults = copy.deepcopy(MODELS[model][1])
     chemistry = raw.get("chemistry", {})
     extras={"box", "fragment_size"}
-    if model=='copy':extras.update(('gf_end_capture','bond_turnover'))
+    if model=='copy':extras.update(('gf_end_capture','bond_turnover','capture_curvature'))
     if model in ('membrane','membrane_bath'):extras.add('bound_port_geometry')
     if set(chemistry) - set(defaults) - extras:
         raise ValueError("Unknown chemistry keys: " + str(sorted(set(chemistry)-set(defaults)-extras)))
@@ -82,6 +82,8 @@ def resolve(raw):
     if 'box' in defaults and (len(defaults['box'])!=2 or any(not math.isfinite(x) or x<=1.2 for x in defaults['box'])):
         raise ValueError('box requires two lengths greater than 1.2')
     if model=='copy':
+        if defaults.get('capture_curvature','legacy') not in ('legacy','matched'):
+            raise ValueError('capture_curvature must be legacy or matched')
         if 'bond_turnover' in defaults:
             rates=defaults['bond_turnover']
             keys={'backbone_g','backbone_f','rung_g','rung_f','protection'}

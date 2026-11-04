@@ -24,6 +24,7 @@ def precursor_force(pos,pairs,owners,categories,bits,pairing,site_bound,atom_bou
 
 class PrecursorCapture:
     def __init__(self,c):
+        self.stiffness=capture_stiffness(c.config)
         self.site_bound=np.full(c.n,-1,dtype=np.int64)
         self.atom_bound=np.full(2*c.n,-1,dtype=np.int64)
         self.refresh(c)
@@ -70,7 +71,7 @@ class PrecursorCapture:
             self.site_bound,self.atom_bound,self.activity,c.config['food_ligand_energy'],c.config['food_ligand_width'])[0]
 
     def springs(self,c):
-        return [(int(c.rungs[s,1]),int(p),35.,0.) for s,p in enumerate(self.site_bound) if p>=0]
+        return [(int(c.rungs[s,1]),int(p),self.stiffness,0.) for s,p in enumerate(self.site_bound) if p>=0]
 
     def export(self):return dict(site_bound=self.site_bound.tolist(),atom_bound=self.atom_bound.tolist())
 
@@ -78,3 +79,9 @@ class PrecursorCapture:
         self.site_bound=np.array(state['site_bound'],dtype=np.int64)
         self.atom_bound=np.array(state['atom_bound'],dtype=np.int64)
         self.refresh(c)
+
+
+def capture_stiffness(config):
+    """One optional curvature law for both P/R and H/T, legacy by default."""
+    return (config['food_ligand_energy']/config['food_ligand_width']**2
+        if config.get('capture_curvature','legacy')=='matched' else 35.)

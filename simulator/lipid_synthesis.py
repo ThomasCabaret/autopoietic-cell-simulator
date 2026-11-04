@@ -7,7 +7,7 @@ Neither dynamics nor capture reads a complete tool, membrane or target product.
 import copy
 import numpy as np
 from .copy import CopyChemistry
-from .precursors import PrecursorCapture
+from .precursors import PrecursorCapture,capture_stiffness
 from .linked_lipids import LinkedLipids
 from .coupled_bath import ScopedNeighbors
 from .config import COPY_DEFAULTS
@@ -40,8 +40,7 @@ def native_tool_pose(host,pairs):
 class HTPrecursorCapture(PrecursorCapture):
     """Same local site/capture kernel; H is donor0 and T acceptor1."""
     def __init__(self,c):
-        self.stiffness=(c.config['food_ligand_energy']/c.config['food_ligand_width']**2
-            if c.config['capture_curvature']=='matched' else 35.)
+        self.stiffness=capture_stiffness(c.config)
         self.site_bound=np.full(c.n,-1,dtype=np.int64)
         self.atom_bound=np.full(len(c.pos),-1,dtype=np.int64);self.refresh(c)
 
