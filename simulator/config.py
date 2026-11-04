@@ -34,7 +34,7 @@ def resolve(raw):
         raise ValueError("Unknown chemical hook: " + str(model))
     if 'mechanics' in raw:
         settings=raw['mechanics']
-        if model not in ('copy','membrane','membrane_bath','coupled_bath') or not isinstance(settings,dict) or set(settings)-{'motion','mass','damping','dpd_cutoff'}:
+        if model not in ('copy','membrane','membrane_bath','coupled_bath','lipid_synthesis') or not isinstance(settings,dict) or set(settings)-{'motion','mass','damping','dpd_cutoff'}:
             raise ValueError('Experimental mechanics requires a supported reactive hook')
         settings={**dict(motion='langevin',mass=1.,damping=.1,dpd_cutoff=1.),**settings}
         if settings['motion']!='langevin' or any(type(settings[k]) not in (int,float) or not math.isfinite(settings[k]) or settings[k]<=0 for k in ('mass','damping','dpd_cutoff')):
@@ -139,6 +139,18 @@ def resolve(raw):
             raise ValueError('Contact interval must be a multiple of the engine sampling cadence')
         if abs(defaults['record_interval']/defaults['contact_interval']-round(defaults['record_interval']/defaults['contact_interval']))>1e-7:
             raise ValueError('Record interval must be a multiple of the contact interval')
+    elif model=='lipid_synthesis':
+        if type(defaults['food_units']) is not int or defaults['food_units']<1 or type(defaults['tool_count']) is not int or defaults['tool_count']<0:
+            raise ValueError('Invalid lipid food/tool count')
+        if len(defaults['box'])!=2 or any(type(v) not in (int,float) or not math.isfinite(v) or v<=1.2 for v in defaults['box']):
+            raise ValueError('Invalid lipid bath box')
+        for key in ('tool_linked','food_activation','bonding','terminal_exchange'):
+            if type(defaults[key]) is not bool:raise ValueError('Invalid lipid boolean: '+key)
+        for key in ('rung_capture_radius','food_binding_radius','food_ligand_width','short_length','dock_width','dock_capture','contact_exchange_capture'):
+            if defaults[key]<=0:raise ValueError('Invalid lipid geometry: '+key)
+        for key in ('rung_formation_rate','rung_catalytic_rate','food_binding_rate','food_unbinding_rate','food_ligand_energy',
+                    'dock_energy','dock_rate','bond_off_rate','break_extension','contact_exchange_rate'):
+            if defaults[key]<0:raise ValueError('Invalid lipid rate/energy: '+key)
     elif model=='coupled_bath':
         from .coupled_bath import membrane_config,genetics_config
         if not isinstance(defaults['include_membrane'],bool):raise ValueError('include_membrane must be boolean')

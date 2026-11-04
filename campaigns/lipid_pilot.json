@@ -1,0 +1,62 @@
+{
+  "name": "L1 one dispersed technical pilot, not biological validation",
+  "workers": 1,
+  "checkpoint_seconds": 30.0,
+  "record_trajectory": false,
+  "tasks": [
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "lipid_synthesis",
+        "name": "L1_dispersed_pilot_s0",
+        "branch": "L1",
+        "seed": 0,
+        "duration": 100.0,
+        "chemistry": {
+          "temperature": 0.08,
+          "box": [
+            12.0,
+            9.0
+          ],
+          "food_units": 24,
+          "tool_count": 4,
+          "tool_linked": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0001,
+          "rung_catalytic_rate": 20.0,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_activation": true,
+          "short_length": 0.98,
+          "dock_width": 0.3,
+          "dock_energy": 4.0,
+          "dock_capture": 0.25,
+          "dock_rate": 25.0,
+          "bond_off_rate": 0.02,
+          "break_extension": 0.35,
+          "bonding": true,
+          "contact_exchange_rate": 0.2,
+          "contact_exchange_capture": 0.8,
+          "terminal_exchange": true
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        }
+      }
+    }
+  ],
+  "comparison_policy": "BATCH_36_PLAN: t100,seed0 only,prepared F01 and initially free H/T, same capture constants as MD2 but new ligand types. No P/R, membrane or expression. No follow-up."
+}

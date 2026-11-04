@@ -7,13 +7,15 @@ from .catalysis import CatalysisChemistry,CatalysisObserver,DEFAULTS as CATALYSI
 from .membrane_bath import MembraneBathChemistry,MembraneBathObserver,DEFAULTS as BATH_DEFAULTS
 from .coupled_bath import CoupledBathChemistry,CoupledBathObserver,DEFAULTS as COUPLED_DEFAULTS
 from .mixing import MixingChemistry,MixingObserver,DEFAULTS as MIXING_DEFAULTS
+from .lipid_synthesis import LipidSynthesisChemistry,LipidSynthesisObserver,DEFAULTS as LIPID_DEFAULTS
 
 MODELS = {"copy": (CopyChemistry, COPY_DEFAULTS, make_copy_observer),
           "membrane": (MembraneChemistry, MEMBRANE_DEFAULTS, VesicleObserver),
           "catalysis": (CatalysisChemistry, CATALYSIS_DEFAULTS, CatalysisObserver),
           "membrane_bath":(MembraneBathChemistry,BATH_DEFAULTS,MembraneBathObserver),
           "coupled_bath":(CoupledBathChemistry,COUPLED_DEFAULTS,CoupledBathObserver),
-          "mixing":(MixingChemistry,MIXING_DEFAULTS,MixingObserver)}
+          "mixing":(MixingChemistry,MIXING_DEFAULTS,MixingObserver),
+          "lipid_synthesis":(LipidSynthesisChemistry,LIPID_DEFAULTS,LipidSynthesisObserver)}
 
 
 def register(name, hook, defaults, observer):
