@@ -1,5 +1,12 @@
 # Architecture du simulateur partagé
 
+Lot36 : hook `lipid_synthesis` opt-in dans le moteur partagé, avec
+`linked_lipids.py` pour ports MD2 sur vrais partenaires H/T, et capture réutilisée
+depuis `precursors.py`. Tableau position global, gather/scatter exact, occupation
+et checkpoint ; aucun ordonnanceur supplémentaire. Prototype headless séparé,
+non promu dans la GUI, aucune loi MD2 modifiée. Contrôles195 et trois préfixes
+MD2 exacts ; lire BATCH_36 pour le coût énergétique et le périmètre non intégré.
+
 ## Loupe génétique passive optionnelle
 
 Les plans de campagne peuvent activer `ligation_loupe: {}` avec `genetic_audit`

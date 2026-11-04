@@ -1,5 +1,12 @@
 # Architectures de cellule : fermeture à concevoir, pas encore réalisée
 
+Lot36 : voie alternative L1 démontrée seulement dans un petit pool H/T :
+F01 préparé→H–T réel→association MD2,64 billes,22 produits dans une graine.
+Aucun rôle/gène supplémentaire ; ne pas additionner cette réussite et celle
+de MIN1R comme un renouvellement intégré. P/R absents de L1 ; MD2 garde L
+préparés. L'activation énergétique au lien est à revoir avant un transfert.
+La cible conditionnelle des trois synthèses et son budget restent distincts.
+
 Lot35 : MIN1M teste l'architecture initiale courte du même co-recruteur :
 16 G01/16 F01,64 F monomères, stocks432 G/384 F,486 billes L. Total2118,
 inchangé au MD2. Aucun nouveau rôle ni gène fonctionnel ; L reste préparé.

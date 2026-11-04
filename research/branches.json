@@ -1244,6 +1244,27 @@
       "results": "research/BATCH_35.md",
       "recipe": "research/BATCH_35_RECIPES.json",
       "health_gate": "12 tasks maximum,2 workers,24h then checkpoint pause; automatic report and stop for interpretation on either outcome, no retries or tuning"
+    },
+    {
+      "id": "L1",
+      "parent": "MIN1",
+      "related": [
+        "MIN1R",
+        "MIN1M",
+        "MD2",
+        "FM1"
+      ],
+      "status": "separate_H_T_synthesis_prototype_one_pilot_positive_energy_jump_diagnosed_not_adopted",
+      "hypothesis": "Existing F01 co-recruitment can assemble arbitrary H/T atoms and expose reusable MD2 lateral ports",
+      "test": "Six mechanism/software controls, one dispersed seed0 t100 with64 atoms, one passive first-birth energy microscope t<=1; no long campaign",
+      "cost": "No new functional tool/gene/elementary material type; new ligand compatibility and bond-state core/port activation. Same numerical capture constants. Dynamic actual partner table, new opt-in hook, unchanged scheduler.",
+      "counterexample": "Index-prescribed tails, teleported products, unlinked sites catalyze, no release/reuse, heat drives apparent performance or mixed P/R poisons tool",
+      "missing_proof": "No dispersed negative cohort, P/R/H/T competition, expressed tool, isothermal flux, insertion into cell boundary, loss or homeostasis. Functional repertoire unproved.",
+      "evidence": "research/BATCH_36_PLAN.md",
+      "results": "research/BATCH_36.md",
+      "recipe": "research/BATCH_36_RECIPES.json",
+      "conclusion": "Pilot22 actual H–T/22 catalyzed, max8 per local pair,16 lateral contacts,21/22 non-index tails. T_final.205/mean_late.251 vs target.08. First birth +31.416 potential mostly core22.670 and axial10.454; passive replay exact.195 tests pass.",
+      "health_gate": "Stop after one pilot; diagnose local transition energy before more L1 sampling. Existing MIN1M unchanged in frozen sources; no default/demos promotion."
     }
   ]
 }

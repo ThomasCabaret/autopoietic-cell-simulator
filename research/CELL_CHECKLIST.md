@@ -1,6 +1,6 @@
 # Checklist détaillée — critères et dépendances
 
-Revue 2026-11-04 · révision5. Source : [cell_checklist.json](cell_checklist.json).
+Revue 2026-11-04 · révision6. Source : [cell_checklist.json](cell_checklist.json).
 [Tableau compact](CELL_CHECKLIST_COMPACT.md) · [Échelle et méthode](CONCEPT_FIRST.md).
 
 Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre acyclique de codage. Les cycles de renouvellement sont intentionnels. Une condition initiale construite peut amorcer un sous-cas sans fermer ces cycles.
@@ -128,21 +128,23 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 <a id="S-04"></a>
 ### S-04 — Nourriture vers lipides polaires
 
-**Concept : esquisse à fermer · Preuve : 0% (non observé).**
+**Concept : esquisse à fermer · Preuve : 25% (sous-cas étayé).**
 
 **Aboutissement :** Des L fabriqués localement depuis les intrants déclarés s’insèrent et renouvellent la frontière.
 
-**Draft local :** Draft P/R+L : co-recrutement H/T libres par le même assemblage F, lien physique saturé H–T expose les ports MD2 ; alternative pince H/T ou états XYZ.
+**Draft local :** L1 implémente H/T libres captés par le F01 existant, lien axial physique saturé et ports MD2 indexés par vrais partenaires. Voie H/T séparée ; P/R+H/T reste un draft.
 
-**Manque / limite :** Extension de capture/compatibilité non implémentée ni choisie ; mauvais couples, énergie et adaptation des partenaires de queue variables restent à tester ; C0B/XYZ distinct.
+**Manque / limite :** Saut de potentiel et échauffement identifiés ; compatibilité capture/état lié, compétition P/R/H/T, expression et insertion cellulaire non établies. C0B/XYZ distinct.
 
 **Dépend de :** [F-01](#F-01), [F-02](#F-02), [F-03](#F-03), [E-03](#E-03), [Q-01](#Q-01) · **Pour renouveler :** [T-04](#T-04)
 
-**Portée des preuves :** L seulement fournis au départ.
+**Portée des preuves :** Un pilote L1 à100,64 billes :22 H–T, tous catalysés,16 contacts latéraux ; jusqu’à8 produits par paire de sites. Une graine sans contrôles dispersés, température cinétique nettement supérieure à la consigne. MD2 fournit toujours L préparés.
 
-**Références :** [research/FUNCTIONAL_MECHANISMS.md](../research/FUNCTIONAL_MECHANISMS.md), [research/CELL_ARCHITECTURE.md](../research/CELL_ARCHITECTURE.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/LIPID_CONSTRUCTION_DRAFT.md](../research/LIPID_CONSTRUCTION_DRAFT.md)
+**Références :** [research/FUNCTIONAL_MECHANISMS.md](../research/FUNCTIONAL_MECHANISMS.md), [research/CELL_ARCHITECTURE.md](../research/CELL_ARCHITECTURE.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/LIPID_CONSTRUCTION_DRAFT.md](../research/LIPID_CONSTRUCTION_DRAFT.md), [research/BATCH_36.md](../research/BATCH_36.md)
 
-**Prochain test / décision :** Choisir le candidat déclaré puis fabriquer de vrais H–T et les transférer aux mêmes ports MD2 sans conversion ; nouvelle pince seulement après proposition/accord.
+**Prochain test / décision :** Traiter le coût local de la transition L1 puis témoins no_tool/split/no_boost et thermique ; ensuite compétition P/R et insertion des vrais produits, sans conversion externe.
+
+**Progrès du dernier lot :** 0→25 : prototype L1 séparé,22 H–T réellement formés et16 contacts ; pas de membrane cellulaire ni validation thermique.
 
 ## Copie et information
 
@@ -338,8 +340,6 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Prochain test / décision :** Lire MIN1M complet et son crible de coexistence membrane / nouveau F entier actif ; puis pertes réelles et maintien.
 
-**Progrès du dernier lot :** MIN1M : transfert avec membrane en campagne,12 essais figés ; palier50 inchangé.
-
 ## Membrane et insertion
 
 <a id="M-01"></a>
@@ -513,9 +513,11 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** Thermostat, activation et cycle externes déclarés ; bilan énergétique complet absent.
 
-**Références :** [research/CELL_ARCHITECTURE.md](../research/CELL_ARCHITECTURE.md), [research/LOCALITY_AUDIT.md](../research/LOCALITY_AUDIT.md)
+**Références :** [research/CELL_ARCHITECTURE.md](../research/CELL_ARCHITECTURE.md), [research/LOCALITY_AUDIT.md](../research/LOCALITY_AUDIT.md), [research/BATCH_36.md](../research/BATCH_36.md)
 
 **Prochain test / décision :** Établir le budget du motif retenu, puis ablater l’aide sans masquer un apport.
+
+**Progrès du dernier lot :** Loupe première naissance : +31,416 de potentiel, surtout cores F/L et axe ; coût énergétique à traiter.
 
 <a id="Q-02"></a>
 ### Q-02 — Retour local et disponibilité après cycle
@@ -753,8 +755,6 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Prochain test / décision :** Ajouter les espèces étrangères avec témoin d’encombrement et suivre séquestration, bons/mauvais produits.
 
-**Progrès du dernier lot :** Même petit outil dans2118 billes MD2, contrôles noL/split/nogene ; aucune preuve anticipée.
-
 <a id="C-02"></a>
 ### C-02 — Régime physique commun et robustesse numérique
 
@@ -848,11 +848,11 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** Fonction logicielle validée pour les références présentes, pas pour toutes les futures chimies.
 
-**Références :** [research/BATCH_26.md](../research/BATCH_26.md), [research/BATCH_27.md](../research/BATCH_27.md), [research/BATCH_31.md](../research/BATCH_31.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_33.md](../research/BATCH_33.md), [research/BATCH_35.md](../research/BATCH_35.md)
+**Références :** [research/BATCH_26.md](../research/BATCH_26.md), [research/BATCH_27.md](../research/BATCH_27.md), [research/BATCH_31.md](../research/BATCH_31.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_33.md](../research/BATCH_33.md), [research/BATCH_35.md](../research/BATCH_35.md), [research/BATCH_36.md](../research/BATCH_36.md)
 
 **Prochain test / décision :** Conserver les contrôles sans observateur, reprise exacte et signatures à chaque changement concerné.
 
-**Progrès du dernier lot :** Trois démos MIN1R exactes ajoutées ; compteurs de F entièrement refaits et actifs,24 choix.
+**Progrès du dernier lot :** 195 tests, trois préfixes MD2 exacts ; recette et diagnostic passif borné sauvegardés.
 
 ## Évolution conservée
 
@@ -861,3 +861,4 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 - Révision3 (2026-10-31) : MIN1 simplifie l’outil P/R existant à deux unités sous lois MD2 : A12/12 et porte passée ; expression B9 en cours. Draft matériel L ajouté, aucune nouvelle fonction intégrée ou hausse de score anticipée.
 - Révision4 (2026-10-31) : MIN1 clos, deux rejeux exacts et loupe bornée ; MIN1R9/9 passe avec F entièrement neufs actifs3/3, sans loi ajoutée. T-05 ajouté puis séparé50%, T-01 court50%, T-03 couplage limité75%. Membrane/L/pertes/information riche restent ouverts.
 - Révision5 (2026-11-04) : MIN1M12 essais de transfert sous lois MD2 lancés, aucun résultat final anticipé. MIN1R validé ajouté aux démos avec recensement matériel passif ; pas de changement de palier.
+- Révision6 (2026-11-04) : Lot36 indépendant : vrai H/T variable et ports MD2 dans nouveau hook L1. Pilote unique22 produits,16 contacts, sans P/R ni expression ; dette thermique et saut de potentiel première naissance identifiés par loupe passive. S-04 sous-cas séparé25%, aucun maintien ou transfert membranaire anticipé.

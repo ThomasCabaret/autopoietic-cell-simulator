@@ -1,5 +1,12 @@
 # Fabrication de L — draft matériel et alternatives, lot32
 
+**Actualisation lot36 :** un prototype opt-in L1 réalise la partie H/T→vrai lien
+→ports MD2 avec le même F01 préparé. Pilote séparé :22 produits et16 contacts
+latéraux, mais échauffement important ; une loupe localise un saut de potentiel
+à la première formation, dû surtout à l'activation des cores F/L et au ressort
+axial. Voir [BATCH_36.md](BATCH_36.md). Pas de compétition P/R/H/T, expression,
+insertion cellulaire ou adoption MD2. Le draft complet ci-dessous reste une cible.
+
 Ce texte ferme une partie du raisonnement qualitatif, pas une nouvelle chimie
 validée. Aucun outil EL, gène ou règle n'est ajouté. Le candidat simulé reste
 P/R+L préparé ; C0B/XYZ et ses trois synthétases restent une spécification

@@ -1351,3 +1351,21 @@ F entièrement alimentaires et actifs comptés passivement ; contrôles sur les
 trois checkpoints finaux retrouvent10/10/10 et5/2/1. Pas de promotion MIN1M
 anticipée. Checklistrévision5, paliers inchangés, arbre/priorités/santé à jour.
 Résultats volumineux locaux ; voir BATCH_35.md et membrane_renewal_status.bat.
+
+### Lot36 — travail indépendant, H/T réels et diagnostic énergétique
+
+Prototype L1 opt-in via Simulation : même F01 préparé, noyau de capture réutilisé,
+vrais partenaires H/T, activation des ports MD2 et scatter vers IDs physiques.
+Pas de nouvelle protéine/gène. Six contrôles et suite195 passent ; trois préfixes
+MD2 bit-exacts, catalogue recertifié. Aucun état/scénario de MIN1M changé.
+Un pilote dispersé t100/seed0/64 billes termine en21,84s :22 H–T catalysés,
+max8 par paire de sites,16 contacts latéraux,21/22 queues non préassignées.
+Température réelle finale0,205/moyenne dernier quart0,251 vs consigne0,08.
+
+Loupe motivée première naissance à0,86, une transition/six positions : saut de
+potentiel+31,416, dont core+22,670 et axe+10,454. Contrôle non instrumenté exact
+positions/vitesses/PRNG/chimie à1. Les aides énergétiques restent non calibrées,
+donc pas de promotion ni taux isotherme inféré. Recette/source/pilote conservés,
+données locales ignorées. S-04 sous-cas L1 séparé25%, aucun autre palier biologique
+augmenté. Lire MIN1M complet, puis traiter énergie L1 avant témoins/compétition
+P/R/H/T et insertion réelle. Pas de campagne longue supplémentaire lancée.

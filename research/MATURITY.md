@@ -1,5 +1,12 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot36 : S-04 atteint25% pour un sous-cas **L1 séparé**, pas pour MD2.
+H/T réellement fabriqués et contacts MD2 réutilisés, mais une seule graine et
+fort échauffement. Une cause locale est identifiée, saut de potentiel au lien.
+Pas d'efficacité isotherme, compétition P/R, expression ou insertion cellulaire.
+F-02 et homéostasie restent ouverts. MIN1M poursuit sa campagne figée.
+La maturité globale n'est pas une somme de ce prototype et des démos MD2.
+
 Lot35 : MIN1R devient inspectable dans les démos, avec mêmes scénarios et
 compteurs de matière entière/activité. Le transfert MIN1M avec membrane tourne
 sur12 essais : aucun résultat final ni palier supplémentaire annoncé.

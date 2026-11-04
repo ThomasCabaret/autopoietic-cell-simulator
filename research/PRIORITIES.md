@@ -1,5 +1,14 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+**Lot36, travail indépendant achevé : L1 fabrique H/T, avec dette thermique.**
+Nouveau hook et vrais partenaires variables, même F01 préparé ; un pilote22
+produits,16 contacts latéraux. La loupe première naissance localise +31,416 de
+potentiel à positions inchangées, surtout core F/L et axe H–T : résoudre cette
+transition avant une cohorte L1. Ne pas promouvoir ou relancer une grille de taux.
+MIN1M continue avec ses sources figées ; lire son rapport complet en priorité
+avant campagne longue. Ensuite L1 : coût énergétique local, contrôles dispersés,
+compétition P/R/H/T et insertion. MD2 et démos gardent leurs lois antérieures.
+
 **Lot35,4 novembre : MIN1M en cours,12 essais figés, aucune nouvelle loi.**
 Lire membrane_renewal_status.bat et le rapport automatique avant une autre
 campagne. Même boucle courte G01/F01 dans le bain MD2, avec noL/split/nogene.

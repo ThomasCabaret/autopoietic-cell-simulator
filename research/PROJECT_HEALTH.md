@@ -1,5 +1,15 @@
 # Santé du projet —31 octobre2026
 
+Lot36 : une contribution indépendante a levé le verrou des queues préassignées
+et réalisé H/T→L→association avec l'outil existant, sans nouvelle enzyme. Un
+pilote ne clôt pas la voie : l'échauffement a une cause maintenant explicite,
+activation brutale des contacts F/L et d'un axe tendu. La loupe donne une décision
+de conception plutôt qu'une grille cinétique. Prochain jalon L1 : transition
+compatible énergétiquement, puis témoins et concurrence P/R. Si deux retouches
+n'apportent ni compatibilité ni diagnostic, réexaminer la représentation.
+Les noyaux indexés restent réutilisables même en cas d'abandon L1. Aucun délai
+cellulaire garanti, maintien/renouvellement sous pertes et information ouverts.
+
 Lot35,4 novembre2026 : le jalon suivant confronte la même boucle matérielle
 au bain membranaire, sans nouvelle primitive ni tuning.12 trajectoires automatiques,
 un choix d'architecture initiale, pas12 corrections conceptuelles. Le plus petit

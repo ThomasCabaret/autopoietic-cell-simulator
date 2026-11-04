@@ -1,5 +1,14 @@
 # Fidélité à l'objectif : localité et risques de pilotage
 
+Lot36 L1 : motif catalytique six billes (deux F composites voisins, H,T),
+occupation des ports et distances seulement. Les vrais liens H–T indexent les
+ports MD2 ; aucune composante, contour ou séquence entière dans les réactions.
+Les indices ne choisissent pas le partenaire. Helper : activation de répulsion
+et ressort/ports au lien, énergie non calibrée et maintenant diagnostiquée.
+La loupe première naissance lit les64 atomes pour les énergies, conserve seulement
+six positions/un événement et ne change pas trajectoire/PRNG.195 tests passent,
+MD2 exact sur trois préfixes ; L1 demeure séparé du candidat par défaut.
+
 Lot35 MIN1M : aucun fichier du moteur ou des lois modifié. G01/F01 et
 témoins changent uniquement l'initialisation sous MD2. Collecteur et GUI
 reconnaissent des chaînes entières pour mesurer, jamais pour agir. Les nouveaux

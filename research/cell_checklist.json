@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "revision": 5,
+  "revision": 6,
   "reviewed": "2026-11-04",
-  "candidate": "MD2 / Langevin inchangé ; MIN1R visible dans la GUI ; transfert membranaire MIN1M en cours",
+  "candidate": "MD2 inchangé / MIN1M en cours ; L1 séparé : première fabrication H/T, dette énergétique diagnostiquée",
   "purpose": "Registre évolutif des capacités nécessaires à une cellule construite maintenue ; les pourcentages sont des paliers de preuve, pas un taux global de réussite.",
   "out_of_scope": [
     "origine spontanée de la cellule",
@@ -227,17 +227,18 @@
         "T-04"
       ],
       "concept": "gap",
-      "mechanism": "Draft P/R+L : co-recrutement H/T libres par le même assemblage F, lien physique saturé H–T expose les ports MD2 ; alternative pince H/T ou états XYZ.",
-      "concept_gap": "Extension de capture/compatibilité non implémentée ni choisie ; mauvais couples, énergie et adaptation des partenaires de queue variables restent à tester ; C0B/XYZ distinct.",
-      "proof": "none",
-      "scope": "L seulement fournis au départ.",
+      "mechanism": "L1 implémente H/T libres captés par le F01 existant, lien axial physique saturé et ports MD2 indexés par vrais partenaires. Voie H/T séparée ; P/R+H/T reste un draft.",
+      "concept_gap": "Saut de potentiel et échauffement identifiés ; compatibilité capture/état lié, compétition P/R/H/T, expression et insertion cellulaire non établies. C0B/XYZ distinct.",
+      "proof": "subcase",
+      "scope": "Un pilote L1 à100,64 billes :22 H–T, tous catalysés,16 contacts latéraux ; jusqu’à8 produits par paire de sites. Une graine sans contrôles dispersés, température cinétique nettement supérieure à la consigne. MD2 fournit toujours L préparés.",
       "references": [
         "research/FUNCTIONAL_MECHANISMS.md",
         "research/CELL_ARCHITECTURE.md",
         "research/BATCH_32.md",
-        "research/LIPID_CONSTRUCTION_DRAFT.md"
+        "research/LIPID_CONSTRUCTION_DRAFT.md",
+        "research/BATCH_36.md"
       ],
-      "next_test": "Choisir le candidat déclaré puis fabriquer de vrais H–T et les transférer aux mêmes ports MD2 sans conversion ; nouvelle pince seulement après proposition/accord.",
+      "next_test": "Traiter le coût local de la transition L1 puis témoins no_tool/split/no_boost et thermique ; ensuite compétition P/R et insertion des vrais produits, sans conversion externe.",
       "essential": true
     },
     {
@@ -687,7 +688,8 @@
       "scope": "Thermostat, activation et cycle externes déclarés ; bilan énergétique complet absent.",
       "references": [
         "research/CELL_ARCHITECTURE.md",
-        "research/LOCALITY_AUDIT.md"
+        "research/LOCALITY_AUDIT.md",
+        "research/BATCH_36.md"
       ],
       "next_test": "Établir le budget du motif retenu, puis ablater l’aide sans masquer un apport.",
       "essential": true
@@ -1098,7 +1100,8 @@
         "research/BATCH_31.md",
         "research/BATCH_32.md",
         "research/BATCH_33.md",
-        "research/BATCH_35.md"
+        "research/BATCH_35.md",
+        "research/BATCH_36.md"
       ],
       "next_test": "Conserver les contrôles sans observateur, reprise exacte et signatures à chaque changement concerné.",
       "essential": true
@@ -1150,11 +1153,16 @@
       "revision": 5,
       "date": "2026-11-04",
       "reason": "MIN1M12 essais de transfert sous lois MD2 lancés, aucun résultat final anticipé. MIN1R validé ajouté aux démos avec recensement matériel passif ; pas de changement de palier."
+    },
+    {
+      "revision": 6,
+      "date": "2026-11-04",
+      "reason": "Lot36 indépendant : vrai H/T variable et ports MD2 dans nouveau hook L1. Pilote unique22 produits,16 contacts, sans P/R ni expression ; dette thermique et saut de potentiel première naissance identifiés par loupe passive. S-04 sous-cas séparé25%, aucun maintien ou transfert membranaire anticipé."
     }
   ],
   "last_batch_progress": {
-    "T-05": "MIN1M : transfert avec membrane en campagne,12 essais figés ; palier50 inchangé.",
-    "C-01": "Même petit outil dans2118 billes MD2, contrôles noL/split/nogene ; aucune preuve anticipée.",
-    "O-02": "Trois démos MIN1R exactes ajoutées ; compteurs de F entièrement refaits et actifs,24 choix."
+    "S-04": "0→25 : prototype L1 séparé,22 H–T réellement formés et16 contacts ; pas de membrane cellulaire ni validation thermique.",
+    "Q-01": "Loupe première naissance : +31,416 de potentiel, surtout cores F/L et axe ; coût énergétique à traiter.",
+    "O-02": "195 tests, trois préfixes MD2 exacts ; recette et diagnostic passif borné sauvegardés."
   }
 }

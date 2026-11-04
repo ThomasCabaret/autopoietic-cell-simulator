@@ -1,5 +1,12 @@
 # Interactions souhaitées, parasites et environnements — lot7
 
+Lot36 L1 : H libre donneur et T libre accepteur peuvent occuper les sites F
+existants ; ports axiaux saturés libèrent la pince, puis contacts MD2 du vrai
+H–T. Aucun P/R dans ce test : mauvais couples et compétition ne sont pas validés.
+Core F/H-T passe0→0,55 au lien, source importante de saut énergétique ; ce coût
+peut invalider le transfert malgré22 produits. Pas de sélectivité nouvelle
+biologique, export/déchets ou insertase ajoutée.
+
 Lot35 : interactions MD2 identiques, aucune nouvelle espèce ou table.
 MIN1M confronte de courts assemblages au même L ; noL/split/nogene séparent
 coexistence membranaire et amorçage. Les produits fabriqués doivent réellement

@@ -96,6 +96,9 @@ def main():
         'experiments/prepare_membrane_renewal.py','experiments/review_membrane_renewal.py',
         'campaigns/membrane_renewal.json','scripts/membrane_renewal_followup.py','scripts/membrane_renewal.ps1',
         'start_membrane_renewal.bat','membrane_renewal_status.bat','stop_membrane_renewal.bat','resume_membrane_renewal.bat'))
+    files.update(ROOT/p for p in ('research/BATCH_36_PLAN.md','research/BATCH_36.md','research/BATCH_36_RECIPES.json',
+        'research/BATCH_36_LIPIDS.png','experiments/pilot_lipid_synthesis.py','experiments/review_lipid_pilot.py',
+        'experiments/render_lipid_pilot.py','experiments/diagnose_lipid_heat.py','campaigns/lipid_pilot.json'))
     files.update(ROOT/p for p in ('README.md','SIMULATOR_ARCHITECTURE.md','requirements.txt',
         'CONTRIBUTING.md','GIT_SETUP.md','THIRD_PARTY_NOTICES.md',
         '.gitignore','.gitattributes','.editorconfig',
