@@ -1,5 +1,12 @@
 # Architectures de cellule : fermeture à concevoir, pas encore réalisée
 
+Lot41 : variante MX1 sans membrane :150 billes P/R (4 G01,1 F01 préparés,
+monomères/précurseurs) +24 H/24 T =198. Aucun L préparé ni rôle/gène ajouté.
+Un seul registre de capture F peut fabriquer G/F puis L ; la production par
+un F entièrement refait est une cible de campagne, pas encore une preuve.
+La cible cellulaire2118 et le graphe conditionnel à plusieurs synthèses ne sont
+pas remplacés par ce petit bain. CT1 a validé le préalable de capture séparément.
+
 Lot40 : MIN1M clos12/12 : même architecture2118 billes, mêmes lois MD2,
 remplaçants F entièrement alimentaires actifs3/3 avec membrane. Pas de rôle/gène
 ajouté ; L préparés, pas de flux ou pertes. La GUI montre exactement ces départs.

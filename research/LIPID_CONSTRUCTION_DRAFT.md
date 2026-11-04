@@ -1,5 +1,12 @@
 # Fabrication de L — draft matériel et alternatives, lot32
 
+**Lot41 :** CT1 a terminé9/9 et conserve la reconstruction sous courbure
+commune. MX1 implémente désormais le cycle de capture concurrente P/R/H/T de
+ce draft ; les douze essais de transfert sont en cours. Aucune nouvelle
+protéine/gène, aucun L initial ;198 billes. Les démos restent MIN1M avec L
+préparés. Le couplage vers une vraie frontière et l’énergie sous flux restent
+à tester ; les mentions « non implémentée » plus bas décrivent le draft historique.
+
 **Actualisation lot36 :** un prototype opt-in L1 réalise la partie H/T→vrai lien
 →ports MD2 avec le même F01 préparé. Pilote séparé :22 produits et16 contacts
 latéraux, mais échauffement important ; une loupe localise un saut de potentiel

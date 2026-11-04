@@ -1,5 +1,15 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot41 : **CT1 clos9/9, porte passée**, mais activité non uniformément meilleure
+(opérations médianes9→3). Ne pas relancer ni adopter globalement. **MX1 lancé12
+essais** : un même pool de sites P/R/H/T et vrais produits, sans nouvelle protéine.
+Lire mixed_synthesis_status.bat puis rapport complet. Chercher F entièrement
+alimentaire→L→contact latéral dans les mêmes bains ; si absence, séparer stock
+épuisé, capture bloquée et chimie inéligible avant réglage. Ensuite insertion/
+rétention (barrière segmentaire distincte du core F/L) et pertes/flux. Les démos
+restent MIN1M validé, pas MX1 en cours. Voir BATCH_41.md ; les états antérieurs
+« CT1 en cours » ci-dessous sont historiques.
+
 Lot40 : **MIN1M clos12/12, porte passée**. Les trois active refont des F
 entiers actifs avec membrane ; témoins nogene négatifs. Démo désormais au menu,
 par défaut graine0 conventionnelle. Ne pas relancer MIN1M ni les grilles L2/L3.

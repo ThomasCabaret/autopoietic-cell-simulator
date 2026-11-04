@@ -1,5 +1,15 @@
 # Fidélité à l'objectif : localité et risques de pilotage
 
+Lot41 MX1 : mêmes captures locales saturables pour P/R/H/T, une seule mise
+à jour par tick. Compatibilité des constituants et motifs de deux F directement
+liés +deux ligands (six billes) pour catalyse ; aucune lecture de chaîne complète,
+origine, protéine ou contour dans les réactions. Delta H/T limité aux forces
+modifiées et à leurs rayons, comme L3. Les certificats d’outil entier/alimentaire
+et contacts ultérieurs sont passifs. Test de retrait d’observateur exact.
+Zéro nouvelle machine/gène/type/port/taux indépendant ; asymétrie de formation
+P/R historique-H/T énergétique et ordre séquentiel déclarés. Pas de contrôle
+par concentration ou de réparation pilotée globalement.
+
 Lot40 CT1 : seule la raideur d'un ressort de capture déjà formé change,
 calculée depuis E et largeur de la même attraction. Attraction tronquée à3largeurs,
 formation de capture dans rayon0,25, états de sites saturables ; aucun nouveau

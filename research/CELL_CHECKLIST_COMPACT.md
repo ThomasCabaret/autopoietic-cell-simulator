@@ -1,6 +1,6 @@
 # Checklist compacte — cellule construite maintenue
 
-Révision 10 · revue 2026-11-04 · 43 sous-buts · MD2 / MIN1M clos12/12 et GUI ; capture commune P/R-H/T CT1 en campagne
+Révision 11 · revue 2026-11-04 · 43 sous-buts · MD2 / MIN1M visible ; CT1 clos9/9 porte passée ; MX1 P/R/H/T partagé en campagne
 
 **Pourcentages = paliers de preuve**, pas effort accompli ni probabilité de réussite. Les plages indiquent min–max des sous-buts ; aucune moyenne globale.
 0% non observé ·25% sous-cas ·50% séparé ·75% couplage partiel ·100% critère satisfait sur son domaine.
@@ -10,17 +10,17 @@ Concept : « à fermer » signale au moins un maillon essentiel manquant ; un dr
 | --- | ---: | --- | ---: | --- | --- |
 | Lois et fonctions des outils | 3 | à fermer | 0–75% | F-01, F-02 | — |
 | Fabrication N / A | 3 | à fermer | 25–75% | S-03 | — |
-| Fabrication des lipides | 1 | à fermer | 25% | S-04 | S-04 : 25 inchangé : intégration P/R/H/T prioritaire, aucune synthèse L ajoutée à la démo membranaire. |
+| Fabrication des lipides | 1 | à fermer | 25% | S-04 | S-04 : Premier mixed :2 F entièrement alimentaires fabriquent3 L ;7 L neufs avec contact ultérieur. Une graine, pas de membrane ni palier augmenté. |
 | Copie et information | 5 | à fermer | 0–75% | R-02, R-04, R-05 | — |
-| Traduction et outils renouvelés | 5 | à fermer | 0–75% | T-02, T-04 | T-05 : 50→75 : MIN1M12/12 clos, remplaçants entiers actifs et membrane sur3/3 graines ; pas pertes/maintien. |
+| Traduction et outils renouvelés | 5 | à fermer | 0–75% | T-02, T-04 | — |
 | Membrane et insertion | 5 | à fermer | 25–75% | M-04, M-05 | — |
 | Apports et transport | 3 | à fermer | 0–75% | E-03 | — |
 | Énergie et retour des cycles | 2 | à fermer | 25% | Q-01, Q-02 | — |
 | Déchets et recyclage | 4 | à fermer | 0–25% | W-02, W-03, W-04 | — |
 | Homéostasie des petites espèces | 2 | drafts décrits | 0% | — | — |
 | Homéostasie des polymères | 4 | à fermer | 0% | H-03, H-04, H-05, H-06 | — |
-| Compatibilité et maintien | 4 | à fermer | 0–25% | C-01, C-03, C-04 | C-02 : CT1 :2/9 finis sans erreur, premier matched reconstruit10 F dont1 actif ; cohorte/témoins incomplets, aucune adoption. |
-| Calcul et observabilité | 2 | drafts décrits | 25–100% | — | O-02 : Démo MIN1M au menu et par défaut,27 choix ;210 tests et4 préfixes physiques archivés exacts àt5. |
+| Compatibilité et maintien | 4 | à fermer | 0–25% | C-01, C-03, C-04 | C-01 : MX1 2/12 clos sans erreur : premier mixed G0/F2 contre7/9 uncaptured, forte pénalité à interpréter après cohorte. ; C-02 : CT1 clos9/9, porte passée :10/8/9 F alimentaires dont1/2/2 actifs ; opérations médianes9→3, pas amélioration uniforme. |
+| Calcul et observabilité | 2 | drafts décrits | 25–100% | — | O-02 : 218 tests passent après correction de l’empreinte du catalogue ;4 préfixes archivés exacts àt5, reprise/passivité du nouveau hook vérifiées. |
 
 **Trous conceptuels prioritaires au présent bilan :**
 

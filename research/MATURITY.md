@@ -1,5 +1,13 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot41 : capture dérivée transférée à la boucle génétique courte sur3 graines,
+CT1 clos9/9 avec témoins négatifs. Activité variable, pas supériorité générale.
+MX1 implémente la concurrence P/R/H/T dans un seul bain et la provenance des
+outils agissant sur L ; campagne12 essais en cours, pas résultat acquis. Pilote
+technique198 billes/t10 sans erreur de ports, insuffisant pour la chimie.
+Aucun palier biologique augmenté : S-04 reste25, T-05/MIN1M75, maintien0.
+Une fonction de co-recrutement réutilisée ne prouve pas un répertoire programmable.
+
 Lot40 : MIN1M12/12 sans erreur, porte passée ; outils entièrement alimentaires
 actifs6/4/2 dans les trois bains membranaires, fermeture85,7/85,6/85,3%.
 T-05 passe50→75 pour ce couplage limité ; aucun maintien sous pertes ou synthèse

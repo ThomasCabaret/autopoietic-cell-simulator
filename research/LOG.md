@@ -1432,3 +1432,25 @@ pose native ou H/T dans le bain génétique. Arrêt après analyse quelle que so
 la porte. Pas de nouveau réglage thermique L3, qui conserve son refus historique.
 Prochain jalon : interpréter CT1 avant compétition des substrats et véritable
 usage de L dans la membrane. Voir BATCH_40_PLAN/BATCH_40/recettes.
+
+
+## 2026-11-04 — lot41, CT1 clos et pool concurrent MX1
+
+CT1 terminé9/9 sans erreur, porte passée : F alimentaires10/8/9, actifs1/2/2,
+opérations13/2/3 contre12/9/9 legacy. Témoins nogene négatifs, coût similaire
+dans le crible ; ne pas parler d’amélioration uniforme ou adopter globalement.
+Rapport hash f26858ce5d378065b5cc84fc22130f0fa8cc68fcf7b6194320fa4119bc36ef7e.
+Figure générée/inspectée BATCH_41_CT1.png.
+
+Hook mixed_synthesis : CopyChemistry +LinkedLipids, une capture globale et un
+adaptateur sans doubles forces/ressorts/tirages. Mauvais couples capturables
+sans produit ; mêmes sites H/T puis P/R, vrais IDs, delta exact et reprise/
+passivité/arbre-brute contrôlés. Pilote t10 fini3.157s,198 billes,0 invariant
+ou L. MX1 lancé12 cas sources figées,2 travailleurs4h, analyse puis arrêt.
+Mesures de provenance et contacts L passives ; pas de membrane, flux ou pertes.
+
+Premiers essais de validation ont rencontré des refus temporaires Windows
+dans le sandbox ; rerun hors sandbox. L’empreinte du nouveau module a ensuite
+nécessité une recertification du catalogue ; validation finale218 tests OK.
+Les quatre préfixes archivés àt5 sont exacts. Aucun palier biologique augmenté
+par l’implémentation/campagne ; MIN1M reste la démo recommandée. Voir BATCH_41.

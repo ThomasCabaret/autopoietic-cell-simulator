@@ -31,11 +31,12 @@ progrès actuel** montre les trois essais MIN1M validés, avec Langevin inchang�
 Le raccourci « État actuel · bain intégré » ouvre cette scène, graine0 par
 convention. La petite boucle MIN1R reste disponible sans membrane.
 
-Recherche en cours : transfert de la même capture H/T vers la génétique P/R,
-neuf essais CT1, avant leur cohabitation dans un bain unique. Statut par
-`capture_transfer_status.bat`, pause par `stop_capture_transfer.bat`, reprise
-explicite par `resume_capture_transfer.bat`. Analyse puis arrêt automatique,
-aucune adoption anticipée. [Lot40](research/BATCH_40.md).
+Recherche en cours : **un seul pool catalytique P/R/H/T**, après CT1 terminé
+9/9 avec reconstruction conservée. Douze essais MX1 testent maintenant les
+vrais produits lipidiques et leur catalyse par des F exprimés depuis nourriture.
+Statut `mixed_synthesis_status.bat`, pause `stop_mixed_synthesis.bat`, reprise
+explicite `resume_mixed_synthesis.bat`. Sources figées, rapport et arrêt automatique ;
+aucune promotion anticipée dans les démos. [Lot41](research/BATCH_41.md).
 
 Un moteur CPU commun pour les campagnes sans fenêtre et les démonstrateurs
 interactifs. Les lois de copie/expression et de membrane sont des modules séparés.

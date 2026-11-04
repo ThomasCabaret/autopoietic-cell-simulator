@@ -1,5 +1,13 @@
 # Interactions souhaitées, parasites et environnements — lot7
 
+Lot41 : MX1 réalise le contrat P_G/P_F/H donneurs, R0/R1/T accepteurs sur
+les mêmes sites saturables. Produits autorisés P–R ou H–T seulement ; P–T/H–R
+peuvent bloquer la pince jusqu’à sa libération, sans nouveau helper de tri.
+Core génétique/L0, H/T-L0,4 et ports MD2 ; pas de membrane cellulaire ou barrière
+de rétention dans MX1. Même capture k et taux, mais P/R garde sa formation
+historique tandis que H/T a la porte locale ΔU. Cette dette n’est pas dissimulée
+comme une thermodynamique commune. Uncaptured est une ablation chimique explicite.
+
 Lot40 : la fonction de raideur de capture devient commune aux hooks P/R et
 H/T ; CT1 compare35 à E/largeur² sur le renouvellement P/R. Ce n'est pas encore
 un bain concurrent : catégories donneur/accepteur réutilisables, mauvais couples

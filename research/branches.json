@@ -1333,17 +1333,39 @@
         "L4",
         "MD2"
       ],
-      "status": "nine_frozen_capture_transfer_trials_running_no_adoption",
+      "status": "nine_complete_gate_passed_capture_transfer_not_uniform_activity_improvement",
       "hypothesis": "The same derived capture curvature can preserve short genetic renewal, prerequisite to a common P/R/H/T bath",
       "test": "legacy/matched/nogene x3 at1200; paired150 atoms/coordinates/velocities/RNG, fixed rates/thermostat. Prospective whole-tool activity, preservation and coarse wall-cost screen; stop regardless of outcome.",
       "cost": "Zero new protein/gene/type/port/state/independent numeric parameter. One explicit law option shared by capture classes; historical defaults unchanged. No new scheduler.",
       "counterexample": "Softer capture prevents ligands reaching formation distance or destroys expression; no actual new whole tool operates, nogene false positive, unacceptable cost or common-law claims from separate baths.",
-      "missing_proof": "No CT1 result yet; no simultaneous P/R/H/T competition, expressed F acting on H/T, energetic closure, continuous feed, insertion/retention or homeostasis.",
+      "missing_proof": "No simultaneous P/R/H/T competition, expressed F acting on H/T, energetic closure, continuous feed, insertion/retention or homeostasis.",
       "evidence": "research/BATCH_40_PLAN.md",
-      "results": "research/BATCH_40.md",
+      "results": "research/BATCH_41.md",
       "recipe": "research/BATCH_40_RECIPES.json",
       "health_gate": "9 tasks maximum,2 workers,2h wall budget, checkpoints30s, report then stop. No retry, second phase, default or GUI adoption.",
-      "partial_result": "2/9 complete no errors: legacy0 whole10 active5 ops12; matched0 whole10 active1 ops13. No cohort decision before nine; other seeds and matched nogene pending."
+      "partial_result": "2/9 complete no errors: legacy0 whole10 active5 ops12; matched0 whole10 active1 ops13. No cohort decision before nine; other seeds and matched nogene pending.",
+      "conclusion": "9/9 no errors, all prospective gates pass. Matched whole F10/8/9, active1/2/2; nogene0. G9/9/7 F12/10/11. Operations13/2/3 versus12/9/9 legacy: not uniformly better. Timing medians219.5/218.6s coarse, no massive overhead. No default adoption; proceed to mixed-site transfer."
+    },
+    {
+      "id": "MX1",
+      "parent": "CT1",
+      "related": [
+        "L3",
+        "L4",
+        "MIN1R",
+        "MIN1M"
+      ],
+      "status": "twelve_frozen_shared_pool_trials_running",
+      "hypothesis": "One saturable F pool can support genetic monomer construction/expression and real H/T products, including catalysis by wholly food-derived expressed F",
+      "test": "mixed/uncaptured/noHT/nogene x3 to1200;198/150 beads,2 workers,4h wall budget. Require material transfer in same seeds and actual L contacts; no second phase.",
+      "cost": "No new tool/gene/elementary type/port/independent numerical constant. Shared capture adapter, material compatibility, existing H/T local energy gate. P/R historical formation helper retained, not thermodynamic closure.",
+      "counterexample": "Wrong P–T/H–R captures poison the sole F, only prepared F makes L, H/T stocks finish before new F arrives, products cannot form contacts, thermal incompatibility or double capture forces.",
+      "missing_proof": "Full MX1 cohort, whole-food F to L under competition, cell membrane insertion/retention, energy under feed, loss/protection, rich information and homeostasis.",
+      "evidence": "research/BATCH_41_PLAN.md",
+      "results": "research/BATCH_41.md",
+      "recipe": "research/BATCH_41_RECIPES.json",
+      "health_gate": "12 tasks maximum, fixed1200 horizon, checkpoints30s,4h then pause; report then stop on either outcome. No retry or tuning.",
+      "partial_result": "2/12 complete no errors. mixed0 G0/F2 whole2,1 PR-active;9 catalyzed L including3 from2 whole-food F;7 L later contacted. uncaptured0 G7/F9 whole6,1 active,0 L. Transfer observed in one case with strong genetic penalty; wait full cohort. No invariant failures."
     }
   ]
 }

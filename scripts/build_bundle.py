@@ -115,6 +115,11 @@ def main():
         'experiments/prepare_capture_transfer.py','experiments/review_capture_transfer.py','experiments/verify_capture_transfer.py',
         'scripts/capture_transfer_followup.py','campaigns/capture_transfer.json','start_capture_transfer.bat',
         'capture_transfer_status.bat','stop_capture_transfer.bat','resume_capture_transfer.bat'))
+    files.update(ROOT/p for p in ('research/BATCH_41_PLAN.md','research/BATCH_41.md','research/BATCH_41_RECIPES.json',
+        'research/BATCH_41_PILOT.json','research/BATCH_41_CT1.png','experiments/render_capture_transfer.py',
+        'experiments/prepare_mixed_synthesis.py','experiments/review_mixed_synthesis.py','experiments/pilot_mixed_synthesis.py',
+        'scripts/mixed_synthesis_followup.py','campaigns/mixed_pilot.json','campaigns/mixed_synthesis.json',
+        'start_mixed_synthesis.bat','mixed_synthesis_status.bat','stop_mixed_synthesis.bat','resume_mixed_synthesis.bat'))
     files.update(ROOT/p for p in ('README.md','SIMULATOR_ARCHITECTURE.md','requirements.txt',
         'CONTRIBUTING.md','GIT_SETUP.md','THIRD_PARTY_NOTICES.md',
         '.gitignore','.gitattributes','.editorconfig',

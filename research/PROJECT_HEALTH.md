@@ -1,5 +1,16 @@
 # Santé du projet —31 octobre2026
 
+Lot41 : un obstacle de transfert est réduit (CT1 garde les remplaçants actifs)
+sans ignorer la baisse d’activité médiane. L’étape suivante devient un test
+causal de concurrence, pas une grille de constantes : un pool de capture pour
+P/R/H/T,12 essais/4h maximum. Un échec de F neuf→L peut aussi être un problème
+d’ordre temporel/épuisement des stocks ; diagnostiquer avant de rejeter le modèle.
+Le prochain horizon de réévaluation est MX1 complet. Si deux interventions
+conceptuelles supplémentaires n’obtiennent ni transfert ni diagnostic nouveau,
+réexaminer l’architecture. Pas de blocage irréversible établi ni de délai garanti ;
+énergie sous flux, information riche, diversité et protection/homéostasie restent
+des risques majeurs. Le code seul ne réduit pas leur dette de preuve.
+
 Lot40 : le transfert matériel vers le bain membranaire est confirmé avec
 témoins complets ; ce progrès réduit une vraie incertitude d'intégration et
 devient inspectable. Prochain jalon falsifiable : CT1, une seule modification

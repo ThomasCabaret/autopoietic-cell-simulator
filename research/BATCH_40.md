@@ -1,5 +1,11 @@
 # Lot40 — transfert membranaire confirmé et capture commune à l’essai
 
+**Clôture CT1 au lot41 :9/9 terminés, zéro erreur, porte passée.** Capture
+commune :10/8/9 F alimentaires dont1/2/2 actifs ; nogene négatif3/3. Activité
+variable, opérations médianes9→3 : pas de supériorité uniforme. Voir
+[BATCH_41.md](BATCH_41.md) pour le bilan et le test de concurrence suivant.
+Les lectures partielles ci-dessous sont conservées comme historique.
+
 4 novembre2026. [Plan figé](BATCH_40_PLAN.md) · [recettes CT1](BATCH_40_RECIPES.json).
 
 ## MIN1M clos :12/12, aucune erreur, porte passée
