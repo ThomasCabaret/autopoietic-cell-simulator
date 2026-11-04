@@ -96,6 +96,29 @@ def renewal_description():
         evidence='research/BATCH_34.md')
 
 
+def membrane_renewal_origins():
+    source='research/campaign_recipes/MIN1M_20261104T113752867767Z/manifest.json'
+    data=json.loads((ROOT/source).read_text(encoding='utf-8'));items=[]
+    for seed in range(3):
+        task=next(t for t in data['tasks'] if t['label']==f'MIN1M_active_s{seed}')
+        items.append((f'current_membrane_renewal_s{seed}','current_membrane_renewal',f'Graine {seed}',
+            copy.deepcopy(task['scenario']),source,task['id'],2118))
+    return items
+
+
+def membrane_renewal_description():
+    return dict(id='current_membrane_renewal',title='Membrane et catalyseurs reconstruits · progrès actuel',
+        level='MD2 / MIN1M · transfert dans le même bain',archive=False,
+        summary='Membrane, copie courte, expression et catalyseurs entièrement refaits dans un même bain.',
+        question='La reconstruction matérielle de F01 reste-t-elle fonctionnelle avec la membrane présente ?',
+        prepared='219 L en anneau et24 L libres ;16 G01 et16 F01 préparés,64 F monomères et P/R libres. 2118 billes ; stocks totaux432 supports G et384 F.',
+        observe='À1200, graines0/1/2 :7/6/2 F entièrement refaits depuis nourriture, dont6/4/2 actifs ensuite pour12/6/16 opérations. Première activité à776,02/606,11/607,46 ; membrane fermée sur85,7/85,6/85,3% des observations régulières. Les trois témoins sans gène ne produisent aucun nouveau F.',
+        conditions='Lois MD2 inchangées ; Langevin masse1/frottement0,1, température0,08, dt0,002 ; cycle externe200/15. Trois graines disponibles. Graine0 ouverte par défaut par convention, sans sélection de résultat.',
+        limits='Départ construit et outils initiaux toujours présents. Production de remplaçants fonctionnels, pas remplacement sous pertes ni maintien. L préparés, pas synthétisés ; stocks finis, pas flux extérieur, homéostasie ou information longue démontrés. Le prototype H/T séparé n’est pas inclus.',
+        look='Jouer en Maximum ; le grand bain demande des dizaines de minutes pour1200. Examiner les compteurs F entièrement refaits et actifs, puis zoomer ou suivre une particule avec Explorer. Simulation réelle depuis t0, pas trajectoire précalculée.',
+        evidence='research/BATCH_40.md')
+
+
 def descriptions():
     result=[dict(id='integrated',title='Bain intégré actuel',level='Intégration partielle · priorité de lecture',
         summary='Membrane, gènes, outils et précurseurs dans un même bain.',
@@ -147,7 +170,7 @@ def langevin_variant(config):
 
 def build():
     variants=[]
-    for key,demo,title,cfg,origin,task,beads in current_origins()+renewal_origins():
+    for key,demo,title,cfg,origin,task,beads in current_origins()+renewal_origins()+membrane_renewal_origins():
         cfg=resolve(cfg);path=f'demonstrators/configs/demo_{key}.json'
         (ROOT/path).write_text(json.dumps(cfg,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
         variants.append(dict(id=key,demo=demo,title=title,seed=cfg['seed'],config=path,beads=beads,
@@ -173,9 +196,9 @@ def build():
     from visualizer.demos import simulator_hashes
     archived=descriptions()
     for info in archived:info['archive']=True
-    catalog=dict(version=1,date='2026-11-04',recommended='current_cell_s2',simulator_sha256=simulator_hashes(),
+    catalog=dict(version=1,date='2026-11-04',recommended='current_membrane_renewal_s0',simulator_sha256=simulator_hashes(),
         policy='Live simulations from preserved initial inputs. Selected illustrative seeds, not a robustness claim. No trajectories/checkpoints bundled.',
-        demos=current_descriptions()+[renewal_description()]+archived,variants=variants)
+        demos=[membrane_renewal_description()]+current_descriptions()+[renewal_description()]+archived,variants=variants)
     (ROOT/'demonstrators/catalog.json').write_text(json.dumps(catalog,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
 
 
@@ -218,6 +241,15 @@ def verify():
         sim=Simulation(cfg)
         assert len(sim.chemistry.pos)==beads==150 and not info['archive'] and sim.motion is not None
         assert cfg['chemistry']['sequence']=='01'
+        rows.append(dict(id=key,beads=beads,source_dynamics_identical=True,current=True))
+    for key,_,_,original,source,task,beads in membrane_renewal_origins():
+        variant,info,cfg=catalog.get(key)
+        assert signature(cfg)==signature(original)
+        assert hashlib.sha256((ROOT/source).read_bytes()).hexdigest()==variant['source_sha256']
+        sim=Simulation(cfg);g=sim.chemistry.genetics
+        assert len(sim.chemistry.pos)==beads==2118 and g.n==816
+        assert cfg['chemistry']['genetics']['sequence']=='01'
+        assert sim.motion is not None and not info['archive']
         rows.append(dict(id=key,beads=beads,source_dynamics_identical=True,current=True))
     return rows
 

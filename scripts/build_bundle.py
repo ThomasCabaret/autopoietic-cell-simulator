@@ -111,6 +111,10 @@ def main():
         'research/BATCH_39_PLAN.md','research/BATCH_39.md','research/BATCH_39_RECIPES.json','experiments/lipid_thermal_tail.py',
         'campaigns/lipid_thermal_tail.json','start_lipid_tail.bat','lipid_tail_status.bat','stop_lipid_tail.bat','resume_lipid_tail.bat'))
     files.update(ROOT/p for p in ('research/BATCH_39_RESULTS.png','experiments/render_lipid_tail.py'))
+    files.update(ROOT/p for p in ('research/BATCH_40_PLAN.md','research/BATCH_40.md','research/BATCH_40_RECIPES.json',
+        'experiments/prepare_capture_transfer.py','experiments/review_capture_transfer.py','experiments/verify_capture_transfer.py',
+        'scripts/capture_transfer_followup.py','campaigns/capture_transfer.json','start_capture_transfer.bat',
+        'capture_transfer_status.bat','stop_capture_transfer.bat','resume_capture_transfer.bat'))
     files.update(ROOT/p for p in ('README.md','SIMULATOR_ARCHITECTURE.md','requirements.txt',
         'CONTRIBUTING.md','GIT_SETUP.md','THIRD_PARTY_NOTICES.md',
         '.gitignore','.gitattributes','.editorconfig',

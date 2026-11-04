@@ -35,7 +35,7 @@ def main():
             assert (Path(packet['path'])/'demo.json').exists()
             assert packet['observations']['time']==0.
             rows.append(dict(id=key,beads=len(f.positions),seed=packet['config']['seed'],paused_initial_state=True))
-            if key in ('integrated_s2','integrated_s2_langevin','current_cell_s2','current_free_s2','current_probes_s2','current_renewal_s0'):
+            if key in ('integrated_s2','integrated_s2_langevin','current_cell_s2','current_free_s2','current_probes_s2','current_renewal_s0','current_membrane_renewal_s0'):
                 initial=f.positions.copy();window.single_step();wait(lambda:window.packet['frame'].step==1)
                 assert window.packet['paused'];window.toggle_pause()
                 wait(lambda:window.packet['frame'].time>=.1)

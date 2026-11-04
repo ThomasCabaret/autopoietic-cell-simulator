@@ -1,7 +1,7 @@
 {
   "version": 1,
   "date": "2026-11-04",
-  "recommended": "current_cell_s2",
+  "recommended": "current_membrane_renewal_s0",
   "simulator_sha256": {
     "simulator/__init__.py": "bf5a7a5cafdf7076cbc3cc9d8992895e4a8c217621ea024645a061a3531281a9",
     "simulator/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
@@ -46,6 +46,20 @@
   },
   "policy": "Live simulations from preserved initial inputs. Selected illustrative seeds, not a robustness claim. No trajectories/checkpoints bundled.",
   "demos": [
+    {
+      "id": "current_membrane_renewal",
+      "title": "Membrane et catalyseurs reconstruits · progrès actuel",
+      "level": "MD2 / MIN1M · transfert dans le même bain",
+      "archive": false,
+      "summary": "Membrane, copie courte, expression et catalyseurs entièrement refaits dans un même bain.",
+      "question": "La reconstruction matérielle de F01 reste-t-elle fonctionnelle avec la membrane présente ?",
+      "prepared": "219 L en anneau et24 L libres ;16 G01 et16 F01 préparés,64 F monomères et P/R libres. 2118 billes ; stocks totaux432 supports G et384 F.",
+      "observe": "À1200, graines0/1/2 :7/6/2 F entièrement refaits depuis nourriture, dont6/4/2 actifs ensuite pour12/6/16 opérations. Première activité à776,02/606,11/607,46 ; membrane fermée sur85,7/85,6/85,3% des observations régulières. Les trois témoins sans gène ne produisent aucun nouveau F.",
+      "conditions": "Lois MD2 inchangées ; Langevin masse1/frottement0,1, température0,08, dt0,002 ; cycle externe200/15. Trois graines disponibles. Graine0 ouverte par défaut par convention, sans sélection de résultat.",
+      "limits": "Départ construit et outils initiaux toujours présents. Production de remplaçants fonctionnels, pas remplacement sous pertes ni maintien. L préparés, pas synthétisés ; stocks finis, pas flux extérieur, homéostasie ou information longue démontrés. Le prototype H/T séparé n’est pas inclus.",
+      "look": "Jouer en Maximum ; le grand bain demande des dizaines de minutes pour1200. Examiner les compteurs F entièrement refaits et actifs, puis zoomer ou suivre une particule avec Explorer. Simulation réelle depuis t0, pas trajectoire précalculée.",
+      "evidence": "research/BATCH_40.md"
+    },
     {
       "conditions": "Langevin, masse 1, frottement 0,1 ; température 0,08, dt 0,002 ; contacts liés/libres cohérents MD2. Paramètres identiques à la recette étudiée, sans réglage de la vue. Cycle externe 200 / 15. Graine 2 recommandée pour illustrer une copie G et une bonne tenue ; choix illustratif, les trois graines restent accessibles.",
       "evidence": "research/BATCH_25_RESULTS.md",
@@ -325,6 +339,48 @@
       "source_task": "task0006",
       "source_sha256": "bbfab1ca4ca27a213fea9dd557192eec9c00b3f18a83375c944b9e1d05e47e8a",
       "dynamics_sha256": "cfd492909caca2090f98fd95db6cb57dd8d15a8f79886477a4d9ad55a66e869d",
+      "view_speed": 0.0,
+      "motion": "langevin"
+    },
+    {
+      "id": "current_membrane_renewal_s0",
+      "demo": "current_membrane_renewal",
+      "title": "Graine 0",
+      "seed": 0,
+      "config": "demonstrators/configs/demo_current_membrane_renewal_s0.json",
+      "beads": 2118,
+      "source": "research/campaign_recipes/MIN1M_20261104T113752867767Z/manifest.json",
+      "source_task": "task0000",
+      "source_sha256": "0fd04ae3ae376ca52b8f7ab8de7a327bdb286cf26588e51d31f9c037b103c064",
+      "dynamics_sha256": "f26928c32665e05a8b144158fad65312396358260c8151ebcb8283089ae85367",
+      "view_speed": 0.0,
+      "motion": "langevin"
+    },
+    {
+      "id": "current_membrane_renewal_s1",
+      "demo": "current_membrane_renewal",
+      "title": "Graine 1",
+      "seed": 1,
+      "config": "demonstrators/configs/demo_current_membrane_renewal_s1.json",
+      "beads": 2118,
+      "source": "research/campaign_recipes/MIN1M_20261104T113752867767Z/manifest.json",
+      "source_task": "task0004",
+      "source_sha256": "0fd04ae3ae376ca52b8f7ab8de7a327bdb286cf26588e51d31f9c037b103c064",
+      "dynamics_sha256": "3b3713e91df136ed78561bc9ee10da201f449b765c814dd92c3e481119b55503",
+      "view_speed": 0.0,
+      "motion": "langevin"
+    },
+    {
+      "id": "current_membrane_renewal_s2",
+      "demo": "current_membrane_renewal",
+      "title": "Graine 2",
+      "seed": 2,
+      "config": "demonstrators/configs/demo_current_membrane_renewal_s2.json",
+      "beads": 2118,
+      "source": "research/campaign_recipes/MIN1M_20261104T113752867767Z/manifest.json",
+      "source_task": "task0008",
+      "source_sha256": "0fd04ae3ae376ca52b8f7ab8de7a327bdb286cf26588e51d31f9c037b103c064",
+      "dynamics_sha256": "80746f03645bc7d0f7aa023124ca12344acda3a213753f20f91fab5ba2255f32",
       "view_speed": 0.0,
       "motion": "langevin"
     },

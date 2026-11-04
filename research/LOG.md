@@ -1416,3 +1416,19 @@ thermique exacts. L24/23/23, contacts21/20/20, dernières naissances235,50/129,5
 refusé. Refroidissement observé après stocks finis, pas isothermie alimentée.
 Figure/bilan final ajoutés, aucune nouvelle correction ou campagne. MIN1M11/12,
 dernier témoin actif ; prochaine reprise sur sa clôture puis couplage matériel.
+
+
+## 2026-11-04 — lot40, clôture MIN1M et préalable de capture CT1
+
+MIN1M12/12 clos, porte passée : actifs entièrement alimentaires6/4/2 avec
+membrane ; témoins nogene négatifs, split aucun entier actif. T-05 devient75,
+pas maintien/pertes. Promotion des3 recettes exactes dans GUI,27 choix ; toutes
+actions natives et positions headless vérifiées, capture inspectée.210 tests
+passent et4 préfixes àt5 MIN1R/MIN1M/MD2/L3 restent exactement égaux aux archives.
+
+CT1 lancé9 essais sources figées,2h/2 workers, k35 versus E/largeur² commun
+P/R-H/T, contrôle nogene. Même état initial et thermostat, pas nouvelle protéine,
+pose native ou H/T dans le bain génétique. Arrêt après analyse quelle que soit
+la porte. Pas de nouveau réglage thermique L3, qui conserve son refus historique.
+Prochain jalon : interpréter CT1 avant compétition des substrats et véritable
+usage de L dans la membrane. Voir BATCH_40_PLAN/BATCH_40/recettes.

@@ -1,5 +1,12 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot40 : MIN1M12/12 sans erreur, porte passée ; outils entièrement alimentaires
+actifs6/4/2 dans les trois bains membranaires, fermeture85,7/85,6/85,3%.
+T-05 passe50→75 pour ce couplage limité ; aucun maintien sous pertes ou synthèse
+L dans ce même bain. Trois recettes promues dans la GUI sans changement de lois.
+CT1 teste la capture commune sur P/R :9 essais en cours, résultat non anticipé.
+Les succès L3/L4 restent séparés, S-04 reste25 et maintien0. Voir BATCH_40.md.
+
 L4 clos3/3 :24/23/23 L, préfixes exacts et températures revenues près de la
 consigne après production. Cela réduit le risque de dérive thermique persistante
 dans ces pools fermés, pas celui de chauffage sous alimentation continue.

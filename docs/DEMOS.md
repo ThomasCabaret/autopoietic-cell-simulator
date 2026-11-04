@@ -1,23 +1,32 @@
 # Démos représentatives accessibles dans la GUI
 
-## Progrès du4 novembre —24 choix
+## Progrès du4 novembre —27 choix
 
-**Démos → Catalyseurs reconstruits · progrès récent** présente les trois
-graines MIN1R validées :150 billes sans membrane, quatre G01 et un F01
-préparés, P/R libres. Chaque essai produit10 F entièrement refaits depuis
-nourriture ;5/2/1 deviennent actifs ensuite. Les deux compteurs dédiés
-excluent l'outil initial et les chaînes partiellement préparées. Première
-activité vers392,68/192,14/395,92 ; jouer en Maximum puis ralentir.
+**Démos → État actuel · bain intégré** ouvre désormais **Membrane et catalyseurs
+reconstruits · progrès actuel**, graine0. Les trois graines MIN1M sont accessibles :
+2118 billes, membrane préparée,16 G01/16 F01 et P/R. À1200,7/6/2 F entièrement
+refaits depuis nourriture, dont6/4/2 actifs ensuite ; fermeture régulière de la
+membrane85,7/85,6/85,3%. Graine0 par convention, sans choix du meilleur résultat.
 
-L'outil initial demeure : production de remplaçants fonctionnels, pas maintien
-sous pertes. La démo membranaire recommandée reste MD2 ; le nouveau transfert
-MIN1M est encore en campagne, donc absent du catalogue. Aucun film précalculé
-ou réglage graphique de chimie. Voir [lot35](../research/BATCH_35.md).
+Jouer en Maximum, puis ralentir et zoomer/suivre avec Explorer. Le grand bain
+peut demander des dizaines de minutes. Compteurs : F entièrement refaits et
+actifs après libération ; les outils initiaux sont exclus. Départ réel àt0,
+sans film précalculé. L reste préparé ; les enzymes initiales demeurent. Ni
+maintien sous pertes, synthèse L, flux ouvert ou homéostasie démontrés.
 
-## Référence intégrée — MD2
+**Catalyseurs reconstruits · progrès récent** garde MIN1R (150 billes, sans
+membrane), plus rapide pour inspecter la boucle. MD2 précédent et les références
+historiques restent disponibles. [Résultats et limites](../research/BATCH_40.md).
 
-Relancer **`visualizer.bat`**, puis **Démos → État actuel · bain intégré**.
-Ce raccourci ouvre **Cellule construite · état actuel, graine2**, en pause à t=0,
+Les27 actions natives Qt et la lecture/pause/recommencement ont été vérifiés ;
+positions affichées identiques au moteur sans interface au même pas. Recettes
+et signatures physiques identiques aux entrées de recherche. CT1 expérimental
+ne modifie pas ces démos et n'est pas promu par anticipation.
+
+## Référence intégrée antérieure — MD2
+
+Pour revoir MD2, lancer **`visualizer.bat`**, puis choisir
+**Démos → Cellule construite · état actuel → Graine2**, en pause à t=0,
 avec Langevin et les contacts liés/libres cohérents. Cliquer **Jouer**, laisser
 la vitesse **Maximum**, zoomer à la molette et glisser pour déplacer la vue.
 **F** revient à la vue globale ; **Explorer** propose filtres, sélection et suivi.

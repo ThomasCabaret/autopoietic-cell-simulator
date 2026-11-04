@@ -1,5 +1,12 @@
 # Interactions souhaitées, parasites et environnements — lot7
 
+Lot40 : la fonction de raideur de capture devient commune aux hooks P/R et
+H/T ; CT1 compare35 à E/largeur² sur le renouvellement P/R. Ce n'est pas encore
+un bain concurrent : catégories donneur/accepteur réutilisables, mauvais couples
+P–T/H–R à tester ensuite. Ne pas désactiver la barrière segmentaire membranaire
+en supprimant le core F/L ; les deux rôles doivent être distingués avant transfert.
+MIN1M clos confirme seulement la boucle P/R avec L préparés.
+
 Lot38 : capture H/T de L3 peut utiliser une raideur dérivée au lieu de35.
 Ne pas présenter cette option comme un paramètre propre au lipide dans une
 chimie déjà unifiée : lors du transfert, appliquer le même mécanisme à P/R et

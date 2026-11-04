@@ -1,5 +1,11 @@
 # Architectures de cellule : fermeture à concevoir, pas encore réalisée
 
+Lot40 : MIN1M clos12/12 : même architecture2118 billes, mêmes lois MD2,
+remplaçants F entièrement alimentaires actifs3/3 avec membrane. Pas de rôle/gène
+ajouté ; L préparés, pas de flux ou pertes. La GUI montre exactement ces départs.
+CT1 teste séparément le transfert de capture dérivée H/T vers P/R avant le bain
+simultané ; cela ne ferme pas encore la voie L du graphe. Voir BATCH_40.md.
+
 Lot36 : voie alternative L1 démontrée seulement dans un petit pool H/T :
 F01 préparé→H–T réel→association MD2,64 billes,22 produits dans une graine.
 Aucun rôle/gène supplémentaire ; ne pas additionner cette réussite et celle

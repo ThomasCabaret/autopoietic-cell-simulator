@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "revision": 9,
+  "revision": 10,
   "reviewed": "2026-11-04",
-  "candidate": "MD2 / MIN1M11/12 ; L2/L3 clos, L4 trois queues froides sélectionnées après production",
+  "candidate": "MD2 / MIN1M clos12/12 et GUI ; capture commune P/R-H/T CT1 en campagne",
   "purpose": "Registre évolutif des capacités nécessaires à une cellule construite maintenue ; les pourcentages sont des paliers de preuve, pas un taux global de réussite.",
   "out_of_scope": [
     "origine spontanée de la cellule",
@@ -230,7 +230,7 @@
       "mechanism": "L1 implémente H/T libres captés par le F01 existant, lien axial physique saturé et ports MD2 indexés par vrais partenaires. Voie H/T séparée ; P/R+H/T reste un draft.",
       "concept_gap": "Saut de potentiel et échauffement identifiés ; compatibilité capture/état lié, compétition P/R/H/T, expression et insertion cellulaire non établies. C0B/XYZ distinct.",
       "proof": "subcase",
-      "scope": "Un pilote L1 à100,64 billes :22 H–T, tous catalysés,16 contacts latéraux ; jusqu’à8 produits par paire de sites. Une graine sans contrôles dispersés, température cinétique nettement supérieure à la consigne. MD2 fournit toujours L préparés.",
+      "scope": "L3 séparé :19/20/21 L et contacts10/14/14, contrôles négatifs ; crible thermique à100 refusé. L4 suivis sélectionnés à400 :24/23/23 L, refroidissement après production. Aucun P/R ni membrane cellulaire dans ce hook.",
       "references": [
         "research/FUNCTIONAL_MECHANISMS.md",
         "research/CELL_ARCHITECTURE.md",
@@ -239,9 +239,10 @@
         "research/BATCH_36.md",
         "research/BATCH_37.md",
         "research/BATCH_38.md",
-        "research/BATCH_39.md"
+        "research/BATCH_39.md",
+        "research/BATCH_40.md"
       ],
-      "next_test": "Lire L3 complet avec les mêmes seuils thermiques ; ensuite chimie P/R commune, expression, insertion/rétention. Pas de nouvelle grille si échec sans diagnostic.",
+      "next_test": "Lire CT1 (transfert de capture H/T vers renouvellement P/R), puis compétition commune P/R/H/T, expression, insertion/rétention et énergie sous flux.",
       "essential": true
     },
     {
@@ -483,17 +484,18 @@
       ],
       "concept": "draft",
       "mechanism": "Un F construit fabrique P/R composites ; leur expression sur G produit un F dont chaque composite vient de nourriture, puis ses deux sites catalysent à nouveau.",
-      "concept_gap": "Production de remplaçants seulement : ancien F non retiré ici, maintien sous pertes/membrane, énergie et robustesse de population non établis. Tous les autres outils relèvent de T-04.",
-      "proof": "separate",
-      "scope": "MIN1R9/9 terminé : active10/10/10 F entièrement refaits dont5/2/1 actifs ; split3/5/0 dont1/3/0 actifs ; nogene négatif3/3. Pas membrane/pertes/régime ouvert.",
+      "concept_gap": "Production de remplaçants seulement : ancien F non retiré ; maintien sous pertes, énergie et robustesse de population non établis. Tous les autres outils relèvent de T-04.",
+      "proof": "coupled",
+      "scope": "MIN1M12/12 clos, porte passée :7/6/2 F entièrement alimentaires dont6/4/2 actifs dans le même bain membranaire ; fermeture85,7/85,6/85,3%. Nogene négatif3/3, split aucun F entier actif. Initial enzymes remain; no losses or open feed.",
       "references": [
         "research/BATCH_34.md",
         "research/BATCH_34_PLAN.md",
         "research/BATCH_35.md",
         "research/BATCH_37.md",
-        "research/BATCH_38.md"
+        "research/BATCH_38.md",
+        "research/BATCH_40.md"
       ],
-      "next_test": "Lire MIN1M complet et son crible de coexistence membrane / nouveau F entier actif ; puis pertes réelles et maintien.",
+      "next_test": "Préserver ce transfert sous capture commune, puis pertes déclarées du stock initial et maintien ; pas simple persistance des outils préparés.",
       "essential": true
     },
     {
@@ -982,7 +984,8 @@
       "references": [
         "research/CELL_INTERACTIONS.md",
         "research/INTEGRATION_TESTS.json",
-        "research/BATCH_35.md"
+        "research/BATCH_35.md",
+        "research/BATCH_40.md"
       ],
       "next_test": "Ajouter les espèces étrangères avec témoin d’encombrement et suivre séquestration, bons/mauvais produits.",
       "essential": true
@@ -1005,9 +1008,10 @@
       "scope": "N1/LT2/MD2 caractérisent des écarts et régressions ; pas certification complète.",
       "references": [
         "research/KINETICS_AND_PERFORMANCE.md",
-        "research/BATCH_25_RESULTS.md"
+        "research/BATCH_25_RESULTS.md",
+        "research/BATCH_40.md"
       ],
-      "next_test": "Figer horizon et observable physique puis comparer dt, cadence et petites perturbations.",
+      "next_test": "Lire CT1 sous courbure commune de capture ; ensuite bain P/R/H/T et contrôle dt/cadence aux observables utiles. Pas de preuve de convergence par un préfixe exact.",
       "essential": true
     },
     {
@@ -1111,7 +1115,8 @@
         "research/BATCH_35.md",
         "research/BATCH_36.md",
         "research/BATCH_38.md",
-        "research/BATCH_39.md"
+        "research/BATCH_39.md",
+        "research/BATCH_40.md"
       ],
       "next_test": "Conserver les contrôles sans observateur, reprise exacte et signatures à chaque changement concerné.",
       "essential": true
@@ -1183,12 +1188,17 @@
       "revision": 9,
       "date": "2026-11-04",
       "reason": "L3 clos18/18, crible100 refusé. L4 trois horizons400 achevés, préfixes exacts,24/23/23 L et T350–400.076/.092/.077 après fin de production. Pas de révision rétroactive ou preuve sous flux ; paliers inchangés."
+    },
+    {
+      "revision": 10,
+      "date": "2026-11-04",
+      "reason": "MIN1M complet12/12 porte passée : transfert membrane + remplaçants alimentaires actifs3/3, T-05 separate→coupled. Démo exacte au menu. CT1 neuf tests de transfert de capture lancés, aucune adoption ou preuve mixte anticipée."
     }
   ],
   "last_batch_progress": {
-    "S-04": "L3 clos :19/20/21 L et témoins négatifs, critères thermiques refusés ; S-04 reste25%.",
-    "Q-01": "L4 : refroidissement après production dans3/3 suivis sélectionnés, sans nouvelle loi ; chaleur sous flux continu inconnue.",
-    "T-05": "MIN1M11/12 : trois active positifs avec membrane ; dernier témoin sans gène encore actif.",
-    "O-02": "207 tests, sources figées, contrôle des historiques0–100 requis dans chaque suivi L4."
+    "T-05": "50→75 : MIN1M12/12 clos, remplaçants entiers actifs et membrane sur3/3 graines ; pas pertes/maintien.",
+    "C-02": "CT1 :2/9 finis sans erreur, premier matched reconstruit10 F dont1 actif ; cohorte/témoins incomplets, aucune adoption.",
+    "S-04": "25 inchangé : intégration P/R/H/T prioritaire, aucune synthèse L ajoutée à la démo membranaire.",
+    "O-02": "Démo MIN1M au menu et par défaut,27 choix ;210 tests et4 préfixes physiques archivés exacts àt5."
   }
 }

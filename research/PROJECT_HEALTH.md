@@ -1,5 +1,16 @@
 # Santé du projet —31 octobre2026
 
+Lot40 : le transfert matériel vers le bain membranaire est confirmé avec
+témoins complets ; ce progrès réduit une vraie incertitude d'intégration et
+devient inspectable. Prochain jalon falsifiable : CT1, une seule modification
+de capture dérivée,9 essais automatiques. Si régression, comprendre la géométrie
+des contacts avant autre constante ; si réussite, tester les sites communs en
+compétition P/R/H/T. Ne pas investir d'emblée dans une cellule complète sur la
+somme de deux bains incompatibles. Aucun blocage irréversible établi ; fermeture
+énergétique sous flux, information, diversité F et protection/régulation des
+polymères restent des risques majeurs. Pas de calendrier garanti. Deux changements
+conceptuels sans transfert ni diagnostic nouveau imposent une révision du modèle.
+
 Clôture39 : l’hypothèse d’horizon est soutenue dans les trois suivis exacts ;
 pas besoin d’une troisième correction mécanique pour obtenir une queue froide.
 Progrès causal réel, mais comparaisons L3 sélectionnées et stocks finis : le

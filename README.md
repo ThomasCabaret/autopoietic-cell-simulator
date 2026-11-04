@@ -19,21 +19,23 @@ ouverture d'un scénario. Aller dans **Démos → État actuel · bain intégré
 pour la vue d'ensemble sous Langevin avec contacts cohérents MD2, ou choisir
 **Membranes · molécules libres** pour un essai plus rapide. Les références
 anciennes restent rangées séparément. [Catalogue et limites](docs/DEMOS.md).
-Le bain courant est construit et son renouvellement reste incomplet : la
-membrane progresse, mais aucun F nouveau complet n'a été observé dans MD2 à1200.
+Le bain MIN1M construit produit des catalyseurs entièrement refaits et actifs
+avec membrane sur trois graines. Les enzymes initiales restent présentes et
+les lipides sont préparés : le maintien sous pertes reste à établir.
 La visualisation essentielle est disponible ; la vidéo et les outils avancés
 seront spécifiés plus tard. [Guide de la GUI](docs/VISUALIZER.md).
 Les lanceurs Pygame historiques ci-dessous sont conservés.
 
-**Progrès récent visible** : **Démos → Catalyseurs reconstruits · progrès récent**
-montre les trois essais MIN1R validés. De nouveaux F entièrement construits
-depuis nourriture deviennent actifs ; les compteurs les distinguent des outils
-préparés. Petit bain sans membrane, stocks finis, pas maintien sous pertes.
+**Progrès récent visible** : **Démos → Membrane et catalyseurs reconstruits ·
+progrès actuel** montre les trois essais MIN1M validés, avec Langevin inchangé.
+Le raccourci « État actuel · bain intégré » ouvre cette scène, graine0 par
+convention. La petite boucle MIN1R reste disponible sans membrane.
 
-Recherche en cours : transfert de cette boucle courte vers le bain membranaire
-MD2,12 essais MIN1M sans nouvelle loi. État par `membrane_renewal_status.bat`,
-pause par `stop_membrane_renewal.bat`, reprise par `resume_membrane_renewal.bat`.
-Analyse automatique puis arrêt pour interprétation. [Lot35](research/BATCH_35.md).
+Recherche en cours : transfert de la même capture H/T vers la génétique P/R,
+neuf essais CT1, avant leur cohabitation dans un bain unique. Statut par
+`capture_transfer_status.bat`, pause par `stop_capture_transfer.bat`, reprise
+explicite par `resume_capture_transfer.bat`. Analyse puis arrêt automatique,
+aucune adoption anticipée. [Lot40](research/BATCH_40.md).
 
 Un moteur CPU commun pour les campagnes sans fenêtre et les démonstrateurs
 interactifs. Les lois de copie/expression et de membrane sont des modules séparés.

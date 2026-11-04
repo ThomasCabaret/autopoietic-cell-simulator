@@ -1234,16 +1234,17 @@
         "I0",
         "RV1"
       ],
-      "status": "twelve_frozen_membrane_transfer_trials_running_no_promotion",
+      "status": "twelve_complete_screen_passed_material_renewal_with_membrane_GUI",
       "hypothesis": "Existing short G01/F01 reconstruction loop can coexist with the MD2 membrane without new laws",
       "test": "active/noL/split/nogene x3 at1200; whole food-derived expressed F activity and >=70% regular membrane closure in same >=2 active seeds; nogene negative",
       "cost": "Zero new primitive/type/state/port/rate/tool/gene. Initial architecture changed, same432 G/384 F supports;2118 beads with L/1632 without. Passive GUI material counters.",
       "counterexample": "Only old enzyme works, newly expressed tools use prepared composites, membrane collapses or noL alone preserves material closure",
-      "missing_proof": "Transfer pending; no L construction, actual old-tool replacement under loss, homeostasis, open feed or rich information.",
+      "missing_proof": "No L synthesis, imposed loss of prepared tools, homeostasis, open feed or rich information.",
       "evidence": "research/BATCH_35_PLAN.md",
       "results": "research/BATCH_35.md",
       "recipe": "research/BATCH_35_RECIPES.json",
-      "health_gate": "12 tasks maximum,2 workers,24h then checkpoint pause; automatic report and stop for interpretation on either outcome, no retries or tuning"
+      "health_gate": "12 tasks maximum,2 workers,24h then checkpoint pause; automatic report and stop for interpretation on either outcome, no retries or tuning",
+      "conclusion": "12/12 no errors. Active whole-food F7/6/2, active6/4/2,12/6/16 operations; closure.857/.856/.853. Nogene all0, split no whole active F. T-05 coupled75; all three exact recipes in GUI, default seed0 by convention. Not maintenance."
     },
     {
       "id": "L1",
@@ -1322,6 +1323,27 @@
       "recipe": "research/BATCH_39_RECIPES.json",
       "health_gate": "Stop after three; no rate sweep, no retroactive success claim, no phase beyond plan.",
       "conclusion": "3/3 complete no errors; histories/events/thermal prefixes exact.24/23/23 L,21/20/20 lateral contacts, no births after300; T350-400.0758/.0923/.0773. L3 criterion stays refused; not a steady-fed-cell result."
+    },
+    {
+      "id": "CT1",
+      "parent": "L3",
+      "related": [
+        "MIN1R",
+        "MIN1M",
+        "L4",
+        "MD2"
+      ],
+      "status": "nine_frozen_capture_transfer_trials_running_no_adoption",
+      "hypothesis": "The same derived capture curvature can preserve short genetic renewal, prerequisite to a common P/R/H/T bath",
+      "test": "legacy/matched/nogene x3 at1200; paired150 atoms/coordinates/velocities/RNG, fixed rates/thermostat. Prospective whole-tool activity, preservation and coarse wall-cost screen; stop regardless of outcome.",
+      "cost": "Zero new protein/gene/type/port/state/independent numeric parameter. One explicit law option shared by capture classes; historical defaults unchanged. No new scheduler.",
+      "counterexample": "Softer capture prevents ligands reaching formation distance or destroys expression; no actual new whole tool operates, nogene false positive, unacceptable cost or common-law claims from separate baths.",
+      "missing_proof": "No CT1 result yet; no simultaneous P/R/H/T competition, expressed F acting on H/T, energetic closure, continuous feed, insertion/retention or homeostasis.",
+      "evidence": "research/BATCH_40_PLAN.md",
+      "results": "research/BATCH_40.md",
+      "recipe": "research/BATCH_40_RECIPES.json",
+      "health_gate": "9 tasks maximum,2 workers,2h wall budget, checkpoints30s, report then stop. No retry, second phase, default or GUI adoption.",
+      "partial_result": "2/9 complete no errors: legacy0 whole10 active5 ops12; matched0 whole10 active1 ops13. No cohort decision before nine; other seeds and matched nogene pending."
     }
   ]
 }

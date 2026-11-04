@@ -1,5 +1,14 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot40 : **MIN1M clos12/12, porte passée**. Les trois active refont des F
+entiers actifs avec membrane ; témoins nogene négatifs. Démo désormais au menu,
+par défaut graine0 conventionnelle. Ne pas relancer MIN1M ni les grilles L2/L3.
+**CT1 lancé9 essais** : transférer la courbure de capture H/T à P/R avant le bain
+mixte. Lire capture_transfer_status.bat et rapport automatique ; aucune adoption
+avant interprétation. Ensuite compétition P/R/H/T et usage réel des produits,
+barrière de rétention/insertion, énergie sous flux. Les états « en cours »
+ci-dessous sont historiques. Voir BATCH_40.md ; pertes/homéostasie restent ouverts.
+
 Clôture lot39 : L4 terminé3/3 sans erreur, préfixes exacts, refroidissement
 après production (T350–400.076/.092/.077). Aucun nouveau calcul L4 ni autre
 réglage thermique à lancer. L3 reste refusé à100 ; les suivis sont sélectionnés.

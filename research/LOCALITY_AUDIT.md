@@ -1,5 +1,13 @@
 # Fidélité à l'objectif : localité et risques de pilotage
 
+Lot40 CT1 : seule la raideur d'un ressort de capture déjà formé change,
+calculée depuis E et largeur de la même attraction. Attraction tronquée à3largeurs,
+formation de capture dans rayon0,25, états de sites saturables ; aucun nouveau
+voisinage, retour observateur ou identité d'agrégat. Zéro type/port/état/taux/gène
+ajouté. Option figée par scénario ; défaut35 conservé. La règle locale dérivée
+ne garantit pas continuité de potentiel ou thermodynamique ; P/R garde sa
+formation historique, pas la porte énergétique H/T. La GUI ne pilote aucune loi.
+
 Lot38 : pose native uniquement dans le constructeur de F01 préparés, jamais
 dans une réaction ou réparation. Ressort de capture dérivé E/largeur², même
 stiffness dans les forces et ΔU ; aucune lecture biologique ni taux adapté aux

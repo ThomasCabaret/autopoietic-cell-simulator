@@ -1,6 +1,6 @@
 # Checklist détaillée — critères et dépendances
 
-Revue 2026-11-04 · révision9. Source : [cell_checklist.json](cell_checklist.json).
+Revue 2026-11-04 · révision10. Source : [cell_checklist.json](cell_checklist.json).
 [Tableau compact](CELL_CHECKLIST_COMPACT.md) · [Échelle et méthode](CONCEPT_FIRST.md).
 
 Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre acyclique de codage. Les cycles de renouvellement sont intentionnels. Une condition initiale construite peut amorcer un sous-cas sans fermer ces cycles.
@@ -138,13 +138,13 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Dépend de :** [F-01](#F-01), [F-02](#F-02), [F-03](#F-03), [E-03](#E-03), [Q-01](#Q-01) · **Pour renouveler :** [T-04](#T-04)
 
-**Portée des preuves :** Un pilote L1 à100,64 billes :22 H–T, tous catalysés,16 contacts latéraux ; jusqu’à8 produits par paire de sites. Une graine sans contrôles dispersés, température cinétique nettement supérieure à la consigne. MD2 fournit toujours L préparés.
+**Portée des preuves :** L3 séparé :19/20/21 L et contacts10/14/14, contrôles négatifs ; crible thermique à100 refusé. L4 suivis sélectionnés à400 :24/23/23 L, refroidissement après production. Aucun P/R ni membrane cellulaire dans ce hook.
 
-**Références :** [research/FUNCTIONAL_MECHANISMS.md](../research/FUNCTIONAL_MECHANISMS.md), [research/CELL_ARCHITECTURE.md](../research/CELL_ARCHITECTURE.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/LIPID_CONSTRUCTION_DRAFT.md](../research/LIPID_CONSTRUCTION_DRAFT.md), [research/BATCH_36.md](../research/BATCH_36.md), [research/BATCH_37.md](../research/BATCH_37.md), [research/BATCH_38.md](../research/BATCH_38.md), [research/BATCH_39.md](../research/BATCH_39.md)
+**Références :** [research/FUNCTIONAL_MECHANISMS.md](../research/FUNCTIONAL_MECHANISMS.md), [research/CELL_ARCHITECTURE.md](../research/CELL_ARCHITECTURE.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/LIPID_CONSTRUCTION_DRAFT.md](../research/LIPID_CONSTRUCTION_DRAFT.md), [research/BATCH_36.md](../research/BATCH_36.md), [research/BATCH_37.md](../research/BATCH_37.md), [research/BATCH_38.md](../research/BATCH_38.md), [research/BATCH_39.md](../research/BATCH_39.md), [research/BATCH_40.md](../research/BATCH_40.md)
 
-**Prochain test / décision :** Lire L3 complet avec les mêmes seuils thermiques ; ensuite chimie P/R commune, expression, insertion/rétention. Pas de nouvelle grille si échec sans diagnostic.
+**Prochain test / décision :** Lire CT1 (transfert de capture H/T vers renouvellement P/R), puis compétition commune P/R/H/T, expression, insertion/rétention et énergie sous flux.
 
-**Progrès du dernier lot :** L3 clos :19/20/21 L et témoins négatifs, critères thermiques refusés ; S-04 reste25%.
+**Progrès du dernier lot :** 25 inchangé : intégration P/R/H/T prioritaire, aucune synthèse L ajoutée à la démo membranaire.
 
 ## Copie et information
 
@@ -324,23 +324,23 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 <a id="T-05"></a>
 ### T-05 — Production de remplaçants fonctionnels du co-recruteur
 
-**Concept : draft décrit · Preuve : 50% (test séparé).**
+**Concept : draft décrit · Preuve : 75% (couplage partiel).**
 
 **Aboutissement :** Des F entièrement reconstruits depuis la nourriture maintiennent la fonction lors de pertes déclarées du stock initial, avec témoins et transfert aux conditions requises.
 
 **Draft local :** Un F construit fabrique P/R composites ; leur expression sur G produit un F dont chaque composite vient de nourriture, puis ses deux sites catalysent à nouveau.
 
-**Manque / limite :** Production de remplaçants seulement : ancien F non retiré ici, maintien sous pertes/membrane, énergie et robustesse de population non établis. Tous les autres outils relèvent de T-04.
+**Manque / limite :** Production de remplaçants seulement : ancien F non retiré ; maintien sous pertes, énergie et robustesse de population non établis. Tous les autres outils relèvent de T-04.
 
 **Dépend de :** [T-03](#T-03), [S-02](#S-02), [S-03](#S-03) · **Pour renouveler :** [R-01](#R-01), [S-01](#S-01), [Q-01](#Q-01)
 
-**Portée des preuves :** MIN1R9/9 terminé : active10/10/10 F entièrement refaits dont5/2/1 actifs ; split3/5/0 dont1/3/0 actifs ; nogene négatif3/3. Pas membrane/pertes/régime ouvert.
+**Portée des preuves :** MIN1M12/12 clos, porte passée :7/6/2 F entièrement alimentaires dont6/4/2 actifs dans le même bain membranaire ; fermeture85,7/85,6/85,3%. Nogene négatif3/3, split aucun F entier actif. Initial enzymes remain; no losses or open feed.
 
-**Références :** [research/BATCH_34.md](../research/BATCH_34.md), [research/BATCH_34_PLAN.md](../research/BATCH_34_PLAN.md), [research/BATCH_35.md](../research/BATCH_35.md), [research/BATCH_37.md](../research/BATCH_37.md), [research/BATCH_38.md](../research/BATCH_38.md)
+**Références :** [research/BATCH_34.md](../research/BATCH_34.md), [research/BATCH_34_PLAN.md](../research/BATCH_34_PLAN.md), [research/BATCH_35.md](../research/BATCH_35.md), [research/BATCH_37.md](../research/BATCH_37.md), [research/BATCH_38.md](../research/BATCH_38.md), [research/BATCH_40.md](../research/BATCH_40.md)
 
-**Prochain test / décision :** Lire MIN1M complet et son crible de coexistence membrane / nouveau F entier actif ; puis pertes réelles et maintien.
+**Prochain test / décision :** Préserver ce transfert sous capture commune, puis pertes déclarées du stock initial et maintien ; pas simple persistance des outils préparés.
 
-**Progrès du dernier lot :** MIN1M11/12 : trois active positifs avec membrane ; dernier témoin sans gène encore actif.
+**Progrès du dernier lot :** 50→75 : MIN1M12/12 clos, remplaçants entiers actifs et membrane sur3/3 graines ; pas pertes/maintien.
 
 ## Membrane et insertion
 
@@ -518,8 +518,6 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 **Références :** [research/CELL_ARCHITECTURE.md](../research/CELL_ARCHITECTURE.md), [research/LOCALITY_AUDIT.md](../research/LOCALITY_AUDIT.md), [research/BATCH_36.md](../research/BATCH_36.md), [research/BATCH_37.md](../research/BATCH_37.md), [research/BATCH_38.md](../research/BATCH_38.md), [research/BATCH_39.md](../research/BATCH_39.md)
 
 **Prochain test / décision :** Établir le budget du motif retenu, puis ablater l’aide sans masquer un apport.
-
-**Progrès du dernier lot :** L4 : refroidissement après production dans3/3 suivis sélectionnés, sans nouvelle loi ; chaleur sous flux continu inconnue.
 
 <a id="Q-02"></a>
 ### Q-02 — Retour local et disponibilité après cycle
@@ -753,7 +751,7 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** Cohabitation d’un sous-réseau MD2, pas de toutes les fonctions.
 
-**Références :** [research/CELL_INTERACTIONS.md](../research/CELL_INTERACTIONS.md), [research/INTEGRATION_TESTS.json](../research/INTEGRATION_TESTS.json), [research/BATCH_35.md](../research/BATCH_35.md)
+**Références :** [research/CELL_INTERACTIONS.md](../research/CELL_INTERACTIONS.md), [research/INTEGRATION_TESTS.json](../research/INTEGRATION_TESTS.json), [research/BATCH_35.md](../research/BATCH_35.md), [research/BATCH_40.md](../research/BATCH_40.md)
 
 **Prochain test / décision :** Ajouter les espèces étrangères avec témoin d’encombrement et suivre séquestration, bons/mauvais produits.
 
@@ -772,9 +770,11 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** N1/LT2/MD2 caractérisent des écarts et régressions ; pas certification complète.
 
-**Références :** [research/KINETICS_AND_PERFORMANCE.md](../research/KINETICS_AND_PERFORMANCE.md), [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md)
+**Références :** [research/KINETICS_AND_PERFORMANCE.md](../research/KINETICS_AND_PERFORMANCE.md), [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/BATCH_40.md](../research/BATCH_40.md)
 
-**Prochain test / décision :** Figer horizon et observable physique puis comparer dt, cadence et petites perturbations.
+**Prochain test / décision :** Lire CT1 sous courbure commune de capture ; ensuite bain P/R/H/T et contrôle dt/cadence aux observables utiles. Pas de preuve de convergence par un préfixe exact.
+
+**Progrès du dernier lot :** CT1 :2/9 finis sans erreur, premier matched reconstruit10 F dont1 actif ; cohorte/témoins incomplets, aucune adoption.
 
 <a id="C-03"></a>
 ### C-03 — Fermeture fonctionnelle et matérielle complète
@@ -850,11 +850,11 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** Fonction logicielle validée pour les références présentes, pas pour toutes les futures chimies.
 
-**Références :** [research/BATCH_26.md](../research/BATCH_26.md), [research/BATCH_27.md](../research/BATCH_27.md), [research/BATCH_31.md](../research/BATCH_31.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_33.md](../research/BATCH_33.md), [research/BATCH_35.md](../research/BATCH_35.md), [research/BATCH_36.md](../research/BATCH_36.md), [research/BATCH_38.md](../research/BATCH_38.md), [research/BATCH_39.md](../research/BATCH_39.md)
+**Références :** [research/BATCH_26.md](../research/BATCH_26.md), [research/BATCH_27.md](../research/BATCH_27.md), [research/BATCH_31.md](../research/BATCH_31.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_33.md](../research/BATCH_33.md), [research/BATCH_35.md](../research/BATCH_35.md), [research/BATCH_36.md](../research/BATCH_36.md), [research/BATCH_38.md](../research/BATCH_38.md), [research/BATCH_39.md](../research/BATCH_39.md), [research/BATCH_40.md](../research/BATCH_40.md)
 
 **Prochain test / décision :** Conserver les contrôles sans observateur, reprise exacte et signatures à chaque changement concerné.
 
-**Progrès du dernier lot :** 207 tests, sources figées, contrôle des historiques0–100 requis dans chaque suivi L4.
+**Progrès du dernier lot :** Démo MIN1M au menu et par défaut,27 choix ;210 tests et4 préfixes physiques archivés exacts àt5.
 
 ## Évolution conservée
 
@@ -867,3 +867,4 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 - Révision7 (2026-11-04) : Clôture lot37 après interruption :20 nouveaux essais L2 et référence réutilisée, production utile mais deux alarmes thermiques. Aucun palier augmenté. MIN1M9/12, porte non évaluée.
 - Révision8 (2026-11-04) : Lot38 : loupe capture exacte, préparation F et courbure dérivée implémentées,18 essais L3 lancés. MIN1M10/12, trois active positifs mais deux témoins en cours. Aucun palier biologique augmenté.
 - Révision9 (2026-11-04) : L3 clos18/18, crible100 refusé. L4 trois horizons400 achevés, préfixes exacts,24/23/23 L et T350–400.076/.092/.077 après fin de production. Pas de révision rétroactive ou preuve sous flux ; paliers inchangés.
+- Révision10 (2026-11-04) : MIN1M complet12/12 porte passée : transfert membrane + remplaçants alimentaires actifs3/3, T-05 separate→coupled. Démo exacte au menu. CT1 neuf tests de transfert de capture lancés, aucune adoption ou preuve mixte anticipée.

@@ -1,5 +1,11 @@
 # Lot35 — transfert membranaire en cours et démonstration du progrès acquis
 
+**Clôture au lot40 :12/12 terminés, zéro erreur, porte passée.** Trois graines
+active ont7/6/2 F entièrement alimentaires dont6/4/2 actifs, membrane fermée
+85,67/85,63/85,26%. Nogene0/0/0 nouveaux F ; split0/0/4 F mais aucun entier
+actif. Voir le tableau complet, les limites et la démo promue dans
+[BATCH_40.md](BATCH_40.md). Le texte de lancement ci-dessous est historique.
+
 4 novembre2026. [Plan figé](BATCH_35_PLAN.md) · [recettes](BATCH_35_RECIPES.json).
 
 MIN1R revérifié :9/9 terminés, zéro erreur, aucun travail ancien actif. Aucun
