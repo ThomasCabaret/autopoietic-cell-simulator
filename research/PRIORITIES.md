@@ -1,5 +1,15 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot42 : **MX1 clos12/12, porte refusée G/F**, mais transfert F alimentaire→L
+sur2/3. Audit : stocks P/R abondants restants et production tardive ; ne pas
+conclure à une impossibilité ou augmenter aveuglément la nourriture. Loupe
+sélectionnée : déliaison suivie de recapture rapide. **MX2 lancé12 essais**,
+coopération locale et références au même horizon2400, sans nouveau taux/outil.
+Lire cooperative_synthesis_status.bat puis rapport complet stocks/fenêtres/
+préfixes ; pas de grille supplémentaire avant interprétation. Ensuite vrais
+L→frontière et boucle de maintien sous pertes/perturbations. Suivre désormais
+CAMPAIGN_CALIBRATION.md ; les états « MX1 en cours » ci-dessous sont historiques.
+
 Lot41 : **CT1 clos9/9, porte passée**, mais activité non uniformément meilleure
 (opérations médianes9→3). Ne pas relancer ni adopter globalement. **MX1 lancé12
 essais** : un même pool de sites P/R/H/T et vrais produits, sans nouvelle protéine.

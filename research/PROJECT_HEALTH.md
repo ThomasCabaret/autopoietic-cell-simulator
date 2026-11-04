@@ -1,5 +1,17 @@
 # Santé du projet —31 octobre2026
 
+Lot42 : progression par compréhension causale plutôt que réglage de score :
+audit de stocks, temps et occupation, puis loupe bornée ; deux recaptures rapides
+illustrent le piège local. La coopération proposée réemploie la compatibilité
+de jonction, sans nouvelle enzyme ou constante. MX2 est le prochain horizon
+décisif, avec référence longue et témoin noHT ; pas de promesse d’asymptote à2400.
+Une nouvelle erreur de calibration pourrait masquer la fonction : déclarer les
+occasions insuffisantes au lieu de condamner le modèle. Si le candidat n’apporte
+ni débit commun ni diagnostic nouveau, revoir la capture plutôt qu’enchaîner une
+grille. L’objectif reste le maintien construit sous pertes et perturbations ;
+homéostasie/protection/export et énergie sous flux restent des risques conceptuels
+importants. Pas de blocage irréversible établi ni de calendrier garanti.
+
 Lot41 : un obstacle de transfert est réduit (CT1 garde les remplaçants actifs)
 sans ignorer la baisse d’activité médiane. L’étape suivante devient un test
 causal de concurrence, pas une grille de constantes : un pool de capture pour

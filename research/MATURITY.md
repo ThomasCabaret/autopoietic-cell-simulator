@@ -1,5 +1,14 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot42 : MX1 est clos12/12, transfert F alimentaires→L et contacts sur2/3,
+mais débit G/F insuffisant au crible1200. Stocks non épuisés et production
+tardive limitent la portée du refus. Le diagnostic de capture motive une
+coopération de sites, pas un nouveau taux ; MX2 compare à2400, résultat à attendre.
+Un pilote100 produit12 P/R et5 L, sans preuve de maintien. Aucun palier augmenté :
+S-04 reste25, T-05/MIN1M75 ; maintien et homéostasie non démontrés.
+Le premier test global non naïf exige aussi flux/export, régulation et récupération,
+pas seulement ces synthèses. Voir BATCH_42 et CAMPAIGN_CALIBRATION.
+
 Lot41 : capture dérivée transférée à la boucle génétique courte sur3 graines,
 CT1 clos9/9 avec témoins négatifs. Activité variable, pas supériorité générale.
 MX1 implémente la concurrence P/R/H/T dans un seul bain et la provenance des

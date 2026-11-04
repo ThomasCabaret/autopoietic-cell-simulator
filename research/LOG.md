@@ -1454,3 +1454,29 @@ dans le sandbox ; rerun hors sandbox. L’empreinte du nouveau module a ensuite
 nécessité une recertification du catalogue ; validation finale218 tests OK.
 Les quatre préfixes archivés àt5 sont exacts. Aucun palier biologique augmenté
 par l’implémentation/campagne ; MIN1M reste la démo recommandée. Voir BATCH_41.
+
+
+## 2026-11-04 — lot42, calibration des campagnes et coopération locale MX2
+
+MX1 clos12/12 sans erreur, porte refusée pour G/F ; six autres conditions
+passent. Audit depuis événements/IDs/checkpoints : P/R non épuisés en mixed,
+stocks presque épuisés en uncaptured, production mixed toujours tardive900–1200.
+99,6/98,1/99,1% du temps échantillonné de double occupation est croisé, sans
+en faire une probabilité de capture. Loupe première paire croisée t5,15 : deux
+déliaisons, pas recapture même tick, mêmes atomes revus liés en≤0,28/0,72 ;
+six billes, fenêtre20, contrôle physique exact40. Hypothèse d’évasion inefficace
+soutenue sur cet exemple choisi, pas preuve de piège permanent.
+
+Nouvelle option capture_cooperativity : le ligand d’un site lié conditionne
+affinité et recrutement du voisin selon compatibilité matérielle de jonction.
+Pas nouveau taux/gène/outil ; helper local six billes, coût explicite et delta
+H/T étendu aux affinités des voisins liés.225 tests passent, cinq préfixes
+archivés exacts quand option inactive. Pilote100 produit12 P/R et5 L, aucune
+double capture croisée ni violation ; aucun G/F libéré avant fenêtre externe185,
+pas un échec à conclure. MX2 douze essais2400, mêmes stocks,2 workers4h,
+références longues sélectionnées et contrôles figés, analyse puis arrêt.
+
+CAMPAIGN_CALIBRATION explicite les justifications avant essai et conclusions
+permises ; stock/fenêtres désormais automatiques au rapport MX2. Aucun palier
+cellulaire augmenté, démos MIN1M gardées. Priorité aval : lecture MX2 puis L
+réel vers membrane et maintien sous pertes/perturbations. Voir BATCH_42.

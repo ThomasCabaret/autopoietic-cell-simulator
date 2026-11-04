@@ -1,5 +1,13 @@
 # Bruit, discrétisation et coût du renouvellement — 27 octobre2026
 
+Actualisation lot42 : les démos et candidats récents utilisent Langevin BAOAB,
+masse1, amortissement0,1, T0,08, dt0,002. La section « Ce que le moteur intègre »
+ci-dessous décrit le J0 brownien historique. Pour le Langevin actuel, tau_v=10
+et D libre asymptotique=T/(masse×amortissement)=0,8 ; ni ces repères ni un test
+de billes libres ne garantissent le mélange des agrégats réactifs. Lire
+CAMPAIGN_CALIBRATION.md pour les stocks, cycles et censures. Aucun temps de
+demi-renouvellement cellulaire alimenté n’est mesuré ou garanti.
+
 Réponse technique et ordre de grandeur, pas une nouvelle campagne chimique.
 Les données brutes restent sous outputs/performance et outputs/campaigns.
 

@@ -1,5 +1,11 @@
 # Architectures de cellule : fermeture à concevoir, pas encore réalisée
 
+Lot42 : MX1 a réellement transféré P/R→F entièrement alimentaire→L sur2/3,
+mais la génétique est pénalisée. MX2 ne change ni stock (198 billes,150 sans H/T),
+ni rôle/gène : une condition locale de capture coopérative et un horizon plus
+long sont comparés séparément. Pas de membrane dans ces essais. L’architecture
+de cellule maintenue et ses fonctions de régulation/export restent à réaliser.
+
 Lot41 : variante MX1 sans membrane :150 billes P/R (4 G01,1 F01 préparés,
 monomères/précurseurs) +24 H/24 T =198. Aucun L préparé ni rôle/gène ajouté.
 Un seul registre de capture F peut fabriquer G/F puis L ; la production par

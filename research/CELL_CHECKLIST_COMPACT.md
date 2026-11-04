@@ -1,6 +1,6 @@
 # Checklist compacte — cellule construite maintenue
 
-Révision 11 · revue 2026-11-04 · 43 sous-buts · MD2 / MIN1M visible ; CT1 clos9/9 porte passée ; MX1 P/R/H/T partagé en campagne
+Révision 12 · revue 2026-11-04 · 43 sous-buts · MD2/MIN1M visible ; MX1 clos12/12 refus génétique ; MX2 coopération locale et horizon2400 en campagne
 
 **Pourcentages = paliers de preuve**, pas effort accompli ni probabilité de réussite. Les plages indiquent min–max des sous-buts ; aucune moyenne globale.
 0% non observé ·25% sous-cas ·50% séparé ·75% couplage partiel ·100% critère satisfait sur son domaine.
@@ -10,7 +10,7 @@ Concept : « à fermer » signale au moins un maillon essentiel manquant ; un dr
 | --- | ---: | --- | ---: | --- | --- |
 | Lois et fonctions des outils | 3 | à fermer | 0–75% | F-01, F-02 | — |
 | Fabrication N / A | 3 | à fermer | 25–75% | S-03 | — |
-| Fabrication des lipides | 1 | à fermer | 25% | S-04 | S-04 : Premier mixed :2 F entièrement alimentaires fabriquent3 L ;7 L neufs avec contact ultérieur. Une graine, pas de membrane ni palier augmenté. |
+| Fabrication des lipides | 1 | à fermer | 25% | S-04 | S-04 : F alimentaires→L confirmé2/3 MX1, aucune insertion cellulaire ou homéostasie ; pilote coopératif100 :12 P/R et5 L, pas de palier augmenté. |
 | Copie et information | 5 | à fermer | 0–75% | R-02, R-04, R-05 | — |
 | Traduction et outils renouvelés | 5 | à fermer | 0–75% | T-02, T-04 | — |
 | Membrane et insertion | 5 | à fermer | 25–75% | M-04, M-05 | — |
@@ -19,8 +19,8 @@ Concept : « à fermer » signale au moins un maillon essentiel manquant ; un dr
 | Déchets et recyclage | 4 | à fermer | 0–25% | W-02, W-03, W-04 | — |
 | Homéostasie des petites espèces | 2 | drafts décrits | 0% | — | — |
 | Homéostasie des polymères | 4 | à fermer | 0% | H-03, H-04, H-05, H-06 | — |
-| Compatibilité et maintien | 4 | à fermer | 0–25% | C-01, C-03, C-04 | C-01 : MX1 2/12 clos sans erreur : premier mixed G0/F2 contre7/9 uncaptured, forte pénalité à interpréter après cohorte. ; C-02 : CT1 clos9/9, porte passée :10/8/9 F alimentaires dont1/2/2 actifs ; opérations médianes9→3, pas amélioration uniforme. |
-| Calcul et observabilité | 2 | drafts décrits | 25–100% | — | O-02 : 218 tests passent après correction de l’empreinte du catalogue ;4 préfixes archivés exacts àt5, reprise/passivité du nouveau hook vérifiées. |
+| Compatibilité et maintien | 4 | à fermer | 0–25% | C-01, C-03, C-04 | C-01 : MX1 refusé G/F ; coopération locale implémentée. À1200 dans graine0 MX2 en cours :G5/F10/L24 contre0/2/9 reference, sans verdict de cohorte. ; C-02 : Audit sans simulation : réactifs P/R non épuisés en mixed, production tardive ; MX2 compare lois à2400 avec stocks/fenêtres et préfixes1200 vérifiés. |
+| Calcul et observabilité | 2 | drafts décrits | 25–100% | — | O-02 : 225 tests passent, cinq préfixes archivés exacts àt5 ; contrat de calibration et rapport automatique de stocks ajoutés. |
 
 **Trous conceptuels prioritaires au présent bilan :**
 

@@ -1,5 +1,12 @@
 # Lot41 — capture transférable, bain concurrent P/R/H/T construit
 
+**Clôture MX1 au lot42 :12/12 achevés, zéro erreur, porte refusée.** Deux
+critères G/F échouent ; les six autres passent, dont F alimentaires→L sur2/3.
+G nouveaux0/2/0, F2/5/1, L9/20/8. Le refus vaut le domaine/horizon1200,
+pas impossibilité : stocks P/R encore présents et production tardive.
+Voir [BATCH_42.md](BATCH_42.md) pour l’audit de calibration et la suite.
+Les lectures partielles ci-dessous restent historiques.
+
 4 novembre2026. [Plan](BATCH_41_PLAN.md) · [recettes MX1](BATCH_41_RECIPES.json)
 · [pilote](BATCH_41_PILOT.json) · [comparaison CT1](BATCH_41_CT1.png).
 

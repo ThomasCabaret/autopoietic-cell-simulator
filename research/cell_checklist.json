@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "revision": 11,
+  "revision": 12,
   "reviewed": "2026-11-04",
-  "candidate": "MD2 / MIN1M visible ; CT1 clos9/9 porte passée ; MX1 P/R/H/T partagé en campagne",
+  "candidate": "MD2/MIN1M visible ; MX1 clos12/12 refus génétique ; MX2 coopération locale et horizon2400 en campagne",
   "purpose": "Registre évolutif des capacités nécessaires à une cellule construite maintenue ; les pourcentages sont des paliers de preuve, pas un taux global de réussite.",
   "out_of_scope": [
     "origine spontanée de la cellule",
@@ -81,9 +81,10 @@
         "research/FUNCTIONAL_MECHANISMS.md",
         "research/LOCALITY_AUDIT.md",
         "research/BATCH_32.md",
-        "research/BATCH_41.md"
+        "research/BATCH_41.md",
+        "research/BATCH_42.md"
       ],
-      "next_test": "Chercher un second produit utile puis L sous exactement les mêmes lois.",
+      "next_test": "Mesurer le transfert de la coopération locale de capture dans MX2 ; coût explicite d’une condition six-billes, pas preuve de répertoire programmable.",
       "essential": true
     },
     {
@@ -231,7 +232,7 @@
       "mechanism": "L3 assemble H/T par F01 puis ports MD2. MX1 implémente les vrais P/R et H/T dans un seul registre saturable, avec outils F exprimables ; campagne de transfert en cours, pas encore preuve mixte.",
       "concept_gap": "Saut de potentiel et échauffement identifiés ; compatibilité capture/état lié, compétition P/R/H/T, expression et insertion cellulaire non établies. C0B/XYZ distinct.",
       "proof": "subcase",
-      "scope": "L3 séparé :19/20/21 L et contacts10/14/14, contrôles négatifs ; crible thermique à100 refusé. L4 suivis sélectionnés à400 :24/23/23 L, refroidissement après production. Aucun P/R ni membrane cellulaire dans ce hook.",
+      "scope": "MX1 fabrique9/20/8 L, dont3/4/0 via F entièrement alimentaires, puis contacts de7/16/7 L neufs ; deux graines de couplage matériel mais sans membrane, débit génétique insuffisant. La voie L ne renouvelle pas encore une frontière.",
       "references": [
         "research/FUNCTIONAL_MECHANISMS.md",
         "research/CELL_ARCHITECTURE.md",
@@ -242,9 +243,10 @@
         "research/BATCH_38.md",
         "research/BATCH_39.md",
         "research/BATCH_40.md",
-        "research/BATCH_41.md"
+        "research/BATCH_41.md",
+        "research/BATCH_42.md"
       ],
-      "next_test": "Lire les12 MX1 : F entièrement alimentaire vers H/T→L puis contact latéral, concurrence et témoins. Ensuite insertion/rétention et énergie sous flux ; pas nouvelle grille à l’aveugle.",
+      "next_test": "Préserver la génétique avec L dans MX2, puis insertion/rétention des vrais produits dans une frontière existante, énergie sous flux et remplacement sous pertes.",
       "essential": true
     },
     {
@@ -703,7 +705,8 @@
         "research/BATCH_37.md",
         "research/BATCH_38.md",
         "research/BATCH_39.md",
-        "research/BATCH_41.md"
+        "research/BATCH_41.md",
+        "research/BATCH_42.md"
       ],
       "next_test": "Établir le budget du motif retenu, puis ablater l’aide sans masquer un apport.",
       "essential": true
@@ -984,15 +987,16 @@
       "mechanism": "Affinités/ports locaux sélectifs, états liés masquant les sites ; tester les classes étrangères ensemble.",
       "concept_gap": "Contrats globaux EN/EA/EL et nouveaux produits non validés ; pas d’orthogonalité acquise.",
       "proof": "subcase",
-      "scope": "Cohabitation MD2 d’un sous-réseau avec L préparés. MX1 code la concurrence P/R/H/T et mesure ses occupations ; résultats de cohorte encore incomplets.",
+      "scope": "MX1 clos12/12 : transfert F alimentaires→L sur2/3 mais G0/2/0 et F2/5/1, porte refusée. Stocks P/R restants ; motifs croisés dominent leur temps de double occupation échantillonné. MX2 est une nouvelle loi en campagne.",
       "references": [
         "research/CELL_INTERACTIONS.md",
         "research/INTEGRATION_TESTS.json",
         "research/BATCH_35.md",
         "research/BATCH_40.md",
-        "research/BATCH_41.md"
+        "research/BATCH_41.md",
+        "research/BATCH_42.md"
       ],
-      "next_test": "Lire MX1 complet : concurrence, mauvais motifs P–T/H–R, synthèse/usage L par F exprimés ; séparer épuisement de stock et incompatibilité de mécanisme.",
+      "next_test": "Lire MX2 complet au même horizon2400, avec contrôles et stocks ; si échec persistant, distinguer géométrie/exposition et boucles de maintien avant autre retouche.",
       "essential": true
     },
     {
@@ -1010,14 +1014,15 @@
       "mechanism": "Paramètres figés, contrôle dt/cadence, thermique et fonctions utiles ; index spatial sans feedback.",
       "concept_gap": "Raffinements sélectionnés ne prouvent pas convergence globale, futurs assemblages non transférés.",
       "proof": "subcase",
-      "scope": "N1/LT2/MD2 et CT1 caractérisent des écarts et régressions. CT1 conserve renouvellement court sur3 graines avec courbure H/T, activité non uniformément améliorée ; pas certification numérique complète.",
+      "scope": "CT1 conserve la boucle courte ; MX1 fournit seulement un crible1200 avec production tardive. Audit stocks/fenêtres/cycles et cinq préfixes physiques exacts ; aucune asymptote ou convergence numérique complète acquise.",
       "references": [
         "research/KINETICS_AND_PERFORMANCE.md",
         "research/BATCH_25_RESULTS.md",
         "research/BATCH_40.md",
-        "research/BATCH_41.md"
+        "research/BATCH_41.md",
+        "research/BATCH_42.md"
       ],
-      "next_test": "Lire MX1 sous capture commune en bain simultané ; conserver contrôles dt/cadence et thermique avant maintien.",
+      "next_test": "Lire références MX2 prolongées et vérifier tout leur historique0–1200 égal à MX1 ; comparer la coopération à même horizon2400. Étudier ensuite dt/cadence sans modifier les lois physiques.",
       "essential": true
     },
     {
@@ -1123,7 +1128,8 @@
         "research/BATCH_38.md",
         "research/BATCH_39.md",
         "research/BATCH_40.md",
-        "research/BATCH_41.md"
+        "research/BATCH_41.md",
+        "research/BATCH_42.md"
       ],
       "next_test": "Conserver les contrôles sans observateur, reprise exacte et signatures à chaque changement concerné.",
       "essential": true
@@ -1205,12 +1211,17 @@
       "revision": 11,
       "date": "2026-11-04",
       "reason": "CT1 clos9/9 porte passée mais activité variable. MX1 registre commun P/R/H/T implémenté, contrôles locaux et pilote technique t10 passés,12 essais figés lancés. Aucun palier biologique augmenté par le code ou la première lecture partielle."
+    },
+    {
+      "revision": 12,
+      "date": "2026-11-04",
+      "reason": "MX1 clos12/12 refus G/F, transfert matériel2/3. Audit stocks/temps post-hoc et loupe passive précise ; défaut de domaine/horizon distingué d’impossibilité. Coopération locale sans nouveau taux/outil, pilote100 positif et MX2 douze essais2400 lancés. Aucun maintien ou palier biologique supplémentaire anticipé."
     }
   ],
   "last_batch_progress": {
-    "C-02": "CT1 clos9/9, porte passée :10/8/9 F alimentaires dont1/2/2 actifs ; opérations médianes9→3, pas amélioration uniforme.",
-    "C-01": "MX1 2/12 clos sans erreur : premier mixed G0/F2 contre7/9 uncaptured, forte pénalité à interpréter après cohorte.",
-    "S-04": "Premier mixed :2 F entièrement alimentaires fabriquent3 L ;7 L neufs avec contact ultérieur. Une graine, pas de membrane ni palier augmenté.",
-    "O-02": "218 tests passent après correction de l’empreinte du catalogue ;4 préfixes archivés exacts àt5, reprise/passivité du nouveau hook vérifiées."
+    "C-01": "MX1 refusé G/F ; coopération locale implémentée. À1200 dans graine0 MX2 en cours :G5/F10/L24 contre0/2/9 reference, sans verdict de cohorte.",
+    "C-02": "Audit sans simulation : réactifs P/R non épuisés en mixed, production tardive ; MX2 compare lois à2400 avec stocks/fenêtres et préfixes1200 vérifiés.",
+    "S-04": "F alimentaires→L confirmé2/3 MX1, aucune insertion cellulaire ou homéostasie ; pilote coopératif100 :12 P/R et5 L, pas de palier augmenté.",
+    "O-02": "225 tests passent, cinq préfixes archivés exacts àt5 ; contrat de calibration et rapport automatique de stocks ajoutés."
   }
 }

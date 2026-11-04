@@ -1355,17 +1355,39 @@
         "MIN1R",
         "MIN1M"
       ],
-      "status": "twelve_frozen_shared_pool_trials_running",
+      "status": "twelve_complete_transfer_observed_genetic_preservation_gate_refused",
       "hypothesis": "One saturable F pool can support genetic monomer construction/expression and real H/T products, including catalysis by wholly food-derived expressed F",
       "test": "mixed/uncaptured/noHT/nogene x3 to1200;198/150 beads,2 workers,4h wall budget. Require material transfer in same seeds and actual L contacts; no second phase.",
       "cost": "No new tool/gene/elementary type/port/independent numerical constant. Shared capture adapter, material compatibility, existing H/T local energy gate. P/R historical formation helper retained, not thermodynamic closure.",
       "counterexample": "Wrong P–T/H–R captures poison the sole F, only prepared F makes L, H/T stocks finish before new F arrives, products cannot form contacts, thermal incompatibility or double capture forces.",
-      "missing_proof": "Full MX1 cohort, whole-food F to L under competition, cell membrane insertion/retention, energy under feed, loss/protection, rich information and homeostasis.",
+      "missing_proof": "Adequate joint genetic throughput, cell membrane insertion/retention, energy under feed, loss/protection, rich information and homeostasis.1200 is not asymptotic.",
       "evidence": "research/BATCH_41_PLAN.md",
-      "results": "research/BATCH_41.md",
+      "results": "research/BATCH_42.md",
       "recipe": "research/BATCH_41_RECIPES.json",
       "health_gate": "12 tasks maximum, fixed1200 horizon, checkpoints30s,4h then pause; report then stop on either outcome. No retry or tuning.",
-      "partial_result": "2/12 complete no errors. mixed0 G0/F2 whole2,1 PR-active;9 catalyzed L including3 from2 whole-food F;7 L later contacted. uncaptured0 G7/F9 whole6,1 active,0 L. Transfer observed in one case with strong genetic penalty; wait full cohort. No invariant failures."
+      "partial_result": "2/12 complete no errors. mixed0 G0/F2 whole2,1 PR-active;9 catalyzed L including3 from2 whole-food F;7 L later contacted. uncaptured0 G7/F9 whole6,1 active,0 L. Transfer observed in one case with strong genetic penalty; wait full cohort. No invariant failures.",
+      "conclusion": "12/12 no errors. G0/2/0 F2/5/1 vs uncaptured7/7/12 and9/9/10: two genetic gates fail, six other gates pass. L9/20/8, whole-food F to L3/4/0, later contacts7/16/7. Stocks P/R remain; production continues late, no impossibility inferred."
+    },
+    {
+      "id": "MX2",
+      "parent": "MX1",
+      "related": [
+        "CT1",
+        "L3",
+        "MIN1M"
+      ],
+      "status": "twelve_frozen_cooperative_capture_and_long_horizon_trials_running",
+      "hypothesis": "A bounded compatibility-dependent capture affinity at adjacent F sites avoids persistent crossed ligands while retaining common P/R/H/T synthesis",
+      "test": "cooperative/reference/nogene/noHT x3 at2400,198/150 beads. Same horizon and stocks; selected longer reference must reproduce all observed MX1 histories/events through1200. Report stocks and late windows.",
+      "cost": "One extra local six-bead cooperation condition, no new protein/gene/elementary type/port/independent numeric rate or constant. Same condition in capture and forces; local energy delta includes affected bonded neighbors. P/R helper debt retained.",
+      "counterexample": "Wrong pairs disappear but one branch starves, energy switches heat the bath, horizon alone explains improvement, or apparent change comes from stock/volume variation.",
+      "missing_proof": "MX2 cohort, sustained fed throughput, chemical expressivity beyond co-recruitment, membrane insertion/repair, recycling/protection and homeostasis.",
+      "evidence": "research/BATCH_42_PLAN.md",
+      "results": "research/BATCH_42.md",
+      "recipe": "research/BATCH_42_RECIPES.json",
+      "health_gate": "12 cases maximum,2 workers,4h checkpoint pause, report then stop on either gate outcome. No retry, automatic parameter search or demo adoption.",
+      "partial_result": "One100-unit pilot:12 PR composites,5 L,0 wrong motifs/invariants,46.765s. No detached G/F before first external release window185; not a negative kinetic test or long-run success.",
+      "intermediate_checkpoint": "Seed0 observed prefix1200: cooperative G5/F10/L24 with1 L from whole-food F; reference G0/F2/L9 with3 such L. Reference four observed prefixes match MX1 after JSON normalization. Cases still running to2400; no cohort conclusion."
     }
   ]
 }

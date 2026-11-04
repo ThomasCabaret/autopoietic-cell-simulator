@@ -31,12 +31,14 @@ progrès actuel** montre les trois essais MIN1M validés, avec Langevin inchang�
 Le raccourci « État actuel · bain intégré » ouvre cette scène, graine0 par
 convention. La petite boucle MIN1R reste disponible sans membrane.
 
-Recherche en cours : **un seul pool catalytique P/R/H/T**, après CT1 terminé
-9/9 avec reconstruction conservée. Douze essais MX1 testent maintenant les
-vrais produits lipidiques et leur catalyse par des F exprimés depuis nourriture.
-Statut `mixed_synthesis_status.bat`, pause `stop_mixed_synthesis.bat`, reprise
-explicite `resume_mixed_synthesis.bat`. Sources figées, rapport et arrêt automatique ;
-aucune promotion anticipée dans les démos. [Lot41](research/BATCH_41.md).
+Recherche en cours : **capture coopérative locale P/R/H/T**, après MX1
+terminé12/12 avec transfert matériel mais forte pénalité génétique. Douze essais
+MX2 comparent à horizon2400 les lois antérieures, la coopération et leurs témoins.
+Stocks, fenêtres de production et préfixes historiques sont vérifiés automatiquement.
+Statut `cooperative_synthesis_status.bat`, pause `stop_cooperative_synthesis.bat`,
+reprise explicite `resume_cooperative_synthesis.bat`. Sources et critères figés,
+arrêt après rapport ; pas de promotion anticipée dans les démos.
+[Lot42](research/BATCH_42.md) · [Calibration](research/CAMPAIGN_CALIBRATION.md).
 
 Un moteur CPU commun pour les campagnes sans fenêtre et les démonstrateurs
 interactifs. Les lois de copie/expression et de membrane sont des modules séparés.

@@ -1,5 +1,15 @@
 # Fidélité à l'objectif : localité et risques de pilotage
 
+Lot42 : coopération de capture sur motif de deux composites F directement
+liés et deux ligands, six billes. Compatibilité matérielle déjà utilisée par
+la jonction, aucun objectif de produit/chaîne complète, contour, information
+d’origine ou concentration. Affinités dérivées de l’occupation, pas nouvel état
+chimique mémorisé. Forces et captures partagent la condition ; delta H/T ajoute
+seulement les voisins F directement liés aux sites libérés et leurs interactions
+spatiales à portée existante. Zéro enzyme/gène/type/port/taux indépendant ajouté,
+une condition locale en plus. Transition de potentiel : aide non thermodynamiquement
+fermée. Loupe six billes/20 temps, contrôle exact40, sans feedback de l’observation.
+
 Lot41 MX1 : mêmes captures locales saturables pour P/R/H/T, une seule mise
 à jour par tick. Compatibilité des constituants et motifs de deux F directement
 liés +deux ligands (six billes) pour catalyse ; aucune lecture de chaîne complète,

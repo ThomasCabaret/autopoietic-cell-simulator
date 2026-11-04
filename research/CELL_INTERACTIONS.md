@@ -1,5 +1,13 @@
 # Interactions souhaitées, parasites et environnements — lot7
 
+Lot42 : MX2 ajoute une affinité conditionnelle locale aux sites F directement
+liés. Le premier ligand garde une capture large ; le voisin attire/capte un
+partenaire compatible P–R/H–T. Même test pour attraction et capture, voisinages
+de liens bornés, pas de nom de protéine ou de population. La libération réouvre
+les affinités ; le delta H/T tient compte de cette réouverture aux sites liés
+adjacents. Type/ports/taux inchangés, un helper coopératif de plus. Les états
+historiques gardent cette option fausse et les démos restent MIN1M.
+
 Lot41 : MX1 réalise le contrat P_G/P_F/H donneurs, R0/R1/T accepteurs sur
 les mêmes sites saturables. Produits autorisés P–R ou H–T seulement ; P–T/H–R
 peuvent bloquer la pince jusqu’à sa libération, sans nouveau helper de tri.
