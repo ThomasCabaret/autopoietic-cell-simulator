@@ -20,12 +20,28 @@ DEFAULTS=dict(temperature=.08,box=[12.,9.],food_units=24,tool_count=4,tool_linke
     short_length=.98,dock_width=.3,dock_energy=4.,dock_capture=.25,dock_rate=25.,
     bond_off_rate=.02,break_extension=.35,bonding=True,
     contact_exchange_rate=.2,contact_exchange_capture=.8,terminal_exchange=True,
-    formation_gate='none',tool_lipid_contact=.55)
+    formation_gate='none',tool_lipid_contact=.55,capture_curvature='legacy',tool_pose='straight')
+
+
+def native_tool_pose(host,pairs):
+    """Constructed-start geometry only; never called by reactions or observers."""
+    touched=set()
+    for i,j in sorted(pairs):
+        if i in touched or j in touched:raise ValueError('Native pose initializer requires disjoint prepared site pairs')
+        touched.update((i,j));d=host.pos[j]-host.pos[i];d=d/np.linalg.norm(d)
+        normal=np.array([-d[1],d[0]])
+        old=(host.pos[host.rungs[i,1]]-host.pos[i])+(host.pos[host.rungs[j,1]]-host.pos[j])
+        if np.dot(normal,old)<0:normal=-normal
+        for q,along in ((i,d),(j,-d)):
+            cosine=host.config['functional_cosines'].get(str(int(host.bits[q])),0.)
+            host.pos[host.rungs[q,1]]=host.pos[q]+.45*(cosine*along+np.sqrt(1-cosine*cosine)*normal)
 
 
 class HTPrecursorCapture(PrecursorCapture):
     """Same local site/capture kernel; H is donor0 and T acceptor1."""
     def __init__(self,c):
+        self.stiffness=(c.config['food_ligand_energy']/c.config['food_ligand_width']**2
+            if c.config['capture_curvature']=='matched' else 35.)
         self.site_bound=np.full(c.n,-1,dtype=np.int64)
         self.atom_bound=np.full(len(c.pos),-1,dtype=np.int64);self.refresh(c)
 
@@ -40,6 +56,9 @@ class HTPrecursorCapture(PrecursorCapture):
             self.activity[:]=.1/35.
             for i,j in c.edges:self.activity[i]=self.activity[j]=1.
 
+    def springs(self,c):
+        return [(int(c.rungs[s,1]),int(a),self.stiffness,0.) for s,a in enumerate(self.site_bound) if a>=0]
+
 
 class LipidSynthesisChemistry:
     def __init__(self,config,rng):
@@ -52,6 +71,7 @@ class LipidSynthesisChemistry:
                 constructible=True,assembled_stock=True,rung_catalysis=False,
                 initial_assemblies=[dict(family=1,sequence='01',backbone=config['tool_linked']) for _ in range(config['tool_count']-1)])
             self.host=CopyChemistry(g,rng)
+            if config['tool_pose']=='native':native_tool_pose(self.host,[(0,1)]+[q['units'] for q in self.host.initial_groups])
             prefix=self.host.pos.copy();self.n=self.host.n;self.rungs=self.host.rungs;self.bits=self.host.bits
         else:
             prefix=np.empty((0,2));self.n=0;self.rungs=np.empty((0,2),dtype=np.int64);self.bits=np.empty(0,dtype=np.int64)

@@ -21,7 +21,7 @@ def formation_energy(c,h,t,neighbors):
         core+=40*(max(c.contact[newa,newb]-d,0.)**2-max(c.contact[ka,kb]-d,0.)**2)
     axial=90*(float(np.linalg.norm(pos[h]-pos[t]))-.65)**2
     released={int(cap.atom_bound[a]) for a in changed if cap.atom_bound[a]>=0}
-    springs=-sum(17.5*float(np.sum((pos[c.rungs[s,1]]-pos[cap.site_bound[s]])**2)) for s in released)
+    springs=-sum(.5*cap.stiffness*float(np.sum((pos[c.rungs[s,1]]-pos[cap.site_bound[s]])**2)) for s in released)
     touched=list(changed|{int(c.rungs[s,1]) for s in released})
     pairs=neighbors.pairs(pos,3*cfg['food_ligand_width'],'HT:delta_capture')
     pairs=pairs[np.isin(pairs[:,0],touched)|np.isin(pairs[:,1],touched)]

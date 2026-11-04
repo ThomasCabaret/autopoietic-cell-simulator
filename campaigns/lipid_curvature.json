@@ -1,0 +1,1039 @@
+{
+  "name": "L3 capture curvature and constructed native pose",
+  "workers": 1,
+  "checkpoint_seconds": 30.0,
+  "record_trajectory": false,
+  "tasks": [
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "lipid_synthesis",
+        "name": "L3_pose_s0",
+        "branch": "L3",
+        "seed": 0,
+        "duration": 100.0,
+        "chemistry": {
+          "temperature": 0.08,
+          "box": [
+            12.0,
+            9.0
+          ],
+          "food_units": 24,
+          "tool_count": 4,
+          "tool_linked": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0001,
+          "rung_catalytic_rate": 20.0,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_activation": true,
+          "short_length": 0.98,
+          "dock_width": 0.3,
+          "dock_energy": 4.0,
+          "dock_capture": 0.25,
+          "dock_rate": 25.0,
+          "bond_off_rate": 0.02,
+          "break_extension": 0.35,
+          "bonding": true,
+          "contact_exchange_rate": 0.2,
+          "contact_exchange_capture": 0.8,
+          "terminal_exchange": true,
+          "formation_gate": "metropolis",
+          "tool_lipid_contact": 0.0,
+          "capture_curvature": "legacy",
+          "tool_pose": "native"
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "lipid_synthesis",
+        "name": "L3_curvature_s0",
+        "branch": "L3",
+        "seed": 0,
+        "duration": 100.0,
+        "chemistry": {
+          "temperature": 0.08,
+          "box": [
+            12.0,
+            9.0
+          ],
+          "food_units": 24,
+          "tool_count": 4,
+          "tool_linked": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0001,
+          "rung_catalytic_rate": 20.0,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_activation": true,
+          "short_length": 0.98,
+          "dock_width": 0.3,
+          "dock_energy": 4.0,
+          "dock_capture": 0.25,
+          "dock_rate": 25.0,
+          "bond_off_rate": 0.02,
+          "break_extension": 0.35,
+          "bonding": true,
+          "contact_exchange_rate": 0.2,
+          "contact_exchange_capture": 0.8,
+          "terminal_exchange": true,
+          "formation_gate": "metropolis",
+          "tool_lipid_contact": 0.0,
+          "capture_curvature": "matched",
+          "tool_pose": "straight"
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "lipid_synthesis",
+        "name": "L3_combined_s0",
+        "branch": "L3",
+        "seed": 0,
+        "duration": 100.0,
+        "chemistry": {
+          "temperature": 0.08,
+          "box": [
+            12.0,
+            9.0
+          ],
+          "food_units": 24,
+          "tool_count": 4,
+          "tool_linked": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0001,
+          "rung_catalytic_rate": 20.0,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_activation": true,
+          "short_length": 0.98,
+          "dock_width": 0.3,
+          "dock_energy": 4.0,
+          "dock_capture": 0.25,
+          "dock_rate": 25.0,
+          "bond_off_rate": 0.02,
+          "break_extension": 0.35,
+          "bonding": true,
+          "contact_exchange_rate": 0.2,
+          "contact_exchange_capture": 0.8,
+          "terminal_exchange": true,
+          "formation_gate": "metropolis",
+          "tool_lipid_contact": 0.0,
+          "capture_curvature": "matched",
+          "tool_pose": "native"
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "lipid_synthesis",
+        "name": "L3_split_s0",
+        "branch": "L3",
+        "seed": 0,
+        "duration": 100.0,
+        "chemistry": {
+          "temperature": 0.08,
+          "box": [
+            12.0,
+            9.0
+          ],
+          "food_units": 24,
+          "tool_count": 4,
+          "tool_linked": false,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0001,
+          "rung_catalytic_rate": 20.0,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_activation": true,
+          "short_length": 0.98,
+          "dock_width": 0.3,
+          "dock_energy": 4.0,
+          "dock_capture": 0.25,
+          "dock_rate": 25.0,
+          "bond_off_rate": 0.02,
+          "break_extension": 0.35,
+          "bonding": true,
+          "contact_exchange_rate": 0.2,
+          "contact_exchange_capture": 0.8,
+          "terminal_exchange": true,
+          "formation_gate": "metropolis",
+          "tool_lipid_contact": 0.0,
+          "capture_curvature": "matched",
+          "tool_pose": "native"
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "lipid_synthesis",
+        "name": "L3_no_boost_s0",
+        "branch": "L3",
+        "seed": 0,
+        "duration": 100.0,
+        "chemistry": {
+          "temperature": 0.08,
+          "box": [
+            12.0,
+            9.0
+          ],
+          "food_units": 24,
+          "tool_count": 4,
+          "tool_linked": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0001,
+          "rung_catalytic_rate": 0.0001,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_activation": true,
+          "short_length": 0.98,
+          "dock_width": 0.3,
+          "dock_energy": 4.0,
+          "dock_capture": 0.25,
+          "dock_rate": 25.0,
+          "bond_off_rate": 0.02,
+          "break_extension": 0.35,
+          "bonding": true,
+          "contact_exchange_rate": 0.2,
+          "contact_exchange_capture": 0.8,
+          "terminal_exchange": true,
+          "formation_gate": "metropolis",
+          "tool_lipid_contact": 0.0,
+          "capture_curvature": "matched",
+          "tool_pose": "native"
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "lipid_synthesis",
+        "name": "L3_no_tool_s0",
+        "branch": "L3",
+        "seed": 0,
+        "duration": 100.0,
+        "chemistry": {
+          "temperature": 0.08,
+          "box": [
+            12.0,
+            9.0
+          ],
+          "food_units": 24,
+          "tool_count": 0,
+          "tool_linked": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0001,
+          "rung_catalytic_rate": 20.0,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_activation": true,
+          "short_length": 0.98,
+          "dock_width": 0.3,
+          "dock_energy": 4.0,
+          "dock_capture": 0.25,
+          "dock_rate": 25.0,
+          "bond_off_rate": 0.02,
+          "break_extension": 0.35,
+          "bonding": true,
+          "contact_exchange_rate": 0.2,
+          "contact_exchange_capture": 0.8,
+          "terminal_exchange": true,
+          "formation_gate": "metropolis",
+          "tool_lipid_contact": 0.0,
+          "capture_curvature": "matched",
+          "tool_pose": "native"
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "lipid_synthesis",
+        "name": "L3_pose_s1",
+        "branch": "L3",
+        "seed": 1,
+        "duration": 100.0,
+        "chemistry": {
+          "temperature": 0.08,
+          "box": [
+            12.0,
+            9.0
+          ],
+          "food_units": 24,
+          "tool_count": 4,
+          "tool_linked": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0001,
+          "rung_catalytic_rate": 20.0,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_activation": true,
+          "short_length": 0.98,
+          "dock_width": 0.3,
+          "dock_energy": 4.0,
+          "dock_capture": 0.25,
+          "dock_rate": 25.0,
+          "bond_off_rate": 0.02,
+          "break_extension": 0.35,
+          "bonding": true,
+          "contact_exchange_rate": 0.2,
+          "contact_exchange_capture": 0.8,
+          "terminal_exchange": true,
+          "formation_gate": "metropolis",
+          "tool_lipid_contact": 0.0,
+          "capture_curvature": "legacy",
+          "tool_pose": "native"
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "lipid_synthesis",
+        "name": "L3_curvature_s1",
+        "branch": "L3",
+        "seed": 1,
+        "duration": 100.0,
+        "chemistry": {
+          "temperature": 0.08,
+          "box": [
+            12.0,
+            9.0
+          ],
+          "food_units": 24,
+          "tool_count": 4,
+          "tool_linked": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0001,
+          "rung_catalytic_rate": 20.0,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_activation": true,
+          "short_length": 0.98,
+          "dock_width": 0.3,
+          "dock_energy": 4.0,
+          "dock_capture": 0.25,
+          "dock_rate": 25.0,
+          "bond_off_rate": 0.02,
+          "break_extension": 0.35,
+          "bonding": true,
+          "contact_exchange_rate": 0.2,
+          "contact_exchange_capture": 0.8,
+          "terminal_exchange": true,
+          "formation_gate": "metropolis",
+          "tool_lipid_contact": 0.0,
+          "capture_curvature": "matched",
+          "tool_pose": "straight"
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "lipid_synthesis",
+        "name": "L3_combined_s1",
+        "branch": "L3",
+        "seed": 1,
+        "duration": 100.0,
+        "chemistry": {
+          "temperature": 0.08,
+          "box": [
+            12.0,
+            9.0
+          ],
+          "food_units": 24,
+          "tool_count": 4,
+          "tool_linked": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0001,
+          "rung_catalytic_rate": 20.0,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_activation": true,
+          "short_length": 0.98,
+          "dock_width": 0.3,
+          "dock_energy": 4.0,
+          "dock_capture": 0.25,
+          "dock_rate": 25.0,
+          "bond_off_rate": 0.02,
+          "break_extension": 0.35,
+          "bonding": true,
+          "contact_exchange_rate": 0.2,
+          "contact_exchange_capture": 0.8,
+          "terminal_exchange": true,
+          "formation_gate": "metropolis",
+          "tool_lipid_contact": 0.0,
+          "capture_curvature": "matched",
+          "tool_pose": "native"
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "lipid_synthesis",
+        "name": "L3_split_s1",
+        "branch": "L3",
+        "seed": 1,
+        "duration": 100.0,
+        "chemistry": {
+          "temperature": 0.08,
+          "box": [
+            12.0,
+            9.0
+          ],
+          "food_units": 24,
+          "tool_count": 4,
+          "tool_linked": false,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0001,
+          "rung_catalytic_rate": 20.0,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_activation": true,
+          "short_length": 0.98,
+          "dock_width": 0.3,
+          "dock_energy": 4.0,
+          "dock_capture": 0.25,
+          "dock_rate": 25.0,
+          "bond_off_rate": 0.02,
+          "break_extension": 0.35,
+          "bonding": true,
+          "contact_exchange_rate": 0.2,
+          "contact_exchange_capture": 0.8,
+          "terminal_exchange": true,
+          "formation_gate": "metropolis",
+          "tool_lipid_contact": 0.0,
+          "capture_curvature": "matched",
+          "tool_pose": "native"
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "lipid_synthesis",
+        "name": "L3_no_boost_s1",
+        "branch": "L3",
+        "seed": 1,
+        "duration": 100.0,
+        "chemistry": {
+          "temperature": 0.08,
+          "box": [
+            12.0,
+            9.0
+          ],
+          "food_units": 24,
+          "tool_count": 4,
+          "tool_linked": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0001,
+          "rung_catalytic_rate": 0.0001,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_activation": true,
+          "short_length": 0.98,
+          "dock_width": 0.3,
+          "dock_energy": 4.0,
+          "dock_capture": 0.25,
+          "dock_rate": 25.0,
+          "bond_off_rate": 0.02,
+          "break_extension": 0.35,
+          "bonding": true,
+          "contact_exchange_rate": 0.2,
+          "contact_exchange_capture": 0.8,
+          "terminal_exchange": true,
+          "formation_gate": "metropolis",
+          "tool_lipid_contact": 0.0,
+          "capture_curvature": "matched",
+          "tool_pose": "native"
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "lipid_synthesis",
+        "name": "L3_no_tool_s1",
+        "branch": "L3",
+        "seed": 1,
+        "duration": 100.0,
+        "chemistry": {
+          "temperature": 0.08,
+          "box": [
+            12.0,
+            9.0
+          ],
+          "food_units": 24,
+          "tool_count": 0,
+          "tool_linked": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0001,
+          "rung_catalytic_rate": 20.0,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_activation": true,
+          "short_length": 0.98,
+          "dock_width": 0.3,
+          "dock_energy": 4.0,
+          "dock_capture": 0.25,
+          "dock_rate": 25.0,
+          "bond_off_rate": 0.02,
+          "break_extension": 0.35,
+          "bonding": true,
+          "contact_exchange_rate": 0.2,
+          "contact_exchange_capture": 0.8,
+          "terminal_exchange": true,
+          "formation_gate": "metropolis",
+          "tool_lipid_contact": 0.0,
+          "capture_curvature": "matched",
+          "tool_pose": "native"
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "lipid_synthesis",
+        "name": "L3_pose_s2",
+        "branch": "L3",
+        "seed": 2,
+        "duration": 100.0,
+        "chemistry": {
+          "temperature": 0.08,
+          "box": [
+            12.0,
+            9.0
+          ],
+          "food_units": 24,
+          "tool_count": 4,
+          "tool_linked": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0001,
+          "rung_catalytic_rate": 20.0,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_activation": true,
+          "short_length": 0.98,
+          "dock_width": 0.3,
+          "dock_energy": 4.0,
+          "dock_capture": 0.25,
+          "dock_rate": 25.0,
+          "bond_off_rate": 0.02,
+          "break_extension": 0.35,
+          "bonding": true,
+          "contact_exchange_rate": 0.2,
+          "contact_exchange_capture": 0.8,
+          "terminal_exchange": true,
+          "formation_gate": "metropolis",
+          "tool_lipid_contact": 0.0,
+          "capture_curvature": "legacy",
+          "tool_pose": "native"
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "lipid_synthesis",
+        "name": "L3_curvature_s2",
+        "branch": "L3",
+        "seed": 2,
+        "duration": 100.0,
+        "chemistry": {
+          "temperature": 0.08,
+          "box": [
+            12.0,
+            9.0
+          ],
+          "food_units": 24,
+          "tool_count": 4,
+          "tool_linked": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0001,
+          "rung_catalytic_rate": 20.0,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_activation": true,
+          "short_length": 0.98,
+          "dock_width": 0.3,
+          "dock_energy": 4.0,
+          "dock_capture": 0.25,
+          "dock_rate": 25.0,
+          "bond_off_rate": 0.02,
+          "break_extension": 0.35,
+          "bonding": true,
+          "contact_exchange_rate": 0.2,
+          "contact_exchange_capture": 0.8,
+          "terminal_exchange": true,
+          "formation_gate": "metropolis",
+          "tool_lipid_contact": 0.0,
+          "capture_curvature": "matched",
+          "tool_pose": "straight"
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "lipid_synthesis",
+        "name": "L3_combined_s2",
+        "branch": "L3",
+        "seed": 2,
+        "duration": 100.0,
+        "chemistry": {
+          "temperature": 0.08,
+          "box": [
+            12.0,
+            9.0
+          ],
+          "food_units": 24,
+          "tool_count": 4,
+          "tool_linked": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0001,
+          "rung_catalytic_rate": 20.0,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_activation": true,
+          "short_length": 0.98,
+          "dock_width": 0.3,
+          "dock_energy": 4.0,
+          "dock_capture": 0.25,
+          "dock_rate": 25.0,
+          "bond_off_rate": 0.02,
+          "break_extension": 0.35,
+          "bonding": true,
+          "contact_exchange_rate": 0.2,
+          "contact_exchange_capture": 0.8,
+          "terminal_exchange": true,
+          "formation_gate": "metropolis",
+          "tool_lipid_contact": 0.0,
+          "capture_curvature": "matched",
+          "tool_pose": "native"
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "lipid_synthesis",
+        "name": "L3_split_s2",
+        "branch": "L3",
+        "seed": 2,
+        "duration": 100.0,
+        "chemistry": {
+          "temperature": 0.08,
+          "box": [
+            12.0,
+            9.0
+          ],
+          "food_units": 24,
+          "tool_count": 4,
+          "tool_linked": false,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0001,
+          "rung_catalytic_rate": 20.0,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_activation": true,
+          "short_length": 0.98,
+          "dock_width": 0.3,
+          "dock_energy": 4.0,
+          "dock_capture": 0.25,
+          "dock_rate": 25.0,
+          "bond_off_rate": 0.02,
+          "break_extension": 0.35,
+          "bonding": true,
+          "contact_exchange_rate": 0.2,
+          "contact_exchange_capture": 0.8,
+          "terminal_exchange": true,
+          "formation_gate": "metropolis",
+          "tool_lipid_contact": 0.0,
+          "capture_curvature": "matched",
+          "tool_pose": "native"
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "lipid_synthesis",
+        "name": "L3_no_boost_s2",
+        "branch": "L3",
+        "seed": 2,
+        "duration": 100.0,
+        "chemistry": {
+          "temperature": 0.08,
+          "box": [
+            12.0,
+            9.0
+          ],
+          "food_units": 24,
+          "tool_count": 4,
+          "tool_linked": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0001,
+          "rung_catalytic_rate": 0.0001,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_activation": true,
+          "short_length": 0.98,
+          "dock_width": 0.3,
+          "dock_energy": 4.0,
+          "dock_capture": 0.25,
+          "dock_rate": 25.0,
+          "bond_off_rate": 0.02,
+          "break_extension": 0.35,
+          "bonding": true,
+          "contact_exchange_rate": 0.2,
+          "contact_exchange_capture": 0.8,
+          "terminal_exchange": true,
+          "formation_gate": "metropolis",
+          "tool_lipid_contact": 0.0,
+          "capture_curvature": "matched",
+          "tool_pose": "native"
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "lipid_synthesis",
+        "name": "L3_no_tool_s2",
+        "branch": "L3",
+        "seed": 2,
+        "duration": 100.0,
+        "chemistry": {
+          "temperature": 0.08,
+          "box": [
+            12.0,
+            9.0
+          ],
+          "food_units": 24,
+          "tool_count": 0,
+          "tool_linked": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0001,
+          "rung_catalytic_rate": 20.0,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_activation": true,
+          "short_length": 0.98,
+          "dock_width": 0.3,
+          "dock_energy": 4.0,
+          "dock_capture": 0.25,
+          "dock_rate": 25.0,
+          "bond_off_rate": 0.02,
+          "break_extension": 0.35,
+          "bonding": true,
+          "contact_exchange_rate": 0.2,
+          "contact_exchange_capture": 0.8,
+          "terminal_exchange": true,
+          "formation_gate": "metropolis",
+          "tool_lipid_contact": 0.0,
+          "capture_curvature": "matched",
+          "tool_pose": "native"
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        }
+      }
+    }
+  ],
+  "reused_reference": {
+    "campaign": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\lipid_energy_followups\\followup_20261104T122737643199Z\\A\\campaign_20261104T122738441553Z",
+    "manifest_sha256": "12a3bf9cf14fe16429031bdeecd3f3cb0995c24a244dc22dcbe6a1519aca293a"
+  },
+  "comparison_policy": "BATCH_38_PLAN:18 new cases plus reused L2_combined x3, t100, one worker,1h wall budget. Fixed rates/thermostat and local derived capture stiffness; prepared native pose is initialization only. No new protein, retries, rate search, follow-up or automatic promotion."
+}
