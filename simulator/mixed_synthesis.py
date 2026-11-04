@@ -17,7 +17,7 @@ SHARED=('temperature','box','rung_capture_radius','rung_formation_rate','rung_ca
     'food_binding_radius','food_binding_rate','food_unbinding_rate','food_ligand_energy',
     'food_ligand_width','food_activation','capture_curvature')
 DEFAULTS={k:v for k,v in LIPID_DEFAULTS.items() if k not in ('tool_count','tool_linked','tool_pose')}
-DEFAULTS.update(genetics={},lipid_capture=True)
+DEFAULTS.update(genetics={},lipid_capture=True,capture_cooperativity=False)
 
 
 def genetics_config(config):
@@ -48,6 +48,38 @@ class MixedCapture(PrecursorCapture):
         if c.config['food_activation']:
             self.activity[:]=.1/35.
             for i,j in g.edges:self.activity[i]=self.activity[j]=1.
+        if c.config['capture_cooperativity']:
+            self.bond_neighbors=[[] for _ in range(c.n)]
+            for i,j in c.edges:self.bond_neighbors[i].append(j);self.bond_neighbors[j].append(i)
+            self.material_group=(c.ligand_types>=0).astype(np.int64)
+            self.allowed_groups=np.ones((c.n,2),dtype=bool)
+            for s,adjacent in enumerate(self.bond_neighbors):
+                for other in adjacent:
+                    atom=int(self.site_bound[other])
+                    if atom>=0:
+                        self.allowed_groups[s]&=((np.arange(2)==self.material_group[atom]) &
+                            (c.bits[s]!=self.categories[atom]))
+
+    def binding_allowed(self,c,site,atom,released=()):
+        if not c.config['capture_cooperativity']:return True
+        for neighbor in self.bond_neighbors[site]:
+            other=int(self.site_bound[neighbor])
+            if other<0 or neighbor in released:continue
+            if self.material_group[atom]!=self.material_group[other] or self.categories[atom]==self.categories[other]:return False
+        return True
+
+    def affected_sites(self,c,released):
+        if not c.config['capture_cooperativity']:return released
+        return set(released)|{q for s in released for q in self.bond_neighbors[s]}
+
+    def force_pairs(self,c,neighbors):
+        pairs=super().force_pairs(c,neighbors)
+        if not c.config['capture_cooperativity'] or not len(pairs):return pairs
+        keep=np.zeros(len(pairs),dtype=bool)
+        for a,b in ((pairs[:,0],pairs[:,1]),(pairs[:,1],pairs[:,0])):
+            owners=self.owners[a]
+            keep|=(owners>=0)&(self.categories[b]>=0)&self.allowed_groups[np.maximum(owners,0),self.material_group[b]]
+        return pairs[keep]
 
 
 class GeneticCaptureView:
@@ -96,6 +128,7 @@ class MixedSynthesisChemistry(LipidSynthesisChemistry):
         events=self.host.react(time,dt,ScopedNeighbors(neighbors,'PR:'))
         self._views();self.capture.refresh(self);self._mechanics()
         self.form_lipids(time,dt*5,neighbors)
+        if self.config['capture_cooperativity']:self.capture.refresh(self)
         self.exchanges.extend(dict(time=float(time),**e) for e in self.lipids.react(
             self.pos,self.config,self.rng,ScopedNeighbors(neighbors,'L:'),dt*5))
         self._mechanics();return events

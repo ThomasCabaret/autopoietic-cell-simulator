@@ -11,7 +11,8 @@ def main():
     cases=[('MIN1R_20261031T110654015735Z','MIN1R_active_s0'),
         ('MIN1M_20261104T113752867767Z','MIN1M_active_s0'),
         ('MD2_20261030T115427443420Z','MD2_bath_new_s2'),
-        ('L3_20261104T164655147905Z','L3_combined_s0')]
+        ('L3_20261104T164655147905Z','L3_combined_s0'),
+        ('MX1_20261104T192816403023Z','MX1_mixed_s0')]
     out=ROOT/'outputs/diagnostics'/('CT1_reference_'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ'));out.mkdir(parents=True)
     code=('import json,sys;from simulator.engine import Simulation;from simulator.checkpoint import save;'
         'sim=Simulation(json.load(open(sys.argv[1],encoding="utf-8")));sim.advance(round(5./sim.dt));save(sys.argv[2],sim)')
@@ -25,7 +26,10 @@ def main():
         with np.load(case/'old.npz',allow_pickle=False) as a,np.load(case/'current.npz',allow_pickle=False) as b:
             for k in ('positions','springs','angles'):np.testing.assert_array_equal(a[k],b[k])
             x,y=[json.loads(str(z['metadata'])) for z in (a,b)]
-        for value in (x,y):value.pop('source_sha256')
+        for value in (x,y):
+            value.pop('source_sha256')
+            if value['config']['chemistry'].get('capture_cooperativity') is False:
+                value['config']['chemistry'].pop('capture_cooperativity')
         if x!=y:raise ValueError(f'Physical state/RNG/motion changed: {label}')
         rows.append(dict(label=label,time=5.,state_rng_motion_exact=True))
     write(out/'report.json',dict(rows=rows));print(out);return out

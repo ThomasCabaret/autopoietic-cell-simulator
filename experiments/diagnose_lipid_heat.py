@@ -18,7 +18,8 @@ def energy(c):
     core=float(40*np.sum(np.maximum(c.contact[kind[i],kind[j]]-distance,0.)**2))
     axial=sum(90*(float(np.linalg.norm(pos[h]-pos[t]))-.65)**2 for h,t in c.lipids.rungs.items())
     capture=sum(.5*getattr(c.capture,'stiffness',35.)*float(np.sum((pos[c.rungs[s,1]]-pos[a])**2)) for s,a in enumerate(c.capture.site_bound) if a>=0)
-    cap=c.capture;cfg=c.config;pairs=Neighborhood('brute',0.).pairs(pos,3*cfg['food_ligand_width'])
+    cap=c.capture;cfg=c.config;neighbors=Neighborhood('brute',0.)
+    pairs=cap.force_pairs(c,neighbors) if hasattr(cap,'force_pairs') else neighbors.pairs(pos,3*cfg['food_ligand_width'])
     attractive=precursor_force(pos,pairs,cap.owners,cap.categories,c.bits,c.pairing,
         cap.site_bound,cap.atom_bound,cap.activity,cfg['food_ligand_energy'],cfg['food_ligand_width'])[1]
     ports=c.lipids.forces(pos,cfg,Neighborhood('brute',0.))[1]

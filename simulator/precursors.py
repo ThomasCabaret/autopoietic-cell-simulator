@@ -56,6 +56,7 @@ class PrecursorCapture:
                 s=int(self.owners[site])
                 if s<0 or self.categories[atom]<0 or c.bits[s]!=self.categories[atom]:continue
                 if c.pairing[s]>=0 or self.site_bound[s]>=0 or self.atom_bound[atom]>=0:continue
+                if not self.binding_allowed(c,s,atom):continue
                 if c.rng.random() < -np.expm1(-self.activity[s]*cfg['food_binding_rate']*interval):
                     self.site_bound[s]=atom;self.atom_bound[atom]=s
 
@@ -65,8 +66,13 @@ class PrecursorCapture:
         s=int(self.atom_bound[atom])
         if s>=0:self.site_bound[s]=-1;self.atom_bound[atom]=-1
 
+    def binding_allowed(self,c,site,atom,released=()):return True
+
+    def force_pairs(self,c,neighbors):
+        return neighbors.pairs(c.pos,3*c.config['food_ligand_width'],'precursor_force')
+
     def forces(self,c,neighbors):
-        pairs=neighbors.pairs(c.pos,3*c.config['food_ligand_width'],'precursor_force')
+        pairs=self.force_pairs(c,neighbors)
         return precursor_force(c.pos,pairs,self.owners,self.categories,c.bits,c.pairing,
             self.site_bound,self.atom_bound,self.activity,c.config['food_ligand_energy'],c.config['food_ligand_width'])[0]
 

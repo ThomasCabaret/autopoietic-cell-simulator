@@ -151,7 +151,7 @@ def resolve(raw):
             raise ValueError('Invalid lipid food/tool count')
         if len(defaults['box'])!=2 or any(type(v) not in (int,float) or not math.isfinite(v) or v<=1.2 for v in defaults['box']):
             raise ValueError('Invalid lipid bath box')
-        for key in ('tool_linked','food_activation','bonding','terminal_exchange','lipid_capture'):
+        for key in ('tool_linked','food_activation','bonding','terminal_exchange','lipid_capture','capture_cooperativity'):
             if key in defaults and type(defaults[key]) is not bool:raise ValueError('Invalid lipid boolean: '+key)
         for key in ('rung_capture_radius','food_binding_radius','food_ligand_width','short_length','dock_width','dock_capture','contact_exchange_capture'):
             if defaults[key]<=0:raise ValueError('Invalid lipid geometry: '+key)

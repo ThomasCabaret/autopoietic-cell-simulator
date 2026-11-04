@@ -22,7 +22,8 @@ def formation_energy(c,h,t,neighbors):
     axial=90*(float(np.linalg.norm(pos[h]-pos[t]))-.65)**2
     released={int(cap.atom_bound[a]) for a in changed if cap.atom_bound[a]>=0}
     springs=-sum(.5*cap.stiffness*float(np.sum((pos[c.rungs[s,1]]-pos[cap.site_bound[s]])**2)) for s in released)
-    touched=list(changed|{int(c.rungs[s,1]) for s in released})
+    affected=cap.affected_sites(c,released) if hasattr(cap,'affected_sites') else released
+    touched=list(changed|{int(c.rungs[s,1]) for s in affected if c.rungs[s,1]>=0})
     pairs=neighbors.pairs(pos,3*cfg['food_ligand_width'],'HT:delta_capture')
     pairs=pairs[np.isin(pairs[:,0],touched)|np.isin(pairs[:,1],touched)]
     attraction=0.
@@ -35,6 +36,8 @@ def formation_energy(c,h,t,neighbors):
             old=(category>=0 and c.bits[s]==category and cap.site_bound[s]<0 and cap.atom_bound[atom]<0)
             new=(new_category>=0 and c.bits[s]==new_category and (cap.site_bound[s]<0 or s in released) and
                  (cap.atom_bound[atom]<0 or atom in changed))
+            old=old and cap.binding_allowed(c,s,atom)
+            new=new and cap.binding_allowed(c,s,atom,released)
             attraction+=value*(int(new)-int(old))
     # A newly formed axial pair has two unoccupied faces. Other pairs expose
     # only their actual free local faces; existing port energies do not change.

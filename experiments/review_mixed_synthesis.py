@@ -32,7 +32,7 @@ def decide(rows):
             'Stop for interpretation, no second phase, retry or default promotion.')
 
 
-def collect(folder,require_complete=True):
+def collect(folder,require_complete=True,decision_fn=decide):
     folder=Path(folder);m=validate(folder);s=status(folder)
     if require_complete and (s['controller_active'] or s['counts']['complete']!=12):raise ValueError('Require complete inactive cohort')
     hashes={k:v for k,v in m['source_sha256'].items() if k.startswith('simulator/')};rows=[]
@@ -57,7 +57,7 @@ def collect(folder,require_complete=True):
             sampled_wrong_double_edge_time=sum((b['time']-a['time'])*a['wrong_double_edges'] for a,b in zip(h,h[1:])),
             elapsed_seconds=r['elapsed_seconds'],result_sha256=digest(p),motion_sha256=digest(folder/state['motion_audit'])))
     report=dict(counts=s['counts'],controller_active=s['controller_active'],rows=rows,
-        decision=decide(rows) if len(rows)==12 else None,manifest_sha256=digest(folder/'manifest.json'),
+        decision=decision_fn(rows) if len(rows)==12 else None,manifest_sha256=digest(folder/'manifest.json'),
         scope='Fixed finite stocks. Missing events censored at1200; all initial tools retained. '
             'Occupation is sampled every0.5, not exact integrated reaction exposure. '
             'NoHT initial PR positions match, smaller velocity array changes PRNG; uncaptured is a law ablation.')

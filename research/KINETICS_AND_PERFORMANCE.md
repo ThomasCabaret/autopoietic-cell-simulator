@@ -1,5 +1,11 @@
 # Cinétique, campagnes différées et coût du moteur
 
+Précision lot42 : suivre [CAMPAIGN_CALIBRATION.md](CAMPAIGN_CALIBRATION.md).
+Justifier stocks typés, concentrations, horloges et portée de conclusion avant
+campagne ; auditer les derniers quarts et les occasions réellement disponibles.
+MX1 n’était pas un test d’impossibilité : stocks P/R restants et production
+tardive. Les occupations post-réaction ne mesurent pas les probabilités de capture.
+
 Discussion du26 octobre2026, pendant la clôture du lot9. Ce document fixe la
 suite méthodologique. Le lot10 implémente un premier gestionnaire figé/reprenable
 et un diagnostic pré-réaction pour la membrane, voir [mode d'emploi](../campaigns/README.md).

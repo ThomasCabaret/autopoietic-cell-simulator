@@ -1,5 +1,5 @@
 param([ValidateSet('Start','Status','Stop','Resume','Review')][string]$Action='Status',
-      [ValidateSet('Membrane','Lipids','Curvature','Tail','Capture','Mixed')][string]$Kind='Membrane')
+      [ValidateSet('Membrane','Lipids','Curvature','Tail','Capture','Mixed','Cooperative')][string]$Kind='Membrane')
 $ErrorActionPreference='Stop'
 $projectRoot=Split-Path -Parent $PSScriptRoot
 Set-Location -LiteralPath $projectRoot
@@ -11,6 +11,7 @@ $kindLabel=if ($Kind -eq 'Lipids') { 'L2' } else { 'MIN1M' }
 if ($Kind -eq 'Curvature') { $driverName='lipid_curvature_followup.py'; $parentName='lipid_curvature_followups'; $kindLabel='L3' }
 if ($Kind -eq 'Capture') { $driverName='capture_transfer_followup.py'; $parentName='capture_transfer_followups'; $kindLabel='CT1' }
 if ($Kind -eq 'Mixed') { $driverName='mixed_synthesis_followup.py'; $parentName='mixed_synthesis_followups'; $kindLabel='MX1' }
+if ($Kind -eq 'Cooperative') { $driverName='cooperative_synthesis_followup.py'; $parentName='cooperative_synthesis_followups'; $kindLabel='MX2' }
 $modeArgs=@()
 if ($Kind -eq 'Tail') { $driverName='lipid_curvature_followup.py'; $parentName='lipid_thermal_tail_followups'; $kindLabel='L4'; $modeArgs=@('--tail') }
 $driverPath=Join-Path $projectRoot "scripts\$driverName"
