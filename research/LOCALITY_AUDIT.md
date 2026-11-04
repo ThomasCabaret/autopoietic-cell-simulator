@@ -1,5 +1,12 @@
 # Fidélité à l'objectif : localité et risques de pilotage
 
+Lot38 : pose native uniquement dans le constructeur de F01 préparés, jamais
+dans une réaction ou réparation. Ressort de capture dérivé E/largeur², même
+stiffness dans les forces et ΔU ; aucune lecture biologique ni taux adapté aux
+mesures. Diagnostic première capture passif exact, trois positions/un événement,
+64 atomes pour l’énergie de contexte. Helpers de niveau de potentiel toujours
+non calibrés ; P/R historique inchangé, L3 est une branche séparée.
+
 Lot37 L2 : ΔU calculé seulement pour les termes modifiés dans les rayons des
 forces (cores, capture, ports), plus un ressort axial. Indexation des liens
 locaux, aucun potentiel total du bain, contour ou observateur dans la décision.

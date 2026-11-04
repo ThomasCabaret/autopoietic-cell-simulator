@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "revision": 7,
+  "revision": 9,
   "reviewed": "2026-11-04",
-  "candidate": "MD2 / MIN1M9/12 en cours ; L2 terminé20/20, critères thermiques refusés",
+  "candidate": "MD2 / MIN1M11/12 ; L2/L3 clos, L4 trois queues froides sélectionnées après production",
   "purpose": "Registre évolutif des capacités nécessaires à une cellule construite maintenue ; les pourcentages sont des paliers de preuve, pas un taux global de réussite.",
   "out_of_scope": [
     "origine spontanée de la cellule",
@@ -237,9 +237,11 @@
         "research/BATCH_32.md",
         "research/LIPID_CONSTRUCTION_DRAFT.md",
         "research/BATCH_36.md",
-        "research/BATCH_37.md"
+        "research/BATCH_37.md",
+        "research/BATCH_38.md",
+        "research/BATCH_39.md"
       ],
-      "next_test": "Traiter le coût local de la transition L1 puis témoins no_tool/split/no_boost et thermique ; ensuite compétition P/R et insertion des vrais produits, sans conversion externe.",
+      "next_test": "Lire L3 complet avec les mêmes seuils thermiques ; ensuite chimie P/R commune, expression, insertion/rétention. Pas de nouvelle grille si échec sans diagnostic.",
       "essential": true
     },
     {
@@ -488,7 +490,8 @@
         "research/BATCH_34.md",
         "research/BATCH_34_PLAN.md",
         "research/BATCH_35.md",
-        "research/BATCH_37.md"
+        "research/BATCH_37.md",
+        "research/BATCH_38.md"
       ],
       "next_test": "Lire MIN1M complet et son crible de coexistence membrane / nouveau F entier actif ; puis pertes réelles et maintien.",
       "essential": true
@@ -692,7 +695,9 @@
         "research/CELL_ARCHITECTURE.md",
         "research/LOCALITY_AUDIT.md",
         "research/BATCH_36.md",
-        "research/BATCH_37.md"
+        "research/BATCH_37.md",
+        "research/BATCH_38.md",
+        "research/BATCH_39.md"
       ],
       "next_test": "Établir le budget du motif retenu, puis ablater l’aide sans masquer un apport.",
       "essential": true
@@ -1104,7 +1109,9 @@
         "research/BATCH_32.md",
         "research/BATCH_33.md",
         "research/BATCH_35.md",
-        "research/BATCH_36.md"
+        "research/BATCH_36.md",
+        "research/BATCH_38.md",
+        "research/BATCH_39.md"
       ],
       "next_test": "Conserver les contrôles sans observateur, reprise exacte et signatures à chaque changement concerné.",
       "essential": true
@@ -1166,11 +1173,22 @@
       "revision": 7,
       "date": "2026-11-04",
       "reason": "Clôture lot37 après interruption :20 nouveaux essais L2 et référence réutilisée, production utile mais deux alarmes thermiques. Aucun palier augmenté. MIN1M9/12, porte non évaluée."
+    },
+    {
+      "revision": 8,
+      "date": "2026-11-04",
+      "reason": "Lot38 : loupe capture exacte, préparation F et courbure dérivée implémentées,18 essais L3 lancés. MIN1M10/12, trois active positifs mais deux témoins en cours. Aucun palier biologique augmenté."
+    },
+    {
+      "revision": 9,
+      "date": "2026-11-04",
+      "reason": "L3 clos18/18, crible100 refusé. L4 trois horizons400 achevés, préfixes exacts,24/23/23 L et T350–400.076/.092/.077 après fin de production. Pas de révision rétroactive ou preuve sous flux ; paliers inchangés."
     }
   ],
   "last_batch_progress": {
-    "S-04": "L2 :19/21/21 L avec contrôle combiné, témoins négatifs ; critères thermiques refusés, palier25 inchangé.",
-    "Q-01": "Variation locale d’énergie vérifiée ; naissance H–T seule ne ferme pas le bilan capture/repliement.",
-    "T-05": "MIN1M9/12 achevés sans erreur ; deux graines active ont de vrais F neufs actifs, cohorte incomplète."
+    "S-04": "L3 clos :19/20/21 L et témoins négatifs, critères thermiques refusés ; S-04 reste25%.",
+    "Q-01": "L4 : refroidissement après production dans3/3 suivis sélectionnés, sans nouvelle loi ; chaleur sous flux continu inconnue.",
+    "T-05": "MIN1M11/12 : trois active positifs avec membrane ; dernier témoin sans gène encore actif.",
+    "O-02": "207 tests, sources figées, contrôle des historiques0–100 requis dans chaque suivi L4."
   }
 }

@@ -1,5 +1,29 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Clôture lot39 : L4 terminé3/3 sans erreur, préfixes exacts, refroidissement
+après production (T350–400.076/.092/.077). Aucun nouveau calcul L4 ni autre
+réglage thermique à lancer. L3 reste refusé à100 ; les suivis sont sélectionnés.
+Priorité : dernier témoin MIN1M (11/12), clôture/visibilité du transfert validé,
+puis vraie cohabitation P/R/H/T et produits L utilisables avec même capture.
+Mesurer la puissance sous flux continu et le repliement de F nouvellement
+exprimés ; une queue froide après stocks finis ne suffit pas.
+
+Lot39 : L3 clos18/18, deux critères thermiques refusés ; ne pas changer de
+raideur ni relancer sa grille. Trois suivis L4 à400 conservent les mêmes lois
+et contrôlent leurs préfixes L3. Lire lipid_tail_status.bat puis rapport complet :
+séparer transitoire productif/refroidissement et chaleur entretenue avant nouvelle
+règle. MIN1M10/12 en cours, aucun échec ; attendre les deux derniers témoins.
+Après ces lectures : compatibilité commune P/R/H/T, énergie de nouveaux F et
+insertion/rétention. Une queue froide de stocks finis n’est pas l’homéostasie.
+
+Lot38 en cours : L3 compare pose construite native et courbure de capture
+dérivée du potentiel,18 nouveaux essais et3 références L2 réutilisées. Ne pas
+changer les seuils thermiques de L2. Lire lipid_curvature_status.bat puis rapport
+complet avant autre correction. MIN1M10/12 : trois active refont des outils
+entiers actifs avec membrane, deux témoins restants. Pas de relance MIN1M/L2.
+Après L3 : interpréter capture/énergie, puis tester une vraie chimie P/R/H/T
+commune et l’insertion ; ne pas additionner des succès séparés en viabilité.
+
 Lot37 clôturé : L2 terminé20/20 sans erreur, crible thermique refusé malgré
 production19/21/21 et témoins négatifs. Ne pas relancer la grille ni promouvoir.
 MIN1M9/12 en cours, zéro erreur, porte complète à attendre. Travail indépendant

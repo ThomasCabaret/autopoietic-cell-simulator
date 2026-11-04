@@ -1,5 +1,22 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+L4 clos3/3 :24/23/23 L, préfixes exacts et températures revenues près de la
+consigne après production. Cela réduit le risque de dérive thermique persistante
+dans ces pools fermés, pas celui de chauffage sous alimentation continue.
+Aucune adoption L3 dans MD2 ou hausse de palier. MIN1M11/12 : trois active
+positifs, dernier témoin sans gène en cours. Toujours pas maintien sous pertes.
+
+Clôture L3 :18/18 sans erreur, production19/20/21 maintenue mais porte thermique
+encore refusée. Les trois suivis L4 n’ajoutent aucune loi ; ils testent l’horizon
+alors que des naissances arrivent encore tard. Aucun palier de cellule augmenté,
+aucune promotion GUI. MIN1M reste incomplet10/12 malgré ses trois active positifs.
+
+Lot38 : diagnostic de capture et départ F identifie deux sources de chaleur ;
+corrections L3 opt-in en campagne, aucune preuve anticipée. MIN1M10/12 montre
+déjà7/6/2 remplaçants entiers dont6/4/2 actifs dans les trois cas avec membrane,
+mais deux témoins restent en cours. Pas de maintien sous pertes ou synthèse L
+dans ce même bain. Paliers inchangés jusqu’aux cohortes et transferts requis.
+
 Lot37 : production L2 utile sur3 graines mais deux critères thermiques refusés.
 S-04 reste25%, Q-01 inchangé ; aucune adoption du combiné. MIN1M9/12 et porte
 non évaluée. Deux graines active achevées produisent déjà des F entièrement

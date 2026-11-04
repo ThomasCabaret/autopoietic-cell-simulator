@@ -1380,3 +1380,39 @@ recette/sources/checkpoints figés conservés. Rapport/figure et checklistrev7
 ajoutés. MIN1M9/12 actif, deux graines avec remplaçants entiers utiles ; ne pas
 clôturer la porte sur cette lecture partielle. Prochain diagnostic : énergie
 initiale des F liés et transitions de capture, distinctes de la naissance H–T.
+
+### Lot38 — reprise et progression ciblée
+
+MIN1M10/12, aucun échec, trois active positifs (F entiers7/6/2, actifs6/4/2,
+fermeture.857/.856/.853) ; deux témoins encore actifs, pas de porte finale.
+Température post-hoc tardive.08382/.08351/.08272, consigne.08 ; métrique hors
+crible d’origine. Diagnostic L2 sans bonus : initial F51,2 et première capture
++2,503, contrôle passif exact à2 et seulement trois positions conservées.
+Implémentation L3 optionnelle : préparation native et stiffness E/largeur²,
+sans nouvelle constante indépendante, taux ou thermostat.18 essais en cours,
+trois références réutilisées,1 travailleur1h, mêmes seuils puis arrêt.207 tests
+et préfixes MD2/L2 passent, catalogue recertifié, aucune adoption/protéine ajoutée.
+Checklistrev8/arbre/priorités actualisés ; code/recettes/bilan versionnés,
+données et checkpoints gardés locaux. Prochain jalon : lire cohortes puis
+traiter vraie compatibilité P/R et nouvel outil exprimé avant intégration L.
+
+Clôture L3 au lot38 :18/18 sans erreur. Combiné19/20/21 L,10/14/14 contacts,
+témoins0, tardif.136/.139/.111 et P95.213/.247/.317 : deux critères thermiques
+refusés. Figure finale ajoutée, aucune promotion ni relance du taux.
+
+### Lot39 — horizon thermique sélectionné, aucune nouvelle loi
+
+Dernières naissances98,51/77,61/86,35 et T50–75 > T75–100 : question d’horizon
+avant une troisième correction. Trois essais400 L4, mêmes graines et lois,
+nouveaux dossiers/source figée et préfixes0–100 à vérifier intégralement,
+1 travailleur1h puis arrêt. Pas de répétitions indépendantes ni succès rétroactif
+de L3. Ce diagnostic ne prouve pas le fonctionnement sous flux continu.
+Checklistrev9 et état global mis à jour, aucun palier augmenté. MIN1M10/12
+poursuit les deux témoins restants, ses sources et son crible inchangés.
+
+Clôture39 :3/3 sans erreur et contrôleur arrêté ; préfixes observation/naissances/
+thermique exacts. L24/23/23, contacts21/20/20, dernières naissances235,50/129,52/
+157,40 et aucune après300. T350–400.0758/.0923/.0773 ; le crible L3 à100 reste
+refusé. Refroidissement observé après stocks finis, pas isothermie alimentée.
+Figure/bilan final ajoutés, aucune nouvelle correction ou campagne. MIN1M11/12,
+dernier témoin actif ; prochaine reprise sur sa clôture puis couplage matériel.

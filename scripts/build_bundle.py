@@ -103,6 +103,14 @@ def main():
         'research/BATCH_37_RESULTS.png','experiments/prepare_lipid_energy.py','experiments/review_lipid_energy.py',
         'experiments/verify_lipid_reference.py','experiments/render_lipid_energy.py','scripts/lipid_energy_followup.py',
         'campaigns/lipid_energy.json','start_lipid_energy.bat','lipid_energy_status.bat','stop_lipid_energy.bat','resume_lipid_energy.bat'))
+    files.update(ROOT/p for p in ('research/BATCH_38_PLAN.md','research/BATCH_38.md','research/BATCH_38_RECIPES.json',
+        'experiments/diagnose_capture_heat.py','experiments/prepare_lipid_curvature.py','experiments/review_lipid_curvature.py',
+        'experiments/verify_lipid_curvature_reference.py','experiments/membrane_thermal_context.py','scripts/lipid_curvature_followup.py',
+        'campaigns/lipid_curvature.json','start_lipid_curvature.bat','lipid_curvature_status.bat','stop_lipid_curvature.bat','resume_lipid_curvature.bat'))
+    files.update(ROOT/p for p in ('research/BATCH_38_RESULTS.png','experiments/render_lipid_curvature.py',
+        'research/BATCH_39_PLAN.md','research/BATCH_39.md','research/BATCH_39_RECIPES.json','experiments/lipid_thermal_tail.py',
+        'campaigns/lipid_thermal_tail.json','start_lipid_tail.bat','lipid_tail_status.bat','stop_lipid_tail.bat','resume_lipid_tail.bat'))
+    files.update(ROOT/p for p in ('research/BATCH_39_RESULTS.png','experiments/render_lipid_tail.py'))
     files.update(ROOT/p for p in ('README.md','SIMULATOR_ARCHITECTURE.md','requirements.txt',
         'CONTRIBUTING.md','GIT_SETUP.md','THIRD_PARTY_NOTICES.md',
         '.gitignore','.gitattributes','.editorconfig',

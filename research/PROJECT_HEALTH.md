@@ -1,5 +1,30 @@
 # Santé du projet —31 octobre2026
 
+Clôture39 : l’hypothèse d’horizon est soutenue dans les trois suivis exacts ;
+pas besoin d’une troisième correction mécanique pour obtenir une queue froide.
+Progrès causal réel, mais comparaisons L3 sélectionnées et stocks finis : le
+prochain risque pertinent est le couplage P/R/H/T et la puissance en régime
+alimenté. Attendre le dernier contrôle MIN1M pour clôturer son transfert.
+La cible reste plausible sans garantie de délai ; pertes/protection de gènes,
+diversité des outils, information riche et homéostasie restent ouverts.
+
+Lot39 : ne pas confondre seuil tardif et équilibre mesuré. Les T L3 décroissent
+encore et certains produits naissent jusqu’à98,51 ; trois horizons400 sont un
+diagnostic de temps justifié avant d’accumuler des rustines. L3 reste refusé au
+crible annoncé. Ce lot ajoute du calcul sélectionné, zéro intervention chimique.
+Le critère décisif demeure le transfert sous une chimie commune, pas une somme
+de petites réussites. Pas de délai ni de maintien promis ; régulation/énergie,
+information et fabrication L intégrée restent les risques majeurs.
+
+Lot38 : la démarche réduit une incertitude causale, pas seulement un score.
+La chaleur sans synthèse est reliée à51,2 d’énergie de préparation F et une
+transition de capture+2,503. L3 enlève une contrainte mécanique arbitraire et
+compare un départ construit détendu, sans réglage de thermostat/taux. La pose
+native ne protège pas les futurs F exprimés ; ce transfert est explicite.
+Si L3 ne stabilise pas le pool, revoir les changements de potentiel plutôt
+qu’ajouter des valeurs de raideur. MIN1M avance matériellement sur3 cas actifs,
+proche de sa consigne tardive, mais maintien/pertes/L commun restent ouverts.
+
 Lot37 : échec thermique conservé plutôt qu’un succès de débit surévalué.
 Les ablations distinguent coût du contact et de la formation ; un transitoire
 persiste sans aucune synthèse, ce qui motive un diagnostic de préparation/

@@ -1,5 +1,11 @@
 # Interactions souhaitées, parasites et environnements — lot7
 
+Lot38 : capture H/T de L3 peut utiliser une raideur dérivée au lieu de35.
+Ne pas présenter cette option comme un paramètre propre au lipide dans une
+chimie déjà unifiée : lors du transfert, appliquer le même mécanisme à P/R et
+retester expression/activité. Le contact F/L0 nécessite une barrière membranaire
+locale indépendante et un test de rétention ; aucune étanchéité L3 acquise.
+
 Lot36 L1 : H libre donneur et T libre accepteur peuvent occuper les sites F
 existants ; ports axiaux saturés libèrent la pince, puis contacts MD2 du vrai
 H–T. Aucun P/R dans ce test : mauvais couples et compétition ne sont pas validés.

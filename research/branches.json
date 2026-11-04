@@ -1283,6 +1283,45 @@
       "results": "research/BATCH_37.md",
       "recipe": "research/BATCH_37_RECIPES.json",
       "conclusion": "20/20 no errors. Combined19/21/21 L,13/15/15 lateral links; negative controls0. Late T.138/.183/.087 and P95.456/.457/.453 fail prospective thermal criteria. No promotion or further phase."
+    },
+    {
+      "id": "L3",
+      "parent": "L2",
+      "related": [
+        "MIN1M",
+        "L1",
+        "FM1"
+      ],
+      "status": "eighteen_complete_useful_products_preserved_thermal_gate_refused",
+      "hypothesis": "Native prepared geometry and Gaussian-matched capture curvature reduce heat without new rates or damping changes",
+      "test": "18 new100-unit trials and3 reused L2 combined references; same thermal/usefulness criteria;1 worker,1h wall budget. Selected first-capture microscope exact through2.",
+      "cost": "Zero new protein/gene/material type/rate; one initialization choice and stiffness derived from existing E/width² replacing hardcoded35 in this optional H/T branch. No P/R adoption.",
+      "counterexample": "Native initialization hides heat of newly expressed tools, softer capture destroys synthesis, temperature remains high or criteria are relaxed after results",
+      "missing_proof": "Full L3 cohort, capture/free-energy closure, common P/R capture, new-tool folding energy, membrane insertion/retention and homeostasis.",
+      "evidence": "research/BATCH_38_PLAN.md",
+      "results": "research/BATCH_38.md",
+      "recipe": "research/BATCH_38_RECIPES.json",
+      "health_gate": "Stop after cohort; compare all ablations before new rule. Two targeted corrections must yield compatibility or a fresh causal diagnosis before another tuning lot.",
+      "conclusion": "Combined19/20/21 L,10/14/14 contacts, controls0; late T.136/.139/.111 and P95.213/.247/.317 refuse both thermal criteria. Births continue to98.51/77.61/86.35 and temperature still declines; selected horizon diagnosis L4, no adoption."
+    },
+    {
+      "id": "L4",
+      "parent": "L3",
+      "related": [
+        "MIN1M",
+        "L2"
+      ],
+      "status": "three_selected_tails_complete_exact_prefixes_cooling_after_production",
+      "hypothesis": "The100-unit thermal screen may include productive transients; longer fixed-law horizons distinguish cooling and persistent heating",
+      "test": "L3_combined seeds0/1/2 selected to400; compare entire observation/event/thermal prefix through100; at most3 trials,one worker,1h,automatic report then stop",
+      "cost": "No chemical law/type/state/rate/tool/gene/thermostat change. Extra horizon and passive windowed analysis only.",
+      "counterexample": "Prefix changes, persistent high T after production stops or a selected follow-up retroactively changes the failed L3 screen",
+      "missing_proof": "Common P/R capture and synthesis, energy under continuous feed, expressed tool, insertion/retention and homeostasis.",
+      "evidence": "research/BATCH_39_PLAN.md",
+      "results": "research/BATCH_39.md",
+      "recipe": "research/BATCH_39_RECIPES.json",
+      "health_gate": "Stop after three; no rate sweep, no retroactive success claim, no phase beyond plan.",
+      "conclusion": "3/3 complete no errors; histories/events/thermal prefixes exact.24/23/23 L,21/20/20 lateral contacts, no births after300; T350-400.0758/.0923/.0773. L3 criterion stays refused; not a steady-fed-cell result."
     }
   ]
 }
