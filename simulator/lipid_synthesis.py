@@ -115,11 +115,14 @@ class LipidSynthesisChemistry:
         self._mechanics();return []
 
     def form_lipids(self,time,interval,neighbors):
-        pairs=neighbors.pairs(self.pos,self.config['rung_capture_radius'],'HT:formation').copy();self.rng.shuffle(pairs)
+        pairs=self.lipid_candidates(neighbors).copy();self.rng.shuffle(pairs)
         for a,b in pairs:
             a,b=int(a),int(b)
             if self.capture.categories[a]==1 and self.capture.categories[b]==0:a,b=b,a
             if self.capture.categories[a]!=0 or self.capture.categories[b]!=1:continue
+            # Material compatibility, independent of donor/acceptor site affinity.
+            # Mixed baths may also capture P/R on those same sites.
+            if self.ligand_types[a]!=0 or self.ligand_types[b]!=1:continue
             sites=self.capture.support(a,b)
             catalyzed=all(q>=0 for q in sites) and tuple(sorted(sites)) in self.edges
             rate=self.config['rung_catalytic_rate'] if catalyzed else self.config['rung_formation_rate']
@@ -138,6 +141,9 @@ class LipidSynthesisChemistry:
             self.births.append(dict(time=float(time),head=a,tail=b,catalyzed=bool(catalyzed),sites=list(sites)))
             if delta is not None:
                 stats['formed']+=1;self.births[-1].update(delta_U=delta,energy_factor=factor)
+
+    def lipid_candidates(self,neighbors):
+        return neighbors.pairs(self.pos,self.config['rung_capture_radius'],'HT:formation')
 
     def extra_forces(self,neighbors):
         self._views();force=self.capture.forces(self,ScopedNeighbors(neighbors,'HT:'))
