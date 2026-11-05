@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "revision": 12,
-  "reviewed": "2026-11-04",
-  "candidate": "MD2/MIN1M visible ; MX1 clos12/12 refus génétique ; MX2 coopération locale et horizon2400 en campagne",
+  "revision": 13,
+  "reviewed": "2026-11-05",
+  "candidate": "MIN1M visible ; MX2 clos12/12 portes passées ; BI1 vrais L vers frontière en campagne9 essais",
   "purpose": "Registre évolutif des capacités nécessaires à une cellule construite maintenue ; les pourcentages sont des paliers de preuve, pas un taux global de réussite.",
   "out_of_scope": [
     "origine spontanée de la cellule",
@@ -82,9 +82,10 @@
         "research/LOCALITY_AUDIT.md",
         "research/BATCH_32.md",
         "research/BATCH_41.md",
-        "research/BATCH_42.md"
+        "research/BATCH_42.md",
+        "research/BATCH_43.md"
       ],
-      "next_test": "Mesurer le transfert de la coopération locale de capture dans MX2 ; coût explicite d’une condition six-billes, pas preuve de répertoire programmable.",
+      "next_test": "Lire BI1 : transfert de vrais produits à la frontière, sans nouvelle primitive fonctionnelle ; répertoire programmable encore ouvert.",
       "essential": true
     },
     {
@@ -101,12 +102,13 @@
       ],
       "concept": "gap",
       "mechanism": "Disposer des sites/ports et des géométries qui favorisent différentes poses de réaction.",
-      "concept_gap": "Aucun couple EN/EA sélectif ni constructeur L sous une chimie fixe ; un assembleur polyvalent ne suffit pas.",
+      "concept_gap": "Un même co-recruteur opère P/R et H/T ; fonctions EN/EA/EL distinctes et programmables par assemblage non établies.",
       "proof": "none",
       "scope": "Un seul motif P/R, pas bibliothèque sélective.",
       "references": [
         "research/FUNCTIONAL_MECHANISMS.md",
-        "research/BATCH_32.md"
+        "research/BATCH_32.md",
+        "research/BATCH_43.md"
       ],
       "next_test": "Concevoir le motif minimal et son mauvais produit discriminant avant campagne.",
       "essential": true
@@ -179,12 +181,13 @@
       ],
       "concept": "draft",
       "mechanism": "Même assembleur P/R sur support fonctionnel ; le R donne le symbole réellement incorporé.",
-      "concept_gap": "Spécialisation P_F et absence de F nouveau complet dans le grand bain MD2.",
+      "concept_gap": "F01 entièrement reconstruit dans MIN1M/MX2 ; spécialisation P_F et outil EA sélectif restent ouverts.",
       "proof": "coupled",
       "scope": "Fabrication et incorporation partielle dans F sous MD2 ; aucune fermeture de renouvellement.",
       "references": [
         "research/BATCH_25_RESULTS.md",
-        "simulator/assembly.py"
+        "simulator/assembly.py",
+        "research/BATCH_43.md"
       ],
       "next_test": "Vérifier que les produits atteignent un outil complet puis actif, pas un stock de fragments.",
       "essential": true
@@ -229,10 +232,10 @@
         "T-04"
       ],
       "concept": "gap",
-      "mechanism": "L3 assemble H/T par F01 puis ports MD2. MX1 implémente les vrais P/R et H/T dans un seul registre saturable, avec outils F exprimables ; campagne de transfert en cours, pas encore preuve mixte.",
-      "concept_gap": "Saut de potentiel et échauffement identifiés ; compatibilité capture/état lié, compétition P/R/H/T, expression et insertion cellulaire non établies. C0B/XYZ distinct.",
+      "mechanism": "MX2 assemble réellement H/T via le même F01 exprimé depuis G et refait depuis P/R ; ports MD2 identiques. BI1 ajoute la frontière construite.",
+      "concept_gap": "Transfert vers frontière, énergie sous flux, recyclage/pertes et régulation L non établis. C0B/XYZ distinct.",
       "proof": "subcase",
-      "scope": "MX1 fabrique9/20/8 L, dont3/4/0 via F entièrement alimentaires, puis contacts de7/16/7 L neufs ; deux graines de couplage matériel mais sans membrane, débit génétique insuffisant. La voie L ne renouvelle pas encore une frontière.",
+      "scope": "MX2 L24/23/23 dont1/0/3 via F alimentaires, contacts ultérieurs24/23/23. BI1P100 produit1 L dedans sans insertion ; pas de renouvellement de frontière.",
       "references": [
         "research/FUNCTIONAL_MECHANISMS.md",
         "research/CELL_ARCHITECTURE.md",
@@ -244,9 +247,10 @@
         "research/BATCH_39.md",
         "research/BATCH_40.md",
         "research/BATCH_41.md",
-        "research/BATCH_42.md"
+        "research/BATCH_42.md",
+        "research/BATCH_43.md"
       ],
-      "next_test": "Préserver la génétique avec L dans MX2, puis insertion/rétention des vrais produits dans une frontière existante, énergie sous flux et remplacement sous pertes.",
+      "next_test": "Lire BI1 complet avec stocks, occasions pré-tick et contours ; distinguer adsorption et vraie insertion, puis réparation sous pertes.",
       "essential": true
     },
     {
@@ -431,7 +435,7 @@
       "renewal_needs": [],
       "concept": "draft",
       "mechanism": "Même géométrie et ports pour outil préparé ou exprimé ; provenance identifiée seulement par l’observateur.",
-      "concept_gap": "Transfert historique limité à un outil ; grand bain actuel sans nouveau F complet.",
+      "concept_gap": "Un seul co-recruteur renouvelé et actif ; diversité et sélectivité des autres outils non établies.",
       "proof": "coupled",
       "scope": "MIN1R :30 F entièrement refaits depuis nourriture sur3 graines active,8 de ces remplaçants catalysent30 opérations ; boucle locale sous mêmes lois, sans membrane ni pertes.",
       "references": [
@@ -439,7 +443,8 @@
         "research/BATCH_25_RESULTS.md",
         "research/BATCH_32.md",
         "research/BATCH_33.md",
-        "research/BATCH_34.md"
+        "research/BATCH_34.md",
+        "research/BATCH_43.md"
       ],
       "next_test": "Vérifier le même remplacement entier actif dans le bain avec L, puis sous pertes et flux déclarés.",
       "essential": true
@@ -515,11 +520,12 @@
       "renewal_needs": [],
       "concept": "draft",
       "mechanism": "Ports latéraux orientés et géométrie locale liée/libre cohérente.",
-      "concept_gap": "Petites V8 et grandes frontières ont encore des paramètres géométriques différents ; L ne sont pas fabriqués.",
+      "concept_gap": "Auto-assemblage depuis L libres démontré séparément ; un grand contour issu de H/T fabriqués et sa stabilité commune restent à établir.",
       "proof": "separate",
       "scope": "V8 MD2 s’assemble à partir de dimères isolés sur trois graines, bain séparé.",
       "references": [
-        "research/BATCH_25_RESULTS.md"
+        "research/BATCH_25_RESULTS.md",
+        "research/BATCH_43.md"
       ],
       "next_test": "Transférer aux L réellement fabriqués et à la géométrie commune requise.",
       "essential": true
@@ -581,13 +587,14 @@
       "renewal_needs": [],
       "concept": "gap",
       "mechanism": "Échange de contacts latéraux locaux, puis relaxation mécanique ; une insertase serait une autre option payante.",
-      "concept_gap": "L actuellement préparés ; une graine à sondes reste dégradée, mécanisme de réparation à diagnostiquer.",
+      "concept_gap": "Insertion de L préparés rare dans MD2 ; transfert de vrais produits et confinement conjoint en attente BI1.",
       "proof": "coupled",
       "scope": "Insertions rares de L préparés dans MD2 ; pas circuit synthèse L→membrane.",
       "references": [
-        "research/BATCH_25_RESULTS.md"
+        "research/BATCH_25_RESULTS.md",
+        "research/BATCH_43.md"
       ],
-      "next_test": "Analyser l’échange défectueux puis transférer de vrais L synthétisés, sans réparer un contour.",
+      "next_test": "BI1 active/noexchange/nosynthesis à1200 : L vraiment né dedans dans un contour refermé et fuites ; pas insertion depuis simple contact.",
       "essential": true
     },
     {
@@ -987,16 +994,17 @@
       "mechanism": "Affinités/ports locaux sélectifs, états liés masquant les sites ; tester les classes étrangères ensemble.",
       "concept_gap": "Contrats globaux EN/EA/EL et nouveaux produits non validés ; pas d’orthogonalité acquise.",
       "proof": "subcase",
-      "scope": "MX1 clos12/12 : transfert F alimentaires→L sur2/3 mais G0/2/0 et F2/5/1, porte refusée. Stocks P/R restants ; motifs croisés dominent leur temps de double occupation échantillonné. MX2 est une nouvelle loi en campagne.",
+      "scope": "MX2 complet12/12, neuf conditions passent : G12/13/14,F14/12/15,L24/23/23, zéro motif croisé échantillonné. Couplage utile, stocks presque épuisés, pas homéostasie.",
       "references": [
         "research/CELL_INTERACTIONS.md",
         "research/INTEGRATION_TESTS.json",
         "research/BATCH_35.md",
         "research/BATCH_40.md",
         "research/BATCH_41.md",
-        "research/BATCH_42.md"
+        "research/BATCH_42.md",
+        "research/BATCH_43.md"
       ],
-      "next_test": "Lire MX2 complet au même horizon2400, avec contrôles et stocks ; si échec persistant, distinguer géométrie/exposition et boucles de maintien avant autre retouche.",
+      "next_test": "Lire BI1 complet puis coupler pertes, flux et protection ; aucune nouvelle grille de capture justifiée.",
       "essential": true
     },
     {
@@ -1020,7 +1028,8 @@
         "research/BATCH_25_RESULTS.md",
         "research/BATCH_40.md",
         "research/BATCH_41.md",
-        "research/BATCH_42.md"
+        "research/BATCH_42.md",
+        "research/BATCH_43.md"
       ],
       "next_test": "Lire références MX2 prolongées et vérifier tout leur historique0–1200 égal à MX1 ; comparer la coopération à même horizon2400. Étudier ensuite dt/cadence sans modifier les lois physiques.",
       "essential": true
@@ -1129,7 +1138,8 @@
         "research/BATCH_39.md",
         "research/BATCH_40.md",
         "research/BATCH_41.md",
-        "research/BATCH_42.md"
+        "research/BATCH_42.md",
+        "research/BATCH_43.md"
       ],
       "next_test": "Conserver les contrôles sans observateur, reprise exacte et signatures à chaque changement concerné.",
       "essential": true
@@ -1216,12 +1226,18 @@
       "revision": 12,
       "date": "2026-11-04",
       "reason": "MX1 clos12/12 refus G/F, transfert matériel2/3. Audit stocks/temps post-hoc et loupe passive précise ; défaut de domaine/horizon distingué d’impossibilité. Coopération locale sans nouveau taux/outil, pilote100 positif et MX2 douze essais2400 lancés. Aucun maintien ou palier biologique supplémentaire anticipé."
+    },
+    {
+      "revision": 13,
+      "date": "2026-11-05",
+      "reason": "MX2 complet12/12 portes passées, coopération conservée pour transfert. BI1 construit frontière commune et diagnostic passif, pilote100 stable et neuf essais lancés. Aucun nouveau palier biologique ni maintien anticipé ; descriptions de limites devenues obsolètes corrigées."
     }
   ],
   "last_batch_progress": {
-    "C-01": "MX1 refusé G/F ; coopération locale implémentée. À1200 dans graine0 MX2 en cours :G5/F10/L24 contre0/2/9 reference, sans verdict de cohorte.",
-    "C-02": "Audit sans simulation : réactifs P/R non épuisés en mixed, production tardive ; MX2 compare lois à2400 avec stocks/fenêtres et préfixes1200 vérifiés.",
-    "S-04": "F alimentaires→L confirmé2/3 MX1, aucune insertion cellulaire ou homéostasie ; pilote coopératif100 :12 P/R et5 L, pas de palier augmenté.",
-    "O-02": "225 tests passent, cinq préfixes archivés exacts àt5 ; contrat de calibration et rapport automatique de stocks ajoutés."
+    "C-01": "MX2 clos12/12 : neuf critères passent, médianes G13/F14 contre4/7 référence ; contribution des remplaçants non uniformément meilleure.",
+    "S-04": "L24/23/23, F alimentaires→L2/3 sous chimie commune ; BI1P1 L né dedans, pas insertion encore.",
+    "M-04": "Frontière construite219 L reliée au même bain (636 billes), observateur adsorption/insertion et BI1 neuf essais lancés. Aucun nouveau palier anticipé.",
+    "C-02": "Stocks quasi épuisés dans MX2 ; nouveau diagnostic distingue dilution globale et paquet local, occasions pré-tick et naissance au même instant.",
+    "O-02": "232 tests passent ; six préfixes physiques archivés exacts àt5, dont BI1P. Démo validée conservée, nouveau candidat non promu."
   }
 }

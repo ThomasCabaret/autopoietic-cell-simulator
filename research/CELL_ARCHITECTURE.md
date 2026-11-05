@@ -1,5 +1,15 @@
 # Architectures de cellule : fermeture à concevoir, pas encore réalisée
 
+Lot43 : MX2 termine12/12, G12/13/14,F14/12/15,L24/23/23 et F alimentaires
+actifs sur L2/3. BI1 reprend ce bain et ajoute219 L construits (438 billes),
+soit636 billes :150 P/R+48 H/T libres+438 frontière. Boîte90×90 ; paquet initial
+12×9 décalé27,5 du centre, dilution ensuite libre. Même alphabet, pas de nouvel
+outil/gène ; coût local MD2 de confinement transféré. Il s'agit d'un diagnostic
+réduit près de la frontière, pas d'un nouveau budget cellulaire complet.
+Pilote100 : un L né dedans, aucune insertion ; cohorte9 essais en cours.
+Alimentation, pertes, récupération et homéostasie non implémentées par ce montage.
+Voir BATCH_43 et son plan.
+
 Lot42 : MX1 a réellement transféré P/R→F entièrement alimentaire→L sur2/3,
 mais la génétique est pénalisée. MX2 ne change ni stock (198 billes,150 sans H/T),
 ni rôle/gène : une condition locale de capture coopérative et un horizon plus

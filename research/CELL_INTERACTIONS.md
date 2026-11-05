@@ -1,5 +1,15 @@
 # Interactions souhaitées, parasites et environnements — lot7
 
+Lot43 BI1 : vrais L préparés et produits H/T utilisent le même registre
+de partenaires et de faces. Barrière segmentaire de deux têtes L contre chaque
+atome P/R axialement lié (.55,80), reprise de MD2 ; P/R libres et H/T perméables.
+Les réactions ne lisent pas le masque intérieur/extérieur ou les IDs initiaux.
+Le core génétique/L reste0 comme MX2 ; pas d'adhésion introduite pour forcer
+l'insertion. Confinement/capture énergétique à la formation P/R restent des
+helpers explicites, pas une fermeture énergétique. Le recensement d'occasions
+et de contours est passif. Les témoins changent l'échange ou les deux taux
+partagés de synthèse, avec départs identiques. Voir BATCH_43_PLAN.md.
+
 Lot42 : MX2 ajoute une affinité conditionnelle locale aux sites F directement
 liés. Le premier ligand garde une capture large ; le voisin attire/capte un
 partenaire compatible P–R/H–T. Même test pour attraction et capture, voisinages

@@ -1,5 +1,19 @@
 # Santé du projet —31 octobre2026
 
+Lot43 : le diagnostic de capture converge : MX2 passe les neuf conditions
+sans troisième retouche, ni nouveau taux/outil. La médiane génétique remonte,
+mais les activités individuelles ne sont pas toutes meilleures ; la matière
+finie impose de ne pas confondre épuisement et régulation. Une intervention
+d'intégration ajoute la frontière à la même chimie ; BI1 neuf essais automatisés,
+pas neuf changements conceptuels. Le pilote mécanique est stable et produit
+un L intérieur ; le prochain horizon décisif est la cohorte1200. Si insertion
+absente, séparer transport/éligibilité/attente/instabilité puis loupe ciblée,
+pas une grille à l'aveugle. Deux changements sans transfert ni diagnostic nouveau
+imposeraient de revoir la représentation. Risques majeurs encore ouverts :
+répertoire F, protection et recyclage, régulation des polymères, énergie sous
+flux et information. Aucun blocage irréversible établi, aucun délai ou nombre
+de lots restant fiable avant ces jalons. La cible est le maintien, pas la division.
+
 Lot42 : progression par compréhension causale plutôt que réglage de score :
 audit de stocks, temps et occupation, puis loupe bornée ; deux recaptures rapides
 illustrent le piège local. La coopération proposée réemploie la compatibilité

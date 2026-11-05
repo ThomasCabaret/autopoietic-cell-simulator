@@ -1480,3 +1480,18 @@ CAMPAIGN_CALIBRATION explicite les justifications avant essai et conclusions
 permises ; stock/fenêtres désormais automatiques au rapport MX2. Aucun palier
 cellulaire augmenté, démos MIN1M gardées. Priorité aval : lecture MX2 puis L
 réel vers membrane et maintien sous pertes/perturbations. Voir BATCH_42.
+
+## 2026-11-05 — lot43, coopération confirmée et vrais L vers frontière
+
+MX2 complet12/12, neuf portes passent ; rapport et résultats dans BATCH_43.md.
+Médianes G13/F14 contre4/7 référence, L24/23/23, outils alimentaires actifs sur L2/3.
+Pas de supériorité uniforme d'activité : stocks quasi épuisés, chronologie des
+remplaçants distincte. Les trois références reproduisent MX1 jusqu'à1200.
+Décision : plus de grille de capture ; transférer les vrais produits à la frontière.
+BI1 ajoute219 L construits au bain commun et le helper segmentaire local MD2,
+sans nouvelle enzyme/gène ; observateurs passifs de contour, naissance et occasion.
+Pilote100 stable,1 L dedans,0 insertion,96.422s. Neuf essais à1200 lancés,
+2 travailleurs/4h/checkpoints30s, arrêt après rapport. Calibration de dilution
+explicitée ; pas de rejet chimique en cas de contacts insuffisants.
+232 tests passent, six préfixes exacts àt5 ; catalogue inchangé physiquement.
+Checklist13 et santé mises à jour. Voir BATCH_43_PLAN/BATCH_43_RECIPES/BATCH_43.

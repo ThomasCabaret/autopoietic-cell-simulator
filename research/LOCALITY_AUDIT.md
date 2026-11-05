@@ -1,5 +1,17 @@
 # Fidélité à l'objectif : localité et risques de pilotage
 
+Lot43 BI1 : seule extension dynamique, reprise du helper MD2 de barrière :
+segment de deux têtes L +position d'un atome P/R dont le lien axial est occupé.
+Trois positions dans la force, état local d'un lien avec partenaire supplémentaire ;
+portée finie .55, forces réciproques aux extrémités. Zéro reconnaissance de
+dimère/outil/contour complet. Rayon/raideur transférés .55/80, zéro nouvelle
+enzyme/gène/type/port. La commutation du potentiel à la jonction P/R conserve
+une dette énergétique explicite. L'anneau219 L et le paquet décalé sont un
+départ construit, pas une auto-organisation démontrée. Les IDs d'origine,
+contours et positions de naissance ne servent qu'aux observateurs. L'échantillon
+déclenché par une naissance ne consomme pas de hasard et n'entre pas dans les
+forces. Retrait de l'observation et reprise testés ; pilote100 sans nouvel outil.
+
 Lot42 : coopération de capture sur motif de deux composites F directement
 liés et deux ligands, six billes. Compatibilité matérielle déjà utilisée par
 la jonction, aucun objectif de produit/chaîne complète, contour, information

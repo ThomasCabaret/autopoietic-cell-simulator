@@ -1,5 +1,14 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot43 : MX2 complet12/12 confirme le couplage P/R→F alimentaire→L dans
+un même bain avec débit génétique rétabli : médianes G13/F14 contre4/7 référence.
+Contribution des remplaçants variable, pas supériorité de chaque métrique ni
+homéostasie. BI1 construit le vrai transfert vers un anneau219 L ; pilote100
+stable,1 L produit dedans, zéro insertion observée ;9 essais à1200 lancés.
+S-04 reste25, M-04 historique75 avec L préparés, C-01 reste25, maintien0 :
+pas de hausse de palier par un pilote. Le premier test global non naïf attend
+insertion/réparation, alimentation/export et régulation/protection. Voir BATCH_43.
+
 Lot42 : MX1 est clos12/12, transfert F alimentaires→L et contacts sur2/3,
 mais débit G/F insuffisant au crible1200. Stocks non épuisés et production
 tardive limitent la portée du refus. Le diagnostic de capture motive une

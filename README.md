@@ -31,14 +31,15 @@ progrès actuel** montre les trois essais MIN1M validés, avec Langevin inchang�
 Le raccourci « État actuel · bain intégré » ouvre cette scène, graine0 par
 convention. La petite boucle MIN1R reste disponible sans membrane.
 
-Recherche en cours : **capture coopérative locale P/R/H/T**, après MX1
-terminé12/12 avec transfert matériel mais forte pénalité génétique. Douze essais
-MX2 comparent à horizon2400 les lois antérieures, la coopération et leurs témoins.
-Stocks, fenêtres de production et préfixes historiques sont vérifiés automatiquement.
-Statut `cooperative_synthesis_status.bat`, pause `stop_cooperative_synthesis.bat`,
-reprise explicite `resume_cooperative_synthesis.bat`. Sources et critères figés,
-arrêt après rapport ; pas de promotion anticipée dans les démos.
-[Lot42](research/BATCH_42.md) · [Calibration](research/CAMPAIGN_CALIBRATION.md).
+Recherche en cours : **transfert des lipides fabriqués vers la frontière**.
+MX2 terminé12/12 : la capture coopérative rétablit le débit génétique tout en
+gardant le transfert matériel P/R→F→L. BI1 ajoute une membrane préparée de219 L
+au même bain ; neuf essais à1200,636 billes, témoins et sources figés.
+Le pilote100 reste stable et fabrique un L intérieur, sans insertion observée.
+Statut `boundary_transfer_status.bat`, pause `stop_boundary_transfer.bat`,
+reprise explicite `resume_boundary_transfer.bat`. Aucun maintien ou nouveau
+résultat GUI anticipé. [Lot43](research/BATCH_43.md) ·
+[Calibration](research/CAMPAIGN_CALIBRATION.md).
 
 Un moteur CPU commun pour les campagnes sans fenêtre et les démonstrateurs
 interactifs. Les lois de copie/expression et de membrane sont des modules séparés.

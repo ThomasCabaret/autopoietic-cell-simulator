@@ -1376,18 +1376,39 @@
         "L3",
         "MIN1M"
       ],
-      "status": "twelve_frozen_cooperative_capture_and_long_horizon_trials_running",
+      "status": "twelve_complete_nine_gates_passed_finite_shared_synthesis",
       "hypothesis": "A bounded compatibility-dependent capture affinity at adjacent F sites avoids persistent crossed ligands while retaining common P/R/H/T synthesis",
       "test": "cooperative/reference/nogene/noHT x3 at2400,198/150 beads. Same horizon and stocks; selected longer reference must reproduce all observed MX1 histories/events through1200. Report stocks and late windows.",
       "cost": "One extra local six-bead cooperation condition, no new protein/gene/elementary type/port/independent numeric rate or constant. Same condition in capture and forces; local energy delta includes affected bonded neighbors. P/R helper debt retained.",
       "counterexample": "Wrong pairs disappear but one branch starves, energy switches heat the bath, horizon alone explains improvement, or apparent change comes from stock/volume variation.",
-      "missing_proof": "MX2 cohort, sustained fed throughput, chemical expressivity beyond co-recruitment, membrane insertion/repair, recycling/protection and homeostasis.",
+      "missing_proof": "Fed/loss maintenance, membrane insertion/repair, useful rich information, functional diversity, polymer protection/recycling and homeostasis.",
       "evidence": "research/BATCH_42_PLAN.md",
-      "results": "research/BATCH_42.md",
+      "results": "research/BATCH_43.md",
       "recipe": "research/BATCH_42_RECIPES.json",
       "health_gate": "12 cases maximum,2 workers,4h checkpoint pause, report then stop on either gate outcome. No retry, automatic parameter search or demo adoption.",
       "partial_result": "One100-unit pilot:12 PR composites,5 L,0 wrong motifs/invariants,46.765s. No detached G/F before first external release window185; not a negative kinetic test or long-run success.",
-      "intermediate_checkpoint": "Seed0 observed prefix1200: cooperative G5/F10/L24 with1 L from whole-food F; reference G0/F2/L9 with3 such L. Reference four observed prefixes match MX1 after JSON normalization. Cases still running to2400; no cohort conclusion."
+      "intermediate_checkpoint": "Seed0 observed prefix1200: cooperative G5/F10/L24 with1 L from whole-food F; reference G0/F2/L9 with3 such L. Reference four observed prefixes match MX1 after JSON normalization. Cases still running to2400; no cohort conclusion.",
+      "conclusion": "12/12 no errors, nine gates pass. Cooperative G12/13/14 F14/12/15 L24/23/23; whole-food F to L1/0/3. Reference G4/12/2 F7/12/6. Three MX1 observed prefixes exact through1200. Near stock depletion; not uniform activity superiority or homeostasis."
+    },
+    {
+      "id": "BI1",
+      "parent": "MX2",
+      "related": [
+        "MD2",
+        "MIN1M",
+        "L3"
+      ],
+      "status": "nine_frozen_boundary_transfer_trials_running",
+      "hypothesis": "Actual H/T products from a shared cooperative PR/HT bath can join a constructed same-law frontier from inside.",
+      "test": "active/noexchange/nosynthesis x3 at1200,636 atoms.219 prepared L plus original198-bead packet,90x90 world, local packet12x9 near inside frontier. Shared rates off in nosynthesis; no new tool.",
+      "cost": "Reuse actual LinkedLipids ports and local MD2 segment helper, radius.55 stiffness80. Four-bead neighborhood counting axial-state partner; three positions in reciprocal force. No new elementary type/port/gene/tool. Constructed start and passive contour/kinetic observers.",
+      "counterexample": "Only adsorption/internal micelles, no admissible contacts, geometry rejects products, frontier loses closure, retained material leaks, stock/dilution mistaken for chemistry failure.",
+      "missing_proof": "BI1 cohort; protection/recycling, fed/loss repair, energetic closure and polymer homeostasis.",
+      "evidence": "research/BATCH_43_PLAN.md",
+      "results": "research/BATCH_43.md",
+      "recipe": "research/BATCH_43_RECIPES.json",
+      "health_gate": "9 cases,2 workers,4h checkpoint pause, report then stop. No retry, tuning, second phase or demo adoption.",
+      "partial_result": "Pilot100,96.422s:1 actual L born inside at16.02, no insertion, valid contour86.5% all/88% late, zero bound crossings/invariants. Not maintenance."
     }
   ]
 }

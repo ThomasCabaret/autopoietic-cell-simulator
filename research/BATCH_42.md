@@ -3,6 +3,9 @@
 4 novembre2026. [Plan](BATCH_42_PLAN.md) · [recettes](BATCH_42_RECIPES.json)
 · [pilote](BATCH_42_PILOT.json) · [contrat de calibration](CAMPAIGN_CALIBRATION.md).
 
+**Clôture ultérieure : MX2 terminé12/12, neuf conditions passent ; voir [lot43](BATCH_43.md).**
+Les lectures intermédiaires ci-dessous sont conservées comme historique.
+
 ## Clôture MX1 et portée du résultat
 
 12/12 achevés, aucune erreur. Rapport figé local

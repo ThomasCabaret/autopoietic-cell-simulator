@@ -1,6 +1,6 @@
 # Checklist détaillée — critères et dépendances
 
-Revue 2026-11-04 · révision12. Source : [cell_checklist.json](cell_checklist.json).
+Revue 2026-11-05 · révision13. Source : [cell_checklist.json](cell_checklist.json).
 [Tableau compact](CELL_CHECKLIST_COMPACT.md) · [Échelle et méthode](CONCEPT_FIRST.md).
 
 Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre acyclique de codage. Les cycles de renouvellement sont intentionnels. Une condition initiale construite peut amorcer un sous-cas sans fermer ces cycles.
@@ -22,9 +22,9 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** Union de modules locaux, pas alphabet commun constructible complet.
 
-**Références :** [research/FUNCTIONAL_MECHANISMS.md](../research/FUNCTIONAL_MECHANISMS.md), [research/LOCALITY_AUDIT.md](../research/LOCALITY_AUDIT.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md)
+**Références :** [research/FUNCTIONAL_MECHANISMS.md](../research/FUNCTIONAL_MECHANISMS.md), [research/LOCALITY_AUDIT.md](../research/LOCALITY_AUDIT.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md), [research/BATCH_43.md](../research/BATCH_43.md)
 
-**Prochain test / décision :** Mesurer le transfert de la coopération locale de capture dans MX2 ; coût explicite d’une condition six-billes, pas preuve de répertoire programmable.
+**Prochain test / décision :** Lire BI1 : transfert de vrais produits à la frontière, sans nouvelle primitive fonctionnelle ; répertoire programmable encore ouvert.
 
 <a id="F-02"></a>
 ### F-02 — Fonctions distinctes depuis les assemblages
@@ -35,13 +35,13 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Draft local :** Disposer des sites/ports et des géométries qui favorisent différentes poses de réaction.
 
-**Manque / limite :** Aucun couple EN/EA sélectif ni constructeur L sous une chimie fixe ; un assembleur polyvalent ne suffit pas.
+**Manque / limite :** Un même co-recruteur opère P/R et H/T ; fonctions EN/EA/EL distinctes et programmables par assemblage non établies.
 
 **Dépend de :** [F-01](#F-01), [F-03](#F-03) · **Pour renouveler :** [T-04](#T-04)
 
 **Portée des preuves :** Un seul motif P/R, pas bibliothèque sélective.
 
-**Références :** [research/FUNCTIONAL_MECHANISMS.md](../research/FUNCTIONAL_MECHANISMS.md), [research/BATCH_32.md](../research/BATCH_32.md)
+**Références :** [research/FUNCTIONAL_MECHANISMS.md](../research/FUNCTIONAL_MECHANISMS.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_43.md](../research/BATCH_43.md)
 
 **Prochain test / décision :** Concevoir le motif minimal et son mauvais produit discriminant avant campagne.
 
@@ -94,13 +94,13 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Draft local :** Même assembleur P/R sur support fonctionnel ; le R donne le symbole réellement incorporé.
 
-**Manque / limite :** Spécialisation P_F et absence de F nouveau complet dans le grand bain MD2.
+**Manque / limite :** F01 entièrement reconstruit dans MIN1M/MX2 ; spécialisation P_F et outil EA sélectif restent ouverts.
 
 **Dépend de :** [F-01](#F-01), [F-03](#F-03), [E-03](#E-03), [Q-01](#Q-01) · **Pour renouveler :** [T-04](#T-04)
 
 **Portée des preuves :** Fabrication et incorporation partielle dans F sous MD2 ; aucune fermeture de renouvellement.
 
-**Références :** [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [simulator/assembly.py](../simulator/assembly.py)
+**Références :** [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [simulator/assembly.py](../simulator/assembly.py), [research/BATCH_43.md](../research/BATCH_43.md)
 
 **Prochain test / décision :** Vérifier que les produits atteignent un outil complet puis actif, pas un stock de fragments.
 
@@ -132,19 +132,19 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Aboutissement :** Des L fabriqués localement depuis les intrants déclarés s’insèrent et renouvellent la frontière.
 
-**Draft local :** L3 assemble H/T par F01 puis ports MD2. MX1 implémente les vrais P/R et H/T dans un seul registre saturable, avec outils F exprimables ; campagne de transfert en cours, pas encore preuve mixte.
+**Draft local :** MX2 assemble réellement H/T via le même F01 exprimé depuis G et refait depuis P/R ; ports MD2 identiques. BI1 ajoute la frontière construite.
 
-**Manque / limite :** Saut de potentiel et échauffement identifiés ; compatibilité capture/état lié, compétition P/R/H/T, expression et insertion cellulaire non établies. C0B/XYZ distinct.
+**Manque / limite :** Transfert vers frontière, énergie sous flux, recyclage/pertes et régulation L non établis. C0B/XYZ distinct.
 
 **Dépend de :** [F-01](#F-01), [F-02](#F-02), [F-03](#F-03), [E-03](#E-03), [Q-01](#Q-01) · **Pour renouveler :** [T-04](#T-04)
 
-**Portée des preuves :** MX1 fabrique9/20/8 L, dont3/4/0 via F entièrement alimentaires, puis contacts de7/16/7 L neufs ; deux graines de couplage matériel mais sans membrane, débit génétique insuffisant. La voie L ne renouvelle pas encore une frontière.
+**Portée des preuves :** MX2 L24/23/23 dont1/0/3 via F alimentaires, contacts ultérieurs24/23/23. BI1P100 produit1 L dedans sans insertion ; pas de renouvellement de frontière.
 
-**Références :** [research/FUNCTIONAL_MECHANISMS.md](../research/FUNCTIONAL_MECHANISMS.md), [research/CELL_ARCHITECTURE.md](../research/CELL_ARCHITECTURE.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/LIPID_CONSTRUCTION_DRAFT.md](../research/LIPID_CONSTRUCTION_DRAFT.md), [research/BATCH_36.md](../research/BATCH_36.md), [research/BATCH_37.md](../research/BATCH_37.md), [research/BATCH_38.md](../research/BATCH_38.md), [research/BATCH_39.md](../research/BATCH_39.md), [research/BATCH_40.md](../research/BATCH_40.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md)
+**Références :** [research/FUNCTIONAL_MECHANISMS.md](../research/FUNCTIONAL_MECHANISMS.md), [research/CELL_ARCHITECTURE.md](../research/CELL_ARCHITECTURE.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/LIPID_CONSTRUCTION_DRAFT.md](../research/LIPID_CONSTRUCTION_DRAFT.md), [research/BATCH_36.md](../research/BATCH_36.md), [research/BATCH_37.md](../research/BATCH_37.md), [research/BATCH_38.md](../research/BATCH_38.md), [research/BATCH_39.md](../research/BATCH_39.md), [research/BATCH_40.md](../research/BATCH_40.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md), [research/BATCH_43.md](../research/BATCH_43.md)
 
-**Prochain test / décision :** Préserver la génétique avec L dans MX2, puis insertion/rétention des vrais produits dans une frontière existante, énergie sous flux et remplacement sous pertes.
+**Prochain test / décision :** Lire BI1 complet avec stocks, occasions pré-tick et contours ; distinguer adsorption et vraie insertion, puis réparation sous pertes.
 
-**Progrès du dernier lot :** F alimentaires→L confirmé2/3 MX1, aucune insertion cellulaire ou homéostasie ; pilote coopératif100 :12 P/R et5 L, pas de palier augmenté.
+**Progrès du dernier lot :** L24/23/23, F alimentaires→L2/3 sous chimie commune ; BI1P1 L né dedans, pas insertion encore.
 
 ## Copie et information
 
@@ -292,13 +292,13 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Draft local :** Même géométrie et ports pour outil préparé ou exprimé ; provenance identifiée seulement par l’observateur.
 
-**Manque / limite :** Transfert historique limité à un outil ; grand bain actuel sans nouveau F complet.
+**Manque / limite :** Un seul co-recruteur renouvelé et actif ; diversité et sélectivité des autres outils non établies.
 
 **Dépend de :** [T-02](#T-02), [S-03](#S-03), [F-03](#F-03) · **Pour renouveler :** —
 
 **Portée des preuves :** MIN1R :30 F entièrement refaits depuis nourriture sur3 graines active,8 de ces remplaçants catalysent30 opérations ; boucle locale sous mêmes lois, sans membrane ni pertes.
 
-**Références :** [research/BATCH_08.md](../research/BATCH_08.md), [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_33.md](../research/BATCH_33.md), [research/BATCH_34.md](../research/BATCH_34.md)
+**Références :** [research/BATCH_08.md](../research/BATCH_08.md), [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_33.md](../research/BATCH_33.md), [research/BATCH_34.md](../research/BATCH_34.md), [research/BATCH_43.md](../research/BATCH_43.md)
 
 **Prochain test / décision :** Vérifier le même remplacement entier actif dans le bain avec L, puis sous pertes et flux déclarés.
 
@@ -351,13 +351,13 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Draft local :** Ports latéraux orientés et géométrie locale liée/libre cohérente.
 
-**Manque / limite :** Petites V8 et grandes frontières ont encore des paramètres géométriques différents ; L ne sont pas fabriqués.
+**Manque / limite :** Auto-assemblage depuis L libres démontré séparément ; un grand contour issu de H/T fabriqués et sa stabilité commune restent à établir.
 
 **Dépend de :** [F-01](#F-01), [S-04](#S-04) · **Pour renouveler :** —
 
 **Portée des preuves :** V8 MD2 s’assemble à partir de dimères isolés sur trois graines, bain séparé.
 
-**Références :** [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md)
+**Références :** [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/BATCH_43.md](../research/BATCH_43.md)
 
 **Prochain test / décision :** Transférer aux L réellement fabriqués et à la géométrie commune requise.
 
@@ -408,15 +408,17 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Draft local :** Échange de contacts latéraux locaux, puis relaxation mécanique ; une insertase serait une autre option payante.
 
-**Manque / limite :** L actuellement préparés ; une graine à sondes reste dégradée, mécanisme de réparation à diagnostiquer.
+**Manque / limite :** Insertion de L préparés rare dans MD2 ; transfert de vrais produits et confinement conjoint en attente BI1.
 
 **Dépend de :** [S-04](#S-04), [M-02](#M-02), [M-03](#M-03) · **Pour renouveler :** —
 
 **Portée des preuves :** Insertions rares de L préparés dans MD2 ; pas circuit synthèse L→membrane.
 
-**Références :** [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md)
+**Références :** [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/BATCH_43.md](../research/BATCH_43.md)
 
-**Prochain test / décision :** Analyser l’échange défectueux puis transférer de vrais L synthétisés, sans réparer un contour.
+**Prochain test / décision :** BI1 active/noexchange/nosynthesis à1200 : L vraiment né dedans dans un contour refermé et fuites ; pas insertion depuis simple contact.
+
+**Progrès du dernier lot :** Frontière construite219 L reliée au même bain (636 billes), observateur adsorption/insertion et BI1 neuf essais lancés. Aucun nouveau palier anticipé.
 
 <a id="M-05"></a>
 ### M-05 — Réparation et remplacement de frontière
@@ -747,13 +749,13 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Dépend de :** [F-02](#F-02), [R-04](#R-04), [T-04](#T-04), [M-03](#M-03), [W-04](#W-04) · **Pour renouveler :** —
 
-**Portée des preuves :** MX1 clos12/12 : transfert F alimentaires→L sur2/3 mais G0/2/0 et F2/5/1, porte refusée. Stocks P/R restants ; motifs croisés dominent leur temps de double occupation échantillonné. MX2 est une nouvelle loi en campagne.
+**Portée des preuves :** MX2 complet12/12, neuf conditions passent : G12/13/14,F14/12/15,L24/23/23, zéro motif croisé échantillonné. Couplage utile, stocks presque épuisés, pas homéostasie.
 
-**Références :** [research/CELL_INTERACTIONS.md](../research/CELL_INTERACTIONS.md), [research/INTEGRATION_TESTS.json](../research/INTEGRATION_TESTS.json), [research/BATCH_35.md](../research/BATCH_35.md), [research/BATCH_40.md](../research/BATCH_40.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md)
+**Références :** [research/CELL_INTERACTIONS.md](../research/CELL_INTERACTIONS.md), [research/INTEGRATION_TESTS.json](../research/INTEGRATION_TESTS.json), [research/BATCH_35.md](../research/BATCH_35.md), [research/BATCH_40.md](../research/BATCH_40.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md), [research/BATCH_43.md](../research/BATCH_43.md)
 
-**Prochain test / décision :** Lire MX2 complet au même horizon2400, avec contrôles et stocks ; si échec persistant, distinguer géométrie/exposition et boucles de maintien avant autre retouche.
+**Prochain test / décision :** Lire BI1 complet puis coupler pertes, flux et protection ; aucune nouvelle grille de capture justifiée.
 
-**Progrès du dernier lot :** MX1 refusé G/F ; coopération locale implémentée. À1200 dans graine0 MX2 en cours :G5/F10/L24 contre0/2/9 reference, sans verdict de cohorte.
+**Progrès du dernier lot :** MX2 clos12/12 : neuf critères passent, médianes G13/F14 contre4/7 référence ; contribution des remplaçants non uniformément meilleure.
 
 <a id="C-02"></a>
 ### C-02 — Régime physique commun et robustesse numérique
@@ -770,11 +772,11 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** CT1 conserve la boucle courte ; MX1 fournit seulement un crible1200 avec production tardive. Audit stocks/fenêtres/cycles et cinq préfixes physiques exacts ; aucune asymptote ou convergence numérique complète acquise.
 
-**Références :** [research/KINETICS_AND_PERFORMANCE.md](../research/KINETICS_AND_PERFORMANCE.md), [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/BATCH_40.md](../research/BATCH_40.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md)
+**Références :** [research/KINETICS_AND_PERFORMANCE.md](../research/KINETICS_AND_PERFORMANCE.md), [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/BATCH_40.md](../research/BATCH_40.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md), [research/BATCH_43.md](../research/BATCH_43.md)
 
 **Prochain test / décision :** Lire références MX2 prolongées et vérifier tout leur historique0–1200 égal à MX1 ; comparer la coopération à même horizon2400. Étudier ensuite dt/cadence sans modifier les lois physiques.
 
-**Progrès du dernier lot :** Audit sans simulation : réactifs P/R non épuisés en mixed, production tardive ; MX2 compare lois à2400 avec stocks/fenêtres et préfixes1200 vérifiés.
+**Progrès du dernier lot :** Stocks quasi épuisés dans MX2 ; nouveau diagnostic distingue dilution globale et paquet local, occasions pré-tick et naissance au même instant.
 
 <a id="C-03"></a>
 ### C-03 — Fermeture fonctionnelle et matérielle complète
@@ -850,11 +852,11 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** Fonction logicielle validée pour les références présentes, pas pour toutes les futures chimies.
 
-**Références :** [research/BATCH_26.md](../research/BATCH_26.md), [research/BATCH_27.md](../research/BATCH_27.md), [research/BATCH_31.md](../research/BATCH_31.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_33.md](../research/BATCH_33.md), [research/BATCH_35.md](../research/BATCH_35.md), [research/BATCH_36.md](../research/BATCH_36.md), [research/BATCH_38.md](../research/BATCH_38.md), [research/BATCH_39.md](../research/BATCH_39.md), [research/BATCH_40.md](../research/BATCH_40.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md)
+**Références :** [research/BATCH_26.md](../research/BATCH_26.md), [research/BATCH_27.md](../research/BATCH_27.md), [research/BATCH_31.md](../research/BATCH_31.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_33.md](../research/BATCH_33.md), [research/BATCH_35.md](../research/BATCH_35.md), [research/BATCH_36.md](../research/BATCH_36.md), [research/BATCH_38.md](../research/BATCH_38.md), [research/BATCH_39.md](../research/BATCH_39.md), [research/BATCH_40.md](../research/BATCH_40.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md), [research/BATCH_43.md](../research/BATCH_43.md)
 
 **Prochain test / décision :** Conserver les contrôles sans observateur, reprise exacte et signatures à chaque changement concerné.
 
-**Progrès du dernier lot :** 225 tests passent, cinq préfixes archivés exacts àt5 ; contrat de calibration et rapport automatique de stocks ajoutés.
+**Progrès du dernier lot :** 232 tests passent ; six préfixes physiques archivés exacts àt5, dont BI1P. Démo validée conservée, nouveau candidat non promu.
 
 ## Évolution conservée
 
@@ -870,3 +872,4 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 - Révision10 (2026-11-04) : MIN1M complet12/12 porte passée : transfert membrane + remplaçants alimentaires actifs3/3, T-05 separate→coupled. Démo exacte au menu. CT1 neuf tests de transfert de capture lancés, aucune adoption ou preuve mixte anticipée.
 - Révision11 (2026-11-04) : CT1 clos9/9 porte passée mais activité variable. MX1 registre commun P/R/H/T implémenté, contrôles locaux et pilote technique t10 passés,12 essais figés lancés. Aucun palier biologique augmenté par le code ou la première lecture partielle.
 - Révision12 (2026-11-04) : MX1 clos12/12 refus G/F, transfert matériel2/3. Audit stocks/temps post-hoc et loupe passive précise ; défaut de domaine/horizon distingué d’impossibilité. Coopération locale sans nouveau taux/outil, pilote100 positif et MX2 douze essais2400 lancés. Aucun maintien ou palier biologique supplémentaire anticipé.
+- Révision13 (2026-11-05) : MX2 complet12/12 portes passées, coopération conservée pour transfert. BI1 construit frontière commune et diagnostic passif, pilote100 stable et neuf essais lancés. Aucun nouveau palier biologique ni maintien anticipé ; descriptions de limites devenues obsolètes corrigées.

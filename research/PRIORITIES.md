@@ -1,5 +1,16 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot43 : **MX2 clos12/12, neuf conditions passent**. Coopératif G12/13/14,
+F14/12/15,L24/23/23 ; F alimentaires→L sur2/3, activité non uniformément
+supérieure et stocks quasi épuisés. Ne pas relancer MX2. **BI1 lancé9 essais** :
+vrais L fabriqués dans un paquet intérieur près d'une frontière construite219 L,
+636 billes au total, même chimie/portage local. Pilote100 stable,1 L intérieur,
+aucune insertion encore. Lire boundary_transfer_status.bat puis bilan stocks,
+occasions de contact et contour ; si défaut, loupe motivée avant tout taux.
+Après transfert : réparation/remplacement, flux ouvert et régulation/protection.
+Les démos restent MIN1M validé ; aucun maintien anticipé. Voir BATCH_43.md.
+Les mentions de campagnes en cours ci-dessous sont historiques.
+
 Lot42 : **MX1 clos12/12, porte refusée G/F**, mais transfert F alimentaire→L
 sur2/3. Audit : stocks P/R abondants restants et production tardive ; ne pas
 conclure à une impossibilité ou augmenter aveuglément la nourriture. Loupe
