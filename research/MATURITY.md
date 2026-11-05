@@ -1,5 +1,15 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot48 : EN1 refuse la robustesse de la réussite EG1 ; une graine chaude/ouverte
+et deux sans insertion. M-04 garde75 uniquement pour le domaine historique EG1,
+refus au pas fin explicite ; aucune invariance numérique ou réparation acquise.
+Chronologie s2 : chaleur avant l'échange tardif, pas de PR/HT concomitant.
+EL1 mesure les autres commutations ; résultat à attendre. RP1 implémente une
+alternative de protection de squelette, testée localement,3 essais séparés en
+cours ; aucun palier biologique augmenté. Deux préfixes RV1 défaut exacts.
+GUI39 rend visibles les EN1 et leurs échecs. Maintien0, information/diversité,
+protection/régulation et flux demeurent ouverts. Voir BATCH_48.
+
 Lot47 : EG1 réussit la porte limitée3/3, insertion2/3 et tenue thermique3/3.
 M-04 passe25→75 pour ce couplage de L réellement fabriqués avec frontière
 construite ; pas réparation, renouvellement ou étanchéité continue. Aucune insertion

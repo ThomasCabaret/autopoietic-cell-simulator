@@ -1,5 +1,18 @@
 # Fidélité à l'objectif : localité et risques de pilotage
 
+Lot48 RP1 : perte de squelette protégée par liaison (a,b), appariements
+réciproques a–x/b–y et liaison(x,y), au plus4 composites/8 billes. Aucun test
+séquence/longueur/gène/origine/stock/fonction. Pas d'identité d'agrégat, même
+pour distinguer deux brins : le prédicat autorise les motifs satisfaisant ces
+liens locaux. Quatre taux et facteur de protection conservés ; un choix de
+prédicat alternatif, zéro type/port/gène/outil/constante nouvelle. Réutilisation
+espérée pour duplex, non validée. Le garde P–R reste degré0 et ports libres.
+Les labels de recyclage ne pilotent rien ; ancien défaut occupied exact sur
+deux préfixes RV1. EL1 fait un bilan global d'observation de deux phases de
+contact sur un bain sélectionné ; il n'ajoute aucun calcul d'énergie globale
+aux réactions. Neighborhood d'analyse séparé, pas de PRNG ou cache dynamique
+muté ; clone/préfixe devront être vérifiés. Le forcing périodique reste externe.
+
 Lot47 : aucune loi chimique changée. GUI charge exactement les3 EG1,
 les statistiques observées ne pilotent pas les réactions. RX1 encapsule les
 appels existants de turnover, sans tirage supplémentaire, et lit leur journal

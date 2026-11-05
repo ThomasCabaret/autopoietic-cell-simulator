@@ -1524,7 +1524,7 @@
     {
       "id": "EN1",
       "parent": "EG1",
-      "status": "three_fixed_cadence_half_step_trials_running",
+      "status": "three_complete_gate_refused_no_numerical_robustness",
       "hypothesis": "Useful insertion/closure/temperature survive half mechanical dt at fixed chemistry and sampling cadence.",
       "test": "3 seeds2400,dt.001,reaction_every10,sample_every500; compare reused EG1.",
       "cost": "No new chemical law/type/rate/tool; approximately doubled mechanical work per simulated time.",
@@ -1532,8 +1532,39 @@
       "missing_proof": "General convergence, fed/loss maintenance, protection/regulation and complex information.",
       "recipe": "research/BATCH_47_EN1_RECIPES.json",
       "evidence": "research/BATCH_47_PLAN.md",
-      "results": "research/BATCH_47.md",
-      "health_gate": "3 cases,2 workers,3h checkpoint pause, report then stop; no tuning/retry/automatic adoption."
+      "results": "research/BATCH_48.md",
+      "health_gate": "3 cases,2 workers,3h checkpoint pause, report then stop; no tuning/retry/automatic adoption.",
+      "conclusion": "No errors/invariant failures. G7/6/8 F7/10/9 L23/22/23; insertion0/0/2, late closure.94543/.9466/.58978 and T.08996/.08780/.15167. Two seeds no eligible capture/accepted exchange; s2 late heating precedes late exchange. No dt tuning/retry."
+    },
+    {
+      "id": "EL1",
+      "parent": "EN1",
+      "status": "selected_contact_heat_replay_running",
+      "hypothesis": "Ungated contact update transitions inject port/segment potential before late heating, or reveal a different mechanical source.",
+      "test": "Frozen EN1 s2 to2200, instrument2100–2200 only; phase ledger and material-class kinetic sample. Clone and historical observed prefix check.",
+      "cost": "Passive observer only, no law/type/rate/tool;2000 bounded events, largest local motif coordinates, checkpoints.",
+      "counterexample": "No matching potential contributions; old dynamics changed; heating belongs to another class/cycle.",
+      "recipe": "research/BATCH_48_EL1.json",
+      "evidence": "research/BATCH_48_PLAN.md",
+      "results": "research/BATCH_48.md",
+      "health_gate": "2700s checkpoint pause, report then stop; no auto followup."
+    },
+    {
+      "id": "RP1",
+      "parent": "RV1",
+      "related": [
+        "RX1"
+      ],
+      "status": "three_coherent_pair_protection_cases_running",
+      "hypothesis": "Protection tied to reciprocal paired edges frees captured functional fragments while preserving usable genetic material.",
+      "test": "Historical protected RV1 rates/stocks, new protection_scope paired_edge only;3 seeds1200, reversible current census.",
+      "cost": "One alternative bounded predicate, no new numerical rate/type/port/gene/tool. At most4 composites/8beads, no component/sequence identity.",
+      "counterexample": "Tools extinct, genetic information lost, fragments remain trapped, only futile monomer cycles.",
+      "missing_proof": "Selective survival, homeostasis, rare information, export and mixed EG1 compatibility.",
+      "recipe": "research/BATCH_48_RP1_RECIPES.json",
+      "evidence": "research/BATCH_48_PLAN.md",
+      "results": "research/BATCH_48.md",
+      "health_gate": "3 trials,1 worker,1h checkpoint pause, fixed five gates then report/stop; no retry, tuning or transfer."
     }
   ]
 }

@@ -1,5 +1,12 @@
 # Architectures de cellule : fermeture à concevoir, pas encore réalisée
 
+Lot48 : aucun nouveau gène/outil, budget inchangé (cellule prototype302,
+RV1/RP1 séparé150). EN1 refuse la robustesse numérique/physique de l'insertion,
+sans remettre en cause la production commune dans ces bains finis. RP1 change
+un garde de pertes dans un autre candidat, pas le graphe de la cellule actuelle.
+EL1 observe les commutations des contacts et ne dirige aucune réaction. Apports,
+export, régulation et maintien du graphe complet restent conditionnels.
+
 Lot47 : EG1 valide une insertion limitée sans gène/outil supplémentaire,
 avec302 billes et mêmes flux matériels finis.1/0/2 L nés dedans insérés ; aucune
 insertion issue de F entièrement alimentaire dans cette cohorte. Les outils

@@ -1561,3 +1561,17 @@ EN1 lancé3×2400,dt/2 avec cadences physiques réaction/observation identiques,
 2 travailleurs/3h, rapport puis arrêt.249 tests complets passent,4 ciblés
 supplémentaires passent dont2 nouveaux EN1. Registre17,43 IDs stables. Maintien0,
 protection/régulation et information restent ouverts. Voir BATCH_47.
+
+## 2026-11-05 — lot48, refus EN1 et deux mécanismes distingués
+
+EN1 complet3/3 refuse : production G/F/L préservée, insertion0/0/2 ; s2
+fermeture.58978 et T tardive.15167. Deux graines ont zéro capture admissible
+nouveau/ancien et tous échanges refusés. Chauffe tardive s2 précède l'échange,
+sans PR/HT concomitant. EL1 source figée lancé vers2200, fenêtre2100–2200,
+2700s puis rapport/arrêt. Pilote0–2 sonde/clonage/préfixe exact,2 transitions,
+aucune inférence sur chauffage. RP1 garde local paired_edge construit, quatre
+taux/facteur RV1 inchangés, passivité/reprise et contre-motifs testés. Deux
+préfixes RV1 sans option restent exacts ;3 essais1200,1 travailleur/1h lancés,
+aucun transfert automatique.256 tests passent,39 démos natives exactes dont
+EN1 refusés ; fiche EG1 limite sa réussite. Registre18/43, aucun palier augmenté,
+maintien0. Voir BATCH_48 et ses recettes, données/checkpoints restent locaux.

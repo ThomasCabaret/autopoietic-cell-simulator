@@ -1,5 +1,20 @@
 # Santé du projet — actualisation5 novembre2026
 
+Lot48 : le refus EN1 empêche de considérer l'insertion comme robuste. Il ne
+prouve ni impossibilité de principe ni biais systématique de dt sur3 trajectoires.
+Deux échecs relèvent d'occasions absentes/défavorables ; le troisième chauffe
+avant son premier échange tardif. Horizon décisif EL1 : bilan des transitions
+hors échange, sans nouvelle constante. Si aucun mécanisme énergétique n'émerge,
+réexaminer forces/cycles avant une retouche ou une cohorte supplémentaire.
+Le front indépendant RP1 transforme le diagnostic RX1 en un seul garde local
+alternatif, pas une suite de taux ; horizon3 graines1200. Si réemploi gagné
+mais perte d'information/outils, pas de transfert et révision du compromis.
+Protection de chaque espèce, répertoire fonctionnel, flux/export et information
+riche restent des risques conceptuels. Estimation lot46 non relevée ;2 lots
+supplémentaires jusqu'à réévaluation, ou immédiatement si EL1/RP1 révèlent un
+refus structurel. Maintien non prêt, pas de blocage irréversible établi ou garantie
+que tout sera résoluble par des réglages. Deux calculs bornés, deux décisions.
+
 Lot47 : un risque d'intégration réduit sans nouvelle primitive : EG1 garde
 production/insertion et stabilité dans le domaine déclaré. Prochain jalon EN1,
 un raffinement mécanique commun, pas une recherche de constantes. Un refus

@@ -1,5 +1,13 @@
 # Interactions souhaitées, parasites et environnements — lot7
 
+Lot48 : EN1 ne confirme pas la tenue de l'insertion au pas fin. Les phases
+update_faces et exchange_faces doivent être distinguées ; seul le second a
+le filtre énergétique EG1. Une commutation de barrière segmentaire peut donc
+rester hors de ce bilan. EL1 vérifie cette hypothèse, sans la déclarer cause.
+RP1 protège un motif apparié lié ; il ne modifie aucune affinité ni ne désigne
+un gène/protéine entier. Risques : outils actifs non appariés dégradés, fragments
+appariés conservés ; pas de compatibilité avec EG1 démontrée ou nouveau transport.
+
 Lot47 : EG1 passe3/3 la porte thermique/fermeture, insertion sur2 graines.
 Ce n'est pas une validation de toutes les non-interactions. RX1 explique un
 risque distinct dans l'ancien RV1 : une liaison protégée par toute occupation

@@ -1,5 +1,19 @@
 # Démos représentatives accessibles dans la GUI
 
+## Lot48 —39 choix, contrôle au pas fin et refus visibles
+
+**Intégration compacte · contrôle au pas fin** ajoute les3 EN1 exacts :
+dt0,001, mêmes cadences physiques de réactions/observation que EG1. À2400,
+insertions0/0/2 ; la graine2 chauffe et s'ouvre tard (fermeture58,98%,T.1517).
+Jouer la graine2 au-delà de2100 pour inspecter cette phase. Les graines0/1
+restent sans insertion malgré une bonne tenue. Cette porte est refusée, sans
+promouvoir EN1 en référence ni choisir un dt favorable.
+
+Le raccourci actuel reste EG1 graine0, dont la fiche avertit explicitement de
+l'échec EN1.39 choix natifs et clone du moteur vérifiés, anciens CB1 conservés.
+RP1 est une variante de pertes séparée non promue, EL1 une sonde passive.
+[Bilan et limites](../research/BATCH_48.md).
+
 ## Lot47 —36 choix, insertion stabilisée EG1
 
 **Démos → État actuel · bain intégré** ouvre EG1 graine0, également disponible

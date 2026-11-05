@@ -1,5 +1,18 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot48 : **EN1 clos3/3 refuse**, production conservée mais insertions0/0/2,
+une graine chaude/ouverte. Ne pas sélectionner un dt favorable ni relancer des
+graines pour sauver EG1. Deux graines sans face de capture admissible et sans
+échange accepté ; interprétation cinétique, pas verdict numérique automatique.
+**EL1 en cours**, rejeu EN1 s2, fenêtre2100–2200 : bilan des commutations de
+contacts hors échange et partition thermique, source figée,2700s puis arrêt.
+**RP1 en cours**, trois graines d'un même garde local
+paired_edge, taux RV1 protected inchangés ;1 travailleur/1h puis rapport et arrêt.
+Aucun transfert vers EG1 ni nouvelle enzyme. Lire contact_heat_status.bat et
+pair_protection_status.bat. Décider après leurs rapports ; pas de grille de taux.
+GUI39 montre les3 EN1 refusés et avertit dans la fiche EG1. Diversité, information,
+protection/régulation et flux/export restent des risques conceptuels. Voir BATCH_48.
+
 Lot47 : **EG1 clos3/3 passe** : tenue94–95%, température proche.08,
 insertions1/0/2, production G/F/L conservée. GUI36 choix, nouveau raccourci EG1
 « Intégration compacte · échanges stabilisés » ; CB1 et ses défauts conservés.

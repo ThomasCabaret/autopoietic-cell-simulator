@@ -32,15 +32,15 @@ Les lanceurs Pygame historiques ci-dessous sont conservés.
 fabriqués dans deux graines sur trois, tenue tardive94–95% et température
 proche de la consigne dans les trois ; aucun maintien sous pertes ou flux ouvert.
 CB1 et ses ouvertures restent au menu « défauts connus ». MIN1M et MX2 restent
-accessibles séparément,36 démos au total.
+accessibles séparément,39 démos au total. EN1 est visible dans « contrôle au pas fin ».
 
-Recherche : EG1 passe sa porte limitée3/3, sans nouvel outil. **EN1 vérifie
-le pas mécanique divisé par deux**, mêmes cadences physiques chimiques et
-d'observation ; trois essais à2400, sources figées, rapport puis arrêt.
-Statut par `exchange_refinement_status.bat`. Le diagnostic RX1 du recyclage
-est terminé : maintien lié des fragments dominant dans deux trajectoires
-historiques exactes. La protection/régulation et l'information restent ouvertes.
-[Lot47](research/BATCH_47.md) ·
+Recherche : **EN1 est terminé et refuse les critères au pas fin** : deux
+bains sans insertion, un bain chaud/ouvert. La réussite EG1 reste limitée,
+pas une preuve de robustesse numérique. **EL1** rejoue la phase chaude avec
+bilan passif des commutations de contacts ; **RP1** teste séparément une
+protection par motif apparié, sans nouvelle enzyme et aux taux RV1 fixes.
+Suivi : `contact_heat_status.bat` et `pair_protection_status.bat`. Rapports
+puis arrêt, aucune seconde phase automatique. [Lot48](research/BATCH_48.md) ·
 [Calibration](research/CAMPAIGN_CALIBRATION.md).
 
 Un moteur CPU commun pour les campagnes sans fenêtre et les démonstrateurs

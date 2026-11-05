@@ -1,5 +1,20 @@
 # Homéostasie des polymères — pistes locales, fermeture encore ouverte
 
+## Lot48 — RP1 construit, résultat séparé à attendre
+
+La variante optionnelle paired_edge implémente le draft du lot47 : la protection
+du squelette dépend de deux appariements réciproques et du lien entre partenaires,
+pas d'une simple capture de substrat. Motif d'au plus4 composites, sans identité
+de brin ou de bon produit ; les motifs courts satisfaisant ces liens ne sont pas
+exemptés de l'analyse des parasites. Le garde de dissociation P–R est inchangé.
+Taux/protection historiques RV1 fixés ;3 graines1200 puis rapport/arrêt.
+Ce n'est pas un transfert de RV1 protected refusé vers la cellule : RP1 reste
+un candidat copy séparé avec census courant et boucles de matière réelles.
+La survie minimale G/F et le réemploi strict doivent coexister ; une production
+de cycles futiles ne passe pas la porte. Si perte des outils ou persistance des
+fragments, réexaminer le compromis au lieu de changer plusieurs taux. Régulation,
+protection rare, partage par espèce et export ne sont toujours pas fermés.
+
 ## Actualisation lot47 — exposition des fragments mesurée, compromis encore ouvert
 
 RX1 rejoue full/protected graine0 RV1 à1200 sous sources historiques, états,

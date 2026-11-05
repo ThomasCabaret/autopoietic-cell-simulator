@@ -1,0 +1,124 @@
+{
+  "EN1": {
+    "report": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\timestep_mechanism_followups\\followup_20261105T170333609605Z\\report_0.json",
+    "sha256": "44698a518ed4b30e4fbcc916dd86173a9e6827dd341343312f04ff15050fc106",
+    "decision": {
+      "screen_passed": false,
+      "conditions": {
+        "invariants": true,
+        "late_closure": false,
+        "late_temperature": false,
+        "insertion_two_seeds": false,
+        "energy_gate_observed": true,
+        "G_new_preserved": true,
+        "F_new_preserved": true,
+        "L_new_preserved": true
+      },
+      "run_transfer": false,
+      "scope": "Three half-dt selected sensitivity checks against reused EG1. Fixed physical reaction/sample cadences; not numerical convergence, stochastic equivalence or fed maintenance."
+    },
+    "rows": [
+      {
+        "seed": 0,
+        "G_new": 7,
+        "F_new": 7,
+        "L_new": 23,
+        "valid_fraction_late": 0.9454333333333333,
+        "late_temperature": 0.08995749539807221,
+        "inserted_born_inside": 0,
+        "invariant_failures": 0,
+        "exchange_gate_stats": {
+          "proposals": 4,
+          "accepted": 0,
+          "rejected": 4,
+          "positive_delta": 4,
+          "sum_positive_delta": 3.178508991267686,
+          "sum_factor": 0.037015128691260425,
+          "min_delta": 0.310534576835126,
+          "max_delta": 1.8235278002171733
+        },
+        "opportunities": {
+          "encounter_pair_time": 85116.12999999999,
+          "capture_face_time": 0.0,
+          "exchange_face_time": 13.419999999999177,
+          "exchanges": 0,
+          "gated_exchange_face_time": 5.689999999999543
+        }
+      },
+      {
+        "seed": 1,
+        "G_new": 6,
+        "F_new": 10,
+        "L_new": 22,
+        "valid_fraction_late": 0.9466000000000001,
+        "late_temperature": 0.08779785053085894,
+        "inserted_born_inside": 0,
+        "invariant_failures": 0,
+        "exchange_gate_stats": {
+          "proposals": 2,
+          "accepted": 0,
+          "rejected": 2,
+          "positive_delta": 2,
+          "sum_positive_delta": 2.4898695904626105,
+          "sum_factor": 3.5637636667770346e-07,
+          "min_delta": 1.2283802515430913,
+          "max_delta": 1.2614893389195192
+        },
+        "opportunities": {
+          "encounter_pair_time": 88352.31,
+          "capture_face_time": 0.0,
+          "exchange_face_time": 22.640000000000583,
+          "exchanges": 0,
+          "gated_exchange_face_time": 7.449999999999818
+        }
+      },
+      {
+        "seed": 2,
+        "G_new": 8,
+        "F_new": 9,
+        "L_new": 23,
+        "valid_fraction_late": 0.5897833333333331,
+        "late_temperature": 0.15167200797085936,
+        "inserted_born_inside": 2,
+        "invariant_failures": 0,
+        "exchange_gate_stats": {
+          "proposals": 67,
+          "accepted": 21,
+          "rejected": 46,
+          "positive_delta": 48,
+          "sum_positive_delta": 72.5783257120377,
+          "sum_factor": 21.66535074315506,
+          "min_delta": -3.2904666450845506,
+          "max_delta": 6.007727717254527
+        },
+        "opportunities": {
+          "encounter_pair_time": 122664.09,
+          "capture_face_time": 59.400000000004354,
+          "exchange_face_time": 99.22999999999105,
+          "exchanges": 21,
+          "gated_exchange_face_time": 72.4299999999923
+        }
+      }
+    ]
+  },
+  "chronology_selected_seed2": {
+    "first_T_above_point2_after_t1000": 2173.5,
+    "first_exchange_after_t2000": 2177.63,
+    "last_PR_before_heating": 2063.68,
+    "next_HT_birth": 2373.53,
+    "scope": "Chronology excludes these births/exchanges as simultaneous triggers; delayed mechanical release and other transitions remain possible."
+  },
+  "turnover_prefixes": {
+    "report": "outputs/diagnostics/CT1_reference_20261105T185005332780Z/report.json",
+    "cases": [
+      "RV1_full_s0",
+      "RV1_protected_s0"
+    ],
+    "duration": 5.0,
+    "state_rng_motion_exact": true
+  },
+  "ongoing_descriptors": [
+    "research/BATCH_48_EL1.json",
+    "research/BATCH_48_RP1_RECIPES.json"
+  ]
+}

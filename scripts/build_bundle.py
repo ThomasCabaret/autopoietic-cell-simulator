@@ -142,6 +142,11 @@ def main():
         'scripts/turnover_probe.ps1','campaigns/timestep_mechanism.json',
         'turnover_probe_status.bat','stop_turnover_probe.bat','resume_turnover_probe.bat',
         'exchange_refinement_status.bat','stop_exchange_refinement.bat','resume_exchange_refinement.bat'))
+    files.update(ROOT/p for p in ('research/BATCH_48_PLAN.md','research/BATCH_48.md','research/BATCH_48_RESULTS.json',
+        'research/BATCH_48_EL1.json','research/BATCH_48_EL1_MICRO.json','research/BATCH_48_RP1_RECIPES.json',
+        'experiments/inspect_contact_heat.py','experiments/prepare_pair_protection.py','experiments/review_pair_protection.py',
+        'campaigns/protection_mechanism.json','pair_protection_status.bat','stop_pair_protection.bat','resume_pair_protection.bat',
+        'contact_heat_status.bat','stop_contact_heat.bat','resume_contact_heat.bat'))
     files.update(p for p in (ROOT/'research/diagnostic_recipes').rglob('*') if p.suffix=='.py' or p.name=='recipe.json')
     files.update(ROOT/p for p in ('research/BATCH_44_PLAN.md','research/BATCH_44.md','research/BATCH_44_RECIPES.json',
         'research/BATCH_44_PILOT.json','experiments/audit_boundary_access.py','experiments/prepare_compact_transfer.py',
