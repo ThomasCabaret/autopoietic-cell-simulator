@@ -15,7 +15,7 @@ from simulator.runner import make_observer
 class DemoCatalogTests(unittest.TestCase):
     def test_all_presets_match_research_inputs_and_declared_initial_material(self):
         from experiments.prepare_demo_catalog import verify
-        rows=verify();self.assertEqual(len(rows),27)
+        rows=verify();self.assertEqual(len(rows),30)
         catalog=DemoCatalog();self.assertEqual(catalog.data['recommended'],'current_membrane_renewal_s0')
         _,_,cfg=catalog.get('integrated_s2');sim=Simulation(cfg);g=sim.chemistry.genetics
         prepared_g=1+sum(q['family']==0 and q['backbone'] and len(q['units'])==3 for q in g.initial_groups)
@@ -89,3 +89,19 @@ class DemoCatalogTests(unittest.TestCase):
         self.assertEqual(rows['F entièrement refaits depuis nourriture'],1)
         self.assertEqual(rows['Dont actifs après libération'],1)
         self.assertEqual(obs.__dict__,before)
+
+    def test_mixed_scene_has_real_species_and_passive_lipid_counters(self):
+        from visualizer.scene import species
+        _,_,cfg=DemoCatalog().get('current_mixed_s0');cfg['duration']=.05
+        sim=Simulation(cfg);plain=Simulation(cfg);obs=make_observer(sim.config,False);sim.listeners.append(obs)
+        sim.advance(sim.target_step);plain.advance(plain.target_step)
+        codes,labels,palette=species(sim.chemistry)
+        self.assertEqual(len(codes),198);self.assertTrue((codes>=0).all());self.assertTrue((codes<len(labels)).all())
+        self.assertIn('Support G',labels);self.assertIn('Support F',labels)
+        self.assertTrue(all(labels[q].startswith('H ') for q in codes[150:174]))
+        self.assertTrue(all(labels[q].startswith('T ') for q in codes[174:198]))
+        before=copy.deepcopy(obs.summary());view=dict(live_observations(obs)['rows'])
+        self.assertEqual(view['Lipides fabriqués depuis H/T'],before['lipids_formed'])
+        self.assertEqual(view['Dont par F entièrement refaits'],before['lipids_from_whole_food_F'])
+        self.assertEqual(before,obs.summary());np.testing.assert_array_equal(sim.chemistry.pos,plain.chemistry.pos)
+        self.assertEqual(sim.rng.bit_generator.state,plain.rng.bit_generator.state)

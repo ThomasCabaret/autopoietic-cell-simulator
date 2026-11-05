@@ -1,6 +1,25 @@
 # Démos représentatives accessibles dans la GUI
 
-## Progrès du4 novembre —27 choix
+## État du5 novembre —30 choix
+
+**Chimie mixte · outils et lipides** ajoute les trois graines MX2 validées,
+198 billes, boîte12×9, capture coopérative et Langevin exacts de la recette.
+À2400 : nouveaux G12/13/14, F14/12/15,L24/23/23. Les F entièrement refaits
+depuis nourriture catalysent1/0/3 L : variabilité laissée visible. Les filtres
+distinguent supports G/F et H/T ; les compteurs affichent L fabriqués et part
+due aux F entièrement reconstruits. Aucun L préparé ni membrane dans cette scène.
+
+Le raccourci **État actuel · bain intégré** reste MIN1M, membrane préparée et
+catalyseurs reconstruits ; il ne prétend pas montrer MX2 avec membrane. Ces
+deux sous-ensembles ne constituent pas ensemble une cellule viable. BI1 a fini
+sans insertion et sans nouveau G/F ; CB1 teste actuellement un compartiment
+plus compact. Aucun des deux n'est promu comme démo de réussite.
+
+Les30 choix sont contrôlés contre leurs recettes sources ; la lecture native
+inclut maintenant MX2. [Résultats/limites](../research/BATCH_44.md).
+Les paragraphes suivants conservent les bilans historiques de leurs modèles.
+
+## Progrès du4 novembre —27 choix antérieurs
 
 **Démos → État actuel · bain intégré** ouvre désormais **Membrane et catalyseurs
 reconstruits · progrès actuel**, graine0. Les trois graines MIN1M sont accessibles :

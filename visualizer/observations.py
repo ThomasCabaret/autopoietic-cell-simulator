@@ -44,5 +44,16 @@ def live_observations(observer,observed_time=None):
     if 'closed_sets' in state:
         measured=state['history'][-1]['time'] if state.get('history') else None
         rows.append(('Contours fermés observés',len(state['closed_sets'])))
+    if 'births' in state:
+        births=state['births'];rows.append(('Lipides fabriqués depuis H/T',len(births)))
+        if genetic:
+            made={e['support']:e['time'] for e in genetic.get('assembly_state',{}).get('events',[])}
+            whole=[e for e in births if e.get('chain_kind')=='expressed' and e.get('chain') and
+                all(q in made and made[q]<e['time'] for q in e['chain'])]
+            rows.append(('Dont par F entièrement refaits',len(whole)))
+    boundary=state.get('boundary_state')
+    if boundary and boundary.get('history'):
+        rows.append(('Contour de frontière classifiable', 'fermé' if boundary['history'][-1]['valid'] else 'non classable'))
+        rows.append(('L nés dedans puis insérés (observés)',len(boundary['ever_inserted_born_inside'])))
     return dict(time=measured if observed_time is None else observed_time,rows=rows,
         note='Mesures passives. Les compteurs nouveaux G/F excluent les structures initiales ; le census réversible les inclut explicitement.')

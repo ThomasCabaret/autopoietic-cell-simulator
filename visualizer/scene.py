@@ -102,6 +102,11 @@ def species(c):
         if c.offset:
             n=c.membrane.n;codes[:n]=add('Membrane H','#55cfbf');codes[n:2*n]=add('Membrane T','#ecb36c')
         genetics(c.genetics,c.offset)
+    elif hasattr(c,'lipids'):
+        if c.host is not None:genetics(c.host,0)
+        ids=np.arange(c.prefix,len(c.pos))
+        for kind,label,color in ((0,'H · précurseur / lipide','#55cfbf'),(1,'T · précurseur / lipide','#ecb36c')):
+            codes[ids[c.ligand_types[ids]==kind]]=add(label,color)
     elif hasattr(c,'families'):genetics(c,0)
     elif hasattr(c,'rungs') and hasattr(c,'n'):
         n=c.n;codes[:n]=add('Membrane H','#55cfbf');codes[n:2*n]=add('Membrane T','#ecb36c')

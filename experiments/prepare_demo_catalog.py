@@ -168,9 +168,31 @@ def langevin_variant(config):
     return resolve(cfg)
 
 
+def mixed_origins():
+    source='research/campaign_recipes/MX2_20261104T203221072374Z/manifest.json'
+    data=json.loads((ROOT/source).read_text(encoding='utf-8'));items=[]
+    for seed in range(3):
+        task=next(t for t in data['tasks'] if t['label']==f'MX2_cooperative_s{seed}')
+        items.append((f'current_mixed_s{seed}','current_mixed',f'Graine {seed}',copy.deepcopy(task['scenario']),source,task['id'],198))
+    return items
+
+
+def mixed_description():
+    return dict(id='current_mixed',title='Chimie mixte · outils et lipides',archive=False,
+        level='MX2 validé · couplage matériel sans membrane',
+        summary='Un même pool de sites fabrique les composants génétiques/fonctionnels et les vrais lipides H/T.',
+        question='Voir la concurrence des substrats, les F refaits depuis nourriture, leur activité et les L qui s’associent.',
+        prepared='4 G01 et1 F01 construits,4 F monomères, précurseurs P/R,24 H et24 T.198 billes. Aucun lipide ni contour préparé.',
+        observe='À2400, graines0/1/2 : nouveaux G12/13/14, F14/12/15 et L24/23/23. F entièrement alimentaires11/9/11 ; L fabriqués par ces F1/0/3. Contribution variable conservée, sans choix de la meilleure graine.',
+        conditions='Recette coopérative MX2 exacte ; Langevin masse1/frottement0,1, T0,08, dt0,002 ; boîte12×9 et cycle externe200/15. Sources et états initiaux validés par cohorte12 essais.',
+        limits='Aucune membrane cellulaire dans ce sous-système. Association de L ne signifie pas insertion ni maintien. Stocks presque épuisés à2400, outils initiaux présents, pas de pertes, flux ouvert ou homéostasie. Gène court01, pas génome riche démontré.',
+        look='Jouer en Maximum puis ralentir. Filtrer H/T ou les supports G/F dans Explorer. Les flashes marquent les vraies liaisons et les compteurs distinguent production H/T et activité des F refaits. Départ t0, aucun résultat précalculé.',
+        evidence='research/BATCH_43.md')
+
+
 def build():
     variants=[]
-    for key,demo,title,cfg,origin,task,beads in current_origins()+renewal_origins()+membrane_renewal_origins():
+    for key,demo,title,cfg,origin,task,beads in current_origins()+renewal_origins()+membrane_renewal_origins()+mixed_origins():
         cfg=resolve(cfg);path=f'demonstrators/configs/demo_{key}.json'
         (ROOT/path).write_text(json.dumps(cfg,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
         variants.append(dict(id=key,demo=demo,title=title,seed=cfg['seed'],config=path,beads=beads,
@@ -196,9 +218,9 @@ def build():
     from visualizer.demos import simulator_hashes
     archived=descriptions()
     for info in archived:info['archive']=True
-    catalog=dict(version=1,date='2026-11-04',recommended='current_membrane_renewal_s0',simulator_sha256=simulator_hashes(),
+    catalog=dict(version=1,date='2026-11-05',recommended='current_membrane_renewal_s0',simulator_sha256=simulator_hashes(),
         policy='Live simulations from preserved initial inputs. Selected illustrative seeds, not a robustness claim. No trajectories/checkpoints bundled.',
-        demos=[membrane_renewal_description()]+current_descriptions()+[renewal_description()]+archived,variants=variants)
+        demos=[membrane_renewal_description(),mixed_description()]+current_descriptions()+[renewal_description()]+archived,variants=variants)
     (ROOT/'demonstrators/catalog.json').write_text(json.dumps(catalog,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
 
 
@@ -250,6 +272,14 @@ def verify():
         assert len(sim.chemistry.pos)==beads==2118 and g.n==816
         assert cfg['chemistry']['genetics']['sequence']=='01'
         assert sim.motion is not None and not info['archive']
+        rows.append(dict(id=key,beads=beads,source_dynamics_identical=True,current=True))
+    for key,_,_,original,source,task,beads in mixed_origins():
+        variant,info,cfg=catalog.get(key)
+        assert signature(cfg)==signature(original)
+        assert hashlib.sha256((ROOT/source).read_bytes()).hexdigest()==variant['source_sha256']
+        sim=Simulation(cfg)
+        assert len(sim.chemistry.pos)==beads==198 and sim.motion is not None
+        assert cfg['chemistry']['capture_cooperativity'] and not sim.chemistry.lipids.rungs
         rows.append(dict(id=key,beads=beads,source_dynamics_identical=True,current=True))
     return rows
 
