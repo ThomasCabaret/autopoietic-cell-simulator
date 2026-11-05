@@ -1,5 +1,15 @@
 # Fidélité à l'objectif : localité et risques de pilotage
 
+Lot47 : aucune loi chimique changée. GUI charge exactement les3 EG1,
+les statistiques observées ne pilotent pas les réactions. RX1 encapsule les
+appels existants de turnover, sans tirage supplémentaire, et lit leur journal
+pour reconstruire le stade après rupture de squelette. Origine polymérisée,
+intensités et occupations servent seulement à mesurer. États/RNG/observateurs
+finaux exacts sur2 archives et passivité/reprise sur microcas. EN1 ne change
+que la discrétisation mécanique ; cadences physiques et tous taux/potentiels
+conservés. La piste de protection par appariement cohérent est un draft local,
+pas une loi ajoutée ou un test de bonne séquence/fonction.
+
 Lot46 EG1 : remplacement d'un contact entre trois composites L (six billes),
 occupations de leurs ports et interactions spatiales incidentes à la coupure
 existante1+4*dock_width. Ajouter la différence de barrière des deux segments

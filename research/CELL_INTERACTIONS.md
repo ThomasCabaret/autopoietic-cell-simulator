@@ -1,5 +1,13 @@
 # Interactions souhaitées, parasites et environnements — lot7
 
+Lot47 : EG1 passe3/3 la porte thermique/fermeture, insertion sur2 graines.
+Ce n'est pas une validation de toutes les non-interactions. RX1 explique un
+risque distinct dans l'ancien RV1 : une liaison protégée par toute occupation
+peut bloquer en amont la libération des fragments. Captures isolées de F déjà
+polymérisés : exposition très faible dans les2 cas sélectionnés. Ne pas changer
+les affinités sans rapport avec ce goulot. EN1 conserve les lois et leurs cadences
+physiques ; pas de nouvelle espèce ou fonction.
+
 Lot46 : EG1 ajoute seulement le coût des interactions modifiées à l'acceptation
 d'un échange de contact L : ports des trois L et leur voisinage fini, barrière
 P/R des deux segments. Aucun changement d'affinité/capture G/F/HT, ni de bruit.

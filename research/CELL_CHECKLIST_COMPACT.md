@@ -1,6 +1,6 @@
 # Checklist compacte — cellule construite maintenue
 
-Révision 16 · revue 2026-11-05 · 43 sous-buts · CX1 stable sans insertion, CW1 insertion fragile ; EG1 énergétique en cours, PI1 interdit de capture identifié
+Révision 17 · revue 2026-11-05 · 43 sous-buts · EG1 insertion/tenue limitée confirmées, GUI36 ; RX1 recyclage diagnostiqué ; EN1 dt/2 en cours
 
 **Pourcentages = paliers de preuve**, pas effort accompli ni probabilité de réussite. Les plages indiquent min–max des sous-buts ; aucune moyenne globale.
 0% non observé ·25% sous-cas ·50% séparé ·75% couplage partiel ·100% critère satisfait sur son domaine.
@@ -13,14 +13,14 @@ Concept : « à fermer » signale au moins un maillon essentiel manquant ; un dr
 | Fabrication des lipides | 1 | à fermer | 25% | S-04 | — |
 | Copie et information | 5 | à fermer | 0–75% | R-02, R-04, R-05 | — |
 | Traduction et outils renouvelés | 5 | à fermer | 0–75% | T-02, T-04 | — |
-| Membrane et insertion | 5 | à fermer | 25–75% | M-05 | M-04 : CW1 insère2/3 mais tenue refusée ; gate énergétique EG1 construit et cohorte lancée, preuve reste25. |
+| Membrane et insertion | 5 | à fermer | 25–75% | M-05 | M-04 : 25→75 : L fabriqués insérés2/3 avec tenue tardive/température3/3, domaine EG1 limité. |
 | Apports et transport | 3 | à fermer | 0–75% | E-03 | — |
-| Énergie et retour des cycles | 2 | à fermer | 25% | Q-01, Q-02 | Q-01 : Delta local des ports/barrières contrôlé ; pas de bilan global ni adoption anticipée. |
-| Déchets et recyclage | 4 | à fermer | 0–25% | W-02, W-03, W-04 | — |
+| Énergie et retour des cycles | 2 | à fermer | 25% | Q-01, Q-02 | — |
+| Déchets et recyclage | 4 | à fermer | 0–25% | W-02, W-03, W-04 | W-02 : RX1 exact : F déjà polymérisés liés74%/94% du temps full/protected ; accès aux pertes localisé, preuve reste25. |
 | Homéostasie des petites espèces | 2 | drafts décrits | 0% | — | — |
-| Homéostasie des polymères | 4 | à fermer | 0% | H-03, H-04, H-05, H-06 | H-03 : PI1 exclut le frein direct par produits F01 ; mécanisme inaccessible, gap conservé. |
-| Compatibilité et maintien | 4 | à fermer | 0–25% | C-01, C-03, C-04 | C-01 : CX1 stable3/3 sans insertion isole le défaut ; CW1 ne remplit pas le couplage robuste. |
-| Calcul et observabilité | 2 | drafts décrits | 25–100% | — | O-02 : Précontrôle réel bloque les campagnes inaccessibles ; sources gelées et suivi EG1, GUI CB1 conservée. |
+| Homéostasie des polymères | 4 | à fermer | 0% | H-03, H-04, H-05, H-06 | H-06 : Goulot de protection clarifié ; alternative locale décrite, gap/proof0 conservés. |
+| Compatibilité et maintien | 4 | à fermer | 0–25% | C-01, C-03, C-04 | C-02 : EN1 dt/2 lancé, cadence physique chimie/observation fixe ; pas de résultat anticipé. |
+| Calcul et observabilité | 2 | drafts décrits | 25–100% | — | O-02 : GUI36 choix,3 EG1 exacts, compteurs passifs d’échange, CB1 conservé. |
 
 **Trous conceptuels prioritaires au présent bilan :**
 

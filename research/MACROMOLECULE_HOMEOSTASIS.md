@@ -1,5 +1,26 @@
 # Homéostasie des polymères — pistes locales, fermeture encore ouverte
 
+## Actualisation lot47 — exposition des fragments mesurée, compromis encore ouvert
+
+RX1 rejoue full/protected graine0 RV1 à1200 sous sources historiques, états,
+RNG et observateurs exacts. F déjà polymérisés : temps encore lié73,65%/94,28%,
+temps éligible P–R3741,53/640,81, intensité37,4153/6,4081. Capture directe de
+ces F isolés :2,07/0,16 sites·temps ; mauvais candidat pour expliquer seul le
+goulot. Ce sont deux histoires différentes sélectionnées, pas un effet causal
+apparié. Le refus protected original et sa porte restent inchangés.
+
+Piste qualitative suivante : protéger une liaison lorsque ses deux extrémités
+sont appariées sur les deux extrémités d'une liaison voisine, plutôt que dès
+qu'une extrémité est occupée par n'importe quel ligand. Motif borné de quatre
+composites/huit billes, séquence/longueur/origine/fonction jamais interrogées.
+Protéger ainsi les duplex de copie et laisser un squelette portant seulement
+des substrats se renouveler serait une alternative sans nouvel outil ; elle
+pourrait aussi détruire trop vite les outils ou préserver des fragments
+appariés. Il faut comparer ces deux échecs avant adoption. Aucun nouveau garde,
+taux ou mécanisme de régulation implémenté dans ce lot. H-03/H-04/H-06 restent
+gap : accès au recyclage et protection de chaque espèce ne sont pas le même but.
+Voir BATCH_47 et sa trace RX1, sans transférer la variante refusée vers EG1.
+
 ## Actualisation lot46 — rétroaction directe inaccessible dans le candidat
 
 PI1 est terminé15/15 : aucun site G occupé par les F01 produits préparés,

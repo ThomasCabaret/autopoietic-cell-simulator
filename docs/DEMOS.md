@@ -1,5 +1,23 @@
 # Démos représentatives accessibles dans la GUI
 
+## Lot47 —36 choix, insertion stabilisée EG1
+
+**Démos → État actuel · bain intégré** ouvre EG1 graine0, également disponible
+sous **Intégration compacte · échanges stabilisés** avec les graines1/2.
+302 billes, recettes exactes sous Langevin, sans film ni adaptation de lois.
+À2400 : G9/2/8,F7/9/9,L23/23/24, L nés dedans insérés1/0/2 ; fermeture tardive
+94–95% et température proche de.08. Première insertion graine0 vers1108.
+Les compteurs montrent échanges proposés, acceptés et refusés par coût local.
+
+36 choix natifs vérifiés, démarrage en pause, lecture/recommencement et clone
+sans interface exacts. La graine1 sans insertion reste proposée. Outils initiaux
+présents, stocks finis, pas de réparation sous pertes, flux ou homéostasie ;
+aucune insertion issue de F entièrement alimentaire dans cette cohorte. CB1
+et ses échecs restent dans « défauts connus ». EN1 affine le pas mécanique
+hors démos et n'est pas promu avant analyse. [Bilan](../research/BATCH_47.md).
+
+## Historique
+
 ## Lot46 —33 choix, référence compacte et défauts visibles
 
 Le raccourci **Démos → État actuel · bain intégré** ouvre désormais

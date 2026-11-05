@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "revision": 16,
+  "revision": 17,
   "reviewed": "2026-11-05",
-  "candidate": "CX1 stable sans insertion, CW1 insertion fragile ; EG1 énergétique en cours, PI1 interdit de capture identifié",
+  "candidate": "EG1 insertion/tenue limitée confirmées, GUI36 ; RX1 recyclage diagnostiqué ; EN1 dt/2 en cours",
   "purpose": "Registre évolutif des capacités nécessaires à une cellule construite maintenue ; les pourcentages sont des paliers de preuve, pas un taux global de réussite.",
   "out_of_scope": [
     "origine spontanée de la cellule",
@@ -592,18 +592,19 @@
       ],
       "renewal_needs": [],
       "concept": "draft",
-      "mechanism": "Échange local puis rencontre des faces libérées ; CW1 insère2/3 mais chauffe/ouvre1/3. EG1 filtre le coût de potentiel local sans outil ajouté.",
-      "concept_gap": "Étapes locales observées ; tenue robuste et énergie des transitions non établies.",
-      "proof": "subcase",
-      "scope": "Une insertion réelle depuis F alimentaire en CB1 graine1, mais deux frontières durablement ouvertes. Preuve sous-cas25, ancien prototype MD2 à L préparés conservé.",
+      "mechanism": "Échange de contact filtré par différence de potentiel locale puis recapture des faces ; aucun contour dans les lois.",
+      "concept_gap": "Couplage limité confirmé ; robustesse sous perturbations et renouvellement complet restent ouverts.",
+      "proof": "coupled",
+      "scope": "EG1 porte passée : L réellement fabriqués nés dedans insérés1/0/2, fermeture tardive94–95% et T proche consigne3/3. Outils initiaux présents ; aucune insertion issue de F entièrement alimentaire dans cette cohorte. Pas étanchéité continue ou maintien.",
       "references": [
         "research/BATCH_25_RESULTS.md",
         "research/BATCH_43.md",
         "research/BATCH_44.md",
         "research/BATCH_45.md",
-        "research/BATCH_46.md"
+        "research/BATCH_46.md",
+        "research/BATCH_47.md"
       ],
-      "next_test": "Cohorte EG1 : fermeture, température, insertion et débit simultanés ; sinon interpréter les propositions avant une autre constante.",
+      "next_test": "EN1 raffinement mécanique à cadence chimique fixe, puis perturbation bornée de frontière avec mesure de récupération.",
       "essential": true
     },
     {
@@ -627,9 +628,10 @@
       "references": [
         "research/BATCH_25_RESULTS.md",
         "research/HOMEOSTASIS.md",
-        "research/BATCH_45.md"
+        "research/BATCH_45.md",
+        "research/BATCH_47.md"
       ],
-      "next_test": "Stabiliser insertion/refermeture dans EG1 avant une lésion imposée ; CW1 échoue déjà sans perturbation.",
+      "next_test": "Après EN1, définir une perturbation matérielle bornée sans réparation externe ; mesurer retour de frontière et confinement, pas simple score de fermeture.",
       "essential": true
     },
     {
@@ -725,9 +727,10 @@
         "research/BATCH_41.md",
         "research/BATCH_42.md",
         "research/BATCH_45.md",
-        "research/BATCH_46.md"
+        "research/BATCH_46.md",
+        "research/BATCH_47.md"
       ],
-      "next_test": "Lire EG1 sans confondre coût local et bilan global ; étendre ensuite aux ruptures, synthèses et forçage sous flux.",
+      "next_test": "EG1 contrôle le coût des échanges et la température dans3 bains finis ; étendre le bilan aux ruptures, synthèses et forçage sous flux.",
       "essential": true
     },
     {
@@ -795,9 +798,10 @@
       "scope": "Ruptures locales sous quatre variantes x3 graines ; full réincorpore des composites recyclés2/3, protected0/3. Pas de dégradation sélective ni de validation intégrée.",
       "references": [
         "research/MACROMOLECULE_HOMEOSTASIS.md",
-        "research/BATCH_31.md"
+        "research/BATCH_31.md",
+        "research/BATCH_47.md"
       ],
-      "next_test": "Mesurer exposition locale des fragments et flux utile, pas cycles de formation ; aucune grille ni transfert automatique après refus.",
+      "next_test": "RX1 montre surtout maintien lié. Comparer qualitativement garde par appariement cohérent et risque de perte des outils avant une variante dynamique.",
       "essential": true
     },
     {
@@ -819,9 +823,10 @@
       "references": [
         "research/MACROMOLECULE_HOMEOSTASIS.md",
         "simulator/assembly.py",
-        "research/BATCH_31.md"
+        "research/BATCH_31.md",
+        "research/BATCH_47.md"
       ],
-      "next_test": "Distinguer cycle futile, piégeage de fragments et réemploi productif ; transférer seulement un candidat justifié sans assouplir la porte RV1.",
+      "next_test": "Relier pertes de squelette, dissociation et réemploi utile ; exposition RX1 n’établit pas encore le débouché/export en chimie commune.",
       "essential": true
     },
     {
@@ -986,9 +991,10 @@
       "references": [
         "research/HOMEOSTASIS.md",
         "research/MACROMOLECULE_HOMEOSTASIS.md",
-        "research/BATCH_31.md"
+        "research/BATCH_31.md",
+        "research/BATCH_47.md"
       ],
-      "next_test": "Diagnostiquer le compromis local et mesurer les faibles effectifs seulement après un réemploi utile sous protection.",
+      "next_test": "Comparer protection par appariement cohérent et protection par occupation ; tester perte d’outils et surprotection des fragments, sans identité globale.",
       "essential": true
     },
     {
@@ -1019,9 +1025,10 @@
         "research/BATCH_43.md",
         "research/BATCH_44.md",
         "research/BATCH_45.md",
-        "research/BATCH_46.md"
+        "research/BATCH_46.md",
+        "research/BATCH_47.md"
       ],
-      "next_test": "Attendre EG1 complet : stabilité/insertion/débit avant montage alimenté avec pertes et protection.",
+      "next_test": "EG1 réduit un défaut ; contrôler EN1 avant tests de pertes/flux communs. Diversité et interactions parasites restent ouvertes.",
       "essential": true
     },
     {
@@ -1048,9 +1055,10 @@
         "research/BATCH_42.md",
         "research/BATCH_43.md",
         "research/BATCH_44.md",
-        "research/BATCH_45.md"
+        "research/BATCH_45.md",
+        "research/BATCH_47.md"
       ],
-      "next_test": "Lire références MX2 prolongées et vérifier tout leur historique0–1200 égal à MX1 ; comparer la coopération à même horizon2400. Étudier ensuite dt/cadence sans modifier les lois physiques.",
+      "next_test": "Lire EN1 dt/2 avec mêmes cadences physiques ; distinguer variation stochastique, défaut de temps de contact et instabilité numérique.",
       "essential": true
     },
     {
@@ -1162,9 +1170,10 @@
         "research/BATCH_43.md",
         "research/BATCH_44.md",
         "research/BATCH_45.md",
-        "research/BATCH_46.md"
+        "research/BATCH_46.md",
+        "research/BATCH_47.md"
       ],
-      "next_test": "Précontrôler les motifs via le vrai prédicat ; exploiter EG1 gelé et vérifier le prochain transfert sans promotion automatique.",
+      "next_test": "Exploiter EN1 et conserver les traces passives RX1 ; GUI36 propose les3 EG1 avec mêmes lois, pas vidéo sélectionnée.",
       "essential": true
     }
   ],
@@ -1269,13 +1278,18 @@
       "revision": 16,
       "date": "2026-11-05",
       "reason": "CX1 complet passe, CW1 insertion2/3 mais refus thermique/fermeture ; EG1 gate local construit, microchecks et pilote puis3 essais. PI1 complet interdit structurel de capture, précontrôle désormais exigé. Aucun palier biologique augmenté."
+    },
+    {
+      "revision": 17,
+      "date": "2026-11-05",
+      "reason": "EG1 complet3/3 porte passée et insertion2/3, M-04 subcase→coupled sur domaine limité ; GUI36 exacte. RX1 deux rejeux historiques exacts localisent le maintien lié, sans loi adoptée. EN1 trois raffinements dt/2 lancés, maintien et régulation non anticipés."
     }
   ],
   "last_batch_progress": {
-    "M-04": "CW1 insère2/3 mais tenue refusée ; gate énergétique EG1 construit et cohorte lancée, preuve reste25.",
-    "Q-01": "Delta local des ports/barrières contrôlé ; pas de bilan global ni adoption anticipée.",
-    "H-03": "PI1 exclut le frein direct par produits F01 ; mécanisme inaccessible, gap conservé.",
-    "C-01": "CX1 stable3/3 sans insertion isole le défaut ; CW1 ne remplit pas le couplage robuste.",
-    "O-02": "Précontrôle réel bloque les campagnes inaccessibles ; sources gelées et suivi EG1, GUI CB1 conservée."
+    "M-04": "25→75 : L fabriqués insérés2/3 avec tenue tardive/température3/3, domaine EG1 limité.",
+    "W-02": "RX1 exact : F déjà polymérisés liés74%/94% du temps full/protected ; accès aux pertes localisé, preuve reste25.",
+    "H-06": "Goulot de protection clarifié ; alternative locale décrite, gap/proof0 conservés.",
+    "C-02": "EN1 dt/2 lancé, cadence physique chimie/observation fixe ; pas de résultat anticipé.",
+    "O-02": "GUI36 choix,3 EG1 exacts, compteurs passifs d’échange, CB1 conservé."
   }
 }

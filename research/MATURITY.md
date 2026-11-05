@@ -1,5 +1,15 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot47 : EG1 réussit la porte limitée3/3, insertion2/3 et tenue thermique3/3.
+M-04 passe25→75 pour ce couplage de L réellement fabriqués avec frontière
+construite ; pas réparation, renouvellement ou étanchéité continue. Aucune insertion
+issue de F entièrement alimentaire dans cette cohorte. GUI36 choix présente les
+recettes exactes, anciens échecs conservés. RX1 rejoue exactement2 cas historiques
+et localise surtout le maintien lié avant dissociation, pas une capture isolée.
+W-02/W-03 restent25 et H-03/H-04/H-06 restent0 ; pas de transfert RV1 adopté.
+EN1 vérifie dt/2 à cadences physiques fixes ; aucun résultat anticipé. Maintien
+intégré0, inconnues majeures de protection/régulation et information. Voir BATCH_47.
+
 Lot46 : CX1 stable3/3 sans insertion ; CW1 insère2/3 mais échoue en tenue
 thermique/fermeture dans la troisième. EG1 implémenté et contrôlé localement,
 pilote stable ; cohorte encore en cours, aucune promotion. PI1 réfute la fixation

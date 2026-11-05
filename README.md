@@ -16,7 +16,7 @@ de génération dans [docs/metabolism](docs/metabolism/README.md).
 puis `visualizer.bat`. Fenêtre Qt, rendu OpenGL par lots, navigation, filtres,
 sélection/suivi, transformations et export PNG. Elle démarre en pause après
 ouverture d'un scénario. Aller dans **Démos → État actuel · bain intégré**
-pour le prototype compact sous Langevin, dont les défauts restent visibles, ou choisir
+pour le prototype compact EG1 sous Langevin, ou choisir
 **Membranes · molécules libres** pour un essai plus rapide. Les références
 anciennes restent rangées séparément. [Catalogue et limites](docs/DEMOS.md).
 Le bain MIN1M construit produit des catalyseurs entièrement refaits et actifs
@@ -27,20 +27,20 @@ seront spécifiés plus tard. [Guide de la GUI](docs/VISUALIZER.md).
 Les lanceurs Pygame historiques ci-dessous sont conservés.
 
 **Prototype le plus intégré visible** : **Démos → Intégration compacte ·
-défauts connus** montre les trois CB1,302 billes, avec vraie synthèse H/T.
-« État actuel · bain intégré » ouvre la graine0 par convention : sa membrane
-s'ouvre durablement. La graine1 montre une insertion de L alimentaire et une
-bonne tenue tardive ; la graine2 échoue aussi. Porte de cohorte refusée,
-aucun maintien cellulaire revendiqué. MIN1M et MX2 restent au menu séparément.
+échanges stabilisés** montre les trois EG1,302 billes, avec vraie synthèse H/T.
+« État actuel · bain intégré » ouvre la graine0 par convention. Insertion de L
+fabriqués dans deux graines sur trois, tenue tardive94–95% et température
+proche de la consigne dans les trois ; aucun maintien sous pertes ou flux ouvert.
+CB1 et ses ouvertures restent au menu « défauts connus ». MIN1M et MX2 restent
+accessibles séparément,36 démos au total.
 
-Recherche : **insérer sans perdre la fermeture ni échauffer le bain**. CX1
-termine stable3/3 sans insertion ; CW1 insère2/3 mais échoue en tenue thermique
-et fermeture dans la troisième graine. EG1 teste un filtre du coût énergétique
-local des échanges, mêmes taux/bruit/largeur, aucun nouvel outil. Trois essais
-à2400 en cours, sources figées, rapport puis arrêt. Statut par
-`energy_exchange_status.bat`, arrêt/reprise par les lanceurs associés.
-PI1 identifie aussi un interdit local de fixation des produits F01 sur G ;
-la régulation/protection des polymères reste ouverte. [Lot46](research/BATCH_46.md) ·
+Recherche : EG1 passe sa porte limitée3/3, sans nouvel outil. **EN1 vérifie
+le pas mécanique divisé par deux**, mêmes cadences physiques chimiques et
+d'observation ; trois essais à2400, sources figées, rapport puis arrêt.
+Statut par `exchange_refinement_status.bat`. Le diagnostic RX1 du recyclage
+est terminé : maintien lié des fragments dominant dans deux trajectoires
+historiques exactes. La protection/régulation et l'information restent ouvertes.
+[Lot47](research/BATCH_47.md) ·
 [Calibration](research/CAMPAIGN_CALIBRATION.md).
 
 Un moteur CPU commun pour les campagnes sans fenêtre et les démonstrateurs

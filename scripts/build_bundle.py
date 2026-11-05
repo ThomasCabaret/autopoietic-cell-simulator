@@ -136,6 +136,12 @@ def main():
         'campaigns/energy_exchange_pilot.json','campaigns/energy_mechanism.json','campaigns/inhibition_mechanism.json',
         'energy_exchange_status.bat','stop_energy_exchange.bat','resume_energy_exchange.bat',
         'inhibition_status.bat','stop_inhibition.bat','resume_inhibition.bat'))
+    files.update(ROOT/p for p in ('research/BATCH_47_PLAN.md','research/BATCH_47.md','research/BATCH_47_RESULTS.json',
+        'research/BATCH_47_RX1.json','research/BATCH_47_EN1_RECIPES.json',
+        'experiments/inspect_turnover_exposure.py','experiments/prepare_exchange_refinement.py','experiments/review_exchange_refinement.py',
+        'scripts/turnover_probe.ps1','campaigns/timestep_mechanism.json',
+        'turnover_probe_status.bat','stop_turnover_probe.bat','resume_turnover_probe.bat',
+        'exchange_refinement_status.bat','stop_exchange_refinement.bat','resume_exchange_refinement.bat'))
     files.update(p for p in (ROOT/'research/diagnostic_recipes').rglob('*') if p.suffix=='.py' or p.name=='recipe.json')
     files.update(ROOT/p for p in ('research/BATCH_44_PLAN.md','research/BATCH_44.md','research/BATCH_44_RECIPES.json',
         'research/BATCH_44_PILOT.json','experiments/audit_boundary_access.py','experiments/prepare_compact_transfer.py',

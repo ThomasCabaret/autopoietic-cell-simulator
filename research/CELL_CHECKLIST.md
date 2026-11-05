@@ -1,6 +1,6 @@
 # Checklist détaillée — critères et dépendances
 
-Revue 2026-11-05 · révision16. Source : [cell_checklist.json](cell_checklist.json).
+Revue 2026-11-05 · révision17. Source : [cell_checklist.json](cell_checklist.json).
 [Tableau compact](CELL_CHECKLIST_COMPACT.md) · [Échelle et méthode](CONCEPT_FIRST.md).
 
 Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre acyclique de codage. Les cycles de renouvellement sont intentionnels. Une condition initiale construite peut amorcer un sous-cas sans fermer ces cycles.
@@ -400,23 +400,23 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 <a id="M-04"></a>
 ### M-04 — Insertion depuis dedans et refermeture
 
-**Concept : draft décrit · Preuve : 25% (sous-cas étayé).**
+**Concept : draft décrit · Preuve : 75% (couplage partiel).**
 
 **Aboutissement :** Des L nouvellement fabriqués à l’intérieur intègrent la frontière avec insertion et confinement conjoints.
 
-**Draft local :** Échange local puis rencontre des faces libérées ; CW1 insère2/3 mais chauffe/ouvre1/3. EG1 filtre le coût de potentiel local sans outil ajouté.
+**Draft local :** Échange de contact filtré par différence de potentiel locale puis recapture des faces ; aucun contour dans les lois.
 
-**Manque / limite :** Étapes locales observées ; tenue robuste et énergie des transitions non établies.
+**Manque / limite :** Couplage limité confirmé ; robustesse sous perturbations et renouvellement complet restent ouverts.
 
 **Dépend de :** [S-04](#S-04), [M-02](#M-02), [M-03](#M-03) · **Pour renouveler :** —
 
-**Portée des preuves :** Une insertion réelle depuis F alimentaire en CB1 graine1, mais deux frontières durablement ouvertes. Preuve sous-cas25, ancien prototype MD2 à L préparés conservé.
+**Portée des preuves :** EG1 porte passée : L réellement fabriqués nés dedans insérés1/0/2, fermeture tardive94–95% et T proche consigne3/3. Outils initiaux présents ; aucune insertion issue de F entièrement alimentaire dans cette cohorte. Pas étanchéité continue ou maintien.
 
-**Références :** [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/BATCH_43.md](../research/BATCH_43.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_45.md](../research/BATCH_45.md), [research/BATCH_46.md](../research/BATCH_46.md)
+**Références :** [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/BATCH_43.md](../research/BATCH_43.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_45.md](../research/BATCH_45.md), [research/BATCH_46.md](../research/BATCH_46.md), [research/BATCH_47.md](../research/BATCH_47.md)
 
-**Prochain test / décision :** Cohorte EG1 : fermeture, température, insertion et débit simultanés ; sinon interpréter les propositions avant une autre constante.
+**Prochain test / décision :** EN1 raffinement mécanique à cadence chimique fixe, puis perturbation bornée de frontière avec mesure de récupération.
 
-**Progrès du dernier lot :** CW1 insère2/3 mais tenue refusée ; gate énergétique EG1 construit et cohorte lancée, preuve reste25.
+**Progrès du dernier lot :** 25→75 : L fabriqués insérés2/3 avec tenue tardive/température3/3, domaine EG1 limité.
 
 <a id="M-05"></a>
 ### M-05 — Réparation et remplacement de frontière
@@ -433,9 +433,9 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** Contacts cohérents et recaptures locales, pas maintien de frontière renouvelée.
 
-**Références :** [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/HOMEOSTASIS.md](../research/HOMEOSTASIS.md), [research/BATCH_45.md](../research/BATCH_45.md)
+**Références :** [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/HOMEOSTASIS.md](../research/HOMEOSTASIS.md), [research/BATCH_45.md](../research/BATCH_45.md), [research/BATCH_47.md](../research/BATCH_47.md)
 
-**Prochain test / décision :** Stabiliser insertion/refermeture dans EG1 avant une lésion imposée ; CW1 échoue déjà sans perturbation.
+**Prochain test / décision :** Après EN1, définir une perturbation matérielle bornée sans réparation externe ; mesurer retour de frontière et confinement, pas simple score de fermeture.
 
 ## Apports et transport
 
@@ -513,11 +513,9 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** Thermostat, activation et cycle externes déclarés ; bilan énergétique complet absent.
 
-**Références :** [research/CELL_ARCHITECTURE.md](../research/CELL_ARCHITECTURE.md), [research/LOCALITY_AUDIT.md](../research/LOCALITY_AUDIT.md), [research/BATCH_36.md](../research/BATCH_36.md), [research/BATCH_37.md](../research/BATCH_37.md), [research/BATCH_38.md](../research/BATCH_38.md), [research/BATCH_39.md](../research/BATCH_39.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md), [research/BATCH_45.md](../research/BATCH_45.md), [research/BATCH_46.md](../research/BATCH_46.md)
+**Références :** [research/CELL_ARCHITECTURE.md](../research/CELL_ARCHITECTURE.md), [research/LOCALITY_AUDIT.md](../research/LOCALITY_AUDIT.md), [research/BATCH_36.md](../research/BATCH_36.md), [research/BATCH_37.md](../research/BATCH_37.md), [research/BATCH_38.md](../research/BATCH_38.md), [research/BATCH_39.md](../research/BATCH_39.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md), [research/BATCH_45.md](../research/BATCH_45.md), [research/BATCH_46.md](../research/BATCH_46.md), [research/BATCH_47.md](../research/BATCH_47.md)
 
-**Prochain test / décision :** Lire EG1 sans confondre coût local et bilan global ; étendre ensuite aux ruptures, synthèses et forçage sous flux.
-
-**Progrès du dernier lot :** Delta local des ports/barrières contrôlé ; pas de bilan global ni adoption anticipée.
+**Prochain test / décision :** EG1 contrôle le coût des échanges et la température dans3 bains finis ; étendre le bilan aux ruptures, synthèses et forçage sous flux.
 
 <a id="Q-02"></a>
 ### Q-02 — Retour local et disponibilité après cycle
@@ -574,9 +572,11 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** Ruptures locales sous quatre variantes x3 graines ; full réincorpore des composites recyclés2/3, protected0/3. Pas de dégradation sélective ni de validation intégrée.
 
-**Références :** [research/MACROMOLECULE_HOMEOSTASIS.md](../research/MACROMOLECULE_HOMEOSTASIS.md), [research/BATCH_31.md](../research/BATCH_31.md)
+**Références :** [research/MACROMOLECULE_HOMEOSTASIS.md](../research/MACROMOLECULE_HOMEOSTASIS.md), [research/BATCH_31.md](../research/BATCH_31.md), [research/BATCH_47.md](../research/BATCH_47.md)
 
-**Prochain test / décision :** Mesurer exposition locale des fragments et flux utile, pas cycles de formation ; aucune grille ni transfert automatique après refus.
+**Prochain test / décision :** RX1 montre surtout maintien lié. Comparer qualitativement garde par appariement cohérent et risque de perte des outils avant une variante dynamique.
+
+**Progrès du dernier lot :** RX1 exact : F déjà polymérisés liés74%/94% du temps full/protected ; accès aux pertes localisé, preuve reste25.
 
 <a id="W-03"></a>
 ### W-03 — Débouché de la matière composite excédentaire
@@ -593,9 +593,9 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** Vrais atomes conservés ; full réincorpore des composites à deux atomes issus de polymères2/3 graines, protected0/3 ; recyclage partiel d’un R observé. Pas de sortie ouverte ou de robustesse intégrée.
 
-**Références :** [research/MACROMOLECULE_HOMEOSTASIS.md](../research/MACROMOLECULE_HOMEOSTASIS.md), [simulator/assembly.py](../simulator/assembly.py), [research/BATCH_31.md](../research/BATCH_31.md)
+**Références :** [research/MACROMOLECULE_HOMEOSTASIS.md](../research/MACROMOLECULE_HOMEOSTASIS.md), [simulator/assembly.py](../simulator/assembly.py), [research/BATCH_31.md](../research/BATCH_31.md), [research/BATCH_47.md](../research/BATCH_47.md)
 
-**Prochain test / décision :** Distinguer cycle futile, piégeage de fragments et réemploi productif ; transférer seulement un candidat justifié sans assouplir la porte RV1.
+**Prochain test / décision :** Relier pertes de squelette, dissociation et réemploi utile ; exposition RX1 n’établit pas encore le débouché/export en chimie commune.
 
 <a id="W-04"></a>
 ### W-04 — Pièges, agrégats et parasites
@@ -677,8 +677,6 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Prochain test / décision :** Décrire protection et débit/pertes/export avec les vrais états avant campagne ; ne pas refaire PI1 interdit par construction.
 
-**Progrès du dernier lot :** PI1 exclut le frein direct par produits F01 ; mécanisme inaccessible, gap conservé.
-
 <a id="H-04"></a>
 ### H-04 — Chaque gène : copies bornées et exploitables
 
@@ -732,9 +730,11 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** Protected conserve4/6/4 G001 à1200, mais réincorporation stricte0/0/0 ; quatre copies initiales, pas test de dernier gène ni de récupération sous perturbation.
 
-**Références :** [research/HOMEOSTASIS.md](../research/HOMEOSTASIS.md), [research/MACROMOLECULE_HOMEOSTASIS.md](../research/MACROMOLECULE_HOMEOSTASIS.md), [research/BATCH_31.md](../research/BATCH_31.md)
+**Références :** [research/HOMEOSTASIS.md](../research/HOMEOSTASIS.md), [research/MACROMOLECULE_HOMEOSTASIS.md](../research/MACROMOLECULE_HOMEOSTASIS.md), [research/BATCH_31.md](../research/BATCH_31.md), [research/BATCH_47.md](../research/BATCH_47.md)
 
-**Prochain test / décision :** Diagnostiquer le compromis local et mesurer les faibles effectifs seulement après un réemploi utile sous protection.
+**Prochain test / décision :** Comparer protection par appariement cohérent et protection par occupation ; tester perte d’outils et surprotection des fragments, sans identité globale.
+
+**Progrès du dernier lot :** Goulot de protection clarifié ; alternative locale décrite, gap/proof0 conservés.
 
 ## Compatibilité et maintien
 
@@ -753,11 +753,9 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** CB1 libère G/F3/3 et transfère nourriture→F→L→frontière1/3 ; fermeture tardive0/.9417/0. Production compatible, maintien non établi.
 
-**Références :** [research/CELL_INTERACTIONS.md](../research/CELL_INTERACTIONS.md), [research/INTEGRATION_TESTS.json](../research/INTEGRATION_TESTS.json), [research/BATCH_35.md](../research/BATCH_35.md), [research/BATCH_40.md](../research/BATCH_40.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md), [research/BATCH_43.md](../research/BATCH_43.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_45.md](../research/BATCH_45.md), [research/BATCH_46.md](../research/BATCH_46.md)
+**Références :** [research/CELL_INTERACTIONS.md](../research/CELL_INTERACTIONS.md), [research/INTEGRATION_TESTS.json](../research/INTEGRATION_TESTS.json), [research/BATCH_35.md](../research/BATCH_35.md), [research/BATCH_40.md](../research/BATCH_40.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md), [research/BATCH_43.md](../research/BATCH_43.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_45.md](../research/BATCH_45.md), [research/BATCH_46.md](../research/BATCH_46.md), [research/BATCH_47.md](../research/BATCH_47.md)
 
-**Prochain test / décision :** Attendre EG1 complet : stabilité/insertion/débit avant montage alimenté avec pertes et protection.
-
-**Progrès du dernier lot :** CX1 stable3/3 sans insertion isole le défaut ; CW1 ne remplit pas le couplage robuste.
+**Prochain test / décision :** EG1 réduit un défaut ; contrôler EN1 avant tests de pertes/flux communs. Diversité et interactions parasites restent ouvertes.
 
 <a id="C-02"></a>
 ### C-02 — Régime physique commun et robustesse numérique
@@ -774,9 +772,11 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** CT1 conserve la boucle courte ; MX1 fournit seulement un crible1200 avec production tardive. Audit stocks/fenêtres/cycles et cinq préfixes physiques exacts ; aucune asymptote ou convergence numérique complète acquise.
 
-**Références :** [research/KINETICS_AND_PERFORMANCE.md](../research/KINETICS_AND_PERFORMANCE.md), [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/BATCH_40.md](../research/BATCH_40.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md), [research/BATCH_43.md](../research/BATCH_43.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_45.md](../research/BATCH_45.md)
+**Références :** [research/KINETICS_AND_PERFORMANCE.md](../research/KINETICS_AND_PERFORMANCE.md), [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/BATCH_40.md](../research/BATCH_40.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md), [research/BATCH_43.md](../research/BATCH_43.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_45.md](../research/BATCH_45.md), [research/BATCH_47.md](../research/BATCH_47.md)
 
-**Prochain test / décision :** Lire références MX2 prolongées et vérifier tout leur historique0–1200 égal à MX1 ; comparer la coopération à même horizon2400. Étudier ensuite dt/cadence sans modifier les lois physiques.
+**Prochain test / décision :** Lire EN1 dt/2 avec mêmes cadences physiques ; distinguer variation stochastique, défaut de temps de contact et instabilité numérique.
+
+**Progrès du dernier lot :** EN1 dt/2 lancé, cadence physique chimie/observation fixe ; pas de résultat anticipé.
 
 <a id="C-03"></a>
 ### C-03 — Fermeture fonctionnelle et matérielle complète
@@ -852,11 +852,11 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** Fonction logicielle validée pour les références présentes, pas pour toutes les futures chimies.
 
-**Références :** [research/BATCH_26.md](../research/BATCH_26.md), [research/BATCH_27.md](../research/BATCH_27.md), [research/BATCH_31.md](../research/BATCH_31.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_33.md](../research/BATCH_33.md), [research/BATCH_35.md](../research/BATCH_35.md), [research/BATCH_36.md](../research/BATCH_36.md), [research/BATCH_38.md](../research/BATCH_38.md), [research/BATCH_39.md](../research/BATCH_39.md), [research/BATCH_40.md](../research/BATCH_40.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md), [research/BATCH_43.md](../research/BATCH_43.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_45.md](../research/BATCH_45.md), [research/BATCH_46.md](../research/BATCH_46.md)
+**Références :** [research/BATCH_26.md](../research/BATCH_26.md), [research/BATCH_27.md](../research/BATCH_27.md), [research/BATCH_31.md](../research/BATCH_31.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_33.md](../research/BATCH_33.md), [research/BATCH_35.md](../research/BATCH_35.md), [research/BATCH_36.md](../research/BATCH_36.md), [research/BATCH_38.md](../research/BATCH_38.md), [research/BATCH_39.md](../research/BATCH_39.md), [research/BATCH_40.md](../research/BATCH_40.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md), [research/BATCH_43.md](../research/BATCH_43.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_45.md](../research/BATCH_45.md), [research/BATCH_46.md](../research/BATCH_46.md), [research/BATCH_47.md](../research/BATCH_47.md)
 
-**Prochain test / décision :** Précontrôler les motifs via le vrai prédicat ; exploiter EG1 gelé et vérifier le prochain transfert sans promotion automatique.
+**Prochain test / décision :** Exploiter EN1 et conserver les traces passives RX1 ; GUI36 propose les3 EG1 avec mêmes lois, pas vidéo sélectionnée.
 
-**Progrès du dernier lot :** Précontrôle réel bloque les campagnes inaccessibles ; sources gelées et suivi EG1, GUI CB1 conservée.
+**Progrès du dernier lot :** GUI36 choix,3 EG1 exacts, compteurs passifs d’échange, CB1 conservé.
 
 ## Évolution conservée
 
@@ -876,3 +876,4 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 - Révision14 (2026-11-05) : BI1 terminé9/9 insertion refusée et absence G/F, calibration d’exposition/dilution. CB1 compact construit/pilote stable temporel et9 essais lancés. M-04 ancien75 concernait L préparés malgré critère de L fabriqués : recalibré25, preuve historique conservée. MX2 validé rendu visible, aucun maintien anticipé.
 - Révision15 (2026-11-05) : CB1 terminé, analyse figée récupérée sans recalcul ; un transfert alimentaire jusqu’à la frontière mais fermeture fragile. CL1 passif exact clarifie saut de potentiel et extrémités. M-04 concept draft, preuve25 inchangée. CX1/CW1 prospectifs et CB1 rendu visible avec ses défauts.
 - Révision16 (2026-11-05) : CX1 complet passe, CW1 insertion2/3 mais refus thermique/fermeture ; EG1 gate local construit, microchecks et pilote puis3 essais. PI1 complet interdit structurel de capture, précontrôle désormais exigé. Aucun palier biologique augmenté.
+- Révision17 (2026-11-05) : EG1 complet3/3 porte passée et insertion2/3, M-04 subcase→coupled sur domaine limité ; GUI36 exacte. RX1 deux rejeux historiques exacts localisent le maintien lié, sans loi adoptée. EN1 trois raffinements dt/2 lancés, maintien et régulation non anticipés.

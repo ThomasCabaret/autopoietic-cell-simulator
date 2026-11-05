@@ -1496,7 +1496,7 @@
         "CL1",
         "CX1"
       ],
-      "status": "three_energy_gated_followups_running",
+      "status": "three_complete_limited_insertion_thermal_closure_gate_passed",
       "hypothesis": "Finite-neighborhood potential gate reduces harmful energy injection without eliminating productive membrane insertion.",
       "test": "Three2400 cases, only contact_exchange_gate=metropolis vs CW1; freeze rates/noise/width. Compare reused CW1.",
       "cost": "One transition gate, no numerical constant/type/port/state/gene/tool. Existing temperature and potentials; three L plus finite neighbors and local P/R segment barrier.",
@@ -1504,9 +1504,36 @@
       "missing_proof": "Robust insertion/repair, global energy accounting, feed/loss maintenance and regulation/protection.",
       "recipe": "research/BATCH_46_EG1_RECIPES.json",
       "evidence": "research/BATCH_46_PLAN.md",
-      "results": "research/BATCH_46.md",
+      "results": "research/BATCH_47.md",
       "health_gate": "3 cases,2 workers,3h checkpoint pause, report then stop; no retry, tuning or adoption.",
-      "partial_result": "Pilot100: valid.945 lateT.08592,3 L,0 invariants,0 exchange proposals. Technical pass only; microchecks exercise the gate."
+      "conclusion": "3/3 pass all gates; G9/2/8 F7/9/9 L23/23/24, insertion1/0/2, late closure.94477/.94667/.945 and T.08492/.08255/.08893. No food-F-derived insertion or fed/loss maintenance."
+    },
+    {
+      "id": "RX1",
+      "parent": "RV1",
+      "status": "two_selected_historical_replays_exact",
+      "hypothesis": "Protection prevents prior polymer material reaching a degradable state; discriminate linked, paired and captured gates.",
+      "test": "Historical full/protected seed0,1200, same frozen sources; passive per-call exposure and journal, no coordinates recorded.",
+      "cost": "No chemical primitive; passive diagnostic and bounded local checkpoints only.",
+      "counterexample": "Adequate exposure but no event, or cleavage occurs while reuse fails downstream.",
+      "conclusion": "Exact states/RNG/observers. Prior-polymer F linked73.65/94.28%; eligible site-time3741.53/640.81; captured2.07/.16. Supports upstream linked bottleneck, not causal isolation or homeostasis.",
+      "recipe": "research/BATCH_47_RX1.json",
+      "evidence": "research/BATCH_47_RESULTS.json",
+      "results": "research/BATCH_47.md"
+    },
+    {
+      "id": "EN1",
+      "parent": "EG1",
+      "status": "three_fixed_cadence_half_step_trials_running",
+      "hypothesis": "Useful insertion/closure/temperature survive half mechanical dt at fixed chemistry and sampling cadence.",
+      "test": "3 seeds2400,dt.001,reaction_every10,sample_every500; compare reused EG1.",
+      "cost": "No new chemical law/type/rate/tool; approximately doubled mechanical work per simulated time.",
+      "counterexample": "Instability, missed insertion, loss of throughput; interpret opportunities and stochastic variation before blaming discretization.",
+      "missing_proof": "General convergence, fed/loss maintenance, protection/regulation and complex information.",
+      "recipe": "research/BATCH_47_EN1_RECIPES.json",
+      "evidence": "research/BATCH_47_PLAN.md",
+      "results": "research/BATCH_47.md",
+      "health_gate": "3 cases,2 workers,3h checkpoint pause, report then stop; no tuning/retry/automatic adoption."
     }
   ]
 }

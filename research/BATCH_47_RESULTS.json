@@ -1,0 +1,321 @@
+{
+  "EG1": {
+    "report": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\energy_mechanism_followups\\followup_20261105T131525540618Z\\report_0.json",
+    "sha256": "70d644399a50e587938093f0483dc88960d01dea54eb8ebb384733f954f5c7ad",
+    "decision": {
+      "screen_passed": true,
+      "conditions": {
+        "invariants": true,
+        "late_closure": true,
+        "late_temperature": true,
+        "insertion_two_seeds": true,
+        "energy_gate_observed": true,
+        "G_new_preserved": true,
+        "F_new_preserved": true,
+        "L_new_preserved": true
+      },
+      "run_transfer": false,
+      "scope": "Selected energy-gate transfer check, not global detailed balance, fed/loss maintenance or independent robustness. Three CW1 active references reused. Report then stop."
+    },
+    "rows": [
+      {
+        "seed": 0,
+        "G_new": 9,
+        "F_new": 7,
+        "L_new": 23,
+        "valid_fraction_late": 0.9447666666666669,
+        "late_temperature": 0.08492223859158037,
+        "inserted_born_inside": 1,
+        "inserted_from_whole_food_F": 0,
+        "invariant_failures": 0,
+        "exchange_gate_stats": {
+          "proposals": 22,
+          "accepted": 6,
+          "rejected": 16,
+          "positive_delta": 16,
+          "sum_positive_delta": 36.597609409480846,
+          "sum_factor": 6.008867547880729,
+          "min_delta": -2.011172173252284,
+          "max_delta": 5.1834041578001475
+        }
+      },
+      {
+        "seed": 1,
+        "G_new": 2,
+        "F_new": 9,
+        "L_new": 23,
+        "valid_fraction_late": 0.9466666666666667,
+        "late_temperature": 0.08255114706409267,
+        "inserted_born_inside": 0,
+        "inserted_from_whole_food_F": 0,
+        "invariant_failures": 0,
+        "exchange_gate_stats": {
+          "proposals": 8,
+          "accepted": 1,
+          "rejected": 7,
+          "positive_delta": 7,
+          "sum_positive_delta": 12.720881217544807,
+          "sum_factor": 1.0000789919449702,
+          "min_delta": -1.6723696777237933,
+          "max_delta": 3.022428471915828
+        }
+      },
+      {
+        "seed": 2,
+        "G_new": 8,
+        "F_new": 9,
+        "L_new": 24,
+        "valid_fraction_late": 0.945,
+        "late_temperature": 0.08893205392355003,
+        "inserted_born_inside": 2,
+        "inserted_from_whole_food_F": 0,
+        "invariant_failures": 0,
+        "exchange_gate_stats": {
+          "proposals": 25,
+          "accepted": 10,
+          "rejected": 15,
+          "positive_delta": 16,
+          "sum_positive_delta": 24.205048011680063,
+          "sum_factor": 9.482831678703633,
+          "min_delta": -2.1510283689433938,
+          "max_delta": 6.2450185976243455
+        }
+      }
+    ]
+  },
+  "RX1": {
+    "report": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\diagnostics\\RX1_20261105T160842996062Z\\report.json",
+    "sha256": "7119354d8d4078f78540f78411e7f9f6556dfaf90bae97821d1d86029ace0785",
+    "cases": [
+      {
+        "label": "RV1_full_s0",
+        "historical_state_rng_observer_exact": true,
+        "metrics": {
+          "time": 1200.0,
+          "active_rungs": 69,
+          "free_P": 6,
+          "free_R": 6,
+          "backbone_links": 24,
+          "target_chains": {
+            "G": 4,
+            "F": 1
+          },
+          "detached_targets": {
+            "G": 4,
+            "F": 1
+          },
+          "lengths": {
+            "G": {
+              "2": 7,
+              "3": 4,
+              "1": 13
+            },
+            "F": {
+              "1": 13,
+              "2": 7,
+              "3": 1
+            }
+          },
+          "atoms": 150,
+          "invariants_valid": true,
+          "backbone_break": 15,
+          "rung_break": 148,
+          "rung_form": 187,
+          "backbone_form": 23,
+          "catalyzed_formations": 186,
+          "polymer_reassemblies": 13,
+          "recycled_incorporations": 3
+        },
+        "exposure_totals": {
+          "site_time": {
+            "G:polymer_seen:degree1:pair0:capture0": 10292.75999999412,
+            "G:polymer_seen:degree2:pair0:capture0": 2865.640000000065,
+            "F:polymer_seen:degree1:pair0:capture0": 4963.889999998622,
+            "F:polymer_seen:degree2:pair0:capture0": 912.5799999999856,
+            "F:other:degree0:pair0:capture0": 9578.399999994768,
+            "F:polymer_seen:degree1:pair0:capture1": 6202.689999997838,
+            "F:polymer_seen:degree0:pair0:capture1": 1.9600000000000006,
+            "F:polymer_seen:degree2:pair0:capture1": 41.889999999999844,
+            "F:polymer_seen:degree0:pair0:capture0": 3741.4799999994334,
+            "G:other:degree0:pair0:capture0": 12611.279999992013,
+            "G:polymer_seen:degree2:pair1:capture0": 1861.620000000087,
+            "F:polymer_seen:degree0:pair1:capture0": 1280.2500000001141,
+            "G:other:degree0:pair1:capture0": 2289.9999999998495,
+            "G:polymer_seen:degree1:pair1:capture0": 9924.259999994341,
+            "F:other:degree0:pair1:capture0": 1662.960000000123,
+            "F:polymer_seen:degree1:pair1:capture0": 1584.2800000000445,
+            "F:polymer_seen:degree2:pair1:capture0": 338.08000000000266,
+            "F:other:degree0:pair0:capture1": 0.6600000000000001,
+            "G:polymer_seen:degree0:pair1:capture0": 671.850000000063,
+            "G:polymer_seen:degree0:pair0:capture0": 1448.5700000000936
+          },
+          "rung_gate_time": {
+            "G:polymer_seen:linked": 24944.219999980796,
+            "F:polymer_seen:linked": 14043.249999990709,
+            "F:other:eligible": 9578.399999994768,
+            "F:polymer_seen:captured": 2.0700000000000003,
+            "F:polymer_seen:eligible": 3741.529999999433,
+            "G:other:eligible": 12611.279999992013,
+            "F:polymer_seen:paired": 1280.2500000001141,
+            "G:other:paired": 2289.9999999998495,
+            "F:other:paired": 1662.960000000123,
+            "F:other:captured": 0.6600000000000001,
+            "G:polymer_seen:paired": 671.870000000063,
+            "G:polymer_seen:eligible": 1448.6100000000936
+          },
+          "rung_intensity": {
+            "F:other": 95.78400000006098,
+            "F:polymer_seen": 37.41530000000801,
+            "G:other": 12.611279999997778,
+            "G:polymer_seen": 1.4486100000000162
+          },
+          "backbone_time": {
+            "G:exposed": 4171.379999998817,
+            "F:exposed": 1162.9700000000291,
+            "F:occupied": 6505.009999997563,
+            "G:occupied": 10664.38999999378
+          },
+          "backbone_intensity": {
+            "G:exposed": 0.20856900000003467,
+            "F:exposed": 1.1629700000000396,
+            "F:occupied": 6.505010000003127,
+            "G:occupied": 0.5332195000002872
+          },
+          "events": {
+            "backbone_break": 15.0,
+            "rung_break:other": 109.0,
+            "rung_break:polymer_seen": 39.0
+          }
+        },
+        "polymer_seen_gate_fractions": {
+          "G": {
+            "linked": 0.9216514500437231,
+            "paired": 0.02482458700818911,
+            "eligible": 0.053523962948087846
+          },
+          "F": {
+            "linked": 0.7365173518782555,
+            "captured": 0.0001085639662036208,
+            "eligible": 0.19622963114481726,
+            "paired": 0.06714445301072362
+          }
+        }
+      },
+      {
+        "label": "RV1_protected_s0",
+        "historical_state_rng_observer_exact": true,
+        "metrics": {
+          "time": 1200.0,
+          "active_rungs": 46,
+          "free_P": 29,
+          "free_R": 29,
+          "backbone_links": 18,
+          "target_chains": {
+            "G": 4,
+            "F": 2
+          },
+          "detached_targets": {
+            "G": 4,
+            "F": 2
+          },
+          "lengths": {
+            "G": {
+              "3": 4,
+              "1": 11,
+              "2": 3
+            },
+            "F": {
+              "3": 2,
+              "2": 3,
+              "1": 5
+            }
+          },
+          "atoms": 150,
+          "invariants_valid": true,
+          "backbone_break": 3,
+          "rung_break": 87,
+          "rung_form": 103,
+          "backbone_form": 5,
+          "catalyzed_formations": 103,
+          "polymer_reassemblies": 0,
+          "recycled_incorporations": 0
+        },
+        "exposure_totals": {
+          "site_time": {
+            "G:polymer_seen:degree1:pair0:capture0": 9581.719999994764,
+            "G:polymer_seen:degree2:pair0:capture0": 4170.879999999572,
+            "F:polymer_seen:degree1:pair0:capture0": 663.860000000002,
+            "F:polymer_seen:degree2:pair0:capture0": 2774.960000000236,
+            "F:other:degree0:pair0:capture0": 6692.8599999973485,
+            "F:polymer_seen:degree1:pair0:capture1": 9376.709999994951,
+            "F:polymer_seen:degree2:pair0:capture1": 189.79000000000627,
+            "G:other:degree0:pair0:capture0": 12435.669999992124,
+            "G:polymer_seen:degree2:pair1:capture0": 629.1600000000393,
+            "F:other:degree0:pair1:capture0": 2089.940000000111,
+            "F:polymer_seen:degree0:pair0:capture0": 640.7999999999976,
+            "G:other:degree0:pair1:capture0": 2549.9599999999095,
+            "G:polymer_seen:degree1:pair1:capture0": 5041.219999998208,
+            "F:polymer_seen:degree0:pair1:capture0": 151.1500000000042,
+            "F:other:degree0:pair0:capture1": 1.2500000000000002,
+            "F:polymer_seen:degree0:pair0:capture1": 0.15,
+            "F:polymer_seen:degree1:pair1:capture0": 53.649999999997895,
+            "G:polymer_seen:degree0:pair0:capture0": 78.07999999999815,
+            "G:polymer_seen:degree0:pair1:capture0": 145.11999999999867
+          },
+          "rung_gate_time": {
+            "G:polymer_seen:linked": 19422.959999985826,
+            "F:polymer_seen:linked": 13058.949999991606,
+            "F:other:eligible": 6692.8599999973485,
+            "G:other:eligible": 12435.669999992124,
+            "F:other:paired": 2089.940000000111,
+            "F:polymer_seen:eligible": 640.8099999999976,
+            "G:other:paired": 2549.9599999999095,
+            "F:polymer_seen:paired": 151.1500000000042,
+            "F:other:captured": 1.2500000000000002,
+            "F:polymer_seen:captured": 0.16,
+            "G:polymer_seen:eligible": 78.09999999999816,
+            "G:polymer_seen:paired": 145.11999999999867
+          },
+          "rung_intensity": {
+            "F:other": 66.92860000003938,
+            "G:other": 12.435670000000444,
+            "F:polymer_seen": 6.408099999999571,
+            "G:polymer_seen": 0.07810000000000393
+          },
+          "backbone_time": {
+            "G:exposed": 6090.609999997853,
+            "F:exposed": 324.1599999999978,
+            "F:occupied": 7687.699999996487,
+            "G:occupied": 6020.899999997682
+          },
+          "backbone_intensity": {
+            "G:exposed": 0.3045305000000693,
+            "F:exposed": 0.3241599999999962,
+            "F:occupied": 0.3843850000001364,
+            "G:occupied": 0.015052249999994166
+          },
+          "events": {
+            "rung_break:other": 79.0,
+            "backbone_break": 3.0,
+            "rung_break:polymer_seen": 8.0
+          }
+        },
+        "polymer_seen_gate_fractions": {
+          "G": {
+            "linked": 0.9886379947653865,
+            "eligible": 0.0039753275191439005,
+            "paired": 0.007386677715469541
+          },
+          "F": {
+            "linked": 0.9428116383788052,
+            "eligible": 0.046264295826992846,
+            "paired": 0.01091251434005429,
+            "captured": 1.1551454147592708e-05
+          }
+        }
+      }
+    ],
+    "local_output_bytes": 2817187,
+    "scope": "Two selected historical cases. Fractions have different polymer_seen population histories; not matched per-molecule treatment effects."
+  }
+}

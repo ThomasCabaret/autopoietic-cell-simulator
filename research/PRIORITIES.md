@@ -1,5 +1,18 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot47 : **EG1 clos3/3 passe** : tenue94–95%, température proche.08,
+insertions1/0/2, production G/F/L conservée. GUI36 choix, nouveau raccourci EG1
+« Intégration compacte · échanges stabilisés » ; CB1 et ses défauts conservés.
+**EN1 en cours** : dt/2, mêmes cadences physiques de réaction/observation,
+3 graines2400,2 travailleurs/3h, rapport puis arrêt. Lire exchange_refinement_status.bat.
+Pas d'adoption générale ou de grille si refus : interpréter occasions et stocks.
+**RX1 clos2/2 exacts** : protected retient les F déjà polymérisés liés94% du temps
+contre74% full ; capture directe isolée négligeable dans ces trajectoires.
+Prochain choix conceptuel : protection de liaison par appariement local cohérent
+plutôt que toute occupation ; comparer ses risques outils actifs/fragments, sans
+l'implémenter comme acquis ou transférer protected refusé. Débit/pertes/export,
+répartition par espèce et protection de l'information restent des gaps. Voir BATCH_47.
+
 Lot46 : **CX1 clos3/3 passe**, production avec frontière stable mais aucune
 insertion. **CW1 clos3/3 refuse** :5/14 insertions sur2 graines, mais la troisième
 chauffe (T tardive.3764) et s'ouvre. Pas d'autre grille de largeurs. **EG1 en cours**,

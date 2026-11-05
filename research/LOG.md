@@ -1546,3 +1546,18 @@ Validation246 tests passent après correction de comparaison du nouveau défaut
 none aux configurations historiques ; sept préfixes physiques/RNG exacts,
 33 démos natives validées, CB1 reste la référence visible sous Langevin. Sources
 et résumés reproductibles seulement dans Git. Voir BATCH_46 et ses descripteurs.
+
+## 2026-11-05 — lot47, insertion stabilisée et exposition du turnover
+
+EG1 complet3/3 passe : fermeture tardive94–95%, T proche.08, insertion1/0/2,
+G9/2/8 F7/9/9 L23/23/24. M-04→75 limité, pas réparation ou maintien. Aucune
+insertion issue de F entièrement alimentaire ici. GUI36 démos, nouveau défaut
+EG1 graine0, CB1 conservé ; lecture/pause/recommencement et clone moteur vérifiés.
+RX1 rejoue2 cas historiques full/protected s0 exacts (état/RNG/observateur),
+≈2,82Mo locaux. F déjà polymérisés encore liés74/94% du temps ; capture isolée
+négligeable dans ces trajectoires. Nouvelle piste de protection par appariement
+cohérent seulement décrite ; aucun helper chimique ajouté ni transfert RV1.
+EN1 lancé3×2400,dt/2 avec cadences physiques réaction/observation identiques,
+2 travailleurs/3h, rapport puis arrêt.249 tests complets passent,4 ciblés
+supplémentaires passent dont2 nouveaux EN1. Registre17,43 IDs stables. Maintien0,
+protection/régulation et information restent ouverts. Voir BATCH_47.

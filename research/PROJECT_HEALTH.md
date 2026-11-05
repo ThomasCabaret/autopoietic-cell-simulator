@@ -1,5 +1,19 @@
 # Santé du projet — actualisation5 novembre2026
 
+Lot47 : un risque d'intégration réduit sans nouvelle primitive : EG1 garde
+production/insertion et stabilité dans le domaine déclaré. Prochain jalon EN1,
+un raffinement mécanique commun, pas une recherche de constantes. Un refus
+exigerait de distinguer aléa, cinétique de contacts et instabilité numérique.
+RX1 exact sur2 cas sélectionnés réduit l'incertitude de protection/recyclage :
+le maintien lié domine, pas la capture isolée. Une alternative locale bornée
+est dessinée mais pas adoptée ; elle pourrait perdre les outils actifs ou
+conserver les parasites appariés. Protection de chaque information, partage des
+ressources, alimentation/export et diversité restent des risques conceptuels,
+pas de simples ajustements garantis. Maintien non prêt. Ne pas relever le jugement
+de planification du lot46 sur cette seule réussite ; le réévaluer dans3 lots ou
+au prochain refus structurel. Aucun blocage de principe établi, aucune garantie
+que la cible soit accessible sans revoir la représentation.
+
 Lot46 : l'ablation CX1 isole une frontière productive stable, CW1 obtient
 insertion2/3 mais échoue par chaleur/ouverture dans une graine. Une seule
 intervention mécaniste EG1 traite le coût local de l'échange ; trois essais,

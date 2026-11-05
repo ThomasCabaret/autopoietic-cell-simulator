@@ -1,5 +1,13 @@
 # Architectures de cellule : fermeture à concevoir, pas encore réalisée
 
+Lot47 : EG1 valide une insertion limitée sans gène/outil supplémentaire,
+avec302 billes et mêmes flux matériels finis.1/0/2 L nés dedans insérés ; aucune
+insertion issue de F entièrement alimentaire dans cette cohorte. Les outils
+initiaux restent présents ; aucune fermeture du graphe sous pertes. RX1 précise
+le risque de maintien de fragments liés par protection. EN1 ne modifie ni espèces,
+ni graphe causal, ni budget : uniquement le pas mécanique. Le budget final de
+cellule reste conditionnel à la diversité, aux stocks viables et aux flux.
+
 Lot46 : aucun changement de graphe, de gène ou de budget (prototype302 billes).
 CX1 stable sans insertion ; CW1 insère2/3 mais échoue en tenue thermique et
 fermeture dans la troisième graine. EG1 ne change que l'acceptation énergétique
