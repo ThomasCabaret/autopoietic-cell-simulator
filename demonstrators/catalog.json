@@ -1,7 +1,7 @@
 {
   "version": 1,
   "date": "2026-11-05",
-  "recommended": "current_membrane_renewal_s0",
+  "recommended": "current_compact_s0",
   "simulator_sha256": {
     "simulator/__init__.py": "bf5a7a5cafdf7076cbc3cc9d8992895e4a8c217621ea024645a061a3531281a9",
     "simulator/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
@@ -48,6 +48,20 @@
   },
   "policy": "Live simulations from preserved initial inputs. Selected illustrative seeds, not a robustness claim. No trajectories/checkpoints bundled.",
   "demos": [
+    {
+      "id": "current_compact",
+      "title": "Intégration compacte · défauts connus",
+      "archive": false,
+      "level": "CB1 · montage le plus intégré, maintien non démontré",
+      "summary": "Même bain productif : gènes, outils, précurseurs, vrais lipides fabriqués et frontière construite.",
+      "question": "Voir le transfert matériel jusqu’à la frontière, et pourquoi les échanges peuvent laisser une ouverture durable.",
+      "prepared": "52 molécules L en anneau,4 G01 et1 F01 préparés,4 F monomères, précurseurs P/R et24 H/24 T.302 billes, boîte22×22. Pas de perte ou de flux ouvert.",
+      "observe": "À2400, graines0/1/2 : nouveaux G3/10/4, F4/9/1,L24/23/23. Un L né dedans et produit par un F entièrement reconstruit est inséré en graine1. Fermeture tardive0 /94,17 /0 %. Les deux échecs persistent et restent visibles.",
+      "conditions": "Recettes CB1 exactes ; Langevin masse1/frottement0,1,T0,08,dt0,002 ; short_length0,92 et cycle externe200/15. Graine0 par convention pour le raccourci, sans sélectionner la réussite.",
+      "limits": "Porte de cohorte refusée : fermeture et insertion insuffisantes sur deux graines. Zéro traversée liée observée ne garantit pas étanchéité pendant les périodes non classables. Stocks finis, outils initiaux présents, aucun maintien sous pertes, recyclage, alimentation ouverte ou homéostasie.",
+      "look": "Jouer en Maximum. Graine1 pour le transfert jusqu’à une insertion ; graines0/2 pour suivre la première ouverture. Explorer permet filtre H/T, suivi des molécules et inspection des flashes. Simulation depuis t0, pas une vidéo sélectionnée.",
+      "evidence": "research/BATCH_45.md"
+    },
     {
       "id": "current_membrane_renewal",
       "title": "Membrane et catalyseurs reconstruits · progrès actuel",
@@ -439,6 +453,48 @@
       "source_task": "task0008",
       "source_sha256": "b9122f8dada116bf17a5f86e4cd296d0e29520901d4a529ce0073c207852fa77",
       "dynamics_sha256": "fec93cb1fa3a08de7f291af9d6b19a54550b77a43ce0cc04805406c583c83c7c",
+      "view_speed": 0.0,
+      "motion": "langevin"
+    },
+    {
+      "id": "current_compact_s0",
+      "demo": "current_compact",
+      "title": "Graine 0 · ouverture persistante",
+      "seed": 0,
+      "config": "demonstrators/configs/demo_current_compact_s0.json",
+      "beads": 302,
+      "source": "research/campaign_recipes/CB1_20261105T092857284853Z/manifest.json",
+      "source_task": "task0000",
+      "source_sha256": "34cf6e4f0f8077c52fd09f1dc24c74ffb399a57891958d32977d338a4538644d",
+      "dynamics_sha256": "3d2fd6fc4f5428f19682691e1896873de1c7bef04b5147715aa70afb06893c71",
+      "view_speed": 0.0,
+      "motion": "langevin"
+    },
+    {
+      "id": "current_compact_s1",
+      "demo": "current_compact",
+      "title": "Graine 1 · une insertion, tenue tardive",
+      "seed": 1,
+      "config": "demonstrators/configs/demo_current_compact_s1.json",
+      "beads": 302,
+      "source": "research/campaign_recipes/CB1_20261105T092857284853Z/manifest.json",
+      "source_task": "task0003",
+      "source_sha256": "34cf6e4f0f8077c52fd09f1dc24c74ffb399a57891958d32977d338a4538644d",
+      "dynamics_sha256": "54c7d68df546870592e8769af35ec1c4387e92efef14ab5f5b4ad661eadaf6a6",
+      "view_speed": 0.0,
+      "motion": "langevin"
+    },
+    {
+      "id": "current_compact_s2",
+      "demo": "current_compact",
+      "title": "Graine 2 · ouverture persistante",
+      "seed": 2,
+      "config": "demonstrators/configs/demo_current_compact_s2.json",
+      "beads": 302,
+      "source": "research/campaign_recipes/CB1_20261105T092857284853Z/manifest.json",
+      "source_task": "task0006",
+      "source_sha256": "34cf6e4f0f8077c52fd09f1dc24c74ffb399a57891958d32977d338a4538644d",
+      "dynamics_sha256": "7da73e7e979b0f8bb478cd7d4980507ae5819e2675277d16106002ca6684eb6e",
       "view_speed": 0.0,
       "motion": "langevin"
     },

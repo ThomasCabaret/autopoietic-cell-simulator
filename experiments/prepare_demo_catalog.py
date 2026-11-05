@@ -190,9 +190,32 @@ def mixed_description():
         evidence='research/BATCH_43.md')
 
 
+def compact_origins():
+    source='research/campaign_recipes/CB1_20261105T092857284853Z/manifest.json'
+    data=json.loads((ROOT/source).read_text(encoding='utf-8'));items=[]
+    for seed in range(3):
+        task=next(t for t in data['tasks'] if t['label']==f'CB1_active_s{seed}')
+        title=f'Graine {seed} · '+('une insertion, tenue tardive' if seed==1 else 'ouverture persistante')
+        items.append((f'current_compact_s{seed}','current_compact',title,copy.deepcopy(task['scenario']),source,task['id'],302))
+    return items
+
+
+def compact_description():
+    return dict(id='current_compact',title='Intégration compacte · défauts connus',archive=False,
+        level='CB1 · montage le plus intégré, maintien non démontré',
+        summary='Même bain productif : gènes, outils, précurseurs, vrais lipides fabriqués et frontière construite.',
+        question='Voir le transfert matériel jusqu’à la frontière, et pourquoi les échanges peuvent laisser une ouverture durable.',
+        prepared='52 molécules L en anneau,4 G01 et1 F01 préparés,4 F monomères, précurseurs P/R et24 H/24 T.302 billes, boîte22×22. Pas de perte ou de flux ouvert.',
+        observe='À2400, graines0/1/2 : nouveaux G3/10/4, F4/9/1,L24/23/23. Un L né dedans et produit par un F entièrement reconstruit est inséré en graine1. Fermeture tardive0 /94,17 /0 %. Les deux échecs persistent et restent visibles.',
+        conditions='Recettes CB1 exactes ; Langevin masse1/frottement0,1,T0,08,dt0,002 ; short_length0,92 et cycle externe200/15. Graine0 par convention pour le raccourci, sans sélectionner la réussite.',
+        limits='Porte de cohorte refusée : fermeture et insertion insuffisantes sur deux graines. Zéro traversée liée observée ne garantit pas étanchéité pendant les périodes non classables. Stocks finis, outils initiaux présents, aucun maintien sous pertes, recyclage, alimentation ouverte ou homéostasie.',
+        look='Jouer en Maximum. Graine1 pour le transfert jusqu’à une insertion ; graines0/2 pour suivre la première ouverture. Explorer permet filtre H/T, suivi des molécules et inspection des flashes. Simulation depuis t0, pas une vidéo sélectionnée.',
+        evidence='research/BATCH_45.md')
+
+
 def build():
     variants=[]
-    for key,demo,title,cfg,origin,task,beads in current_origins()+renewal_origins()+membrane_renewal_origins()+mixed_origins():
+    for key,demo,title,cfg,origin,task,beads in current_origins()+renewal_origins()+membrane_renewal_origins()+mixed_origins()+compact_origins():
         cfg=resolve(cfg);path=f'demonstrators/configs/demo_{key}.json'
         (ROOT/path).write_text(json.dumps(cfg,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
         variants.append(dict(id=key,demo=demo,title=title,seed=cfg['seed'],config=path,beads=beads,
@@ -218,9 +241,9 @@ def build():
     from visualizer.demos import simulator_hashes
     archived=descriptions()
     for info in archived:info['archive']=True
-    catalog=dict(version=1,date='2026-11-05',recommended='current_membrane_renewal_s0',simulator_sha256=simulator_hashes(),
+    catalog=dict(version=1,date='2026-11-05',recommended='current_compact_s0',simulator_sha256=simulator_hashes(),
         policy='Live simulations from preserved initial inputs. Selected illustrative seeds, not a robustness claim. No trajectories/checkpoints bundled.',
-        demos=[membrane_renewal_description(),mixed_description()]+current_descriptions()+[renewal_description()]+archived,variants=variants)
+        demos=[compact_description(),membrane_renewal_description(),mixed_description()]+current_descriptions()+[renewal_description()]+archived,variants=variants)
     (ROOT/'demonstrators/catalog.json').write_text(json.dumps(catalog,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
 
 
@@ -280,6 +303,14 @@ def verify():
         sim=Simulation(cfg)
         assert len(sim.chemistry.pos)==beads==198 and sim.motion is not None
         assert cfg['chemistry']['capture_cooperativity'] and not sim.chemistry.lipids.rungs
+        rows.append(dict(id=key,beads=beads,source_dynamics_identical=True,current=True))
+    for key,_,_,original,source,task,beads in compact_origins():
+        variant,info,cfg=catalog.get(key)
+        assert signature(cfg)==signature(original)
+        assert hashlib.sha256((ROOT/source).read_bytes()).hexdigest()==variant['source_sha256']
+        sim=Simulation(cfg)
+        assert len(sim.chemistry.pos)==beads==302 and len(sim.chemistry.lipids.rungs)==52
+        assert cfg['chemistry']['short_length']==.92 and sim.motion is not None
         rows.append(dict(id=key,beads=beads,source_dynamics_identical=True,current=True))
     return rows
 

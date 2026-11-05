@@ -1,6 +1,24 @@
 # Démos représentatives accessibles dans la GUI
 
-## État du5 novembre —30 choix
+## Lot45 —33 choix, intégration compacte et défauts visibles
+
+Le raccourci **Démos → État actuel · bain intégré** ouvre désormais
+**Intégration compacte · défauts connus**, graine0 par convention.302 billes,
+52 L de frontière construits,4 G01/1 F01 préparés, P/R et H/T. Langevin exact
+de CB1, short_length.92, boîte22×22 ; synthèse de vrais L et nouveaux G/F.
+
+À2400 : G3/10/4,F4/9/1,L24/23/23. Graine1 : un L produit par un F entièrement
+refait depuis nourriture rejoint la frontière ; fermeture tardive94,17%.
+Graines0/2 : ouvertures persistantes, fermeture tardive0. Le refus de cohorte
+reste explicite. Ni trois succès ni maintien sous pertes ; pas de film sélectionné.
+Le suivi/flashes et les compteurs permettent de regarder la lésion et la rare
+refermeture. Commencer en Maximum puis ralentir localement.
+
+Les33 actions natives et les positions par rapport au moteur sans interface
+sont vérifiées. MIN1M/MX2 et leurs recettes restent accessibles ; CX1/CW1 en
+campagne ne modifient aucune démo. [Résultats/limites](../research/BATCH_45.md).
+
+## Historique lot44 —30 choix avant CB1
 
 **Chimie mixte · outils et lipides** ajoute les trois graines MX2 validées,
 198 billes, boîte12×9, capture coopérative et Langevin exacts de la recette.

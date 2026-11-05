@@ -15,8 +15,8 @@ from simulator.runner import make_observer
 class DemoCatalogTests(unittest.TestCase):
     def test_all_presets_match_research_inputs_and_declared_initial_material(self):
         from experiments.prepare_demo_catalog import verify
-        rows=verify();self.assertEqual(len(rows),30)
-        catalog=DemoCatalog();self.assertEqual(catalog.data['recommended'],'current_membrane_renewal_s0')
+        rows=verify();self.assertEqual(len(rows),33)
+        catalog=DemoCatalog();self.assertEqual(catalog.data['recommended'],'current_compact_s0')
         _,_,cfg=catalog.get('integrated_s2');sim=Simulation(cfg);g=sim.chemistry.genetics
         prepared_g=1+sum(q['family']==0 and q['backbone'] and len(q['units'])==3 for q in g.initial_groups)
         prepared_f=sum(q['family']==1 and q['backbone'] and len(q['units'])==3 for q in g.initial_groups)
