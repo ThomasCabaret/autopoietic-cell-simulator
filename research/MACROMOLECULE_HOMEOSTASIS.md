@@ -1,5 +1,37 @@
 # Homéostasie des polymères — pistes locales, fermeture encore ouverte
 
+## Actualisation lot46 — rétroaction directe inaccessible dans le candidat
+
+PI1 est terminé15/15 : aucun site G occupé par les F01 produits préparés,
+pour4 ou16 outils dans chacune des trois graines. Ce n'est pas une limite de
+temps ou de concentration : les règles communes ont monomer_only_capture et
+pas gf_end_capture ; tous les F01 ont un degré de squelette1 et sont exclus
+de cette capture. Les témoins F0/F1 déliés peuvent, eux, se fixer. Le précontrôle
+orienté appelle maintenant GeneticAudit et refuse une répétition identique.
+Ce constat aurait dû précéder le calcul ; les recettes originales sont conservées.
+L'assay isolé ne mesure ni inhibition de débit ni maintien et ne change aucune loi.
+
+Une alternative qualitative sans outil supplémentaire consiste à borner le débit
+de naissance par l'accès local aux substrats et aux sites, tout en laissant des
+pertes locales croître avec les liaisons exposées. Un débit saturé B et une perte
+effective proportionnelle au stock D peuvent donner un bilan B−D borné ; ce bilan
+est un raisonnement, jamais une mesure globale qui piloterait une réaction.
+Les maillons à réaliser ensemble sont : approvisionnement externe fixé, production
+concurrente, rupture/recyclage réel G/F, dissociation des composites en précurseurs
+perméables et sortie au bord. RV1 étudie les pertes dans une autre variante,
+pas leur compatibilité actuelle avec MX2/CB1. Il manque aussi un mécanisme qui
+protège assez chaque information et conserve une répartition viable entre espèces.
+Une borne sur la masse totale ne remplit pas cette exigence : tous les sites
+peuvent être monopolisés par des fragments ou un seul gène. H-03/H-04 restent gap.
+
+Ne pas activer gf_end_capture uniquement pour obtenir un frein sans examiner
+copie, ligation parasite, piégeage et sélectivité. Si un outil de régulation devient
+préférable, comparer ses coûts puis demander l'accord utilisateur avant ajout.
+La cible part d'une cellule construite et redondante : aucune promesse de recréer
+une séquence entièrement éteinte à partir d'aucune information restante.
+
+Les paragraphes suivants gardent la genèse des pistes, pas une validation actuelle.
+
 31 octobre2026. Sous-buts W-02/W-03/W-04 et H-03/H-04/H-06 du registre.
 Pas de règle ni nouvelle machine implémentée. Le candidat actuel ne comporte
 pas de recyclage des squelettes G/F ; aucun résultat d'homéostasie n'est revendiqué.

@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "revision": 15,
+  "revision": 16,
   "reviewed": "2026-11-05",
-  "candidate": "CB1 visible avec défauts : une insertion alimentaire, fermeture fragile ; CX1/CW1 en campagne, CL1 terminé",
+  "candidate": "CX1 stable sans insertion, CW1 insertion fragile ; EG1 énergétique en cours, PI1 interdit de capture identifié",
   "purpose": "Registre évolutif des capacités nécessaires à une cellule construite maintenue ; les pourcentages sont des paliers de preuve, pas un taux global de réussite.",
   "out_of_scope": [
     "origine spontanée de la cellule",
@@ -84,9 +84,10 @@
         "research/BATCH_41.md",
         "research/BATCH_42.md",
         "research/BATCH_43.md",
-        "research/BATCH_44.md"
+        "research/BATCH_44.md",
+        "research/BATCH_46.md"
       ],
-      "next_test": "Lire CB1 : compatibilité réelle des mêmes porteurs avec une frontière dimensionnée ; aucune nouvelle enzyme ou affinité associative avant diagnostic.",
+      "next_test": "Lire EG1 et fermer les drafts protection/pertes/export ; ne pas supposer une bibliothèque de protéines ou une rétroaction produits déjà disponible.",
       "essential": true
     },
     {
@@ -591,17 +592,18 @@
       ],
       "renewal_needs": [],
       "concept": "draft",
-      "mechanism": "Échange local d’un contact puis attraction des deux faces libérées. CB1 donne un L alimentaire inséré ; CL1 décrit un échec de refermeture et CW1 élargit le bassin sans ajouter de règle.",
-      "concept_gap": "Draft local observé dans une graine ; robustesse et énergie de transition non établies.",
+      "mechanism": "Échange local puis rencontre des faces libérées ; CW1 insère2/3 mais chauffe/ouvre1/3. EG1 filtre le coût de potentiel local sans outil ajouté.",
+      "concept_gap": "Étapes locales observées ; tenue robuste et énergie des transitions non établies.",
       "proof": "subcase",
       "scope": "Une insertion réelle depuis F alimentaire en CB1 graine1, mais deux frontières durablement ouvertes. Preuve sous-cas25, ancien prototype MD2 à L préparés conservé.",
       "references": [
         "research/BATCH_25_RESULTS.md",
         "research/BATCH_43.md",
         "research/BATCH_44.md",
-        "research/BATCH_45.md"
+        "research/BATCH_45.md",
+        "research/BATCH_46.md"
       ],
-      "next_test": "CX1 sans échange et CW1 dock_width.6 : fermeture avec production/insertion, avant une nouvelle fonction ou grille.",
+      "next_test": "Cohorte EG1 : fermeture, température, insertion et débit simultanés ; sinon interpréter les propositions avant une autre constante.",
       "essential": true
     },
     {
@@ -627,7 +629,7 @@
         "research/HOMEOSTASIS.md",
         "research/BATCH_45.md"
       ],
-      "next_test": "Stabiliser la refermeture dans CX1/CW1 avant d’ajouter une lésion imposée ; les ouvertures spontanées persistent déjà.",
+      "next_test": "Stabiliser insertion/refermeture dans EG1 avant une lésion imposée ; CW1 échoue déjà sans perturbation.",
       "essential": true
     },
     {
@@ -722,9 +724,10 @@
         "research/BATCH_39.md",
         "research/BATCH_41.md",
         "research/BATCH_42.md",
-        "research/BATCH_45.md"
+        "research/BATCH_45.md",
+        "research/BATCH_46.md"
       ],
-      "next_test": "CL1 mesure +6.0243 à la transition de ports ; étendre le bilan sous production et flux, sans confondre saut local et chaleur intégrée.",
+      "next_test": "Lire EG1 sans confondre coût local et bilan global ; étendre ensuite aux ruptures, synthèses et forçage sous flux.",
       "essential": true
     },
     {
@@ -904,14 +907,15 @@
       ],
       "renewal_needs": [],
       "concept": "gap",
-      "mechanism": "Frein réversible de l’expression/production de A, combiné au recyclage local et à une protection suffisante.",
-      "concept_gap": "Sélectivité de la rétroaction et conservation des outils utiles non résolues ; séquestrer ne retire pas la matière.",
+      "mechanism": "Alternative : production limitée par accès aux substrats/sites + pertes locales et recyclage/export ; frein direct par produits F01 non accessible actuellement.",
+      "concept_gap": "PI1 identifie un interdit local de capture des F polymérisés. Protection et répartition viable entre espèces restent ouvertes.",
       "proof": "none",
       "scope": "Aucune régulation ni turnover de population F démontré.",
       "references": [
-        "research/MACROMOLECULE_HOMEOSTASIS.md"
+        "research/MACROMOLECULE_HOMEOSTASIS.md",
+        "research/BATCH_46.md"
       ],
-      "next_test": "Surplus puis manque de chaque outil ; suivre activité, nombre/longueur, matière et retour au régime.",
+      "next_test": "Décrire protection et débit/pertes/export avec les vrais états avant campagne ; ne pas refaire PI1 interdit par construction.",
       "essential": true
     },
     {
@@ -933,9 +937,10 @@
       "proof": "none",
       "scope": "Stabilité des backbones initiaux n’est pas homéostasie génétique.",
       "references": [
-        "research/MACROMOLECULE_HOMEOSTASIS.md"
+        "research/MACROMOLECULE_HOMEOSTASIS.md",
+        "research/BATCH_46.md"
       ],
-      "next_test": "Perturber séparément chaque population de gènes ; mesurer reprise, parasites et extinction.",
+      "next_test": "Fermer la protection et le partage des ressources par espèce avant tests de perturbation/extinction ; pas de frein direct F01 supposé.",
       "essential": true
     },
     {
@@ -1013,9 +1018,10 @@
         "research/BATCH_42.md",
         "research/BATCH_43.md",
         "research/BATCH_44.md",
-        "research/BATCH_45.md"
+        "research/BATCH_45.md",
+        "research/BATCH_46.md"
       ],
-      "next_test": "Lire CX1/CW1 : différencier bruit, transition de potentiel et bassin de fermeture, puis revenir aux dépendances de maintien.",
+      "next_test": "Attendre EG1 complet : stabilité/insertion/débit avant montage alimenté avec pertes et protection.",
       "essential": true
     },
     {
@@ -1155,9 +1161,10 @@
         "research/BATCH_42.md",
         "research/BATCH_43.md",
         "research/BATCH_44.md",
-        "research/BATCH_45.md"
+        "research/BATCH_45.md",
+        "research/BATCH_46.md"
       ],
-      "next_test": "Conserver les contrôles sans observateur, reprise exacte et signatures à chaque changement concerné.",
+      "next_test": "Précontrôler les motifs via le vrai prédicat ; exploiter EG1 gelé et vérifier le prochain transfert sans promotion automatique.",
       "essential": true
     }
   ],
@@ -1257,13 +1264,18 @@
       "revision": 15,
       "date": "2026-11-05",
       "reason": "CB1 terminé, analyse figée récupérée sans recalcul ; un transfert alimentaire jusqu’à la frontière mais fermeture fragile. CL1 passif exact clarifie saut de potentiel et extrémités. M-04 concept draft, preuve25 inchangée. CX1/CW1 prospectifs et CB1 rendu visible avec ses défauts."
+    },
+    {
+      "revision": 16,
+      "date": "2026-11-05",
+      "reason": "CX1 complet passe, CW1 insertion2/3 mais refus thermique/fermeture ; EG1 gate local construit, microchecks et pilote puis3 essais. PI1 complet interdit structurel de capture, précontrôle désormais exigé. Aucun palier biologique augmenté."
     }
   ],
   "last_batch_progress": {
-    "S-04": "Premier L produit par un F entièrement reconstruit puis inséré dans la frontière, graine1 CB1 ; réussite unique, pas maintien.",
-    "M-04": "Concept gap→draft, preuve reste25 : étapes locales observées, deux échecs et cause de refermeture étudiée. CX1/CW1 lancés.",
-    "Q-01": "Loupe CL1 six billes : +6.0243 de potentiel des ports au premier échange ; clone/prefixe exacts, pas bilan global.",
-    "C-01": "CB1 productif dans les trois actifs, mais tenue refusée0/.9417/0 ; contrôles sans échange et variante largeur figés.",
-    "O-02": "Routage d’analyse réparé sans relancer CB1 ; erreurs/sources préservées. GUI33 choix, défauts CB1 visibles et clone graphique exact."
+    "M-04": "CW1 insère2/3 mais tenue refusée ; gate énergétique EG1 construit et cohorte lancée, preuve reste25.",
+    "Q-01": "Delta local des ports/barrières contrôlé ; pas de bilan global ni adoption anticipée.",
+    "H-03": "PI1 exclut le frein direct par produits F01 ; mécanisme inaccessible, gap conservé.",
+    "C-01": "CX1 stable3/3 sans insertion isole le défaut ; CW1 ne remplit pas le couplage robuste.",
+    "O-02": "Précontrôle réel bloque les campagnes inaccessibles ; sources gelées et suivi EG1, GUI CB1 conservée."
   }
 }

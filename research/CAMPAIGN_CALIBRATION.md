@@ -11,6 +11,13 @@ nombre de billes commode ne justifient pas un résultat négatif de mécanisme.
    de débit à durée finie, ou recherche d’un régime durable ? Un contrôle forcé
    ne mesure pas une cinétique spontanée. Un crible opérationnel peut être
    utile sans garantir son horizon asymptotique ; le dire explicitement.
+   **Précontrôle d'accessibilité avant campagne :** construire, lorsque possible,
+   un contact orienté qui réalise le motif recherché et interroger le prédicat
+   réel de la règle ou son audit partagé. Vérifier types, états, degrés, ports et
+   options avant de régler concentrations et horizon. Une transition interdite
+   par le modèle ne devient pas accessible par davantage de calcul. Ne pas
+   recopier un prédicat approximatif dans le précontrôle. Lot46 : PI1 aurait dû
+   être arrêté ainsi avant ses15 essais ; le garde courant bloque sa répétition.
 2. **Bilan matière.** Types réellement disponibles, préassemblés, capturés,
    incorporés et détournés. Calculer la capacité stœchiométrique grossière du
    résultat recherché, avec la compétition pour les mêmes précurseurs. Un grand

@@ -128,6 +128,14 @@ def main():
         'campaigns/exchange_ablation.json','campaigns/wide_ports.json','campaigns/wide_ports_pilot.json',
         'exchange_ablation_status.bat','stop_exchange_ablation.bat','resume_exchange_ablation.bat',
         'wide_ports_status.bat','stop_wide_ports.bat','resume_wide_ports.bat'))
+    files.update(ROOT/p for p in ('research/BATCH_46_PLAN.md','research/BATCH_46.md','research/BATCH_46_RESULTS.json',
+        'research/BATCH_46_EG1_PILOT.json','research/BATCH_46_EG1_RECIPES.json',
+        'research/BATCH_46_PI1_RECIPES.json','research/BATCH_46_PI1_PREFLIGHT.json',
+        'experiments/prepare_energy_exchange.py','experiments/pilot_energy_exchange.py','experiments/review_energy_exchange.py',
+        'experiments/prepare_product_binding.py','experiments/review_product_binding.py','scripts/mechanism_followup.py',
+        'campaigns/energy_exchange_pilot.json','campaigns/energy_mechanism.json','campaigns/inhibition_mechanism.json',
+        'energy_exchange_status.bat','stop_energy_exchange.bat','resume_energy_exchange.bat',
+        'inhibition_status.bat','stop_inhibition.bat','resume_inhibition.bat'))
     files.update(p for p in (ROOT/'research/diagnostic_recipes').rglob('*') if p.suffix=='.py' or p.name=='recipe.json')
     files.update(ROOT/p for p in ('research/BATCH_44_PLAN.md','research/BATCH_44.md','research/BATCH_44_RECIPES.json',
         'research/BATCH_44_PILOT.json','experiments/audit_boundary_access.py','experiments/prepare_compact_transfer.py',

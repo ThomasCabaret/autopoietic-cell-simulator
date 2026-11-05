@@ -1,5 +1,22 @@
 # Brouillon — ce qu'un assemblage fonctionnel pourrait faire
 
+## État courant — lot46, 5 novembre2026
+
+Les sections historiques ci-dessous décrivent les hypothèses au moment de leur
+écriture. Depuis, le co-recruteur F01 fabriqué depuis P/R peut assembler H/T
+en L sous les lois communes MX2. CB1 a même une insertion d'un tel L dans
+une frontière construite, graine1 ; tenue robuste et renouvellement non démontrés.
+CW1 insère dans2/3 graines mais échoue en fermeture/température dans la troisième.
+EG1 teste le coût énergétique local des échanges, pas une enzyme d'insertion.
+
+La fonction établie reste le rapprochement local de partenaires compatibles,
+pas une bibliothèque de moteurs, cliveurs et repliements programmables. PI1
+réfute une possibilité précise sous ces lois : les produits F01 ne peuvent
+pas se refixer à G01, car la capture G–F exclut les F de degré de squelette>0
+sans gf_end_capture. Ne pas les présenter comme inhibiteurs naturels de
+traduction. Les contacts de F monomères restent possibles. Voir BATCH_46.md
+et MACROMOLECULE_HOMEOSTASIS.md pour les suites et limites.
+
 30 octobre2026, lot29. Priorité de conception I0. Ce document distingue les
 mécanismes existants des hypothèses ; il ne déclare aucune nouvelle loi adoptée
 et ne constitue pas une autorisation d'ajouter une machine moléculaire.
@@ -78,7 +95,8 @@ sous MD2/Langevin : ses grands bains ne produisent pas de F nouveau complet.
   F ne fournit pas aujourd'hui un commutateur démontré EN contre EA.
 - Les monomères G et F sont spécialisés matériellement dans le candidat actuel.
   Ils ne sont pas encore les deux états N/A d'un alphabet XYZ commun imaginés
-  par le cahier des charges C0B. La construction des constituants L n'existe pas.
+  par le cahier des charges C0B. À ce stade historique, la construction des
+  constituants L n'existait pas ; voir l'actualisation lot46 ci-dessus.
 - Le moteur permet des préférences d'angles locales et un masquage par l'état
   d'appariement. Mais MD2 utilise les mêmes cosinus0,8 pour F0 et F1, et aucun
   functional_bend_cosines distinct : pas de bibliothèque de repliements

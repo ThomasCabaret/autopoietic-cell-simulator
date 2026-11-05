@@ -1,0 +1,191 @@
+{
+  "completed": {
+    "CX1": {
+      "job": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\exchange_ablation_followups\\followup_20261105T113118343041Z",
+      "report": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\exchange_ablation_followups\\followup_20261105T113118343041Z\\report_0.json",
+      "report_sha256": "8cb79ee5fcdd6043665e31fb1fbbebf348fc811f78a73b643996117aa5931066",
+      "decision": {
+        "screen_passed": true,
+        "conditions": {
+          "invariants": true,
+          "late_closure": true,
+          "G_new_preserved": true,
+          "F_new_preserved": true,
+          "L_new_preserved": true
+        },
+        "run_transfer": false,
+        "scope": "Ablation of exchange, same compact setting; three reused CB1 references, not independent success frequencies or a requirement that no insertion occurs. Stop for interpretation."
+      },
+      "rows": [
+        {
+          "seed": 0,
+          "G_new": 4,
+          "F_new": 7,
+          "L_new": 22,
+          "valid_fraction_late": 0.9575,
+          "inserted_born_inside": 0,
+          "late_temperature": 0.08592260628947916
+        },
+        {
+          "seed": 1,
+          "G_new": 9,
+          "F_new": 12,
+          "L_new": 22,
+          "valid_fraction_late": 0.96,
+          "inserted_born_inside": 0,
+          "late_temperature": 0.08575123781240428
+        },
+        {
+          "seed": 2,
+          "G_new": 11,
+          "F_new": 11,
+          "L_new": 23,
+          "valid_fraction_late": 0.9593833333333331,
+          "inserted_born_inside": 0,
+          "late_temperature": 0.08673149853656706
+        }
+      ]
+    },
+    "CW1": {
+      "job": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\wide_ports_followups\\followup_20261105T115432485306Z",
+      "report": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\wide_ports_followups\\followup_20261105T115432485306Z\\report_0.json",
+      "report_sha256": "e6afc0bf70d8f57b48d63ff4ef70206ed2fcac5e5705c6ecd8477f1f549abd4c",
+      "decision": {
+        "screen_passed": false,
+        "conditions": {
+          "invariants": true,
+          "late_closure": false,
+          "G_new_preserved": true,
+          "F_new_preserved": true,
+          "L_new_preserved": true,
+          "insertion_two_seeds": true
+        },
+        "run_transfer": false,
+        "scope": "Ablation of exchange, same compact setting; three reused CB1 references, not independent success frequencies or a requirement that no insertion occurs. Stop for interpretation."
+      },
+      "rows": [
+        {
+          "seed": 0,
+          "G_new": 9,
+          "F_new": 8,
+          "L_new": 22,
+          "valid_fraction_late": 0.22669999999999996,
+          "inserted_born_inside": 0,
+          "late_temperature": 0.37638240791759736
+        },
+        {
+          "seed": 1,
+          "G_new": 5,
+          "F_new": 9,
+          "L_new": 23,
+          "valid_fraction_late": 0.9547333333333335,
+          "inserted_born_inside": 5,
+          "late_temperature": 0.08559587190128286
+        },
+        {
+          "seed": 2,
+          "G_new": 4,
+          "F_new": 4,
+          "L_new": 24,
+          "valid_fraction_late": 0.9266666666666666,
+          "inserted_born_inside": 14,
+          "late_temperature": 0.08508694225829086
+        }
+      ]
+    },
+    "PI1": {
+      "job": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\inhibition_mechanism_followups\\followup_20261105T130106104748Z",
+      "report": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\inhibition_mechanism_followups\\followup_20261105T130106104748Z\\report_0.json",
+      "report_sha256": "85105bfe2cb2669819f8761080cd1afd16853fd940f9fc0d6e113e3c3fc5f190",
+      "decision": {
+        "screen_passed": false,
+        "conditions": {
+          "no_false_binding": true,
+          "birth_disabled": true,
+          "linked_products_occupy_gene": false
+        },
+        "run_transfer": false,
+        "scope": "Existing binding opportunity only. No measured inhibition of production, homeostasis, useful losses, selective protection, feed or polymer regulation."
+      },
+      "rows": [
+        {
+          "seed": 0,
+          "variant": "zero",
+          "occupied_G_fraction": 0.0
+        },
+        {
+          "seed": 0,
+          "variant": "linked4",
+          "occupied_G_fraction": 0.0
+        },
+        {
+          "seed": 0,
+          "variant": "split4",
+          "occupied_G_fraction": 0.26232500000000003
+        },
+        {
+          "seed": 0,
+          "variant": "linked16",
+          "occupied_G_fraction": 0.0
+        },
+        {
+          "seed": 0,
+          "variant": "split16",
+          "occupied_G_fraction": 0.0
+        },
+        {
+          "seed": 1,
+          "variant": "zero",
+          "occupied_G_fraction": 0.0
+        },
+        {
+          "seed": 1,
+          "variant": "linked4",
+          "occupied_G_fraction": 0.0
+        },
+        {
+          "seed": 1,
+          "variant": "split4",
+          "occupied_G_fraction": 0.0010250000000000625
+        },
+        {
+          "seed": 1,
+          "variant": "linked16",
+          "occupied_G_fraction": 0.0
+        },
+        {
+          "seed": 1,
+          "variant": "split16",
+          "occupied_G_fraction": 0.10760000000000006
+        },
+        {
+          "seed": 2,
+          "variant": "zero",
+          "occupied_G_fraction": 0.0
+        },
+        {
+          "seed": 2,
+          "variant": "linked4",
+          "occupied_G_fraction": 0.0
+        },
+        {
+          "seed": 2,
+          "variant": "split4",
+          "occupied_G_fraction": 0.0
+        },
+        {
+          "seed": 2,
+          "variant": "linked16",
+          "occupied_G_fraction": 0.0
+        },
+        {
+          "seed": 2,
+          "variant": "split16",
+          "occupied_G_fraction": 0.0
+        }
+      ]
+    }
+  },
+  "energy_followup": "research/BATCH_46_EG1_RECIPES.json",
+  "scope": "Compact interpreted evidence only; raw run evidence remains local. Frozen recipes reproduce the trials."
+}

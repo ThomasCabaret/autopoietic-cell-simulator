@@ -1,5 +1,14 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot46 : CX1 stable3/3 sans insertion ; CW1 insère2/3 mais échoue en tenue
+thermique/fermeture dans la troisième. EG1 implémenté et contrôlé localement,
+pilote stable ; cohorte encore en cours, aucune promotion. PI1 réfute la fixation
+régulatrice directe des F01 produits sous les règles actuelles : interdit local,
+pas lenteur. Précontrôle et méthode renforcés. Aucun palier biologique augmenté :
+M-04 reste25, H-03/H-04 restent0 et maintien intégré0. Progression par isolement
+causal et mécanisme ciblé, pas nouvelle capacité cellulaire robuste. Protection,
+répartition par espèce, information et énergie sous flux restent des gaps. Voir BATCH_46.
+
 Lot45 : chaîne matérielle P/R→F entièrement reconstruit→L né dedans→
 frontière observée dans une graine CB1. C'est un couplage réel partiel, pas une
 validation : deux autres frontières restent ouvertes, et les stocks sont finis.

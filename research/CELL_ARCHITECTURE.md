@@ -1,5 +1,15 @@
 # Architectures de cellule : fermeture à concevoir, pas encore réalisée
 
+Lot46 : aucun changement de graphe, de gène ou de budget (prototype302 billes).
+CX1 stable sans insertion ; CW1 insère2/3 mais échoue en tenue thermique et
+fermeture dans la troisième graine. EG1 ne change que l'acceptation énergétique
+locale des échanges ; cohorte en cours, pas de nouvelle architecture adoptée.
+La rétroaction F produit→occupation G n'existe pas sous les lois communes
+actuelles : restriction locale de capture démontrée par PI1 et précontrôle.
+Un débit de production limité couplé à des pertes/export est une alternative
+qualitative, dont protection et répartition par espèce restent ouvertes.
+Le graphe cible conditionnel ne doit pas dessiner cette inhibition comme acquise.
+
 Lot45 : CB1 conserve302 billes et les outils courts. Un F alimentaire
 produit un L qui rejoint la frontière en graine1 ; les deux autres frontières
 restent ouvertes. Pas de gène/outil ajouté ou de budget cible révisé. CX1 enlève

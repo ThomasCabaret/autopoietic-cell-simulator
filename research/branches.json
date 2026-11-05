@@ -1448,15 +1448,15 @@
     {
       "id": "CX1",
       "parent": "CB1",
-      "status": "three_frozen_noexchange_controls_running",
+      "status": "three_complete_stability_gate_passed_no_insertion",
       "hypothesis": "Removing exchange preserves a productive frontier, distinguishing insertion damage from synthesis alone.",
       "test": "Three same initial CB1 seeds at2400, exchange rate0 only; reuse completed active CB1.",
       "cost": "No new chemistry or parameter, one rule ablation.",
       "counterexample": "Frontier still opens or production collapses without exchange.",
-      "partial_result": "Seeds0/1 complete: G4/9 F7/12 L22/22, late closure.9575/.9600, no insertion; seed2 pending, not a cohort conclusion.",
       "recipe": "research/BATCH_45_RECIPES.json",
       "evidence": "research/BATCH_45_PLAN.md",
-      "results": "research/BATCH_45.md"
+      "results": "research/BATCH_46.md",
+      "conclusion": "3/3 no errors; G4/9/11 F7/12/11 L22/22/23, late closure.9575/.9600/.95938; no insertion. Rule ablation causal control, not renewal."
     },
     {
       "id": "CW1",
@@ -1465,15 +1465,48 @@
         "CL1",
         "CX1"
       ],
-      "status": "three_selected_wider_port_followups_running",
+      "status": "three_complete_insertion_two_seeds_but_closure_and_thermal_failure",
       "hypothesis": "Wider free-port attraction and consistently softer bound continuation allow local closing after exchange.",
       "test": "dock_width.6 instead of.3 only, three seeds to2400; old CB1 reused, no rate/noise changes.",
       "cost": "One existing constant changed, no extra type/state/port/gene/tool/helper.",
       "counterexample": "Only suppresses all activity, creates internal traps, overheats or still cannot reseal.",
-      "partial_result": "Pilot100:3 L,94.5% closed time, invariant0, final closed52 L. Followups selected, not general chemistry adoption.",
       "recipe": "research/BATCH_45_WIDE_RECIPES.json",
       "evidence": "research/BATCH_45_PLAN.md",
-      "results": "research/BATCH_45.md"
+      "results": "research/BATCH_46.md",
+      "conclusion": "3/3 no errors, insertion0/5/14, late closure.2267/.95473/.92667. Seed0 has262 exchanges vs10/2, lateT.37638 vs.08560/.08509. Gate refused, no promotion or width grid."
+    },
+    {
+      "id": "PI1",
+      "parent": "MX2",
+      "status": "fifteen_complete_product_rebinding_structurally_ineligible",
+      "hypothesis": "Prepared F01 products can occupy G01 and potentially compete with expression under existing capture laws.",
+      "test": "zero/linked4/split4/linked16/split16 x3,400 time, one G01, no ligation/birth or L/HT; binding-only separate assay.",
+      "cost": "No new law, port, type, tool or dynamics observer; existing passive GeneticAudit.",
+      "counterexample": "Polymer degree rejects product contacts despite admissible monomer controls.",
+      "conclusion": "All linked occupancy and eligible GF contacts zero. monomer_only_capture without gf_end_capture forbids linked F; actual-predicate static preflight now blocks repetition. Should have checked before15 trials.",
+      "missing_proof": "Rate feedback, species-specific bounded active stocks, protection, feed/export and same-law turnover.",
+      "recipe": "research/BATCH_46_PI1_RECIPES.json",
+      "evidence": "research/BATCH_46_PI1_PREFLIGHT.json",
+      "results": "research/BATCH_46.md"
+    },
+    {
+      "id": "EG1",
+      "parent": "CW1",
+      "related": [
+        "CL1",
+        "CX1"
+      ],
+      "status": "three_energy_gated_followups_running",
+      "hypothesis": "Finite-neighborhood potential gate reduces harmful energy injection without eliminating productive membrane insertion.",
+      "test": "Three2400 cases, only contact_exchange_gate=metropolis vs CW1; freeze rates/noise/width. Compare reused CW1.",
+      "cost": "One transition gate, no numerical constant/type/port/state/gene/tool. Existing temperature and potentials; three L plus finite neighbors and local P/R segment barrier.",
+      "counterexample": "No insertion, persistent heat/opening, lost G/F/L throughput or expensive proposals.",
+      "missing_proof": "Robust insertion/repair, global energy accounting, feed/loss maintenance and regulation/protection.",
+      "recipe": "research/BATCH_46_EG1_RECIPES.json",
+      "evidence": "research/BATCH_46_PLAN.md",
+      "results": "research/BATCH_46.md",
+      "health_gate": "3 cases,2 workers,3h checkpoint pause, report then stop; no retry, tuning or adoption.",
+      "partial_result": "Pilot100: valid.945 lateT.08592,3 L,0 invariants,0 exchange proposals. Technical pass only; microchecks exercise the gate."
     }
   ]
 }

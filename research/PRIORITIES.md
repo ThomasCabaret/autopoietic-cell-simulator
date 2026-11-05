@@ -1,5 +1,18 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot46 : **CX1 clos3/3 passe**, production avec frontière stable mais aucune
+insertion. **CW1 clos3/3 refuse** :5/14 insertions sur2 graines, mais la troisième
+chauffe (T tardive.3764) et s'ouvre. Pas d'autre grille de largeurs. **EG1 en cours**,
+3 graines2400,2 travailleurs/3h : filtre énergétique local des échanges, mêmes
+taux/bruit/largeur, pas de nouvel outil. Lire energy_exchange_status.bat ; rapport
+puis arrêt, aucune adoption automatique. Si perte d'insertion ou chaleur persistante,
+interpréter propositions/deltaU avant changement, revoir le mécanisme si nécessaire.
+**PI1 clos15/15 refuse** : les produits F01 sont exclus de capture G–F par le degré
+local ; un précontrôle bloque la répétition. Prochaine construction conceptuelle
+indépendante : production saturée + pertes/recyclage/export avec protection de
+chaque espèce, pas une inhibition présumée. H-03/H-04 restent gap. GUI CB1 inchangée
+biologiquement,33 démos Langevin, limites visibles. Voir BATCH_46.
+
 Lot45 : **CB1 clos9/9**, analyse récupérée sans recalcul après perte du
 flag --compact. Une vraie chaîne nourriture→F entier→L→frontière est observée
 en graine1 ; fermeture tardive0/.9417/0, porte refusée. Ne pas relancer CB1.

@@ -1,5 +1,22 @@
 # Fidélité à l'objectif : localité et risques de pilotage
 
+Lot46 EG1 : remplacement d'un contact entre trois composites L (six billes),
+occupations de leurs ports et interactions spatiales incidentes à la coupure
+existante1+4*dock_width. Ajouter la différence de barrière des deux segments
+retiré/formé contre les atomes P/R axialement liés à portée. Aucun contour,
+séquence, origine, succès ou stock global dans l'acceptation. Les recherches
+numériques peuvent parcourir les tableaux mais seules ces interactions locales
+contribuent. Le facteur exp(-deltaU/T) réutilise la température et les potentiels
+existants ; un gate supplémentaire, zéro type/port/gène/outil/taux/constante.
+Sa réutilisation dans d'autres transitions est espérée, pas démontrée. Le coût
+informatique par proposition peut croître avec le bain et reste à mesurer sur
+la cohorte. Ce n'est pas une preuve de bilan thermique global : ruptures, helpers
+de synthèse et cycle externe gardent leur dette. Option none par défaut,
+anciens préfixes physiques/RNG testés. Les statistiques ne pilotent pas les règles.
+PI1 n'ajoute aucune dynamique : état préparé, ablations communes, audit passif.
+Son précontrôle courant utilise le véritable prédicat GeneticAudit ; il ne
+change pas le comportement pour rendre le test favorable.
+
 Lot45 : zéro nouvelle primitive chimique. CL1 observe trois L/six billes,
 650 frames et les variations de potentiel des contacts affectés ; clone et
 préfixe archivés exacts. Aucune origine ou fermeture dans les forces. CX1 est

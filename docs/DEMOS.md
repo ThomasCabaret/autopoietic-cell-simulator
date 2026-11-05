@@ -1,6 +1,6 @@
 # Démos représentatives accessibles dans la GUI
 
-## Lot45 —33 choix, intégration compacte et défauts visibles
+## Lot46 —33 choix, référence compacte et défauts visibles
 
 Le raccourci **Démos → État actuel · bain intégré** ouvre désormais
 **Intégration compacte · défauts connus**, graine0 par convention.302 billes,
@@ -15,8 +15,10 @@ Le suivi/flashes et les compteurs permettent de regarder la lésion et la rare
 refermeture. Commencer en Maximum puis ralentir localement.
 
 Les33 actions natives et les positions par rapport au moteur sans interface
-sont vérifiées. MIN1M/MX2 et leurs recettes restent accessibles ; CX1/CW1 en
-campagne ne modifient aucune démo. [Résultats/limites](../research/BATCH_45.md).
+sont vérifiées. MIN1M/MX2 et leurs recettes restent accessibles. CX1 terminé
+est stable sans insertion ; CW1 terminé insère2/3 mais échoue en tenue dans la
+troisième graine. EG1 teste le filtre énergétique local et ne modifie aucune
+démo avant évaluation. [Résultats/limites](../research/BATCH_46.md).
 
 ## Historique lot44 —30 choix avant CB1
 

@@ -1,5 +1,14 @@
 # Interactions souhaitées, parasites et environnements — lot7
 
+Lot46 : EG1 ajoute seulement le coût des interactions modifiées à l'acceptation
+d'un échange de contact L : ports des trois L et leur voisinage fini, barrière
+P/R des deux segments. Aucun changement d'affinité/capture G/F/HT, ni de bruit.
+Hors échange, les aides thermiques restent inchangées ; cohorte nécessaire avant
+adoption. PI1 établit un interdit local souvent oublié : F de degré de squelette>0
+ne se fixe pas à G sans gf_end_capture, donc le produit F01 ne peut pas inhiber
+G par occupation directe dans le candidat courant. F0/F1 libres peuvent le faire.
+Cela retire une interaction présumée, sans introduire un nouveau régulateur.
+
 Lot45 : échange CB1 = retrait d'une liaison latérale, formation d'une
 autre ; les deux faces libérées doivent encore se rencontrer. CL1 mesure un
 saut de potentiel de ports +6.0243 et aucune jonction admissible sur la fenêtre

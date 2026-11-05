@@ -1523,3 +1523,26 @@ fixées, pilote stable et trois suivis lancés. Aucune nouvelle protéine ou pri
 CB1 devient la vue intégrée de la GUI (graine0, échec visible),33 choix natifs
 vérifiés ; registre15 distingue draft mécanistique et preuve limitée25.
 Voir BATCH_45 et ses recettes/provenance. Maintien, protection et régulation ouverts.
+
+## 2026-11-05 — lot46, coût local des échanges et précontrôle de régulation
+
+CX1 terminé3/3 passe : frontière productive stable sans insertion. CW1 terminé3/3
+refuse : insertion0/5/14, mais graine0 fermeture.2267 et T tardive.3764,262 échanges.
+Pas de grille de largeurs ni de bruit ralenti. EG1 implémenté : filtre du coût
+potentiel local d'échange, zéro nouvel outil/type/paramètre numérique. Microchecks
+potentiel/inversion/T0, passivité et reprise exacts ; pilote100 ferme.945,T.08592,
+3 L,0 invariant,0 proposition. Cohorte3×2400 figée lancée,2 travailleurs/3h,
+rapport puis arrêt ; résultat non anticipé.
+
+PI1 séparé terminé15/15 : aucun produit F01 ne se refixe à G, contrairement à
+certains témoins monomères. Interdit par degré local du squelette, pas défaut
+d'horizon. Cette vérification aurait dû précéder la campagne. Précontrôle du
+véritable GeneticAudit ajouté, répétition bloquée et méthode renforcée ; anciennes
+recettes intactes. Pas de rétroaction ou d'homéostasie acquise. Débit limité +
+pertes/recyclage/export est une alternative qualitative, protection et répartition
+restent gap. Aucun palier biologique augmenté. Registre16/43 actualisé.
+
+Validation246 tests passent après correction de comparaison du nouveau défaut
+none aux configurations historiques ; sept préfixes physiques/RNG exacts,
+33 démos natives validées, CB1 reste la référence visible sous Langevin. Sources
+et résumés reproductibles seulement dans Git. Voir BATCH_46 et ses descripteurs.

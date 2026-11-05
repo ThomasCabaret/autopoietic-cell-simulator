@@ -1,4 +1,25 @@
-# Santé du projet —31 octobre2026
+# Santé du projet — actualisation5 novembre2026
+
+Lot46 : l'ablation CX1 isole une frontière productive stable, CW1 obtient
+insertion2/3 mais échoue par chaleur/ouverture dans une graine. Une seule
+intervention mécaniste EG1 traite le coût local de l'échange ; trois essais,
+pas trois conceptions supplémentaires. Horizon décisif : cohorte2400. En cas
+d'échec, interpréter ses propositions/refus et reconsidérer le mécanisme avant
+une autre constante ; ne pas poursuivre une grille de largeurs. PI1 a été lancé
+sans détecter d'abord une impossibilité statique de capture des produits. Cette
+dépense évitable est conservée et entraîne un précontrôle du prédicat réel.
+Le manque de rétroaction directe révèle un risque concret, sans établir une
+impossibilité de maintien : bilan débit limité/pertes/export plausible, protection
+et répartition par espèce encore ouvertes. Ne pas attendre EG1 pour les concevoir.
+
+À la question précédente, estimation d'orientation communiquée : environ40%
+(30–50) de préparation au premier test intégré non naïf, environ20 lots restants
+(15–30 conditionnels). **Jugement de planification, pas score de preuve, probabilité
+ou engagement** ; ne pas le calculer comme moyenne de la checklist. Réévaluation
+après3–5 lots ou tout refus structurel. Ces bornes ne sont pas fiables tant que
+protection/régulation, information, transport/export et bilan sous flux manquent.
+Le présent lot ne justifie pas de les améliorer. Pas de blocage de principe établi,
+pas d'assurance que tous les risques seront de simples réglages. Maintien non prêt.
 
 Lot45 : CB1 donne un premier transfert complet jusqu'à la frontière1/3,
 avec G/F nouveaux3/3, mais fermeture robuste refusée. Le diagnostic ne se limite

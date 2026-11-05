@@ -33,13 +33,14 @@ s'ouvre durablement. La graine1 montre une insertion de L alimentaire et une
 bonne tenue tardive ; la graine2 échoue aussi. Porte de cohorte refusée,
 aucun maintien cellulaire revendiqué. MIN1M et MX2 restent au menu séparément.
 
-Recherche : **refermer la membrane après l'échange local**. CB1 terminé9/9,
-rapport récupéré sans recalcul après correction du routage d'analyse. Une
-loupe de six billes montre un saut de potentiel et des extrémités qui se
-séparent. CX1 teste l'absence d'échange ; CW1 élargit uniquement le potentiel
-des ports (.3→.6). Trois essais chacun, horizons et sources figés.
-Statuts `exchange_ablation_status.bat` et `wide_ports_status.bat` ; arrêts/reprises
-par les lanceurs associés. [Lot45](research/BATCH_45.md) ·
+Recherche : **insérer sans perdre la fermeture ni échauffer le bain**. CX1
+termine stable3/3 sans insertion ; CW1 insère2/3 mais échoue en tenue thermique
+et fermeture dans la troisième graine. EG1 teste un filtre du coût énergétique
+local des échanges, mêmes taux/bruit/largeur, aucun nouvel outil. Trois essais
+à2400 en cours, sources figées, rapport puis arrêt. Statut par
+`energy_exchange_status.bat`, arrêt/reprise par les lanceurs associés.
+PI1 identifie aussi un interdit local de fixation des produits F01 sur G ;
+la régulation/protection des polymères reste ouverte. [Lot46](research/BATCH_46.md) ·
 [Calibration](research/CAMPAIGN_CALIBRATION.md).
 
 Un moteur CPU commun pour les campagnes sans fenêtre et les démonstrateurs
