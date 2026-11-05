@@ -16,6 +16,9 @@ class KineticProbe:
         self.state=state or dict(version=1,last_time=None,windows={},first={},encountered={},ticks=0)
 
     def scan(self,c):
+        if self.config['model']=='mixed_synthesis' and c.config['initial_boundary'] is not None:
+            from .mixed_boundary import scan_contacts
+            return scan_contacts(c,self.neighbors)
         if self.config['model']!='membrane_bath':return {}
         n=c.n;m=c.config['ring_units'];pos=c.pos[:2*n]
         pairs=self.neighbors.pairs(pos[:n],1.+4*c.config['dock_width'],'kinetic_contacts')
@@ -52,8 +55,9 @@ class KineticProbe:
         original=c.react
         def observed(time,dt,neighbors):
             before=self.scan(c)
-            edges=set(c.face_links) if self.config['model']=='membrane_bath' else set()
-            count=len(getattr(c,'exchange_events',[]))
+            mixed=self.config['model']=='mixed_synthesis' and c.config['initial_boundary'] is not None
+            edges=set(c.lipids.links) if mixed else (set(c.face_links) if self.config['model']=='membrane_bath' else set())
+            count=len(c.exchanges) if mixed else len(getattr(c,'exchange_events',[]))
             result=original(time,dt,neighbors)
             state=self.state;last=state['last_time'];span=0. if last is None else time-last
             key=str(int(math.floor(time/self.window)))
@@ -69,13 +73,17 @@ class KineticProbe:
             if self.terminal:
                 w['gated_exchange_face_time']=w.get('gated_exchange_face_time',0.)+span*before.get('gated_exchange_faces',0)
                 if before.get('gated_exchange_faces',0):state['first'].setdefault('gated_exchange_faces',float(time))
-            if edges or self.config['model']=='membrane_bath':
-                after=set(c.face_links);formed=len(after-edges);broken=len(edges-after)
+            if edges or self.config['model']=='membrane_bath' or mixed:
+                after=set(c.lipids.links) if mixed else set(c.face_links);formed=len(after-edges);broken=len(edges-after)
                 w['formed_contacts']+=formed;w['broken_contacts']+=broken
                 if formed:state['first'].setdefault('formed_contact',float(time))
-                m=c.config['ring_units']
-                if any(i<m<=j for i,j,a,b in after-edges):state['first'].setdefault('new_old_contact',float(time))
-            delta=len(getattr(c,'exchange_events',[]))-count;w['exchanges']+=delta
+                if mixed:
+                    prepared=set(c.initial_boundary_heads)
+                    contact=any((i in prepared)!=(j in prepared) for i,j,a,b in after-edges)
+                else:
+                    m=c.config['ring_units'];contact=any(i<m<=j for i,j,a,b in after-edges)
+                if contact:state['first'].setdefault('new_old_contact',float(time))
+            delta=(len(c.exchanges) if mixed else len(getattr(c,'exchange_events',[])))-count;w['exchanges']+=delta
             if delta:state['first'].setdefault('exchange',float(time))
             state['last_time']=float(time);state['ticks']+=1
             return result
@@ -83,19 +91,22 @@ class KineticProbe:
 
     def summary(self,time,metrics):
         first=self.state['first'];passages={}
+        mixed=self.config['model']=='mixed_synthesis' and self.config['chemistry']['initial_boundary'] is not None
+        measured=self.config['model']=='membrane_bath' or mixed
         names=['encounter_pairs','capture_faces','exchange_faces','new_old_contact','exchange']
         if self.terminal:names.append('gated_exchange_faces')
         for name in names:
             value=first.get(name);passages[name]=dict(time=value if value is not None else time,event=value is not None,
-                measured=self.config['model']=='membrane_bath')
-        history=metrics.get('history',[])
-        insertion=next((float(h['time']) for h in history if h.get('inserted_now')),None)
+                measured=measured)
+        history=metrics.get('boundary',{}).get('history',[]) if mixed else metrics.get('history',[])
+        insertion_key='inserted_born_inside' if mixed else 'inserted_now'
+        insertion=next((float(h['time']) for h in history if h.get(insertion_key)),None)
         passages['closed_insertion']=dict(time=time if insertion is None else insertion,event=insertion is not None,
-            measured=self.config['model']=='membrane_bath')
+            measured=measured)
         windows=list(self.state['windows'].values())
         keys=['encounter_pair_time','capture_face_time','exchange_face_time','exchanges']
         if self.terminal:keys.append('gated_exchange_face_time')
-        return dict(version=1,scope='Membrane pre-reaction original/new pair census; other hooks have no eligibility diagnostic',
+        return dict(version=1,scope='Membrane/mixed-boundary pre-reaction original/new pair census; other hooks have no eligibility diagnostic',
             resolution='Every reaction tick; right-endpoint face-time approximation, no exact hazard or independence claim',
             sampled_until=time,first_passages=passages,encountered_new_units=len(self.state['encountered']),
             opportunity_totals={k:sum(w.get(k,0.) for w in windows) for k in keys},

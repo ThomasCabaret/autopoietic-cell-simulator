@@ -49,9 +49,10 @@ class Simulation:
                 # Pairing, release and other unreported state changes also alter forces.
                 # Refresh even when react() returns no backbone-formation event.
                 self.motion.force=None
-        if self.step_index%self.config['engine']['sample_every']==0 or events or self.done:
+        if self.step_index%self.config['engine']['sample_every']==0 or events or self.done or getattr(self.chemistry,'observation_due',False):
             for callback in self.listeners:
                 self.chemistry.observe(callback,self.time,events)
+        self.chemistry.observation_due=False
         self.prepared=True
 
     def advance(self, steps=1):

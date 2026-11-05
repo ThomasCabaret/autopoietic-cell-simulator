@@ -21,6 +21,10 @@ def material_inventory(scenario,assembly):
     types=['P_G' if f==0 else 'P_F' for f in families]+[f'R{b}' for b in assembly['atom_bits']]
     types+=['H']*cfg['food_units']+['T']*cfg['food_units']
     initial=set(assembly['initial_supports']);initial_atoms=initial|{n+s for s in initial}
+    boundary=cfg.get('initial_boundary')
+    if boundary is not None:
+        start=len(types);count=boundary['units']
+        types+=['H']*count+['T']*count;initial_atoms.update(range(start,start+2*count))
     return n,families,types,initial_atoms
 
 

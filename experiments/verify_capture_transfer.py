@@ -12,7 +12,8 @@ def main():
         ('MIN1M_20261104T113752867767Z','MIN1M_active_s0'),
         ('MD2_20261030T115427443420Z','MD2_bath_new_s2'),
         ('L3_20261104T164655147905Z','L3_combined_s0'),
-        ('MX1_20261104T192816403023Z','MX1_mixed_s0')]
+        ('MX1_20261104T192816403023Z','MX1_mixed_s0'),
+        ('BI1P_20261105T062531768586Z','BI1_active_s0')]
     out=ROOT/'outputs/diagnostics'/('CT1_reference_'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ'));out.mkdir(parents=True)
     code=('import json,sys;from simulator.engine import Simulation;from simulator.checkpoint import save;'
         'sim=Simulation(json.load(open(sys.argv[1],encoding="utf-8")));sim.advance(round(5./sim.dt));save(sys.argv[2],sim)')
@@ -30,6 +31,9 @@ def main():
             value.pop('source_sha256')
             if value['config']['chemistry'].get('capture_cooperativity') is False:
                 value['config']['chemistry'].pop('capture_cooperativity')
+            c=value['config']['chemistry']
+            if value['config']['model']=='mixed_synthesis' and c.get('initial_boundary') is None and c.get('bound_barrier_radius',0.)==0.:
+                for key in ('initial_boundary','bound_barrier_radius','bound_barrier_stiffness'):c.pop(key,None)
         if x!=y:raise ValueError(f'Physical state/RNG/motion changed: {label}')
         rows.append(dict(label=label,time=5.,state_rng_motion_exact=True))
     write(out/'report.json',dict(rows=rows));print(out);return out

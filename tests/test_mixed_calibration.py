@@ -13,6 +13,8 @@ class MixedCalibrationTests(unittest.TestCase):
         self.assertEqual(stock_at(cfg,assembly,lipid,1.),dict(P_G=1,P_F=1,R0=1,R1=1,H=1,T=1))
         self.assertEqual(stock_at(cfg,assembly,lipid,2.),dict(P_G=0,P_F=1,R0=1,R1=0,H=1,T=1))
         self.assertEqual(stock_at(cfg,assembly,lipid,3.)['H'],0)
+        cfg['chemistry']['initial_boundary']=dict(units=219)
+        self.assertEqual(stock_at(cfg,assembly,lipid,1.),dict(P_G=1,P_F=1,R0=1,R1=1,H=1,T=1))
         history=[dict(time=0.,x=0.),dict(time=9.,x=1.),dict(time=10.,x=1.)]
         self.assertAlmostEqual(weighted(history,'x',0.,10.),.1)
         self.assertAlmostEqual(weighted(history,'x',5.,10.),.2)

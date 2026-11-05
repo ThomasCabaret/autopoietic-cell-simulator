@@ -160,6 +160,21 @@ def resolve(raw):
             if defaults[key]<0:raise ValueError('Invalid lipid rate/energy: '+key)
         if model=='mixed_synthesis':
             from .mixed_synthesis import genetics_config,SHARED
+            boundary=defaults['initial_boundary']
+            if boundary is not None:
+                if (not isinstance(boundary,dict) or set(boundary)!={'units','radius','packet_box','packet_offset'} or
+                    type(boundary['units']) is not int or boundary['units']<3 or
+                    type(boundary['radius']) not in (int,float) or not math.isfinite(boundary['radius']) or boundary['radius']<=.325):
+                    raise ValueError('Invalid constructed mixed boundary')
+                for key in ('packet_box','packet_offset'):
+                    if (not isinstance(boundary[key],list) or len(boundary[key])!=2 or
+                        any(type(x) not in (int,float) or not math.isfinite(x) for x in boundary[key])):
+                        raise ValueError('Invalid mixed initial '+key)
+                if any(x<=1.2 for x in boundary['packet_box']) or any(2*(boundary['radius']+.325)>=x for x in defaults['box']):
+                    raise ValueError('Initial mixed geometry does not fit')
+            for key in ('bound_barrier_radius','bound_barrier_stiffness'):
+                if type(defaults[key]) not in (int,float) or not math.isfinite(defaults[key]) or defaults[key]<0:
+                    raise ValueError('Invalid mixed segment parameter: '+key)
             if not isinstance(defaults['genetics'],dict) or set(defaults['genetics'])&set(SHARED):
                 raise ValueError('Mixed synthesis has one shared capture/temperature/box definition')
             g=genetics_config(defaults)

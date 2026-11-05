@@ -17,7 +17,8 @@ SHARED=('temperature','box','rung_capture_radius','rung_formation_rate','rung_ca
     'food_binding_radius','food_binding_rate','food_unbinding_rate','food_ligand_energy',
     'food_ligand_width','food_activation','capture_curvature')
 DEFAULTS={k:v for k,v in LIPID_DEFAULTS.items() if k not in ('tool_count','tool_linked','tool_pose')}
-DEFAULTS.update(genetics={},lipid_capture=True,capture_cooperativity=False)
+DEFAULTS.update(genetics={},lipid_capture=True,capture_cooperativity=False,
+    initial_boundary=None,bound_barrier_radius=0.,bound_barrier_stiffness=80.)
 
 
 def genetics_config(config):
@@ -103,11 +104,17 @@ class GeneticCaptureView:
 class MixedSynthesisChemistry(LipidSynthesisChemistry):
     def __init__(self,config,rng):
         self.config,self.rng=config,rng;self.box=np.asarray(config['box'],dtype=float)
-        self.host=CopyChemistry(genetics_config(config),rng);self.prefix=len(self.host.pos)
-        count=config['food_units'];food=rng.uniform([.6,.6],self.box-.6,size=(2*count,2))
+        initial=genetics_config(config);boundary=config['initial_boundary']
+        packet=self.box if boundary is None else np.asarray(boundary['packet_box'],dtype=float)
+        initial['box']=packet.tolist()
+        self.host=CopyChemistry(initial,rng);self.host.config['box']=self.box.tolist();self.host.box=self.box
+        self.prefix=len(self.host.pos)
+        count=config['food_units'];food=rng.uniform([.6,.6],packet-.6,size=(2*count,2))
         self.pos=np.concatenate((self.host.pos.copy(),food));self.lipids=LinkedLipids()
         self.births=[];self.exchanges=[];self.ligand_types=np.full(len(self.pos),-1,dtype=np.int64)
         self.ligand_types[self.prefix:self.prefix+count]=0;self.ligand_types[self.prefix+count:]=1
+        from .mixed_boundary import initialize
+        initialize(self)
         self._views();self.capture=MixedCapture(self)
         self.host.assembly.catalyst=GeneticCaptureView(self)
         r=config['tool_lipid_contact']
@@ -115,7 +122,7 @@ class MixedSynthesisChemistry(LipidSynthesisChemistry):
         if config['formation_gate']=='metropolis':
             self.transition_stats={k:dict(proposals=0,contact_time=0.,weighted_time=0.,positive_delta=0,
                 sum_positive_delta=0.,max_delta=None,min_delta=None,formed=0) for k in ('background','catalytic')}
-        self.mobility=np.concatenate((np.full(self.prefix,.25),np.full(2*count,.4)))[:,None]
+        self.mobility=np.concatenate((np.full(self.prefix,.25),np.full(len(self.pos)-self.prefix,.4)))[:,None]
         self._mechanics()
 
     def _views(self):
@@ -127,7 +134,10 @@ class MixedSynthesisChemistry(LipidSynthesisChemistry):
         # The host adapter reacts the global capture once, before P/R formation.
         events=self.host.react(time,dt,ScopedNeighbors(neighbors,'PR:'))
         self._views();self.capture.refresh(self);self._mechanics()
-        self.form_lipids(time,dt*5,neighbors)
+        before=len(self.births);self.form_lipids(time,dt*5,neighbors)
+        self.observation_due=self.config['initial_boundary'] is not None and len(self.births)>before
+        if self.observation_due:
+            for e in self.births[before:]:e['birth_midpoint']=((self.pos[e['head']]+self.pos[e['tail']])/2).tolist()
         if self.config['capture_cooperativity']:self.capture.refresh(self)
         self.exchanges.extend(dict(time=float(time),**e) for e in self.lipids.react(
             self.pos,self.config,self.rng,ScopedNeighbors(neighbors,'L:'),dt*5))
@@ -137,6 +147,9 @@ class MixedSynthesisChemistry(LipidSynthesisChemistry):
         self._views();force=self.capture.forces(self,ScopedNeighbors(neighbors,'shared:'))
         force[:self.prefix]+=self.host.extra_forces(ScopedNeighbors(neighbors,'PR:'))
         force+=self.lipids.forces(self.pos,self.config,ScopedNeighbors(neighbors,'L:'))[0]
+        if self.config['bound_barrier_radius']>0:
+            from .mixed_boundary import segment_forces
+            force+=segment_forces(self,ScopedNeighbors(neighbors,'L:'))
         return force
 
     def lipid_candidates(self,neighbors):
@@ -157,6 +170,11 @@ class MixedSynthesisChemistry(LipidSynthesisChemistry):
         state.update(host_springs=self.host.springs.tolist(),host_angles=self.host.angles.tolist())
         return state
 
+    def colors(self):
+        colors=super().colors()
+        n=len(self.initial_boundary_heads)
+        return colors+['#148e9c']*n+['#df7947']*n
+
     def restore(self,state):
         self._views();self.host.springs=np.asarray(state['host_springs'],dtype=float).reshape(-1,4)
         self.host.angles=np.asarray(state['host_angles'],dtype=float).reshape(-1,5)
@@ -169,6 +187,7 @@ class MixedSynthesisChemistry(LipidSynthesisChemistry):
 class MixedSynthesisObserver(LipidSynthesisObserver):
     def __init__(self,config):
         super().__init__(config);self.genetic_state=None;self.used_lipids=set();self.invariant_failures=0
+        self.boundary_state=None
 
     def genetic_observer(self):
         cfg={**genetics_config(self.config),'case':self.config['case'],'seed':self.config['seed']}
@@ -180,9 +199,11 @@ class MixedSynthesisObserver(LipidSynthesisObserver):
         occupied=[(s,int(a)) for s,a in enumerate(c.capture.site_bound) if a>=0]
         axial=[int(r) for r in c.host.rungs[:,1] if r>=0]
         heads=list(c.lipids.rungs);tails=list(c.lipids.rungs.values());count=c.config['food_units']
-        valid=(len(c.pos)==c.prefix+2*count and len(axial)==len(set(axial)) and
-            all(c.prefix<=h<c.prefix+count for h in heads) and
-            all(c.prefix+count<=t<len(c.pos) for t in tails) and len(tails)==len(set(tails)) and
+        faces=[(a,x) for a,b,x,y in c.lipids.links]+[(b,y) for a,b,x,y in c.lipids.links]
+        valid=(len(c.pos)==c.prefix+2*count+2*len(c.initial_boundary_heads) and len(axial)==len(set(axial)) and
+            all(c.prefix<=h<len(c.pos) and c.ligand_types[h]==0 for h in heads) and
+            all(c.prefix<=t<len(c.pos) and c.ligand_types[t]==1 for t in tails) and len(tails)==len(set(tails)) and
+            len(faces)==len(set(faces)) and all(a in c.lipids.rungs and b in c.lipids.rungs and a<b and x in (0,1) and y==1-x for a,b,x,y in c.lipids.links) and
             len(occupied)==len({a for _,a in occupied}) and
             all(c.capture.atom_bound[a]==s for s,a in occupied) and
             all(c.capture.site_bound[s]==a for a,s in enumerate(c.capture.atom_bound) if s>=0))
@@ -207,6 +228,11 @@ class MixedSynthesisObserver(LipidSynthesisObserver):
         self.history.append(dict(time=float(time),lipids=len(c.lipids.rungs),lateral_contacts=len(c.lipids.links),
             occupied_sites=len(occupied),genetic_ligands=sum(a<c.prefix for a in occupied),
             lipid_ligands=sum(a>=c.prefix for a in occupied),double_occupied_edges=double,wrong_double_edges=wrong))
+        if c.config['initial_boundary'] is not None:
+            from .mixed_boundary import BoundaryObserver
+            observer=BoundaryObserver()
+            if self.boundary_state is not None:observer.__dict__.update(self.boundary_state)
+            observer.observe(time,c);self.boundary_state=observer.__dict__
         if getattr(self,'record_trajectory',True):self.frames.append(c.pos.copy())
 
     def summary(self):
@@ -220,4 +246,8 @@ class MixedSynthesisObserver(LipidSynthesisObserver):
             scope='One shared capture pool P/R/H/T; actual products and conserved atom IDs. Prepared short G/F, '
                 'finite stocks, no cell membrane, losses, open feed or homeostasis. H/T local energy gate optional; '
                 'P/R formation retains its historical helper. Tool provenance uses prior passive observations only; may undercount.')
+        if self.boundary_state is not None:
+            from .mixed_boundary import BoundaryObserver
+            observer=BoundaryObserver();observer.__dict__.update(self.boundary_state);result['boundary']=observer.summary()
+            result['scope']='Constructed L boundary and shared P/R/H/T capture, actual products; finite stocks, no losses/open feed/homeostasis. P/R helper and external release cycle retained.'
         return result
