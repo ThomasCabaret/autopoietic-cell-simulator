@@ -1,5 +1,5 @@
 param([ValidateSet('Start','Status','Stop','Resume','Review')][string]$Action='Status',
-      [ValidateSet('Membrane','Lipids','Curvature','Tail','Capture','Mixed','Cooperative','Boundary')][string]$Kind='Membrane')
+      [ValidateSet('Membrane','Lipids','Curvature','Tail','Capture','Mixed','Cooperative','Boundary','Compact')][string]$Kind='Membrane')
 $ErrorActionPreference='Stop'
 $projectRoot=Split-Path -Parent $PSScriptRoot
 Set-Location -LiteralPath $projectRoot
@@ -13,6 +13,7 @@ if ($Kind -eq 'Capture') { $driverName='capture_transfer_followup.py'; $parentNa
 if ($Kind -eq 'Mixed') { $driverName='mixed_synthesis_followup.py'; $parentName='mixed_synthesis_followups'; $kindLabel='MX1' }
 if ($Kind -eq 'Cooperative') { $driverName='cooperative_synthesis_followup.py'; $parentName='cooperative_synthesis_followups'; $kindLabel='MX2' }
 if ($Kind -eq 'Boundary') { $driverName='boundary_transfer_followup.py'; $parentName='boundary_transfer_followups'; $kindLabel='BI1' }
+if ($Kind -eq 'Compact') { $driverName='boundary_transfer_followup.py'; $parentName='compact_transfer_followups'; $kindLabel='CB1'; $modeArgs=@('--compact') }
 $modeArgs=@()
 if ($Kind -eq 'Tail') { $driverName='lipid_curvature_followup.py'; $parentName='lipid_thermal_tail_followups'; $kindLabel='L4'; $modeArgs=@('--tail') }
 $driverPath=Join-Path $projectRoot "scripts\$driverName"

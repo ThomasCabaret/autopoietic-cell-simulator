@@ -163,7 +163,7 @@ def resolve(raw):
             boundary=defaults['initial_boundary']
             if boundary is not None:
                 if (not isinstance(boundary,dict) or set(boundary)!={'units','radius','packet_box','packet_offset'} or
-                    type(boundary['units']) is not int or boundary['units']<3 or
+                    type(boundary['units']) is not int or (boundary['units']!=0 and boundary['units']<3) or
                     type(boundary['radius']) not in (int,float) or not math.isfinite(boundary['radius']) or boundary['radius']<=.325):
                     raise ValueError('Invalid constructed mixed boundary')
                 for key in ('packet_box','packet_offset'):

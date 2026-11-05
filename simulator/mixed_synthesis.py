@@ -228,7 +228,7 @@ class MixedSynthesisObserver(LipidSynthesisObserver):
         self.history.append(dict(time=float(time),lipids=len(c.lipids.rungs),lateral_contacts=len(c.lipids.links),
             occupied_sites=len(occupied),genetic_ligands=sum(a<c.prefix for a in occupied),
             lipid_ligands=sum(a>=c.prefix for a in occupied),double_occupied_edges=double,wrong_double_edges=wrong))
-        if c.config['initial_boundary'] is not None:
+        if c.initial_boundary_heads:
             from .mixed_boundary import BoundaryObserver
             observer=BoundaryObserver()
             if self.boundary_state is not None:observer.__dict__.update(self.boundary_state)

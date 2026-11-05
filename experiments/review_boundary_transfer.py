@@ -23,7 +23,7 @@ def decide(rows):
             'membrane replacement under loss or independent robustness. Stop for interpretation.')
 
 
-def collect(folder,require_complete=True):
+def collect(folder,require_complete=True,decision_fn=decide):
     folder=Path(folder);manifest=validate(folder);snapshot=status(folder)
     if require_complete and (snapshot['controller_active'] or snapshot['counts']['complete']!=9):raise ValueError('Require complete inactive BI1')
     rows=[];hashes={k:v for k,v in manifest['source_sha256'].items() if k.startswith('simulator/')}
@@ -32,7 +32,9 @@ def collect(folder,require_complete=True):
         path=folder/state['result'];result=read(path)
         if result['error'] or not result['completed'] or result['scenario']!=task['scenario'] or result['source_sha256']!=hashes:
             raise ValueError('BI1 result provenance mismatch')
-        m=result['metrics'];g=m['genetics'];b=m['boundary'];history=b['history'];duration=task['scenario']['duration']
+        m=result['metrics'];g=m['genetics'];duration=task['scenario']['duration']
+        b=m.get('boundary',dict(history=[],ever_inserted=[],ever_inserted_born_inside=[],residence={},birth_inside={},sampled_crossings={}))
+        history=b['history']
         stock=stock_row(folder,task,state,manifest);kinetics=read(folder/state['kinetics'])
         motion=read(folder/state['motion_audit'])['history'];late=[r['kinetic_temperature'] for r in motion if r['time']>=.75*duration]
         inserted=set(b['ever_inserted_born_inside']);food=[]
@@ -45,11 +47,11 @@ def collect(folder,require_complete=True):
             valid_fraction=weighted(history,'valid',0.,duration),valid_fraction_late=weighted(history,'valid',.75*duration,duration),
             inserted=len(b['ever_inserted']),inserted_born_inside=len(inserted),inserted_from_whole_food_F=len(food),
             sampled_residence=b['residence'],birth_inside=b['birth_inside'],sampled_crossings=b['sampled_crossings'],
-            final=history[-1],invariant_failures=m['atom_port_invariant_failures'],
+            final=history[-1] if history else None,invariant_failures=m['atom_port_invariant_failures'],
             calibration=stock,kinetics=kinetics,late_temperature=sum(late)/len(late),
             elapsed_seconds=result['elapsed_seconds'],result_sha256=digest(path)))
     report=dict(counts=snapshot['counts'],controller_active=snapshot['controller_active'],rows=rows,
-        decision=decide(rows) if len(rows)==9 else None,manifest_sha256=digest(folder/'manifest.json'),
+        decision=decision_fn(rows) if len(rows)==9 else None,manifest_sha256=digest(folder/'manifest.json'),
         scope='Actual births and same-law L contacts. Closed simple contours are passive witnesses. '
             'Pre-reaction exposure is sampled, not integrated hazard. Original/new IDs never enter laws. '
             'Finite near-frontier packet, global dilution, no feed or losses. Nosynthesis disables shared PR/HT rates.')

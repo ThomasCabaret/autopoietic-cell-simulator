@@ -13,7 +13,9 @@ def initialize(c):
     if cfg is None:return
     packet=np.asarray(cfg['packet_box']);offset=c.box/2-packet/2+cfg['packet_offset']
     c.pos+=offset
-    n=cfg['units'];theta=np.arange(n)*2*np.pi/n
+    n=cfg['units']
+    if n==0:return  # Explicit no-L control; packet placement is still identical.
+    theta=np.arange(n)*2*np.pi/n
     radial=np.column_stack((np.cos(theta),np.sin(theta)))
     start=len(c.pos);radius=cfg['radius']
     c.pos=np.concatenate((c.pos,c.box/2+(radius+.325)*radial,c.box/2+(radius-.325)*radial))

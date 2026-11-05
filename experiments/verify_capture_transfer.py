@@ -13,7 +13,8 @@ def main():
         ('MD2_20261030T115427443420Z','MD2_bath_new_s2'),
         ('L3_20261104T164655147905Z','L3_combined_s0'),
         ('MX1_20261104T192816403023Z','MX1_mixed_s0'),
-        ('BI1P_20261105T062531768586Z','BI1_active_s0')]
+        ('BI1P_20261105T062531768586Z','BI1_active_s0'),
+        ('MX2_20261104T203221072374Z','MX2_cooperative_s0')]
     out=ROOT/'outputs/diagnostics'/('CT1_reference_'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ'));out.mkdir(parents=True)
     code=('import json,sys;from simulator.engine import Simulation;from simulator.checkpoint import save;'
         'sim=Simulation(json.load(open(sys.argv[1],encoding="utf-8")));sim.advance(round(5./sim.dt));save(sys.argv[2],sim)')
