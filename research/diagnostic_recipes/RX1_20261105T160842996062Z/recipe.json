@@ -1,0 +1,26 @@
+{
+  "campaign": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\recycling_followups\\followup_20261031T080348730984Z\\A\\campaign_20261031T080349153016Z",
+  "manifest_sha256": "c0f7ca6ebd418af603b64bb788787d8d865c4b3c5462404e831d890ae95f0d64",
+  "cases": [
+    {
+      "task": "task0002",
+      "label": "RV1_full_s0",
+      "result": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\recycling_followups\\followup_20261031T080348730984Z\\A\\campaign_20261031T080349153016Z\\tasks\\task0002\\attempts\\RV1_full_s0_s0_20261031T082332653347Z\\result.json",
+      "result_sha256": "a525f9c95bb994e0cabe189ca337ebdf735fdc3634e789324aff7e236f386d65",
+      "checkpoint": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\recycling_followups\\followup_20261031T080348730984Z\\A\\campaign_20261031T080349153016Z\\tasks\\task0002\\attempts\\RV1_full_s0_s0_20261031T082332653347Z\\periodic.npz",
+      "checkpoint_sha256": "3e08b0e74b6f04b4d43ed695452f1bee7fce021da9abb083dc9cd0389fc4845e"
+    },
+    {
+      "task": "task0003",
+      "label": "RV1_protected_s0",
+      "result": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\recycling_followups\\followup_20261031T080348730984Z\\A\\campaign_20261031T080349153016Z\\tasks\\task0003\\attempts\\RV1_protected_s0_s0_20261031T082333959285Z\\result.json",
+      "result_sha256": "cb7e14879bf513454396a0b232d53b31208caaf23ebf6f37e93b83bc94b9e9d3",
+      "checkpoint": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\recycling_followups\\followup_20261031T080348730984Z\\A\\campaign_20261031T080349153016Z\\tasks\\task0003\\attempts\\RV1_protected_s0_s0_20261031T082333959285Z\\periodic.npz",
+      "checkpoint_sha256": "3e77839da40a96fdbead4fdac0fcc20a43c2cc4d9e871527e44bc14b72f9d087"
+    }
+  ],
+  "source_sha256": "d24407b40138baf777354d5c9bac0e6eb9cfc84eba038dcbab7d97fb2ea9d47e",
+  "max_wall_seconds": 1800,
+  "checkpoint_simulated_interval": 50.0,
+  "after": "Report then stop; no tuning or transfer"
+}
