@@ -15,8 +15,8 @@ from simulator.runner import make_observer
 class DemoCatalogTests(unittest.TestCase):
     def test_all_presets_match_research_inputs_and_declared_initial_material(self):
         from experiments.prepare_demo_catalog import verify
-        rows=verify();self.assertEqual(len(rows),33)
-        catalog=DemoCatalog();self.assertEqual(catalog.data['recommended'],'current_compact_s0')
+        rows=verify();self.assertEqual(len(rows),36)
+        catalog=DemoCatalog();self.assertEqual(catalog.data['recommended'],'current_energy_s0')
         _,_,cfg=catalog.get('integrated_s2');sim=Simulation(cfg);g=sim.chemistry.genetics
         prepared_g=1+sum(q['family']==0 and q['backbone'] and len(q['units'])==3 for q in g.initial_groups)
         prepared_f=sum(q['family']==1 and q['backbone'] and len(q['units'])==3 for q in g.initial_groups)
@@ -104,4 +104,15 @@ class DemoCatalogTests(unittest.TestCase):
         self.assertEqual(view['Lipides fabriqués depuis H/T'],before['lipids_formed'])
         self.assertEqual(view['Dont par F entièrement refaits'],before['lipids_from_whole_food_F'])
         self.assertEqual(before,obs.summary());np.testing.assert_array_equal(sim.chemistry.pos,plain.chemistry.pos)
+        self.assertEqual(sim.rng.bit_generator.state,plain.rng.bit_generator.state)
+
+    def test_energy_demo_readout_does_not_change_the_simulation_or_confuse_proposals_with_acceptances(self):
+        _,info,cfg=DemoCatalog().get('current_energy_s0');cfg['duration']=.05
+        sim=Simulation(cfg);plain=Simulation(cfg);obs=make_observer(sim.config,False);sim.listeners.append(obs)
+        sim.advance(sim.target_step);plain.advance(plain.target_step)
+        before=copy.deepcopy(obs.summary());rows=dict(live_observations(obs)['rows'])
+        self.assertEqual(rows['Échanges proposés (filtre local)'],before['exchange_gate_stats']['proposals'])
+        self.assertEqual(rows['Échanges acceptés'],before['exchange_gate_stats']['accepted'])
+        self.assertIn('maintien',info['limits']);self.assertEqual(before,obs.summary())
+        np.testing.assert_array_equal(sim.chemistry.pos,plain.chemistry.pos)
         self.assertEqual(sim.rng.bit_generator.state,plain.rng.bit_generator.state)

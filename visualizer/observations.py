@@ -55,5 +55,9 @@ def live_observations(observer,observed_time=None):
     if boundary and boundary.get('history'):
         rows.append(('Contour de frontière classifiable', 'fermé' if boundary['history'][-1]['valid'] else 'non classable'))
         rows.append(('L nés dedans puis insérés (observés)',len(boundary['ever_inserted_born_inside'])))
+    exchange=state.get('exchange_gate_stats')
+    if exchange is not None:
+        rows.extend([('Échanges proposés (filtre local)',exchange['proposals']),
+            ('Échanges acceptés',exchange['accepted']),('Échanges refusés',exchange['rejected'])])
     return dict(time=measured if observed_time is None else observed_time,rows=rows,
         note='Mesures passives. Les compteurs nouveaux G/F excluent les structures initiales ; le census réversible les inclut explicitement.')

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "date": "2026-11-05",
-  "recommended": "current_compact_s0",
+  "recommended": "current_energy_s0",
   "simulator_sha256": {
     "simulator/__init__.py": "bf5a7a5cafdf7076cbc3cc9d8992895e4a8c217621ea024645a061a3531281a9",
     "simulator/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
@@ -49,6 +49,20 @@
   },
   "policy": "Live simulations from preserved initial inputs. Selected illustrative seeds, not a robustness claim. No trajectories/checkpoints bundled.",
   "demos": [
+    {
+      "id": "current_energy",
+      "title": "Intégration compacte · échanges stabilisés",
+      "archive": false,
+      "level": "EG1 · insertion stabilisée, maintien non démontré",
+      "summary": "Même bain G/F/H/T et frontière construite, avec acceptation énergétique locale des échanges.",
+      "question": "Des lipides réellement fabriqués peuvent-ils rejoindre la frontière sans emballement thermique ni ouverture persistante ?",
+      "prepared": "52 L en anneau,4 G01 et1 F01 préparés,4 F monomères, nourriture P/R et24 H/24 T.302 billes, boîte22×22. Stocks finis, aucun apport ou perte.",
+      "observe": "À2400, graines0/1/2 : nouveaux G9/2/8,F7/9/9,L23/23/24 ; L nés dedans insérés1/0/2. Fermeture tardive94,48/94,67/94,50 %, T0,0849/0,0826/0,0889 pour consigne0,08. La graine1 reste sans insertion. Échanges acceptés6/1/10, refusés16/7/15.",
+      "conditions": "Recettes EG1 exactes ; Langevin masse1/frottement0,1,T0,08,dt0,002 ; largeur des ports0,6, cycle externe200/15. Un échange lit seulement son changement de potentiel local, jamais un contour ou une identité biologique.",
+      "limits": "Porte limitée passée3/3 : pas maintien sous pertes, alimentation ou homéostasie. Outils initiaux présents ; aucune insertion de L issu de F entièrement alimentaire dans cette cohorte. Fermeture échantillonnée intermittente, zéro traversée liée observée ne garantit pas étanchéité continue. Bilan énergétique global et réparation sous perturbation non démontrés.",
+      "look": "Jouer en Maximum ; première insertion observée vers1108 en graine0. Ralentir ensuite, filtrer H/T et suivre un L. Graine0 par convention ; conserver la graine1 sans insertion et comparer aux défauts CB1 dans le menu. La simulation repart de t0, sans film précalculé.",
+      "evidence": "research/BATCH_47.md"
+    },
     {
       "id": "current_compact",
       "title": "Intégration compacte · défauts connus",
@@ -496,6 +510,48 @@
       "source_task": "task0006",
       "source_sha256": "34cf6e4f0f8077c52fd09f1dc24c74ffb399a57891958d32977d338a4538644d",
       "dynamics_sha256": "b90fbc1840e143e591ddbfaccde34e37a2ffac7ea83e103378459b0c6cea7a31",
+      "view_speed": 0.0,
+      "motion": "langevin"
+    },
+    {
+      "id": "current_energy_s0",
+      "demo": "current_energy",
+      "title": "Graine 0 · insertion et tenue tardive",
+      "seed": 0,
+      "config": "demonstrators/configs/demo_current_energy_s0.json",
+      "beads": 302,
+      "source": "research/campaign_recipes/EG1_20261105T131525540618Z/manifest.json",
+      "source_task": "task0000",
+      "source_sha256": "855774e5ad43bfab632179d2ca59194d252227c88c38acbb8b9b5ec838d007bf",
+      "dynamics_sha256": "9ca8d6e4461e79585c60b5534f5d3c87355d59f4f6e9f2f7ec30e98afbb55884",
+      "view_speed": 0.0,
+      "motion": "langevin"
+    },
+    {
+      "id": "current_energy_s1",
+      "demo": "current_energy",
+      "title": "Graine 1 · sans insertion observée",
+      "seed": 1,
+      "config": "demonstrators/configs/demo_current_energy_s1.json",
+      "beads": 302,
+      "source": "research/campaign_recipes/EG1_20261105T131525540618Z/manifest.json",
+      "source_task": "task0001",
+      "source_sha256": "855774e5ad43bfab632179d2ca59194d252227c88c38acbb8b9b5ec838d007bf",
+      "dynamics_sha256": "2f0df696ce39478a9134f6481a8242003af5712fb6ad7cd5571edc96f8cbd57d",
+      "view_speed": 0.0,
+      "motion": "langevin"
+    },
+    {
+      "id": "current_energy_s2",
+      "demo": "current_energy",
+      "title": "Graine 2 · insertion et tenue tardive",
+      "seed": 2,
+      "config": "demonstrators/configs/demo_current_energy_s2.json",
+      "beads": 302,
+      "source": "research/campaign_recipes/EG1_20261105T131525540618Z/manifest.json",
+      "source_task": "task0002",
+      "source_sha256": "855774e5ad43bfab632179d2ca59194d252227c88c38acbb8b9b5ec838d007bf",
+      "dynamics_sha256": "c0ee8af16badf0ba941430440adebb1152f1c88954a9f1d1cb6a12d5c317a4d9",
       "view_speed": 0.0,
       "motion": "langevin"
     },

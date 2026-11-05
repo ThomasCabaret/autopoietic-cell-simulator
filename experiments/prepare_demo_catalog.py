@@ -213,9 +213,32 @@ def compact_description():
         evidence='research/BATCH_45.md')
 
 
+def energy_origins():
+    source='research/campaign_recipes/EG1_20261105T131525540618Z/manifest.json'
+    data=json.loads((ROOT/source).read_text(encoding='utf-8'));items=[]
+    for seed in range(3):
+        task=next(t for t in data['tasks'] if t['label']==f'EG1_energy_s{seed}')
+        title=f'Graine {seed} · '+('sans insertion observée' if seed==1 else 'insertion et tenue tardive')
+        items.append((f'current_energy_s{seed}','current_energy',title,copy.deepcopy(task['scenario']),source,task['id'],302))
+    return items
+
+
+def energy_description():
+    return dict(id='current_energy',title='Intégration compacte · échanges stabilisés',archive=False,
+        level='EG1 · insertion stabilisée, maintien non démontré',
+        summary='Même bain G/F/H/T et frontière construite, avec acceptation énergétique locale des échanges.',
+        question='Des lipides réellement fabriqués peuvent-ils rejoindre la frontière sans emballement thermique ni ouverture persistante ?',
+        prepared='52 L en anneau,4 G01 et1 F01 préparés,4 F monomères, nourriture P/R et24 H/24 T.302 billes, boîte22×22. Stocks finis, aucun apport ou perte.',
+        observe='À2400, graines0/1/2 : nouveaux G9/2/8,F7/9/9,L23/23/24 ; L nés dedans insérés1/0/2. Fermeture tardive94,48/94,67/94,50 %, T0,0849/0,0826/0,0889 pour consigne0,08. La graine1 reste sans insertion. Échanges acceptés6/1/10, refusés16/7/15.',
+        conditions='Recettes EG1 exactes ; Langevin masse1/frottement0,1,T0,08,dt0,002 ; largeur des ports0,6, cycle externe200/15. Un échange lit seulement son changement de potentiel local, jamais un contour ou une identité biologique.',
+        limits='Porte limitée passée3/3 : pas maintien sous pertes, alimentation ou homéostasie. Outils initiaux présents ; aucune insertion de L issu de F entièrement alimentaire dans cette cohorte. Fermeture échantillonnée intermittente, zéro traversée liée observée ne garantit pas étanchéité continue. Bilan énergétique global et réparation sous perturbation non démontrés.',
+        look='Jouer en Maximum ; première insertion observée vers1108 en graine0. Ralentir ensuite, filtrer H/T et suivre un L. Graine0 par convention ; conserver la graine1 sans insertion et comparer aux défauts CB1 dans le menu. La simulation repart de t0, sans film précalculé.',
+        evidence='research/BATCH_47.md')
+
+
 def build():
     variants=[]
-    for key,demo,title,cfg,origin,task,beads in current_origins()+renewal_origins()+membrane_renewal_origins()+mixed_origins()+compact_origins():
+    for key,demo,title,cfg,origin,task,beads in current_origins()+renewal_origins()+membrane_renewal_origins()+mixed_origins()+compact_origins()+energy_origins():
         cfg=resolve(cfg);path=f'demonstrators/configs/demo_{key}.json'
         (ROOT/path).write_text(json.dumps(cfg,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
         variants.append(dict(id=key,demo=demo,title=title,seed=cfg['seed'],config=path,beads=beads,
@@ -241,9 +264,9 @@ def build():
     from visualizer.demos import simulator_hashes
     archived=descriptions()
     for info in archived:info['archive']=True
-    catalog=dict(version=1,date='2026-11-05',recommended='current_compact_s0',simulator_sha256=simulator_hashes(),
+    catalog=dict(version=1,date='2026-11-05',recommended='current_energy_s0',simulator_sha256=simulator_hashes(),
         policy='Live simulations from preserved initial inputs. Selected illustrative seeds, not a robustness claim. No trajectories/checkpoints bundled.',
-        demos=[compact_description(),membrane_renewal_description(),mixed_description()]+current_descriptions()+[renewal_description()]+archived,variants=variants)
+        demos=[energy_description(),compact_description(),membrane_renewal_description(),mixed_description()]+current_descriptions()+[renewal_description()]+archived,variants=variants)
     (ROOT/'demonstrators/catalog.json').write_text(json.dumps(catalog,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
 
 
@@ -304,13 +327,14 @@ def verify():
         assert len(sim.chemistry.pos)==beads==198 and sim.motion is not None
         assert cfg['chemistry']['capture_cooperativity'] and not sim.chemistry.lipids.rungs
         rows.append(dict(id=key,beads=beads,source_dynamics_identical=True,current=True))
-    for key,_,_,original,source,task,beads in compact_origins():
+    for key,_,_,original,source,task,beads in compact_origins()+energy_origins():
         variant,info,cfg=catalog.get(key)
         assert signature(cfg)==signature(original)
         assert hashlib.sha256((ROOT/source).read_bytes()).hexdigest()==variant['source_sha256']
         sim=Simulation(cfg)
         assert len(sim.chemistry.pos)==beads==302 and len(sim.chemistry.lipids.rungs)==52
         assert cfg['chemistry']['short_length']==.92 and sim.motion is not None
+        if key.startswith('current_energy'):assert cfg['chemistry']['contact_exchange_gate']=='metropolis'
         rows.append(dict(id=key,beads=beads,source_dynamics_identical=True,current=True))
     return rows
 
