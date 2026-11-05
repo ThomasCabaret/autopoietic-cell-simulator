@@ -7,7 +7,7 @@ from .contact_exchange import exchange_faces
 
 class LinkedLipids:
     def __init__(self):
-        self.rungs={};self.links=[];self.broken_contacts=0;self.exchange_stats=None
+        self.rungs={};self.links=[];self.broken_contacts=0;self.exchange_stats=None;self.contact_stats=None
 
     def bind(self,head,tail):
         head,tail=int(head),int(tail)
@@ -38,11 +38,17 @@ class LinkedLipids:
     def react(self,pos,config,rng,neighbors,interval,extra_energy=None):
         heads,ids,links=self.layout()
         if not heads:return []
-        links,broken=update_faces(pos[ids],links,config,rng,neighbors,interval)
+        callback=None if extra_energy is None else lambda old,new:extra_energy(
+            None if old is None else (heads[old[0]],heads[old[1]]),
+            None if new is None else (heads[new[0]],heads[new[1]]))
+        if config.get('contact_update_gate','none')=='metropolis':
+            if self.contact_stats is None:
+                self.contact_stats={k:dict(proposals=0,accepted=0,rejected=0,positive_delta=0,sum_factor=0.,sum_accepted_delta=0.,min_delta=None,max_delta=None) for k in ('formation','breaking')}
+            links,broken=update_faces(pos[ids],links,config,rng,neighbors,interval,callback,self.contact_stats)
+        else:links,broken=update_faces(pos[ids],links,config,rng,neighbors,interval)
         if config.get('contact_exchange_gate','none')=='metropolis':
             if self.exchange_stats is None:
                 self.exchange_stats=dict(proposals=0,accepted=0,rejected=0,positive_delta=0,sum_positive_delta=0.,sum_factor=0.,min_delta=None,max_delta=None)
-            callback=None if extra_energy is None else lambda old,new:extra_energy((heads[old[0]],heads[old[1]]),(heads[new[0]],heads[new[1]]))
             links,events=exchange_faces(pos[ids],links,config,rng,neighbors,interval,callback,self.exchange_stats)
         else:links,events=exchange_faces(pos[ids],links,config,rng,neighbors,interval)
         self.links=[(heads[i],heads[j],a,b) for i,j,a,b in links];self.broken_contacts+=broken
@@ -59,6 +65,7 @@ class LinkedLipids:
     def export(self):
         result=dict(rungs=sorted(self.rungs.items()),links=self.links,broken_contacts=self.broken_contacts)
         if self.exchange_stats is not None:result['exchange_stats']=copy.deepcopy(self.exchange_stats)
+        if self.contact_stats is not None:result['contact_stats']=copy.deepcopy(self.contact_stats)
         return result
 
     def restore(self,state):
@@ -71,3 +78,4 @@ class LinkedLipids:
             occupied.update(((i,a),(j,b)));self.links.append((i,j,a,b))
         self.broken_contacts=int(state['broken_contacts'])
         self.exchange_stats=copy.deepcopy(state.get('exchange_stats'))
+        self.contact_stats=copy.deepcopy(state.get('contact_stats'))

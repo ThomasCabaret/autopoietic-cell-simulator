@@ -36,6 +36,7 @@
     "tool_lipid_contact": 0.0,
     "capture_curvature": "matched",
     "contact_exchange_gate": "none",
+    "contact_update_gate": "none",
     "genetics": {
       "sequence": "01",
       "alphabet": "01",

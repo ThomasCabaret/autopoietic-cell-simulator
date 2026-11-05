@@ -50,6 +50,7 @@ def segment_energy_delta(c,old,new,neighbors):
     ids=c.host.rungs[c.host.rungs[:,1]>=0].reshape(-1)
     if not len(ids):return 0.
     def energy(edge,key):
+        if edge is None:return 0.
         edges=np.asarray([edge],dtype=np.int64)
         midpoint=(c.pos[edge[0]]+c.pos[edge[1]])/2
         half=.5*np.linalg.norm(c.pos[edge[0]]-c.pos[edge[1]])

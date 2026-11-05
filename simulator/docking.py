@@ -97,16 +97,34 @@ def bound_port_force(pos,links,long,short,epsilon,width):
     return force,energy
 
 
-def update_faces(pos,links,config,rng,neighbors,interval):
+def update_faces(pos,links,config,rng,neighbors,interval,extra_energy=None,stats=None):
     n=len(pos)//2
     long,short=1.,config['short_length']
     head,tail,_,_=port_geometry(pos,n,long,short)
-    kept=[]; broken=0
+    gated=config.get('contact_update_gate','none')=='metropolis'
+    if gated and config.get('bound_barrier_radius',0.)>0 and extra_energy is None:
+        raise ValueError('Energy-gated contacts require the bound-segment energy callback')
+    def accept(current,removed,formed,kind):
+        from .exchange_energy import port_delta
+        from .transition_energy import thermal_factor
+        delta=port_delta(pos,current,removed,formed,config,neighbors)
+        if extra_energy is not None:delta+=float(extra_energy(removed,formed))
+        factor=thermal_factor(delta,config['temperature'])
+        accepted=not (factor<1. and (factor<=0. or rng.random()>=factor))
+        if stats is not None:
+            s=stats[kind];s['proposals']+=1;s['accepted']+=int(accepted);s['rejected']+=int(not accepted)
+            s['positive_delta']+=int(delta>0);s['sum_factor']+=factor;s['sum_accepted_delta']+=delta if accepted else 0.
+            s['max_delta']=delta if s['max_delta'] is None else max(s['max_delta'],delta)
+            s['min_delta']=delta if s['min_delta'] is None else min(s['min_delta'],delta)
+        return accepted
+    kept=[]; broken=0;current=list(links) if gated else None
     for i,j,a,b in sorted(links):
         stretch=max(abs(np.linalg.norm(pos[j]-pos[i])-long),
                     abs(np.linalg.norm(pos[n+j]-pos[n+i])-short))
-        if stretch>config['break_extension'] or rng.random() < -np.expm1(-config['bond_off_rate']*interval):
+        proposed=stretch>config['break_extension'] or rng.random() < -np.expm1(-config['bond_off_rate']*interval)
+        if proposed and (not gated or accept(current,(i,j,a,b),None,'breaking')):
             broken+=1
+            if gated:current.remove((i,j,a,b))
         else: kept.append((i,j,a,b))
     free=free_faces(n,kept)
     existing={tuple(sorted((i,j))) for i,j,_,_ in kept}
@@ -121,6 +139,7 @@ def update_faces(pos,links,config,rng,neighbors,interval):
                 if not free[i,a] or not free[j,b]: continue
                 q=np.sum((head[j,b]-head[i,a])**2)+np.sum((tail[j,b]-tail[i,a])**2)
                 if q<config['dock_capture']**2 and rng.random() < -np.expm1(-config['dock_rate']*interval):
+                    if gated and not accept(kept,None,(i,j,a,b),'formation'):continue
                     kept.append((i,j,a,b)); existing.add((i,j))
                     free[i,a]=free[j,b]=False
                     break

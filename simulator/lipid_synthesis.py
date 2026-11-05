@@ -20,7 +20,7 @@ DEFAULTS=dict(temperature=.08,box=[12.,9.],food_units=24,tool_count=4,tool_linke
     short_length=.98,dock_width=.3,dock_energy=4.,dock_capture=.25,dock_rate=25.,
     bond_off_rate=.02,break_extension=.35,bonding=True,
     contact_exchange_rate=.2,contact_exchange_capture=.8,terminal_exchange=True,
-    formation_gate='none',tool_lipid_contact=.55,capture_curvature='legacy',tool_pose='straight',contact_exchange_gate='none')
+    formation_gate='none',tool_lipid_contact=.55,capture_curvature='legacy',tool_pose='straight',contact_exchange_gate='none',contact_update_gate='none')
 
 
 def native_tool_pose(host,pairs):
@@ -185,6 +185,7 @@ class LipidSynthesisObserver:
 
     def __call__(self,time,c,events):
         self.times.append(float(time));self.births=list(c.births)
+        if c.lipids.contact_stats is not None:self.contact_update_stats=copy.deepcopy(c.lipids.contact_stats)
         if hasattr(c,'transition_stats'):self.transition_stats=copy.deepcopy(c.transition_stats)
         self.history.append(dict(time=float(time),lipids=len(c.lipids.rungs),lateral_contacts=len(c.lipids.links),
             occupied_sites=int(np.count_nonzero(c.capture.site_bound>=0))))
@@ -200,4 +201,5 @@ class LipidSynthesisObserver:
             scope='Prepared existing F01 co-recruiter, H/T only. Same capture constants but extended ligand types. '
                 'No P/R competition, expression, full-cell membrane or maintenance proof. Products use real conserved H/T atom IDs.')
         if hasattr(self,'transition_stats'):result['transition_stats']=self.transition_stats
+        if hasattr(self,'contact_update_stats'):result['contact_update_stats']=self.contact_update_stats
         return result

@@ -4,12 +4,13 @@ from experiments.prepare_exchange_refinement import scenario,REFERENCE
 from experiments.review_exchange_refinement import decide
 from simulator.campaign_io import read
 from simulator.engine import Simulation
+from simulator.config import resolve
 
 
 class ExchangeRefinementTests(unittest.TestCase):
     def test_only_discretization_changes_with_identical_initial_states_and_physical_cadences(self):
         old=read(REFERENCE/'manifest.json')['tasks'][0]['scenario'];new=scenario(old['seed'])
-        expected=copy.deepcopy(old);expected.update(name=new['name'],branch='EN1')
+        expected=resolve(copy.deepcopy(old));expected.update(name=new['name'],branch='EN1')
         expected['engine']['dt']/=2
         for key in ('reaction_every','sample_every'):expected['engine'][key]*=2
         self.assertEqual(new,expected)

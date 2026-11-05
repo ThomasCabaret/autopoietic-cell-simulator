@@ -27,7 +27,7 @@ def context():
 
 def full_energy(c):
     port=c.lipids.forces(c.pos,c.config,Neighborhood('brute',0.))[1]
-    edges=np.asarray([(a,b) for a,b,_,_ in c.lipids.links],dtype=np.int64)
+    edges=np.asarray([(a,b) for a,b,_,_ in c.lipids.links],dtype=np.int64).reshape(-1,2)
     ids=c.host.rungs.reshape(-1);pairs=np.asarray([(a,b) for a in range(len(edges)) for b in range(len(ids))],dtype=np.int64).reshape(-1,2)
     return port+barrier_force(c.pos,edges,ids,pairs,.55,80.)[1]
 
