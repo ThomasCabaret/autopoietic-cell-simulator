@@ -67,6 +67,15 @@ def main():
     if COMPACT:from experiments.review_compact_transfer import collect as collect_fn,decide as decide_fn
     if a.action=='prepare':print(prepare());return
     job=a.job or latest()
+    # A supplied frozen job is authoritative even if a shell drops --compact.
+    # This is orchestration metadata, never information passed to chemistry.
+    gate=controller.validate_job(job)['gate']
+    if gate.startswith('CB1_'):
+        from experiments.review_compact_transfer import collect as collect_fn,decide as decide_fn
+    elif gate.startswith('BI1_'):
+        if COMPACT:raise ValueError('Compact option contradicts BI1 job')
+        collect_fn,decide_fn=collect,decide
+    else:raise ValueError('Unsupported boundary job gate: '+gate)
     if a.action=='run':controller.run(job,collect_fn,decide_fn)
     elif a.action=='review':print(json.dumps(collect_fn(Path(read(job/'job.json')['campaigns'][0]),False),indent=2))
     elif a.action=='status':

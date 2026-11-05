@@ -1,0 +1,42 @@
+{
+  "job": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\compact_transfer_followups\\followup_20261105T092857284853Z",
+  "report": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\compact_transfer_followups\\followup_20261105T092857284853Z\\report_recovered_1.json",
+  "report_sha256": "b9e80c46099b446f1d1ca8e0ead8fa4a9e220312bb6ccc9f385b567d2e9e2502",
+  "archived_failure_sha256": "4e229ea7faeb8dd292f052acbd12e544bd6b7279e9195b3df8ef7f847c74f5fb",
+  "command": [
+    "C:\\Users\\thoma\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\compact_transfer_followups\\followup_20261105T092857284853Z\\runtime\\scripts\\boundary_transfer_followup.py",
+    "review",
+    "--job",
+    "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\compact_transfer_followups\\followup_20261105T092857284853Z",
+    "--compact"
+  ],
+  "recovery_source_sha256": "d4721306231832cd3460d2cbf593591aff1011ba0716a277d39e61376b00f400",
+  "result_hashes_unchanged": {
+    "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\compact_transfer_followups\\followup_20261105T092857284853Z\\A\\campaign_20261105T092857660587Z\\tasks\\task0000\\attempts\\CB1_active_s0_s0_20261105T092901453505Z\\result.json": "7dbd5d03bfd01c97bd3b2ca42475bbc31ba62c396a9e96562be782e2e08900a9",
+    "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\compact_transfer_followups\\followup_20261105T092857284853Z\\A\\campaign_20261105T092857660587Z\\tasks\\task0001\\attempts\\CB1_noL_s0_s0_20261105T092901454506Z\\result.json": "d742bf3a15f4984dcc39a778c3d87ac26e783172405e989ebcc82d415c9f845c",
+    "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\compact_transfer_followups\\followup_20261105T092857284853Z\\A\\campaign_20261105T092857660587Z\\tasks\\task0002\\attempts\\CB1_nosynthesis_s0_s0_20261105T094245454408Z\\result.json": "5e38308b7e65bce470cc6fe13a932118122aa9eae30a7ae5fd1bfd9f1f90257a",
+    "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\compact_transfer_followups\\followup_20261105T092857284853Z\\A\\campaign_20261105T092857660587Z\\tasks\\task0003\\attempts\\CB1_active_s1_s1_20261105T095147021299Z\\result.json": "6c9e8622d052cd058e3b61abc1df44330b1f05b43370b948bb6276bb2a456c69",
+    "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\compact_transfer_followups\\followup_20261105T092857284853Z\\A\\campaign_20261105T092857660587Z\\tasks\\task0004\\attempts\\CB1_noL_s1_s1_20261105T100226338645Z\\result.json": "95d5fbe27961e3964bf59340ebe4b5df4f0733c437de0bd94ab3bfe4a569b46d",
+    "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\compact_transfer_followups\\followup_20261105T092857284853Z\\A\\campaign_20261105T092857660587Z\\tasks\\task0005\\attempts\\CB1_nosynthesis_s1_s1_20261105T101342055141Z\\result.json": "f268230cc3f00e15279a3f36f02005af975e7b420882f801f7baaacce2526590",
+    "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\compact_transfer_followups\\followup_20261105T092857284853Z\\A\\campaign_20261105T092857660587Z\\tasks\\task0006\\attempts\\CB1_active_s2_s2_20261105T101434164447Z\\result.json": "0157493c224dee36e182951c7bad24878e70a587e263a5eb6aa46169b23d66cd",
+    "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\compact_transfer_followups\\followup_20261105T092857284853Z\\A\\campaign_20261105T092857660587Z\\tasks\\task0007\\attempts\\CB1_noL_s2_s2_20261105T103312226342Z\\result.json": "8206a10a798a4d098f7442fb2fa6ef1ca392cf6eea6263af133314d0699055bd",
+    "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\compact_transfer_followups\\followup_20261105T092857284853Z\\A\\campaign_20261105T092857660587Z\\tasks\\task0008\\attempts\\CB1_nosynthesis_s2_s2_20261105T103542541900Z\\result.json": "b5e9f19a8e64d7436ac40e3f46623683bea88dee2c0117f8d15aa387570cec02"
+  },
+  "original_runtime_sources_unchanged": true,
+  "decision": {
+    "screen_passed": false,
+    "conditions": {
+      "atom_ports_valid": true,
+      "active_late_contour": false,
+      "actual_inside_product_in_contour_two_seeds": false,
+      "noL_G_reference_positive": true,
+      "noL_F_reference_positive": true,
+      "G_at_least_half_noL": true,
+      "F_at_least_half_noL": true,
+      "nosynthesis_negative": true
+    },
+    "run_transfer": false,
+    "scope": "Selected compact geometry, finite stocks and external cycle. No fed maintenance or losses. Negative/noL controls are new at the same horizon. Stop regardless of result."
+  }
+}

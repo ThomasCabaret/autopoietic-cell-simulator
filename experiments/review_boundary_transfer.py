@@ -23,9 +23,9 @@ def decide(rows):
             'membrane replacement under loss or independent robustness. Stop for interpretation.')
 
 
-def collect(folder,require_complete=True,decision_fn=decide):
+def collect(folder,require_complete=True,decision_fn=decide,expected_tasks=9):
     folder=Path(folder);manifest=validate(folder);snapshot=status(folder)
-    if require_complete and (snapshot['controller_active'] or snapshot['counts']['complete']!=9):raise ValueError('Require complete inactive BI1')
+    if require_complete and (snapshot['controller_active'] or snapshot['counts']['complete']!=expected_tasks):raise ValueError('Require complete inactive boundary cohort')
     rows=[];hashes={k:v for k,v in manifest['source_sha256'].items() if k.startswith('simulator/')}
     for task,state in zip(manifest['tasks'],snapshot['tasks']):
         if state['phase']!='complete':continue
@@ -51,7 +51,7 @@ def collect(folder,require_complete=True,decision_fn=decide):
             calibration=stock,kinetics=kinetics,late_temperature=sum(late)/len(late),
             elapsed_seconds=result['elapsed_seconds'],result_sha256=digest(path)))
     report=dict(counts=snapshot['counts'],controller_active=snapshot['controller_active'],rows=rows,
-        decision=decision_fn(rows) if len(rows)==9 else None,manifest_sha256=digest(folder/'manifest.json'),
+        decision=decision_fn(rows) if len(rows)==expected_tasks else None,manifest_sha256=digest(folder/'manifest.json'),
         scope='Actual births and same-law L contacts. Closed simple contours are passive witnesses. '
             'Pre-reaction exposure is sampled, not integrated hazard. Original/new IDs never enter laws. '
             'Finite near-frontier packet, global dilution, no feed or losses. Nosynthesis disables shared PR/HT rates.')

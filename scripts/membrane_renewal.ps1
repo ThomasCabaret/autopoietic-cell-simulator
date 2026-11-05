@@ -1,5 +1,5 @@
 param([ValidateSet('Start','Status','Stop','Resume','Review')][string]$Action='Status',
-      [ValidateSet('Membrane','Lipids','Curvature','Tail','Capture','Mixed','Cooperative','Boundary','Compact')][string]$Kind='Membrane')
+      [ValidateSet('Membrane','Lipids','Curvature','Tail','Capture','Mixed','Cooperative','Boundary','Compact','Exchange','Wide')][string]$Kind='Membrane')
 $ErrorActionPreference='Stop'
 $projectRoot=Split-Path -Parent $PSScriptRoot
 Set-Location -LiteralPath $projectRoot
@@ -8,13 +8,15 @@ if (-not (Test-Path -LiteralPath $pythonPath)) { $pythonPath=(Get-Command python
 $driverName=if ($Kind -eq 'Lipids') { 'lipid_energy_followup.py' } else { 'membrane_renewal_followup.py' }
 $parentName=if ($Kind -eq 'Lipids') { 'lipid_energy_followups' } else { 'membrane_renewal_followups' }
 $kindLabel=if ($Kind -eq 'Lipids') { 'L2' } else { 'MIN1M' }
+$modeArgs=@()
 if ($Kind -eq 'Curvature') { $driverName='lipid_curvature_followup.py'; $parentName='lipid_curvature_followups'; $kindLabel='L3' }
 if ($Kind -eq 'Capture') { $driverName='capture_transfer_followup.py'; $parentName='capture_transfer_followups'; $kindLabel='CT1' }
 if ($Kind -eq 'Mixed') { $driverName='mixed_synthesis_followup.py'; $parentName='mixed_synthesis_followups'; $kindLabel='MX1' }
 if ($Kind -eq 'Cooperative') { $driverName='cooperative_synthesis_followup.py'; $parentName='cooperative_synthesis_followups'; $kindLabel='MX2' }
 if ($Kind -eq 'Boundary') { $driverName='boundary_transfer_followup.py'; $parentName='boundary_transfer_followups'; $kindLabel='BI1' }
 if ($Kind -eq 'Compact') { $driverName='boundary_transfer_followup.py'; $parentName='compact_transfer_followups'; $kindLabel='CB1'; $modeArgs=@('--compact') }
-$modeArgs=@()
+if ($Kind -eq 'Exchange') { $driverName='exchange_ablation_followup.py'; $parentName='exchange_ablation_followups'; $kindLabel='CX1' }
+if ($Kind -eq 'Wide') { $driverName='exchange_ablation_followup.py'; $parentName='wide_ports_followups'; $kindLabel='CW1'; $modeArgs=@('--wide') }
 if ($Kind -eq 'Tail') { $driverName='lipid_curvature_followup.py'; $parentName='lipid_thermal_tail_followups'; $kindLabel='L4'; $modeArgs=@('--tail') }
 $driverPath=Join-Path $projectRoot "scripts\$driverName"
 if ($Action -eq 'Start') {

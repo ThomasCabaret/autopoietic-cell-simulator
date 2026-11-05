@@ -1,0 +1,40 @@
+{
+  "campaign": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\compact_transfer_followups\\followup_20261105T092857284853Z\\A\\campaign_20261105T092857660587Z",
+  "manifest_sha256": "34cf6e4f0f8077c52fd09f1dc24c74ffb399a57891958d32977d338a4538644d",
+  "task": "task0000",
+  "result_sha256": "7dbd5d03bfd01c97bd3b2ca42475bbc31ba62c396a9e96562be782e2e08900a9",
+  "target_event": {
+    "time": 752.11,
+    "removed": [
+      234,
+      235,
+      0,
+      1
+    ],
+    "formed": [
+      173,
+      234,
+      1,
+      0
+    ],
+    "port_mismatch": 0.2738923300708171
+  },
+  "atom_ids": [
+    173,
+    174,
+    234,
+    235,
+    286,
+    287
+  ],
+  "heads": [
+    173,
+    234,
+    235
+  ],
+  "start": 751.61,
+  "end": 758.11,
+  "max_frames": 700,
+  "max_wall_seconds": 1800,
+  "diagnostic_source_sha256": "029cdab7dbde6d07a79a089212796dc174706dd95cc788fa31b04ceed2e784a4"
+}

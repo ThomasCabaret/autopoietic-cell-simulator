@@ -1,0 +1,12 @@
+{
+  "output": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\diagnostics\\CL1_20261105T113223797972Z",
+  "recipe": "research/diagnostic_recipes/CL1_20261105T113223797972Z",
+  "recipe_sha256": "160f34246f57be1c38f5d1f5c5b559a07de3f815414bbc1551485fecba244951",
+  "source_sha256": "8864c5e4c349122e77db424a3ccf948cb76acd8a7139fcde4174af74a03dba21",
+  "previous_attempt": {
+    "output": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\diagnostics\\CL1_20261105T110804549978Z",
+    "recipe": "research/diagnostic_recipes/CL1_20261105T110804549978Z",
+    "recipe_sha256": "04b233d6f641c639f3f5d5f7c28e623ffba8710595a6b3aea916fef0727503a2",
+    "source_sha256": "029cdab7dbde6d07a79a089212796dc174706dd95cc788fa31b04ceed2e784a4"
+  }
+}
