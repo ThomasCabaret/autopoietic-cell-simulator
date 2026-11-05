@@ -1,0 +1,1703 @@
+{
+  "name": "PI1 existing F-product binding to a prepared gene",
+  "workers": 2,
+  "checkpoint_seconds": 30.0,
+  "kinetic_window": 25.0,
+  "record_trajectory": false,
+  "genetic_audit": true,
+  "tasks": [
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "copy",
+        "name": "PI1_zero_s0",
+        "branch": "PI1",
+        "seed": 0,
+        "duration": 400.0,
+        "chemistry": {
+          "sequence": "01",
+          "alphabet": "01",
+          "free_units": 0,
+          "function_units": 0,
+          "activation": true,
+          "release": "cycle",
+          "period": 200.0,
+          "release_time": 15.0,
+          "template": true,
+          "backbone_angle": 20.0,
+          "box": [
+            22.0,
+            22.0
+          ],
+          "monomer_only_capture": true,
+          "product_cooperativity": true,
+          "functional_cosines": {
+            "0": 0.8,
+            "1": 0.8
+          },
+          "seed_family": 0,
+          "caps_symbol": -1,
+          "initial_min_separation": 0.6,
+          "local_off_rate": 0.2,
+          "ligation_rate": 12.0,
+          "ligation": false,
+          "temperature": 0.08,
+          "functional_bend_cosines": {},
+          "functional_bend_strength": 100.0,
+          "food_pairs": 0,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_reaction_radius": 0.25,
+          "food_reaction_rate": 0.2,
+          "food_activation": true,
+          "dual_faces": false,
+          "constructible": true,
+          "assembled_stock": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0,
+          "rung_catalysis": true,
+          "rung_catalytic_rate": 0.0,
+          "initial_assemblies": [],
+          "capture_curvature": "matched"
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "copy",
+        "name": "PI1_linked4_s0",
+        "branch": "PI1",
+        "seed": 0,
+        "duration": 400.0,
+        "chemistry": {
+          "sequence": "01",
+          "alphabet": "01",
+          "free_units": 0,
+          "function_units": 8,
+          "activation": true,
+          "release": "cycle",
+          "period": 200.0,
+          "release_time": 15.0,
+          "template": true,
+          "backbone_angle": 20.0,
+          "box": [
+            22.0,
+            22.0
+          ],
+          "monomer_only_capture": true,
+          "product_cooperativity": true,
+          "functional_cosines": {
+            "0": 0.8,
+            "1": 0.8
+          },
+          "seed_family": 0,
+          "caps_symbol": -1,
+          "initial_min_separation": 0.6,
+          "local_off_rate": 0.2,
+          "ligation_rate": 12.0,
+          "ligation": false,
+          "temperature": 0.08,
+          "functional_bend_cosines": {},
+          "functional_bend_strength": 100.0,
+          "food_pairs": 0,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_reaction_radius": 0.25,
+          "food_reaction_rate": 0.2,
+          "food_activation": true,
+          "dual_faces": false,
+          "constructible": true,
+          "assembled_stock": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0,
+          "rung_catalysis": true,
+          "rung_catalytic_rate": 0.0,
+          "initial_assemblies": [
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            }
+          ],
+          "capture_curvature": "matched"
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "copy",
+        "name": "PI1_split4_s0",
+        "branch": "PI1",
+        "seed": 0,
+        "duration": 400.0,
+        "chemistry": {
+          "sequence": "01",
+          "alphabet": "01",
+          "free_units": 0,
+          "function_units": 8,
+          "activation": true,
+          "release": "cycle",
+          "period": 200.0,
+          "release_time": 15.0,
+          "template": true,
+          "backbone_angle": 20.0,
+          "box": [
+            22.0,
+            22.0
+          ],
+          "monomer_only_capture": true,
+          "product_cooperativity": true,
+          "functional_cosines": {
+            "0": 0.8,
+            "1": 0.8
+          },
+          "seed_family": 0,
+          "caps_symbol": -1,
+          "initial_min_separation": 0.6,
+          "local_off_rate": 0.2,
+          "ligation_rate": 12.0,
+          "ligation": false,
+          "temperature": 0.08,
+          "functional_bend_cosines": {},
+          "functional_bend_strength": 100.0,
+          "food_pairs": 0,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_reaction_radius": 0.25,
+          "food_reaction_rate": 0.2,
+          "food_activation": true,
+          "dual_faces": false,
+          "constructible": true,
+          "assembled_stock": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0,
+          "rung_catalysis": true,
+          "rung_catalytic_rate": 0.0,
+          "initial_assemblies": [
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            }
+          ],
+          "capture_curvature": "matched"
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "copy",
+        "name": "PI1_linked16_s0",
+        "branch": "PI1",
+        "seed": 0,
+        "duration": 400.0,
+        "chemistry": {
+          "sequence": "01",
+          "alphabet": "01",
+          "free_units": 0,
+          "function_units": 32,
+          "activation": true,
+          "release": "cycle",
+          "period": 200.0,
+          "release_time": 15.0,
+          "template": true,
+          "backbone_angle": 20.0,
+          "box": [
+            22.0,
+            22.0
+          ],
+          "monomer_only_capture": true,
+          "product_cooperativity": true,
+          "functional_cosines": {
+            "0": 0.8,
+            "1": 0.8
+          },
+          "seed_family": 0,
+          "caps_symbol": -1,
+          "initial_min_separation": 0.6,
+          "local_off_rate": 0.2,
+          "ligation_rate": 12.0,
+          "ligation": false,
+          "temperature": 0.08,
+          "functional_bend_cosines": {},
+          "functional_bend_strength": 100.0,
+          "food_pairs": 0,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_reaction_radius": 0.25,
+          "food_reaction_rate": 0.2,
+          "food_activation": true,
+          "dual_faces": false,
+          "constructible": true,
+          "assembled_stock": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0,
+          "rung_catalysis": true,
+          "rung_catalytic_rate": 0.0,
+          "initial_assemblies": [
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            }
+          ],
+          "capture_curvature": "matched"
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "copy",
+        "name": "PI1_split16_s0",
+        "branch": "PI1",
+        "seed": 0,
+        "duration": 400.0,
+        "chemistry": {
+          "sequence": "01",
+          "alphabet": "01",
+          "free_units": 0,
+          "function_units": 32,
+          "activation": true,
+          "release": "cycle",
+          "period": 200.0,
+          "release_time": 15.0,
+          "template": true,
+          "backbone_angle": 20.0,
+          "box": [
+            22.0,
+            22.0
+          ],
+          "monomer_only_capture": true,
+          "product_cooperativity": true,
+          "functional_cosines": {
+            "0": 0.8,
+            "1": 0.8
+          },
+          "seed_family": 0,
+          "caps_symbol": -1,
+          "initial_min_separation": 0.6,
+          "local_off_rate": 0.2,
+          "ligation_rate": 12.0,
+          "ligation": false,
+          "temperature": 0.08,
+          "functional_bend_cosines": {},
+          "functional_bend_strength": 100.0,
+          "food_pairs": 0,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_reaction_radius": 0.25,
+          "food_reaction_rate": 0.2,
+          "food_activation": true,
+          "dual_faces": false,
+          "constructible": true,
+          "assembled_stock": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0,
+          "rung_catalysis": true,
+          "rung_catalytic_rate": 0.0,
+          "initial_assemblies": [
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            }
+          ],
+          "capture_curvature": "matched"
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "copy",
+        "name": "PI1_zero_s1",
+        "branch": "PI1",
+        "seed": 1,
+        "duration": 400.0,
+        "chemistry": {
+          "sequence": "01",
+          "alphabet": "01",
+          "free_units": 0,
+          "function_units": 0,
+          "activation": true,
+          "release": "cycle",
+          "period": 200.0,
+          "release_time": 15.0,
+          "template": true,
+          "backbone_angle": 20.0,
+          "box": [
+            22.0,
+            22.0
+          ],
+          "monomer_only_capture": true,
+          "product_cooperativity": true,
+          "functional_cosines": {
+            "0": 0.8,
+            "1": 0.8
+          },
+          "seed_family": 0,
+          "caps_symbol": -1,
+          "initial_min_separation": 0.6,
+          "local_off_rate": 0.2,
+          "ligation_rate": 12.0,
+          "ligation": false,
+          "temperature": 0.08,
+          "functional_bend_cosines": {},
+          "functional_bend_strength": 100.0,
+          "food_pairs": 0,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_reaction_radius": 0.25,
+          "food_reaction_rate": 0.2,
+          "food_activation": true,
+          "dual_faces": false,
+          "constructible": true,
+          "assembled_stock": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0,
+          "rung_catalysis": true,
+          "rung_catalytic_rate": 0.0,
+          "initial_assemblies": [],
+          "capture_curvature": "matched"
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "copy",
+        "name": "PI1_linked4_s1",
+        "branch": "PI1",
+        "seed": 1,
+        "duration": 400.0,
+        "chemistry": {
+          "sequence": "01",
+          "alphabet": "01",
+          "free_units": 0,
+          "function_units": 8,
+          "activation": true,
+          "release": "cycle",
+          "period": 200.0,
+          "release_time": 15.0,
+          "template": true,
+          "backbone_angle": 20.0,
+          "box": [
+            22.0,
+            22.0
+          ],
+          "monomer_only_capture": true,
+          "product_cooperativity": true,
+          "functional_cosines": {
+            "0": 0.8,
+            "1": 0.8
+          },
+          "seed_family": 0,
+          "caps_symbol": -1,
+          "initial_min_separation": 0.6,
+          "local_off_rate": 0.2,
+          "ligation_rate": 12.0,
+          "ligation": false,
+          "temperature": 0.08,
+          "functional_bend_cosines": {},
+          "functional_bend_strength": 100.0,
+          "food_pairs": 0,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_reaction_radius": 0.25,
+          "food_reaction_rate": 0.2,
+          "food_activation": true,
+          "dual_faces": false,
+          "constructible": true,
+          "assembled_stock": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0,
+          "rung_catalysis": true,
+          "rung_catalytic_rate": 0.0,
+          "initial_assemblies": [
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            }
+          ],
+          "capture_curvature": "matched"
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "copy",
+        "name": "PI1_split4_s1",
+        "branch": "PI1",
+        "seed": 1,
+        "duration": 400.0,
+        "chemistry": {
+          "sequence": "01",
+          "alphabet": "01",
+          "free_units": 0,
+          "function_units": 8,
+          "activation": true,
+          "release": "cycle",
+          "period": 200.0,
+          "release_time": 15.0,
+          "template": true,
+          "backbone_angle": 20.0,
+          "box": [
+            22.0,
+            22.0
+          ],
+          "monomer_only_capture": true,
+          "product_cooperativity": true,
+          "functional_cosines": {
+            "0": 0.8,
+            "1": 0.8
+          },
+          "seed_family": 0,
+          "caps_symbol": -1,
+          "initial_min_separation": 0.6,
+          "local_off_rate": 0.2,
+          "ligation_rate": 12.0,
+          "ligation": false,
+          "temperature": 0.08,
+          "functional_bend_cosines": {},
+          "functional_bend_strength": 100.0,
+          "food_pairs": 0,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_reaction_radius": 0.25,
+          "food_reaction_rate": 0.2,
+          "food_activation": true,
+          "dual_faces": false,
+          "constructible": true,
+          "assembled_stock": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0,
+          "rung_catalysis": true,
+          "rung_catalytic_rate": 0.0,
+          "initial_assemblies": [
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            }
+          ],
+          "capture_curvature": "matched"
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "copy",
+        "name": "PI1_linked16_s1",
+        "branch": "PI1",
+        "seed": 1,
+        "duration": 400.0,
+        "chemistry": {
+          "sequence": "01",
+          "alphabet": "01",
+          "free_units": 0,
+          "function_units": 32,
+          "activation": true,
+          "release": "cycle",
+          "period": 200.0,
+          "release_time": 15.0,
+          "template": true,
+          "backbone_angle": 20.0,
+          "box": [
+            22.0,
+            22.0
+          ],
+          "monomer_only_capture": true,
+          "product_cooperativity": true,
+          "functional_cosines": {
+            "0": 0.8,
+            "1": 0.8
+          },
+          "seed_family": 0,
+          "caps_symbol": -1,
+          "initial_min_separation": 0.6,
+          "local_off_rate": 0.2,
+          "ligation_rate": 12.0,
+          "ligation": false,
+          "temperature": 0.08,
+          "functional_bend_cosines": {},
+          "functional_bend_strength": 100.0,
+          "food_pairs": 0,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_reaction_radius": 0.25,
+          "food_reaction_rate": 0.2,
+          "food_activation": true,
+          "dual_faces": false,
+          "constructible": true,
+          "assembled_stock": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0,
+          "rung_catalysis": true,
+          "rung_catalytic_rate": 0.0,
+          "initial_assemblies": [
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            }
+          ],
+          "capture_curvature": "matched"
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "copy",
+        "name": "PI1_split16_s1",
+        "branch": "PI1",
+        "seed": 1,
+        "duration": 400.0,
+        "chemistry": {
+          "sequence": "01",
+          "alphabet": "01",
+          "free_units": 0,
+          "function_units": 32,
+          "activation": true,
+          "release": "cycle",
+          "period": 200.0,
+          "release_time": 15.0,
+          "template": true,
+          "backbone_angle": 20.0,
+          "box": [
+            22.0,
+            22.0
+          ],
+          "monomer_only_capture": true,
+          "product_cooperativity": true,
+          "functional_cosines": {
+            "0": 0.8,
+            "1": 0.8
+          },
+          "seed_family": 0,
+          "caps_symbol": -1,
+          "initial_min_separation": 0.6,
+          "local_off_rate": 0.2,
+          "ligation_rate": 12.0,
+          "ligation": false,
+          "temperature": 0.08,
+          "functional_bend_cosines": {},
+          "functional_bend_strength": 100.0,
+          "food_pairs": 0,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_reaction_radius": 0.25,
+          "food_reaction_rate": 0.2,
+          "food_activation": true,
+          "dual_faces": false,
+          "constructible": true,
+          "assembled_stock": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0,
+          "rung_catalysis": true,
+          "rung_catalytic_rate": 0.0,
+          "initial_assemblies": [
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            }
+          ],
+          "capture_curvature": "matched"
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "copy",
+        "name": "PI1_zero_s2",
+        "branch": "PI1",
+        "seed": 2,
+        "duration": 400.0,
+        "chemistry": {
+          "sequence": "01",
+          "alphabet": "01",
+          "free_units": 0,
+          "function_units": 0,
+          "activation": true,
+          "release": "cycle",
+          "period": 200.0,
+          "release_time": 15.0,
+          "template": true,
+          "backbone_angle": 20.0,
+          "box": [
+            22.0,
+            22.0
+          ],
+          "monomer_only_capture": true,
+          "product_cooperativity": true,
+          "functional_cosines": {
+            "0": 0.8,
+            "1": 0.8
+          },
+          "seed_family": 0,
+          "caps_symbol": -1,
+          "initial_min_separation": 0.6,
+          "local_off_rate": 0.2,
+          "ligation_rate": 12.0,
+          "ligation": false,
+          "temperature": 0.08,
+          "functional_bend_cosines": {},
+          "functional_bend_strength": 100.0,
+          "food_pairs": 0,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_reaction_radius": 0.25,
+          "food_reaction_rate": 0.2,
+          "food_activation": true,
+          "dual_faces": false,
+          "constructible": true,
+          "assembled_stock": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0,
+          "rung_catalysis": true,
+          "rung_catalytic_rate": 0.0,
+          "initial_assemblies": [],
+          "capture_curvature": "matched"
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "copy",
+        "name": "PI1_linked4_s2",
+        "branch": "PI1",
+        "seed": 2,
+        "duration": 400.0,
+        "chemistry": {
+          "sequence": "01",
+          "alphabet": "01",
+          "free_units": 0,
+          "function_units": 8,
+          "activation": true,
+          "release": "cycle",
+          "period": 200.0,
+          "release_time": 15.0,
+          "template": true,
+          "backbone_angle": 20.0,
+          "box": [
+            22.0,
+            22.0
+          ],
+          "monomer_only_capture": true,
+          "product_cooperativity": true,
+          "functional_cosines": {
+            "0": 0.8,
+            "1": 0.8
+          },
+          "seed_family": 0,
+          "caps_symbol": -1,
+          "initial_min_separation": 0.6,
+          "local_off_rate": 0.2,
+          "ligation_rate": 12.0,
+          "ligation": false,
+          "temperature": 0.08,
+          "functional_bend_cosines": {},
+          "functional_bend_strength": 100.0,
+          "food_pairs": 0,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_reaction_radius": 0.25,
+          "food_reaction_rate": 0.2,
+          "food_activation": true,
+          "dual_faces": false,
+          "constructible": true,
+          "assembled_stock": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0,
+          "rung_catalysis": true,
+          "rung_catalytic_rate": 0.0,
+          "initial_assemblies": [
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            }
+          ],
+          "capture_curvature": "matched"
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "copy",
+        "name": "PI1_split4_s2",
+        "branch": "PI1",
+        "seed": 2,
+        "duration": 400.0,
+        "chemistry": {
+          "sequence": "01",
+          "alphabet": "01",
+          "free_units": 0,
+          "function_units": 8,
+          "activation": true,
+          "release": "cycle",
+          "period": 200.0,
+          "release_time": 15.0,
+          "template": true,
+          "backbone_angle": 20.0,
+          "box": [
+            22.0,
+            22.0
+          ],
+          "monomer_only_capture": true,
+          "product_cooperativity": true,
+          "functional_cosines": {
+            "0": 0.8,
+            "1": 0.8
+          },
+          "seed_family": 0,
+          "caps_symbol": -1,
+          "initial_min_separation": 0.6,
+          "local_off_rate": 0.2,
+          "ligation_rate": 12.0,
+          "ligation": false,
+          "temperature": 0.08,
+          "functional_bend_cosines": {},
+          "functional_bend_strength": 100.0,
+          "food_pairs": 0,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_reaction_radius": 0.25,
+          "food_reaction_rate": 0.2,
+          "food_activation": true,
+          "dual_faces": false,
+          "constructible": true,
+          "assembled_stock": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0,
+          "rung_catalysis": true,
+          "rung_catalytic_rate": 0.0,
+          "initial_assemblies": [
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            }
+          ],
+          "capture_curvature": "matched"
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "copy",
+        "name": "PI1_linked16_s2",
+        "branch": "PI1",
+        "seed": 2,
+        "duration": 400.0,
+        "chemistry": {
+          "sequence": "01",
+          "alphabet": "01",
+          "free_units": 0,
+          "function_units": 32,
+          "activation": true,
+          "release": "cycle",
+          "period": 200.0,
+          "release_time": 15.0,
+          "template": true,
+          "backbone_angle": 20.0,
+          "box": [
+            22.0,
+            22.0
+          ],
+          "monomer_only_capture": true,
+          "product_cooperativity": true,
+          "functional_cosines": {
+            "0": 0.8,
+            "1": 0.8
+          },
+          "seed_family": 0,
+          "caps_symbol": -1,
+          "initial_min_separation": 0.6,
+          "local_off_rate": 0.2,
+          "ligation_rate": 12.0,
+          "ligation": false,
+          "temperature": 0.08,
+          "functional_bend_cosines": {},
+          "functional_bend_strength": 100.0,
+          "food_pairs": 0,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_reaction_radius": 0.25,
+          "food_reaction_rate": 0.2,
+          "food_activation": true,
+          "dual_faces": false,
+          "constructible": true,
+          "assembled_stock": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0,
+          "rung_catalysis": true,
+          "rung_catalytic_rate": 0.0,
+          "initial_assemblies": [
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": true
+            }
+          ],
+          "capture_curvature": "matched"
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "copy",
+        "name": "PI1_split16_s2",
+        "branch": "PI1",
+        "seed": 2,
+        "duration": 400.0,
+        "chemistry": {
+          "sequence": "01",
+          "alphabet": "01",
+          "free_units": 0,
+          "function_units": 32,
+          "activation": true,
+          "release": "cycle",
+          "period": 200.0,
+          "release_time": 15.0,
+          "template": true,
+          "backbone_angle": 20.0,
+          "box": [
+            22.0,
+            22.0
+          ],
+          "monomer_only_capture": true,
+          "product_cooperativity": true,
+          "functional_cosines": {
+            "0": 0.8,
+            "1": 0.8
+          },
+          "seed_family": 0,
+          "caps_symbol": -1,
+          "initial_min_separation": 0.6,
+          "local_off_rate": 0.2,
+          "ligation_rate": 12.0,
+          "ligation": false,
+          "temperature": 0.08,
+          "functional_bend_cosines": {},
+          "functional_bend_strength": 100.0,
+          "food_pairs": 0,
+          "food_ligand_energy": 2.0,
+          "food_ligand_width": 0.6,
+          "food_binding_radius": 0.25,
+          "food_binding_rate": 20.0,
+          "food_unbinding_rate": 0.1,
+          "food_reaction_radius": 0.25,
+          "food_reaction_rate": 0.2,
+          "food_activation": true,
+          "dual_faces": false,
+          "constructible": true,
+          "assembled_stock": true,
+          "rung_capture_radius": 0.58,
+          "rung_formation_rate": 0.0,
+          "rung_catalysis": true,
+          "rung_catalytic_rate": 0.0,
+          "initial_assemblies": [
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            },
+            {
+              "family": 1,
+              "sequence": "01",
+              "backbone": false
+            }
+          ],
+          "capture_curvature": "matched"
+        },
+        "mechanics": {
+          "motion": "langevin",
+          "mass": 1.0,
+          "damping": 0.1,
+          "dpd_cutoff": 1.0
+        },
+        "engine": {
+          "dt": 0.002,
+          "spatial": "tree",
+          "skin": 0.25,
+          "sample_every": 250,
+          "reaction_every": 5
+        }
+      }
+    }
+  ],
+  "comparison_policy": "BATCH_46_PLAN:15 fixed occupancy assays at400, no L/HT, all precursors assembled, ligation/PR formation disabled in every case.0/4/16 F01 and split controls. Same genetic mechanics/capture/cycle22x22, no new chemical helper. Linked/split have matched initial coordinates/velocities/RNG; counts differ in the titration. Binding is not evidence of homeostasis, net inhibition, selectivity or loss protection."
+}

@@ -1,0 +1,30 @@
+{
+  "cases": {
+    "linked4": {
+      "eligible_GF": 0,
+      "blocked_family_degree": 2,
+      "geometric_product_contacts": 2,
+      "gf_end_capture": false
+    },
+    "split4": {
+      "eligible_GF": 2,
+      "blocked_family_degree": 0,
+      "geometric_product_contacts": 0,
+      "gf_end_capture": false
+    },
+    "linked16": {
+      "eligible_GF": 0,
+      "blocked_family_degree": 2,
+      "geometric_product_contacts": 2,
+      "gf_end_capture": false
+    },
+    "split16": {
+      "eligible_GF": 2,
+      "blocked_family_degree": 0,
+      "geometric_product_contacts": 0,
+      "gf_end_capture": false
+    }
+  },
+  "source_sha256": "ffb6933e9ecd2b0156663dd5ff26b478954846679624fd94312e57ee3c93de7e",
+  "scope": "Constructed oriented contacts, actual GeneticAudit predicate; no time evolution, production or regulation proof."
+}
