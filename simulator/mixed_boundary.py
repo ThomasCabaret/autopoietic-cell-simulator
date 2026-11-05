@@ -1,7 +1,7 @@
 """Constructed-start geometry, local segment forces, and passive diagnostics.
 
-Only segment_forces is a dynamics helper; it reads actual axial P/R bonds and
-individual L contact segments. Ring IDs/contours are never available to it.
+segment_forces and segment_energy_delta read actual axial P/R bonds and
+individual L contact segments. Ring IDs/contours are never available to them.
 """
 import numpy as np
 from .membrane_bath import barrier_force,in_polygon,polygon_simple
@@ -41,6 +41,23 @@ def segment_forces(c,neighbors):
     pairs=neighbors.pairs(points,half+radius,'bound_segments')
     pairs=pairs[(pairs[:,0]<ne)&(pairs[:,1]>=ne)].copy();pairs[:,1]-=ne
     return barrier_force(c.pos,edges,ids,pairs,radius,c.config['bound_barrier_stiffness'])[0]
+
+
+def segment_energy_delta(c,old,new,neighbors):
+    """Only changed bond segments against actually bound P/R atoms."""
+    radius=c.config['bound_barrier_radius']
+    if radius<=0:return 0.
+    ids=c.host.rungs[c.host.rungs[:,1]>=0].reshape(-1)
+    if not len(ids):return 0.
+    def energy(edge,key):
+        edges=np.asarray([edge],dtype=np.int64)
+        midpoint=(c.pos[edge[0]]+c.pos[edge[1]])/2
+        half=.5*np.linalg.norm(c.pos[edge[0]]-c.pos[edge[1]])
+        points=np.vstack((midpoint,c.pos[ids]))
+        pairs=neighbors.pairs(points,half+radius,key)
+        pairs=pairs[(pairs[:,0]==0)&(pairs[:,1]>0)].copy();pairs[:,1]-=1
+        return barrier_force(c.pos,edges,ids,pairs,radius,c.config['bound_barrier_stiffness'])[1]
+    return float(energy(new,'segment_delta_new')-energy(old,'segment_delta_old'))
 
 
 class BoundaryObserver:

@@ -20,7 +20,7 @@ DEFAULTS=dict(temperature=.08,box=[12.,9.],food_units=24,tool_count=4,tool_linke
     short_length=.98,dock_width=.3,dock_energy=4.,dock_capture=.25,dock_rate=25.,
     bond_off_rate=.02,break_extension=.35,bonding=True,
     contact_exchange_rate=.2,contact_exchange_capture=.8,terminal_exchange=True,
-    formation_gate='none',tool_lipid_contact=.55,capture_curvature='legacy',tool_pose='straight')
+    formation_gate='none',tool_lipid_contact=.55,capture_curvature='legacy',tool_pose='straight',contact_exchange_gate='none')
 
 
 def native_tool_pose(host,pairs):

@@ -139,8 +139,12 @@ class MixedSynthesisChemistry(LipidSynthesisChemistry):
         if self.observation_due:
             for e in self.births[before:]:e['birth_midpoint']=((self.pos[e['head']]+self.pos[e['tail']])/2).tolist()
         if self.config['capture_cooperativity']:self.capture.refresh(self)
+        extra_energy=None
+        if self.config['contact_exchange_gate']=='metropolis' and self.config['bound_barrier_radius']>0:
+            from .mixed_boundary import segment_energy_delta
+            extra_energy=lambda old,new:segment_energy_delta(self,old,new,ScopedNeighbors(neighbors,'L:exchange:'))
         self.exchanges.extend(dict(time=float(time),**e) for e in self.lipids.react(
-            self.pos,self.config,self.rng,ScopedNeighbors(neighbors,'L:'),dt*5))
+            self.pos,self.config,self.rng,ScopedNeighbors(neighbors,'L:'),dt*5,extra_energy))
         self._mechanics();return events
 
     def extra_forces(self,neighbors):
@@ -233,6 +237,7 @@ class MixedSynthesisObserver(LipidSynthesisObserver):
             observer=BoundaryObserver()
             if self.boundary_state is not None:observer.__dict__.update(self.boundary_state)
             observer.observe(time,c);self.boundary_state=observer.__dict__
+        if c.lipids.exchange_stats is not None:self.exchange_gate_stats=copy.deepcopy(c.lipids.exchange_stats)
         if getattr(self,'record_trajectory',True):self.frames.append(c.pos.copy())
 
     def summary(self):
@@ -250,4 +255,5 @@ class MixedSynthesisObserver(LipidSynthesisObserver):
             from .mixed_boundary import BoundaryObserver
             observer=BoundaryObserver();observer.__dict__.update(self.boundary_state);result['boundary']=observer.summary()
             result['scope']='Constructed L boundary and shared P/R/H/T capture, actual products; finite stocks, no losses/open feed/homeostasis. P/R helper and external release cycle retained.'
+        if hasattr(self,'exchange_gate_stats'):result['exchange_gate_stats']=self.exchange_gate_stats
         return result

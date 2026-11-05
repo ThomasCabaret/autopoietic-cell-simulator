@@ -142,6 +142,7 @@ def resolve(raw):
         if abs(defaults['record_interval']/defaults['contact_interval']-round(defaults['record_interval']/defaults['contact_interval']))>1e-7:
             raise ValueError('Record interval must be a multiple of the contact interval')
     elif model in ('lipid_synthesis','mixed_synthesis'):
+        if defaults['contact_exchange_gate'] not in ('none','metropolis'):raise ValueError('Invalid contact exchange gate')
         if defaults['capture_curvature'] not in ('legacy','matched') or defaults.get('tool_pose','straight') not in ('straight','native'):
             raise ValueError('Invalid lipid capture curvature/initial tool pose')
         if defaults['formation_gate'] not in ('none','metropolis') or type(defaults['tool_lipid_contact']) not in (int,float) or defaults['tool_lipid_contact']<0:

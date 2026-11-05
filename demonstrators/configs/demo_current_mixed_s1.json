@@ -35,6 +35,7 @@
     "formation_gate": "metropolis",
     "tool_lipid_contact": 0.0,
     "capture_curvature": "matched",
+    "contact_exchange_gate": "none",
     "genetics": {
       "sequence": "01",
       "alphabet": "01",

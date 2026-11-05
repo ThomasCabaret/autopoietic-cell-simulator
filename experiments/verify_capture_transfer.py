@@ -33,6 +33,7 @@ def main():
             if value['config']['chemistry'].get('capture_cooperativity') is False:
                 value['config']['chemistry'].pop('capture_cooperativity')
             c=value['config']['chemistry']
+            if value['config']['model'] in ('lipid_synthesis','mixed_synthesis') and c.get('contact_exchange_gate')=='none':c.pop('contact_exchange_gate')
             if value['config']['model']=='mixed_synthesis' and c.get('initial_boundary') is None and c.get('bound_barrier_radius',0.)==0.:
                 for key in ('initial_boundary','bound_barrier_radius','bound_barrier_stiffness'):c.pop(key,None)
         if x!=y:raise ValueError(f'Physical state/RNG/motion changed: {label}')

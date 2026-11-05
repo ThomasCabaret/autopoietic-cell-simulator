@@ -4,6 +4,7 @@ from experiments.prepare_exchange_ablation import scenario,REFERENCE
 from experiments.review_exchange_ablation import decide
 from simulator.campaign_io import read
 from simulator.engine import Simulation
+from simulator.config import resolve
 
 
 class ExchangeAblationTests(unittest.TestCase):
@@ -24,7 +25,7 @@ class ExchangeAblationTests(unittest.TestCase):
 
     def test_wider_port_variant_changes_only_width_and_requires_insertions(self):
         old=next(t['scenario'] for t in read(REFERENCE/'manifest.json')['tasks'] if t['label']=='CB1_active_s0')
-        new=scenario(0,True);expected=copy.deepcopy(old);expected.update(name=new['name'],branch='CW1');expected['chemistry']['dock_width']=.6
+        new=scenario(0,True);expected=resolve(copy.deepcopy(old));expected.update(name=new['name'],branch='CW1');expected['chemistry']['dock_width']=.6
         self.assertEqual(expected,new)
         rows=[dict(label=f'CW1_wide_s{s}',seed=s,invariant_failures=0,valid_fraction_late=.95,G_new=4,F_new=4,L_new=20,inserted_born_inside=0,
             reference=dict(G_new=4,F_new=4,L_new=23)) for s in range(3)]
