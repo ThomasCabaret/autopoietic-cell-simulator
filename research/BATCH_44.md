@@ -3,6 +3,9 @@
 5 novembre2026. [Plan](BATCH_44_PLAN.md) · [recettes CB1](BATCH_44_RECIPES.json)
 · [pilote](BATCH_44_PILOT.json). Intégration et calibration ; aucun nouvel outil.
 
+**Clôture ultérieure : CB1 terminé9/9, transfert unique et fermeture fragile ; voir [lot45](BATCH_45.md).**
+Les états en cours ci-dessous sont historiques.
+
 ## BI1 :9/9 terminés sans erreur, insertion non démontrée
 
 Rapport figé local

@@ -1419,17 +1419,61 @@
         "MD2",
         "MIN1M"
       ],
-      "status": "nine_frozen_compact_transfer_trials_running",
+      "status": "nine_complete_one_actual_insertion_but_closure_gate_refused",
       "hypothesis": "A compartment scaled for actual short tools preserves productive PR/HT chemistry and gives more meaningful frontier encounters before adding a new associative helper.",
       "test": "active/noL/nosynthesis x3 at2400.52 prepared L/radius8,world22x22,centered12x9 packet.302/198 atoms. Same other laws; short_length.92 analytically derived, not BI1.98.",
       "cost": "No new chemical type/port/gene/tool/rate/helper. One changed lipid geometry constant, initial ring/world size and packet location. Explicit zero-L initialization control; no new scheduler.",
       "counterexample": "Compact noL still makes no G/F, actual lipids fail to approach/adopt eligible poses, frontier loses closure or retains no material.",
-      "missing_proof": "CB1 cohort, rich information, functional diversity, fed/loss maintenance, polymer protection/regulation and energy.",
+      "missing_proof": "Robust closure after insertion, fed/loss maintenance, functional diversity, information and protection/regulation.",
       "evidence": "research/BATCH_44_PLAN.md",
-      "results": "research/BATCH_44.md",
+      "results": "research/BATCH_45.md",
       "recipe": "research/BATCH_44_RECIPES.json",
       "health_gate": "9 cases,2 workers,4h then checkpoint pause; report then stop on either gate. No retry/tuning/second phase.",
-      "partial_result": "Pilot100:5 L,48.016s,97.5% classified closed time, final sample open, zero invariants/bound crossings, finalT.07496. Post-pilot technical guard adapted to time fraction.8, not endpoint; unchanged cohort gates."
+      "partial_result": "Pilot100:5 L,48.016s,97.5% classified closed time, final sample open, zero invariants/bound crossings, finalT.07496. Post-pilot technical guard adapted to time fraction.8, not endpoint; unchanged cohort gates.",
+      "conclusion": "9/9 simulations no error. Analyzer routing failure recovered using original frozen sources, hashes unchanged. G3/10/4 F4/9/1 L24/23/23, one whole-food F->L->boundary insertion seed1. Late closure0/.9417/0. Two gates fail, six pass. Real open final chains in0/2, not just original-ID threshold."
+    },
+    {
+      "id": "CL1",
+      "parent": "CB1",
+      "status": "bounded_first_lesion_microscope_complete",
+      "hypothesis": "Exchange injects local port potential and leaves uncapturable free ends.",
+      "test": "Frozen CB1 seed0 to758.11, six beads/650frames, exact clone over6.5 and observed-prefix comparison.",
+      "cost": "No chemical change, passive selected observation only.",
+      "counterexample": "No potential jump or control differs; geometry already eligible while reaction merely waits.",
+      "conclusion": "First port delta+6.0243, barrier0. Free-end q min.905 versus capture.0625; no eligible samples. Clone and prefix exact. Not a general heat balance.",
+      "recipe": "research/BATCH_45_LOUPE.json",
+      "evidence": "research/BATCH_45_PLAN.md",
+      "results": "research/BATCH_45.md"
+    },
+    {
+      "id": "CX1",
+      "parent": "CB1",
+      "status": "three_frozen_noexchange_controls_running",
+      "hypothesis": "Removing exchange preserves a productive frontier, distinguishing insertion damage from synthesis alone.",
+      "test": "Three same initial CB1 seeds at2400, exchange rate0 only; reuse completed active CB1.",
+      "cost": "No new chemistry or parameter, one rule ablation.",
+      "counterexample": "Frontier still opens or production collapses without exchange.",
+      "partial_result": "Seeds0/1 complete: G4/9 F7/12 L22/22, late closure.9575/.9600, no insertion; seed2 pending, not a cohort conclusion.",
+      "recipe": "research/BATCH_45_RECIPES.json",
+      "evidence": "research/BATCH_45_PLAN.md",
+      "results": "research/BATCH_45.md"
+    },
+    {
+      "id": "CW1",
+      "parent": "CB1",
+      "related": [
+        "CL1",
+        "CX1"
+      ],
+      "status": "three_selected_wider_port_followups_running",
+      "hypothesis": "Wider free-port attraction and consistently softer bound continuation allow local closing after exchange.",
+      "test": "dock_width.6 instead of.3 only, three seeds to2400; old CB1 reused, no rate/noise changes.",
+      "cost": "One existing constant changed, no extra type/state/port/gene/tool/helper.",
+      "counterexample": "Only suppresses all activity, creates internal traps, overheats or still cannot reseal.",
+      "partial_result": "Pilot100:3 L,94.5% closed time, invariant0, final closed52 L. Followups selected, not general chemistry adoption.",
+      "recipe": "research/BATCH_45_WIDE_RECIPES.json",
+      "evidence": "research/BATCH_45_PLAN.md",
+      "results": "research/BATCH_45.md"
     }
   ]
 }

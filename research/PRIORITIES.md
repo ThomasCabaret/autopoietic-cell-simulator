@@ -1,5 +1,17 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot45 : **CB1 clos9/9**, analyse récupérée sans recalcul après perte du
+flag --compact. Une vraie chaîne nourriture→F entier→L→frontière est observée
+en graine1 ; fermeture tardive0/.9417/0, porte refusée. Ne pas relancer CB1.
+**CL1 terminé**, six billes : premier échange +6.0243 de potentiel de ports,
+puis extrémités jamais éligibles à la jonction dans la fenêtre observée.
+**CX1** trois contrôles sans échange en cours, deux finissent stables ;
+**CW1** trois suivis dock_width.6 au lieu de.3, tout autre taux/bruit fixe,
+pilote100 stable. Lire exchange_ablation_status.bat et wide_ports_status.bat.
+Attendre ces comparaisons avant d'ajouter une loi ou un outil ; pas de grille
+de largeurs. GUI désormais sur CB1 « Intégration compacte · défauts connus »,
+graine0 par convention,33 choix et échecs visibles. Voir BATCH_45.
+
 Lot44 : **BI1 terminé9/9, insertion refusée**, G/F0 dans tous les cas,
 L actifs3/2/7 ; stocks restants et très faible exposition admissible. Ne pas
 relancer BI1 ou augmenter un taux sans diagnostic. **CB1 lancé9 essais** :

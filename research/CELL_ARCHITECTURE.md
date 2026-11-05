@@ -1,5 +1,12 @@
 # Architectures de cellule : fermeture à concevoir, pas encore réalisée
 
+Lot45 : CB1 conserve302 billes et les outils courts. Un F alimentaire
+produit un L qui rejoint la frontière en graine1 ; les deux autres frontières
+restent ouvertes. Pas de gène/outil ajouté ou de budget cible révisé. CX1 enlève
+seulement l'échange, CW1 change seulement dock_width.3→.6 avec raideur liée
+dérivée, sans nouveau taux. Tous les gènes cibles/flux/régulations de la cellule
+complète ne sont pas implémentés par ce prototype réduit. Voir BATCH_45.
+
 Lot44 : BI1636 billes/rayon34,5 refuse l'insertion et ne libère aucun G/F
 neuf. Ce résultat ne remplace pas le budget cible mais révèle que l'ancien grand
 compartiment ne convient pas automatiquement au petit inventaire G01/F01.

@@ -1510,3 +1510,16 @@ MX2 validé entre dans la GUI,30 choix, vrais types et compteurs H/T passifs.
 235 tests et sept préfixes archivés passent ; registre14 corrige M-04 de75 à25
 pour ne plus confondre L préparés avec vrais produits fabriqués. Sources et
 résultats historiques conservés. Voir BATCH_44 et son plan/recettes.
+
+## 2026-11-05 — lot45, transfert jusqu'à la frontière et ouverture locale
+
+CB1 terminé9/9, défaut d'analyse (flag perdu par wrapper) réparé sans recalcul,
+sources/résultats inchangés. Un vrai L alimentaire inséré en graine1 ; G/F3/3,
+fermeture0/.9417/0, porte refusée. CL1 six billes/650frames exact au clone et au
+préfixe : saut +6.0243 et faces libres jamais éligibles. Ancien fichier diagnostic
+nommé inspect.py bloquait avant simulation ; échec conservé, nom corrigé.
+CX1 trois contrôles sans échange ; CW1 une largeur.6 au lieu de.3, autres lois
+fixées, pilote stable et trois suivis lancés. Aucune nouvelle protéine ou primitive.
+CB1 devient la vue intégrée de la GUI (graine0, échec visible),33 choix natifs
+vérifiés ; registre15 distingue draft mécanistique et preuve limitée25.
+Voir BATCH_45 et ses recettes/provenance. Maintien, protection et régulation ouverts.

@@ -1,5 +1,14 @@
 # Interactions souhaitées, parasites et environnements — lot7
 
+Lot45 : échange CB1 = retrait d'une liaison latérale, formation d'une
+autre ; les deux faces libérées doivent encore se rencontrer. CL1 mesure un
+saut de potentiel de ports +6.0243 et aucune jonction admissible sur la fenêtre
+locale ; barrière P/R delta0 à cet échange. CX1 supprime ce helper pour contrôle.
+CW1 garde l'échange/taux et élargit le potentiel libre .3→.6 ; continuation liée
+4 fois moins raide, bassin plus large. Risques d'amas, ouverture et échauffement
+à mesurer, pas de réutilisation globale garantie. NoL/sans synthèse ne sont pas
+refaits à.6 dans ce suivi sélectionné. Aucun nouvel outil fonctionnel.
+
 Lot44 : BI1 ne mesure aucune liaison nouveau L/ancien L. Les poses
 d'échange existent mais sont rarement visitées ; les faces occupées n'attirent
 pas l'entrant. CB1 conserve ce contrat et le confinement libre/lié, et change

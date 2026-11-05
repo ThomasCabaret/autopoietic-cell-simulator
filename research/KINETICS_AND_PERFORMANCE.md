@@ -1,5 +1,13 @@
 # Cinétique, campagnes différées et coût du moteur
 
+Précision lot45 : pour une transition de lien qui change la mécanique,
+une loupe peut comparer les potentiels juste avant/après à positions fixes et
+la géométrie des faces libérées. Distinguer cette variation du bilan thermique
+intégré ou d'une instabilité d'intégration. CL1 mesure +6.0243 de potentiel de
+ports puis des faces jamais éligibles à leur jonction dans6.5 temps ; cela motive
+un contrôle sans échange et une variante de portée, pas un thermostat plus fort.
+Voir BATCH_45. Les preuves sont locales/sélectionnées et restent passives.
+
 Précision lot42 : suivre [CAMPAIGN_CALIBRATION.md](CAMPAIGN_CALIBRATION.md).
 Justifier stocks typés, concentrations, horloges et portée de conclusion avant
 campagne ; auditer les derniers quarts et les occasions réellement disponibles.

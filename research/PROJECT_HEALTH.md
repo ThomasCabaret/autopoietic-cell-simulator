@@ -1,5 +1,18 @@
 # Santé du projet —31 octobre2026
 
+Lot45 : CB1 donne un premier transfert complet jusqu'à la frontière1/3,
+avec G/F nouveaux3/3, mais fermeture robuste refusée. Le diagnostic ne se limite
+plus au score : six billes, saut +6.0243 et extrémités non capturables, clone
+sans loupe exact. CX1 sépare l'effet de l'échange ; CW1 est une seule modification
+de largeur motivée, pas une grille ou nouvelle enzyme. Horizon décisif : leurs
+trois graines complètes. Deux contrôles CX1 stables sont intermédiaires.
+Si CW1 ne donne que stabilité sans transfert, revoir le mécanisme/énergie,
+pas d'autres largeurs successives. La correction de routage d'analyse réduit
+un risque logiciel, pas un verrou biologique. Restent des inconnues importantes
+sur protection/recyclage, régulation, information et diversité : pas de délai
+ou de nombre de lots restants fiable, ni maintien global non naïf justifié.
+Aucun blocage de principe établi ; le transfert1/3 n'exclut pas un futur blocage.
+
 Lot44 : BI1 est un refus utile mais réel : aucune insertion ni nouveau G/F.
 Le volume historique masque la fonction par dilution et faible accès ; le
 contrôle local montre une pose admissible, sans attraction vers une face occupée.

@@ -1,5 +1,13 @@
 # Exploration programmable et décisions de conception
 
+Précision lot45 : distinguer échec de calcul physique et échec d'analyse.
+Le gate d'un job figé doit déterminer son analyseur même si un wrapper perd une
+option. Tester ce routage avant calcul différé. Une récupération d'analyse
+garde anciennes erreurs/sources/hashes et ne relance pas les trajectoires ;
+utiliser d'abord l'analyseur original avec les bons arguments. Les diagnostics
+archivés doivent publier initializing/replay/failed/complete et éviter les noms
+qui masquent les modules standard Python. Voir BATCH_45 et CB1_RECOVERY.
+
 28 octobre2026, demande utilisateur. L'exploration peut être un arbre de
 backtracking ; une conversation ne doit pas remplacer une boucle dont le test
 et les décisions sont déjà calculables. Utiliser le moteur et les campagnes

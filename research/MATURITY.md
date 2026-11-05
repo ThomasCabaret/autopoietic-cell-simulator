@@ -1,5 +1,16 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot45 : chaîne matérielle P/R→F entièrement reconstruit→L né dedans→
+frontière observée dans une graine CB1. C'est un couplage réel partiel, pas une
+validation : deux autres frontières restent ouvertes, et les stocks sont finis.
+M-04 reste25 de preuve, mais son concept devient draft : étapes locales
+observées, instabilité identifiée et test discriminant décrit. Premier échange
+de CL1 : +6.0243 de potentiel, pas preuve de bilan thermique intégré. CX1/CW1
+testent causalité et portée d'un bassin plus large, sans adoption anticipée.
+Le prototype le plus intégré est désormais inspectable dans la GUI, avec ses
+deux échecs. Maintien0 ; diversité, information, régulation/protection et énergie
+sous flux restent des risques majeurs. Voir BATCH_45.
+
 Lot44 : BI1 complet ne transfère pas les vrais L à la frontière : zéro
 insertion et zéro G/F nouveau, malgré L3/2/7 et stocks restants. Cela révèle une
 limite du grand bain, pas une impossibilité d'insertion sous ces lois. Exposition

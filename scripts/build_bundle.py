@@ -120,6 +120,15 @@ def main():
         'experiments/prepare_mixed_synthesis.py','experiments/review_mixed_synthesis.py','experiments/pilot_mixed_synthesis.py',
         'scripts/mixed_synthesis_followup.py','campaigns/mixed_pilot.json','campaigns/mixed_synthesis.json',
         'start_mixed_synthesis.bat','mixed_synthesis_status.bat','stop_mixed_synthesis.bat','resume_mixed_synthesis.bat'))
+    files.update(ROOT/p for p in ('research/BATCH_45_PLAN.md','research/BATCH_45.md','research/BATCH_45_CB1_RECOVERY.json',
+        'research/BATCH_45_LOUPE.json','research/BATCH_45_RECIPES.json','research/BATCH_45_WIDE_PILOT.json',
+        'research/BATCH_45_WIDE_RECIPES.json','experiments/inspect_compact_lesion.py',
+        'experiments/prepare_exchange_ablation.py','experiments/review_exchange_ablation.py','experiments/pilot_wide_ports.py',
+        'scripts/exchange_ablation_followup.py','scripts/recover_compact_report.py',
+        'campaigns/exchange_ablation.json','campaigns/wide_ports.json','campaigns/wide_ports_pilot.json',
+        'exchange_ablation_status.bat','stop_exchange_ablation.bat','resume_exchange_ablation.bat',
+        'wide_ports_status.bat','stop_wide_ports.bat','resume_wide_ports.bat'))
+    files.update(p for p in (ROOT/'research/diagnostic_recipes').rglob('*') if p.suffix=='.py' or p.name=='recipe.json')
     files.update(ROOT/p for p in ('research/BATCH_44_PLAN.md','research/BATCH_44.md','research/BATCH_44_RECIPES.json',
         'research/BATCH_44_PILOT.json','experiments/audit_boundary_access.py','experiments/prepare_compact_transfer.py',
         'experiments/pilot_compact_transfer.py','experiments/review_compact_transfer.py',

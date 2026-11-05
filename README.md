@@ -16,7 +16,7 @@ de génération dans [docs/metabolism](docs/metabolism/README.md).
 puis `visualizer.bat`. Fenêtre Qt, rendu OpenGL par lots, navigation, filtres,
 sélection/suivi, transformations et export PNG. Elle démarre en pause après
 ouverture d'un scénario. Aller dans **Démos → État actuel · bain intégré**
-pour la vue d'ensemble sous Langevin avec contacts cohérents MD2, ou choisir
+pour le prototype compact sous Langevin, dont les défauts restent visibles, ou choisir
 **Membranes · molécules libres** pour un essai plus rapide. Les références
 anciennes restent rangées séparément. [Catalogue et limites](docs/DEMOS.md).
 Le bain MIN1M construit produit des catalyseurs entièrement refaits et actifs
@@ -26,23 +26,21 @@ La visualisation essentielle est disponible ; la vidéo et les outils avancés
 seront spécifiés plus tard. [Guide de la GUI](docs/VISUALIZER.md).
 Les lanceurs Pygame historiques ci-dessous sont conservés.
 
-**Progrès récent visible** : **Démos → Membrane et catalyseurs reconstruits ·
-progrès actuel** montre les trois essais MIN1M validés, avec Langevin inchangé.
-Le raccourci « État actuel · bain intégré » ouvre cette scène, graine0 par
-convention. La petite boucle MIN1R reste disponible sans membrane.
+**Prototype le plus intégré visible** : **Démos → Intégration compacte ·
+défauts connus** montre les trois CB1,302 billes, avec vraie synthèse H/T.
+« État actuel · bain intégré » ouvre la graine0 par convention : sa membrane
+s'ouvre durablement. La graine1 montre une insertion de L alimentaire et une
+bonne tenue tardive ; la graine2 échoue aussi. Porte de cohorte refusée,
+aucun maintien cellulaire revendiqué. MIN1M et MX2 restent au menu séparément.
 
-**Nouveau progrès visible** : **Démos → Chimie mixte · outils et lipides**
-montre MX2 validé,198 billes, trois graines : mêmes sites pour P/R et H/T,
-outils reconstruits puis actifs et lipides réels. Cette scène ne contient
-aucune membrane cellulaire. MIN1M reste la vue d'ensemble avec membrane préparée.
-
-Recherche : **dimensionner le compartiment et transférer les L fabriqués**.
-BI1 terminé9/9 : aucun G/F neuf ni insertion, avec peu d'occasions admissibles.
-CB1 teste une frontière compacte52 L et des témoins noL/sans synthèse : neuf
-essais à2400,302 billes, géométrie explicitement différente (.92), autres lois
-fixées. Statut `compact_transfer_status.bat`, pause `stop_compact_transfer.bat`,
-reprise explicite `resume_compact_transfer.bat`. Aucun maintien anticipé.
-[Lot44](research/BATCH_44.md) · [Calibration](research/CAMPAIGN_CALIBRATION.md).
+Recherche : **refermer la membrane après l'échange local**. CB1 terminé9/9,
+rapport récupéré sans recalcul après correction du routage d'analyse. Une
+loupe de six billes montre un saut de potentiel et des extrémités qui se
+séparent. CX1 teste l'absence d'échange ; CW1 élargit uniquement le potentiel
+des ports (.3→.6). Trois essais chacun, horizons et sources figés.
+Statuts `exchange_ablation_status.bat` et `wide_ports_status.bat` ; arrêts/reprises
+par les lanceurs associés. [Lot45](research/BATCH_45.md) ·
+[Calibration](research/CAMPAIGN_CALIBRATION.md).
 
 Un moteur CPU commun pour les campagnes sans fenêtre et les démonstrateurs
 interactifs. Les lois de copie/expression et de membrane sont des modules séparés.

@@ -1,5 +1,13 @@
 # Fidélité à l'objectif : localité et risques de pilotage
 
+Lot45 : zéro nouvelle primitive chimique. CL1 observe trois L/six billes,
+650 frames et les variations de potentiel des contacts affectés ; clone et
+préfixe archivés exacts. Aucune origine ou fermeture dans les forces. CX1 est
+une ablation ; CW1 change une constante de portée/raideur existante, sans nouveau
+helper/taux/gène. Le gate du job choisit l'analyse dans l'orchestration, jamais
+une réaction. Les démos CB1 sont des états construits et des échecs documentés,
+pas une preuve de cellule spontanée ou viable. Aucun outil d'insertion ajouté.
+
 Lot44 CB1 : aucune loi dynamique ajoutée. Même capture coopérative,
 barrière segmentaire locale et échanges ; géométrie short_length.92 au lieu de.98
 explicitement différente.52 L sont construits, pas déclarés émergents. Zéro L
