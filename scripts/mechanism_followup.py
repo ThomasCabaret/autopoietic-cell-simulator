@@ -11,7 +11,9 @@ STUDIES=dict(inhibition=dict(tag='PI1',prepare='prepare_product_binding',review=
     timestep=dict(tag='EN1',prepare='prepare_exchange_refinement',review='review_exchange_refinement',tasks=3,budget=10800,batch=47,
         predecessor='research/BATCH_46_EG1_RECIPES.json'),
     protection=dict(tag='RP1',prepare='prepare_pair_protection',review='review_pair_protection',tasks=3,budget=3600,batch=48,
-        predecessor='research/BATCH_31_RECIPES.json',predecessor_tasks=12,workers=1))
+        predecessor='research/BATCH_31_RECIPES.json',predecessor_tasks=12,workers=1),
+    contacts=dict(tag='CF1',prepare='prepare_contact_gate',review='review_contact_gate',tasks=6,budget=10800,batch=49,
+        predecessor='research/BATCH_47_EN1_RECIPES.json'))
 
 
 def latest(study):return Path((ROOT/f'outputs/{study}_mechanism_followups/latest.txt').read_text().strip())
@@ -39,7 +41,7 @@ def prepare(study):
     plan=module.plan();p=ROOT/f'campaigns/{study}_mechanism.json';write(p,plan);folder=prepare_campaign(p,job/'A')
     recipe=ROOT/f'research/campaign_recipes/{info["tag"]}_{stamp}';export_recipe(folder,recipe)
     sources=list((ROOT/'simulator').glob('*.py'))+[ROOT/p for p in ('scripts/campaign.py','scripts/expression_followup.py','scripts/mechanism_followup.py',f'experiments/{info["prepare"]}.py',f'experiments/{info["review"]}.py')]
-    if study in ('energy','timestep'):sources += [ROOT/p for p in ('experiments/review_boundary_transfer.py','experiments/mixed_calibration.py','experiments/review_renewal.py','experiments/tool_product_flux.py')]
+    if study in ('energy','timestep','contacts'):sources += [ROOT/p for p in ('experiments/review_boundary_transfer.py','experiments/mixed_calibration.py','experiments/review_renewal.py','experiments/tool_product_flux.py')]
     if study=='timestep':sources += [ROOT/'experiments/review_energy_exchange.py']
     hashes={}
     for src in sources:

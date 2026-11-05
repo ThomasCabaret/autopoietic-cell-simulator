@@ -1,5 +1,5 @@
 param([ValidateSet('Start','Status','Stop','Resume','Review')][string]$Action='Status',
-      [ValidateSet('Membrane','Lipids','Curvature','Tail','Capture','Mixed','Cooperative','Boundary','Compact','Exchange','Wide','Inhibition','Energy','EnergyDt','Protection')][string]$Kind='Membrane')
+      [ValidateSet('Membrane','Lipids','Curvature','Tail','Capture','Mixed','Cooperative','Boundary','Compact','Exchange','Wide','Inhibition','Energy','EnergyDt','Protection','Contacts')][string]$Kind='Membrane')
 $ErrorActionPreference='Stop'
 $projectRoot=Split-Path -Parent $PSScriptRoot
 Set-Location -LiteralPath $projectRoot
@@ -21,6 +21,7 @@ if ($Kind -eq 'Inhibition') { $driverName='mechanism_followup.py'; $parentName='
 if ($Kind -eq 'Energy') { $driverName='mechanism_followup.py'; $parentName='energy_mechanism_followups'; $kindLabel='EG1'; $modeArgs=@('--study','energy') }
 if ($Kind -eq 'EnergyDt') { $driverName='mechanism_followup.py'; $parentName='timestep_mechanism_followups'; $kindLabel='EN1'; $modeArgs=@('--study','timestep') }
 if ($Kind -eq 'Protection') { $driverName='mechanism_followup.py'; $parentName='protection_mechanism_followups'; $kindLabel='RP1'; $modeArgs=@('--study','protection') }
+if ($Kind -eq 'Contacts') { $driverName='mechanism_followup.py'; $parentName='contacts_mechanism_followups'; $kindLabel='CF1'; $modeArgs=@('--study','contacts') }
 if ($Kind -eq 'Tail') { $driverName='lipid_curvature_followup.py'; $parentName='lipid_thermal_tail_followups'; $kindLabel='L4'; $modeArgs=@('--tail') }
 $driverPath=Join-Path $projectRoot "scripts\$driverName"
 if ($Action -eq 'Start') {
