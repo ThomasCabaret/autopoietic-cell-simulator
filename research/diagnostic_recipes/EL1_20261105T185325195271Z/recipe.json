@@ -1,0 +1,11 @@
+{
+  "campaign": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\timestep_mechanism_followups\\followup_20261105T170333609605Z\\A\\campaign_20261105T170334875109Z",
+  "manifest_sha256": "e6c5c92b34a9c0591425c60c2a98de9f324015d96bc2f3ae67b18270e2052e12",
+  "task": "task0002",
+  "result_sha256": "85a6c99f9cd6e69208eb6c1efc34ef786b65285a4bedb610da30881cac92ef5e",
+  "source_sha256": "43bd457a5886b83ddb521ea7a5a606e87804d85ee0d6211402c4e96bad2da922",
+  "start": 2100.0,
+  "end": 2200.0,
+  "max_wall_seconds": 2700,
+  "scope": "Selected late heating window; fixed-position port and PR segment changes only, not total-world energy."
+}

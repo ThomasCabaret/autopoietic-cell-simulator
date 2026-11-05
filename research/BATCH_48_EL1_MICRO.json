@@ -1,0 +1,16 @@
+{
+  "output": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\diagnostics\\EL1_micro_20261105T190018869754Z",
+  "scope": "Separate 0-2 pilot of frozen EL1 instrumentation; not the selected late-heating evidence.",
+  "source_sha256": "43bd457a5886b83ddb521ea7a5a606e87804d85ee0d6211402c4e96bad2da922",
+  "report_sha256": "aa55250b10e0af5f25af567e8243aa2341eab702a61c24af18cdd6ffa6758f8a",
+  "checks": {
+    "plain_state_rng_observer_exact": true,
+    "historical_observed_prefix_exact": true,
+    "start": 0.0,
+    "end": 2.0,
+    "events": 2,
+    "kinetic_samples": 20,
+    "dropped": 0
+  },
+  "note": "Raw report inherited the main recipe scope text. Actual replay is0-2, used only for instrumentation/passivity, no late-heating inference."
+}

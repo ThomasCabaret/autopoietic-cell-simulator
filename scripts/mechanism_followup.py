@@ -9,7 +9,9 @@ from simulator.campaign_io import read,write
 STUDIES=dict(inhibition=dict(tag='PI1',prepare='prepare_product_binding',review='review_product_binding',tasks=15,budget=3600),
     energy=dict(tag='EG1',prepare='prepare_energy_exchange',review='review_energy_exchange',tasks=3,budget=10800),
     timestep=dict(tag='EN1',prepare='prepare_exchange_refinement',review='review_exchange_refinement',tasks=3,budget=10800,batch=47,
-        predecessor='research/BATCH_46_EG1_RECIPES.json'))
+        predecessor='research/BATCH_46_EG1_RECIPES.json'),
+    protection=dict(tag='RP1',prepare='prepare_pair_protection',review='review_pair_protection',tasks=3,budget=3600,batch=48,
+        predecessor='research/BATCH_31_RECIPES.json',predecessor_tasks=12,workers=1))
 
 
 def latest(study):return Path((ROOT/f'outputs/{study}_mechanism_followups/latest.txt').read_text().strip())
@@ -18,7 +20,7 @@ def latest(study):return Path((ROOT/f'outputs/{study}_mechanism_followups/latest
 def prepare(study):
     info=STUDIES[study];module=importlib.import_module('experiments.'+info['prepare'])
     previous=Path(read(ROOT/info.get('predecessor','research/BATCH_45_WIDE_RECIPES.json'))['job']);s=controller.status(previous)
-    if s['active'] or s['state']['phase']!='needs_interpretation' or s['campaigns'][0]['counts']['complete']!=3:raise ValueError('Require complete analyzed predecessor')
+    if s['active'] or s['state']['phase']!='needs_interpretation' or s['campaigns'][0]['counts']['complete']!=info.get('predecessor_tasks',3):raise ValueError('Require complete analyzed predecessor')
     evidence=Path(s['state']['report_0'])
     if controller.digest(evidence)!=s['state']['report_0_sha256']:raise ValueError('Predecessor evidence changed')
     if study=='energy':
@@ -44,7 +46,7 @@ def prepare(study):
         name=src.relative_to(ROOT).as_posix();dest=job/'runtime'/name;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(src,dest);hashes[name]=controller.digest(dest)
     cfg=dict(version=1,study=study,campaigns=[str(folder)],source_sha256=hashes,manifests={str(folder):controller.digest(folder/'manifest.json')},
         baseline_recipe=str(module.REFERENCE),baseline_manifest_sha256=controller.digest(module.REFERENCE/'manifest.json'),
-        max_tasks=info['tasks'],workers=2,max_wall_seconds=info['budget'],gate=info['tag']+f'_BATCH_{info.get("batch",46)}_PLAN',
+        max_tasks=info['tasks'],workers=info.get('workers',2),max_wall_seconds=info['budget'],gate=info['tag']+f'_BATCH_{info.get("batch",46)}_PLAN',
         predecessor_report=str(evidence),predecessor_report_sha256=controller.digest(evidence),after='Report and stop; no tuning/retry/second phase')
     write(job/'job.json',cfg);(job/'job.sha256').write_text(controller.digest(job/'job.json'));write(job/'state.json',dict(phase='ready_A',stage=0,updated=time.time()))
     (parent/'latest.txt').write_text(str(job.resolve()));write(ROOT/f'research/BATCH_{info.get("batch",46)}_{info["tag"]}_RECIPES.json',dict(job=str(job),recipes=[recipe.relative_to(ROOT).as_posix()],job_sha256=controller.digest(job/'job.json'),supervisor_source_sha256=hashes))
