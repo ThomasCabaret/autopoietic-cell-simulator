@@ -1,5 +1,14 @@
 # Fidélité à l'objectif : localité et risques de pilotage
 
+Lot44 CB1 : aucune loi dynamique ajoutée. Même capture coopérative,
+barrière segmentaire locale et échanges ; géométrie short_length.92 au lieu de.98
+explicitement différente.52 L sont construits, pas déclarés émergents. Zéro L
+est une ablation d'initialisation, sans contour virtuel ni mur pour garder le
+paquet. Observateurs/GUI lisent les types et vrais liens sans piloter la physique.
+Le contrôle statique de trois L lit seulement leurs faces et leur occupation ;
+il n'effectue ni insertion ni déplacement dynamique. La piste associative future
+reste une hypothèse, pas une primitive cachée. Aucune nouvelle enzyme/gène.
+
 Lot43 BI1 : seule extension dynamique, reprise du helper MD2 de barrière :
 segment de deux têtes L +position d'un atome P/R dont le lien axial est occupé.
 Trois positions dans la force, état local d'un lien avec partenaire supplémentaire ;

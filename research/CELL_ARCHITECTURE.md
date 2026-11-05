@@ -1,5 +1,14 @@
 # Architectures de cellule : fermeture à concevoir, pas encore réalisée
 
+Lot44 : BI1636 billes/rayon34,5 refuse l'insertion et ne libère aucun G/F
+neuf. Ce résultat ne remplace pas le budget cible mais révèle que l'ancien grand
+compartiment ne convient pas automatiquement au petit inventaire G01/F01.
+CB1 dimensionne52 L/rayon8,150 P/R+48 H/T+104 frontière=302 billes, boîte22×22,
+paquet12×9 centré. Sans L :198 billes et même paquet initial ; PRNG Langevin
+diffère ensuite. short_length.92 fixé par la géométrie locale, toutes autres
+lois conservées ; aucun gène/outil de plus. Le budget final avec plusieurs
+fonctions et flux reste conditionnel. Voir BATCH_44_PLAN et BATCH_44.
+
 Lot43 : MX2 termine12/12, G12/13/14,F14/12/15,L24/23/23 et F alimentaires
 actifs sur L2/3. BI1 reprend ce bain et ajoute219 L construits (438 billes),
 soit636 billes :150 P/R+48 H/T libres+438 frontière. Boîte90×90 ; paquet initial

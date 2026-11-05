@@ -1495,3 +1495,18 @@ Pilote100 stable,1 L dedans,0 insertion,96.422s. Neuf essais à1200 lancés,
 explicitée ; pas de rejet chimique en cas de contacts insuffisants.
 232 tests passent, six préfixes exacts àt5 ; catalogue inchangé physiquement.
 Checklist13 et santé mises à jour. Voir BATCH_43_PLAN/BATCH_43_RECIPES/BATCH_43.
+
+## 2026-11-05 — lot44, BI1 refusé et compactage causal
+
+BI1 terminé9/9 sans erreur : L3/2/7, aucun G/F neuf, aucune liaison à la frontière
+ou insertion. Audit sans simulation : stocks restants et faible exposition
+pré-tick pondérée.224. Contrôle statique3 L : pose d'échange admissible mais
+aucune attraction libre vers les faces occupées. Pas de grille ou taux ajouté.
+CB1 dimensionne52 L/rayon8/boîte22 avec short_length.92 analytique explicite,
+302 billes, témoins noL/sans synthèse. Pilote100 produit5 L,97.5% fermé et
+dernier point ouvert ; garde technique adapté après inspection, cohorte inchangée.
+Neuf essais2400 lancés,2 travailleurs/4h/checkpoints30s, arrêt après rapport.
+MX2 validé entre dans la GUI,30 choix, vrais types et compteurs H/T passifs.
+235 tests et sept préfixes archivés passent ; registre14 corrige M-04 de75 à25
+pour ne plus confondre L préparés avec vrais produits fabriqués. Sources et
+résultats historiques conservés. Voir BATCH_44 et son plan/recettes.

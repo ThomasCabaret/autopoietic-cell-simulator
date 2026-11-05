@@ -1,5 +1,16 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot44 : **BI1 terminé9/9, insertion refusée**, G/F0 dans tous les cas,
+L actifs3/2/7 ; stocks restants et très faible exposition admissible. Ne pas
+relancer BI1 ou augmenter un taux sans diagnostic. **CB1 lancé9 essais** :
+frontière52 L dimensionnée pour outils courts,302 billes/boîte22, short_length.92
+explicite, témoins noL/nosynthesis à2400. Lire compact_transfer_status.bat puis
+stocks, occasions et taux de production. Si accès toujours faible dans un bain
+productif, comparer un mécanisme associatif local ; pas d'insertase ajoutée.
+GUI : MX2 validé désormais au menu « Chimie mixte · outils et lipides » ;
+MIN1M reste la vue avec membrane. M-04 recalibré75→25, ancien75 concernait L
+préparés. Voir BATCH_44 ; les états en cours ci-dessous sont historiques.
+
 Lot43 : **MX2 clos12/12, neuf conditions passent**. Coopératif G12/13/14,
 F14/12/15,L24/23/23 ; F alimentaires→L sur2/3, activité non uniformément
 supérieure et stocks quasi épuisés. Ne pas relancer MX2. **BI1 lancé9 essais** :

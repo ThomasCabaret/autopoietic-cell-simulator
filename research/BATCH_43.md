@@ -3,6 +3,9 @@
 5 novembre2026. [Plan](BATCH_43_PLAN.md) · [recettes BI1](BATCH_43_RECIPES.json)
 · [pilote](BATCH_43_PILOT.json). Aucun nouvel outil/gène, aucun push.
 
+**Clôture ultérieure : BI1 terminé9/9, insertion refusée ; voir [lot44](BATCH_44.md).**
+Les états en cours ci-dessous sont conservés comme historique.
+
 ## MX2 terminé :12/12, neuf conditions passent
 
 Rapport local figé

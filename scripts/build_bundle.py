@@ -120,6 +120,11 @@ def main():
         'experiments/prepare_mixed_synthesis.py','experiments/review_mixed_synthesis.py','experiments/pilot_mixed_synthesis.py',
         'scripts/mixed_synthesis_followup.py','campaigns/mixed_pilot.json','campaigns/mixed_synthesis.json',
         'start_mixed_synthesis.bat','mixed_synthesis_status.bat','stop_mixed_synthesis.bat','resume_mixed_synthesis.bat'))
+    files.update(ROOT/p for p in ('research/BATCH_44_PLAN.md','research/BATCH_44.md','research/BATCH_44_RECIPES.json',
+        'research/BATCH_44_PILOT.json','experiments/audit_boundary_access.py','experiments/prepare_compact_transfer.py',
+        'experiments/pilot_compact_transfer.py','experiments/review_compact_transfer.py',
+        'campaigns/compact_pilot.json','campaigns/compact_transfer.json',
+        'compact_transfer_status.bat','stop_compact_transfer.bat','resume_compact_transfer.bat'))
     files.update(ROOT/p for p in ('research/BATCH_43_PLAN.md','research/BATCH_43.md','research/BATCH_43_RECIPES.json',
         'research/BATCH_43_PILOT.json','experiments/prepare_boundary_transfer.py','experiments/pilot_boundary_transfer.py',
         'experiments/review_boundary_transfer.py','scripts/boundary_transfer_followup.py',

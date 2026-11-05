@@ -1398,17 +1398,38 @@
         "MIN1M",
         "L3"
       ],
-      "status": "nine_frozen_boundary_transfer_trials_running",
+      "status": "nine_complete_insertion_gate_refused_low_exposure_and_genetic_dilution",
       "hypothesis": "Actual H/T products from a shared cooperative PR/HT bath can join a constructed same-law frontier from inside.",
       "test": "active/noexchange/nosynthesis x3 at1200,636 atoms.219 prepared L plus original198-bead packet,90x90 world, local packet12x9 near inside frontier. Shared rates off in nosynthesis; no new tool.",
       "cost": "Reuse actual LinkedLipids ports and local MD2 segment helper, radius.55 stiffness80. Four-bead neighborhood counting axial-state partner; three positions in reciprocal force. No new elementary type/port/gene/tool. Constructed start and passive contour/kinetic observers.",
       "counterexample": "Only adsorption/internal micelles, no admissible contacts, geometry rejects products, frontier loses closure, retained material leaks, stock/dilution mistaken for chemistry failure.",
-      "missing_proof": "BI1 cohort; protection/recycling, fed/loss repair, energetic closure and polymer homeostasis.",
+      "missing_proof": "Adequate productive compact bath, genuine insertion/repair, fed renewal, regulation/protection and energy.",
       "evidence": "research/BATCH_43_PLAN.md",
-      "results": "research/BATCH_43.md",
+      "results": "research/BATCH_44.md",
       "recipe": "research/BATCH_43_RECIPES.json",
       "health_gate": "9 cases,2 workers,4h checkpoint pause, report then stop. No retry, tuning, second phase or demo adoption.",
-      "partial_result": "Pilot100,96.422s:1 actual L born inside at16.02, no insertion, valid contour86.5% all/88% late, zero bound crossings/invariants. Not maintenance."
+      "partial_result": "Pilot100,96.422s:1 actual L born inside at16.02, no insertion, valid contour86.5% all/88% late, zero bound crossings/invariants. Not maintenance.",
+      "conclusion": "9/9 no errors. Active L3/2/7, G/F0all, no old/new contact or insertion. Late closure.8383/.8617/.8567, bound crossings0. All stocks remain; eligible face-time0/.34/.78 at rate.2 gives only.224 sampled weighted exposure, not impossibility."
+    },
+    {
+      "id": "CB1",
+      "parent": "BI1",
+      "related": [
+        "MX2",
+        "MD2",
+        "MIN1M"
+      ],
+      "status": "nine_frozen_compact_transfer_trials_running",
+      "hypothesis": "A compartment scaled for actual short tools preserves productive PR/HT chemistry and gives more meaningful frontier encounters before adding a new associative helper.",
+      "test": "active/noL/nosynthesis x3 at2400.52 prepared L/radius8,world22x22,centered12x9 packet.302/198 atoms. Same other laws; short_length.92 analytically derived, not BI1.98.",
+      "cost": "No new chemical type/port/gene/tool/rate/helper. One changed lipid geometry constant, initial ring/world size and packet location. Explicit zero-L initialization control; no new scheduler.",
+      "counterexample": "Compact noL still makes no G/F, actual lipids fail to approach/adopt eligible poses, frontier loses closure or retains no material.",
+      "missing_proof": "CB1 cohort, rich information, functional diversity, fed/loss maintenance, polymer protection/regulation and energy.",
+      "evidence": "research/BATCH_44_PLAN.md",
+      "results": "research/BATCH_44.md",
+      "recipe": "research/BATCH_44_RECIPES.json",
+      "health_gate": "9 cases,2 workers,4h then checkpoint pause; report then stop on either gate. No retry/tuning/second phase.",
+      "partial_result": "Pilot100:5 L,48.016s,97.5% classified closed time, final sample open, zero invariants/bound crossings, finalT.07496. Post-pilot technical guard adapted to time fraction.8, not endpoint; unchanged cohort gates."
     }
   ]
 }

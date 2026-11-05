@@ -1,5 +1,18 @@
 # Santé du projet —31 octobre2026
 
+Lot44 : BI1 est un refus utile mais réel : aucune insertion ni nouveau G/F.
+Le volume historique masque la fonction par dilution et faible accès ; le
+contrôle local montre une pose admissible, sans attraction vers une face occupée.
+CB1 est une intervention de dimensionnement, pas neuf nouvelles corrections :
+neuf calculs figés avec témoin noL, aucun taux ou outil ajouté. Pilote stable au
+sens temporel, endpoint ouvert conservé ; adaptation du garde technique tracée.
+Horizon décisif : cohorte CB1. Si elle échoue sans L, revoir le bain avant la
+membrane ; si productive sans insertion et exposition faible, une seule piste
+associative locale à départager. Deux changements sans transfert ni diagnostic
+nouveau imposent refonte. Le prochain test global non naïf reste prématuré ;
+protection/régulation, information, flux et énergie empêchent un nombre fiable
+de lots restants. Aucun blocage irréversible établi, pas de délai garanti.
+
 Lot43 : le diagnostic de capture converge : MX2 passe les neuf conditions
 sans troisième retouche, ni nouveau taux/outil. La médiane génétique remonte,
 mais les activités individuelles ne sont pas toutes meilleures ; la matière

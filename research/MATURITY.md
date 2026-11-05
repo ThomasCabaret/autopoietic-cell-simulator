@@ -1,5 +1,15 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot44 : BI1 complet ne transfère pas les vrais L à la frontière : zéro
+insertion et zéro G/F nouveau, malgré L3/2/7 et stocks restants. Cela révèle une
+limite du grand bain, pas une impossibilité d'insertion sous ces lois. Exposition
+pré-tick pondérée≈.224, accès peu testé. CB1 redimensionne le compartiment et
+compare noL ; pilote100,5 L,97,5% fermé, zéro fuite liée/invariant ; cohorte en cours.
+M-04 corrige75→25 pour la cible L réellement fabriqués ; ancien couplage MD2
+avec L préparés conservé. S-04/C-01 restent25, maintien0. MX2 productif est
+maintenant visible dans la GUI, explicitement sans membrane. Flux, pertes,
+protection/régulation et information restent ouverts. Voir BATCH_44.
+
 Lot43 : MX2 complet12/12 confirme le couplage P/R→F alimentaire→L dans
 un même bain avec débit génétique rétabli : médianes G13/F14 contre4/7 référence.
 Contribution des remplaçants variable, pas supériorité de chaque métrique ni

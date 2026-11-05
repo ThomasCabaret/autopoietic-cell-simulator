@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "revision": 13,
+  "revision": 14,
   "reviewed": "2026-11-05",
-  "candidate": "MIN1M visible ; MX2 clos12/12 portes passées ; BI1 vrais L vers frontière en campagne9 essais",
+  "candidate": "MIN1M et MX2 visibles ; BI1 clos9/9 insertion refusée ; CB1 compact en campagne9 essais",
   "purpose": "Registre évolutif des capacités nécessaires à une cellule construite maintenue ; les pourcentages sont des paliers de preuve, pas un taux global de réussite.",
   "out_of_scope": [
     "origine spontanée de la cellule",
@@ -83,9 +83,10 @@
         "research/BATCH_32.md",
         "research/BATCH_41.md",
         "research/BATCH_42.md",
-        "research/BATCH_43.md"
+        "research/BATCH_43.md",
+        "research/BATCH_44.md"
       ],
-      "next_test": "Lire BI1 : transfert de vrais produits à la frontière, sans nouvelle primitive fonctionnelle ; répertoire programmable encore ouvert.",
+      "next_test": "Lire CB1 : compatibilité réelle des mêmes porteurs avec une frontière dimensionnée ; aucune nouvelle enzyme ou affinité associative avant diagnostic.",
       "essential": true
     },
     {
@@ -235,7 +236,7 @@
       "mechanism": "MX2 assemble réellement H/T via le même F01 exprimé depuis G et refait depuis P/R ; ports MD2 identiques. BI1 ajoute la frontière construite.",
       "concept_gap": "Transfert vers frontière, énergie sous flux, recyclage/pertes et régulation L non établis. C0B/XYZ distinct.",
       "proof": "subcase",
-      "scope": "MX2 L24/23/23 dont1/0/3 via F alimentaires, contacts ultérieurs24/23/23. BI1P100 produit1 L dedans sans insertion ; pas de renouvellement de frontière.",
+      "scope": "MX2 L24/23/23, F alimentaires→L2/3 sans membrane. BI1 L3/2/7 mais aucune insertion ni nouveau G/F. CB1P100 produit5 L, insertion non observée ; cohorte en cours.",
       "references": [
         "research/FUNCTIONAL_MECHANISMS.md",
         "research/CELL_ARCHITECTURE.md",
@@ -248,9 +249,10 @@
         "research/BATCH_40.md",
         "research/BATCH_41.md",
         "research/BATCH_42.md",
-        "research/BATCH_43.md"
+        "research/BATCH_43.md",
+        "research/BATCH_44.md"
       ],
-      "next_test": "Lire BI1 complet avec stocks, occasions pré-tick et contours ; distinguer adsorption et vraie insertion, puis réparation sous pertes.",
+      "next_test": "Lire CB1 avec stocks, occasions et production noL ; puis vraie insertion/réparation, pas seulement association de L.",
       "essential": true
     },
     {
@@ -547,9 +549,10 @@
       "proof": "coupled",
       "scope": "MD2 grand bain2118 billes, membrane préparée, fermeture partielle.",
       "references": [
-        "research/BATCH_25_RESULTS.md"
+        "research/BATCH_25_RESULTS.md",
+        "research/BATCH_44.md"
       ],
-      "next_test": "Tester l’inventaire réellement nécessaire, ouvertures et charge sans consigne de contour.",
+      "next_test": "CB1 frontière52 L/rayon8 versus219/rayon34.5 BI1 ; dimensionner à partir des outils réels et vérifier production/confinement ensemble.",
       "essential": true
     },
     {
@@ -587,14 +590,15 @@
       "renewal_needs": [],
       "concept": "gap",
       "mechanism": "Échange de contacts latéraux locaux, puis relaxation mécanique ; une insertase serait une autre option payante.",
-      "concept_gap": "Insertion de L préparés rare dans MD2 ; transfert de vrais produits et confinement conjoint en attente BI1.",
-      "proof": "coupled",
-      "scope": "Insertions rares de L préparés dans MD2 ; pas circuit synthèse L→membrane.",
+      "concept_gap": "Faible accès aux poses admissibles et absence d’attraction des faces occupées ; dimensionnement et capture associative à départager.",
+      "proof": "subcase",
+      "scope": "Ancien75 concernait L préparés insérés dans MD2, résultat conservé comme prototype. Pour vrais L fabriqués, BI1 clos9/9 : zéro insertion, faible exposition ; sous-cas25, pas couplage réalisé du critère.",
       "references": [
         "research/BATCH_25_RESULTS.md",
-        "research/BATCH_43.md"
+        "research/BATCH_43.md",
+        "research/BATCH_44.md"
       ],
-      "next_test": "BI1 active/noexchange/nosynthesis à1200 : L vraiment né dedans dans un contour refermé et fuites ; pas insertion depuis simple contact.",
+      "next_test": "CB1 active/noL/nosynthesis à2400 ; si exposition faible malgré production, concevoir un motif associatif local plutôt que monter aveuglément le taux.",
       "essential": true
     },
     {
@@ -994,7 +998,7 @@
       "mechanism": "Affinités/ports locaux sélectifs, états liés masquant les sites ; tester les classes étrangères ensemble.",
       "concept_gap": "Contrats globaux EN/EA/EL et nouveaux produits non validés ; pas d’orthogonalité acquise.",
       "proof": "subcase",
-      "scope": "MX2 complet12/12, neuf conditions passent : G12/13/14,F14/12/15,L24/23/23, zéro motif croisé échantillonné. Couplage utile, stocks presque épuisés, pas homéostasie.",
+      "scope": "MX2 neuf conditions passent dans boîte12×9 ; BI1 ne transfère pas ce débit ni les L vers une frontière90×90. CB1 examine le dimensionnement avec témoin noL, sans effacer cet échec.",
       "references": [
         "research/CELL_INTERACTIONS.md",
         "research/INTEGRATION_TESTS.json",
@@ -1002,9 +1006,10 @@
         "research/BATCH_40.md",
         "research/BATCH_41.md",
         "research/BATCH_42.md",
-        "research/BATCH_43.md"
+        "research/BATCH_43.md",
+        "research/BATCH_44.md"
       ],
-      "next_test": "Lire BI1 complet puis coupler pertes, flux et protection ; aucune nouvelle grille de capture justifiée.",
+      "next_test": "Lire CB1 puis départager transport/dilution, géométrie et attente ; aucune promotion avant résultat complet.",
       "essential": true
     },
     {
@@ -1029,7 +1034,8 @@
         "research/BATCH_40.md",
         "research/BATCH_41.md",
         "research/BATCH_42.md",
-        "research/BATCH_43.md"
+        "research/BATCH_43.md",
+        "research/BATCH_44.md"
       ],
       "next_test": "Lire références MX2 prolongées et vérifier tout leur historique0–1200 égal à MX1 ; comparer la coopération à même horizon2400. Étudier ensuite dt/cadence sans modifier les lois physiques.",
       "essential": true
@@ -1109,9 +1115,10 @@
       "proof": "subcase",
       "scope": "Benchmarks et scènes2118 billes, pas renouvellement cellulaire chronométré.",
       "references": [
-        "research/KINETICS_AND_PERFORMANCE.md"
+        "research/KINETICS_AND_PERFORMANCE.md",
+        "research/BATCH_44.md"
       ],
-      "next_test": "Mesurer temps réel par remplacement utile et coût du flux, sans grossir dt ni ralentir la chimie.",
+      "next_test": "Lire coûts CB1 à302/198 billes, distincts du budget cellulaire cible et du temps de renouvellement inconnu.",
       "essential": true
     },
     {
@@ -1139,7 +1146,8 @@
         "research/BATCH_40.md",
         "research/BATCH_41.md",
         "research/BATCH_42.md",
-        "research/BATCH_43.md"
+        "research/BATCH_43.md",
+        "research/BATCH_44.md"
       ],
       "next_test": "Conserver les contrôles sans observateur, reprise exacte et signatures à chaque changement concerné.",
       "essential": true
@@ -1231,13 +1239,18 @@
       "revision": 13,
       "date": "2026-11-05",
       "reason": "MX2 complet12/12 portes passées, coopération conservée pour transfert. BI1 construit frontière commune et diagnostic passif, pilote100 stable et neuf essais lancés. Aucun nouveau palier biologique ni maintien anticipé ; descriptions de limites devenues obsolètes corrigées."
+    },
+    {
+      "revision": 14,
+      "date": "2026-11-05",
+      "reason": "BI1 terminé9/9 insertion refusée et absence G/F, calibration d’exposition/dilution. CB1 compact construit/pilote stable temporel et9 essais lancés. M-04 ancien75 concernait L préparés malgré critère de L fabriqués : recalibré25, preuve historique conservée. MX2 validé rendu visible, aucun maintien anticipé."
     }
   ],
   "last_batch_progress": {
-    "C-01": "MX2 clos12/12 : neuf critères passent, médianes G13/F14 contre4/7 référence ; contribution des remplaçants non uniformément meilleure.",
-    "S-04": "L24/23/23, F alimentaires→L2/3 sous chimie commune ; BI1P1 L né dedans, pas insertion encore.",
-    "M-04": "Frontière construite219 L reliée au même bain (636 billes), observateur adsorption/insertion et BI1 neuf essais lancés. Aucun nouveau palier anticipé.",
-    "C-02": "Stocks quasi épuisés dans MX2 ; nouveau diagnostic distingue dilution globale et paquet local, occasions pré-tick et naissance au même instant.",
-    "O-02": "232 tests passent ; six préfixes physiques archivés exacts àt5, dont BI1P. Démo validée conservée, nouveau candidat non promu."
+    "C-01": "BI1 clos9/9 sans erreur mais G/F0 ; la réussite MX2 ne se transfère pas au grand compartiment.",
+    "S-04": "L3/2/7 dans BI1, aucune insertion ; stocks encore abondants. Pilote compact100 :5 L, pas maintien.",
+    "M-04": "Palier75→25 recalibré : ancien75 fondé sur L préparés MD2. Vrais produits BI1 sans insertion ; faible exposition et cause locale identifiées.",
+    "C-02": "Audit sans trajectoire : exposition pondérée.224, stocks restants ; CB1 dimensionné analytiquement et témoin noL.",
+    "O-02": "235 tests passent, sept préfixes physiques exacts àt5. MX2 ajouté au catalogue30 choix, adaptateur espèces/compteurs passif."
   }
 }

@@ -1,5 +1,13 @@
 # Interactions souhaitées, parasites et environnements — lot7
 
+Lot44 : BI1 ne mesure aucune liaison nouveau L/ancien L. Les poses
+d'échange existent mais sont rarement visitées ; les faces occupées n'attirent
+pas l'entrant. CB1 conserve ce contrat et le confinement libre/lié, et change
+explicitement la courbure .98→.92 pour une frontière52 L. Pas nouveau helper
+d'insertion ou attraction associative. Témoin noL distingue l'effet de L d'un
+bain improductif ; nosynthesis coupe les deux taux P/R/H/T partagés. Source et
+paramètres figés, énergie sous flux/protection et homéostasie non acquises.
+
 Lot43 BI1 : vrais L préparés et produits H/T utilisent le même registre
 de partenaires et de faces. Barrière segmentaire de deux têtes L contre chaque
 atome P/R axialement lié (.55,80), reprise de MD2 ; P/R libres et H/T perméables.

@@ -31,15 +31,18 @@ progrès actuel** montre les trois essais MIN1M validés, avec Langevin inchang�
 Le raccourci « État actuel · bain intégré » ouvre cette scène, graine0 par
 convention. La petite boucle MIN1R reste disponible sans membrane.
 
-Recherche en cours : **transfert des lipides fabriqués vers la frontière**.
-MX2 terminé12/12 : la capture coopérative rétablit le débit génétique tout en
-gardant le transfert matériel P/R→F→L. BI1 ajoute une membrane préparée de219 L
-au même bain ; neuf essais à1200,636 billes, témoins et sources figés.
-Le pilote100 reste stable et fabrique un L intérieur, sans insertion observée.
-Statut `boundary_transfer_status.bat`, pause `stop_boundary_transfer.bat`,
-reprise explicite `resume_boundary_transfer.bat`. Aucun maintien ou nouveau
-résultat GUI anticipé. [Lot43](research/BATCH_43.md) ·
-[Calibration](research/CAMPAIGN_CALIBRATION.md).
+**Nouveau progrès visible** : **Démos → Chimie mixte · outils et lipides**
+montre MX2 validé,198 billes, trois graines : mêmes sites pour P/R et H/T,
+outils reconstruits puis actifs et lipides réels. Cette scène ne contient
+aucune membrane cellulaire. MIN1M reste la vue d'ensemble avec membrane préparée.
+
+Recherche : **dimensionner le compartiment et transférer les L fabriqués**.
+BI1 terminé9/9 : aucun G/F neuf ni insertion, avec peu d'occasions admissibles.
+CB1 teste une frontière compacte52 L et des témoins noL/sans synthèse : neuf
+essais à2400,302 billes, géométrie explicitement différente (.92), autres lois
+fixées. Statut `compact_transfer_status.bat`, pause `stop_compact_transfer.bat`,
+reprise explicite `resume_compact_transfer.bat`. Aucun maintien anticipé.
+[Lot44](research/BATCH_44.md) · [Calibration](research/CAMPAIGN_CALIBRATION.md).
 
 Un moteur CPU commun pour les campagnes sans fenêtre et les démonstrateurs
 interactifs. Les lois de copie/expression et de membrane sont des modules séparés.
