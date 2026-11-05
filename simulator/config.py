@@ -87,9 +87,11 @@ def resolve(raw):
         if 'bond_turnover' in defaults:
             rates=defaults['bond_turnover']
             keys={'backbone_g','backbone_f','rung_g','rung_f','protection'}
-            if not isinstance(rates,dict) or set(rates)!=keys or any(
-                type(v) not in (int,float) or not math.isfinite(v) or v<0 for v in rates.values()):
+            if not isinstance(rates,dict) or set(rates)-{'protection_scope'}!=keys or any(
+                type(rates[k]) not in (int,float) or not math.isfinite(rates[k]) or rates[k]<0 for k in keys):
                 raise ValueError('bond_turnover requires four finite nonnegative rates and protection')
+            if rates.get('protection_scope','occupied') not in ('occupied','paired_edge'):
+                raise ValueError('Invalid turnover protection_scope')
             if rates['protection']>1 or not defaults['constructible']:
                 raise ValueError('bond_turnover requires constructible rungs and protection in [0,1]')
         if type(defaults.get('gf_end_capture',False)) is not bool:

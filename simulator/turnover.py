@@ -7,6 +7,13 @@ import numpy as np
 from .reference import degree
 
 
+def paired_edge(c,a,b):
+    """Four directly connected composites; no chain or sequence identity."""
+    x,y=int(c.pairing[a]),int(c.pairing[b])
+    return (x>=0 and y>=0 and c.pairing[x]==a and c.pairing[y]==b and
+        tuple(sorted((x,y))) in c.edges)
+
+
 class BondTurnover:
     def __init__(self, settings):
         self.settings = settings
@@ -20,7 +27,8 @@ class BondTurnover:
             occupied = occupied | (cat.site_bound >= 0)
         for a, b in sorted(c.edges):
             rate = rates['backbone_g' if c.families[a] == 0 else 'backbone_f']
-            if occupied[a] or occupied[b]:
+            protected=paired_edge(c,a,b) if rates.get('protection_scope','occupied')=='paired_edge' else occupied[a] or occupied[b]
+            if protected:
                 rate *= rates['protection']
             if rate > 0 and c.rng.random() < -np.expm1(-rate * dt * 5):
                 c.edges.remove((a, b))

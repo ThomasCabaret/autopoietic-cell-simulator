@@ -7,7 +7,7 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from simulator.campaign_io import read,write
 
 
-def main():
+def main(turnover_only=False):
     cases=[('MIN1R_20261031T110654015735Z','MIN1R_active_s0'),
         ('MIN1M_20261104T113752867767Z','MIN1M_active_s0'),
         ('MD2_20261030T115427443420Z','MD2_bath_new_s2'),
@@ -15,6 +15,7 @@ def main():
         ('MX1_20261104T192816403023Z','MX1_mixed_s0'),
         ('BI1P_20261105T062531768586Z','BI1_active_s0'),
         ('MX2_20261104T203221072374Z','MX2_cooperative_s0')]
+    if turnover_only:cases=[('RV1A_20261031T080348730984Z',f'RV1_{variant}_s0') for variant in ('full','protected')]
     out=ROOT/'outputs/diagnostics'/('CT1_reference_'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ'));out.mkdir(parents=True)
     code=('import json,sys;from simulator.engine import Simulation;from simulator.checkpoint import save;'
         'sim=Simulation(json.load(open(sys.argv[1],encoding="utf-8")));sim.advance(round(5./sim.dt));save(sys.argv[2],sim)')
@@ -41,4 +42,6 @@ def main():
     write(out/'report.json',dict(rows=rows));print(out);return out
 
 
-if __name__=='__main__':main()
+if __name__=='__main__':
+    import argparse
+    p=argparse.ArgumentParser();p.add_argument('--turnover-only',action='store_true');a=p.parse_args();main(a.turnover_only)
