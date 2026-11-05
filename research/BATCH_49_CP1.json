@@ -1,0 +1,33 @@
+{
+  "output": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\diagnostics\\CP1_20261105T215947024063Z",
+  "recipe": "research/diagnostic_recipes/CP1_20261105T215947024063Z",
+  "report_sha256": "90dd1ceb8b1755c158f59a57f5e110ab8b239c46c98382be8d05e3c32318d0b8",
+  "summary": [
+    {
+      "label": "CF1_coarse_s0",
+      "time": 1345.0,
+      "L": 75,
+      "links": 1,
+      "eligible_contacts": 206,
+      "max_competitive_face_load": 0.7280883153709369,
+      "selected_count": 12,
+      "median_additive_delta": 209.09157186964606,
+      "median_competitive_delta": -1.9245982267442783,
+      "competitive_nonpositive": 12
+    },
+    {
+      "label": "CF1_coarse_s1",
+      "time": 2033.5,
+      "L": 75,
+      "links": 0,
+      "eligible_contacts": 131,
+      "max_competitive_face_load": 0.7125642027752406,
+      "selected_count": 12,
+      "median_additive_delta": 99.09090985738634,
+      "median_competitive_delta": -1.697259971421407,
+      "competitive_nonpositive": 11
+    }
+  ],
+  "scope": "Top12 geometric contacts per paused snapshot, same contacts for both static models. Competitive law not installed in simulator, no movement, rates or success declared.",
+  "archived_analyzer_sha256": "7d6193a17cdaedd6440942c24964a483e204ecba3e6e038de826f06d1f1dad99"
+}

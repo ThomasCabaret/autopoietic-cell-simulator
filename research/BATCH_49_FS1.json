@@ -1,0 +1,81 @@
+{
+  "output": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\diagnostics\\FS1_20261105T213526155578Z",
+  "recipe": "research/diagnostic_recipes/FS1_20261105T213526155578Z",
+  "report_sha256": "c5151205832f6813d8055837fe2f7eed3c35bd5171dbe88223c280d2185c44b6",
+  "source_sha256": "b4f9ff5a3fce46b775c09ffb9cfd8e941c434df201228a5020ee687035c611d8",
+  "summary": {
+    "rows": [
+      {
+        "seed": 0,
+        "label": "RP1_pair_s0",
+        "exact_F_target_final": 1,
+        "exact_F_target_late_min": 0,
+        "exact_F_target_late_max": 1,
+        "late_window": [
+          900.0,
+          1200.0
+        ],
+        "late_catalyzed_formations": 42,
+        "late_recycled_incorporations": 3,
+        "mixed_symbol_F_edges": 8,
+        "unpaired_mixed_symbol_F_edges": 8,
+        "current_double_captures_with_PR_geometry": 0,
+        "coherently_protected_edges": 0
+      },
+      {
+        "seed": 1,
+        "label": "RP1_pair_s1",
+        "exact_F_target_final": 0,
+        "exact_F_target_late_min": 0,
+        "exact_F_target_late_max": 0,
+        "late_window": [
+          900.0,
+          1200.0
+        ],
+        "late_catalyzed_formations": 31,
+        "late_recycled_incorporations": 0,
+        "mixed_symbol_F_edges": 1,
+        "unpaired_mixed_symbol_F_edges": 1,
+        "current_double_captures_with_PR_geometry": 0,
+        "coherently_protected_edges": 0
+      },
+      {
+        "seed": 2,
+        "label": "RP1_pair_s2",
+        "exact_F_target_final": 0,
+        "exact_F_target_late_min": 0,
+        "exact_F_target_late_max": 1,
+        "late_window": [
+          900.0,
+          1200.0
+        ],
+        "late_catalyzed_formations": 18,
+        "late_recycled_incorporations": 0,
+        "mixed_symbol_F_edges": 1,
+        "unpaired_mixed_symbol_F_edges": 1,
+        "current_double_captures_with_PR_geometry": 0,
+        "coherently_protected_edges": 0
+      }
+    ],
+    "reference_report_sha256": "30f4e642d4dde0ddd23ea926462b9bd64d3629b5106e3c01ad353f901a8460fa",
+    "manifest_sha256": "1cd3b8d5aa800e5bc38593441bde48fd4996e5b65eb94f5e326419d40083d517",
+    "inputs": [
+      {
+        "task": "task0000",
+        "result_sha256": "67a7889bdc0d82dbfc49250116d36b15eca3a627349b5998ff2ca747bb9c6ec3",
+        "checkpoint_sha256": "0973221c3eeaa5207a0ccb7e7e039dc679a535a619ea218a61490f48f3e64884"
+      },
+      {
+        "task": "task0001",
+        "result_sha256": "f358d8777c8697cd1b0957d62854451b8e469a7fe9274cb23ad70f9462dbf2f9",
+        "checkpoint_sha256": "bde23768dc07ab43c9fbb114abe0eefb3bb7dec0543cc44de6fc68be5acd3490"
+      },
+      {
+        "task": "task0002",
+        "result_sha256": "8f25e36cd56457cb55f53ba18390a4379ef3190be39423e564110317284603bd",
+        "checkpoint_sha256": "ecf8b7e9f835388a764611d033d20ba540e9b857d16a05386a9cc0c78b9d71f3"
+      }
+    ],
+    "scope": "Current edge motifs may overlap and are potential co-recruiters, not whole proteins. Late catalytic events can be futile cycles. The original exact-F001 gate stays refused; no homeostasis, information preservation or mixed-bath survival claimed."
+  }
+}

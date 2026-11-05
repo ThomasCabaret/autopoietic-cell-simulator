@@ -1,0 +1,15 @@
+{
+  "campaign": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\contacts_mechanism_followups\\followup_20261105T195838168416Z\\A\\campaign_20261105T200001704286Z",
+  "inputs": [
+    {
+      "task": "task0000",
+      "checkpoint_sha256": "422d0ba8e0bef3d57155162c95b134dd3a84ae9f56d0b4cb98fef4fe62393ec9"
+    },
+    {
+      "task": "task0001",
+      "checkpoint_sha256": "c7a4398649997758425bed62485cb48f5abc16661f80ab1f7e72522b80cdc80a"
+    }
+  ],
+  "manifest_sha256": "3705e671ff5e86189dda48123a9d07efa71a3496fa0700af5ba7e16ca8e26ff4",
+  "selection": "12 smallest eligible mismatch per first2 paused cases"
+}
