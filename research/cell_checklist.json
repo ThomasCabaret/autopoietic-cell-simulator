@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "revision": 18,
+  "revision": 19,
   "reviewed": "2026-11-05",
-  "candidate": "EG1 limité, EN1 refusé et visible ; EL1 thermique et RP1 protection séparée en cours",
+  "candidate": "EG1 limité ; CF1 pausé pour frustration des ports additifs ; CP1 statique concurrent et FS1 fonction/séquence",
   "purpose": "Registre évolutif des capacités nécessaires à une cellule construite maintenue ; les pourcentages sont des paliers de preuve, pas un taux global de réussite.",
   "out_of_scope": [
     "origine spontanée de la cellule",
@@ -85,9 +85,10 @@
         "research/BATCH_42.md",
         "research/BATCH_43.md",
         "research/BATCH_44.md",
-        "research/BATCH_46.md"
+        "research/BATCH_46.md",
+        "research/BATCH_49.md"
       ],
-      "next_test": "Lire EG1 et fermer les drafts protection/pertes/export ; ne pas supposer une bibliothèque de protéines ou une rétroaction produits déjà disponible.",
+      "next_test": "Tester une loi compétitive locale de ports qui conserve le cas binaire, puis son transfert ; aucune nouvelle enzyme/type/rate.",
       "essential": true
     },
     {
@@ -603,9 +604,10 @@
         "research/BATCH_45.md",
         "research/BATCH_46.md",
         "research/BATCH_47.md",
-        "research/BATCH_48.md"
+        "research/BATCH_48.md",
+        "research/BATCH_49.md"
       ],
-      "next_test": "Lire EL1 et localiser les apports de potentiel hors échange avant autre constante ou contrôle de réparation.",
+      "next_test": "Intégrer CP1 et son delta local, vérifier assemblage/insertion et coût avant cohorte ; CF1 ne doit pas être repris comme solution.",
       "essential": true
     },
     {
@@ -717,7 +719,7 @@
       "mechanism": "Choisir ressources activées ou protocole externe figé ; ne pas inventer une autonomie énergétique.",
       "concept_gap": "E/W de C0B n’est pas le moteur ; travail du cycle et transitions d’affinité non calibrés.",
       "proof": "subcase",
-      "scope": "Thermostat, activation et cycle externes déclarés ; bilan énergétique complet absent.",
+      "scope": "EL1 mesure les apports de commutation ; CF1 expose une incompatibilité libre/lié. CP1 statique borne les affinités, pas bilan global.",
       "references": [
         "research/CELL_ARCHITECTURE.md",
         "research/LOCALITY_AUDIT.md",
@@ -730,9 +732,10 @@
         "research/BATCH_45.md",
         "research/BATCH_46.md",
         "research/BATCH_47.md",
-        "research/BATCH_48.md"
+        "research/BATCH_48.md",
+        "research/BATCH_49.md"
       ],
-      "next_test": "EL1 : delta ports/barrière des ruptures/formations et échanges sur la montée thermique EN1 ; pas de bilan global acquis.",
+      "next_test": "CP1 dynamique et delta de réaction à voisinage borné ; contrôler coût et apports avant nouveau calcul long.",
       "essential": true
     },
     {
@@ -802,9 +805,10 @@
         "research/MACROMOLECULE_HOMEOSTASIS.md",
         "research/BATCH_31.md",
         "research/BATCH_47.md",
-        "research/BATCH_48.md"
+        "research/BATCH_48.md",
+        "research/BATCH_49.md"
       ],
-      "next_test": "Lire RP1 trois graines, réemploi strict et présence G/F simultanés ; variante séparée sans transfert automatique.",
+      "next_test": "RP1 refusé sur F001 ; définir des critères prospectifs distinguant information, motif actif et réemploi matériel, sans relaxer sa porte.",
       "essential": true
     },
     {
@@ -922,9 +926,10 @@
       "scope": "Aucune régulation ni turnover de population F démontré.",
       "references": [
         "research/MACROMOLECULE_HOMEOSTASIS.md",
-        "research/BATCH_46.md"
+        "research/BATCH_46.md",
+        "research/BATCH_49.md"
       ],
-      "next_test": "Décrire protection et débit/pertes/export avec les vrais états avant campagne ; ne pas refaire PI1 interdit par construction.",
+      "next_test": "Définir inventaire fonctionnel et flux utile sans confondre F001 absent avec absence de catalyse ; FS1 ne prouve pas équilibre.",
       "essential": true
     },
     {
@@ -989,7 +994,7 @@
       "renewal_needs": [],
       "concept": "gap",
       "mechanism": "Protection locale de liaison par appariements réciproques et lien entre partenaires ; RP1 optionnel, risques de fragments/outils à tester.",
-      "concept_gap": "Préserver assez les informations rares et outils actifs sans conserver les parasites reste non résolu.",
+      "concept_gap": "RP1 ne maintient pas la séquence cible F001 mais garde des motifs/flux catalytiques ; protection de chaque information et fonction essentielle non fermée.",
       "proof": "none",
       "scope": "Protected conserve4/6/4 G001 à1200, mais réincorporation stricte0/0/0 ; quatre copies initiales, pas test de dernier gène ni de récupération sous perturbation.",
       "references": [
@@ -997,9 +1002,10 @@
         "research/MACROMOLECULE_HOMEOSTASIS.md",
         "research/BATCH_31.md",
         "research/BATCH_47.md",
-        "research/BATCH_48.md"
+        "research/BATCH_48.md",
+        "research/BATCH_49.md"
       ],
-      "next_test": "RP1 : survie G/F et recyclage utile ; pas de protection par nom ni d’adoption en cellule avant preuve.",
+      "next_test": "Clarifier quelles fonctions requièrent une chaîne exacte ; ne pas ajouter de protection sur un proxy insuffisant.",
       "essential": true
     },
     {
@@ -1063,9 +1069,10 @@
         "research/BATCH_44.md",
         "research/BATCH_45.md",
         "research/BATCH_47.md",
-        "research/BATCH_48.md"
+        "research/BATCH_48.md",
+        "research/BATCH_49.md"
       ],
-      "next_test": "Interpréter EL1, distinguer énergie des transitions et stabilité mécanique avant une autre cohorte dt.",
+      "next_test": "Ne pas choisir un dt favorable : résoudre la concurrence des ports avant refaire un contrôle aux deux pas.",
       "essential": true
     },
     {
@@ -1144,9 +1151,10 @@
       "scope": "Benchmarks et scènes2118 billes, pas renouvellement cellulaire chronométré.",
       "references": [
         "research/KINETICS_AND_PERFORMANCE.md",
-        "research/BATCH_44.md"
+        "research/BATCH_44.md",
+        "research/BATCH_49.md"
       ],
-      "next_test": "Lire coûts CB1 à302/198 billes, distincts du budget cellulaire cible et du temps de renouvellement inconnu.",
+      "next_test": "CF1 a un coût démesuré avec~4M refus par préfixe ; CP1 doit résoudre la cohérence et être mesuré avant cohorte.",
       "essential": true
     },
     {
@@ -1179,9 +1187,10 @@
         "research/BATCH_45.md",
         "research/BATCH_46.md",
         "research/BATCH_47.md",
-        "research/BATCH_48.md"
+        "research/BATCH_48.md",
+        "research/BATCH_49.md"
       ],
-      "next_test": "Vérifier EL1 clone/préfixe, analyser RP1 sans modifier les portes ;39 démos dont les3 EN1 refusés.",
+      "next_test": "Conserver préfixes pausés et sources ; tester le futur delta CP1 contre potentiel complet à voisinage borné, aucun feedback d’observation.",
       "essential": true
     }
   ],
@@ -1296,13 +1305,18 @@
       "revision": 18,
       "date": "2026-11-05",
       "reason": "EN1 complet refuse, limites explicites et3 démos ajoutées. Chronologie distingue chauffe et échange tardif ; EL1 source figée lancé. RP1 garde local alternatif construit/contrôlé, trois essais séparés lancés. Aucun palier biologique augmenté."
+    },
+    {
+      "revision": 19,
+      "date": "2026-11-05",
+      "reason": "EL1 et RP1 clos. CF1 gate local construit/pilote passe/cohorte lancée puis pause scientifique anticipée : frustration des ports additifs, aucun essai complet. CP1 alternatif statique validé ; FS1 distingue F001 et motifs catalytiques. Aucun palier biologique augmenté."
     }
   ],
   "last_batch_progress": {
-    "M-04": "Couplage75 EG1 limité conservé, refus EN1 désormais explicite ; robustesse non acquise.",
-    "Q-01": "Chauffe EN1 avant premier échange tardif ; EL1 des autres commutations lancé.",
-    "W-02": "Garde paired_edge construit, taux inchangés ; RP1 séparé en cours, preuve reste25.",
-    "H-06": "Motif local effectif, pièges et survie à tester ; gap/proof0 conservés.",
-    "O-02": "GUI39 avec échecs EN1 et avertissement EG1 ; défaut RV1 exact sur2 préfixes."
+    "Q-01": "EL1 localise les commutations ; CF1 révèle la frustration, CP1 statique propose une loi à capacité bornée.",
+    "M-04": "CF1 perd la frontière dans deux préfixes ; preuve75 reste limitée à EG1 historique, pas de robustesse nouvelle.",
+    "H-06": "FS1 distingue disparition de F001 et activité F01 persistante ; pas de maintien acquis.",
+    "O-01": "Pause justifiée par millions de refus et coût ; aucune grille de taux supplémentaire.",
+    "O-02": "Anciens préfixes exacts,39 démos recertifiées ; nouveaux résultats/provenances et checklist actualisés."
   }
 }

@@ -1539,15 +1539,16 @@
     {
       "id": "EL1",
       "parent": "EN1",
-      "status": "selected_contact_heat_replay_running",
+      "status": "selected_replay_complete_exact_contact_updates_inject_potential",
       "hypothesis": "Ungated contact update transitions inject port/segment potential before late heating, or reveal a different mechanical source.",
       "test": "Frozen EN1 s2 to2200, instrument2100–2200 only; phase ledger and material-class kinetic sample. Clone and historical observed prefix check.",
       "cost": "Passive observer only, no law/type/rate/tool;2000 bounded events, largest local motif coordinates, checkpoints.",
       "counterexample": "No matching potential contributions; old dynamics changed; heating belongs to another class/cycle.",
       "recipe": "research/BATCH_48_EL1.json",
       "evidence": "research/BATCH_48_PLAN.md",
-      "results": "research/BATCH_48.md",
-      "health_gate": "2700s checkpoint pause, report then stop; no auto followup."
+      "results": "research/BATCH_49.md",
+      "health_gate": "2700s checkpoint pause, report then stop; no auto followup.",
+      "conclusion": "Clone and observed prefix exact. Updates net565.8112 mainly ports560.7266, exchanges-7.07554; formations-only+2629.03 vs breaks-only-2088.46. Partial potential ledger, not total heat/causal isolation."
     },
     {
       "id": "RP1",
@@ -1555,7 +1556,7 @@
       "related": [
         "RX1"
       ],
-      "status": "three_coherent_pair_protection_cases_running",
+      "status": "three_complete_exact_target_F_gate_refused_activity_not_extinct",
       "hypothesis": "Protection tied to reciprocal paired edges frees captured functional fragments while preserving usable genetic material.",
       "test": "Historical protected RV1 rates/stocks, new protection_scope paired_edge only;3 seeds1200, reversible current census.",
       "cost": "One alternative bounded predicate, no new numerical rate/type/port/gene/tool. At most4 composites/8beads, no component/sequence identity.",
@@ -1563,8 +1564,52 @@
       "missing_proof": "Selective survival, homeostasis, rare information, export and mixed EG1 compatibility.",
       "recipe": "research/BATCH_48_RP1_RECIPES.json",
       "evidence": "research/BATCH_48_PLAN.md",
-      "results": "research/BATCH_48.md",
-      "health_gate": "3 trials,1 worker,1h checkpoint pause, fixed five gates then report/stop; no retry, tuning or transfer."
+      "results": "research/BATCH_49.md",
+      "health_gate": "3 trials,1 worker,1h checkpoint pause, fixed five gates then report/stop; no retry, tuning or transfer.",
+      "conclusion": "G0014/3/6 F0011/0/0; reassembly13/2/6 reincorp3/0/1, invariant0. Gate refused; FS1 later finds F01 motifs and late catalysis, no homeostasis or gate relaxation."
+    },
+    {
+      "id": "CF1",
+      "parent": "EN1",
+      "related": [
+        "EL1",
+        "EG1"
+      ],
+      "status": "unplanned_science_pause_two_censored_prefixes_four_pending",
+      "hypothesis": "Local energy acceptance on all L contact changes avoids the observed nonthermal updates.",
+      "test": "Six trials at both existing dt, same EG1/EN1 scenarios except contact_update_gate. Pilot100 passed.",
+      "cost": "One gate choice, no new numerical parameter/type/port/gene/tool. Two L/four beads plus finite incident potentials and segment barrier.",
+      "counterexample": "Filter blocks binding or costs too much, boundary lost, heating persists.",
+      "conclusion": "Paused before cohort completion: two prefixes1345/2033.5,1/0 links for75 L,~4M proposals each mostly rejected. Additive free-face attraction conflicts with saturated binding. No cohort gate or adoption.",
+      "recipe": "research/BATCH_49_CF1_RECIPES.json",
+      "evidence": "research/BATCH_49_PLAN.md",
+      "results": "research/BATCH_49.md",
+      "health_gate": "Originally six trials/3h; explicitly interrupted for structural interpretation, preserve checkpoints and no automatic resume."
+    },
+    {
+      "id": "CP1",
+      "parent": "CF1",
+      "status": "static_competitive_potential_prototype_only",
+      "hypothesis": "Two-endpoint local competition normalizes port affinity and removes loss of many additive wells when forming one bond.",
+      "test": "Binary energy/force equality, full coordinate finite differences, capacity<=1, exclusions;12 selected admissible contacts in each of two paused snapshots.",
+      "cost": "No new adjustable number or chemical entity. Local partition computation, future reaction delta needs affected second-neighbor energies. Not installed in dynamics.",
+      "counterexample": "Wrong gradient, binary regression, overloaded ports, or no improvement for same candidate contacts; future dynamic assembly/insertion/cost failures.",
+      "conclusion": "Static checks pass. Median delta additive209.09/99.09 -> competitive-1.925/-1.697;12/12 and11/12 selected downhill. No dynamics or global robustness claim.",
+      "recipe": "research/BATCH_49_CP1.json",
+      "evidence": "research/BATCH_49_PLAN.md",
+      "results": "research/BATCH_49.md"
+    },
+    {
+      "id": "FS1",
+      "parent": "RP1",
+      "status": "frozen_checkpoint_function_vs_sequence_audit_complete",
+      "hypothesis": "Loss of F001 target need not mean extinction of minimal co-recruitment motifs.",
+      "test": "Read-only archived checkpoint loader and late900–1200 observer windows, no evolution or modified criteria.",
+      "cost": "Passive analysis only.",
+      "conclusion": "8/1/1 unpaired F01 edges and42/31/18 late catalytic operations; s1 lacks F001 throughout late window. Motifs can be fragments and cycles futile; exact target gate remains refused.",
+      "recipe": "research/BATCH_49_FS1.json",
+      "evidence": "research/BATCH_49.md",
+      "results": "research/BATCH_49.md"
     }
   ]
 }

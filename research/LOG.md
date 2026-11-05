@@ -1575,3 +1575,22 @@ préfixes RV1 sans option restent exacts ;3 essais1200,1 travailleur/1h lancés,
 aucun transfert automatique.256 tests passent,39 démos natives exactes dont
 EN1 refusés ; fiche EG1 limite sa réussite. Registre18/43, aucun palier augmenté,
 maintien0. Voir BATCH_48 et ses recettes, données/checkpoints restent locaux.
+
+## 2026-11-05 — lot49, concurrence des ports et différence séquence/fonction
+
+EL1 clos exact : updates+565.8112 surtout ports ; échanges−7.07554.
+CF1 étend le delta aux ajouts/retraits de contact, same rates/noise, microchecks
+et pilote100 passent ;6 essais lancés automatiquement. Pause scientifique
+anticipée après deux préfixes1345/2033.5,~4M propositions chacun,1/0 contacts
+pour75 L,4 tâches non démarrées. Pas de gate de cohorte ou reprise automatique.
+Le défaut structurel des attractions libres additives est explicité. CP1 normalise
+par concurrence aux deux ports, conserve potentiel/force binaires, gradient et
+capacité<=1 vérifiés.12 contacts sélectionnés par snapshot : coûts médians
+209/99 deviennent−1.925/−1.697. Statique seulement, futur delta doit inclure
+termes au second rang et partitions jusqu'au troisième, coût à vérifier.
+RP1 clos refusé ; FS1 conserve ce refus mais constate8/1/1 motifs F01 et
+42/31/18 catalyses tardives malgré F001 absent dans deux états finaux. Ne pas
+assimiler proxy de séquence et extinction fonctionnelle ; pas homéostasie.
+265 tests finaux passent, sept préfixes historiques exacts,39 démos natives
+recertifiées. Registre19/43, aucun palier biologique augmenté. Aucun calcul
+actif à la clôture, CF1 checkpoints/sources conservés. Voir BATCH_49.

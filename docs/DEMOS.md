@@ -1,5 +1,14 @@
 # Démos représentatives accessibles dans la GUI
 
+## Lot49 —39 choix recertifiés, limites conservées
+
+EG1/EN1/CB1 restent les recettes visibles, avec défauts et refus déclarés.
+Le nouveau champ contact_update_gate=none explicite leur mode historique ;
+leurs dynamiques et limites ne sont pas requalifiées.39 choix natifs vérifiés.
+CF1, dont deux préfixes perdent la frontière et refusent des millions de
+formations, est en pause et ne remplace aucune démo. CP1 reste un prototype
+statique, aucune réussite dynamique à afficher. [Bilan](../research/BATCH_49.md).
+
 ## Lot48 —39 choix, contrôle au pas fin et refus visibles
 
 **Intégration compacte · contrôle au pas fin** ajoute les3 EN1 exacts :

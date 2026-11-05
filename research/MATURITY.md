@@ -1,5 +1,15 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot49 : aucune hausse de palier. Le filtre de toutes les transitions CF1
+est construit/contrôlé, mais expose un défaut de représentation libre/lié et
+devient inefficace : deux préfixes pausés, frontière perdue, pas de cohorte
+complète. CP1 fournit une alternative statique locale vérifiée, pas une chimie
+dynamique validée. EL1 exact explique le choix ; FS1 nuance RP1 : catalyse et
+motifs F01 subsistent malgré F001 absent. Aucun maintien/protection acquis.
+M-04 garde75 pour le domaine EG1 historique seul, robustesse toujours refusée ;
+Q-01/C-02/W-02 restent25, maintien0. Prochaine preuve nécessaire : transfert
+mécanique/énergétique CP1 au moteur, pas une grille de taux. Voir BATCH_49.
+
 Lot48 : EN1 refuse la robustesse de la réussite EG1 ; une graine chaude/ouverte
 et deux sans insertion. M-04 garde75 uniquement pour le domaine historique EG1,
 refus au pas fin explicite ; aucune invariance numérique ou réparation acquise.

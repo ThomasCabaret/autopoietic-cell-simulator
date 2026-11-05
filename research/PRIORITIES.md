@@ -1,5 +1,20 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot49 : **EL1 clos exact** localise surtout les apports des formations de
+contacts, pas ceux des échanges filtrés. **RP1 refusé** sur la séquence cible,
+mais FS1 constate encore motifs F01 et catalyse tardive : ne pas assimiler perte
+F001 et extinction fonctionnelle. **CF1 en pause scientifique**, deux préfixes
+1345/2033.5,4 essais non démarrés,~4M propositions chacun et1/0 contacts pour75 L.
+Ne pas reprendre cette cohorte : attraction libre additive incompatible avec
+liaison saturable, coût démesuré et perte de frontière. Aucun gate final calculé.
+**CP1 statique** : potentiel compétitif à capacité locale bornée, binaire exact,
+gradient vérifié ; sur les mêmes12 contacts sélectionnés par snapshot, coûts
+médians209/99 deviennent−1.925/−1.697. Pas installé dans la simulation.
+Prochain lot : intégrer le potentiel et son delta local : termes modifiés jusqu’au second rang,
+partitions pouvant nécessiter le troisième ; vérifier coût, molécules L libres et insertion avant nouvelle
+cohorte. Pas nouvelle constante, thermostat ou outil pour masquer cette dette.
+Aucune campagne active ; GUI39 demeure sur les recettes EG1/EN1 historiques.
+
 Lot48 : **EN1 clos3/3 refuse**, production conservée mais insertions0/0/2,
 une graine chaude/ouverte. Ne pas sélectionner un dt favorable ni relancer des
 graines pour sauver EG1. Deux graines sans face de capture admissible et sans

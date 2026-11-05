@@ -1,5 +1,25 @@
 # Santé du projet — actualisation5 novembre2026
 
+Lot49, réévaluation après le refus structurel CF1 : l'attraction additive
+libre rend favorable l'accumulation de partenaires qu'une liaison exclut ensuite.
+Des millions de refus et la perte de frontière justifient l'arrêt anticipé,
+pas le reste des six essais. Coût réel du filtre et cohérence thermodynamique
+locale étaient sous-estimés par les contrôles binaires/pilote court.
+CP1 répond par une famille locale compétitive sans nouveau nombre, validée en
+statique ; elle devra rester calculable et expressive. Ce n'est pas une solution
+dynamique établie. Horizon décisif : au plus deux interventions de conception
+(intégration du delta/forces, puis transfert contrôlé). Sans nouveau mécanisme
+ou transfert à cet horizon, revoir la représentation plutôt que régler des taux.
+
+Les estimations d'orientation40%/15–30 lots du lot46 ne deviennent pas plus
+fiables : ce refus montre qu'une révision de loi peut encore être nécessaire.
+Pas de nouveau chiffre global ni garantie de quelques dizaines de lots avant
+CP1 dynamique et fermeture protection/flux/information. Pas de blocage de principe
+établi : alternative explicite et testable, mais maintien non prêt. FS1 évite
+un autre faux diagnostic : perdre F001 n'est pas perdre toute activité F01.
+Le proxy de séquence reste refusé, ne pas le relaxer après lecture. Aucun calcul
+actif à la clôture, données et checkpoints de CF1 conservés.
+
 Lot48 : le refus EN1 empêche de considérer l'insertion comme robuste. Il ne
 prouve ni impossibilité de principe ni biais systématique de dt sur3 trajectoires.
 Deux échecs relèvent d'occasions absentes/défavorables ; le troisième chauffe

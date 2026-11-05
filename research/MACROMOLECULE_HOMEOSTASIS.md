@@ -1,5 +1,21 @@
 # Homéostasie des polymères — pistes locales, fermeture encore ouverte
 
+## Lot49 — le proxy F001 n'est pas la capacité catalytique
+
+RP1 garde son refus initial : F001 courant1/0/0 et médiane cible nulle. FS1 lit
+les checkpoints figés :8/1/1 motifs F0–F1 non appariés,42/31/18 formations
+catalysées sur900–1200. La graine1 est sans F001 sur tout cet intervalle.
+Il ne s'agit donc pas d'une extinction de toute catalyse. Des fragments F01
+peuvent porter la fonction minimale, déjà utilisée dans le candidat cellulaire.
+
+Ne pas requalifier la porte après lecture : les cibles, informations et outils
+complets ne sont pas interchangeables avec un motif actif. Mais ne pas ajouter
+une nouvelle protection à partir du seul proxy F001. Le prochain bilan doit
+suivre pool fonctionnel, séquences requises et réemploi utile séparément ; une
+catalyse tardive peut être un cycle futile. Aucun équilibre sous flux ou survie
+de tous les outils n'est démontré. H-03/H-04/H-06 restent gap ; aucun nouvel
+assemblage fonctionnel ou garde de protection ajouté au lot49.
+
 ## Lot48 — RP1 construit, résultat séparé à attendre
 
 La variante optionnelle paired_edge implémente le draft du lot47 : la protection

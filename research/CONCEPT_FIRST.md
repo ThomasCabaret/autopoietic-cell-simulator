@@ -31,6 +31,14 @@ un point sans préciser sa réalisation et ses conséquences. Dire clairement
 ces drafts comme des fonctionnalités validées. Déclarer les nouveaux coûts
 d'alphabet, ports, taux, aides, énergie, gènes et renouvellement avant adoption.
 
+Séparer identité de séquence et capacité fonctionnelle dans les critères : la
+perte d'une chaîne F cible ne démontre pas l'extinction de tous ses motifs actifs.
+Un fragment peut conserver une fonction locale. Inversement, la présence d'un
+motif ou des cycles catalysés ne prouve ni information intacte ni flux utile.
+Définir avant campagne quel inventaire/activité répond au sous-but ; conserver
+les portes initiales après refus et documenter un éventuel proxy inadéquat.
+FS1/lot49 illustre cette distinction sans requalifier RP1 en réussite.
+
 ## Deux axes de suivi
 
 **Concept** :

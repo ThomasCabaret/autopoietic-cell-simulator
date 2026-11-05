@@ -34,6 +34,11 @@ nombre de billes commode ne justifient pas un résultat négatif de mécanisme.
    Des contacts fréquents ou une température correcte ne suffisent pas. Quand
    ces données manquent, déclarer la cause indéterminée et chercher une mesure
    ciblée plutôt qu’inférer une impossibilité.
+   Pour des ports saturables, vérifier aussi les états avec partenaires concurrents :
+   un test binaire peut préserver potentiel/force tout en masquant une attraction
+   libre additive incompatible avec la liaison à un seul partenaire. Mesurer le
+   coût de commutation et la fréquence des refus dans un motif peuplé avant une
+   cohorte longue ; arrêter pour interprétation si ces refus dominent sans progrès.
 6. **Horizon et contrôles figés.** Nombre de cycles ou cinétique de référence
    justifiant la durée ; fenêtres de stocks/production ; graines ; témoins
    pertinents ; budget et arrêt. Si un suivi est sélectionné après lecture,

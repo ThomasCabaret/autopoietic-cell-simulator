@@ -1,5 +1,20 @@
 # Fidélité à l'objectif : localité et risques de pilotage
 
+Lot49 CF1 : ajout/retrait de contact = deux L/quatre billes et interactions
+incidentelles à coupure existante ; barrière PR du seul segment modifié. Delta
+et facteur thermique réutilisés, un choix de gate, zéro taux/type/port/gène/outil.
+Pas de detailed balance globale. L'option none conserve les anciennes dynamiques.
+CF1 pausé après contre-exemples, pas adopté. CP1 est un prototype statique :
+chaque énergie de paire est normalisée par les scores des voisins de ses deux
+ports. Charge de port<=1, cas binaire exact, aucun matching global, séquence,
+origine ou agrégat. Le gradient nécessite les partitions de voisins ; le delta
+de réaction futur doit inclure les termes affectés jusqu’au second rang spatial
+et les partitions pouvant nécessiter le troisième. Ce surcoût de portée est
+réel, borné indépendamment de la taille d’un agrégat ; aucune requête de contour.
+Ce coût est déclaré avant intégration, pas remplacé par une énergie globale
+pilotant une réaction. Aucune primitive biologique ou nouveau paramètre ajustable.
+FS1 reconnaît motifs/flux globalement seulement pour observer des archives.
+
 Lot48 RP1 : perte de squelette protégée par liaison (a,b), appariements
 réciproques a–x/b–y et liaison(x,y), au plus4 composites/8 billes. Aucun test
 séquence/longueur/gène/origine/stock/fonction. Pas d'identité d'agrégat, même

@@ -1,5 +1,17 @@
 # Brouillon — ce qu'un assemblage fonctionnel pourrait faire
 
+## Lot49 — fonction locale et identité d'une chaîne
+
+FS1 confirme que des motifs F01 continuent à catalyser dans RP1 lorsque la cible
+F001 est absente. La fonction actuelle est portée par un voisinage de sites,
+pas par un nom/longueur de protéine dans la règle. Cela ne construit pas une
+bibliothèque de fonctions distinctes, ni une information riche stable.
+CF1/CP1 concernent un autre invariant : attraction d'un port libre et exclusion
+par son occupation doivent rester cohérentes avec la valence. Un prototype
+compétitif statique conserve exactement le potentiel/force binaires tout en
+bornant l'affinité totale par port ; pas encore intégré au moteur. Ce type de
+loi est espéré réutilisable pour d'autres sites, pas une enzyme supplémentaire.
+
 ## État courant — lot46, 5 novembre2026
 
 Les sections historiques ci-dessous décrivent les hypothèses au moment de leur

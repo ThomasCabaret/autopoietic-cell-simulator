@@ -34,13 +34,13 @@ proche de la consigne dans les trois ; aucun maintien sous pertes ou flux ouvert
 CB1 et ses ouvertures restent au menu « défauts connus ». MIN1M et MX2 restent
 accessibles séparément,39 démos au total. EN1 est visible dans « contrôle au pas fin ».
 
-Recherche : **EN1 est terminé et refuse les critères au pas fin** : deux
-bains sans insertion, un bain chaud/ouvert. La réussite EG1 reste limitée,
-pas une preuve de robustesse numérique. **EL1** rejoue la phase chaude avec
-bilan passif des commutations de contacts ; **RP1** teste séparément une
-protection par motif apparié, sans nouvelle enzyme et aux taux RV1 fixes.
-Suivi : `contact_heat_status.bat` et `pair_protection_status.bat`. Rapports
-puis arrêt, aucune seconde phase automatique. [Lot48](research/BATCH_48.md) ·
+Recherche : **CF1 est en pause scientifique**, sans essai complet : le filtre
+local de toutes les transitions expose une attraction libre additive incompatible
+avec la liaison saturable. Deux préfixes et quatre essais non démarrés conservés,
+aucune campagne active. **CP1 est un prototype statique compétitif**, cas binaire
+et gradient vérifiés ; son intégration dynamique reste à faire. EL1 est clos,
+RP1 reste refusé ; FS1 distingue perte de F001 et activité F01 encore présente.
+Ne pas reprendre CF1 sans nouvelle décision. [Lot49](research/BATCH_49.md) ·
 [Calibration](research/CAMPAIGN_CALIBRATION.md).
 
 Un moteur CPU commun pour les campagnes sans fenêtre et les démonstrateurs

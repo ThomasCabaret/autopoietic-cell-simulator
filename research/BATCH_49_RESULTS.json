@@ -1,0 +1,250 @@
+{
+  "EL1": {
+    "report_sha256": "8af17f6eeac9de3a1f25f44bbfe951515816a598e649358fa21bada411f51f60",
+    "checks": {
+      "plain_state_rng_observer_exact": true,
+      "historical_observed_prefix_exact": true
+    },
+    "totals": {
+      "face_update": {
+        "changes": 1110,
+        "positive": 2868.1962081789347,
+        "negative": -2302.3850494879384,
+        "ports": 560.7266105833454,
+        "barrier": 5.084548107650941,
+        "max_reported_delta_error": 0.0
+      },
+      "exchange": {
+        "changes": 5,
+        "positive": 0.0,
+        "negative": -7.07554228815934,
+        "ports": -7.07554228815934,
+        "barrier": 0.0,
+        "max_reported_delta_error": 2.398081733190338e-14
+      }
+    },
+    "classified": {
+      "break_only": {
+        "count": 534,
+        "positive": 0.0,
+        "negative": -2088.4551899695357
+      },
+      "formation_only": {
+        "count": 493,
+        "positive": 2629.030861104278,
+        "negative": 0.0
+      },
+      "mixed": {
+        "count": 83,
+        "positive": 239.16534707465766,
+        "negative": -213.92985951840402
+      }
+    }
+  },
+  "RP1": {
+    "report_sha256": "30f4e642d4dde0ddd23ea926462b9bd64d3629b5106e3c01ad353f901a8460fa",
+    "decision": {
+      "screen_passed": false,
+      "conditions": {
+        "invariants": true,
+        "genetic_survival": true,
+        "functional_present": false,
+        "useful_reassembly": true,
+        "useful_reincorporation": true
+      },
+      "run_transfer": false,
+      "scope": "Three separate RV1 protection-variant cases. Current counts include prepared chains; two-real-atom lifecycle only, not expressed whole-tool renewal, homeostasis or compatibility with EG1."
+    },
+    "rows": [
+      {
+        "seed": 0,
+        "label": "RP1_pair_s0",
+        "G_current": 4,
+        "F_current": 1,
+        "atoms": 150,
+        "invariant_failures": 0,
+        "polymer_reassemblies": 13,
+        "recycled_incorporations": 3,
+        "backbone_break": 15,
+        "rung_break": 148,
+        "result_sha256": "67a7889bdc0d82dbfc49250116d36b15eca3a627349b5998ff2ca747bb9c6ec3"
+      },
+      {
+        "seed": 1,
+        "label": "RP1_pair_s1",
+        "G_current": 3,
+        "F_current": 0,
+        "atoms": 150,
+        "invariant_failures": 0,
+        "polymer_reassemblies": 2,
+        "recycled_incorporations": 0,
+        "backbone_break": 9,
+        "rung_break": 157,
+        "result_sha256": "f358d8777c8697cd1b0957d62854451b8e469a7fe9274cb23ad70f9462dbf2f9"
+      },
+      {
+        "seed": 2,
+        "label": "RP1_pair_s2",
+        "G_current": 6,
+        "F_current": 0,
+        "atoms": 150,
+        "invariant_failures": 0,
+        "polymer_reassemblies": 6,
+        "recycled_incorporations": 1,
+        "backbone_break": 11,
+        "rung_break": 116,
+        "result_sha256": "8f25e36cd56457cb55f53ba18390a4379ef3190be39423e564110317284603bd"
+      }
+    ]
+  },
+  "CF1": {
+    "state": "paused",
+    "completed": 0,
+    "paused": 2,
+    "pending": 4,
+    "reason": "Unplanned science stop: millions of failed proposals, nearly all contacts lost. Prefixes censored, no cohort decision.",
+    "prefixes": [
+      {
+        "label": "CF1_coarse_s0",
+        "step": 672500,
+        "time": 1345.0,
+        "L": 75,
+        "links": 1,
+        "stats": {
+          "formation": {
+            "proposals": 3927058,
+            "accepted": 255,
+            "rejected": 3926803,
+            "positive_delta": 3927058,
+            "sum_factor": 253.17483453087996,
+            "sum_accepted_delta": 2.053075597812684,
+            "min_delta": 2.2851992387273867e-07,
+            "max_delta": 257.2676014249795
+          },
+          "breaking": {
+            "proposals": 306,
+            "accepted": 306,
+            "rejected": 0,
+            "positive_delta": 0,
+            "sum_factor": 306.0,
+            "sum_accepted_delta": -54.30663537616072,
+            "min_delta": -11.504206487217797,
+            "max_delta": -5.502876959884162e-06
+          }
+        },
+        "checkpoint_sha256": "422d0ba8e0bef3d57155162c95b134dd3a84ae9f56d0b4cb98fef4fe62393ec9",
+        "current_contour_valid": false
+      },
+      {
+        "label": "CF1_coarse_s1",
+        "step": 1016750,
+        "time": 2033.5,
+        "L": 75,
+        "links": 0,
+        "stats": {
+          "formation": {
+            "proposals": 4094165,
+            "accepted": 289,
+            "rejected": 4093876,
+            "positive_delta": 4094165,
+            "sum_factor": 284.4342736881056,
+            "sum_accepted_delta": 1.9573816038645366,
+            "min_delta": 7.814114506565772e-07,
+            "max_delta": 161.73040551377917
+          },
+          "breaking": {
+            "proposals": 341,
+            "accepted": 341,
+            "rejected": 0,
+            "positive_delta": 0,
+            "sum_factor": 341.0,
+            "sum_accepted_delta": -44.49126448149074,
+            "min_delta": -3.7605351773833964,
+            "max_delta": -1.5629441776354724e-06
+          }
+        },
+        "checkpoint_sha256": "c7a4398649997758425bed62485cb48f5abc16661f80ab1f7e72522b80cdc80a",
+        "current_contour_valid": false
+      }
+    ]
+  },
+  "CP1": [
+    {
+      "label": "CF1_coarse_s0",
+      "time": 1345.0,
+      "L": 75,
+      "links": 1,
+      "eligible_contacts": 206,
+      "max_competitive_face_load": 0.7280883153709369,
+      "selected_count": 12,
+      "median_additive_delta": 209.09157186964606,
+      "median_competitive_delta": -1.9245982267442783,
+      "competitive_nonpositive": 12
+    },
+    {
+      "label": "CF1_coarse_s1",
+      "time": 2033.5,
+      "L": 75,
+      "links": 0,
+      "eligible_contacts": 131,
+      "max_competitive_face_load": 0.7125642027752406,
+      "selected_count": 12,
+      "median_additive_delta": 99.09090985738634,
+      "median_competitive_delta": -1.697259971421407,
+      "competitive_nonpositive": 11
+    }
+  ],
+  "FS1": [
+    {
+      "seed": 0,
+      "label": "RP1_pair_s0",
+      "exact_F_target_final": 1,
+      "exact_F_target_late_min": 0,
+      "exact_F_target_late_max": 1,
+      "late_window": [
+        900.0,
+        1200.0
+      ],
+      "late_catalyzed_formations": 42,
+      "late_recycled_incorporations": 3,
+      "mixed_symbol_F_edges": 8,
+      "unpaired_mixed_symbol_F_edges": 8,
+      "current_double_captures_with_PR_geometry": 0,
+      "coherently_protected_edges": 0
+    },
+    {
+      "seed": 1,
+      "label": "RP1_pair_s1",
+      "exact_F_target_final": 0,
+      "exact_F_target_late_min": 0,
+      "exact_F_target_late_max": 0,
+      "late_window": [
+        900.0,
+        1200.0
+      ],
+      "late_catalyzed_formations": 31,
+      "late_recycled_incorporations": 0,
+      "mixed_symbol_F_edges": 1,
+      "unpaired_mixed_symbol_F_edges": 1,
+      "current_double_captures_with_PR_geometry": 0,
+      "coherently_protected_edges": 0
+    },
+    {
+      "seed": 2,
+      "label": "RP1_pair_s2",
+      "exact_F_target_final": 0,
+      "exact_F_target_late_min": 0,
+      "exact_F_target_late_max": 1,
+      "late_window": [
+        900.0,
+        1200.0
+      ],
+      "late_catalyzed_formations": 18,
+      "late_recycled_incorporations": 0,
+      "mixed_symbol_F_edges": 1,
+      "unpaired_mixed_symbol_F_edges": 1,
+      "current_double_captures_with_PR_geometry": 0,
+      "coherently_protected_edges": 0
+    }
+  ]
+}

@@ -1,5 +1,13 @@
 # Architectures de cellule : fermeture à concevoir, pas encore réalisée
 
+Lot49 : aucun nouveau gène/outil ou budget (prototype302 billes). CF1
+filtre les updates sans résoudre l'insertion : deux préfixes perdent presque
+tous leurs contacts, campagne pausée. CP1 révise qualitativement la concurrence
+sur les ports libres, mais n'est pas une architecture dynamique adoptée.
+FS1 distingue protéines cibles et motifs actifs de fragments ; le graphe visé
+doit fermer les fonctions, pas seulement conserver un ancien nom de séquence.
+Information, maintien des inventaires utiles et export restent conditionnels.
+
 Lot48 : aucun nouveau gène/outil, budget inchangé (cellule prototype302,
 RV1/RP1 séparé150). EN1 refuse la robustesse numérique/physique de l'insertion,
 sans remettre en cause la production commune dans ces bains finis. RP1 change

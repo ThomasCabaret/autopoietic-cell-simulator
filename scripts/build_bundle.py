@@ -147,6 +147,12 @@ def main():
         'experiments/inspect_contact_heat.py','experiments/prepare_pair_protection.py','experiments/review_pair_protection.py',
         'campaigns/protection_mechanism.json','pair_protection_status.bat','stop_pair_protection.bat','resume_pair_protection.bat',
         'contact_heat_status.bat','stop_contact_heat.bat','resume_contact_heat.bat'))
+    files.update(ROOT/p for p in ('research/BATCH_49_PLAN.md','research/BATCH_49.md','research/BATCH_49_RESULTS.json',
+        'research/BATCH_49_CF1_PILOT.json','research/BATCH_49_CF1_RECIPES.json','research/BATCH_49_CP1.json','research/BATCH_49_FS1.json',
+        'experiments/prepare_contact_gate.py','experiments/review_contact_gate.py','experiments/audit_functional_survival.py',
+        'experiments/competitive_port_potential.py','experiments/probe_competitive_ports.py',
+        'campaigns/contact_gate_pilot.json','campaigns/contacts_mechanism.json',
+        'contact_gate_status.bat','stop_contact_gate.bat','resume_contact_gate.bat'))
     files.update(p for p in (ROOT/'research/diagnostic_recipes').rglob('*') if p.suffix=='.py' or p.name=='recipe.json')
     files.update(ROOT/p for p in ('research/BATCH_44_PLAN.md','research/BATCH_44.md','research/BATCH_44_RECIPES.json',
         'research/BATCH_44_PILOT.json','experiments/audit_boundary_access.py','experiments/prepare_compact_transfer.py',

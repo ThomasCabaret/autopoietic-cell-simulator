@@ -1,5 +1,14 @@
 # Interactions souhaitées, parasites et environnements — lot7
 
+Lot49 : l'énergie additive des faces libres peut compter plusieurs
+partenaires alors que la liaison n'en garde qu'un. CF1 filtre ces hausses mais
+bloque presque toutes les formations en amas ;1/0 liens pour75 L aux deux
+préfixes. Ne pas corriger par une hausse de température ou de taux. CP1 statique
+normalise la concurrence aux deux extrémités, conserve chaque paire isolée et
+les exclusions ; futur transfert à vérifier sous les mêmes lois. FS1 montre
+que perte de F001 n'annule pas les opérations catalytiques des motifs F01,
+sans preuve de préservation des informations ou de fermeture du réseau.
+
 Lot48 : EN1 ne confirme pas la tenue de l'insertion au pas fin. Les phases
 update_faces et exchange_faces doivent être distinguées ; seul le second a
 le filtre énergétique EG1. Une commutation de barrière segmentaire peut donc
