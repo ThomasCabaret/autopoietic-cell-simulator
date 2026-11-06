@@ -7,7 +7,7 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from simulator.campaign_io import read,write
 
 
-def main(turnover_only=False):
+def main(turnover_only=False,competitive_only=False):
     cases=[('MIN1R_20261031T110654015735Z','MIN1R_active_s0'),
         ('MIN1M_20261104T113752867767Z','MIN1M_active_s0'),
         ('MD2_20261030T115427443420Z','MD2_bath_new_s2'),
@@ -16,6 +16,9 @@ def main(turnover_only=False):
         ('BI1P_20261105T062531768586Z','BI1_active_s0'),
         ('MX2_20261104T203221072374Z','MX2_cooperative_s0')]
     if turnover_only:cases=[('RV1A_20261031T080348730984Z',f'RV1_{variant}_s0') for variant in ('full','protected')]
+    if competitive_only:
+        recipe=Path(read(ROOT/'research/BATCH_50_CC1_RECIPES.json')['recipes'][0]).name
+        cases=[(recipe,'CC1_integrated_s1'),(recipe,'CC1_assembly_s0')]
     out=ROOT/'outputs/diagnostics'/('CT1_reference_'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ'));out.mkdir(parents=True)
     code=('import json,sys;from simulator.engine import Simulation;from simulator.checkpoint import save;'
         'sim=Simulation(json.load(open(sys.argv[1],encoding="utf-8")));sim.advance(round(5./sim.dt));save(sys.argv[2],sim)')
@@ -36,6 +39,9 @@ def main(turnover_only=False):
             c=value['config']['chemistry']
             if value['config']['model'] in ('lipid_synthesis','mixed_synthesis') and c.get('contact_exchange_gate')=='none':c.pop('contact_exchange_gate')
             if value['config']['model'] in ('lipid_synthesis','mixed_synthesis') and c.get('contact_update_gate')=='none':c.pop('contact_update_gate')
+            if value['config']['model'] in ('lipid_synthesis','mixed_synthesis'):
+                if c.get('free_port_potential')=='additive':c.pop('free_port_potential')
+                if c.get('initial_lipids')==[]:c.pop('initial_lipids')
             if value['config']['model']=='mixed_synthesis' and c.get('initial_boundary') is None and c.get('bound_barrier_radius',0.)==0.:
                 for key in ('initial_boundary','bound_barrier_radius','bound_barrier_stiffness'):c.pop(key,None)
         if x!=y:raise ValueError(f'Physical state/RNG/motion changed: {label}')
@@ -45,4 +51,5 @@ def main(turnover_only=False):
 
 if __name__=='__main__':
     import argparse
-    p=argparse.ArgumentParser();p.add_argument('--turnover-only',action='store_true');a=p.parse_args();main(a.turnover_only)
+    p=argparse.ArgumentParser();g=p.add_mutually_exclusive_group();g.add_argument('--turnover-only',action='store_true');g.add_argument('--competitive-only',action='store_true')
+    a=p.parse_args();main(a.turnover_only,a.competitive_only)

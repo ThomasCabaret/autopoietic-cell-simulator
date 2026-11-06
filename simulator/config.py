@@ -146,6 +146,16 @@ def resolve(raw):
     elif model in ('lipid_synthesis','mixed_synthesis'):
         if defaults['contact_exchange_gate'] not in ('none','metropolis'):raise ValueError('Invalid contact exchange gate')
         if defaults['contact_update_gate'] not in ('none','metropolis'):raise ValueError('Invalid contact update gate')
+        if defaults['free_port_potential'] not in ('additive','competitive'):raise ValueError('Invalid free port potential')
+        molecules=defaults['initial_lipids']
+        if not isinstance(molecules,list) or type(defaults['food_units']) is not int or len(molecules)>defaults['food_units']:raise ValueError('Invalid prepared lipid stock')
+        for molecule in molecules:
+            if not isinstance(molecule,dict) or set(molecule)!={'head','tail'}:raise ValueError('Prepared lipid requires head/tail coordinates')
+            for key in ('head','tail'):
+                point=molecule[key]
+                if not isinstance(point,list) or len(point)!=2 or any(type(x) not in (int,float) or not math.isfinite(x) or not 0<=x<=defaults['box'][k] for k,x in enumerate(point)):
+                    raise ValueError('Invalid prepared lipid position')
+            if molecule['head']==molecule['tail']:raise ValueError('Prepared lipid requires a nonzero axis')
         if defaults['capture_curvature'] not in ('legacy','matched') or defaults.get('tool_pose','straight') not in ('straight','native'):
             raise ValueError('Invalid lipid capture curvature/initial tool pose')
         if defaults['formation_gate'] not in ('none','metropolis') or type(defaults['tool_lipid_contact']) not in (int,float) or defaults['tool_lipid_contact']<0:

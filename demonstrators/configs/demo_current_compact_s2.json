@@ -37,6 +37,8 @@
     "capture_curvature": "matched",
     "contact_exchange_gate": "none",
     "contact_update_gate": "none",
+    "free_port_potential": "additive",
+    "initial_lipids": [],
     "genetics": {
       "sequence": "01",
       "alphabet": "01",

@@ -40,9 +40,13 @@ def formation_energy(c,h,t,neighbors):
             new=new and cap.binding_allowed(c,s,atom,released)
             attraction+=value*(int(new)-int(old))
     # A newly formed axial pair has two unoccupied faces. Other pairs expose
-    # only their actual free local faces; existing port energies do not change.
+    # only their actual free local faces. Competitive partitions of existing
+    # pairs must also change; the additive branch has no such reweighting.
     heads,_,links=c.lipids.layout();available=free_faces(len(heads),links);ports=0.
-    if heads:
+    if cfg.get('free_port_potential','additive')=='competitive':
+        from .competitive_ports import birth_port_delta
+        ports=birth_port_delta(c,h,t,neighbors)
+    elif heads:
         points=np.vstack((pos[heads],pos[h]));last=len(heads)
         nearby=neighbors.pairs(points,1.+4*cfg['dock_width'],'HT:delta_ports')
         for i,j in nearby:

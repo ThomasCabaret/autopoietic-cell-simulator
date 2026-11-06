@@ -27,7 +27,11 @@ class LinkedLipids:
         packed=pos[ids];n=len(heads);partners=np.full((n,2),-1,dtype=np.int64)
         for i,j,a,b in links:partners[i,a]=j;partners[j,b]=i
         pairs=neighbors.pairs(packed[:n],1.+4*config['dock_width'],'face_force')
-        force,energy=docking_force(packed,pairs,free_faces(n,links),1.,config['short_length'],
+        kernel=docking_force
+        if config.get('free_port_potential','additive')=='competitive':
+            from .competitive_ports import competitive_force
+            kernel=competitive_force
+        force,energy=kernel(packed,pairs,free_faces(n,links),1.,config['short_length'],
             config['dock_energy'],config['dock_width'],partners)
         bound,value=bound_port_force(packed,np.asarray(links,dtype=np.int64).reshape(-1,4),1.,
             config['short_length'],config['dock_energy'],config['dock_width'])

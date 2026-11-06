@@ -115,6 +115,8 @@ class MixedSynthesisChemistry(LipidSynthesisChemistry):
         self.ligand_types[self.prefix:self.prefix+count]=0;self.ligand_types[self.prefix+count:]=1
         from .mixed_boundary import initialize
         initialize(self)
+        from .lipid_synthesis import initialize_lipids
+        initialize_lipids(self)
         self._views();self.capture=MixedCapture(self)
         self.host.assembly.catalyst=GeneticCaptureView(self)
         r=config['tool_lipid_contact']

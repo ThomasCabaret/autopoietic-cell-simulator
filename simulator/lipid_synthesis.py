@@ -20,7 +20,14 @@ DEFAULTS=dict(temperature=.08,box=[12.,9.],food_units=24,tool_count=4,tool_linke
     short_length=.98,dock_width=.3,dock_energy=4.,dock_capture=.25,dock_rate=25.,
     bond_off_rate=.02,break_extension=.35,bonding=True,
     contact_exchange_rate=.2,contact_exchange_capture=.8,terminal_exchange=True,
-    formation_gate='none',tool_lipid_contact=.55,capture_curvature='legacy',tool_pose='straight',contact_exchange_gate='none',contact_update_gate='none')
+    formation_gate='none',tool_lipid_contact=.55,capture_curvature='legacy',tool_pose='straight',contact_exchange_gate='none',contact_update_gate='none',free_port_potential='additive',initial_lipids=[])
+
+
+def initialize_lipids(c):
+    """Prepared isolated H/T dimers consume the existing food stock only."""
+    for i,item in enumerate(c.config['initial_lipids']):
+        h,t=c.prefix+i,c.prefix+c.config['food_units']+i
+        c.pos[h]=item['head'];c.pos[t]=item['tail'];c.lipids.bind(h,t)
 
 
 def native_tool_pose(host,pairs):
@@ -88,6 +95,9 @@ class LipidSynthesisChemistry:
         if config['formation_gate']=='metropolis':
             self.transition_stats={key:dict(proposals=0,contact_time=0.,weighted_time=0.,positive_delta=0,
                 sum_positive_delta=0.,max_delta=None,min_delta=None,formed=0) for key in ('background','catalytic')}
+        if config['initial_lipids']:
+            initialize_lipids(self)
+            self.capture.refresh(self)
         self.mobility=np.concatenate((np.full(self.prefix,.25),np.full(2*count,.4)))[:,None]
         self.springs=np.empty((0,4));self.angles=np.empty((0,5));self._mechanics()
 
