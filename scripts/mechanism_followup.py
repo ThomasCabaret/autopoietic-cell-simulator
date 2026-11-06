@@ -19,7 +19,11 @@ STUDIES=dict(inhibition=dict(tag='PI1',prepare='prepare_product_binding',review=
     competitive_horizon=dict(tag='CH1',prepare='prepare_competitive_horizon',review='review_competitive_horizon',tasks=4,budget=7200,batch=50,
         predecessor='research/BATCH_50_CC1_RECIPES.json',predecessor_tasks=6),
     competitive_relaxation=dict(tag='CR1',prepare='prepare_competitive_relaxation',review='review_competitive_relaxation',tasks=3,budget=10800,batch=51,
-        predecessor='research/BATCH_50_CH1_RECIPES.json',predecessor_tasks=4))
+        predecessor='research/BATCH_50_CH1_RECIPES.json',predecessor_tasks=4),
+    selective_transport=dict(tag='PT1',prepare='prepare_selective_transport',review='review_selective_transport',tasks=6,budget=7200,batch=53,workers=1,
+        predecessor='research/BATCH_50_CH1_RECIPES.json',predecessor_tasks=4),
+    functional_recycling=dict(tag='RF1',prepare='prepare_functional_recycling',review='review_functional_recycling',tasks=9,budget=7200,batch=53,workers=1,
+        predecessor='research/BATCH_48_RP1_RECIPES.json',predecessor_tasks=3))
 
 
 def latest(study):return Path((ROOT/f'outputs/{study}_mechanism_followups/latest.txt').read_text().strip())
@@ -50,6 +54,8 @@ def prepare(study):
     if study in ('energy','timestep','contacts','competitive'):sources += [ROOT/p for p in ('experiments/review_boundary_transfer.py','experiments/mixed_calibration.py','experiments/review_renewal.py','experiments/tool_product_flux.py')]
     if study=='competitive':sources += [ROOT/'experiments/prepare_contact_gate.py',ROOT/'experiments/benchmark_competitive_ports.py']
     if study in ('competitive_horizon','competitive_relaxation'):sources += [ROOT/'experiments/review_competitive_panel.py',ROOT/'experiments/mixed_calibration.py']
+    if study in ('selective_transport','functional_recycling'):sources += [ROOT/'experiments/independent_assay_results.py']
+    if study=='selective_transport':sources += [ROOT/'experiments/mixed_calibration.py']
     if study=='timestep':sources += [ROOT/'experiments/review_energy_exchange.py']
     hashes={}
     for src in sources:
