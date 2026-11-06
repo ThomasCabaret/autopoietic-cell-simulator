@@ -1,5 +1,5 @@
 param([ValidateSet('Start','Status','Stop','Resume','Review')][string]$Action='Status',
-      [ValidateSet('Membrane','Lipids','Curvature','Tail','Capture','Mixed','Cooperative','Boundary','Compact','Exchange','Wide','Inhibition','Energy','EnergyDt','Protection','Contacts','Competitive','CompetitiveHorizon')][string]$Kind='Membrane')
+      [ValidateSet('Membrane','Lipids','Curvature','Tail','Capture','Mixed','Cooperative','Boundary','Compact','Exchange','Wide','Inhibition','Energy','EnergyDt','Protection','Contacts','Competitive','CompetitiveHorizon','CompetitiveRelaxation')][string]$Kind='Membrane')
 $ErrorActionPreference='Stop'
 $projectRoot=Split-Path -Parent $PSScriptRoot
 Set-Location -LiteralPath $projectRoot
@@ -24,6 +24,7 @@ if ($Kind -eq 'Protection') { $driverName='mechanism_followup.py'; $parentName='
 if ($Kind -eq 'Contacts') { $driverName='mechanism_followup.py'; $parentName='contacts_mechanism_followups'; $kindLabel='CF1'; $modeArgs=@('--study','contacts') }
 if ($Kind -eq 'Competitive') { $driverName='mechanism_followup.py'; $parentName='competitive_mechanism_followups'; $kindLabel='CC1'; $modeArgs=@('--study','competitive') }
 if ($Kind -eq 'CompetitiveHorizon') { $driverName='mechanism_followup.py'; $parentName='competitive_horizon_mechanism_followups'; $kindLabel='CH1'; $modeArgs=@('--study','competitive_horizon') }
+if ($Kind -eq 'CompetitiveRelaxation') { $driverName='mechanism_followup.py'; $parentName='competitive_relaxation_mechanism_followups'; $kindLabel='CR1'; $modeArgs=@('--study','competitive_relaxation') }
 if ($Kind -eq 'Tail') { $driverName='lipid_curvature_followup.py'; $parentName='lipid_thermal_tail_followups'; $kindLabel='L4'; $modeArgs=@('--tail') }
 $driverPath=Join-Path $projectRoot "scripts\$driverName"
 if ($Action -eq 'Start') {

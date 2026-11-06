@@ -1,0 +1,477 @@
+{
+  "output": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\diagnostics\\BC1_20261106T104543402497Z",
+  "recipe": "research/diagnostic_recipes/BC1_20261106T104543402497Z",
+  "summary": {
+    "rows": [
+      {
+        "label": "CH1_assembly_s0",
+        "checkpoint_sha256": "c8b5c94bb3327be641c3a3ad2bebda4d4bb6c26c69aaa42ca2fa8b1c997ed837",
+        "atoms": 104,
+        "L": 52,
+        "links": 50,
+        "axial_length": {
+          "count": 52,
+          "mean": 0.6528960998727181,
+          "std": 0.021297952343869,
+          "q05": 0.6187726736159431,
+          "q50": 0.6577292401205657,
+          "q95": 0.681239770833633
+        },
+        "signed_link_angle": {
+          "count": 50,
+          "mean": -0.14691951149190152,
+          "std": 0.19918121589431875,
+          "q05": -0.49071408011461837,
+          "q50": -0.14239098374351844,
+          "q95": 0.11781374079143087
+        },
+        "preferred_equal_axial_angle": -0.12292191176553185,
+        "harmonic_angular_sd": 0.1842977218469666,
+        "link_strain_energy": {
+          "count": 50,
+          "mean": 0.12228723429634496,
+          "std": 0.1020409698674382,
+          "q05": 0.018216181974237754,
+          "q50": 0.08560489809440108,
+          "q95": 0.3389979496687141
+        },
+        "chains": [
+          {
+            "size": 30,
+            "cycle": false,
+            "net_axis_turn": -3.5194051065055874,
+            "turns": -0.5601307194432226
+          },
+          {
+            "size": 22,
+            "cycle": false,
+            "net_axis_turn": -3.8265704680894896,
+            "turns": -0.6090176050859101
+          }
+        ]
+      },
+      {
+        "label": "CH1_assembly_s1",
+        "checkpoint_sha256": "023a0a46c1594f36358611de17ada233fe422553cebe37e2fde081a7f798f27e",
+        "atoms": 104,
+        "L": 52,
+        "links": 51,
+        "axial_length": {
+          "count": 52,
+          "mean": 0.6500185131684421,
+          "std": 0.02527857230391675,
+          "q05": 0.6070323595061484,
+          "q50": 0.6528195084926158,
+          "q95": 0.6816852468310016
+        },
+        "signed_link_angle": {
+          "count": 51,
+          "mean": -0.1634919509595895,
+          "std": 0.16900195899311538,
+          "q05": -0.4563166038045116,
+          "q50": -0.1303954628181115,
+          "q95": 0.08459443710167322
+        },
+        "preferred_equal_axial_angle": -0.12292191176553185,
+        "harmonic_angular_sd": 0.1842977218469666,
+        "link_strain_energy": {
+          "count": 51,
+          "mean": 0.12850407747784817,
+          "std": 0.09864095413861357,
+          "q05": 0.028928611105294433,
+          "q50": 0.09188325134489572,
+          "q95": 0.3184693342561342
+        },
+        "chains": [
+          {
+            "size": 52,
+            "cycle": false,
+            "net_axis_turn": -8.338089498939063,
+            "turns": -1.3270481596987767
+          }
+        ]
+      },
+      {
+        "label": "CH1_assembly_s2",
+        "checkpoint_sha256": "2bae62f37157728ebee935af447ba2c00b8cae510e71abe3eaa35d919750c3fe",
+        "atoms": 104,
+        "L": 52,
+        "links": 50,
+        "axial_length": {
+          "count": 52,
+          "mean": 0.6505398351559349,
+          "std": 0.01777621672066123,
+          "q05": 0.6227851920907657,
+          "q50": 0.6496992633186707,
+          "q95": 0.6758660689687411
+        },
+        "signed_link_angle": {
+          "count": 50,
+          "mean": 0.004625309481465701,
+          "std": 0.20393433374467862,
+          "q05": -0.31927077313352137,
+          "q50": 0.03061612917801558,
+          "q95": 0.33176309355603295
+        },
+        "preferred_equal_axial_angle": -0.12292191176553185,
+        "harmonic_angular_sd": 0.1842977218469666,
+        "link_strain_energy": {
+          "count": 50,
+          "mean": 0.13451726079162143,
+          "std": 0.09451359950852897,
+          "q05": 0.025479396207557105,
+          "q50": 0.12045036074813953,
+          "q95": 0.3024834349509985
+        },
+        "chains": [
+          {
+            "size": 34,
+            "cycle": false,
+            "net_axis_turn": 1.4234908218584257,
+            "turns": 0.22655560074471306
+          },
+          {
+            "size": 18,
+            "cycle": false,
+            "net_axis_turn": -1.1922253477851406,
+            "turns": -0.18974855737945917
+          }
+        ]
+      },
+      {
+        "label": "CH1_integrated_s1",
+        "checkpoint_sha256": "d30611819a8414257bfad63fd93e5e90063af52c285e67c9b558c6310dfff8a1",
+        "atoms": 302,
+        "L": 74,
+        "links": 71,
+        "axial_length": {
+          "count": 74,
+          "mean": 0.6496215487701633,
+          "std": 0.01946892287074805,
+          "q05": 0.6192774656918221,
+          "q50": 0.6497253525591902,
+          "q95": 0.6801856085308511
+        },
+        "signed_link_angle": {
+          "count": 71,
+          "mean": -0.10248682051596918,
+          "std": 0.17978213639632526,
+          "q05": -0.3869625916690388,
+          "q50": -0.11055702696243914,
+          "q95": 0.22068024065591907
+        },
+        "preferred_equal_axial_angle": -0.12292191176553185,
+        "harmonic_angular_sd": 0.1842977218469666,
+        "link_strain_energy": {
+          "count": 71,
+          "mean": 0.12757133943034069,
+          "std": 0.09194680585388218,
+          "q05": 0.018049022135582682,
+          "q50": 0.10858428253474983,
+          "q95": 0.2787097536240519
+        },
+        "chains": [
+          {
+            "size": 56,
+            "cycle": true,
+            "net_axis_turn": -6.283185307179586,
+            "turns": -1.0
+          },
+          {
+            "size": 15,
+            "cycle": false,
+            "net_axis_turn": -0.7863103860719598,
+            "turns": -0.12514518474784903
+          },
+          {
+            "size": 2,
+            "cycle": false,
+            "net_axis_turn": -0.207068563382266,
+            "turns": -0.03295598542122507
+          },
+          {
+            "size": 1,
+            "cycle": false,
+            "net_axis_turn": 0.0,
+            "turns": 0.0
+          }
+        ]
+      }
+    ],
+    "local_profile": {
+      "preferred_angle": -0.12292191176553185,
+      "ideal_turn_count": 51.1152585973808,
+      "bending_curvature": 2.3553207238861478,
+      "harmonic_angular_sd": 0.1842977218469666,
+      "straight_excess_over_T": 0.22214767497157895,
+      "engine_energy_max_error": 2.6645352591003757e-15
+    },
+    "bare_modes": [
+      {
+        "units": 12,
+        "rigid_zero_modes": 3,
+        "minimum_eigenvalue": -2.1854337498264834e-11,
+        "softest_eigenvalue": 0.026118258067651594,
+        "slowest_amplitude_envelope_time": 20.0,
+        "force_at_reference": 1.626326808782381e-13,
+        "scope": "Small perturbation of ideal open axial/bound backbone only. No nonlinear bath relaxation or closure-time prediction."
+      },
+      {
+        "units": 22,
+        "rigid_zero_modes": 3,
+        "minimum_eigenvalue": -1.6415878812890076e-12,
+        "softest_eigenvalue": 0.0019007996045608537,
+        "slowest_amplitude_envelope_time": 39.182757586763515,
+        "force_at_reference": 3.4504434219517954e-13,
+        "scope": "Small perturbation of ideal open axial/bound backbone only. No nonlinear bath relaxation or closure-time prediction."
+      },
+      {
+        "units": 34,
+        "rigid_zero_modes": 3,
+        "minimum_eigenvalue": -1.1631754097431134e-13,
+        "softest_eigenvalue": 0.0002790099386154412,
+        "slowest_amplitude_envelope_time": 348.11441380806343,
+        "force_at_reference": 5.918833040061942e-13,
+        "scope": "Small perturbation of ideal open axial/bound backbone only. No nonlinear bath relaxation or closure-time prediction."
+      },
+      {
+        "units": 52,
+        "rigid_zero_modes": 3,
+        "minimum_eigenvalue": -3.6582632599714565e-14,
+        "softest_eigenvalue": 5.262585188011244e-05,
+        "slowest_amplitude_envelope_time": 1890.1535824830726,
+        "force_at_reference": 6.565420862340072e-13,
+        "scope": "Small perturbation of ideal open axial/bound backbone only. No nonlinear bath relaxation or closure-time prediction."
+      }
+    ],
+    "scope": "Four selected final snapshots and exact pair reduction with fixed axial length. Not a chain free energy, time history, closure rate or causal attribution."
+  },
+  "previous_attempt": {
+    "output": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\diagnostics\\BC1_20261106T104204617229Z",
+    "recipe": "research/diagnostic_recipes/BC1_20261106T104204617229Z",
+    "summary": {
+      "rows": [
+        {
+          "label": "CH1_assembly_s0",
+          "checkpoint_sha256": "c8b5c94bb3327be641c3a3ad2bebda4d4bb6c26c69aaa42ca2fa8b1c997ed837",
+          "atoms": 104,
+          "L": 52,
+          "links": 50,
+          "axial_length": {
+            "count": 52,
+            "mean": 0.6528960998727181,
+            "std": 0.021297952343869,
+            "q05": 0.6187726736159431,
+            "q50": 0.6577292401205657,
+            "q95": 0.681239770833633
+          },
+          "signed_link_angle": {
+            "count": 50,
+            "mean": -0.14691951149190152,
+            "std": 0.19918121589431875,
+            "q05": -0.49071408011461837,
+            "q50": -0.14239098374351844,
+            "q95": 0.11781374079143087
+          },
+          "preferred_equal_axial_angle": -0.12292191176553185,
+          "harmonic_angular_sd": 0.1842977218469666,
+          "link_strain_energy": {
+            "count": 50,
+            "mean": 0.12228723429634496,
+            "std": 0.1020409698674382,
+            "q05": 0.018216181974237754,
+            "q50": 0.08560489809440108,
+            "q95": 0.3389979496687141
+          },
+          "chains": [
+            {
+              "size": 30,
+              "cycle": false,
+              "net_axis_turn": -3.5194051065055874,
+              "turns": -0.5601307194432226
+            },
+            {
+              "size": 22,
+              "cycle": false,
+              "net_axis_turn": -3.8265704680894896,
+              "turns": -0.6090176050859101
+            }
+          ]
+        },
+        {
+          "label": "CH1_assembly_s1",
+          "checkpoint_sha256": "023a0a46c1594f36358611de17ada233fe422553cebe37e2fde081a7f798f27e",
+          "atoms": 104,
+          "L": 52,
+          "links": 51,
+          "axial_length": {
+            "count": 52,
+            "mean": 0.6500185131684421,
+            "std": 0.02527857230391675,
+            "q05": 0.6070323595061484,
+            "q50": 0.6528195084926158,
+            "q95": 0.6816852468310016
+          },
+          "signed_link_angle": {
+            "count": 51,
+            "mean": -0.1634919509595895,
+            "std": 0.16900195899311538,
+            "q05": -0.4563166038045116,
+            "q50": -0.1303954628181115,
+            "q95": 0.08459443710167322
+          },
+          "preferred_equal_axial_angle": -0.12292191176553185,
+          "harmonic_angular_sd": 0.1842977218469666,
+          "link_strain_energy": {
+            "count": 51,
+            "mean": 0.12850407747784817,
+            "std": 0.09864095413861357,
+            "q05": 0.028928611105294433,
+            "q50": 0.09188325134489572,
+            "q95": 0.3184693342561342
+          },
+          "chains": [
+            {
+              "size": 52,
+              "cycle": false,
+              "net_axis_turn": -8.338089498939063,
+              "turns": -1.3270481596987767
+            }
+          ]
+        },
+        {
+          "label": "CH1_assembly_s2",
+          "checkpoint_sha256": "2bae62f37157728ebee935af447ba2c00b8cae510e71abe3eaa35d919750c3fe",
+          "atoms": 104,
+          "L": 52,
+          "links": 50,
+          "axial_length": {
+            "count": 52,
+            "mean": 0.6505398351559349,
+            "std": 0.01777621672066123,
+            "q05": 0.6227851920907657,
+            "q50": 0.6496992633186707,
+            "q95": 0.6758660689687411
+          },
+          "signed_link_angle": {
+            "count": 50,
+            "mean": 0.004625309481465701,
+            "std": 0.20393433374467862,
+            "q05": -0.31927077313352137,
+            "q50": 0.03061612917801558,
+            "q95": 0.33176309355603295
+          },
+          "preferred_equal_axial_angle": -0.12292191176553185,
+          "harmonic_angular_sd": 0.1842977218469666,
+          "link_strain_energy": {
+            "count": 50,
+            "mean": 0.13451726079162143,
+            "std": 0.09451359950852897,
+            "q05": 0.025479396207557105,
+            "q50": 0.12045036074813953,
+            "q95": 0.3024834349509985
+          },
+          "chains": [
+            {
+              "size": 34,
+              "cycle": false,
+              "net_axis_turn": 1.4234908218584257,
+              "turns": 0.22655560074471306
+            },
+            {
+              "size": 18,
+              "cycle": false,
+              "net_axis_turn": -1.1922253477851406,
+              "turns": -0.18974855737945917
+            }
+          ]
+        },
+        {
+          "label": "CH1_integrated_s1",
+          "checkpoint_sha256": "d30611819a8414257bfad63fd93e5e90063af52c285e67c9b558c6310dfff8a1",
+          "atoms": 302,
+          "L": 74,
+          "links": 71,
+          "axial_length": {
+            "count": 74,
+            "mean": 0.6496215487701633,
+            "std": 0.01946892287074805,
+            "q05": 0.6192774656918221,
+            "q50": 0.6497253525591902,
+            "q95": 0.6801856085308511
+          },
+          "signed_link_angle": {
+            "count": 71,
+            "mean": -0.10248682051596918,
+            "std": 0.17978213639632526,
+            "q05": -0.3869625916690388,
+            "q50": -0.11055702696243914,
+            "q95": 0.22068024065591907
+          },
+          "preferred_equal_axial_angle": -0.12292191176553185,
+          "harmonic_angular_sd": 0.1842977218469666,
+          "link_strain_energy": {
+            "count": 71,
+            "mean": 0.12757133943034069,
+            "std": 0.09194680585388218,
+            "q05": 0.018049022135582682,
+            "q50": 0.10858428253474983,
+            "q95": 0.2787097536240519
+          },
+          "chains": [
+            {
+              "size": 56,
+              "cycle": true,
+              "net_axis_turn": -6.283185307179586,
+              "turns": -1.0
+            },
+            {
+              "size": 15,
+              "cycle": false,
+              "net_axis_turn": -0.7863103860719598,
+              "turns": -0.12514518474784903
+            },
+            {
+              "size": 2,
+              "cycle": false,
+              "net_axis_turn": -0.207068563382266,
+              "turns": -0.03295598542122507
+            },
+            {
+              "size": 1,
+              "cycle": false,
+              "net_axis_turn": 0.0,
+              "turns": 0.0
+            }
+          ]
+        }
+      ],
+      "local_profile": {
+        "preferred_angle": -0.12292191176553185,
+        "ideal_turn_count": 51.1152585973808,
+        "bending_curvature": 2.3553207238861478,
+        "harmonic_angular_sd": 0.1842977218469666,
+        "straight_excess_over_T": 0.22214767497157895,
+        "engine_energy_max_error": 2.6645352591003757e-15
+      },
+      "scope": "Four selected final snapshots and exact pair reduction with fixed axial length. Not a chain free energy, time history, closure rate or causal attribution."
+    },
+    "job_sha256": "dac8702b6775d7181d66363dcdf994e600168fe4fd46553273796960eadd4e52",
+    "manifest_sha256": "315eee3513f5d98007a9905f77d813653a9b157ee2d8741ca78f348635164214",
+    "source_sha256": {
+      "experiments/audit_bound_curvature.py": "64f037a1a488e56c2404e1baf761c1ba3ad8dab067aff0360c9dea4eee4ef5ab",
+      "simulator/docking.py": "7f3247b8b54a8130c1e64002acd2bc9b137e0201def6f2964422b122eb5877e4",
+      "simulator/observations.py": "33289e1f3c888fad9b31c05ed7b0805fd117268193ed046da7b17f12cf4be4cf"
+    },
+    "result_sha256": "3fc5836f44baa5c10f8b6cf0fe596161ed5444a7dfbc26ece5a30943efee9a55"
+  },
+  "job_sha256": "dac8702b6775d7181d66363dcdf994e600168fe4fd46553273796960eadd4e52",
+  "manifest_sha256": "315eee3513f5d98007a9905f77d813653a9b157ee2d8741ca78f348635164214",
+  "source_sha256": {
+    "experiments/audit_bound_curvature.py": "d372586fef13cd04b0bb671e1d825588d1b321a69e84c827a68b4e9d841e715d",
+    "simulator/docking.py": "7f3247b8b54a8130c1e64002acd2bc9b137e0201def6f2964422b122eb5877e4",
+    "simulator/observations.py": "33289e1f3c888fad9b31c05ed7b0805fd117268193ed046da7b17f12cf4be4cf",
+    "simulator/physics.py": "d8364c7fb784db08e2f9fe0b3f549abb69246e402c681b06293d85058a7aa464"
+  },
+  "result_sha256": "d7611845e8953ca3eee43d2e21bb441f4fa49a41b01255297d85d29868b05628"
+}
