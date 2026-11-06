@@ -12,18 +12,22 @@ from .scene import EventTap,frame,species
 from .observations import live_observations
 
 
-def execute(config,commands,frames,parent):
+def execute(config,commands,frames,parent,checkpoint_path=None):
     from simulator.engine import Simulation
     from simulator.runner import make_observer,create_output,save_result
     from simulator import checkpoint
     sim=obs=path=None;started=time.monotonic();saved=False;error=None
     try:
-        sim=Simulation(config);obs=make_observer(sim.config,False);sim.listeners.append(obs)
+        if checkpoint_path is None:
+            sim=Simulation(config);obs=make_observer(sim.config,False);sim.listeners.append(obs)
+        else:
+            sim,obs=checkpoint.load(checkpoint_path,make_observer)
+            if sim.config!=config:raise ValueError('Imported checkpoint/config mismatch')
         observed_time=[None]
         def observation_clock(time,*args):observed_time[0]=float(time)
         sim.listeners.append(observation_clock)
         path=create_output(sim.config,parent);tap=EventTap(sim.chemistry);catalog=species(sim.chemistry)
-        paused=True;speed=.5;last_publish=-1.;last=time.monotonic();last_rate=last;last_step=0;rate=0.;credit=0.;dirty=True
+        paused=True;speed=.5;last_publish=-1.;last=time.monotonic();last_rate=last;last_step=sim.step_index;rate=0.;credit=0.;dirty=True
         sim.advance(0)
         def publish(force=False):
             nonlocal last_publish,dirty
@@ -74,9 +78,10 @@ def execute(config,commands,frames,parent):
 
 
 class ProcessSource:
-    def __init__(self,config,parent='outputs/visualizer'):
+    def __init__(self,config,parent='outputs/visualizer',checkpoint_path=None):
         ctx=mp.get_context('spawn');self.commands=ctx.Queue();self.frames=ctx.Queue(maxsize=2)
-        self.process=ctx.Process(target=execute,args=(config,self.commands,self.frames,str(Path(parent).resolve())),daemon=True)
+        self.process=ctx.Process(target=execute,args=(config,self.commands,self.frames,str(Path(parent).resolve()),
+            None if checkpoint_path is None else str(Path(checkpoint_path).resolve())),daemon=True)
         self.process.start()
 
     def command(self,action,value=None):self.commands.put((action,value))

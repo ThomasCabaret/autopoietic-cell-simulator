@@ -2,7 +2,7 @@
 
 
 def live_observations(observer,observed_time=None):
-    state=observer.__dict__;rows=[];measured=None
+    state=observer.__dict__;rows=[];measured=state['times'][-1] if state.get('times') else None
     genetic=state.get('genetic_state') if 'genetic_state' in state else state
     if genetic and genetic.get('recycle_mode') and genetic.get('last'):
         last=genetic['last'];measured=last['time']
