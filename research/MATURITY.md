@@ -1,5 +1,13 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot53 : CR1 complet passe sa porte fixée,3/3 enceintes finales30/52/34,
+2/3 présence macro tardive>=.5. C'est un sous-système L sous lois communes,
+pas une enceinte alimentaire maintenue. PT1/rétention et RF1/recyclage01 sont
+lancés séparément, sans preuve anticipée. M-01 reste50 ; M-04 reste75 EG1 limité,
+maintien0. Aucun coût chimique ajouté à CP1 ; RF1 active les helpers de pertes
+existants dans un candidat séparé.295 tests passent. [Bilan53](BATCH_53.md).
+Les lectures partielles/hypothèses antérieures ci-dessous sont historiques.
+
 Lot52 : deux enceintes finales30/52 sous CP1 depuis molécules isolées,
 mais une seule des deux passe la présence tardive ; troisième en cours,
 aucune porte globale conclue. M-01 reste50, avec preuve actuelle de sous-système

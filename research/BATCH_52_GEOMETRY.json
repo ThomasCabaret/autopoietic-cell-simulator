@@ -1,6 +1,6 @@
 {
-  "output": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\diagnostics\\RG1_20261106T121119987135Z",
-  "recipe": "research/diagnostic_recipes/RG1_20261106T121119987135Z",
+  "output": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\diagnostics\\RG1_20261106T125142158574Z",
+  "recipe": "research/diagnostic_recipes/RG1_20261106T125142158574Z",
   "summary": {
     "rows": [
       {
@@ -52,31 +52,139 @@
         "sampled_port_contact_frames": 41,
         "result_sha256": "1fed90566598ddd78c790c7f92be8439d01e015bd6ace938716fc6239e2aa783",
         "geometry_sha256": "b068dc06f4ea4848af78d1c251df20491fcb1b3b0bcdbb0cd9d9f432b22d2660"
+      },
+      {
+        "label": "CR1_assembly_s2",
+        "first_sampled_macro": {
+          "time": 4810.0,
+          "event": true
+        },
+        "sampled_episodes": 30,
+        "sampled_macro_fraction": 0.3775,
+        "late_fraction": 0.94,
+        "last_episode": {
+          "start": 7950.0,
+          "end": 8000.0,
+          "ends_at_horizon": true
+        },
+        "largest_final": 34,
+        "simple_contours_final": [
+          {
+            "units": 34,
+            "area": 92.38201057200361
+          }
+        ],
+        "sampled_port_contact_frames": 20,
+        "result_sha256": "697a4e4522b987b8e95dbe02a876e856cdb3251f8ebc7e36396f54dc28f54250",
+        "geometry_sha256": "3b3bcdc7503f64787f2600b5392b3c73fb4d6b509114aaf9b7db7ffc6173e9f7"
       }
     ],
     "cohort_counts": {
       "pending": 0,
-      "running": 1,
-      "complete": 2,
+      "running": 0,
+      "complete": 3,
       "failed": 0,
       "paused": 0,
       "interrupted": 0
     },
-    "cohort_complete": false,
+    "cohort_complete": true,
     "scope": "Completed-case descriptive analysis, selected same seeds. Partial cohort has no decision. Episodes are sampled intervals, not exact lifetimes or rates."
   },
-  "previous_attempt": null,
+  "previous_attempt": {
+    "output": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\diagnostics\\RG1_20261106T121119987135Z",
+    "recipe": "research/diagnostic_recipes/RG1_20261106T121119987135Z",
+    "summary": {
+      "rows": [
+        {
+          "label": "CR1_assembly_s0",
+          "first_sampled_macro": {
+            "time": 7205.0,
+            "event": true
+          },
+          "sampled_episodes": 13,
+          "sampled_macro_fraction": 0.091875,
+          "late_fraction": 0.3675,
+          "last_episode": {
+            "start": 7935.0,
+            "end": 8000.0,
+            "ends_at_horizon": true
+          },
+          "largest_final": 30,
+          "simple_contours_final": [
+            {
+              "units": 30,
+              "area": 73.00506226551977
+            }
+          ],
+          "sampled_port_contact_frames": 3,
+          "result_sha256": "b0663123c5694c89b6047814d68055f3a81b269d37137c130c3d78b4df235256",
+          "geometry_sha256": "7ad6a715e435aab28ac608848aabfb47b8a3623773e58b5846b7f66e777baca1"
+        },
+        {
+          "label": "CR1_assembly_s1",
+          "first_sampled_macro": {
+            "time": 810.0,
+            "event": true
+          },
+          "sampled_episodes": 60,
+          "sampled_macro_fraction": 0.756875,
+          "late_fraction": 0.9625,
+          "last_episode": {
+            "start": 7955.0,
+            "end": 8000.0,
+            "ends_at_horizon": true
+          },
+          "largest_final": 52,
+          "simple_contours_final": [
+            {
+              "units": 52,
+              "area": 194.22880230958216
+            }
+          ],
+          "sampled_port_contact_frames": 41,
+          "result_sha256": "1fed90566598ddd78c790c7f92be8439d01e015bd6ace938716fc6239e2aa783",
+          "geometry_sha256": "b068dc06f4ea4848af78d1c251df20491fcb1b3b0bcdbb0cd9d9f432b22d2660"
+        }
+      ],
+      "cohort_counts": {
+        "pending": 0,
+        "running": 1,
+        "complete": 2,
+        "failed": 0,
+        "paused": 0,
+        "interrupted": 0
+      },
+      "cohort_complete": false,
+      "scope": "Completed-case descriptive analysis, selected same seeds. Partial cohort has no decision. Episodes are sampled intervals, not exact lifetimes or rates."
+    },
+    "previous_attempt": null,
+    "manifest_sha256": "b7a702759a855e8ac13dc793b5b65452d9f0afba7c55461863906951567df091",
+    "inputs": {
+      "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\competitive_relaxation_mechanism_followups\\followup_20261106T105709120898Z\\A\\campaign_20261106T105709901387Z\\tasks\\task0000\\attempts\\CR1_assembly_s0_s0_20261106T105714462279Z\\lipid_geometry.json": "7ad6a715e435aab28ac608848aabfb47b8a3623773e58b5846b7f66e777baca1",
+      "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\competitive_relaxation_mechanism_followups\\followup_20261106T105709120898Z\\A\\campaign_20261106T105709901387Z\\tasks\\task0000\\attempts\\CR1_assembly_s0_s0_20261106T105714462279Z\\result.json": "b0663123c5694c89b6047814d68055f3a81b269d37137c130c3d78b4df235256",
+      "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\competitive_relaxation_mechanism_followups\\followup_20261106T105709120898Z\\A\\campaign_20261106T105709901387Z\\tasks\\task0001\\attempts\\CR1_assembly_s1_s1_20261106T105714463282Z\\lipid_geometry.json": "b068dc06f4ea4848af78d1c251df20491fcb1b3b0bcdbb0cd9d9f432b22d2660",
+      "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\competitive_relaxation_mechanism_followups\\followup_20261106T105709120898Z\\A\\campaign_20261106T105709901387Z\\tasks\\task0001\\attempts\\CR1_assembly_s1_s1_20261106T105714463282Z\\result.json": "1fed90566598ddd78c790c7f92be8439d01e015bd6ace938716fc6239e2aa783"
+    },
+    "sources": {
+      "experiments/analyze_relaxation_geometry.py": "c4137a30bcfa2182da3b86528df4d359679c9d1f514b0888676a45c05200d6b4",
+      "experiments/mixed_calibration.py": "cc877b683107726cb32465eb83431cd359cd3ef270f5ab09b1e7f7322745ee01",
+      "scripts/campaign.py": "aa0c3d3f170fbabed77729ec8c569f952d1c936333dde9c60988028e5651340b"
+    },
+    "result_sha256": "f4d146824f35e61c660b1971a721a1532402e071b661f04db66fd0cea58540f7"
+  },
   "manifest_sha256": "b7a702759a855e8ac13dc793b5b65452d9f0afba7c55461863906951567df091",
   "inputs": {
     "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\competitive_relaxation_mechanism_followups\\followup_20261106T105709120898Z\\A\\campaign_20261106T105709901387Z\\tasks\\task0000\\attempts\\CR1_assembly_s0_s0_20261106T105714462279Z\\lipid_geometry.json": "7ad6a715e435aab28ac608848aabfb47b8a3623773e58b5846b7f66e777baca1",
     "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\competitive_relaxation_mechanism_followups\\followup_20261106T105709120898Z\\A\\campaign_20261106T105709901387Z\\tasks\\task0000\\attempts\\CR1_assembly_s0_s0_20261106T105714462279Z\\result.json": "b0663123c5694c89b6047814d68055f3a81b269d37137c130c3d78b4df235256",
     "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\competitive_relaxation_mechanism_followups\\followup_20261106T105709120898Z\\A\\campaign_20261106T105709901387Z\\tasks\\task0001\\attempts\\CR1_assembly_s1_s1_20261106T105714463282Z\\lipid_geometry.json": "b068dc06f4ea4848af78d1c251df20491fcb1b3b0bcdbb0cd9d9f432b22d2660",
-    "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\competitive_relaxation_mechanism_followups\\followup_20261106T105709120898Z\\A\\campaign_20261106T105709901387Z\\tasks\\task0001\\attempts\\CR1_assembly_s1_s1_20261106T105714463282Z\\result.json": "1fed90566598ddd78c790c7f92be8439d01e015bd6ace938716fc6239e2aa783"
+    "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\competitive_relaxation_mechanism_followups\\followup_20261106T105709120898Z\\A\\campaign_20261106T105709901387Z\\tasks\\task0001\\attempts\\CR1_assembly_s1_s1_20261106T105714463282Z\\result.json": "1fed90566598ddd78c790c7f92be8439d01e015bd6ace938716fc6239e2aa783",
+    "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\competitive_relaxation_mechanism_followups\\followup_20261106T105709120898Z\\A\\campaign_20261106T105709901387Z\\tasks\\task0002\\attempts\\CR1_assembly_s2_s2_20261106T114113078480Z\\lipid_geometry.json": "3b3bcdc7503f64787f2600b5392b3c73fb4d6b509114aaf9b7db7ffc6173e9f7",
+    "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\competitive_relaxation_mechanism_followups\\followup_20261106T105709120898Z\\A\\campaign_20261106T105709901387Z\\tasks\\task0002\\attempts\\CR1_assembly_s2_s2_20261106T114113078480Z\\result.json": "697a4e4522b987b8e95dbe02a876e856cdb3251f8ebc7e36396f54dc28f54250"
   },
   "sources": {
     "experiments/analyze_relaxation_geometry.py": "c4137a30bcfa2182da3b86528df4d359679c9d1f514b0888676a45c05200d6b4",
     "experiments/mixed_calibration.py": "cc877b683107726cb32465eb83431cd359cd3ef270f5ab09b1e7f7322745ee01",
     "scripts/campaign.py": "aa0c3d3f170fbabed77729ec8c569f952d1c936333dde9c60988028e5651340b"
   },
-  "result_sha256": "f4d146824f35e61c660b1971a721a1532402e071b661f04db66fd0cea58540f7"
+  "result_sha256": "68aa11537696acc3d3f52f898dfd89b2b86bb8ec41d23c94f6820d6f15f05712"
 }

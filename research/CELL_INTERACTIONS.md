@@ -1,5 +1,13 @@
 # Interactions souhaitées, parasites et environnements — lot7
 
+Lot53 : PT1 compare le contrat libre/lié contre une ablation transparente,
+avec cohortes stables et chimie inactive. Le profil de répulsion dépend de
+l'état local P–R, pas d'une identité globale de dimère ; ce helper est déclaré,
+pas assimilé à une perméabilité émergente générique. RF1 distingue séquence
+exacte, motif F01 actif et catalyse/réemploi effectifs dans un bain sans L.
+Ces deux preuves éventuelles devront être transférées à la chimie active commune.
+Pas de nouvelle espèce ni de nouveau contrat de réaction. [Bilan53](BATCH_53.md).
+
 Lot49 : l'énergie additive des faces libres peut compter plusieurs
 partenaires alors que la liaison n'en garde qu'un. CF1 filtre ces hausses mais
 bloque presque toutes les formations en amas ;1/0 liens pour75 L aux deux

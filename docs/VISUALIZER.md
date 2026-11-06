@@ -1,5 +1,10 @@
 # Interface de visualisation durable — GUI1 et catalogue GUI2
 
+Actualisation lot53 : les trois checkpoints CR1 locaux sont terminés
+(cycles30/52/34). Choisir **Résultats locaux → CP1 · graine1 · terminé**
+pour l'enceinte52. Inspection en pause, pas relecture du passé ; aucune donnée
+brute embarquée. Les39 presets physiques restent inchangés.
+
 6 novembre2026, lot52 : **Fichier → Ouvrir un checkpoint local…** et menu
 **Résultats locaux** disponibles. Ce menu propose les checkpoints CR1 présents
 sur cette machine ; choisir **CP1 · graine1 · terminé** pour inspecter l'enceinte

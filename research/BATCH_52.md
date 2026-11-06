@@ -1,5 +1,9 @@
 # Lot52 — premières enceintes CP1 et inspection des calculs longs
 
+Note de clôture postérieure : [lot53](BATCH_53.md) donne la troisième graine
+et le verdict final CR1. Le texte ci-dessous conserve la lecture partielle du
+lot52 ; RG1 dispose désormais aussi d'une recette complète à trois cas.
+
 6 novembre2026. [Plan](BATCH_52_PLAN.md), [chronologie descriptive RG1](BATCH_52_GEOMETRY.json),
 [figure](BATCH_52_GEOMETRY.png), [preuves compactes](BATCH_52_RESULTS.json).
 L'utilisateur accepte l'inventaire CA1 comme coût de départ. Aucune loi,

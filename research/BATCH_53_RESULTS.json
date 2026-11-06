@@ -1,0 +1,199 @@
+{
+  "batch": 53,
+  "date": "2026-11-06",
+  "plan": "research/BATCH_53_PLAN.md",
+  "CR1": {
+    "report": "outputs/competitive_relaxation_mechanism_followups/followup_20261106T105709120898Z/report_0.json",
+    "report_sha256": "09dc1a26afadbe4085f466c79b23f9e2e14386ebd1865d6a986c49ee116f2d86",
+    "descriptor": "research/BATCH_51_CR1_RECIPES.json",
+    "decision": {
+      "screen_passed": true,
+      "conditions": {
+        "final_ports": true,
+        "complete_observation": true,
+        "temperature": true,
+        "persistent_final_macro_two_seeds": true
+      },
+      "run_transfer": false,
+      "scope": "Three same-seed selected horizons8000, sampled macro occupancy6000–8000. Not independent validation, continuous retention, reaction hazard or maintenance. Report then stop."
+    },
+    "rows": [
+      {
+        "label": "CR1_assembly_s0",
+        "seed": 0,
+        "result_sha256": "b0663123c5694c89b6047814d68055f3a81b269d37137c130c3d78b4df235256",
+        "atoms": 104,
+        "final_ports_valid": true,
+        "late_temperature": 0.07972109496102706,
+        "simple_contours": [
+          {
+            "units": 30,
+            "area": 73.00506226551977
+          }
+        ],
+        "macro_fraction_late": 0.3675,
+        "first_sampled_macro": {
+          "time": 7205.0,
+          "event": true
+        },
+        "geometry_dropped": 0
+      },
+      {
+        "label": "CR1_assembly_s1",
+        "seed": 1,
+        "result_sha256": "1fed90566598ddd78c790c7f92be8439d01e015bd6ace938716fc6239e2aa783",
+        "atoms": 104,
+        "final_ports_valid": true,
+        "late_temperature": 0.0792112983479859,
+        "simple_contours": [
+          {
+            "units": 52,
+            "area": 194.22880230958216
+          }
+        ],
+        "macro_fraction_late": 0.9625,
+        "first_sampled_macro": {
+          "time": 810.0,
+          "event": true
+        },
+        "geometry_dropped": 0
+      },
+      {
+        "label": "CR1_assembly_s2",
+        "seed": 2,
+        "result_sha256": "697a4e4522b987b8e95dbe02a876e856cdb3251f8ebc7e36396f54dc28f54250",
+        "atoms": 104,
+        "final_ports_valid": true,
+        "late_temperature": 0.07955636738545482,
+        "simple_contours": [
+          {
+            "units": 34,
+            "area": 92.38201057200361
+          }
+        ],
+        "macro_fraction_late": 0.94,
+        "first_sampled_macro": {
+          "time": 4810.0,
+          "event": true
+        },
+        "geometry_dropped": 0
+      }
+    ],
+    "geometry_descriptor": "research/BATCH_52_GEOMETRY.json",
+    "geometry_recipe": "research/diagnostic_recipes/RG1_20261106T125142158574Z"
+  },
+  "PT1": {
+    "descriptor": "research/BATCH_53_PT1_RECIPES.json",
+    "tasks": 6,
+    "workers": 1,
+    "budget_seconds": 7200,
+    "horizon": 300,
+    "partial_reading": {
+      "rows": [
+        {
+          "label": "PT1_barrier_s0",
+          "seed": 0,
+          "variant": "barrier",
+          "late_temperature": 0.08076909540999823,
+          "result_sha256": "274486e43c3a9fdbe675b63fc2ec5b7e27c0e777b2c8d8bf65dfe998f0669345",
+          "atoms": 200,
+          "cohorts_stable": true,
+          "invariant_failures": 0,
+          "bound_outside": 0.0,
+          "free_outside": 0.5833333333333334,
+          "final_contour_valid": true,
+          "valid_fraction_late": 0.9133333333333333,
+          "sampled_crossings": {
+            "free": 415,
+            "bound": 0,
+            "state_changed": 0
+          }
+        },
+        {
+          "label": "PT1_transparent_s0",
+          "seed": 0,
+          "variant": "transparent",
+          "late_temperature": 0.07917521819524033,
+          "result_sha256": "57ce66f415602532fd352a3820412a8dfacb9a3b337b313397387018210412f5",
+          "atoms": 200,
+          "cohorts_stable": true,
+          "invariant_failures": 0,
+          "bound_outside": 0.3888888888888889,
+          "free_outside": 0.5666666666666667,
+          "final_contour_valid": true,
+          "valid_fraction_late": 0.93,
+          "sampled_crossings": {
+            "free": 447,
+            "bound": 202,
+            "state_changed": 0
+          }
+        }
+      ],
+      "counts": {
+        "pending": 3,
+        "running": 1,
+        "complete": 2,
+        "failed": 0,
+        "paused": 0,
+        "interrupted": 0
+      },
+      "controller_active": true,
+      "decision": null
+    },
+    "partial_report": "outputs/selective_transport_mechanism_followups/followup_20261106T124745026896Z/A/campaign_20261106T124746705055Z/selective_transport_review.json",
+    "partial_report_sha256": "9eab7ea990f60ca1cad3bd337bf96f76283e461304ace4a44ba9fd4743ded993",
+    "scope": "Dated partial reading, never a live status or completed cohort decision."
+  },
+  "RF1": {
+    "descriptor": "research/BATCH_53_RF1_RECIPES.json",
+    "tasks": 9,
+    "workers": 1,
+    "budget_seconds": 7200,
+    "horizon": 1200,
+    "partial_reading": {
+      "rows": [
+        {
+          "label": "RF1_zero_s0",
+          "seed": 0,
+          "variant": "zero",
+          "late_temperature": 0.10313139393638138,
+          "result_sha256": "122b52be3830661226145aef5b953e457816c14995c71252a4ee7b41aea520e6",
+          "atoms": 150,
+          "invariant_failures": 0,
+          "G01_current": 13,
+          "F01_current": 13,
+          "unpaired_F01_edges": 13,
+          "late_exact_F01_fraction": 1.0,
+          "late_catalysis": 0,
+          "polymer_reassemblies": 0,
+          "recycled_incorporations": 0,
+          "backbone_break": 0,
+          "rung_break": 0,
+          "free_P_final": 1,
+          "free_R_final": 1
+        }
+      ],
+      "counts": {
+        "pending": 7,
+        "running": 1,
+        "complete": 1,
+        "failed": 0,
+        "paused": 0,
+        "interrupted": 0
+      },
+      "controller_active": true,
+      "decision": null
+    },
+    "partial_report": "outputs/functional_recycling_mechanism_followups/followup_20261106T124751759988Z/A/campaign_20261106T124752250330Z/functional_recycling_review.json",
+    "partial_report_sha256": "3c63968025ed0356fc080ec7fbe6913d728d2b36a4041fec5fe4643511e8e32d",
+    "scope": "Dated partial reading, never a live status or completed cohort decision."
+  },
+  "verification": {
+    "targeted_tests": 5,
+    "full_tests": 295,
+    "simulator_changed": false,
+    "gui_presets_changed": false,
+    "chemical_complexity_delta_CP1": 0,
+    "RF1_separate_helper": "Existing2 loss rewrites,4 rates+1 protection factor; not adopted in CP1."
+  }
+}

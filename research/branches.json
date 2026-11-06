@@ -1676,7 +1676,7 @@
       "related": [
         "BC1"
       ],
-      "status": "two_complete_one_running_no_cohort_gate_at_lot52_reading",
+      "status": "three_complete_fixed_gate_passed",
       "hypothesis": "An8000 horizon with sampled geometry can distinguish rare encounters, transient cycles and persistent closure under unchanged CP1 laws.",
       "test": "Three same isolated initial states, same physical parameters, optional passive geometry every5 and one first-witness capture.",
       "cost": "No chemical primitive; bounded2001 observations/one104-bead capture per trial, two workers/three hours.",
@@ -1684,9 +1684,10 @@
       "missing_proof": "Exact first passage, retention, integrated robustness, fed/loss renewal and homeostasis.",
       "recipe": "research/BATCH_51_CR1_RECIPES.json",
       "evidence": "research/BATCH_51_RELAXATION_PLAN.md",
-      "results": "research/BATCH_51.md",
+      "results": "research/BATCH_53.md",
       "health_gate": "Report then stop; no retry, physical tuning or automatic horizon increase.",
-      "partial_results": "Final simple cycles30/52, late macro.3675/.9625, T.07972/.07921. Third pending conclusion. No criteria/horizon change."
+      "lot52_reading": "Final simple cycles30/52, late macro.3675/.9625, T.07972/.07921. Third pending conclusion. No criteria/horizon change.",
+      "conclusion": "Final simple cycles30/52/34, late macro.3675/.9625/.94, T~.08. Fixed2/3 persistent criterion passes; same-seed selected horizons, no retention/maintenance claim."
     },
     {
       "id": "CA1",
@@ -1704,14 +1705,50 @@
     {
       "id": "RG1",
       "parent": "CR1",
-      "status": "completed_case_time_analysis_partial_cohort",
+      "status": "completed_case_time_analysis_full_cohort",
       "hypothesis": "Final snapshots hide transient sampled closures and late first witnesses.",
-      "test": "Only complete CR1 seeds0/1, hashed result/geometry inputs; sampled histories0–8000.",
+      "test": "All three complete CR1 seeds, hashed result/geometry inputs; sampled histories0–8000. Prior two-case recipe preserved.",
       "cost": "Passive offline analysis, one bounded time figure; no physical primitive or rule.",
-      "conclusion": "First sampled macro7205/810,13/60 sampled episodes; whole fractions.091875/.756875, late.3675/.9625. No cohort gate, exact lifetimes or chemical break counts inferred.",
+      "conclusion": "First sampled macro7205/810/4810; final cycles30/52/34, late.3675/.9625/.94. No exact lifetimes or chemical break counts inferred.",
       "recipe": "research/BATCH_52_GEOMETRY.json",
       "evidence": "research/BATCH_52.md",
-      "results": "research/BATCH_52.md"
+      "results": "research/BATCH_53.md",
+      "lot52_reading": "First sampled macro7205/810,13/60 sampled episodes; whole fractions.091875/.756875, late.3675/.9625. No cohort gate, exact lifetimes or chemical break counts inferred."
+    },
+    {
+      "id": "PT1",
+      "parent": "CH1",
+      "related": [
+        "CR1"
+      ],
+      "status": "running_fixed_six_case_transport_screen",
+      "hypothesis": "The current local free/bound barrier retains assembled P/R while free precursors cross a constructed CP1 boundary.",
+      "test": "Three paired seeds, barrier versus transparent;6 trials300,200 atoms, no F or P/R/HT chemistry, stable initial cohorts.",
+      "cost": "No new chemical primitive/tool/gene or simulator change; existing barrier ablated only in controls. One worker/two hours.",
+      "counterexample": "No control escape, unstable/unclassifiable contour, retained free matter or escaped assembled cohort.",
+      "missing_proof": "Continuous retention, active mixed chemistry, waste export, open feed, repaired boundary.",
+      "recipe": "research/BATCH_53_PT1_RECIPES.json",
+      "evidence": "research/BATCH_53_PLAN.md",
+      "results": "research/BATCH_53.md",
+      "health_gate": "Fixed temperatures, classified contour and atom-fraction control/retention gates; report then stop without tuning or transfer."
+    },
+    {
+      "id": "RF1",
+      "parent": "RP1",
+      "related": [
+        "FS1",
+        "CH1"
+      ],
+      "status": "running_current01_nine_case_recycling_screen",
+      "hypothesis": "Existing local losses/protection can recycle matter while preserving actual current01 genetic and catalytic function.",
+      "test": "Three seeds x zero/occupied/paired_edge,1200;150 atoms P/R only in12x9, same01 stocks and capture/motion, no membrane.",
+      "cost": "Existing two loss rewrites, four rates and protection factor; no new atom/bond/tool/gene. Separate candidate, not adopted in CP1; one worker/two hours.",
+      "counterexample": "Exact gene lost, active motifs absent, actual late catalysis or recycled incorporation absent; depleted control makes late activity uninformative.",
+      "missing_proof": "All required genes/functions, energy closure of losses, mixed CP1 compatibility, open-feed homeostasis and perturbation recovery.",
+      "recipe": "research/BATCH_53_RF1_RECIPES.json",
+      "evidence": "research/BATCH_53_PLAN.md",
+      "results": "research/BATCH_53.md",
+      "health_gate": "Each protection screened separately against fixed zero-loss reference; no winner, tuning or transfer automatic. RP1 refusal preserved."
     }
   ]
 }

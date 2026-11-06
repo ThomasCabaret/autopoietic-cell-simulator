@@ -1665,3 +1665,18 @@ Source préservée et provenance de session, pas de données expérimentales Git
 290 tests passent,39 presets natifs vérifiés et deux vrais checkpoints ouverts
 en Qt/OpenGL. Ajout final d'une note de sous-système, contrôle natif répété.
 Coût chimique CA1 inchangé. Registre23/43, aucun palier biologique augmenté.
+
+## 2026-11-06 — lot53, deux fronts indépendants et CR1 complet
+
+CR1 termine3/3 : cycles30/52/34, présence tardive.3675/.9625/.94,
+porte2/3 réussie sans changer lois/seuils. RG1 régénéré sur trois cas,
+ancienne recette à deux cas conservée. Pas de preuve de rétention ou maintien.
+PT1 lancé6x300 : barrière/transparente,200 atomes, chimie désactivée ;
+RF1 lancé9x1200 : fonction01 actuelle,150 atomes, pertes zero/occupied/paired_edge.
+Chaque campagne1 travailleur/2h, sources figées, rapport puis arrêt.
+Pas de nouveau gène/outil ; helper RV1 existant séparé, non adopté CP1.
+Cinq tests ciblés et295 tests complets passent, factory d'observateur corrigée
+avant gel. Premier témoin RF1 sans catalyse tardive avec stock libre presque
+épuisé : limite d'exposition explicitée, pas extinction des outils inférée.
+Registre24/43 et priorités actualisés, aucun palier biologique augmenté.
+Sources/recettes suivies, données locales ignorées. Voir BATCH_53.

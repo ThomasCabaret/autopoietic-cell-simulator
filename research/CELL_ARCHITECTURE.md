@@ -1,5 +1,12 @@
 # Architectures de cellule : fermeture à concevoir, pas encore réalisée
 
+Lot53 : CP1 dynamique et fermeture CR1 établis au niveau L séparé,
+aucun changement de gène ou d'outil. Budget prototype intégré toujours302 billes ;
+PT1=200 (104 L+96 P/R), RF1=150 P/R, deux sous-bains diagnostiques qui ne
+s'additionnent pas en budget cellulaire. PT1 isole transport sans synthèse ;
+RF1 active des pertes existantes dans une autre variante. Aucun renouvellement
+de tous les outils ou export ouvert n'est acquis. [Bilan53](BATCH_53.md).
+
 Lot49 : aucun nouveau gène/outil ou budget (prototype302 billes). CF1
 filtre les updates sans résoudre l'insertion : deux préfixes perdent presque
 tous leurs contacts, campagne pausée. CP1 révise qualitativement la concurrence

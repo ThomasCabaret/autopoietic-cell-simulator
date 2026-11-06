@@ -1,5 +1,14 @@
 # Démos représentatives accessibles dans la GUI
 
+## Lot53 — cohorte CR1 complète
+
+Les trois entrées locales CR1 sont terminées : cycles30/52/34 L.
+La porte fixée de présence macroscopique tardive passe2/3 ; graine0 reste
+en dessous du seuil. **CP1 · graine1 · terminé** montre le cycle52.
+Ces états inspectables restent un sous-système L, sans maintien cellulaire.
+PT1/RF1 tournent en headless ; aucun preset ou loi de démo changé.
+[Bilan53](../research/BATCH_53.md). Les lectures suivantes sont historiques.
+
 ## Lot52 — résultats CP1 réellement calculés, accessibles localement
 
 En plus des39 presets historiques, **Résultats locaux → CP1 · graine1 · terminé**

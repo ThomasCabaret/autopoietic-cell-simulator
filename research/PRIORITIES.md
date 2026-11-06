@@ -1,5 +1,17 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot53 : **CR1 terminé3/3, crible réussi** : cycles30/52/34,
+présence tardive.3675/.9625/.94, deux cas>=.5. Aucun seuil ou loi changé.
+**PT1 et RF1 en cours**, indépendants :6 essais de transport appariés sur
+enceinte construite et9 essais de recyclage de la fonction01 actuelle.
+Un travailleur/2h chacun, rapport puis arrêt. Lire ces deux portes avant
+transfert ; ne pas augmenter les taux ou adopter un helper sur résultats partiels.
+PT1 doit avoir un témoin mobile ; RF1 doit avoir une exposition tardive utile,
+sinon distinguer manque de substrat et défaut de fonction. Aucun nouveau gène.
+GUI : les trois checkpoints CR1 sont inspectables via Résultats locaux.
+Voir [BATCH_53](BATCH_53.md), `selective_transport_status.bat` et
+`functional_recycling_status.bat`. Les entrées suivantes sont l'historique des lots.
+
 Lot52 : CR1 **deux cas complets, troisième en cours** à la lecture RG1.
 Enceintes simples finales30/52 L depuis dimères isolés, sous lois L inchangées ;
 fractions macro tardives.3675/.9625, une seule passe la présence>=.5.

@@ -1,6 +1,6 @@
 # Checklist compacte — cellule construite maintenue
 
-Révision 23 · revue 2026-11-06 · 43 sous-buts · CP1 inchangé ; CR1 deux enceintes finales, troisième cas en cours ; résultats locaux inspectables ; EG1 reste le preset
+Révision 24 · revue 2026-11-06 · 43 sous-buts · CP1 inchangé ; CR1 complet passe son crible2/3 ; PT1 transport et RF1 recyclage01 en cours ; presets EG1 historiques conservés
 
 **Pourcentages = paliers de preuve**, pas effort accompli ni probabilité de réussite. Les plages indiquent min–max des sous-buts ; aucune moyenne globale.
 0% non observé ·25% sous-cas ·50% séparé ·75% couplage partiel ·100% critère satisfait sur son domaine.
@@ -13,19 +13,19 @@ Concept : « à fermer » signale au moins un maillon essentiel manquant ; un dr
 | Fabrication des lipides | 1 | à fermer | 25% | S-04 | — |
 | Copie et information | 5 | à fermer | 0–75% | R-02, R-04, R-05 | — |
 | Traduction et outils renouvelés | 5 | à fermer | 0–75% | T-02, T-04 | — |
-| Membrane et insertion | 5 | à fermer | 25–75% | M-05 | M-01 : CR1 deux cas complets : enceintes30/52 depuis molécules isolées, présence tardive.3675/.9625 ; troisième en cours, pas porte de cohorte. |
+| Membrane et insertion | 5 | à fermer | 25–75% | M-05 | M-01 : CR1 complet : cycles30/52/34, présence tardive.3675/.9625/.94, porte2/3 passe. Palier séparé50 conservé. ; M-03 : PT1 lancé :6 essais transport appariés,200 atomes,300,1 travailleur/2h. Pas de verdict anticipé. |
 | Apports et transport | 3 | à fermer | 0–75% | E-03 | — |
 | Énergie et retour des cycles | 2 | à fermer | 25% | Q-01, Q-02 | — |
-| Déchets et recyclage | 4 | à fermer | 0–25% | W-02, W-03, W-04 | — |
+| Déchets et recyclage | 4 | à fermer | 0–25% | W-02, W-03, W-04 | W-02 : RF1 lancé :9 essais sur fonction01 actuelle,150 atomes,1200,1 travailleur/2h ; motif/identité/flux distingués. |
 | Homéostasie des petites espèces | 2 | drafts décrits | 0% | — | — |
 | Homéostasie des polymères | 4 | à fermer | 0% | H-03, H-04, H-05, H-06 | — |
 | Compatibilité et maintien | 4 | à fermer | 0–25% | C-01, C-03, C-04 | — |
-| Calcul et observabilité | 2 | drafts décrits | 25–100% | — | O-02 : Ouverture des checkpoints et menu local CR1, import figé/reprise exacte,290 tests et39 presets natifs ; données locales hors Git. |
+| Calcul et observabilité | 2 | drafts décrits | 25–100% | — | — |
 
 **Trous conceptuels prioritaires au présent bilan :**
 
-- M-01, M-04, E-02, C-02 : Lire CR1 calibré sur les modes nus : géométrie persistante, rencontres ou instabilité, avant toute nouvelle variante.
-- F-02, R-05, H-03, H-04, E-01, W-01 : Diversité, information et protection/régulation/flux restent des maillons conceptuels, pas des détails garantis.
+- M-03, E-03, W-02, W-03, H-06 : Lire les deux fronts indépendants avant transfert : transport avec contrôle mobile et renouvellement avec activité tardive exposée.
+- M-01, M-04, F-02, R-05, H-03, H-04, E-01, W-01 : Fermeture CR1 démontrée en sous-bain ; diversité/information/régulation/flux restent les risques conceptuels avant cellule maintenue.
 
 Voir [draft des outils](FUNCTIONAL_MECHANISMS.md) et [homéostasie des polymères](MACROMOLECULE_HOMEOSTASIS.md).
 

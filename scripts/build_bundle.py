@@ -161,6 +161,14 @@ def main():
         'competitive_panel_status.bat','stop_competitive_panel.bat','resume_competitive_panel.bat',
         'competitive_horizon_status.bat','stop_competitive_horizon.bat','resume_competitive_horizon.bat'))
     files.update(ROOT/p for p in ('research/CHEMISTRY_COMPLEXITY.md','research/CHEMISTRY_COMPLEXITY.json','experiments/chemical_complexity.py'))
+    files.update(ROOT/p for p in ('research/BATCH_53_PLAN.md','research/BATCH_53.md','research/BATCH_53_RESULTS.json',
+        'research/BATCH_53_PT1_RECIPES.json','research/BATCH_53_RF1_RECIPES.json',
+        'experiments/prepare_selective_transport.py','experiments/review_selective_transport.py',
+        'experiments/prepare_functional_recycling.py','experiments/review_functional_recycling.py',
+        'experiments/independent_assay_results.py',
+        'campaigns/selective_transport_mechanism.json','campaigns/functional_recycling_mechanism.json',
+        'selective_transport_status.bat','stop_selective_transport.bat','resume_selective_transport.bat',
+        'functional_recycling_status.bat','stop_functional_recycling.bat','resume_functional_recycling.bat'))
     files.update(ROOT/p for p in ('research/BATCH_52_PLAN.md','research/BATCH_52.md','research/BATCH_52_RESULTS.json',
         'research/BATCH_52_GEOMETRY.json','research/BATCH_52_GEOMETRY.png',
         'experiments/analyze_relaxation_geometry.py','experiments/smoke_checkpoint_viewer.py'))

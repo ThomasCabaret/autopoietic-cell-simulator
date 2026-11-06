@@ -1,5 +1,18 @@
 # Santé du projet — actualisation6 novembre2026
 
+Lot53 : étape mécanique franchie sans ajouter de règle : CR1 passe2/3
+avec trois contours finaux. L'attente longue était informative ; ce résultat
+ne garantit ni étanchéité ni maintien. Deux campagnes bornées et indépendantes
+ouvrent les questions suivantes : rétention avec contrôle transparent, réemploi
+de matière avec vraie activité01. Aucun lancement dépendant ou grille aveugle.
+Le premier témoin RF1 a consommé presque tout son stock libre et n'a plus de
+catalyse tardive : si cela persiste, la porte ne permettra pas d'attribuer une
+inactivité à la perte des outils. Conserver cette limite, diagnostiquer avant
+tout nouveau régime d'apport ; pas d'allongement automatique.
+Prochain horizon : lecture PT1/RF1 puis un transfert ou diagnostic ciblé.
+Diversité, information/protection et régulation/flux/export restent des risques
+conceptuels ; aucun délai ou pourcentage global garanti. [Bilan53](BATCH_53.md).
+
 Lot52 : progrès sans augmenter le coût chimique accepté : fermeture finale
 depuis dimères isolés obtenue dans deux cas actuels, et inspection directe
 des résultats longs dans la GUI. Le ralentissement collectif était une piste

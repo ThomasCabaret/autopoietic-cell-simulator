@@ -45,15 +45,16 @@ proche de la consigne dans les trois ; aucun maintien sous pertes ou flux ouvert
 CB1 et ses ouvertures restent au menu « défauts connus ». MIN1M et MX2 restent
 accessibles séparément,39 démos au total. EN1 est visible dans « contrôle au pas fin ».
 
-Recherche : **CP1 est transféré au moteur**, avec potentiel compétitif et
-deltas locaux cohérents. **CC1 terminé6/6** : association de molécules libres
-et température correcte, mais fermeture intégrée refusée dans une graine ;
-pas encore de vésicule isolée sous ces lois. **CH1 terminé4/4** : récupération intégrée sélectionnée, mais toujours aucune
-enceinte isolée finale. **BC1** vérifie la courbure et une relaxation collective
-lente ; **CR1 en cours**, trois suivis à8000 sous les mêmes lois, avec observation
-géométrique passive. État : `competitive_relaxation_status.bat`. Les39 démos restent les références additives
-EG1/EN1/CB1 recertifiées ; CP1 n'est pas promu. CF1 reste en pause scientifique.
-[Lot51](research/BATCH_51.md) · [Checklist](research/CELL_CHECKLIST_COMPACT.md) ·
+Recherche : **CR1 terminé3/3, crible fixé réussi** sous les lois CP1 :
+enceintes finales30/52/34 depuis dimères isolés, présence tardive>=50% sur2/3.
+Les refus CC1/CH1 aux horizons courts restent conservés. Cela ne prouve pas
+la rétention ou le maintien de la cellule. **Deux fronts indépendants en cours** :
+PT1 transport/rétention (6 essais), RF1 recyclage de la fonction01 (9 essais),
+un travailleur et2h maximum par campagne. `selective_transport_status.bat`
+et `functional_recycling_status.bat` affichent leur progression.
+Les39 presets restent EG1/EN1/CB1 historiques ; les trois résultats CR1 sont
+inspectables dans **Résultats locaux**. CF1 reste en pause scientifique.
+[Lot53](research/BATCH_53.md) · [Checklist](research/CELL_CHECKLIST_COMPACT.md) ·
 [Calibration](research/CAMPAIGN_CALIBRATION.md).
 
 Un moteur CPU commun pour les campagnes sans fenêtre et les démonstrateurs
