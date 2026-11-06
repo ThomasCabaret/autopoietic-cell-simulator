@@ -1680,3 +1680,17 @@ avant gel. Premier témoin RF1 sans catalyse tardive avec stock libre presque
 épuisé : limite d'exposition explicitée, pas extinction des outils inférée.
 Registre24/43 et priorités actualisés, aucun palier biologique augmenté.
 Sources/recettes suivies, données locales ignorées. Voir BATCH_53.
+
+## 2026-11-06 — lot54, refus PT1/RF1 et récupération FR1
+
+PT1=6/6 refuse :52 L ouverts/51 liens dans graine1 à300, dernier contour valide
+299.5 ; contrôles transport et thermique passent, inconnues non assimilées à fuite0.
+RF1=9/9 refuse les deux protections : réincorporations0, G01 conservés,
+motifs F01 perdus dans graine1, températures graine2.1224/.1254 et témoin épuisé.
+FA1 reconstruit les9 journaux jusqu'aux vrais états finaux ; perte F39-F40 à96.99
+sans retour avant1200, autre perte289.66 suivie de retour316.89.
+FR1 lancé6x600 après coupure construite, seuls taux P/R libres F.01/.001,
+2 travailleurs/1h, audit génétique passif, rapport puis arrêt. Aucun outil/gène
+ou moteur ajouté, aucune adoption CP1. Prévol audité état/PRNG exact, coût×1.31
+sur microbenchmark20 sélectionné.9 tests ciblés passent ; registrev25/43,
+aucun palier biologique augmenté. Voir BATCH_54.

@@ -1,5 +1,12 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot54 : aucun palier relevé. PT1 conserve des assemblages mais échoue
+sur une ouverture finale non classable ; RF1 ne démontre ni recyclage strict
+utile ni protection robuste de fonction. FA1 retrouve une récupération ponctuelle
+et une extinction persistante observée jusqu’à1200, pas impossibilité de principe.
+FR1 récupération en cours, séparé de CP1. M-01=50 ; M-04=75 seulement EG1
+historique limité ; maintien0. [Bilan54](BATCH_54.md).
+
 Lot53 : CR1 complet passe sa porte fixée,3/3 enceintes finales30/52/34,
 2/3 présence macro tardive>=.5. C'est un sous-système L sous lois communes,
 pas une enceinte alimentaire maintenue. PT1/rétention et RF1/recyclage01 sont

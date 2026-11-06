@@ -1,0 +1,858 @@
+{
+  "output": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\diagnostics\\FA1_20261106T135147210373Z",
+  "recipe": "research/diagnostic_recipes/FA1_20261106T135147210373Z",
+  "report_sha256": "1bc91e467c5acb70c2f90dce741f224cab851b8193d6fc1face6c1136042fe79",
+  "analysis": {
+    "PT1": {
+      "decision": {
+        "screen_passed": false,
+        "conditions": {
+          "invariants": true,
+          "temperature": true,
+          "closure": true,
+          "final_classifiable": false,
+          "free_transport": false,
+          "transparent_control": true,
+          "selective_retention": false
+        },
+        "run_transfer": false,
+        "scope": "Constructed, chemistry-disabled sub-bath. Final atom fractions and sampled crossings, not continuous sealing, self-assembly, open feed or viability."
+      },
+      "rows": [
+        {
+          "label": "PT1_barrier_s0",
+          "seed": 0,
+          "variant": "barrier",
+          "late_temperature": 0.08076909540999823,
+          "result_sha256": "274486e43c3a9fdbe675b63fc2ec5b7e27c0e777b2c8d8bf65dfe998f0669345",
+          "lateral_links": 52,
+          "components": [
+            {
+              "units": 52,
+              "cycle": true,
+              "area": 206.87305567393673,
+              "simple": true,
+              "endpoint_gap": null
+            }
+          ],
+          "last_valid_sample": 300.0,
+          "final_valid": true,
+          "sampled_crossings": {
+            "free": 415,
+            "bound": 0,
+            "state_changed": 0
+          }
+        },
+        {
+          "label": "PT1_transparent_s0",
+          "seed": 0,
+          "variant": "transparent",
+          "late_temperature": 0.07917521819524033,
+          "result_sha256": "57ce66f415602532fd352a3820412a8dfacb9a3b337b313397387018210412f5",
+          "lateral_links": 52,
+          "components": [
+            {
+              "units": 52,
+              "cycle": true,
+              "area": 210.9979500211187,
+              "simple": true,
+              "endpoint_gap": null
+            }
+          ],
+          "last_valid_sample": 300.0,
+          "final_valid": true,
+          "sampled_crossings": {
+            "free": 447,
+            "bound": 202,
+            "state_changed": 0
+          }
+        },
+        {
+          "label": "PT1_barrier_s1",
+          "seed": 1,
+          "variant": "barrier",
+          "late_temperature": 0.07965828759160834,
+          "result_sha256": "04abef33b22179edbd1a85e32d1c3fc420bb15affa68de5756a20d6528f105dd",
+          "lateral_links": 51,
+          "components": [
+            {
+              "units": 52,
+              "cycle": false,
+              "area": 203.45779101390514,
+              "simple": true,
+              "endpoint_gap": 0.6385412276550136
+            }
+          ],
+          "last_valid_sample": 299.5,
+          "final_valid": false,
+          "sampled_crossings": {
+            "free": 433,
+            "bound": 0,
+            "state_changed": 0
+          }
+        },
+        {
+          "label": "PT1_transparent_s1",
+          "seed": 1,
+          "variant": "transparent",
+          "late_temperature": 0.07937906009915201,
+          "result_sha256": "6c112318db1f657aea268c76e4d77a8b3f089710809adc3cf67b5583b98cfb56",
+          "lateral_links": 52,
+          "components": [
+            {
+              "units": 52,
+              "cycle": true,
+              "area": 209.3669009584312,
+              "simple": true,
+              "endpoint_gap": null
+            }
+          ],
+          "last_valid_sample": 300.0,
+          "final_valid": true,
+          "sampled_crossings": {
+            "free": 424,
+            "bound": 238,
+            "state_changed": 0
+          }
+        },
+        {
+          "label": "PT1_barrier_s2",
+          "seed": 2,
+          "variant": "barrier",
+          "late_temperature": 0.07737450858883858,
+          "result_sha256": "2ee71e386f900d6503230e337c12fb22a1bfb239300af6565d6549b36da6641d",
+          "lateral_links": 52,
+          "components": [
+            {
+              "units": 52,
+              "cycle": true,
+              "area": 206.075810240801,
+              "simple": true,
+              "endpoint_gap": null
+            }
+          ],
+          "last_valid_sample": 300.0,
+          "final_valid": true,
+          "sampled_crossings": {
+            "free": 411,
+            "bound": 0,
+            "state_changed": 0
+          }
+        },
+        {
+          "label": "PT1_transparent_s2",
+          "seed": 2,
+          "variant": "transparent",
+          "late_temperature": 0.08291332339524621,
+          "result_sha256": "17dcd753a18894faeef0c23ad7b3ac8d24c6968a363ccc2fb0ff55f3d3abe71f",
+          "lateral_links": 52,
+          "components": [
+            {
+              "units": 52,
+              "cycle": true,
+              "area": 186.83108104113376,
+              "simple": true,
+              "endpoint_gap": null
+            }
+          ],
+          "last_valid_sample": 300.0,
+          "final_valid": true,
+          "sampled_crossings": {
+            "free": 439,
+            "bound": 242,
+            "state_changed": 0
+          }
+        }
+      ]
+    },
+    "RF1": {
+      "decision": {
+        "protection_screens": {
+          "occupied": {
+            "screen_passed": false,
+            "conditions": {
+              "invariants": true,
+              "temperature": false,
+              "exact_G01_survival": true,
+              "functional_motif_final": true,
+              "actual_late_catalysis": true,
+              "useful_reassembly": false,
+              "useful_reincorporation": false,
+              "active_baseline": false,
+              "late_flux_preserved": true
+            }
+          },
+          "paired_edge": {
+            "screen_passed": false,
+            "conditions": {
+              "invariants": true,
+              "temperature": false,
+              "exact_G01_survival": true,
+              "functional_motif_final": true,
+              "actual_late_catalysis": true,
+              "useful_reassembly": false,
+              "useful_reincorporation": false,
+              "active_baseline": false,
+              "late_flux_preserved": true
+            }
+          }
+        },
+        "run_transfer": false,
+        "scope": "Fixed existing loss helpers in current01 genetic sub-bath. Exact targets, final motifs and late catalysis are separate; no whole-tool lineage, mixed CP1 transfer or homeostasis."
+      },
+      "rows": [
+        {
+          "label": "RF1_zero_s0",
+          "seed": 0,
+          "variant": "zero",
+          "late_temperature": 0.10313139393638138,
+          "result_sha256": "122b52be3830661226145aef5b953e457816c14995c71252a4ee7b41aea520e6",
+          "final_state_reconstructed": true,
+          "first_structural_loss": null,
+          "first_structural_return": null,
+          "final_structural_motifs": 13,
+          "time_without_structural_motif": 0.0,
+          "motif_changes": [
+            {
+              "time": 175.86,
+              "motifs": 2,
+              "event": "backbone_form"
+            },
+            {
+              "time": 670.22,
+              "motifs": 3,
+              "event": "backbone_form"
+            },
+            {
+              "time": 782.1,
+              "motifs": 4,
+              "event": "backbone_form"
+            },
+            {
+              "time": 808.47,
+              "motifs": 5,
+              "event": "backbone_form"
+            },
+            {
+              "time": 811.96,
+              "motifs": 6,
+              "event": "backbone_form"
+            },
+            {
+              "time": 818.09,
+              "motifs": 7,
+              "event": "backbone_form"
+            },
+            {
+              "time": 897.28,
+              "motifs": 8,
+              "event": "backbone_form"
+            },
+            {
+              "time": 956.14,
+              "motifs": 9,
+              "event": "backbone_form"
+            },
+            {
+              "time": 968.2,
+              "motifs": 10,
+              "event": "backbone_form"
+            },
+            {
+              "time": 1028.85,
+              "motifs": 11,
+              "event": "backbone_form"
+            },
+            {
+              "time": 1039.79,
+              "motifs": 12,
+              "event": "backbone_form"
+            },
+            {
+              "time": 1041.23,
+              "motifs": 13,
+              "event": "backbone_form"
+            }
+          ],
+          "loss_events": [],
+          "formations": {
+            "G": 30,
+            "F": 30
+          },
+          "formations_before_first_loss": {
+            "G": 30,
+            "F": 30
+          },
+          "scope": "Exact bond journal reconstruction, not pairing/capture exposure or a complete molecular lineage. Absence of return is censored at horizon.",
+          "targets_final": {
+            "G": 13,
+            "F": 13
+          },
+          "reassemblies": 0,
+          "reincorporations": 0
+        },
+        {
+          "label": "RF1_occupied_s0",
+          "seed": 0,
+          "variant": "occupied",
+          "late_temperature": 0.10908548621145552,
+          "result_sha256": "0aa94893d9aab10e468db701c93ad5f55d31efb7a6938812dc2d7463d8d70abf",
+          "final_state_reconstructed": true,
+          "first_structural_loss": null,
+          "first_structural_return": null,
+          "final_structural_motifs": 4,
+          "time_without_structural_motif": 0.0,
+          "motif_changes": [
+            {
+              "time": 469.32,
+              "motifs": 2,
+              "event": "backbone_form"
+            },
+            {
+              "time": 1064.67,
+              "motifs": 3,
+              "event": "backbone_form"
+            },
+            {
+              "time": 1083.38,
+              "motifs": 4,
+              "event": "backbone_form"
+            }
+          ],
+          "loss_events": [],
+          "formations": {
+            "G": 50,
+            "F": 119
+          },
+          "formations_before_first_loss": {
+            "G": 50,
+            "F": 119
+          },
+          "scope": "Exact bond journal reconstruction, not pairing/capture exposure or a complete molecular lineage. Absence of return is censored at horizon.",
+          "targets_final": {
+            "G": 10,
+            "F": 4
+          },
+          "reassemblies": 0,
+          "reincorporations": 0
+        },
+        {
+          "label": "RF1_paired_edge_s0",
+          "seed": 0,
+          "variant": "paired_edge",
+          "late_temperature": 0.10460905128335021,
+          "result_sha256": "75a138d56327fa637917e9811101e998f51fa98d9634372e07f2cc336ea05722",
+          "final_state_reconstructed": true,
+          "first_structural_loss": 289.66,
+          "first_structural_return": 316.89,
+          "final_structural_motifs": 1,
+          "time_without_structural_motif": 27.22999999999996,
+          "motif_changes": [
+            {
+              "time": 289.66,
+              "motifs": 0,
+              "event": "backbone_break"
+            },
+            {
+              "time": 316.89,
+              "motifs": 1,
+              "event": "backbone_form"
+            }
+          ],
+          "loss_events": [
+            {
+              "time": 289.66,
+              "event": {
+                "kind": "backbone_break",
+                "time": 289.66,
+                "a": 39,
+                "b": 40
+              },
+              "active_F0": 6,
+              "active_F1": 5
+            }
+          ],
+          "formations": {
+            "G": 36,
+            "F": 106
+          },
+          "formations_before_first_loss": {
+            "G": 20,
+            "F": 25
+          },
+          "scope": "Exact bond journal reconstruction, not pairing/capture exposure or a complete molecular lineage. Absence of return is censored at horizon.",
+          "targets_final": {
+            "G": 12,
+            "F": 1
+          },
+          "reassemblies": 0,
+          "reincorporations": 0
+        },
+        {
+          "label": "RF1_zero_s1",
+          "seed": 1,
+          "variant": "zero",
+          "late_temperature": 0.0941074078175014,
+          "result_sha256": "e09489cf5aa60d98e5de15cd53ba02813fa1b86b35c058e27d4f3562dce8988f",
+          "final_state_reconstructed": true,
+          "first_structural_loss": null,
+          "first_structural_return": null,
+          "final_structural_motifs": 11,
+          "time_without_structural_motif": 0.0,
+          "motif_changes": [
+            {
+              "time": 86.14,
+              "motifs": 2,
+              "event": "backbone_form"
+            },
+            {
+              "time": 411.42,
+              "motifs": 3,
+              "event": "backbone_form"
+            },
+            {
+              "time": 483.22,
+              "motifs": 4,
+              "event": "backbone_form"
+            },
+            {
+              "time": 620.0500000000001,
+              "motifs": 5,
+              "event": "backbone_form"
+            },
+            {
+              "time": 625.42,
+              "motifs": 6,
+              "event": "backbone_form"
+            },
+            {
+              "time": 632.45,
+              "motifs": 7,
+              "event": "backbone_form"
+            },
+            {
+              "time": 731.13,
+              "motifs": 8,
+              "event": "backbone_form"
+            },
+            {
+              "time": 940.28,
+              "motifs": 9,
+              "event": "backbone_form"
+            },
+            {
+              "time": 1032.05,
+              "motifs": 10,
+              "event": "backbone_form"
+            },
+            {
+              "time": 1167.18,
+              "motifs": 11,
+              "event": "backbone_form"
+            }
+          ],
+          "loss_events": [],
+          "formations": {
+            "G": 30,
+            "F": 30
+          },
+          "formations_before_first_loss": {
+            "G": 30,
+            "F": 30
+          },
+          "scope": "Exact bond journal reconstruction, not pairing/capture exposure or a complete molecular lineage. Absence of return is censored at horizon.",
+          "targets_final": {
+            "G": 13,
+            "F": 11
+          },
+          "reassemblies": 0,
+          "reincorporations": 0
+        },
+        {
+          "label": "RF1_occupied_s1",
+          "seed": 1,
+          "variant": "occupied",
+          "late_temperature": 0.07844624099342185,
+          "result_sha256": "1bc9c4da36d88e7250bb5f638e032ac7f5d67f1a812d5a7d962798f906c527ea",
+          "final_state_reconstructed": true,
+          "first_structural_loss": 96.99000000000001,
+          "first_structural_return": null,
+          "final_structural_motifs": 0,
+          "time_without_structural_motif": 1103.01,
+          "motif_changes": [
+            {
+              "time": 96.99000000000001,
+              "motifs": 0,
+              "event": "backbone_break"
+            }
+          ],
+          "loss_events": [
+            {
+              "time": 96.99000000000001,
+              "event": {
+                "kind": "backbone_break",
+                "time": 96.99000000000001,
+                "a": 39,
+                "b": 40
+              },
+              "active_F0": 5,
+              "active_F1": 6
+            }
+          ],
+          "formations": {
+            "G": 11,
+            "F": 11
+          },
+          "formations_before_first_loss": {
+            "G": 11,
+            "F": 9
+          },
+          "scope": "Exact bond journal reconstruction, not pairing/capture exposure or a complete molecular lineage. Absence of return is censored at horizon.",
+          "targets_final": {
+            "G": 5,
+            "F": 0
+          },
+          "reassemblies": 0,
+          "reincorporations": 0
+        },
+        {
+          "label": "RF1_paired_edge_s1",
+          "seed": 1,
+          "variant": "paired_edge",
+          "late_temperature": 0.07844624099342185,
+          "result_sha256": "e60771a05c6908446e61d503f675b25b2a2bd58108b2b5564747520708c8d0cd",
+          "final_state_reconstructed": true,
+          "first_structural_loss": 96.99000000000001,
+          "first_structural_return": null,
+          "final_structural_motifs": 0,
+          "time_without_structural_motif": 1103.01,
+          "motif_changes": [
+            {
+              "time": 96.99000000000001,
+              "motifs": 0,
+              "event": "backbone_break"
+            }
+          ],
+          "loss_events": [
+            {
+              "time": 96.99000000000001,
+              "event": {
+                "kind": "backbone_break",
+                "time": 96.99000000000001,
+                "a": 39,
+                "b": 40
+              },
+              "active_F0": 5,
+              "active_F1": 6
+            }
+          ],
+          "formations": {
+            "G": 11,
+            "F": 11
+          },
+          "formations_before_first_loss": {
+            "G": 11,
+            "F": 9
+          },
+          "scope": "Exact bond journal reconstruction, not pairing/capture exposure or a complete molecular lineage. Absence of return is censored at horizon.",
+          "targets_final": {
+            "G": 5,
+            "F": 0
+          },
+          "reassemblies": 0,
+          "reincorporations": 0
+        },
+        {
+          "label": "RF1_zero_s2",
+          "seed": 2,
+          "variant": "zero",
+          "late_temperature": 0.09601595327685555,
+          "result_sha256": "73b12f75b11331ade2b3b3a374ef1f0a0a9d9e28cb8b84bd3e05e809098e9b71",
+          "final_state_reconstructed": true,
+          "first_structural_loss": null,
+          "first_structural_return": null,
+          "final_structural_motifs": 12,
+          "time_without_structural_motif": 0.0,
+          "motif_changes": [
+            {
+              "time": 254.89000000000001,
+              "motifs": 2,
+              "event": "backbone_form"
+            },
+            {
+              "time": 324.73,
+              "motifs": 3,
+              "event": "backbone_form"
+            },
+            {
+              "time": 417.35,
+              "motifs": 4,
+              "event": "backbone_form"
+            },
+            {
+              "time": 445.42,
+              "motifs": 5,
+              "event": "backbone_form"
+            },
+            {
+              "time": 662.28,
+              "motifs": 6,
+              "event": "backbone_form"
+            },
+            {
+              "time": 670.9300000000001,
+              "motifs": 7,
+              "event": "backbone_form"
+            },
+            {
+              "time": 765.01,
+              "motifs": 8,
+              "event": "backbone_form"
+            },
+            {
+              "time": 859.0600000000001,
+              "motifs": 9,
+              "event": "backbone_form"
+            },
+            {
+              "time": 942.57,
+              "motifs": 10,
+              "event": "backbone_form"
+            },
+            {
+              "time": 975.66,
+              "motifs": 11,
+              "event": "backbone_form"
+            },
+            {
+              "time": 1062.5,
+              "motifs": 12,
+              "event": "backbone_form"
+            }
+          ],
+          "loss_events": [],
+          "formations": {
+            "G": 30,
+            "F": 28
+          },
+          "formations_before_first_loss": {
+            "G": 30,
+            "F": 28
+          },
+          "scope": "Exact bond journal reconstruction, not pairing/capture exposure or a complete molecular lineage. Absence of return is censored at horizon.",
+          "targets_final": {
+            "G": 11,
+            "F": 12
+          },
+          "reassemblies": 0,
+          "reincorporations": 0
+        },
+        {
+          "label": "RF1_occupied_s2",
+          "seed": 2,
+          "variant": "occupied",
+          "late_temperature": 0.12241005445894942,
+          "result_sha256": "680a952cd22491782f29a43522a230fd4065f11bf1e138180c5dbaf52e7d2057",
+          "final_state_reconstructed": true,
+          "first_structural_loss": null,
+          "first_structural_return": null,
+          "final_structural_motifs": 8,
+          "time_without_structural_motif": 0.0,
+          "motif_changes": [
+            {
+              "time": 528.47,
+              "motifs": 2,
+              "event": "backbone_form"
+            },
+            {
+              "time": 533.34,
+              "motifs": 3,
+              "event": "backbone_form"
+            },
+            {
+              "time": 803.23,
+              "motifs": 4,
+              "event": "backbone_form"
+            },
+            {
+              "time": 897.53,
+              "motifs": 5,
+              "event": "backbone_form"
+            },
+            {
+              "time": 1032.19,
+              "motifs": 6,
+              "event": "backbone_form"
+            },
+            {
+              "time": 1049.53,
+              "motifs": 5,
+              "event": "backbone_break"
+            },
+            {
+              "time": 1061.32,
+              "motifs": 6,
+              "event": "backbone_form"
+            },
+            {
+              "time": 1078.99,
+              "motifs": 7,
+              "event": "backbone_form"
+            },
+            {
+              "time": 1091.51,
+              "motifs": 8,
+              "event": "backbone_form"
+            }
+          ],
+          "loss_events": [],
+          "formations": {
+            "G": 36,
+            "F": 147
+          },
+          "formations_before_first_loss": {
+            "G": 36,
+            "F": 147
+          },
+          "scope": "Exact bond journal reconstruction, not pairing/capture exposure or a complete molecular lineage. Absence of return is censored at horizon.",
+          "targets_final": {
+            "G": 15,
+            "F": 8
+          },
+          "reassemblies": 2,
+          "reincorporations": 0
+        },
+        {
+          "label": "RF1_paired_edge_s2",
+          "seed": 2,
+          "variant": "paired_edge",
+          "late_temperature": 0.12544935297024065,
+          "result_sha256": "3bfb2b27ba10cd2029d81307271a718f621e206ecd7c67b5173c7f5a8ae4d60b",
+          "final_state_reconstructed": true,
+          "first_structural_loss": null,
+          "first_structural_return": null,
+          "final_structural_motifs": 8,
+          "time_without_structural_motif": 0.0,
+          "motif_changes": [
+            {
+              "time": 528.47,
+              "motifs": 2,
+              "event": "backbone_form"
+            },
+            {
+              "time": 533.34,
+              "motifs": 3,
+              "event": "backbone_form"
+            },
+            {
+              "time": 803.23,
+              "motifs": 4,
+              "event": "backbone_form"
+            },
+            {
+              "time": 897.53,
+              "motifs": 5,
+              "event": "backbone_form"
+            },
+            {
+              "time": 923.48,
+              "motifs": 4,
+              "event": "backbone_break"
+            },
+            {
+              "time": 925.0600000000001,
+              "motifs": 5,
+              "event": "backbone_form"
+            },
+            {
+              "time": 951.5,
+              "motifs": 6,
+              "event": "backbone_form"
+            },
+            {
+              "time": 1067.34,
+              "motifs": 7,
+              "event": "backbone_form"
+            },
+            {
+              "time": 1068.38,
+              "motifs": 8,
+              "event": "backbone_form"
+            },
+            {
+              "time": 1100.23,
+              "motifs": 9,
+              "event": "backbone_form"
+            },
+            {
+              "time": 1126.49,
+              "motifs": 8,
+              "event": "backbone_break"
+            },
+            {
+              "time": 1143.65,
+              "motifs": 9,
+              "event": "backbone_form"
+            },
+            {
+              "time": 1198.98,
+              "motifs": 8,
+              "event": "backbone_break"
+            }
+          ],
+          "loss_events": [],
+          "formations": {
+            "G": 38,
+            "F": 144
+          },
+          "formations_before_first_loss": {
+            "G": 38,
+            "F": 144
+          },
+          "scope": "Exact bond journal reconstruction, not pairing/capture exposure or a complete molecular lineage. Absence of return is censored at horizon.",
+          "targets_final": {
+            "G": 15,
+            "F": 8
+          },
+          "reassemblies": 0,
+          "reincorporations": 0
+        }
+      ]
+    }
+  },
+  "inputs": {
+    "outputs\\selective_transport_mechanism_followups\\followup_20261106T124745026896Z\\report_0.json": "58f05a7b440e5698a7592b424135cc7b9e782cce0e4b0018b70b729719b631ed",
+    "outputs\\selective_transport_mechanism_followups\\followup_20261106T124745026896Z\\A\\campaign_20261106T124746705055Z\\tasks\\task0000\\attempts\\PT1_barrier_s0_s0_20261106T124752925236Z\\periodic.npz": "2da5fa5dcfb0a9dc7e2b62af9b22fb41991af67132943d909130b6e09145cbd7",
+    "outputs\\selective_transport_mechanism_followups\\followup_20261106T124745026896Z\\A\\campaign_20261106T124746705055Z\\tasks\\task0000\\attempts\\PT1_barrier_s0_s0_20261106T124752925236Z\\result.json": "274486e43c3a9fdbe675b63fc2ec5b7e27c0e777b2c8d8bf65dfe998f0669345",
+    "outputs\\selective_transport_mechanism_followups\\followup_20261106T124745026896Z\\A\\campaign_20261106T124746705055Z\\tasks\\task0001\\attempts\\PT1_transparent_s0_s0_20261106T125130522508Z\\periodic.npz": "3cc9e717eeb60978289d81f99961eec327860685ee11a0d47c783864cfd695cd",
+    "outputs\\selective_transport_mechanism_followups\\followup_20261106T124745026896Z\\A\\campaign_20261106T124746705055Z\\tasks\\task0001\\attempts\\PT1_transparent_s0_s0_20261106T125130522508Z\\result.json": "57ce66f415602532fd352a3820412a8dfacb9a3b337b313397387018210412f5",
+    "outputs\\selective_transport_mechanism_followups\\followup_20261106T124745026896Z\\A\\campaign_20261106T124746705055Z\\tasks\\task0002\\attempts\\PT1_barrier_s1_s1_20261106T125420301060Z\\periodic.npz": "4b9dcad167bd70fa3b2e8edd17215719abfdf5cd2947e62f56c2e62fd0bf5a30",
+    "outputs\\selective_transport_mechanism_followups\\followup_20261106T124745026896Z\\A\\campaign_20261106T124746705055Z\\tasks\\task0002\\attempts\\PT1_barrier_s1_s1_20261106T125420301060Z\\result.json": "04abef33b22179edbd1a85e32d1c3fc420bb15affa68de5756a20d6528f105dd",
+    "outputs\\selective_transport_mechanism_followups\\followup_20261106T124745026896Z\\A\\campaign_20261106T124746705055Z\\tasks\\task0003\\attempts\\PT1_transparent_s1_s1_20261106T125750722552Z\\periodic.npz": "6bb0950d9c50672e38ba8fa0b258a9ed63f23dee3c2d7510d912d23fc95754fe",
+    "outputs\\selective_transport_mechanism_followups\\followup_20261106T124745026896Z\\A\\campaign_20261106T124746705055Z\\tasks\\task0003\\attempts\\PT1_transparent_s1_s1_20261106T125750722552Z\\result.json": "6c112318db1f657aea268c76e4d77a8b3f089710809adc3cf67b5583b98cfb56",
+    "outputs\\selective_transport_mechanism_followups\\followup_20261106T124745026896Z\\A\\campaign_20261106T124746705055Z\\tasks\\task0004\\attempts\\PT1_barrier_s2_s2_20261106T130140312437Z\\periodic.npz": "2c2b4caa65910953c47d432b5a3efed13332bff99e506914e683895d35dfde2a",
+    "outputs\\selective_transport_mechanism_followups\\followup_20261106T124745026896Z\\A\\campaign_20261106T124746705055Z\\tasks\\task0004\\attempts\\PT1_barrier_s2_s2_20261106T130140312437Z\\result.json": "2ee71e386f900d6503230e337c12fb22a1bfb239300af6565d6549b36da6641d",
+    "outputs\\selective_transport_mechanism_followups\\followup_20261106T124745026896Z\\A\\campaign_20261106T124746705055Z\\tasks\\task0005\\attempts\\PT1_transparent_s2_s2_20261106T130533360273Z\\periodic.npz": "e73186e2eb6a04abfe49e812066a18c5b9ccb4029950ee3044279fb5c838b92b",
+    "outputs\\selective_transport_mechanism_followups\\followup_20261106T124745026896Z\\A\\campaign_20261106T124746705055Z\\tasks\\task0005\\attempts\\PT1_transparent_s2_s2_20261106T130533360273Z\\result.json": "17dcd753a18894faeef0c23ad7b3ac8d24c6968a363ccc2fb0ff55f3d3abe71f",
+    "outputs\\functional_recycling_mechanism_followups\\followup_20261106T124751759988Z\\report_0.json": "230d9d65f9d30a0b9f4c7e3c5865214f3ab2f05b5e2ace3eb9fe40b63de9c475",
+    "outputs\\functional_recycling_mechanism_followups\\followup_20261106T124751759988Z\\A\\campaign_20261106T124752250330Z\\tasks\\task0000\\attempts\\RF1_zero_s0_s0_20261106T124757488076Z\\periodic.npz": "421650dfdf2148234b68fab6f67f49d2f87dc6d1d72879233cf1ff686c0b2161",
+    "outputs\\functional_recycling_mechanism_followups\\followup_20261106T124751759988Z\\A\\campaign_20261106T124752250330Z\\tasks\\task0000\\attempts\\RF1_zero_s0_s0_20261106T124757488076Z\\result.json": "122b52be3830661226145aef5b953e457816c14995c71252a4ee7b41aea520e6",
+    "outputs\\functional_recycling_mechanism_followups\\followup_20261106T124751759988Z\\A\\campaign_20261106T124752250330Z\\tasks\\task0001\\attempts\\RF1_occupied_s0_s0_20261106T125259611719Z\\periodic.npz": "3096ce917a7c8935efca85040d0ace9396096d5e9c190b6530d16c82b163faba",
+    "outputs\\functional_recycling_mechanism_followups\\followup_20261106T124751759988Z\\A\\campaign_20261106T124752250330Z\\tasks\\task0001\\attempts\\RF1_occupied_s0_s0_20261106T125259611719Z\\result.json": "0aa94893d9aab10e468db701c93ad5f55d31efb7a6938812dc2d7463d8d70abf",
+    "outputs\\functional_recycling_mechanism_followups\\followup_20261106T124751759988Z\\A\\campaign_20261106T124752250330Z\\tasks\\task0002\\attempts\\RF1_paired_edge_s0_s0_20261106T125744357156Z\\periodic.npz": "09e317f99c40fef4b124c0c86cd1ff13412ea5d7f1e1626132b0ecc0ea13ba1b",
+    "outputs\\functional_recycling_mechanism_followups\\followup_20261106T124751759988Z\\A\\campaign_20261106T124752250330Z\\tasks\\task0002\\attempts\\RF1_paired_edge_s0_s0_20261106T125744357156Z\\result.json": "75a138d56327fa637917e9811101e998f51fa98d9634372e07f2cc336ea05722",
+    "outputs\\functional_recycling_mechanism_followups\\followup_20261106T124751759988Z\\A\\campaign_20261106T124752250330Z\\tasks\\task0003\\attempts\\RF1_zero_s1_s1_20261106T130333099777Z\\periodic.npz": "c163b035dfea1d5349bf279873d0439bf9dc0190f67751b9156ac5cac07fa2f1",
+    "outputs\\functional_recycling_mechanism_followups\\followup_20261106T124751759988Z\\A\\campaign_20261106T124752250330Z\\tasks\\task0003\\attempts\\RF1_zero_s1_s1_20261106T130333099777Z\\result.json": "e09489cf5aa60d98e5de15cd53ba02813fa1b86b35c058e27d4f3562dce8988f",
+    "outputs\\functional_recycling_mechanism_followups\\followup_20261106T124751759988Z\\A\\campaign_20261106T124752250330Z\\tasks\\task0004\\attempts\\RF1_occupied_s1_s1_20261106T130847806831Z\\periodic.npz": "0fce4666123838843425afbce7fce5d0b78a74dcf583c680a20e43d63910d9a2",
+    "outputs\\functional_recycling_mechanism_followups\\followup_20261106T124751759988Z\\A\\campaign_20261106T124752250330Z\\tasks\\task0004\\attempts\\RF1_occupied_s1_s1_20261106T130847806831Z\\result.json": "1bc9c4da36d88e7250bb5f638e032ac7f5d67f1a812d5a7d962798f906c527ea",
+    "outputs\\functional_recycling_mechanism_followups\\followup_20261106T124751759988Z\\A\\campaign_20261106T124752250330Z\\tasks\\task0005\\attempts\\RF1_paired_edge_s1_s1_20261106T131303239846Z\\periodic.npz": "c1d51a652386c5a77827ab48b63ad66b2405f4bc0d1a6241059a06b5d443a975",
+    "outputs\\functional_recycling_mechanism_followups\\followup_20261106T124751759988Z\\A\\campaign_20261106T124752250330Z\\tasks\\task0005\\attempts\\RF1_paired_edge_s1_s1_20261106T131303239846Z\\result.json": "e60771a05c6908446e61d503f675b25b2a2bd58108b2b5564747520708c8d0cd",
+    "outputs\\functional_recycling_mechanism_followups\\followup_20261106T124751759988Z\\A\\campaign_20261106T124752250330Z\\tasks\\task0006\\attempts\\RF1_zero_s2_s2_20261106T131657081729Z\\periodic.npz": "ad72ead2eaf5d179faf71a22b486a440d39761f91da6208b4923f3cba08b2ed0",
+    "outputs\\functional_recycling_mechanism_followups\\followup_20261106T124751759988Z\\A\\campaign_20261106T124752250330Z\\tasks\\task0006\\attempts\\RF1_zero_s2_s2_20261106T131657081729Z\\result.json": "73b12f75b11331ade2b3b3a374ef1f0a0a9d9e28cb8b84bd3e05e809098e9b71",
+    "outputs\\functional_recycling_mechanism_followups\\followup_20261106T124751759988Z\\A\\campaign_20261106T124752250330Z\\tasks\\task0007\\attempts\\RF1_occupied_s2_s2_20261106T132113877283Z\\periodic.npz": "6dc55332247d6d773b5b31d12f0e3e00aaa9751e08d046b610e89df70fa9ca6f",
+    "outputs\\functional_recycling_mechanism_followups\\followup_20261106T124751759988Z\\A\\campaign_20261106T124752250330Z\\tasks\\task0007\\attempts\\RF1_occupied_s2_s2_20261106T132113877283Z\\result.json": "680a952cd22491782f29a43522a230fd4065f11bf1e138180c5dbaf52e7d2057",
+    "outputs\\functional_recycling_mechanism_followups\\followup_20261106T124751759988Z\\A\\campaign_20261106T124752250330Z\\tasks\\task0008\\attempts\\RF1_paired_edge_s2_s2_20261106T132529252382Z\\periodic.npz": "e0a3115f73cde3251918ba625d332c74a02080ff8bc9ef22bade87e1ad79d752",
+    "outputs\\functional_recycling_mechanism_followups\\followup_20261106T124751759988Z\\A\\campaign_20261106T124752250330Z\\tasks\\task0008\\attempts\\RF1_paired_edge_s2_s2_20261106T132529252382Z\\result.json": "3bfb2b27ba10cd2029d81307271a718f621e206ecd7c67b5173c7f5a8ae4d60b"
+  },
+  "scope": "Offline final reports/checkpoints/journals, no dynamics or changed gates."
+}

@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "revision": 24,
+  "revision": 25,
   "reviewed": "2026-11-06",
-  "candidate": "CP1 inchangé ; CR1 complet passe son crible2/3 ; PT1 transport et RF1 recyclage01 en cours ; presets EG1 historiques conservés",
+  "candidate": "CP1 inchangé, CR1 réussi ; PT1/RF1 complets refusés, diagnostics FA1 ; récupération FR1 en cours séparément",
   "purpose": "Registre évolutif des capacités nécessaires à une cellule construite maintenue ; les pourcentages sont des paliers de preuve, pas un taux global de réussite.",
   "out_of_scope": [
     "origine spontanée de la cellule",
@@ -502,7 +502,7 @@
       "mechanism": "Un F construit fabrique P/R composites ; leur expression sur G produit un F dont chaque composite vient de nourriture, puis ses deux sites catalysent à nouveau.",
       "concept_gap": "Production de remplaçants seulement : ancien F non retiré ; maintien sous pertes, énergie et robustesse de population non établis. Tous les autres outils relèvent de T-04.",
       "proof": "coupled",
-      "scope": "MIN1M12/12 clos, porte passée :7/6/2 F entièrement alimentaires dont6/4/2 actifs dans le même bain membranaire ; fermeture85,7/85,6/85,3%. Nogene négatif3/3, split aucun F entier actif. Initial enzymes remain; no losses or open feed.",
+      "scope": "MIN1M12/12 clos, porte passée :7/6/2 F entièrement alimentaires dont6/4/2 actifs dans le même bain membranaire ; fermeture85,7/85,6/85,3%. Nogene négatif3/3, split aucun F entier actif. Initial enzymes remain; no losses or open feed. FA1 retrouve une perte puis un retour structural F01 dans RF1/paired_edge/s0, mais pas de remplacement entier depuis atomes recyclés démontré.",
       "references": [
         "research/BATCH_34.md",
         "research/BATCH_34_PLAN.md",
@@ -510,9 +510,10 @@
         "research/BATCH_37.md",
         "research/BATCH_38.md",
         "research/BATCH_40.md",
-        "research/BATCH_41.md"
+        "research/BATCH_41.md",
+        "research/BATCH_54.md"
       ],
-      "next_test": "Lire MX1 pour le transfert des F entièrement refaits vers H/T ; ensuite maintien sous pertes déclarées du stock initial.",
+      "next_test": "FR1 distingue récupération de structure et activité ; exiger ensuite une matière entièrement refaite avant pertes en bain CP1.",
       "essential": true
     },
     {
@@ -579,13 +580,14 @@
       "mechanism": "Profil d’interaction dépend de l’état local P–R ; répulsion contre billes et segments L réels.",
       "concept_gap": "Helper libre/lié explicite ; fuites et périodes de frontière inconnue, déchets futurs non transférés.",
       "proof": "coupled",
-      "scope": "P/R libres/liés dans MD2 et sondes séparées ; pas étanchéité garantie.",
+      "scope": "P/R libres/liés dans MD2 et sondes séparées ; pas étanchéité garantie. PT1 sous CP1 : témoins transparents mobiles, retenue finale des assemblés dans2 cas classables, mais graine1 ouverte à300. Porte globale refusée, pas étanchéité continue.",
       "references": [
         "research/LOCALITY_AUDIT.md",
         "research/BATCH_25_RESULTS.md",
-        "research/BATCH_53.md"
+        "research/BATCH_53.md",
+        "research/BATCH_54.md"
       ],
-      "next_test": "Lire PT1 : trois paires barrière/transparente, cohortes fixes, fractions finales et passages échantillonnés. Aucun contour inconnu assimilé à zéro fuite.",
+      "next_test": "Diagnostiquer la tenue/réparation de liaisons L et transférer le transport à la chimie active ; conserver les périodes inconnues.",
       "essential": true
     },
     {
@@ -811,16 +813,17 @@
       "mechanism": "RV1 : taux locaux de rupture G/F sur chaque lien de squelette, protection par appariement ou ligand sur un des deux sites.",
       "concept_gap": "Les pertes peuvent détruire les outils et derniers gènes ; sélectivité utile et maintien non démontrés.",
       "proof": "subcase",
-      "scope": "Ruptures locales sous quatre variantes x3 graines ; full réincorpore des composites recyclés2/3, protected0/3. Pas de dégradation sélective ni de validation intégrée.",
+      "scope": "Ruptures locales sous quatre variantes x3 graines ; full réincorpore des composites recyclés2/3, protected0/3. Pas de dégradation sélective ni de validation intégrée. RF1 actuel01 refuse : réassemblages stricts0/0/2 occupied,0/0/0 paired_edge ; réincorporation0/9. Motif structural revenu dans un cas ne vaut pas renouvellement atomique entier.",
       "references": [
         "research/MACROMOLECULE_HOMEOSTASIS.md",
         "research/BATCH_31.md",
         "research/BATCH_47.md",
         "research/BATCH_48.md",
         "research/BATCH_49.md",
-        "research/BATCH_53.md"
+        "research/BATCH_53.md",
+        "research/BATCH_54.md"
       ],
-      "next_test": "Lire RF1 actuel01 : séparer chaîne exacte, motif actif, catalyse900–1200 et réemploi. Pas de requalification du refus RP1.",
+      "next_test": "Lire FR1 sur récupération de fonction, puis tester un outil entier matériellement refait et actif avant transfert des pertes.",
       "essential": true
     },
     {
@@ -838,16 +841,17 @@
       "mechanism": "RV1 dissocie un P–R isolé, non apparié et sans ligand ; P/R physiques demeurent disponibles à la catalyse, avec leurs symboles et vitesses.",
       "concept_gap": "Réemploi sous mouvement normal, évacuation effective et récupération d’un excès retenu non démontrés ; aucun bord ouvert.",
       "proof": "subcase",
-      "scope": "Vrais atomes conservés ; full réincorpore des composites à deux atomes issus de polymères2/3 graines, protected0/3 ; recyclage partiel d’un R observé. Pas de sortie ouverte ou de robustesse intégrée.",
+      "scope": "Vrais atomes conservés ; full réincorpore des composites à deux atomes issus de polymères2/3 graines, protected0/3 ; recyclage partiel d’un R observé. Pas de sortie ouverte ou de robustesse intégrée. RF1 : aucun réemploi strict jusqu’à incorporation ; témoin sans pertes épuisé, absence d’export ouvert.",
       "references": [
         "research/MACROMOLECULE_HOMEOSTASIS.md",
         "simulator/assembly.py",
         "research/BATCH_31.md",
         "research/BATCH_47.md",
         "research/BATCH_48.md",
-        "research/BATCH_53.md"
+        "research/BATCH_53.md",
+        "research/BATCH_54.md"
       ],
-      "next_test": "RF1 compte réincorporations de matière recyclée sans membrane ; PT1 contrôle le transport libre/lié séparément. Aucun export ouvert acquis.",
+      "next_test": "Après récupération fonctionnelle, distinguer réemploi de composites/fragments et recyclage P/R complet ; construire export ouvert séparément.",
       "essential": true
     },
     {
@@ -936,13 +940,14 @@
       "mechanism": "Alternative : production limitée par accès aux substrats/sites + pertes locales et recyclage/export ; frein direct par produits F01 non accessible actuellement.",
       "concept_gap": "PI1 identifie un interdit local de capture des F polymérisés. Protection et répartition viable entre espèces restent ouvertes.",
       "proof": "none",
-      "scope": "Aucune régulation ni turnover de population F démontré.",
+      "scope": "Aucune régulation ni turnover de population F démontré. RF1 : catalyse tardive42/0/39 ou37/0/38 sous pertes ; information G01 conservée mais extinction des motifs F01 possible. Pas équilibre ou homéostasie.",
       "references": [
         "research/MACROMOLECULE_HOMEOSTASIS.md",
         "research/BATCH_46.md",
-        "research/BATCH_49.md"
+        "research/BATCH_49.md",
+        "research/BATCH_54.md"
       ],
-      "next_test": "Définir inventaire fonctionnel et flux utile sans confondre F001 absent avec absence de catalyse ; FS1 ne prouve pas équilibre.",
+      "next_test": "Lire FR1 ; ne pas inférer l’homéostasie d’un stock fermé ou d’une simple reconstruction ponctuelle.",
       "essential": true
     },
     {
@@ -1009,7 +1014,7 @@
       "mechanism": "Protection locale de liaison par appariements réciproques et lien entre partenaires ; RP1 optionnel, risques de fragments/outils à tester.",
       "concept_gap": "RP1 ne maintient pas la séquence cible F001 mais garde des motifs/flux catalytiques ; protection de chaque information et fonction essentielle non fermée.",
       "proof": "none",
-      "scope": "Protected conserve4/6/4 G001 à1200, mais réincorporation stricte0/0/0 ; quatre copies initiales, pas test de dernier gène ni de récupération sous perturbation.",
+      "scope": "Protected conserve4/6/4 G001 à1200, mais réincorporation stricte0/0/0 ; quatre copies initiales, pas test de dernier gène ni de récupération sous perturbation. RF1 garde les G01 mais perd tous les motifs F01 dans graine1 à96.99, sans retour avant1200 ; un autre cas récupère à316.89 après perte289.66. Fragilité concrète de récupération.",
       "references": [
         "research/HOMEOSTASIS.md",
         "research/MACROMOLECULE_HOMEOSTASIS.md",
@@ -1017,9 +1022,10 @@
         "research/BATCH_47.md",
         "research/BATCH_48.md",
         "research/BATCH_49.md",
-        "research/BATCH_53.md"
+        "research/BATCH_53.md",
+        "research/BATCH_54.md"
       ],
-      "next_test": "Lire RF1 : protection de G01, motif F01 et flux utile séparés ; vérifier exposition au substrat si témoin tardif inactif. Tous les autres gènes restent non testés.",
+      "next_test": "Lire FR1 fast/slow depuis état post-coupure construit ; utiliser exposition GF/ligation/catalyse pour interpréter les censures, sans confondre ce test avec maintien équipé.",
       "essential": true
     },
     {
@@ -1219,23 +1225,21 @@
   "retired": [],
   "decision_focus": [
     {
-      "reason": "Lire les deux fronts indépendants avant transfert : transport avec contrôle mobile et renouvellement avec activité tardive exposée.",
+      "reason": "Interpréter FR1 par exposition, reconstruction et activité avant nouveau taux ou transfert des pertes.",
       "items": [
-        "M-03",
-        "E-03",
+        "H-06",
+        "H-03",
         "W-02",
-        "W-03",
-        "H-06"
+        "T-05"
       ]
     },
     {
-      "reason": "Fermeture CR1 démontrée en sous-bain ; diversité/information/régulation/flux restent les risques conceptuels avant cellule maintenue.",
+      "reason": "Maintenir ouverts transport/réparation et verrous conceptuels de diversité, information, régulation et flux.",
       "items": [
-        "M-01",
-        "M-04",
+        "M-03",
+        "M-05",
         "F-02",
         "R-05",
-        "H-03",
         "H-04",
         "E-01",
         "W-01"
@@ -1362,11 +1366,17 @@
       "revision": 24,
       "date": "2026-11-06",
       "reason": "Lot53 : CR1 complet passe la porte fixée ; PT1/RF1 indépendants lancés, mesures et contrôles prospectifs. Aucun changement de loi CP1, nouvel outil ou palier biologique."
+    },
+    {
+      "revision": 25,
+      "date": "2026-11-06",
+      "reason": "Lot54 : PT1/RF1 complets refusés ; FA1 reconstruit les journaux et localise les pertes. FR1 teste la récupération de l’outil actuel sans nouveau gène/règle, aucun palier relevé."
     }
   ],
   "last_batch_progress": {
-    "M-01": "CR1 complet : cycles30/52/34, présence tardive.3675/.9625/.94, porte2/3 passe. Palier séparé50 conservé.",
-    "M-03": "PT1 lancé :6 essais transport appariés,200 atomes,300,1 travailleur/2h. Pas de verdict anticipé.",
-    "W-02": "RF1 lancé :9 essais sur fonction01 actuelle,150 atomes,1200,1 travailleur/2h ; motif/identité/flux distingués."
+    "M-03": "PT1 terminé6/6 : rétention encourageante, porte refusée car ouverture finale réelle dans une graine (51 liens/52 L).",
+    "W-02": "RF1 terminé9/9 : pas de réincorporation stricte, deux protections refusées ; pas adoption dans CP1.",
+    "H-06": "FA1 localise perte à96.99 sans retour ; récupération en27.23 observée ailleurs. FR1 lancé pour tester la survie des monomères.",
+    "T-05": "Scénarios/audit/portes de récupération construits ;6 essais600,2 travailleurs/1h. Aucune preuve anticipée."
   }
 }

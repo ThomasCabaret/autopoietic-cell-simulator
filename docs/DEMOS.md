@@ -1,5 +1,12 @@
 # Démos représentatives accessibles dans la GUI
 
+## Lot54 — démos physiques conservées
+
+PT1/RF1 terminés refusés et FR1 récupération en cours, uniquement headless.
+Les39 presets et les trois checkpoints CR1 locaux gardent leur portée annoncée.
+Pas de pertes ou de variante de durée de vie introduites dans les démos intégrées.
+[Bilan54](../research/BATCH_54.md).
+
 ## Lot53 — cohorte CR1 complète
 
 Les trois entrées locales CR1 sont terminées : cycles30/52/34 L.

@@ -1,0 +1,401 @@
+{
+  "batch": 54,
+  "date": "2026-11-06",
+  "plan": "research/BATCH_54_PLAN.md",
+  "diagnostic": "research/BATCH_54_FA1.json",
+  "PT1": {
+    "report": "outputs/selective_transport_mechanism_followups/followup_20261106T124745026896Z/report_0.json",
+    "report_sha256": "58f05a7b440e5698a7592b424135cc7b9e782cce0e4b0018b70b729719b631ed",
+    "rows": [
+      {
+        "label": "PT1_barrier_s0",
+        "seed": 0,
+        "variant": "barrier",
+        "late_temperature": 0.08076909540999823,
+        "result_sha256": "274486e43c3a9fdbe675b63fc2ec5b7e27c0e777b2c8d8bf65dfe998f0669345",
+        "atoms": 200,
+        "cohorts_stable": true,
+        "invariant_failures": 0,
+        "bound_outside": 0.0,
+        "free_outside": 0.5833333333333334,
+        "final_contour_valid": true,
+        "valid_fraction_late": 0.9133333333333333,
+        "sampled_crossings": {
+          "free": 415,
+          "bound": 0,
+          "state_changed": 0
+        }
+      },
+      {
+        "label": "PT1_transparent_s0",
+        "seed": 0,
+        "variant": "transparent",
+        "late_temperature": 0.07917521819524033,
+        "result_sha256": "57ce66f415602532fd352a3820412a8dfacb9a3b337b313397387018210412f5",
+        "atoms": 200,
+        "cohorts_stable": true,
+        "invariant_failures": 0,
+        "bound_outside": 0.3888888888888889,
+        "free_outside": 0.5666666666666667,
+        "final_contour_valid": true,
+        "valid_fraction_late": 0.93,
+        "sampled_crossings": {
+          "free": 447,
+          "bound": 202,
+          "state_changed": 0
+        }
+      },
+      {
+        "label": "PT1_barrier_s1",
+        "seed": 1,
+        "variant": "barrier",
+        "late_temperature": 0.07965828759160834,
+        "result_sha256": "04abef33b22179edbd1a85e32d1c3fc420bb15affa68de5756a20d6528f105dd",
+        "atoms": 200,
+        "cohorts_stable": true,
+        "invariant_failures": 0,
+        "bound_outside": null,
+        "free_outside": null,
+        "final_contour_valid": false,
+        "valid_fraction_late": 0.9433333333333334,
+        "sampled_crossings": {
+          "free": 433,
+          "bound": 0,
+          "state_changed": 0
+        }
+      },
+      {
+        "label": "PT1_transparent_s1",
+        "seed": 1,
+        "variant": "transparent",
+        "late_temperature": 0.07937906009915201,
+        "result_sha256": "6c112318db1f657aea268c76e4d77a8b3f089710809adc3cf67b5583b98cfb56",
+        "atoms": 200,
+        "cohorts_stable": true,
+        "invariant_failures": 0,
+        "bound_outside": 0.6111111111111112,
+        "free_outside": 0.43333333333333335,
+        "final_contour_valid": true,
+        "valid_fraction_late": 0.95,
+        "sampled_crossings": {
+          "free": 424,
+          "bound": 238,
+          "state_changed": 0
+        }
+      },
+      {
+        "label": "PT1_barrier_s2",
+        "seed": 2,
+        "variant": "barrier",
+        "late_temperature": 0.07737450858883858,
+        "result_sha256": "2ee71e386f900d6503230e337c12fb22a1bfb239300af6565d6549b36da6641d",
+        "atoms": 200,
+        "cohorts_stable": true,
+        "invariant_failures": 0,
+        "bound_outside": 0.0,
+        "free_outside": 0.6,
+        "final_contour_valid": true,
+        "valid_fraction_late": 0.9,
+        "sampled_crossings": {
+          "free": 411,
+          "bound": 0,
+          "state_changed": 0
+        }
+      },
+      {
+        "label": "PT1_transparent_s2",
+        "seed": 2,
+        "variant": "transparent",
+        "late_temperature": 0.08291332339524621,
+        "result_sha256": "17dcd753a18894faeef0c23ad7b3ac8d24c6968a363ccc2fb0ff55f3d3abe71f",
+        "atoms": 200,
+        "cohorts_stable": true,
+        "invariant_failures": 0,
+        "bound_outside": 0.7777777777777778,
+        "free_outside": 0.6666666666666666,
+        "final_contour_valid": true,
+        "valid_fraction_late": 0.9366666666666666,
+        "sampled_crossings": {
+          "free": 439,
+          "bound": 242,
+          "state_changed": 0
+        }
+      }
+    ],
+    "counts": {
+      "pending": 0,
+      "running": 0,
+      "complete": 6,
+      "failed": 0,
+      "paused": 0,
+      "interrupted": 0
+    },
+    "controller_active": false,
+    "decision": {
+      "screen_passed": false,
+      "conditions": {
+        "invariants": true,
+        "temperature": true,
+        "closure": true,
+        "final_classifiable": false,
+        "free_transport": false,
+        "transparent_control": true,
+        "selective_retention": false
+      },
+      "run_transfer": false,
+      "scope": "Constructed, chemistry-disabled sub-bath. Final atom fractions and sampled crossings, not continuous sealing, self-assembly, open feed or viability."
+    }
+  },
+  "RF1": {
+    "report": "outputs/functional_recycling_mechanism_followups/followup_20261106T124751759988Z/report_0.json",
+    "report_sha256": "230d9d65f9d30a0b9f4c7e3c5865214f3ab2f05b5e2ace3eb9fe40b63de9c475",
+    "rows": [
+      {
+        "label": "RF1_zero_s0",
+        "seed": 0,
+        "variant": "zero",
+        "late_temperature": 0.10313139393638138,
+        "result_sha256": "122b52be3830661226145aef5b953e457816c14995c71252a4ee7b41aea520e6",
+        "atoms": 150,
+        "invariant_failures": 0,
+        "G01_current": 13,
+        "F01_current": 13,
+        "unpaired_F01_edges": 13,
+        "late_exact_F01_fraction": 1.0,
+        "late_catalysis": 0,
+        "polymer_reassemblies": 0,
+        "recycled_incorporations": 0,
+        "backbone_break": 0,
+        "rung_break": 0,
+        "free_P_final": 1,
+        "free_R_final": 1
+      },
+      {
+        "label": "RF1_occupied_s0",
+        "seed": 0,
+        "variant": "occupied",
+        "late_temperature": 0.10908548621145552,
+        "result_sha256": "0aa94893d9aab10e468db701c93ad5f55d31efb7a6938812dc2d7463d8d70abf",
+        "atoms": 150,
+        "invariant_failures": 0,
+        "G01_current": 10,
+        "F01_current": 4,
+        "unpaired_F01_edges": 4,
+        "late_exact_F01_fraction": 1.0,
+        "late_catalysis": 42,
+        "polymer_reassemblies": 0,
+        "recycled_incorporations": 0,
+        "backbone_break": 0,
+        "rung_break": 123,
+        "free_P_final": 15,
+        "free_R_final": 15
+      },
+      {
+        "label": "RF1_paired_edge_s0",
+        "seed": 0,
+        "variant": "paired_edge",
+        "late_temperature": 0.10460905128335021,
+        "result_sha256": "75a138d56327fa637917e9811101e998f51fa98d9634372e07f2cc336ea05722",
+        "atoms": 150,
+        "invariant_failures": 0,
+        "G01_current": 12,
+        "F01_current": 1,
+        "unpaired_F01_edges": 1,
+        "late_exact_F01_fraction": 1.0,
+        "late_catalysis": 37,
+        "polymer_reassemblies": 0,
+        "recycled_incorporations": 0,
+        "backbone_break": 1,
+        "rung_break": 105,
+        "free_P_final": 24,
+        "free_R_final": 24
+      },
+      {
+        "label": "RF1_zero_s1",
+        "seed": 1,
+        "variant": "zero",
+        "late_temperature": 0.0941074078175014,
+        "result_sha256": "e09489cf5aa60d98e5de15cd53ba02813fa1b86b35c058e27d4f3562dce8988f",
+        "atoms": 150,
+        "invariant_failures": 0,
+        "G01_current": 13,
+        "F01_current": 11,
+        "unpaired_F01_edges": 11,
+        "late_exact_F01_fraction": 1.0,
+        "late_catalysis": 0,
+        "polymer_reassemblies": 0,
+        "recycled_incorporations": 0,
+        "backbone_break": 0,
+        "rung_break": 0,
+        "free_P_final": 1,
+        "free_R_final": 1
+      },
+      {
+        "label": "RF1_occupied_s1",
+        "seed": 1,
+        "variant": "occupied",
+        "late_temperature": 0.07844624099342185,
+        "result_sha256": "1bc9c4da36d88e7250bb5f638e032ac7f5d67f1a812d5a7d962798f906c527ea",
+        "atoms": 150,
+        "invariant_failures": 0,
+        "G01_current": 5,
+        "F01_current": 0,
+        "unpaired_F01_edges": 0,
+        "late_exact_F01_fraction": 0.0,
+        "late_catalysis": 0,
+        "polymer_reassemblies": 0,
+        "recycled_incorporations": 0,
+        "backbone_break": 1,
+        "rung_break": 25,
+        "free_P_final": 64,
+        "free_R_final": 64
+      },
+      {
+        "label": "RF1_paired_edge_s1",
+        "seed": 1,
+        "variant": "paired_edge",
+        "late_temperature": 0.07844624099342185,
+        "result_sha256": "e60771a05c6908446e61d503f675b25b2a2bd58108b2b5564747520708c8d0cd",
+        "atoms": 150,
+        "invariant_failures": 0,
+        "G01_current": 5,
+        "F01_current": 0,
+        "unpaired_F01_edges": 0,
+        "late_exact_F01_fraction": 0.0,
+        "late_catalysis": 0,
+        "polymer_reassemblies": 0,
+        "recycled_incorporations": 0,
+        "backbone_break": 1,
+        "rung_break": 25,
+        "free_P_final": 64,
+        "free_R_final": 64
+      },
+      {
+        "label": "RF1_zero_s2",
+        "seed": 2,
+        "variant": "zero",
+        "late_temperature": 0.09601595327685555,
+        "result_sha256": "73b12f75b11331ade2b3b3a374ef1f0a0a9d9e28cb8b84bd3e05e809098e9b71",
+        "atoms": 150,
+        "invariant_failures": 0,
+        "G01_current": 11,
+        "F01_current": 12,
+        "unpaired_F01_edges": 12,
+        "late_exact_F01_fraction": 1.0,
+        "late_catalysis": 0,
+        "polymer_reassemblies": 0,
+        "recycled_incorporations": 0,
+        "backbone_break": 0,
+        "rung_break": 0,
+        "free_P_final": 3,
+        "free_R_final": 3
+      },
+      {
+        "label": "RF1_occupied_s2",
+        "seed": 2,
+        "variant": "occupied",
+        "late_temperature": 0.12241005445894942,
+        "result_sha256": "680a952cd22491782f29a43522a230fd4065f11bf1e138180c5dbaf52e7d2057",
+        "atoms": 150,
+        "invariant_failures": 0,
+        "G01_current": 15,
+        "F01_current": 8,
+        "unpaired_F01_edges": 8,
+        "late_exact_F01_fraction": 1.0,
+        "late_catalysis": 39,
+        "polymer_reassemblies": 2,
+        "recycled_incorporations": 0,
+        "backbone_break": 1,
+        "rung_break": 128,
+        "free_P_final": 6,
+        "free_R_final": 6
+      },
+      {
+        "label": "RF1_paired_edge_s2",
+        "seed": 2,
+        "variant": "paired_edge",
+        "late_temperature": 0.12544935297024065,
+        "result_sha256": "3bfb2b27ba10cd2029d81307271a718f621e206ecd7c67b5173c7f5a8ae4d60b",
+        "atoms": 150,
+        "invariant_failures": 0,
+        "G01_current": 15,
+        "F01_current": 8,
+        "unpaired_F01_edges": 8,
+        "late_exact_F01_fraction": 1.0,
+        "late_catalysis": 38,
+        "polymer_reassemblies": 0,
+        "recycled_incorporations": 0,
+        "backbone_break": 3,
+        "rung_break": 126,
+        "free_P_final": 5,
+        "free_R_final": 5
+      }
+    ],
+    "counts": {
+      "pending": 0,
+      "running": 0,
+      "complete": 9,
+      "failed": 0,
+      "paused": 0,
+      "interrupted": 0
+    },
+    "controller_active": false,
+    "decision": {
+      "protection_screens": {
+        "occupied": {
+          "screen_passed": false,
+          "conditions": {
+            "invariants": true,
+            "temperature": false,
+            "exact_G01_survival": true,
+            "functional_motif_final": true,
+            "actual_late_catalysis": true,
+            "useful_reassembly": false,
+            "useful_reincorporation": false,
+            "active_baseline": false,
+            "late_flux_preserved": true
+          }
+        },
+        "paired_edge": {
+          "screen_passed": false,
+          "conditions": {
+            "invariants": true,
+            "temperature": false,
+            "exact_G01_survival": true,
+            "functional_motif_final": true,
+            "actual_late_catalysis": true,
+            "useful_reassembly": false,
+            "useful_reincorporation": false,
+            "active_baseline": false,
+            "late_flux_preserved": true
+          }
+        }
+      },
+      "run_transfer": false,
+      "scope": "Fixed existing loss helpers in current01 genetic sub-bath. Exact targets, final motifs and late catalysis are separate; no whole-tool lineage, mixed CP1 transfer or homeostasis."
+    }
+  },
+  "FR1": {
+    "descriptor": "research/BATCH_54_FR1_RECIPES.json",
+    "tasks": 6,
+    "horizon": 600,
+    "workers": 2,
+    "budget_seconds": 3600,
+    "status": "launched; consult live status, no conclusion anticipated"
+  },
+  "preflight": {
+    "simulated_time": 20.0,
+    "without_audit_seconds": 3.6412936998531222,
+    "with_audit_seconds": 4.781156999990344,
+    "ratio": 1.3130380008026268,
+    "physical_state_rng_exact": true,
+    "scope": "Single warm selected microbenchmark; not a throughput guarantee."
+  },
+  "verification": {
+    "targeted_tests": 9,
+    "simulator_changed": false,
+    "CP1_chemistry_changed": false,
+    "GUI_presets_changed": false,
+    "full_tests": 299
+  }
+}

@@ -1721,7 +1721,7 @@
       "related": [
         "CR1"
       ],
-      "status": "running_fixed_six_case_transport_screen",
+      "status": "six_complete_fixed_gate_refused_final_open_contour",
       "hypothesis": "The current local free/bound barrier retains assembled P/R while free precursors cross a constructed CP1 boundary.",
       "test": "Three paired seeds, barrier versus transparent;6 trials300,200 atoms, no F or P/R/HT chemistry, stable initial cohorts.",
       "cost": "No new chemical primitive/tool/gene or simulator change; existing barrier ablated only in controls. One worker/two hours.",
@@ -1729,8 +1729,9 @@
       "missing_proof": "Continuous retention, active mixed chemistry, waste export, open feed, repaired boundary.",
       "recipe": "research/BATCH_53_PT1_RECIPES.json",
       "evidence": "research/BATCH_53_PLAN.md",
-      "results": "research/BATCH_53.md",
-      "health_gate": "Fixed temperatures, classified contour and atom-fraction control/retention gates; report then stop without tuning or transfer."
+      "results": "research/BATCH_54.md",
+      "health_gate": "Fixed temperatures, classified contour and atom-fraction control/retention gates; report then stop without tuning or transfer.",
+      "conclusion": "All6 thermal/invariants and control escape pass; barrier s0/s2 retain assembled atoms, but s1 has51 links/52 L at300, gap.639; last valid299.5. Unknown final retention, gate refused, no relaxation."
     },
     {
       "id": "RF1",
@@ -1739,7 +1740,7 @@
         "FS1",
         "CH1"
       ],
-      "status": "running_current01_nine_case_recycling_screen",
+      "status": "nine_complete_both_fixed_protection_gates_refused",
       "hypothesis": "Existing local losses/protection can recycle matter while preserving actual current01 genetic and catalytic function.",
       "test": "Three seeds x zero/occupied/paired_edge,1200;150 atoms P/R only in12x9, same01 stocks and capture/motion, no membrane.",
       "cost": "Existing two loss rewrites, four rates and protection factor; no new atom/bond/tool/gene. Separate candidate, not adopted in CP1; one worker/two hours.",
@@ -1747,8 +1748,42 @@
       "missing_proof": "All required genes/functions, energy closure of losses, mixed CP1 compatibility, open-feed homeostasis and perturbation recovery.",
       "recipe": "research/BATCH_53_RF1_RECIPES.json",
       "evidence": "research/BATCH_53_PLAN.md",
-      "results": "research/BATCH_53.md",
-      "health_gate": "Each protection screened separately against fixed zero-loss reference; no winner, tuning or transfer automatic. RP1 refusal preserved."
+      "results": "research/BATCH_54.md",
+      "health_gate": "Each protection screened separately against fixed zero-loss reference; no winner, tuning or transfer automatic. RP1 refusal preserved.",
+      "conclusion": "G01 survives all. Motifs/catalysis lost in both s1 after96.99; recycled incorporations0/9, strict reassembly only occupied s2=2. Zero late catalysis0/0/0 with depleted stock; losses s2 T.1224/.1254 fail. No adoption."
+    },
+    {
+      "id": "FA1",
+      "parent": "RF1",
+      "related": [
+        "PT1"
+      ],
+      "status": "passive_journal_and_boundary_forensics_complete",
+      "hypothesis": "Different causes underlie gate refusals: last catalyst bond loss versus exhausted substrate; final membrane classification may fail on a real transient opening.",
+      "test": "All9 RF1 full journals reconstruct final rungs/bits/edges exactly;6 PT1 final component graphs and last-valid times, immutable inputs.",
+      "cost": "Passive offline only, no new dynamics, rule, tool, gene or numeric parameter.",
+      "conclusion": "s1 loses last F39-F40 bond96.99 with5 F0/6 F1 active; no return by1200. paired_edge s0 loses289.66, recovers316.89. PT1 barrier s1 is a52-L open chain, not invalid polygon geometry.",
+      "missing_proof": "Causal effect of precursor lifetime, intermediate pairing/capture exposure and robust recovery.",
+      "recipe": "research/BATCH_54_FA1.json",
+      "evidence": "research/BATCH_54_PLAN.md",
+      "results": "research/BATCH_54.md"
+    },
+    {
+      "id": "FR1",
+      "parent": "FA1",
+      "related": [
+        "RF1"
+      ],
+      "status": "running_six_case_postcleavage_recovery_screen",
+      "hypothesis": "Longer-lived free F composites survive until template translation and restore the existing co-recruiter after loss of its last backbone.",
+      "test": "Three paired seeds fast rung_f=.01/slow=.001,600,150 atoms; no F backbone initially, G01 and stock preserved; genetic encounter audit.",
+      "cost": "One existing rate value changed in separate variant, no new law/type/port/parameter/gene/tool. Existing loss helper energy unclosed.2 workers/1h.",
+      "counterexample": "No surviving F monomers, no admissible GF contacts/ligation, no actual catalysis after reconstruction, genetic loss or excess temperature.",
+      "missing_proof": "Whole-tool atom renewal, persistent active population, generic information, open-feed homeostasis and mixed CP1 transfer.",
+      "recipe": "research/BATCH_54_FR1_RECIPES.json",
+      "evidence": "research/BATCH_54_PLAN.md",
+      "results": "research/BATCH_54.md",
+      "health_gate": "Each variant fixed2/3 reconstruction then catalysis, G01 retention and thermal/invariant gates; report then stop, no tuning, retry or automatic transfer."
     }
   ]
 }

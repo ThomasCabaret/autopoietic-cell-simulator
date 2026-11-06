@@ -169,6 +169,11 @@ def main():
         'campaigns/selective_transport_mechanism.json','campaigns/functional_recycling_mechanism.json',
         'selective_transport_status.bat','stop_selective_transport.bat','resume_selective_transport.bat',
         'functional_recycling_status.bat','stop_functional_recycling.bat','resume_functional_recycling.bat'))
+    files.update(ROOT/p for p in ('research/BATCH_54_PLAN.md','research/BATCH_54.md','research/BATCH_54_RESULTS.json',
+        'research/BATCH_54_FA1.json','research/BATCH_54_FR1_RECIPES.json',
+        'experiments/audit_independent_failures.py','experiments/prepare_functional_recovery.py',
+        'experiments/review_functional_recovery.py','campaigns/functional_recovery_mechanism.json',
+        'functional_recovery_status.bat','stop_functional_recovery.bat','resume_functional_recovery.bat'))
     files.update(ROOT/p for p in ('research/BATCH_52_PLAN.md','research/BATCH_52.md','research/BATCH_52_RESULTS.json',
         'research/BATCH_52_GEOMETRY.json','research/BATCH_52_GEOMETRY.png',
         'experiments/analyze_relaxation_geometry.py','experiments/smoke_checkpoint_viewer.py'))

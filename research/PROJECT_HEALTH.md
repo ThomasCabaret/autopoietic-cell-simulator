@@ -1,5 +1,17 @@
 # Santé du projet — actualisation6 novembre2026
 
+Lot54 : progrès de compréhension, pas gain de viabilité. Les portes PT1/RF1
+ont révélé des incompatibilités réelles avant transfert : ouverture ponctuelle,
+perte de l'outil malgré gènes et substrat, recyclage strict absent et chaleur.
+Récupération observée ailleurs montre une voie, sans garantie de robustesse.
+FR1 est une unique hypothèse sur une horloge locale, pas une descente aveugle
+de paramètres ; prochain horizon de décision six essais, puis interprétation
+des contacts/ligation/catalyse. Si monomères survivent sans récupération, changer
+le diagnostic et examiner la représentation plutôt que poursuivre les taux.
+Pas de nouvel outil, dette thermique/énergie non masquée, CP1 inchangé. Diversité,
+information et flux/régulation restent des risques ; aucune garantie de délai.
+Voir [BATCH_54](BATCH_54.md).
+
 Lot53 : étape mécanique franchie sans ajouter de règle : CR1 passe2/3
 avec trois contours finaux. L'attente longue était informative ; ce résultat
 ne garantit ni étanchéité ni maintien. Deux campagnes bornées et indépendantes

@@ -1,5 +1,9 @@
 # Lot53 — deux fronts indépendants, fermeture CR1 confirmée
 
+Clôture postérieure : [lot54](BATCH_54.md) donne PT1=6/6 et RF1=9/9,
+portes refusées et diagnostics FA1. Les premières lectures ci-dessous restent
+conservées comme partielles ; FR1 est la seule nouvelle campagne active.
+
 6 novembre2026. [Plan préenregistré](BATCH_53_PLAN.md),
 [preuves compactes](BATCH_53_RESULTS.json), [checklist](CELL_CHECKLIST_COMPACT.md).
 La question est de réduire deux risques d'intégration pendant la fin CR1,

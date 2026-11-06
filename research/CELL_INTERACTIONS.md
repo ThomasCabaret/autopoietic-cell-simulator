@@ -1,5 +1,11 @@
 # Interactions souhaitées, parasites et environnements — lot7
 
+Lot54 : aucun gène, outil ou espèce ajouté. Prototype CP1 toujours302
+billes ; FR1 reste un bain P/R séparé150, comparant une durée de vie libre F.
+RF1 révèle un besoin concret de récupération de fonction, pas de fermeture
+du réseau démontrée ; PT1 révèle une ouverture finale, pas de transport acquis
+en continu. Les pertes restent hors du candidat intégré. [Bilan54](BATCH_54.md).
+
 Lot53 : PT1 compare le contrat libre/lié contre une ablation transparente,
 avec cohortes stables et chimie inactive. Le profil de répulsion dépend de
 l'état local P–R, pas d'une identité globale de dimère ; ce helper est déclaré,

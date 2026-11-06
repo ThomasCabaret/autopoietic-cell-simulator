@@ -1,5 +1,11 @@
 # Architectures de cellule : fermeture à concevoir, pas encore réalisée
 
+Lot54 : aucun gène, outil ou espèce ajouté. Prototype CP1 toujours302
+billes ; FR1 reste un bain P/R séparé150, comparant une durée de vie libre F.
+RF1 révèle un besoin concret de récupération de fonction, pas de fermeture
+du réseau démontrée ; PT1 révèle une ouverture finale, pas de transport acquis
+en continu. Les pertes restent hors du candidat intégré. [Bilan54](BATCH_54.md).
+
 Lot53 : CP1 dynamique et fermeture CR1 établis au niveau L séparé,
 aucun changement de gène ou d'outil. Budget prototype intégré toujours302 billes ;
 PT1=200 (104 L+96 P/R), RF1=150 P/R, deux sous-bains diagnostiques qui ne

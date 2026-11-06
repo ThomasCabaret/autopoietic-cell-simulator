@@ -48,13 +48,14 @@ accessibles séparément,39 démos au total. EN1 est visible dans « contrôle a
 Recherche : **CR1 terminé3/3, crible fixé réussi** sous les lois CP1 :
 enceintes finales30/52/34 depuis dimères isolés, présence tardive>=50% sur2/3.
 Les refus CC1/CH1 aux horizons courts restent conservés. Cela ne prouve pas
-la rétention ou le maintien de la cellule. **Deux fronts indépendants en cours** :
-PT1 transport/rétention (6 essais), RF1 recyclage de la fonction01 (9 essais),
-un travailleur et2h maximum par campagne. `selective_transport_status.bat`
-et `functional_recycling_status.bat` affichent leur progression.
+la rétention ou le maintien de la cellule. **PT1 et RF1 sont terminés, leurs cribles refusés** : une ouverture finale
+empêche de conclure la rétention ; le recyclage ne maintient pas toujours
+l'outil et n'établit pas le réemploi strict. **FR1 en cours** teste la
+récupération du co-recruteur après coupure,6 essais600,2 travailleurs/1h.
+État : `functional_recovery_status.bat`. Aucun changement des lois CP1.
 Les39 presets restent EG1/EN1/CB1 historiques ; les trois résultats CR1 sont
 inspectables dans **Résultats locaux**. CF1 reste en pause scientifique.
-[Lot53](research/BATCH_53.md) · [Checklist](research/CELL_CHECKLIST_COMPACT.md) ·
+[Lot54](research/BATCH_54.md) · [Checklist](research/CELL_CHECKLIST_COMPACT.md) ·
 [Calibration](research/CAMPAIGN_CALIBRATION.md).
 
 Un moteur CPU commun pour les campagnes sans fenêtre et les démonstrateurs

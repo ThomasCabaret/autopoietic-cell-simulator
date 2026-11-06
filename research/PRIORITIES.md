@@ -1,5 +1,16 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot54 : **PT1/RF1 terminés, deux cribles refusés**. PT1 graine1 finit
+en chaîne52 ouverte (51 liens), dernier contour valide299.5. RF1 : perte de
+l'outil à96.99 sans retour dans graine1 malgré substrats ; récupération en27.23
+dans un autre cas, pas de réincorporation stricte et défaut thermique tardif.
+**FR1 lancé** :6 essais600, survie des monomères F .01/.001 après coupure
+construite,2 travailleurs/1h, audit GF/ligation/catalyse. Lire avant transfert
+des pertes dans CP1 ; pas de grille, nouvel outil ou relance des anciennes portes.
+Le témoin RF1 épuisé n'autorise pas une conclusion d'extinction des outils.
+Voir [BATCH_54](BATCH_54.md), `functional_recovery_status.bat`.
+Les mentions « en cours » des lots antérieurs ci-dessous sont historiques.
+
 Lot53 : **CR1 terminé3/3, crible réussi** : cycles30/52/34,
 présence tardive.3675/.9625/.94, deux cas>=.5. Aucun seuil ou loi changé.
 **PT1 et RF1 en cours**, indépendants :6 essais de transport appariés sur
