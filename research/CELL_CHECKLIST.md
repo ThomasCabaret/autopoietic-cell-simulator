@@ -1,6 +1,6 @@
 # Checklist détaillée — critères et dépendances
 
-Revue 2026-11-06 · révision21. Source : [cell_checklist.json](cell_checklist.json).
+Revue 2026-11-06 · révision22. Source : [cell_checklist.json](cell_checklist.json).
 [Tableau compact](CELL_CHECKLIST_COMPACT.md) · [Échelle et méthode](CONCEPT_FIRST.md).
 
 Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre acyclique de codage. Les cycles de renouvellement sont intentionnels. Une condition initiale construite peut amorcer un sous-cas sans fermer ces cycles.
@@ -22,9 +22,11 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** Union de modules locaux, pas alphabet commun constructible complet.
 
-**Références :** [research/FUNCTIONAL_MECHANISMS.md](../research/FUNCTIONAL_MECHANISMS.md), [research/LOCALITY_AUDIT.md](../research/LOCALITY_AUDIT.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md), [research/BATCH_43.md](../research/BATCH_43.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_46.md](../research/BATCH_46.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_50.md](../research/BATCH_50.md)
+**Références :** [research/FUNCTIONAL_MECHANISMS.md](../research/FUNCTIONAL_MECHANISMS.md), [research/LOCALITY_AUDIT.md](../research/LOCALITY_AUDIT.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md), [research/BATCH_43.md](../research/BATCH_43.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_46.md](../research/BATCH_46.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_50.md](../research/BATCH_50.md), [research/CHEMISTRY_COMPLEXITY.md](../research/CHEMISTRY_COMPLEXITY.md)
 
 **Prochain test / décision :** Interpréter la géométrie CP1 et tester le transfert complet/non-interactions ; aucune hausse depuis récupération sélectionnée seule.
+
+**Progrès du dernier lot :** Inventaire normalisé :6 atomes,5 composites,6 liens,8 formules,10 transitions ;12 conventions fonctionnelles recensées. Aucun gain de généralité démontré.
 
 <a id="F-02"></a>
 ### F-02 — Fonctions distinctes depuis les assemblages
@@ -359,8 +361,6 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Prochain test / décision :** Lire CR1 : cycles simples/aires finaux et occupation6000–8000, bouts observés ; pas de nouveau taux/horizon sans interprétation.
 
-**Progrès du dernier lot :** BC1 : courbure locale correcte et souple, arcs/spirale observés ; CR1 calibré8000 lancé sans changer les lois.
-
 <a id="M-02"></a>
 ### M-02 — Frontière dimensionnée pour le contenu
 
@@ -476,8 +476,6 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 **Références :** [research/BATCH_22.md](../research/BATCH_22.md), [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/BATCH_51.md](../research/BATCH_51.md)
 
 **Prochain test / décision :** Interpréter CR1 avec les limites de la linéarisation et la formation tardive des longues chaînes.
-
-**Progrès du dernier lot :** Modes collectifs distingués de diffusion : temps nu52≈1890, pas temps de fermeture du bain mesuré.
 
 <a id="E-03"></a>
 ### E-03 — Alimentation accessible et encombrement
@@ -774,8 +772,6 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Prochain test / décision :** Ne pas choisir un dt favorable : résoudre la concurrence des ports avant refaire un contrôle aux deux pas.
 
-**Progrès du dernier lot :** Aucune loi physique changée ; nouvelle observation passive, deux préfixes compétitifs exacts.
-
 <a id="C-03"></a>
 ### C-03 — Fermeture fonctionnelle et matérielle complète
 
@@ -835,8 +831,6 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Prochain test / décision :** CF1 a un coût démesuré avec~4M refus par préfixe ; CP1 doit résoudre la cohérence et être mesuré avant cohorte.
 
-**Progrès du dernier lot :** Linéarisation locale et squelette quantifient l’échelle collective ; pas gain de vitesse ou renouvellement démontré.
-
 <a id="O-02"></a>
 ### O-02 — Observation passive, reproductibilité et inspection
 
@@ -852,11 +846,11 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** Fonction logicielle validée pour les références présentes, pas pour toutes les futures chimies.
 
-**Références :** [research/BATCH_26.md](../research/BATCH_26.md), [research/BATCH_27.md](../research/BATCH_27.md), [research/BATCH_31.md](../research/BATCH_31.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_33.md](../research/BATCH_33.md), [research/BATCH_35.md](../research/BATCH_35.md), [research/BATCH_36.md](../research/BATCH_36.md), [research/BATCH_38.md](../research/BATCH_38.md), [research/BATCH_39.md](../research/BATCH_39.md), [research/BATCH_40.md](../research/BATCH_40.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md), [research/BATCH_43.md](../research/BATCH_43.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_45.md](../research/BATCH_45.md), [research/BATCH_46.md](../research/BATCH_46.md), [research/BATCH_47.md](../research/BATCH_47.md), [research/BATCH_48.md](../research/BATCH_48.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_50.md](../research/BATCH_50.md), [research/BATCH_51.md](../research/BATCH_51.md)
+**Références :** [research/BATCH_26.md](../research/BATCH_26.md), [research/BATCH_27.md](../research/BATCH_27.md), [research/BATCH_31.md](../research/BATCH_31.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_33.md](../research/BATCH_33.md), [research/BATCH_35.md](../research/BATCH_35.md), [research/BATCH_36.md](../research/BATCH_36.md), [research/BATCH_38.md](../research/BATCH_38.md), [research/BATCH_39.md](../research/BATCH_39.md), [research/BATCH_40.md](../research/BATCH_40.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md), [research/BATCH_43.md](../research/BATCH_43.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_45.md](../research/BATCH_45.md), [research/BATCH_46.md](../research/BATCH_46.md), [research/BATCH_47.md](../research/BATCH_47.md), [research/BATCH_48.md](../research/BATCH_48.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_50.md](../research/BATCH_50.md), [research/BATCH_51.md](../research/BATCH_51.md), [research/CHEMISTRY_COMPLEXITY.md](../research/CHEMISTRY_COMPLEXITY.md)
 
 **Prochain test / décision :** Conserver préfixes pausés et sources ; tester le futur delta CP1 contre potentiel complet à voisinage borné, aucun feedback d’observation.
 
-**Progrès du dernier lot :** Observateur géométrique borné, capture unique et reprise exacte ;287 tests et catalogue39 recertifié.
+**Progrès du dernier lot :** Registre de complexité généré et vérifié, sources hachées ; aucune dynamique modifiée.
 
 ## Évolution conservée
 
@@ -881,3 +875,4 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 - Révision19 (2026-11-05) : EL1 et RP1 clos. CF1 gate local construit/pilote passe/cohorte lancée puis pause scientifique anticipée : frustration des ports additifs, aucun essai complet. CP1 alternatif statique validé ; FS1 distingue F001 et motifs catalytiques. Aucun palier biologique augmenté.
 - Révision20 (2026-11-06) : Lot50 : CP1 intégré/optimisé, CC1 clos6/6 refusé fermeture intégrée ; CH1 clos4/4 récupération intégrée sélectionnée mais aucune enceinte isolée finale. CE1 passif précise les distances finales ; aucun palier biologique augmenté.
 - Révision21 (2026-11-06) : Lot51 BC1 courbure/modes quantifiés, observateur passif borné construit ; CR1 trois mêmes isolés8000 lancé, lois inchangées. Aucun palier biologique augmenté.
+- Révision22 (2026-11-06) : Audit demandé de hardcode : inventaire sémantique normalisé CP1 intégré et CR1 réduit, conventions et contrôles numériques explicites. Aucun palier biologique changé.

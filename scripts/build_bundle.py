@@ -160,6 +160,7 @@ def main():
         'campaigns/competitive_mechanism.json','campaigns/competitive_horizon_mechanism.json',
         'competitive_panel_status.bat','stop_competitive_panel.bat','resume_competitive_panel.bat',
         'competitive_horizon_status.bat','stop_competitive_horizon.bat','resume_competitive_horizon.bat'))
+    files.update(ROOT/p for p in ('research/CHEMISTRY_COMPLEXITY.md','research/CHEMISTRY_COMPLEXITY.json','experiments/chemical_complexity.py'))
     files.update(ROOT/p for p in ('research/BATCH_51_PLAN.md','research/BATCH_51_RELAXATION_PLAN.md','research/BATCH_51.md',
         'research/BATCH_51_BC1.json','research/BATCH_51_CR1_RECIPES.json','research/BATCH_51_RESULTS.json',
         'research/BATCH_51_GEOMETRY.png','research/BATCH_51_PROFILE.png',

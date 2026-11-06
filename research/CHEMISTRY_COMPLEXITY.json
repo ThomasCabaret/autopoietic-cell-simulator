@@ -1,0 +1,962 @@
+{
+  "schema_version": 1,
+  "reviewed": "2026-11-06",
+  "candidate": "CP1 integrated, CH1_integrated_s1; reduced CR1 isolated membrane compared separately",
+  "reference": {
+    "manifest": "research/campaign_recipes/CH1_20261106T073608844143Z/manifest.json",
+    "label": "CH1_integrated_s1",
+    "sha256": "315eee3513f5d98007a9905f77d813653a9b157ee2d8741ca78f348635164214"
+  },
+  "convention": "Semantic inventory v1: one directed transition schema per distinct bond rewrite; one named predicate per reusable semantic condition. Not source if-count, Shannon entropy, independent degrees of freedom or a proof of minimality.",
+  "elementary": [
+    {
+      "id": "PG",
+      "label": "P support with G role",
+      "source": "simulator/assembly.py;simulator/mixed_synthesis.py",
+      "scope": "integrated"
+    },
+    {
+      "id": "PF",
+      "label": "P support with F role",
+      "source": "simulator/assembly.py;simulator/mixed_synthesis.py",
+      "scope": "integrated"
+    },
+    {
+      "id": "R0",
+      "label": "Recognizer carrying symbol0",
+      "source": "simulator/assembly.py;simulator/mixed_synthesis.py",
+      "scope": "integrated"
+    },
+    {
+      "id": "R1",
+      "label": "Recognizer carrying symbol1",
+      "source": "simulator/assembly.py;simulator/mixed_synthesis.py",
+      "scope": "integrated"
+    },
+    {
+      "id": "H",
+      "label": "Lipid head precursor",
+      "source": "simulator/assembly.py;simulator/mixed_synthesis.py",
+      "scope": "both"
+    },
+    {
+      "id": "T",
+      "label": "Lipid tail precursor",
+      "source": "simulator/assembly.py;simulator/mixed_synthesis.py",
+      "scope": "both"
+    }
+  ],
+  "composites": [
+    {
+      "id": "G0",
+      "label": "PG--R0",
+      "source": "simulator/assembly.py;simulator/linked_lipids.py",
+      "scope": "integrated"
+    },
+    {
+      "id": "G1",
+      "label": "PG--R1",
+      "source": "simulator/assembly.py;simulator/linked_lipids.py",
+      "scope": "integrated"
+    },
+    {
+      "id": "F0",
+      "label": "PF--R0",
+      "source": "simulator/assembly.py;simulator/linked_lipids.py",
+      "scope": "integrated"
+    },
+    {
+      "id": "F1",
+      "label": "PF--R1",
+      "source": "simulator/assembly.py;simulator/linked_lipids.py",
+      "scope": "integrated"
+    },
+    {
+      "id": "L",
+      "label": "H--T",
+      "source": "simulator/assembly.py;simulator/linked_lipids.py",
+      "scope": "both"
+    }
+  ],
+  "bonds": [
+    {
+      "id": "PR",
+      "label": "Axial P--R",
+      "source": "simulator/assembly.py",
+      "scope": "integrated",
+      "arity": 2
+    },
+    {
+      "id": "HT",
+      "label": "Axial H--T",
+      "source": "simulator/lipid_synthesis.py",
+      "scope": "both",
+      "arity": 2
+    },
+    {
+      "id": "BB",
+      "label": "Backbone P--P, G or F",
+      "source": "simulator/copy.py",
+      "scope": "integrated",
+      "arity": 2
+    },
+    {
+      "id": "PAIR",
+      "label": "Recognizer R--R pairing",
+      "source": "simulator/copy.py",
+      "scope": "integrated",
+      "arity": 2
+    },
+    {
+      "id": "CAP",
+      "label": "F recognizer--free ligand capture",
+      "source": "simulator/precursors.py",
+      "scope": "integrated",
+      "arity": 2
+    },
+    {
+      "id": "LAT",
+      "label": "Lateral four-bead L face contact",
+      "source": "simulator/docking.py",
+      "scope": "both",
+      "arity": 4
+    }
+  ],
+  "ports": [
+    {
+      "id": "PRA",
+      "label": "P/R axial partner",
+      "source": "simulator/assembly.py",
+      "capacity": 1,
+      "scope": "integrated"
+    },
+    {
+      "id": "HTA",
+      "label": "H/T axial partner",
+      "source": "simulator/linked_lipids.py",
+      "capacity": 1,
+      "scope": "both"
+    },
+    {
+      "id": "BBA",
+      "label": "P backbone directions",
+      "source": "simulator/reference.py",
+      "capacity": 2,
+      "scope": "integrated"
+    },
+    {
+      "id": "PAA",
+      "label": "R pairing partner",
+      "source": "simulator/copy.py",
+      "capacity": 1,
+      "scope": "integrated"
+    },
+    {
+      "id": "CAA",
+      "label": "F recognizer ligand slot",
+      "source": "simulator/precursors.py",
+      "capacity": 1,
+      "scope": "integrated"
+    },
+    {
+      "id": "LAA",
+      "label": "L lateral faces, two subpatches per face",
+      "source": "simulator/docking.py",
+      "capacity": 2,
+      "scope": "both"
+    }
+  ],
+  "forces": [
+    {
+      "id": "CORE",
+      "label": "Soft finite-range repulsion",
+      "source": "simulator/physics.py",
+      "scope": "both"
+    },
+    {
+      "id": "SPRING",
+      "label": "Harmonic distance",
+      "source": "simulator/physics.py",
+      "scope": "both"
+    },
+    {
+      "id": "ANGLE",
+      "label": "Cosine angular elasticity",
+      "source": "simulator/physics.py",
+      "scope": "integrated"
+    },
+    {
+      "id": "ORIENT",
+      "label": "Antiparallel paired axes",
+      "source": "simulator/physics.py",
+      "scope": "integrated"
+    },
+    {
+      "id": "GAUSS",
+      "label": "Saturable Gaussian ligand attraction",
+      "source": "simulator/precursors.py",
+      "scope": "integrated"
+    },
+    {
+      "id": "FREE",
+      "label": "Competitive free L port potential",
+      "source": "simulator/competitive_ports.py",
+      "scope": "both"
+    },
+    {
+      "id": "BOUND",
+      "label": "Harmonic bound L port continuation",
+      "source": "simulator/docking.py",
+      "scope": "both"
+    },
+    {
+      "id": "BARRIER",
+      "label": "Bound-segment repulsion against assembled P/R atoms",
+      "source": "simulator/mixed_boundary.py",
+      "scope": "integrated"
+    }
+  ],
+  "reactions": [
+    {
+      "id": "CAP_ON",
+      "label": "Capture a free precursor on F",
+      "source": "simulator/precursors.py",
+      "predicates": [
+        "G01",
+        "G02",
+        "S08",
+        "S09",
+        "S10"
+      ],
+      "scope": "integrated"
+    },
+    {
+      "id": "CAP_OFF",
+      "label": "Release precursor from F",
+      "source": "simulator/precursors.py",
+      "predicates": [
+        "S08"
+      ],
+      "scope": "integrated"
+    },
+    {
+      "id": "PR_ON",
+      "label": "Form P--R, release captured product",
+      "source": "simulator/assembly.py",
+      "predicates": [
+        "G01",
+        "G02",
+        "S11",
+        "S12"
+      ],
+      "scope": "integrated"
+    },
+    {
+      "id": "HT_ON",
+      "label": "Form H--T, release captured product",
+      "source": "simulator/lipid_synthesis.py",
+      "predicates": [
+        "G02",
+        "S11",
+        "S12",
+        "S16"
+      ],
+      "scope": "integrated"
+    },
+    {
+      "id": "PAIR_ON",
+      "label": "Form R--R recognition pairing",
+      "source": "simulator/copy.py",
+      "predicates": [
+        "G01",
+        "G02",
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05"
+      ],
+      "scope": "integrated"
+    },
+    {
+      "id": "PAIR_OFF",
+      "label": "Break R--R pairing",
+      "source": "simulator/copy.py",
+      "predicates": [],
+      "scope": "integrated"
+    },
+    {
+      "id": "BB_ON",
+      "label": "Template the parallel backbone edge",
+      "source": "simulator/copy.py",
+      "predicates": [
+        "G02",
+        "G03",
+        "G04",
+        "S06"
+      ],
+      "scope": "integrated"
+    },
+    {
+      "id": "LAT_ON",
+      "label": "Form lateral L contact",
+      "source": "simulator/docking.py",
+      "predicates": [
+        "G02",
+        "G04",
+        "S13",
+        "S16"
+      ],
+      "scope": "both"
+    },
+    {
+      "id": "LAT_OFF",
+      "label": "Break lateral L contact",
+      "source": "simulator/docking.py",
+      "predicates": [
+        "S16"
+      ],
+      "scope": "both"
+    },
+    {
+      "id": "LAT_EX",
+      "label": "Replace one lateral partner by another",
+      "source": "simulator/contact_exchange.py",
+      "predicates": [
+        "G02",
+        "G04",
+        "S13",
+        "S14",
+        "S16"
+      ],
+      "scope": "both"
+    }
+  ],
+  "predicates": [
+    {
+      "id": "G01",
+      "label": "Composite axial presence exposes the recognizer and slots",
+      "source": "simulator/assembly.py;simulator/mixed_synthesis.py",
+      "category": "occupancy"
+    },
+    {
+      "id": "G02",
+      "label": "Single occupied slot, pairing/capture mutual exclusion",
+      "source": "simulator/copy.py;simulator/precursors.py",
+      "category": "occupancy"
+    },
+    {
+      "id": "G03",
+      "label": "At most two backbone neighbors, opposite directions",
+      "source": "simulator/reference.py",
+      "category": "occupancy"
+    },
+    {
+      "id": "G04",
+      "label": "Exclude duplicate partner/contact and touched exchange faces",
+      "source": "simulator/docking.py;simulator/contact_exchange.py",
+      "category": "occupancy"
+    },
+    {
+      "id": "S01",
+      "label": "Equal binary symbol for template recognition",
+      "source": "simulator/copy.py",
+      "category": "structural"
+    },
+    {
+      "id": "S02",
+      "label": "Forbid F--F recognition pairing",
+      "source": "simulator/copy.py",
+      "category": "functional"
+    },
+    {
+      "id": "S03",
+      "label": "G--F capture requires linked G and free F monomer",
+      "source": "simulator/copy.py",
+      "category": "functional"
+    },
+    {
+      "id": "S04",
+      "label": "Monomer-only XOR for capture",
+      "source": "simulator/copy.py",
+      "category": "functional"
+    },
+    {
+      "id": "S05",
+      "label": "Neighboring template captures must have same incoming family",
+      "source": "simulator/copy.py",
+      "category": "functional"
+    },
+    {
+      "id": "S06",
+      "label": "Only G--G source edges can template ligation",
+      "source": "simulator/copy.py",
+      "category": "functional"
+    },
+    {
+      "id": "S07",
+      "label": "Native angle applies only to unpaired F",
+      "source": "simulator/copy.py",
+      "category": "functional"
+    },
+    {
+      "id": "S08",
+      "label": "Linked F site fully active, isolated F site weakened",
+      "source": "simulator/mixed_synthesis.py;simulator/precursors.py",
+      "category": "functional"
+    },
+    {
+      "id": "S09",
+      "label": "F0 recruits P/H; F1 recruits R/T",
+      "source": "simulator/mixed_synthesis.py;simulator/precursors.py",
+      "category": "functional"
+    },
+    {
+      "id": "S10",
+      "label": "Neighbor captures require same P/R versus H/T group and complementary categories",
+      "source": "simulator/mixed_synthesis.py",
+      "category": "functional"
+    },
+    {
+      "id": "S11",
+      "label": "Two recruited substrates accelerated only on adjacent F sites",
+      "source": "simulator/assembly.py;simulator/lipid_synthesis.py",
+      "category": "structural"
+    },
+    {
+      "id": "S12",
+      "label": "Product whitelist: P--R and H--T, no cross-material product",
+      "source": "simulator/assembly.py;simulator/mixed_synthesis.py",
+      "category": "functional"
+    },
+    {
+      "id": "S13",
+      "label": "Opposite L faces and coincident head/tail subpatches",
+      "source": "simulator/docking.py",
+      "category": "structural"
+    },
+    {
+      "id": "S14",
+      "label": "Exchange requires at least one outer free face",
+      "source": "simulator/contact_exchange.py",
+      "category": "structural"
+    },
+    {
+      "id": "S15",
+      "label": "L segment barrier targets assembled P/R, not free precursors",
+      "source": "simulator/mixed_boundary.py",
+      "category": "functional"
+    },
+    {
+      "id": "S16",
+      "label": "Energy gates on H/T and L transitions, historical P/R formation ungated",
+      "source": "simulator/lipid_synthesis.py;simulator/assembly.py;simulator/docking.py",
+      "category": "functional"
+    }
+  ],
+  "configured": [
+    {
+      "id": "C00",
+      "label": "chemistry.temperature",
+      "source": "simulator/config.py",
+      "path": "chemistry.temperature"
+    },
+    {
+      "id": "C01",
+      "label": "chemistry.rung_capture_radius",
+      "source": "simulator/config.py",
+      "path": "chemistry.rung_capture_radius"
+    },
+    {
+      "id": "C02",
+      "label": "chemistry.rung_formation_rate",
+      "source": "simulator/config.py",
+      "path": "chemistry.rung_formation_rate"
+    },
+    {
+      "id": "C03",
+      "label": "chemistry.rung_catalytic_rate",
+      "source": "simulator/config.py",
+      "path": "chemistry.rung_catalytic_rate"
+    },
+    {
+      "id": "C04",
+      "label": "chemistry.food_binding_radius",
+      "source": "simulator/config.py",
+      "path": "chemistry.food_binding_radius"
+    },
+    {
+      "id": "C05",
+      "label": "chemistry.food_binding_rate",
+      "source": "simulator/config.py",
+      "path": "chemistry.food_binding_rate"
+    },
+    {
+      "id": "C06",
+      "label": "chemistry.food_unbinding_rate",
+      "source": "simulator/config.py",
+      "path": "chemistry.food_unbinding_rate"
+    },
+    {
+      "id": "C07",
+      "label": "chemistry.food_ligand_energy",
+      "source": "simulator/config.py",
+      "path": "chemistry.food_ligand_energy"
+    },
+    {
+      "id": "C08",
+      "label": "chemistry.food_ligand_width",
+      "source": "simulator/config.py",
+      "path": "chemistry.food_ligand_width"
+    },
+    {
+      "id": "C09",
+      "label": "chemistry.short_length",
+      "source": "simulator/config.py",
+      "path": "chemistry.short_length"
+    },
+    {
+      "id": "C10",
+      "label": "chemistry.dock_width",
+      "source": "simulator/config.py",
+      "path": "chemistry.dock_width"
+    },
+    {
+      "id": "C11",
+      "label": "chemistry.dock_energy",
+      "source": "simulator/config.py",
+      "path": "chemistry.dock_energy"
+    },
+    {
+      "id": "C12",
+      "label": "chemistry.dock_capture",
+      "source": "simulator/config.py",
+      "path": "chemistry.dock_capture"
+    },
+    {
+      "id": "C13",
+      "label": "chemistry.dock_rate",
+      "source": "simulator/config.py",
+      "path": "chemistry.dock_rate"
+    },
+    {
+      "id": "C14",
+      "label": "chemistry.bond_off_rate",
+      "source": "simulator/config.py",
+      "path": "chemistry.bond_off_rate"
+    },
+    {
+      "id": "C15",
+      "label": "chemistry.break_extension",
+      "source": "simulator/config.py",
+      "path": "chemistry.break_extension"
+    },
+    {
+      "id": "C16",
+      "label": "chemistry.contact_exchange_rate",
+      "source": "simulator/config.py",
+      "path": "chemistry.contact_exchange_rate"
+    },
+    {
+      "id": "C17",
+      "label": "chemistry.contact_exchange_capture",
+      "source": "simulator/config.py",
+      "path": "chemistry.contact_exchange_capture"
+    },
+    {
+      "id": "C18",
+      "label": "chemistry.tool_lipid_contact",
+      "source": "simulator/config.py",
+      "path": "chemistry.tool_lipid_contact"
+    },
+    {
+      "id": "C19",
+      "label": "chemistry.bound_barrier_radius",
+      "source": "simulator/config.py",
+      "path": "chemistry.bound_barrier_radius"
+    },
+    {
+      "id": "C20",
+      "label": "chemistry.bound_barrier_stiffness",
+      "source": "simulator/config.py",
+      "path": "chemistry.bound_barrier_stiffness"
+    },
+    {
+      "id": "C21",
+      "label": "chemistry.genetics.backbone_angle",
+      "source": "simulator/config.py",
+      "path": "chemistry.genetics.backbone_angle"
+    },
+    {
+      "id": "C22",
+      "label": "chemistry.genetics.ligation_rate",
+      "source": "simulator/config.py",
+      "path": "chemistry.genetics.ligation_rate"
+    },
+    {
+      "id": "C23",
+      "label": "chemistry.genetics.functional_cosines.0",
+      "source": "simulator/config.py",
+      "path": "chemistry.genetics.functional_cosines.0"
+    },
+    {
+      "id": "C24",
+      "label": "chemistry.genetics.functional_cosines.1",
+      "source": "simulator/config.py",
+      "path": "chemistry.genetics.functional_cosines.1"
+    },
+    {
+      "id": "C25",
+      "label": "mechanics.mass",
+      "source": "simulator/config.py",
+      "path": "mechanics.mass"
+    },
+    {
+      "id": "C26",
+      "label": "mechanics.damping",
+      "source": "simulator/config.py",
+      "path": "mechanics.damping"
+    }
+  ],
+  "fixed": [
+    {
+      "id": "CORE_K",
+      "label": "Soft core stiffness",
+      "source": "simulator/physics.py",
+      "value": 80.0
+    },
+    {
+      "id": "CORE_PP",
+      "label": "P/P contact radius",
+      "source": "simulator/copy.py;simulator/mixed_synthesis.py",
+      "value": 0.7
+    },
+    {
+      "id": "CORE_PR",
+      "label": "P/R contact radius",
+      "source": "simulator/copy.py;simulator/mixed_synthesis.py",
+      "value": 0.28
+    },
+    {
+      "id": "CORE_HTL",
+      "label": "H/T/L contact radius",
+      "source": "simulator/mixed_synthesis.py",
+      "value": 0.4
+    },
+    {
+      "id": "PR_K",
+      "label": "Axial PR stiffness",
+      "source": "simulator/copy.py",
+      "value": 180.0
+    },
+    {
+      "id": "PR_L",
+      "label": "Axial PR length",
+      "source": "simulator/copy.py",
+      "value": 0.45
+    },
+    {
+      "id": "HT_K",
+      "label": "Axial HT stiffness",
+      "source": "simulator/linked_lipids.py",
+      "value": 180.0
+    },
+    {
+      "id": "HT_L",
+      "label": "Axial HT length",
+      "source": "simulator/linked_lipids.py",
+      "value": 0.65
+    },
+    {
+      "id": "BB_K",
+      "label": "Backbone stiffness",
+      "source": "simulator/copy.py",
+      "value": 100.0
+    },
+    {
+      "id": "BB_L",
+      "label": "Backbone length",
+      "source": "simulator/copy.py",
+      "value": 1.0
+    },
+    {
+      "id": "PAIR_K",
+      "label": "Pairing spring stiffness",
+      "source": "simulator/copy.py",
+      "value": 80.0
+    },
+    {
+      "id": "PAIR_L",
+      "label": "Pairing spring rest length",
+      "source": "simulator/copy.py",
+      "value": 0.0
+    },
+    {
+      "id": "ORIENT_K",
+      "label": "Paired-axis orientation stiffness",
+      "source": "simulator/physics.py",
+      "value": 8.0
+    },
+    {
+      "id": "PAIR_R",
+      "label": "Pairing capture radius",
+      "source": "simulator/copy.py",
+      "value": 0.3
+    },
+    {
+      "id": "PAIR_COS",
+      "label": "Pairing maximum axis dot",
+      "source": "simulator/copy.py",
+      "value": -0.5
+    },
+    {
+      "id": "PAIR_ON_K",
+      "label": "Supported pairing on rate",
+      "source": "simulator/copy.py",
+      "value": 35.0
+    },
+    {
+      "id": "PAIR_OFF_K",
+      "label": "Basal pairing off rate",
+      "source": "simulator/copy.py",
+      "value": 0.003
+    },
+    {
+      "id": "PAIR_OFF_RELEASE",
+      "label": "Forced release off rate",
+      "source": "simulator/copy.py",
+      "value": 12.0
+    },
+    {
+      "id": "WEAK_SITE",
+      "label": "Isolated F activity multiplier",
+      "source": "simulator/mixed_synthesis.py",
+      "value": 0.002857142857142857
+    },
+    {
+      "id": "WEAK_OFF",
+      "label": "Inactive-site off-rate floor",
+      "source": "simulator/precursors.py",
+      "value": 5.0
+    },
+    {
+      "id": "LIG_MIN",
+      "label": "Ligation min distance",
+      "source": "simulator/copy.py",
+      "value": 0.72
+    },
+    {
+      "id": "LIG_MAX",
+      "label": "Ligation max distance",
+      "source": "simulator/copy.py",
+      "value": 1.28
+    },
+    {
+      "id": "LIG_COS",
+      "label": "Ligation min relative-axis dot",
+      "source": "simulator/copy.py",
+      "value": 0.5
+    },
+    {
+      "id": "LIG_PROJ",
+      "label": "Ligation max axial projection fraction",
+      "source": "simulator/copy.py",
+      "value": 0.5
+    },
+    {
+      "id": "G_COS",
+      "label": "G backbone angle cosine",
+      "source": "simulator/copy.py",
+      "value": 0.0
+    },
+    {
+      "id": "L_LONG",
+      "label": "L head port width",
+      "source": "simulator/docking.py",
+      "value": 1.0
+    },
+    {
+      "id": "CAP_CUT",
+      "label": "Capture Gaussian cutoff in widths",
+      "source": "simulator/precursors.py",
+      "value": 3.0
+    },
+    {
+      "id": "PORT_CUT",
+      "label": "Port cutoff in squared-width energy coordinate",
+      "source": "simulator/competitive_ports.py",
+      "value": 8.0
+    }
+  ],
+  "external": [
+    {
+      "id": "PERIOD",
+      "label": "External release period",
+      "source": "simulator/copy.py",
+      "value": null,
+      "path": "chemistry.genetics.period"
+    },
+    {
+      "id": "WINDOW",
+      "label": "External release window",
+      "source": "simulator/copy.py",
+      "value": null,
+      "path": "chemistry.genetics.release_time"
+    },
+    {
+      "id": "WALL",
+      "label": "Uniform soft wall stiffness",
+      "source": "simulator/motion.py",
+      "value": 100.0,
+      "path": null
+    }
+  ],
+  "inactive": [
+    {
+      "id": "TURNOVER",
+      "label": "PR/HT/backbone cleavage and recycling absent from this candidate",
+      "source": "simulator/config.py;simulator/copy.py"
+    },
+    {
+      "id": "DUAL",
+      "label": "Second recognition face disabled",
+      "source": "simulator/config.py;simulator/copy.py"
+    },
+    {
+      "id": "GF_END",
+      "label": "F end recapture variant disabled",
+      "source": "simulator/config.py;simulator/copy.py"
+    },
+    {
+      "id": "F_BEND",
+      "label": "Alternative functional three-center bend table empty",
+      "source": "simulator/config.py;simulator/copy.py"
+    },
+    {
+      "id": "FOOD_OLD",
+      "label": "Old separate food ligation subsystem disabled",
+      "source": "simulator/config.py;simulator/copy.py"
+    },
+    {
+      "id": "LOCAL_RELEASE",
+      "label": "Local release alternative disabled",
+      "source": "simulator/config.py;simulator/copy.py"
+    },
+    {
+      "id": "DPD",
+      "label": "DPD thermostat disabled",
+      "source": "simulator/config.py;simulator/copy.py"
+    },
+    {
+      "id": "LEGACY",
+      "label": "Other registered hooks and historical additive potential excluded",
+      "source": "simulator/config.py;simulator/copy.py"
+    },
+    {
+      "id": "PAIR_DORMANT",
+      "label": "Low pairing-on .1 and monomer-pair off5 code remain, but active monomer-only/no-cleavage grammar makes these contexts unreachable from the declared seed",
+      "source": "simulator/config.py;simulator/copy.py"
+    }
+  ],
+  "source_sha256": {
+    "simulator/assembly.py": "4bd703a271102d5ca6a7ae3c6d0109ae158617fef8136b4f8ba5d5456d092034",
+    "simulator/mixed_synthesis.py": "963ddfad842b40ed3ca3fd3829350b550badfa69853d9219566cf996182b9f5c",
+    "simulator/linked_lipids.py": "28d18d700bd3a00e5fbcab09745644e1c37de7826b1922bffb7174d6f8d51866",
+    "simulator/lipid_synthesis.py": "56f20f8eddcf50eae3ed14ce907e4d67cc3f61742ed720061675a8f5d69a98f3",
+    "simulator/copy.py": "5f06560517b772bee387d26e4931cf8c0b9964aabf6f7358992ad9566880b78f",
+    "simulator/precursors.py": "bf766ba8480e6e3180d85b5c481311a926570571e81510cbdfeccee97507594e",
+    "simulator/docking.py": "7f3247b8b54a8130c1e64002acd2bc9b137e0201def6f2964422b122eb5877e4",
+    "simulator/reference.py": "347618abbab85e3991f8b0fd771e2502f554a042db5f7b3140182ea04eb868bc",
+    "simulator/physics.py": "d8364c7fb784db08e2f9fe0b3f549abb69246e402c681b06293d85058a7aa464",
+    "simulator/competitive_ports.py": "dc7fdcea482d9e71de036bbb800748492f63e464848475066275452b68a3efd8",
+    "simulator/mixed_boundary.py": "a1361a5cbe72da18356d48e839372b50abfaac7841908bfc92f931df35192b47",
+    "simulator/contact_exchange.py": "945c4521c1126f18238d3ba962e8429cdbbdf94a1ae54b5aa8cf014f9a93fa3c",
+    "simulator/config.py": "62fc280a0ba65cd114868982b50bcc2e618ff14c64ebec00ba49f02b4f972d57",
+    "simulator/motion.py": "cc9816c080b107b56d470d756e8b564a590c6ff725d4eae9472163988514684f",
+    "simulator/transition_energy.py": "ff02ce91c9e6c485ecb472b0ca2c1d8fb0f78a35766b137e0a9ac5dcec7a771a",
+    "simulator/exchange_energy.py": "601c815c3a8f86362a0ed6d76c2ff538af46cf41f814af04e9d1a42f3531d7f6"
+  },
+  "factorization": {
+    "material_kinds": [
+      "P",
+      "R",
+      "H",
+      "T"
+    ],
+    "P_attribute": [
+      "G",
+      "F"
+    ],
+    "R_attribute": [
+      0,
+      1
+    ],
+    "mechanical_core_classes": [
+      "P",
+      "R",
+      "free_HT",
+      "bound_HT"
+    ],
+    "unordered_core_channels": 10,
+    "nonzero_core_channels": 5,
+    "positive_core_distances": [
+      0.28,
+      0.4,
+      0.7
+    ],
+    "zero_core_channels": 5
+  },
+  "state_registers": [
+    {
+      "id": "AX_PR",
+      "label": "PR axial occupancy",
+      "states": [
+        "free",
+        "bound"
+      ]
+    },
+    {
+      "id": "AX_HT",
+      "label": "HT axial occupancy",
+      "states": [
+        "free",
+        "bound"
+      ]
+    },
+    {
+      "id": "BB",
+      "label": "Two P backbone ports",
+      "states": [
+        "none",
+        "one",
+        "two"
+      ]
+    },
+    {
+      "id": "PAIR",
+      "label": "R recognition partner",
+      "states": [
+        "free",
+        "paired"
+      ]
+    },
+    {
+      "id": "CAP",
+      "label": "F ligand capture",
+      "states": [
+        "free",
+        "occupied"
+      ]
+    },
+    {
+      "id": "LAT",
+      "label": "Two L lateral faces",
+      "states": [
+        "00",
+        "01",
+        "10",
+        "11"
+      ]
+    }
+  ]
+}

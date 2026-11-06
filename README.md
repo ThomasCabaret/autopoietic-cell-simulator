@@ -6,6 +6,10 @@ et [registre détaillé](research/CELL_CHECKLIST.md), avec sous-buts et dépenda
 dans [la méthodologie](research/CONCEPT_FIRST.md). Les scores décrivent les preuves,
 pas un pourcentage global de cellule achevée.
 
+**Coût des lois et cas particuliers** : [inventaire normalisé de la chimie](research/CHEMISTRY_COMPLEXITY.md).
+Types, liens, transitions, conventions fonctionnelles, paramètres et helpers
+du candidat intégré sont distingués des variantes historiques et des observateurs.
+
 **Atlas du métabolisme visé** : double-cliquer sur `metabolism.bat`, ou ouvrir
 [la planche SVG](docs/metabolism/metabolism.svg) / [la page navigable](docs/metabolism/index.html).
 Trois gènes détaillés, apports, synthèses, copie, expression, membrane et déchets ;

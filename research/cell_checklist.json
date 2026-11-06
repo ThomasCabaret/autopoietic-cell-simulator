@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 21,
+  "revision": 22,
   "reviewed": "2026-11-06",
   "candidate": "CP1 inchangé ; BC1 courbure/modes vérifiés ; CR1 trois horizons sélectionnés en cours ; EG1 visible",
   "purpose": "Registre évolutif des capacités nécessaires à une cellule construite maintenue ; les pourcentages sont des paliers de preuve, pas un taux global de réussite.",
@@ -87,7 +87,8 @@
         "research/BATCH_44.md",
         "research/BATCH_46.md",
         "research/BATCH_49.md",
-        "research/BATCH_50.md"
+        "research/BATCH_50.md",
+        "research/CHEMISTRY_COMPLEXITY.md"
       ],
       "next_test": "Interpréter la géométrie CP1 et tester le transfert complet/non-interactions ; aucune hausse depuis récupération sélectionnée seule.",
       "essential": true
@@ -1200,7 +1201,8 @@
         "research/BATCH_48.md",
         "research/BATCH_49.md",
         "research/BATCH_50.md",
-        "research/BATCH_51.md"
+        "research/BATCH_51.md",
+        "research/CHEMISTRY_COMPLEXITY.md"
       ],
       "next_test": "Conserver préfixes pausés et sources ; tester le futur delta CP1 contre potentiel complet à voisinage borné, aucun feedback d’observation.",
       "essential": true
@@ -1334,13 +1336,15 @@
       "revision": 21,
       "date": "2026-11-06",
       "reason": "Lot51 BC1 courbure/modes quantifiés, observateur passif borné construit ; CR1 trois mêmes isolés8000 lancé, lois inchangées. Aucun palier biologique augmenté."
+    },
+    {
+      "revision": 22,
+      "date": "2026-11-06",
+      "reason": "Audit demandé de hardcode : inventaire sémantique normalisé CP1 intégré et CR1 réduit, conventions et contrôles numériques explicites. Aucun palier biologique changé."
     }
   ],
   "last_batch_progress": {
-    "M-01": "BC1 : courbure locale correcte et souple, arcs/spirale observés ; CR1 calibré8000 lancé sans changer les lois.",
-    "E-02": "Modes collectifs distingués de diffusion : temps nu52≈1890, pas temps de fermeture du bain mesuré.",
-    "C-02": "Aucune loi physique changée ; nouvelle observation passive, deux préfixes compétitifs exacts.",
-    "O-01": "Linéarisation locale et squelette quantifient l’échelle collective ; pas gain de vitesse ou renouvellement démontré.",
-    "O-02": "Observateur géométrique borné, capture unique et reprise exacte ;287 tests et catalogue39 recertifié."
+    "F-01": "Inventaire normalisé :6 atomes,5 composites,6 liens,8 formules,10 transitions ;12 conventions fonctionnelles recensées. Aucun gain de généralité démontré.",
+    "O-02": "Registre de complexité généré et vérifié, sources hachées ; aucune dynamique modifiée."
   }
 }

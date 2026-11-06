@@ -1633,3 +1633,20 @@ rapport puis arrêt. Aucune loi physique ou outil ajouté.287 tests passent,
 deux préfixes compétitifs exacts,39 scènes historiques recertifiées. Registre21/43,
 aucun palier biologique augmenté ; maintien0. Sources, figures et recettes
 versionnées ; résultats/checkpoints/trajectoires restent locaux.
+
+## 2026-11-06 — CA1, inventaire normalisé de la spécialisation chimique
+
+Audit demandé sans changer la dynamique ni lancer de campagne. CP1 intégré
+distingué du sous-bain CR1 et des variantes historiques :6 atomes résolus,
+5 dimères possibles,6 familles de liaisons et rôles de ports,8 formules
+intrinsèques et10 transitions dirigées.20 conditions sémantiques nommées,
+dont12 conventions fonctionnelles.27 entrées numériques configurées et28
+contrôles fixes recensés, plus3 contrôles externes. Ni entropie en bits,
+ni compte des if Python ou degrés de liberté indépendants. L'alphabet petit
+cache une spécialisation substantielle ; G/F, capture par catégories,
+coopération et barrière sélective restent des dettes de généralité.
+Registre JSON, rapport généré et vérification des hashes pour détecter une
+revue périmée. Méthode de delta par variante ajoutée aux principes ; santé,
+priorités et checklist révision22/43 actualisées, aucun palier biologique augmenté.
+14 contrôles registre/conception passent ; générateur compilé et vue/source
+cohérentes. Aucun test physique ou verdict de campagne requalifié par cet audit.

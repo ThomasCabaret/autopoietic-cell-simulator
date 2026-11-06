@@ -1,5 +1,11 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Audit de complexité :6 types élémentaires et5 composites possibles ne signifient
+pas chimie générique minimale.10 transitions et12 conventions fonctionnelles
+recensées, avec affinités/rôles spécialisés ; repli F0/F1 identique dans le
+candidat courant. Expressivité par assemblage et compacité restent à démontrer.
+Aucune dynamique ou preuve biologique changée. Voir CHEMISTRY_COMPLEXITY.md.
+
 Lot51 : aucun palier biologique augmenté. Courbure préférée vérifiée,
 temps collectif nu52≈1890 et instantanés motivent CR1 à8000. Observateur
 passif construit/testé, pas de nouvelle fonction cellulaire ni loi modifiée.

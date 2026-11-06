@@ -1,5 +1,18 @@
 # Santé du projet — actualisation6 novembre2026
 
+Audit de complexité du6 novembre2026 : petit alphabet, spécialisation encore
+substantielle. CP1 intégré :6 atomes résolus,5 dimères,6 profils de liaison,
+8 formules intrinsèques,10 transitions dirigées et12 conventions fonctionnelles
+recensées parmi20 conditions nommées.27 entrées numériques configurées et28
+contrôles fixes revus, plus3 externes ; aucune interprétation en degrés de
+liberté indépendants. Ce coût n'a pas explosé au lot51 (observation seulement),
+mais le nombre de fonctions génériques démontrées reste faible. Priorité de
+conception : obtenir davantage par les assemblages, partager/simplifier les
+gardes, éviter une nouvelle exception par fonction. Les rôles G/F, affinités de
+capture et filtre énergétique sélectif sont des dettes explicites, pas des
+garanties d'extensibilité. Aucun palier biologique relevé par l'audit.
+Voir [inventaire et convention](CHEMISTRY_COMPLEXITY.md).
+
 Lot51,6 novembre2026 : sain pour poursuivre la recherche, sans garantie de
 convergence complète. Le jalon diagnostic fixé au lot50 est atteint : forme
 locale et modes collectifs quantifiés, pas de nouvelle règle ou outil ajouté.

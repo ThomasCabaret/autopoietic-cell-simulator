@@ -1686,6 +1686,19 @@
       "evidence": "research/BATCH_51_RELAXATION_PLAN.md",
       "results": "research/BATCH_51.md",
       "health_gate": "Report then stop; no retry, physical tuning or automatic horizon increase."
+    },
+    {
+      "id": "CA1",
+      "parent": "CP1",
+      "status": "normalized_semantic_complexity_inventory_complete",
+      "hypothesis": "A small elementary alphabet can hide extensive function-specific guards and profiles.",
+      "test": "Review active integrated CH1 CP1 laws, factor elementary attributes, list directed rewrites, predicates and numeric slots; distinguish reduced CR1 and inactive historical code.",
+      "cost": "Read-only semantic audit and generator, no physical law, parameter or campaign changed.",
+      "conclusion": "6 resolved atoms,5 dimers,6 bonds/ports,8 intrinsic force formulas,10 directed transitions;20 named conditions including12 functional conventions.27 configured plus28 fixed numeric slots and3 external controls; not independent degrees of freedom or entropy.",
+      "missing_proof": "Minimal description, full dynamic case completeness and increased functional diversity under fixed laws.",
+      "recipe": "research/CHEMISTRY_COMPLEXITY.json",
+      "evidence": "research/CHEMISTRY_COMPLEXITY.md",
+      "results": "research/CHEMISTRY_COMPLEXITY.md"
     }
   ]
 }

@@ -1,5 +1,12 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Audit de complexité : conserver la priorité mécaniste CR1/fermeture ; pas de
+nouvelle campagne ni de loi dans cet audit. Toute variante future doit donner
+le delta d'atomes, profils de liens, transitions, conventions et contrôles
+numériques de [CHEMISTRY_COMPLEXITY.md](CHEMISTRY_COMPLEXITY.md). Le petit
+alphabet6 masque une grammaire encore spécialisée ; chercher réutilisation
+par assemblage et simplification, surtout avant d'ajouter une fonction.
+
 Lot51 : **BC1 clos**. Courbure locale correcte et souple : theta−.12292rad,
 kappa2.35532, sd thermique harmonique.1843. Modes du squelette nu :52 L≈1890,
 donc CH1 à1800 ne sépare pas confortablement cette échelle collective. Ce

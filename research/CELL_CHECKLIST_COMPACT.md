@@ -1,6 +1,6 @@
 # Checklist compacte — cellule construite maintenue
 
-Révision 21 · revue 2026-11-06 · 43 sous-buts · CP1 inchangé ; BC1 courbure/modes vérifiés ; CR1 trois horizons sélectionnés en cours ; EG1 visible
+Révision 22 · revue 2026-11-06 · 43 sous-buts · CP1 inchangé ; BC1 courbure/modes vérifiés ; CR1 trois horizons sélectionnés en cours ; EG1 visible
 
 **Pourcentages = paliers de preuve**, pas effort accompli ni probabilité de réussite. Les plages indiquent min–max des sous-buts ; aucune moyenne globale.
 0% non observé ·25% sous-cas ·50% séparé ·75% couplage partiel ·100% critère satisfait sur son domaine.
@@ -8,19 +8,19 @@ Concept : « à fermer » signale au moins un maillon essentiel manquant ; un dr
 
 | Domaine | Points | Concept | Preuve min–max | Trous conceptuels | Progrès du dernier lot |
 | --- | ---: | --- | ---: | --- | --- |
-| Lois et fonctions des outils | 3 | à fermer | 0–75% | F-01, F-02 | — |
+| Lois et fonctions des outils | 3 | à fermer | 0–75% | F-01, F-02 | F-01 : Inventaire normalisé :6 atomes,5 composites,6 liens,8 formules,10 transitions ;12 conventions fonctionnelles recensées. Aucun gain de généralité démontré. |
 | Fabrication N / A | 3 | à fermer | 25–75% | S-03 | — |
 | Fabrication des lipides | 1 | à fermer | 25% | S-04 | — |
 | Copie et information | 5 | à fermer | 0–75% | R-02, R-04, R-05 | — |
 | Traduction et outils renouvelés | 5 | à fermer | 0–75% | T-02, T-04 | — |
-| Membrane et insertion | 5 | à fermer | 25–75% | M-05 | M-01 : BC1 : courbure locale correcte et souple, arcs/spirale observés ; CR1 calibré8000 lancé sans changer les lois. |
-| Apports et transport | 3 | à fermer | 0–75% | E-03 | E-02 : Modes collectifs distingués de diffusion : temps nu52≈1890, pas temps de fermeture du bain mesuré. |
+| Membrane et insertion | 5 | à fermer | 25–75% | M-05 | — |
+| Apports et transport | 3 | à fermer | 0–75% | E-03 | — |
 | Énergie et retour des cycles | 2 | à fermer | 25% | Q-01, Q-02 | — |
 | Déchets et recyclage | 4 | à fermer | 0–25% | W-02, W-03, W-04 | — |
 | Homéostasie des petites espèces | 2 | drafts décrits | 0% | — | — |
 | Homéostasie des polymères | 4 | à fermer | 0% | H-03, H-04, H-05, H-06 | — |
-| Compatibilité et maintien | 4 | à fermer | 0–25% | C-01, C-03, C-04 | C-02 : Aucune loi physique changée ; nouvelle observation passive, deux préfixes compétitifs exacts. |
-| Calcul et observabilité | 2 | drafts décrits | 25–100% | — | O-01 : Linéarisation locale et squelette quantifient l’échelle collective ; pas gain de vitesse ou renouvellement démontré. ; O-02 : Observateur géométrique borné, capture unique et reprise exacte ;287 tests et catalogue39 recertifié. |
+| Compatibilité et maintien | 4 | à fermer | 0–25% | C-01, C-03, C-04 | — |
+| Calcul et observabilité | 2 | drafts décrits | 25–100% | — | O-02 : Registre de complexité généré et vérifié, sources hachées ; aucune dynamique modifiée. |
 
 **Trous conceptuels prioritaires au présent bilan :**
 

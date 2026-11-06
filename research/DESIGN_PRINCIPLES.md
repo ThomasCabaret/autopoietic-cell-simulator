@@ -23,6 +23,20 @@ aux besoins détectés de la cellule.
 
 ## Ne pas confondre localité, simplicité et flexibilité
 
+Précision utilisateur du6 novembre2026 : suivre aussi la quantité de hardcode
+et de cas spécifiques. Tenir l'inventaire normalisé
+[CHEMISTRY_COMPLEXITY.md](CHEMISTRY_COMPLEXITY.md), source structurée JSON et
+génération `python experiments/chemical_complexity.py build/check`. Compter
+séparément atomes résolus, composites, profils de liens/ports, formules,
+transitions dirigées, conventions fonctionnelles, contrôles numériques et
+forcing. Un petit alphabet ne compense pas une liste croissante de gardes,
+affinités ou seuils spécifiques. Déclarer leur delta et réutilisation lors d'un
+changement, sous la même convention ; ne pas fusionner après coup pour réduire
+le score. Les hashes signalent une revue devenue obsolète. Le regroupement
+sémantique reste une décision explicitée, pas une entropie de Shannon calculée
+par le nombre de `if` du code. L'isolé réduit, le candidat intégré et les
+variantes historiques ne s'additionnent pas et ne se substituent pas.
+
 Précision utilisateur après LT2 : une cinétique de mélange efficace est une
 base de travail fondamentale. L'accélération de réactions parasites révèle
 un problème de chimie à résoudre ; ralentir le mouvement ne le résout pas.
