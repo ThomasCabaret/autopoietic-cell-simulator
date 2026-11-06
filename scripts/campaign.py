@@ -47,6 +47,9 @@ def prepare(plan_path,parent):
     if plan.get('population_audit',False):
         from simulator.polymer_population import PopulationAudit
         for task in tasks:PopulationAudit(task['scenario'],interval=population_interval)
+    if 'lipid_geometry_audit' in plan:
+        from simulator.lipid_geometry_audit import LipidGeometryAudit
+        for task in tasks:LipidGeometryAudit(task['scenario'],plan['lipid_geometry_audit'])
     if plan.get('mixing_report',False) and any(t['scenario']['model']!='mixing' for t in tasks):
         raise ValueError('Mixing report requires mechanics-only mixing scenarios')
     if plan.get('motion_report',False) and any(t['scenario']['model']!='mixing' for t in tasks):
@@ -79,6 +82,7 @@ def prepare(plan_path,parent):
     git=subprocess.run(['git','rev-parse','HEAD'],cwd=ROOT,text=True,capture_output=True)
     manifest['git_revision']=git.stdout.strip() if git.returncode==0 else None
     if 'ligation_loupe' in plan:manifest['ligation_loupe']=plan['ligation_loupe']
+    if 'lipid_geometry_audit' in plan:manifest['lipid_geometry_audit']=plan['lipid_geometry_audit']
     write(folder/'manifest.json',manifest)
     (folder/'manifest.sha256').write_text(digest(folder/'manifest.json'),encoding='ascii')
     shutil.copyfile(plan_path,folder/'plan.json')

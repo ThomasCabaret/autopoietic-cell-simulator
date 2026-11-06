@@ -36,6 +36,11 @@ def execute(folder,task_id):
                 motion_audit=MotionAudit(sim,getattr(obs,'campaign_motion_state',None))
                 sim.listeners.append(motion_audit)
             population=None
+            lipid_geometry=None
+            if 'lipid_geometry_audit' in manifest:
+                from .lipid_geometry_audit import LipidGeometryAudit
+                lipid_geometry=LipidGeometryAudit(sim.config,manifest['lipid_geometry_audit'],getattr(obs,'campaign_lipid_geometry_state',None))
+                sim.listeners.append(lipid_geometry)
             if manifest.get('population_audit',False):
                 population=PopulationAudit(sim.config,getattr(obs,'campaign_population_state',None),manifest['population_interval'])
                 sim.listeners.append(population)
@@ -52,6 +57,10 @@ def execute(folder,task_id):
             path=create_output(sim.config,dest/'attempts');last_save=last_report=time.monotonic();last_step=sim.step_index
             def save():
                 obs.campaign_kinetics_state=probe.state
+                if lipid_geometry is not None:
+                    obs.campaign_lipid_geometry_state=lipid_geometry.state
+                    write(path/'lipid_geometry.json',lipid_geometry.summary(sim.time))
+                    state['lipid_geometry']=(path/'lipid_geometry.json').relative_to(folder).as_posix()
                 if audit is not None:obs.campaign_boundary_state=audit.state
                 if genetic is not None:obs.campaign_genetic_state=genetic.state
                 if population is not None:obs.campaign_population_state=population.state
@@ -98,6 +107,7 @@ def execute(folder,task_id):
                     if track_performance:state['benchmark_compute_seconds']=performance['compute_seconds']
                     write(dest/'state.json',state)
             obs.campaign_kinetics_state=probe.state
+            if lipid_geometry is not None:obs.campaign_lipid_geometry_state=lipid_geometry.state
             if audit is not None:obs.campaign_boundary_state=audit.state
             if genetic is not None:obs.campaign_genetic_state=genetic.state
             if population is not None:obs.campaign_population_state=population.state
