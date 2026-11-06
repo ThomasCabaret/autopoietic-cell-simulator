@@ -1,5 +1,16 @@
 # Santé du projet — actualisation6 novembre2026
 
+Lot52 : progrès sans augmenter le coût chimique accepté : fermeture finale
+depuis dimères isolés obtenue dans deux cas actuels, et inspection directe
+des résultats longs dans la GUI. Le ralentissement collectif était une piste
+utile, mais les épisodes intermittents et le cas tardif empêchent de conclure
+robustesse ou étanchéité. La troisième graine reste nécessaire au crible.
+Pas de nouvelle constante, machine ou allongement pour sauver un résultat.
+Prochain horizon de décision : CR1 complet, puis un transfert ou diagnostic
+ciblé, sans nouvel horizon automatique. Information, diversité des fonctions,
+protection/régulation et flux/export restent des risques conceptuels ; pas
+de nouveau pourcentage global ou délai garanti. Voir [BATCH_52](BATCH_52.md).
+
 Audit de complexité du6 novembre2026 : petit alphabet, spécialisation encore
 substantielle. CP1 intégré :6 atomes résolus,5 dimères,6 profils de liaison,
 8 formules intrinsèques,10 transitions dirigées et12 conventions fonctionnelles

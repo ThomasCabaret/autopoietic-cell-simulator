@@ -1,6 +1,6 @@
 # Checklist détaillée — critères et dépendances
 
-Revue 2026-11-06 · révision22. Source : [cell_checklist.json](cell_checklist.json).
+Revue 2026-11-06 · révision23. Source : [cell_checklist.json](cell_checklist.json).
 [Tableau compact](CELL_CHECKLIST_COMPACT.md) · [Échelle et méthode](CONCEPT_FIRST.md).
 
 Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre acyclique de codage. Les cycles de renouvellement sont intentionnels. Une condition initiale construite peut amorcer un sous-cas sans fermer ces cycles.
@@ -25,8 +25,6 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 **Références :** [research/FUNCTIONAL_MECHANISMS.md](../research/FUNCTIONAL_MECHANISMS.md), [research/LOCALITY_AUDIT.md](../research/LOCALITY_AUDIT.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md), [research/BATCH_43.md](../research/BATCH_43.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_46.md](../research/BATCH_46.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_50.md](../research/BATCH_50.md), [research/CHEMISTRY_COMPLEXITY.md](../research/CHEMISTRY_COMPLEXITY.md)
 
 **Prochain test / décision :** Interpréter la géométrie CP1 et tester le transfert complet/non-interactions ; aucune hausse depuis récupération sélectionnée seule.
-
-**Progrès du dernier lot :** Inventaire normalisé :6 atomes,5 composites,6 liens,8 formules,10 transitions ;12 conventions fonctionnelles recensées. Aucun gain de généralité démontré.
 
 <a id="F-02"></a>
 ### F-02 — Fonctions distinctes depuis les assemblages
@@ -355,11 +353,13 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Dépend de :** [F-01](#F-01), [S-04](#S-04) · **Pour renouveler :** —
 
-**Portée des preuves :** V8 MD2 s’assemble à partir de dimères isolés sur trois graines, bain séparé. CP1 court CC1 : association seulement, aucune enceinte finale ; ne remplace pas la preuve historique. CH1 à1800 : chaînes30/52/34, pas de cycle final. BC1 : forme locale vérifiée ; CR1 en cours, pas nouvelle vésicule finale démontrée.
+**Portée des preuves :** V8 MD2 s’assemble à partir de dimères isolés sur trois graines, bain séparé. CP1 court CC1 : association seulement, aucune enceinte finale ; ne remplace pas la preuve historique. CH1 à1800 : chaînes30/52/34, pas de cycle final. BC1 : forme locale vérifiée ; CR1 en cours, pas nouvelle vésicule finale démontrée. Lot52 : deux CR1 finissent en cycles simples30/52 sous les lois L communes, mais présence tardive ne passe que1/2 et troisième cas en cours.
 
-**Références :** [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/BATCH_43.md](../research/BATCH_43.md), [research/BATCH_50.md](../research/BATCH_50.md), [research/BATCH_51.md](../research/BATCH_51.md)
+**Références :** [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/BATCH_43.md](../research/BATCH_43.md), [research/BATCH_50.md](../research/BATCH_50.md), [research/BATCH_51.md](../research/BATCH_51.md), [research/BATCH_52.md](../research/BATCH_52.md)
 
-**Prochain test / décision :** Lire CR1 : cycles simples/aires finaux et occupation6000–8000, bouts observés ; pas de nouveau taux/horizon sans interprétation.
+**Prochain test / décision :** Finir la lecture CR1 et appliquer la porte2/3 fixée ; distinguer fermeture tardive, intermittence et étanchéité non testée avant transfert.
+
+**Progrès du dernier lot :** CR1 deux cas complets : enceintes30/52 depuis molécules isolées, présence tardive.3675/.9625 ; troisième en cours, pas porte de cohorte.
 
 <a id="M-02"></a>
 ### M-02 — Frontière dimensionnée pour le contenu
@@ -846,11 +846,11 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** Fonction logicielle validée pour les références présentes, pas pour toutes les futures chimies.
 
-**Références :** [research/BATCH_26.md](../research/BATCH_26.md), [research/BATCH_27.md](../research/BATCH_27.md), [research/BATCH_31.md](../research/BATCH_31.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_33.md](../research/BATCH_33.md), [research/BATCH_35.md](../research/BATCH_35.md), [research/BATCH_36.md](../research/BATCH_36.md), [research/BATCH_38.md](../research/BATCH_38.md), [research/BATCH_39.md](../research/BATCH_39.md), [research/BATCH_40.md](../research/BATCH_40.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md), [research/BATCH_43.md](../research/BATCH_43.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_45.md](../research/BATCH_45.md), [research/BATCH_46.md](../research/BATCH_46.md), [research/BATCH_47.md](../research/BATCH_47.md), [research/BATCH_48.md](../research/BATCH_48.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_50.md](../research/BATCH_50.md), [research/BATCH_51.md](../research/BATCH_51.md), [research/CHEMISTRY_COMPLEXITY.md](../research/CHEMISTRY_COMPLEXITY.md)
+**Références :** [research/BATCH_26.md](../research/BATCH_26.md), [research/BATCH_27.md](../research/BATCH_27.md), [research/BATCH_31.md](../research/BATCH_31.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_33.md](../research/BATCH_33.md), [research/BATCH_35.md](../research/BATCH_35.md), [research/BATCH_36.md](../research/BATCH_36.md), [research/BATCH_38.md](../research/BATCH_38.md), [research/BATCH_39.md](../research/BATCH_39.md), [research/BATCH_40.md](../research/BATCH_40.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md), [research/BATCH_43.md](../research/BATCH_43.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_45.md](../research/BATCH_45.md), [research/BATCH_46.md](../research/BATCH_46.md), [research/BATCH_47.md](../research/BATCH_47.md), [research/BATCH_48.md](../research/BATCH_48.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_50.md](../research/BATCH_50.md), [research/BATCH_51.md](../research/BATCH_51.md), [research/CHEMISTRY_COMPLEXITY.md](../research/CHEMISTRY_COMPLEXITY.md), [research/BATCH_52.md](../research/BATCH_52.md)
 
 **Prochain test / décision :** Conserver préfixes pausés et sources ; tester le futur delta CP1 contre potentiel complet à voisinage borné, aucun feedback d’observation.
 
-**Progrès du dernier lot :** Registre de complexité généré et vérifié, sources hachées ; aucune dynamique modifiée.
+**Progrès du dernier lot :** Ouverture des checkpoints et menu local CR1, import figé/reprise exacte,290 tests et39 presets natifs ; données locales hors Git.
 
 ## Évolution conservée
 
@@ -876,3 +876,4 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 - Révision20 (2026-11-06) : Lot50 : CP1 intégré/optimisé, CC1 clos6/6 refusé fermeture intégrée ; CH1 clos4/4 récupération intégrée sélectionnée mais aucune enceinte isolée finale. CE1 passif précise les distances finales ; aucun palier biologique augmenté.
 - Révision21 (2026-11-06) : Lot51 BC1 courbure/modes quantifiés, observateur passif borné construit ; CR1 trois mêmes isolés8000 lancé, lois inchangées. Aucun palier biologique augmenté.
 - Révision22 (2026-11-06) : Audit demandé de hardcode : inventaire sémantique normalisé CP1 intégré et CR1 réduit, conventions et contrôles numériques explicites. Aucun palier biologique changé.
+- Révision23 (2026-11-06) : Lot52 : deux CR1 fermés finaux, crible encore incomplet. GUI ouvre les checkpoints locaux sans données Git, reprise exacte et contrôles natifs. Aucun changement de loi ou palier biologique.

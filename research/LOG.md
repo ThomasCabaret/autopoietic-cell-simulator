@@ -1650,3 +1650,18 @@ revue périmée. Méthode de delta par variante ajoutée aux principes ; santé,
 priorités et checklist révision22/43 actualisées, aucun palier biologique augmenté.
 14 contrôles registre/conception passent ; générateur compilé et vue/source
 cohérentes. Aucun test physique ou verdict de campagne requalifié par cet audit.
+
+## 2026-11-06 — lot52, résultats longs inspectables et CR1 partiel
+
+Deux CR1 complets : cycles simples30/52, aires73,01/194,23, fractions tardives
+.3675/.9625 et T≈.08. Troisième toujours en cours à la lecture ; aucune porte
+de cohorte ni réglage nouveau. RG1 analyse les seules histoires complètes,
+premiers échantillons7205/810,13/60 épisodes observés ; ni durées exactes ni
+compteur de ruptures. Preuves figées et figure bornée, sorties brutes locales.
+GUI ouvre les checkpoints compatibles via Fichier et menu Résultats locaux CR1.
+Copie importée immuable, pause au vrai pas, restart depuis la copie, physique
+et observateur principal exacts ; audits auxiliaires de campagne non prolongés.
+Source préservée et provenance de session, pas de données expérimentales Git.
+290 tests passent,39 presets natifs vérifiés et deux vrais checkpoints ouverts
+en Qt/OpenGL. Ajout final d'une note de sous-système, contrôle natif répété.
+Coût chimique CA1 inchangé. Registre23/43, aucun palier biologique augmenté.

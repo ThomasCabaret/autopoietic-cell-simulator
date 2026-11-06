@@ -1,5 +1,23 @@
 # Interface de visualisation durable — GUI1 et catalogue GUI2
 
+6 novembre2026, lot52 : **Fichier → Ouvrir un checkpoint local…** et menu
+**Résultats locaux** disponibles. Ce menu propose les checkpoints CR1 présents
+sur cette machine ; choisir **CP1 · graine1 · terminé** pour inspecter l'enceinte
+de52 molécules calculée à8000. Il faut avoir les résultats locaux ; aucune
+donnée expérimentale n'est embarquée dans le dépôt. Les39 scénarios de démo
+restent accessibles séparément, depuis leur état initial.
+
+Un checkpoint est copié à l'import dans `outputs/visualizer/imports/`, vérifié
+contre les sources du moteur courant et ouvert en pause. Zoom, filtres et
+suivi fonctionnent immédiatement. **Recommencer** revient à cette copie,
+même si la campagne remplace ensuite son fichier d'origine. Un état final
+ne possède pas de passé animé dans ce client : Jouer devient disponible pour
+les checkpoints qui n'ont pas encore atteint leur horizon. Les auditeurs
+auxiliaires des campagnes ne sont pas automatiquement poursuivis par cette
+session visuelle ; le moteur et l'observateur principal reprennent exactement.
+Le fichier source est préservé, chaque session a ses propres sorties et sa
+provenance. Une ancienne version de moteur est refusée sans migration silencieuse.
+
 État du29 octobre2026 : **visualisation essentielle et menu de démos disponibles**.
 Ce lot construit l'outil final d'exploration et de préparation de captures.
 Le catalogue permet de regarder le bain intégré actuel et trois sous-systèmes.
@@ -41,7 +59,8 @@ preuves de recherche. L'interface utilise le vrai moteur `Simulation.advance`.
 | Style graphique | Sprites GPU adoucis, halo discret, style plat et repères commutables |
 | Capture PNG de la scène sans panneaux | Livré, avec JSON de contexte caméra/scénario/temps ; pas une recette exacte de trajectoire |
 | Mode présentation | Livré, Tab masque panneaux/barres ; F11 gère séparément le plein écran |
-| Checkpoint de simulation | Sauvegarde via Fichier ; chargement dans la nouvelle GUI à venir |
+| Checkpoint de simulation | Sauvegarde et ouverture via Fichier ; copie importée immuable, reprise exacte et pause initiale |
+| Résultats des essais longs | Menu Résultats locaux : états CR1 présents sur la machine, sans données embarquées |
 
 Les identifiants sont les indices persistants des billes dans le moteur actuel,
 stables pendant la session. Après une rupture, le suivi garde sa particule
@@ -126,7 +145,7 @@ Le client de relecture et l'encodeur restent à implémenter.
   optionnel ; capture de toute la scène ou d'une caméra locale.
 - Inspection des sites/ports et contacts non liés, regroupements de visibilité
   moléculaires, retour clair sur les structures préparées et produites.
-- Reprise de checkpoint dans ce client, préférences de vue et ergonomie à affiner.
+- Préférences de vue et ergonomie à affiner ; reprise de checkpoint livrée au lot52.
 - Courbes cinétiques comme panneau facultatif indépendant, après le socle.
 - Le catalogue illustre déjà l'intégration scientifique actuelle, avec ses
   dégradations et capacités manquantes visibles ; il évoluera avec les résultats.

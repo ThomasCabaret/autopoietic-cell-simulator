@@ -1,0 +1,109 @@
+{
+  "batch": 52,
+  "date": "2026-11-06",
+  "CR1": {
+    "status": "two complete, third still running at descriptive reading; no cohort decision",
+    "descriptor": "research/BATCH_51_CR1_RECIPES.json",
+    "completed_rows": [
+      {
+        "label": "CR1_assembly_s0",
+        "first_sampled_macro": {
+          "time": 7205.0,
+          "event": true
+        },
+        "sampled_episodes": 13,
+        "sampled_macro_fraction": 0.091875,
+        "late_fraction": 0.3675,
+        "last_episode": {
+          "start": 7935.0,
+          "end": 8000.0,
+          "ends_at_horizon": true
+        },
+        "largest_final": 30,
+        "simple_contours_final": [
+          {
+            "units": 30,
+            "area": 73.00506226551977
+          }
+        ],
+        "sampled_port_contact_frames": 3,
+        "result_sha256": "b0663123c5694c89b6047814d68055f3a81b269d37137c130c3d78b4df235256",
+        "geometry_sha256": "7ad6a715e435aab28ac608848aabfb47b8a3623773e58b5846b7f66e777baca1"
+      },
+      {
+        "label": "CR1_assembly_s1",
+        "first_sampled_macro": {
+          "time": 810.0,
+          "event": true
+        },
+        "sampled_episodes": 60,
+        "sampled_macro_fraction": 0.756875,
+        "late_fraction": 0.9625,
+        "last_episode": {
+          "start": 7955.0,
+          "end": 8000.0,
+          "ends_at_horizon": true
+        },
+        "largest_final": 52,
+        "simple_contours_final": [
+          {
+            "units": 52,
+            "area": 194.22880230958216
+          }
+        ],
+        "sampled_port_contact_frames": 41,
+        "result_sha256": "1fed90566598ddd78c790c7f92be8439d01e015bd6ace938716fc6239e2aa783",
+        "geometry_sha256": "b068dc06f4ea4848af78d1c251df20491fcb1b3b0bcdbb0cd9d9f432b22d2660"
+      }
+    ]
+  },
+  "RG1": {
+    "descriptor": "research/BATCH_52_GEOMETRY.json",
+    "scope": "Completed-case descriptive analysis, selected same seeds. Partial cohort has no decision. Episodes are sampled intervals, not exact lifetimes or rates."
+  },
+  "verification": {
+    "full_suite": {
+      "tests": 290,
+      "passed": true,
+      "elapsed_seconds": 195.245,
+      "sha256": "3048dbb542332d993fc7576ce35a2af1c18beafd4ea8c566e50342d481e33d84",
+      "note": "Full suite before final presentation-only note; native GUI repeated after note."
+    },
+    "checkpoint_native_gui": {
+      "output": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\checkpoint_gui_qa\\20261106_131614732309",
+      "paused_saved_step": true,
+      "restart_from_immutable_import": true,
+      "continuation_exact": true,
+      "original_preserved": true,
+      "native_qt_opengl": true,
+      "local_results": [
+        {
+          "label": "CR1_assembly_s0",
+          "step": 4000000,
+          "beads": 104
+        },
+        {
+          "label": "CR1_assembly_s1",
+          "step": 4000000,
+          "beads": 104
+        }
+      ],
+      "errors": [],
+      "scope": "Current checkpoint view and exact physical continuation, no historical trajectory replay or new chemical success claim."
+    },
+    "presets_native_gui": {
+      "count": 39,
+      "errors": [],
+      "exact_short_frames": true,
+      "report_sha256": "ac3bc5384345003f723ec61c2257f3bc99b52a630e078332ce1e1f995bdb5136"
+    }
+  },
+  "chemistry_delta": {
+    "atoms": 0,
+    "bond_profiles": 0,
+    "reaction_schemata": 0,
+    "functional_predicates": 0,
+    "numeric_controls": 0
+  },
+  "maturity": "No biological proof-stage change. Two current-law isolated final contours observed; persistence gate incomplete, no retained cargo or maintenance implied."
+}

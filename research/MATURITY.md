@@ -1,5 +1,14 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot52 : deux enceintes finales30/52 sous CP1 depuis molécules isolées,
+mais une seule des deux passe la présence tardive ; troisième en cours,
+aucune porte globale conclue. M-01 reste50, avec preuve actuelle de sous-système
+sous les lois L communes ; aucune rétention continue, synthèse depuis aliments
+ou cellule maintenue démontrée. M-04 reste75 EG1 limité et maintien0.
+Le menu de résultats locaux rend les checkpoints inspectables ;290 tests et
+contrôles Qt natifs passent. Aucun changement de loi ou palier biologique.
+Voir [BATCH_52](BATCH_52.md).
+
 Audit de complexité :6 types élémentaires et5 composites possibles ne signifient
 pas chimie générique minimale.10 transitions et12 conventions fonctionnelles
 recensées, avec affinités/rôles spécialisés ; repli F0/F1 identique dans le

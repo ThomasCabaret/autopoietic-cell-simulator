@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "revision": 22,
+  "revision": 23,
   "reviewed": "2026-11-06",
-  "candidate": "CP1 inchangé ; BC1 courbure/modes vérifiés ; CR1 trois horizons sélectionnés en cours ; EG1 visible",
+  "candidate": "CP1 inchangé ; CR1 deux enceintes finales, troisième cas en cours ; résultats locaux inspectables ; EG1 reste le preset",
   "purpose": "Registre évolutif des capacités nécessaires à une cellule construite maintenue ; les pourcentages sont des paliers de preuve, pas un taux global de réussite.",
   "out_of_scope": [
     "origine spontanée de la cellule",
@@ -529,14 +529,15 @@
       "mechanism": "Ports latéraux orientés et géométrie locale liée/libre cohérente.",
       "concept_gap": "Auto-assemblage depuis L libres démontré séparément ; un grand contour issu de H/T fabriqués et sa stabilité commune restent à établir.",
       "proof": "separate",
-      "scope": "V8 MD2 s’assemble à partir de dimères isolés sur trois graines, bain séparé. CP1 court CC1 : association seulement, aucune enceinte finale ; ne remplace pas la preuve historique. CH1 à1800 : chaînes30/52/34, pas de cycle final. BC1 : forme locale vérifiée ; CR1 en cours, pas nouvelle vésicule finale démontrée.",
+      "scope": "V8 MD2 s’assemble à partir de dimères isolés sur trois graines, bain séparé. CP1 court CC1 : association seulement, aucune enceinte finale ; ne remplace pas la preuve historique. CH1 à1800 : chaînes30/52/34, pas de cycle final. BC1 : forme locale vérifiée ; CR1 en cours, pas nouvelle vésicule finale démontrée. Lot52 : deux CR1 finissent en cycles simples30/52 sous les lois L communes, mais présence tardive ne passe que1/2 et troisième cas en cours.",
       "references": [
         "research/BATCH_25_RESULTS.md",
         "research/BATCH_43.md",
         "research/BATCH_50.md",
-        "research/BATCH_51.md"
+        "research/BATCH_51.md",
+        "research/BATCH_52.md"
       ],
-      "next_test": "Lire CR1 : cycles simples/aires finaux et occupation6000–8000, bouts observés ; pas de nouveau taux/horizon sans interprétation.",
+      "next_test": "Finir la lecture CR1 et appliquer la porte2/3 fixée ; distinguer fermeture tardive, intermittence et étanchéité non testée avant transfert.",
       "essential": true
     },
     {
@@ -1202,7 +1203,8 @@
         "research/BATCH_49.md",
         "research/BATCH_50.md",
         "research/BATCH_51.md",
-        "research/CHEMISTRY_COMPLEXITY.md"
+        "research/CHEMISTRY_COMPLEXITY.md",
+        "research/BATCH_52.md"
       ],
       "next_test": "Conserver préfixes pausés et sources ; tester le futur delta CP1 contre potentiel complet à voisinage borné, aucun feedback d’observation.",
       "essential": true
@@ -1341,10 +1343,15 @@
       "revision": 22,
       "date": "2026-11-06",
       "reason": "Audit demandé de hardcode : inventaire sémantique normalisé CP1 intégré et CR1 réduit, conventions et contrôles numériques explicites. Aucun palier biologique changé."
+    },
+    {
+      "revision": 23,
+      "date": "2026-11-06",
+      "reason": "Lot52 : deux CR1 fermés finaux, crible encore incomplet. GUI ouvre les checkpoints locaux sans données Git, reprise exacte et contrôles natifs. Aucun changement de loi ou palier biologique."
     }
   ],
   "last_batch_progress": {
-    "F-01": "Inventaire normalisé :6 atomes,5 composites,6 liens,8 formules,10 transitions ;12 conventions fonctionnelles recensées. Aucun gain de généralité démontré.",
-    "O-02": "Registre de complexité généré et vérifié, sources hachées ; aucune dynamique modifiée."
+    "M-01": "CR1 deux cas complets : enceintes30/52 depuis molécules isolées, présence tardive.3675/.9625 ; troisième en cours, pas porte de cohorte.",
+    "O-02": "Ouverture des checkpoints et menu local CR1, import figé/reprise exacte,290 tests et39 presets natifs ; données locales hors Git."
   }
 }

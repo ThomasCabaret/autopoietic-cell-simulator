@@ -1676,7 +1676,7 @@
       "related": [
         "BC1"
       ],
-      "status": "same_law_selected_horizons_launched",
+      "status": "two_complete_one_running_no_cohort_gate_at_lot52_reading",
       "hypothesis": "An8000 horizon with sampled geometry can distinguish rare encounters, transient cycles and persistent closure under unchanged CP1 laws.",
       "test": "Three same isolated initial states, same physical parameters, optional passive geometry every5 and one first-witness capture.",
       "cost": "No chemical primitive; bounded2001 observations/one104-bead capture per trial, two workers/three hours.",
@@ -1685,7 +1685,8 @@
       "recipe": "research/BATCH_51_CR1_RECIPES.json",
       "evidence": "research/BATCH_51_RELAXATION_PLAN.md",
       "results": "research/BATCH_51.md",
-      "health_gate": "Report then stop; no retry, physical tuning or automatic horizon increase."
+      "health_gate": "Report then stop; no retry, physical tuning or automatic horizon increase.",
+      "partial_results": "Final simple cycles30/52, late macro.3675/.9625, T.07972/.07921. Third pending conclusion. No criteria/horizon change."
     },
     {
       "id": "CA1",
@@ -1699,6 +1700,18 @@
       "recipe": "research/CHEMISTRY_COMPLEXITY.json",
       "evidence": "research/CHEMISTRY_COMPLEXITY.md",
       "results": "research/CHEMISTRY_COMPLEXITY.md"
+    },
+    {
+      "id": "RG1",
+      "parent": "CR1",
+      "status": "completed_case_time_analysis_partial_cohort",
+      "hypothesis": "Final snapshots hide transient sampled closures and late first witnesses.",
+      "test": "Only complete CR1 seeds0/1, hashed result/geometry inputs; sampled histories0–8000.",
+      "cost": "Passive offline analysis, one bounded time figure; no physical primitive or rule.",
+      "conclusion": "First sampled macro7205/810,13/60 sampled episodes; whole fractions.091875/.756875, late.3675/.9625. No cohort gate, exact lifetimes or chemical break counts inferred.",
+      "recipe": "research/BATCH_52_GEOMETRY.json",
+      "evidence": "research/BATCH_52.md",
+      "results": "research/BATCH_52.md"
     }
   ]
 }

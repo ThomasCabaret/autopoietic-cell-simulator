@@ -1,5 +1,16 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot52 : CR1 **deux cas complets, troisième en cours** à la lecture RG1.
+Enceintes simples finales30/52 L depuis dimères isolés, sous lois L inchangées ;
+fractions macro tardives.3675/.9625, une seule passe la présence>=.5.
+Attendre la troisième avant la porte figée2/3 ; pas de nouveau réglage/horizon.
+GUI : **Résultats locaux → CP1 · graine1 · terminé** montre le vrai checkpoint52,
+en pause avec zoom/filtres/suivi ; états locaux seulement, aucune trajectoire Git.
+Import figé/version vérifiée, reprise physique exacte des checkpoints partiels.
+Prochain jalon scientifique : fin CR1 puis transfert/diagnostic justifié selon
+résultat. Le coût CA1 est accepté comme point de départ, delta chimique nul.
+Voir [BATCH_52](BATCH_52.md), statut `competitive_relaxation_status.bat`.
+
 Audit de complexité : conserver la priorité mécaniste CR1/fermeture ; pas de
 nouvelle campagne ni de loi dans cet audit. Toute variante future doit donner
 le delta d'atomes, profils de liens, transitions, conventions et contrôles

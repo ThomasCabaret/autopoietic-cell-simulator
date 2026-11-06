@@ -1,5 +1,23 @@
 # Démos représentatives accessibles dans la GUI
 
+## Lot52 — résultats CP1 réellement calculés, accessibles localement
+
+En plus des39 presets historiques, **Résultats locaux → CP1 · graine1 · terminé**
+ouvre le checkpoint final CR1 :52 molécules assemblées depuis des dimères isolés,
+cycle simple final, présence macroscopique96,25% sur6000–8000. La graine0
+finit aussi fermée avec30 molécules mais n'atteint que36,75% dans cette fenêtre.
+Le lot reste sans verdict tant que la troisième graine n'est pas terminée.
+
+C'est une inspection d'état en pause, avec navigation/filtres/suivi, sans
+relecture de la trajectoire passée. Le checkpoint final a atteint sa durée :
+le bouton Jouer est donc désactivé. Un checkpoint partiel peut reprendre
+physiquement jusqu'à son horizon, dans une nouvelle session sans toucher
+au calcul scientifique original. **Fichier → Ouvrir un checkpoint local…**
+permet aussi de choisir un fichier compatible. Les résultats restent sous
+`outputs/`, ignorés de Git ; le menu est vide s'ils ne sont pas sur la machine.
+La compatibilité du moteur est vérifiée, aucune archive de code n'est exécutée.
+[Bilan et portée](../research/BATCH_52.md).
+
 ## Lot51 — catalogue recertifié, diagnostic visible dans le bilan
 
 39 scènes historiques toujours inchangées physiquement, catalogue recertifié

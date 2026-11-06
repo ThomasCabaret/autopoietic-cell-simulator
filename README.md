@@ -30,6 +30,13 @@ La visualisation essentielle est disponible ; la vidéo et les outils avancés
 seront spécifiés plus tard. [Guide de la GUI](docs/VISUALIZER.md).
 Les lanceurs Pygame historiques ci-dessous sont conservés.
 
+Pour voir les résultats CP1 calculés sur cette machine :
+**Résultats locaux → CP1 · graine1 · terminé**. Ce checkpoint montre l'enceinte
+de52 molécules à8000 ; ouverture en pause, zoom/filtres/suivi disponibles.
+Le menu charge les fichiers locaux, sans données embarquées dans Git.
+Un checkpoint final est un état à inspecter ; son passé n'est pas rejoué.
+**Fichier → Ouvrir un checkpoint local…** accepte aussi les états compatibles.
+
 **Prototype le plus intégré visible** : **Démos → Intégration compacte ·
 échanges stabilisés** montre les trois EG1,302 billes, avec vraie synthèse H/T.
 « État actuel · bain intégré » ouvre la graine0 par convention. Insertion de L

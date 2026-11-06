@@ -1,5 +1,16 @@
 # Brouillon — ce qu'un assemblage fonctionnel pourrait faire
 
+## Lot52 — état courant du transfert
+
+CP1 est intégré au moteur depuis le lot50. Le suivi CR1 donne désormais deux
+enceintes finales depuis molécules L isolées sous ses lois L inchangées,
+30 et52 unités ; une seule des deux satisfait encore le seuil de présence
+macro tardive, troisième graine en cours. Le checkpoint52 est inspectable
+dans la GUI via Résultats locaux. Cela réduit une incertitude de membrane,
+pas le gap de diversité des outils, de repliement programmable ou de maintien.
+Le cycle externe et les helpers restent déclarés. Les sections datées ci-dessous
+conservent leurs conclusions historiques ; CP1 n'est plus seulement statique.
+
 ## Lot49 — fonction locale et identité d'une chaîne
 
 FS1 confirme que des motifs F01 continuent à catalyser dans RP1 lorsque la cible
