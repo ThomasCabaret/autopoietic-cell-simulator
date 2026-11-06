@@ -1,5 +1,14 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot50 : aucun palier biologique relevé. CP1 dynamique associe les molécules
+isolées et reste thermiquement correct. CH1 démontre une récupération
+sélectionnée de frontière (94,33%, G2/F5/L22), mais aucune vésicule isolée finale
+sur trois essais1800 : chaînes30/52/34, extrémités encore distantes. Ni
+robustesse générale, ni renouvellement acquis. M-01 conserve50 historique
+séparé, M-04 garde75 seulement EG1 limité ; Q-01/C-02 restent25, maintien0.
+CC1/CH1 refusés conservés ; GUI39 ancienne chimie recertifiée, CP1 non promu.
+Aucun calcul actif. Voir [BATCH_50](BATCH_50.md).
+
 Lot49 : aucune hausse de palier. Le filtre de toutes les transitions CF1
 est construit/contrôlé, mais expose un défaut de représentation libre/lié et
 devient inefficace : deux préfixes pausés, frontière perdue, pas de cohorte

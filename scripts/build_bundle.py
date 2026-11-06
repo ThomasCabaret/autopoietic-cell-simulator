@@ -153,7 +153,15 @@ def main():
         'experiments/competitive_port_potential.py','experiments/probe_competitive_ports.py',
         'campaigns/contact_gate_pilot.json','campaigns/contacts_mechanism.json',
         'contact_gate_status.bat','stop_contact_gate.bat','resume_contact_gate.bat'))
-    files.update(p for p in (ROOT/'research/diagnostic_recipes').rglob('*') if p.suffix=='.py' or p.name=='recipe.json')
+    files.update(ROOT/p for p in ('research/BATCH_50_PLAN.md','research/BATCH_50_HORIZON_PLAN.md','research/BATCH_50.md',
+        'research/BATCH_50_RESULTS.json','research/BATCH_50_COST.json','research/BATCH_50_CC1_RECIPES.json','research/BATCH_50_CH1_RECIPES.json','research/BATCH_50_CE1.json',
+        'experiments/benchmark_competitive_ports.py','experiments/prepare_competitive_panel.py','experiments/review_competitive_panel.py',
+        'experiments/prepare_competitive_horizon.py','experiments/review_competitive_horizon.py','experiments/audit_competitive_endpoints.py','scripts/recover_followup_monitor.py',
+        'campaigns/competitive_mechanism.json','campaigns/competitive_horizon_mechanism.json',
+        'competitive_panel_status.bat','stop_competitive_panel.bat','resume_competitive_panel.bat',
+        'competitive_horizon_status.bat','stop_competitive_horizon.bat','resume_competitive_horizon.bat'))
+    files.update(p for p in (ROOT/'research/diagnostic_recipes').rglob('*')
+        if p.suffix=='.py' or p.name in ('recipe.json','engine_sources.json'))
     files.update(ROOT/p for p in ('research/BATCH_44_PLAN.md','research/BATCH_44.md','research/BATCH_44_RECIPES.json',
         'research/BATCH_44_PILOT.json','experiments/audit_boundary_access.py','experiments/prepare_compact_transfer.py',
         'experiments/pilot_compact_transfer.py','experiments/review_compact_transfer.py',

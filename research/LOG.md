@@ -1594,3 +1594,25 @@ assimiler proxy de séquence et extinction fonctionnelle ; pas homéostasie.
 265 tests finaux passent, sept préfixes historiques exacts,39 démos natives
 recertifiées. Registre19/43, aucun palier biologique augmenté. Aucun calcul
 actif à la clôture, CF1 checkpoints/sources conservés. Voir BATCH_49.
+
+## 2026-11-06 — lot50, transfert CP1 et association depuis molécules isolées
+
+Forces compétitives et deltas locaux contacts/échanges/naissances H/T intégrés,
+trois rangs spatiaux, ni identité d'agrégat ni nouvelles primitives. Premier
+microcoût15–16× refusé ; allocations internes supprimées, résultat de référence
+exact, coût force1,81–1,85× et delta1,48/.97×. Échec/source conservés.
+CC1 complet6/6 : température6/6, association3/3 ; plus grandes chaînes22/18/18,
+aucun cycle isolé final. Fermeture intégrée.9633/.4347/.9433 : refus maintenu.
+Pas preuve de débit G/F sur ce court horizon300. CH1 quatre suivis sélectionnés
+à1800, mêmes lois/conditions,2 travailleurs/2h, rapport puis arrêt. Conflit de
+lecture Windows : workers continuent, superviseur réattaché avec retry JSON
+borné et provenance de la surcouche, sans changer runtime ni échéance.
+Sept anciens préfixes et deux compétitifs exacts ;39 démos natives recertifiées,
+EG1/EN1 additif toujours visible, pas promotion CP1. Registre20/43, aucun palier
+biologique augmenté, maintien0. Voir BATCH_50 et ses preuves compactes.
+
+CH1 terminé4/4 avant clôture : température correcte partout, intégré1 récupère
+94,33% tardif avec G2/F5/L22. Isolés30/52/34, aucun cycle final ; porte refusée
+conservée. CE1 passif lit cinq paires d'extrémités toutes hors capture.25,
+y compris chaîne52 : prochaine question géométrie/courbure et occasions,
+pas une nouvelle durée à l'aveugle. Aucun calcul actif à cette clôture.

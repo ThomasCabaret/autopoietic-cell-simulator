@@ -312,3 +312,7 @@ génétique ; de futures modifications T9 devront retester collage parasite,
 accessibilité des gènes et catalyse des fragments, pas les déclarer tous inertes.
 N1 conserve exactement ces interactions et raffine conjointement mécanique
 et ticks réactionnels avant d'attribuer une rareté à la chimie.
+
+## Transfert compétitif — lot50
+
+CC1 change les ports L libres et les deltas des contacts/naissances, sans changer les règles P/R. Le transfert H/T→L inclut les interactions des voisins existants. L’isolé retire outils et P/R : association sous les mêmes paramètres L seulement, pas validation des non-interactions du bain complet. L’intégré reste un contrôle préparé, avec un échec de fermeture à froid ; sélectivité, rétention et compatibilité sous flux non acquises.

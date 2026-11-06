@@ -1,5 +1,13 @@
 # Démos représentatives accessibles dans la GUI
 
+## Lot50 —39 choix conservés, CP1 encore en évaluation
+
+Les39 scènes natives ont été recertifiées. Les champs `free_port_potential=additive`
+et `initial_lipids=[]` explicitent les défauts historiques ; elles montrent EG1/EN1/CB1,
+pas les nouvelles lois CP1. CC1 associe les dimères isolés mais n'obtient pas de
+cycle final à300 et refuse la fermeture intégrée dans une graine. CH1 terminé : récupération intégrée sélectionnée mais pas de cycle isolé final.
+Aucune promotion, aucun calcul actif. [Bilan](../research/BATCH_50.md).
+
 ## Lot49 —39 choix recertifiés, limites conservées
 
 EG1/EN1/CB1 restent les recettes visibles, avec défauts et refus déclarés.

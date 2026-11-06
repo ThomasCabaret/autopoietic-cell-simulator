@@ -1,5 +1,19 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot50 : **CP1 dynamique intégré**, forces/deltas/naissances cohérents,
+coût force optimisé15–16×→1,81–1,85×. **CC1 clos6/6**, porte refusée :
+température6/6, association3/3, mais intégré1 ouvert à froid. **CH1 clos4/4** :
+intégré1 récupère94,33% de fermeture tardive, G2/F5/L22 ; isolés forment chaînes
+30/52/34 mais aucun cycle final. Porte CH1 refusée sur fermeture isolée.
+**CE1 passif** : les cinq paires d'extrémités finales sont loin du seuil.25,
+même la chaîne52 ; pas une preuve d'absence d'occasions antérieures.
+Prochain objectif : diagnostiquer courbure/flexibilité locale et chronologie
+des rencontres/ruptures, d'abord sur instantanés et petits contrôles motivés.
+Ne pas prolonger aveuglément ou augmenter les taux. Aucun calcul actif,
+CF1 reste pausé. GUI39 additive EG1/EN1/CB1, CP1 non promu. Diversité,
+information riche, protection/régulation et flux/export restent des gaps.
+Voir [BATCH_50](BATCH_50.md).
+
 Lot49 : **EL1 clos exact** localise surtout les apports des formations de
 contacts, pas ceux des échanges filtrés. **RP1 refusé** sur la séquence cible,
 mais FS1 constate encore motifs F01 et catalyse tardive : ne pas assimiler perte

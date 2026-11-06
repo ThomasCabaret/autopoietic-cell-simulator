@@ -1,4 +1,18 @@
-# Santé du projet — actualisation5 novembre2026
+# Santé du projet — actualisation6 novembre2026
+
+6 novembre2026, lot50 : deux jalons CP1 examinés. Intégration/gradient/delta
+et coût local atteints ; la récupération sélectionnée de frontière passe,
+mais l'assemblage fermé isolé échoue au critère final. Ce n'est plus un blocage
+de liaison par millions de refus. CE1 montre des extrémités distantes même
+pour52 unités : prochain jalon, au plus une intervention de diagnostic
+géométrique/courbure et un petit contrôle ciblé avant nouvelle campagne longue.
+Sans mécanisme explicatif exploitable, revoir la représentation plutôt que
+des constantes. La lenteur seule reste une hypothèse, pas une conclusion.
+Pas de blocage de principe établi ni garantie de quelques dizaines de lots :
+diversité, protection, information et flux restent conceptuels. Pas de chiffre
+global relevé. Supervision Windows récupérée sans relance ni modification des
+sources physiques ;4/4 résultats CH1 et aucun calcul actif à la clôture.
+Voir [BATCH_50](BATCH_50.md).
 
 Lot49, réévaluation après le refus structurel CF1 : l'attraction additive
 libre rend favorable l'accumulation de partenaires qu'une liaison exclut ensuite.

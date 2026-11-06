@@ -34,13 +34,14 @@ proche de la consigne dans les trois ; aucun maintien sous pertes ou flux ouvert
 CB1 et ses ouvertures restent au menu « défauts connus ». MIN1M et MX2 restent
 accessibles séparément,39 démos au total. EN1 est visible dans « contrôle au pas fin ».
 
-Recherche : **CF1 est en pause scientifique**, sans essai complet : le filtre
-local de toutes les transitions expose une attraction libre additive incompatible
-avec la liaison saturable. Deux préfixes et quatre essais non démarrés conservés,
-aucune campagne active. **CP1 est un prototype statique compétitif**, cas binaire
-et gradient vérifiés ; son intégration dynamique reste à faire. EL1 est clos,
-RP1 reste refusé ; FS1 distingue perte de F001 et activité F01 encore présente.
-Ne pas reprendre CF1 sans nouvelle décision. [Lot49](research/BATCH_49.md) ·
+Recherche : **CP1 est transféré au moteur**, avec potentiel compétitif et
+deltas locaux cohérents. **CC1 terminé6/6** : association de molécules libres
+et température correcte, mais fermeture intégrée refusée dans une graine ;
+pas encore de vésicule isolée sous ces lois. **CH1 terminé4/4** : récupération intégrée sélectionnée, mais toujours aucune
+enceinte isolée finale ; prochain travail sur la géométrie de fermeture. Aucun
+calcul actif, état vérifiable via `competitive_horizon_status.bat`. Les39 démos restent les références additives
+EG1/EN1/CB1 recertifiées ; CP1 n'est pas promu. CF1 reste en pause scientifique.
+[Lot50](research/BATCH_50.md) · [Checklist](research/CELL_CHECKLIST_COMPACT.md) ·
 [Calibration](research/CAMPAIGN_CALIBRATION.md).
 
 Un moteur CPU commun pour les campagnes sans fenêtre et les démonstrateurs

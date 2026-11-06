@@ -1,0 +1,402 @@
+{
+  "batch": 50,
+  "date": "2026-11-06",
+  "CC1": {
+    "report": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\competitive_mechanism_followups\\followup_20261106T071431955883Z\\report_0.json",
+    "report_sha256": "b3da16ae2042f0fed5542f4ae443d4456345e1a361737c2141fdbc3179aa4b2f",
+    "decision": {
+      "screen_passed": false,
+      "conditions": {
+        "final_ports": true,
+        "integrated_invariants": true,
+        "temperature": true,
+        "integrated_closure": false,
+        "isolated_association": true
+      },
+      "run_transfer": false,
+      "scope": "First300-time dynamics, constructed integrated frontier and isolated-L association. No closed vesicle, late insertion, numerical convergence, renewal or homeostasis implied. Report then interpret; no long followup automatically."
+    },
+    "rows": [
+      {
+        "label": "CC1_integrated_s0",
+        "seed": 0,
+        "variant": "integrated",
+        "atoms": 302,
+        "final_ports_valid": true,
+        "invariant_failures": 0,
+        "late_temperature": 0.08431249006651502,
+        "valid_fraction_late": 0.9633333333333334,
+        "L": 59,
+        "L_new": 7,
+        "lateral_contacts": 58,
+        "largest_component": 52,
+        "size_distribution": {
+          "7": 1,
+          "52": 1
+        },
+        "graph_cycles": 1,
+        "G_new": 0,
+        "F_new": 0,
+        "elapsed_seconds": 263.5779999999795,
+        "result_sha256": "9b9ce2c899fbd25b48915a6517dc2d6e16da1f9f60ab7047ee65f331f1531088"
+      },
+      {
+        "label": "CC1_integrated_s1",
+        "seed": 1,
+        "variant": "integrated",
+        "atoms": 302,
+        "final_ports_valid": true,
+        "invariant_failures": 0,
+        "late_temperature": 0.08824332748058951,
+        "valid_fraction_late": 0.4346666666666666,
+        "L": 62,
+        "L_new": 10,
+        "lateral_contacts": 57,
+        "largest_component": 28,
+        "size_distribution": {
+          "4": 1,
+          "28": 1,
+          "27": 1,
+          "1": 1,
+          "2": 1
+        },
+        "graph_cycles": 0,
+        "G_new": 0,
+        "F_new": 0,
+        "elapsed_seconds": 266.1720000000205,
+        "result_sha256": "cf617eb0bad67c53b75793369bfe90e8a9f8ca6fc2cd03ee50e7ef9da8615b20"
+      },
+      {
+        "label": "CC1_integrated_s2",
+        "seed": 2,
+        "variant": "integrated",
+        "atoms": 302,
+        "final_ports_valid": true,
+        "invariant_failures": 0,
+        "late_temperature": 0.08595821971930183,
+        "valid_fraction_late": 0.9433333333333334,
+        "L": 57,
+        "L_new": 5,
+        "lateral_contacts": 54,
+        "largest_component": 52,
+        "size_distribution": {
+          "2": 2,
+          "1": 1,
+          "52": 1
+        },
+        "graph_cycles": 1,
+        "G_new": 0,
+        "F_new": 0,
+        "elapsed_seconds": 217.14099999982864,
+        "result_sha256": "040ac3ecd27972146e80a6aa3b7912f6a5d857b3839694b6d282be6cd964f91a"
+      },
+      {
+        "label": "CC1_assembly_s0",
+        "seed": 0,
+        "variant": "assembly",
+        "atoms": 104,
+        "final_ports_valid": true,
+        "invariant_failures": null,
+        "late_temperature": 0.0864397986202044,
+        "valid_fraction_late": null,
+        "L": 52,
+        "L_new": 0,
+        "lateral_contacts": 48,
+        "largest_component": 22,
+        "size_distribution": {
+          "21": 1,
+          "4": 1,
+          "22": 1,
+          "5": 1
+        },
+        "graph_cycles": 0,
+        "G_new": null,
+        "F_new": null,
+        "elapsed_seconds": 83.40600000019185,
+        "result_sha256": "2db320d0fc875b92b750d8b85e415e32f3c8f75edbe88b96880ed9a776ebe88f"
+      },
+      {
+        "label": "CC1_assembly_s1",
+        "seed": 1,
+        "variant": "assembly",
+        "atoms": 104,
+        "final_ports_valid": true,
+        "invariant_failures": null,
+        "late_temperature": 0.07790911962224399,
+        "valid_fraction_late": null,
+        "L": 52,
+        "L_new": 0,
+        "lateral_contacts": 47,
+        "largest_component": 18,
+        "size_distribution": {
+          "18": 1,
+          "12": 1,
+          "9": 2,
+          "4": 1
+        },
+        "graph_cycles": 0,
+        "G_new": null,
+        "F_new": null,
+        "elapsed_seconds": 117.15599999995902,
+        "result_sha256": "e4dfb3731a0d5b08ce7f6e0519cdcb1e9dca01ab186dcdc9353488701bd68af0"
+      },
+      {
+        "label": "CC1_assembly_s2",
+        "seed": 2,
+        "variant": "assembly",
+        "atoms": 104,
+        "final_ports_valid": true,
+        "invariant_failures": null,
+        "late_temperature": 0.0798228392713353,
+        "valid_fraction_late": null,
+        "L": 52,
+        "L_new": 0,
+        "lateral_contacts": 47,
+        "largest_component": 18,
+        "size_distribution": {
+          "18": 1,
+          "11": 1,
+          "7": 1,
+          "13": 1,
+          "3": 1
+        },
+        "graph_cycles": 0,
+        "G_new": null,
+        "F_new": null,
+        "elapsed_seconds": 116.75,
+        "result_sha256": "77e495043d6dcc4dabbef8d0949456876bcf13ca7f3333626cfc2cc6cdccc9e5"
+      }
+    ]
+  },
+  "cost": {
+    "recipe": "research/diagnostic_recipes/CBEN1_20261106T071433648971Z",
+    "report_sha256": "8f07cf8eda936f5066e9317f2ae7ad577c7203fc866ba7142a7d20220a89383d",
+    "rows": [
+      {
+        "label": "CF1_coarse_s0",
+        "L": 75,
+        "pairs": 2486,
+        "force_seconds_additive": 8.214799920096993e-05,
+        "force_seconds_competitive": 0.0001486169989220798,
+        "force_ratio": 1.809137171539597,
+        "delta_seconds_additive": 0.00016442998312413693,
+        "delta_seconds_competitive": 0.0002441000076942146,
+        "delta_ratio": 1.4845224882735075,
+        "checkpoint_sha256": "422d0ba8e0bef3d57155162c95b134dd3a84ae9f56d0b4cb98fef4fe62393ec9"
+      },
+      {
+        "label": "CF1_coarse_s1",
+        "L": 75,
+        "pairs": 1381,
+        "force_seconds_additive": 4.550199955701828e-05,
+        "force_seconds_competitive": 8.440500125288963e-05,
+        "force_ratio": 1.8549734533560933,
+        "delta_seconds_additive": 0.00011035000206902624,
+        "delta_seconds_competitive": 0.0001073949970304966,
+        "delta_ratio": 0.9732215225815654,
+        "checkpoint_sha256": "c7a4398649997758425bed62485cb48f5abc16661f80ab1f7e72522b80cdc80a"
+      }
+    ],
+    "scope": "Warmed selected snapshot microcost, median3 repeats. Force100 calls, delta10 per selected contact. No full runtime/mixing or machine-independent speed guarantee.",
+    "rejected_first_attempt": {
+      "output": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\diagnostics\\CBEN1_20261106T071207129685Z",
+      "recipe": "research/diagnostic_recipes/CBEN1_20261106T071207129685Z",
+      "report_sha256": "739b8f650c100f4be102e4afa0e92dbaad00d60cb56fd5d381830dcc2a276808",
+      "summary": {
+        "rows": [
+          {
+            "label": "CF1_coarse_s0",
+            "L": 75,
+            "pairs": 2486,
+            "force_seconds_additive": 7.791199954226613e-05,
+            "force_seconds_competitive": 0.0012021600012667476,
+            "force_ratio": 15.42971568345635,
+            "delta_seconds_additive": 0.00013210999313741922,
+            "delta_seconds_competitive": 0.0015400849981233478,
+            "delta_ratio": 11.657596534134779,
+            "checkpoint_sha256": "422d0ba8e0bef3d57155162c95b134dd3a84ae9f56d0b4cb98fef4fe62393ec9"
+          },
+          {
+            "label": "CF1_coarse_s1",
+            "L": 75,
+            "pairs": 1381,
+            "force_seconds_additive": 4.2976001277565954e-05,
+            "force_seconds_competitive": 0.0006982380012050271,
+            "force_ratio": 16.247160751307884,
+            "delta_seconds_additive": 9.407500037923456e-05,
+            "delta_seconds_competitive": 0.0005275600007735193,
+            "delta_ratio": 5.607866049926364,
+            "checkpoint_sha256": "c7a4398649997758425bed62485cb48f5abc16661f80ab1f7e72522b80cdc80a"
+          }
+        ],
+        "screen_passed": false,
+        "scope": "Warmed selected snapshot microcost, median3 repeats. Force100 calls, delta10 per selected contact. No full runtime/mixing or machine-independent speed guarantee."
+      },
+      "engine_source_supplement": "research/diagnostic_recipes/CBEN1_20261106T071207129685Z/engine_sources.json"
+    }
+  },
+  "CH1": {
+    "descriptor": "research/BATCH_50_CH1_RECIPES.json",
+    "plan": "research/BATCH_50_HORIZON_PLAN.md",
+    "report": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\competitive_horizon_mechanism_followups\\followup_20261106T073608844143Z\\report_0.json",
+    "report_sha256": "d65e298912b0c68d055584b23fe0a661c54a9a009bc29d0c397d480271acc56f",
+    "decision": {
+      "screen_passed": false,
+      "conditions": {
+        "ports": true,
+        "integrated_invariants": true,
+        "temperature": true,
+        "macroscopic_final_contour_two_seeds": false,
+        "selected_integrated_closure": true,
+        "selected_integrated_production": true
+      },
+      "run_transfer": false,
+      "scope": "Selected1800 horizon, final simple geometry only. No first-passage, continuous retention, general robustness, homeostasis or independence from CC1. No final witness does not exclude earlier transient closure; no closure rate inferred."
+    },
+    "rows": [
+      {
+        "label": "CH1_assembly_s0",
+        "seed": 0,
+        "variant": "assembly",
+        "atoms": 104,
+        "final_ports_valid": true,
+        "invariant_failures": null,
+        "late_temperature": 0.07893086161958313,
+        "valid_fraction_late": null,
+        "L": 52,
+        "L_new": 0,
+        "lateral_contacts": 50,
+        "largest_component": 30,
+        "size_distribution": {
+          "30": 1,
+          "22": 1
+        },
+        "graph_cycles": 0,
+        "simple_contours": [],
+        "G_new": null,
+        "F_new": null,
+        "elapsed_seconds": 663.469000000041,
+        "result_sha256": "9f5683ea90ffa89c8f3f2b9613172e340b4040273d4b0c566ce101414059b004"
+      },
+      {
+        "label": "CH1_assembly_s1",
+        "seed": 1,
+        "variant": "assembly",
+        "atoms": 104,
+        "final_ports_valid": true,
+        "invariant_failures": null,
+        "late_temperature": 0.07792949599628941,
+        "valid_fraction_late": null,
+        "L": 52,
+        "L_new": 0,
+        "lateral_contacts": 51,
+        "largest_component": 52,
+        "size_distribution": {
+          "52": 1
+        },
+        "graph_cycles": 0,
+        "simple_contours": [],
+        "G_new": null,
+        "F_new": null,
+        "elapsed_seconds": 649.6719999997877,
+        "result_sha256": "ef79457dd5379f6785304f4d61c0ae5b0a3f306c2c149168e2bee6e40190a857"
+      },
+      {
+        "label": "CH1_assembly_s2",
+        "seed": 2,
+        "variant": "assembly",
+        "atoms": 104,
+        "final_ports_valid": true,
+        "invariant_failures": null,
+        "late_temperature": 0.07974955834359296,
+        "valid_fraction_late": null,
+        "L": 52,
+        "L_new": 0,
+        "lateral_contacts": 50,
+        "largest_component": 34,
+        "size_distribution": {
+          "34": 1,
+          "18": 1
+        },
+        "graph_cycles": 0,
+        "simple_contours": [],
+        "G_new": null,
+        "F_new": null,
+        "elapsed_seconds": 658.3280000002123,
+        "result_sha256": "665658ceff522f136298baf1e7ac834a31594a1f330b55df532d6fc3c2494977"
+      },
+      {
+        "label": "CH1_integrated_s1",
+        "seed": 1,
+        "variant": "integrated",
+        "atoms": 302,
+        "final_ports_valid": true,
+        "invariant_failures": 0,
+        "late_temperature": 0.08370434185008338,
+        "valid_fraction_late": 0.9433333333333334,
+        "L": 74,
+        "L_new": 22,
+        "lateral_contacts": 71,
+        "largest_component": 56,
+        "size_distribution": {
+          "15": 1,
+          "1": 1,
+          "56": 1,
+          "2": 1
+        },
+        "graph_cycles": 1,
+        "simple_contours": [
+          {
+            "units": 56,
+            "area": 250.5527390047062
+          }
+        ],
+        "G_new": 2,
+        "F_new": 5,
+        "elapsed_seconds": 1572.8279999999795,
+        "result_sha256": "5d495d60e4bcd533c581a9ff5313f64e9eb0c6f13f913028f4cd68d544255959"
+      }
+    ],
+    "status": "complete4/4; no campaign active"
+  },
+  "verification": {
+    "full_suite": {
+      "tests": 278,
+      "passed": true,
+      "log": "outputs\\batch50_final_tests_unrestricted.log",
+      "sha256": "2c3101e8a4465481bf86b7b596abd4d14795d444911d921bbe4e90dffea3ed98",
+      "elapsed_seconds": 152.689
+    },
+    "native_demos": 39,
+    "historical_exact_prefixes": 7,
+    "competitive_exact_prefixes": 2,
+    "historical": {
+      "path": "outputs/diagnostics/CT1_reference_20261106T071207720773Z/report.json",
+      "sha256": "4f9883e90bf7998e1adf052fe6a0862d8acf56a718ada5d9aa9db94b6141aa3c"
+    },
+    "competitive": {
+      "path": "outputs/diagnostics/CT1_reference_20261106T073504230810Z/report.json",
+      "sha256": "b48dae3e66120e4af2666ad14f8da90c049724c681159c4e646daacd0edca86a"
+    },
+    "sandbox_attempt": "Temp-directory ACL errors; rerun outside sandbox passed. No physics failure inferred.",
+    "release_checks": {
+      "tests": 11,
+      "passed": true,
+      "log": "outputs\\batch50_release_checks.log",
+      "sha256": "594c6629a1b56d715eed51f84d362fe3f34f3431a921f1498d990aa392714949",
+      "scope": "Catalogue rebuilt after a comment-only engine clarification; IO retry tests. Full278 suite before that comment-only change."
+    },
+    "archival_bytes": "diagnostic_recipes now -text/-eol in .gitattributes; existing frozen bytes restored in index, no source-content edits"
+  },
+  "scope": "Association and short thermal behavior, not vesicle assembly or sustained common-chemistry maintenance.",
+  "CE1": {
+    "descriptor": "research/BATCH_50_CE1.json",
+    "scope": "Passive final endpoint geometry, no encounter history."
+  },
+  "monitor_recovery": {
+    "audit_sha256": "34fffcc13c2f3784dbeb76668a0b43f71fce7454b534cafd363a958fee7f7ad5",
+    "source_sha256": "790d1fa0fbf294b93824ba036dce94430465d1107b0edb532c56b9639da5e201",
+    "source": "research/diagnostic_recipes/CH1_monitor_20261106/recover_followup_monitor.py",
+    "result": "Attached existing controller; frozen physical sources and initial deadline retained; report complete4/4."
+  }
+}

@@ -1597,7 +1597,9 @@
       "conclusion": "Static checks pass. Median delta additive209.09/99.09 -> competitive-1.925/-1.697;12/12 and11/12 selected downhill. No dynamics or global robustness claim.",
       "recipe": "research/BATCH_49_CP1.json",
       "evidence": "research/BATCH_49_PLAN.md",
-      "results": "research/BATCH_49.md"
+      "results": "research/BATCH_49.md",
+      "transferred_in": "CC1",
+      "missing_proof": "Dynamic transfer tracked separately in CC1/CH1; static result unchanged."
     },
     {
       "id": "FS1",
@@ -1610,6 +1612,49 @@
       "recipe": "research/BATCH_49_FS1.json",
       "evidence": "research/BATCH_49.md",
       "results": "research/BATCH_49.md"
+    },
+    {
+      "id": "CC1",
+      "parent": "CP1",
+      "status": "six_complete_gate_refused_integrated_closure",
+      "hypothesis": "Bounded port competition permits dynamic association without additive frustration.",
+      "test": "Three integrated302-bead and three isolated104-bead trials300, fixed L laws; isolated52 prepared dimers, no lateral bonds.",
+      "cost": "One potential choice, no new numerical constant/type/port/state/gene/tool; analytic gradient and bounded3-hop deltas; warm force~1.8x.",
+      "counterexample": "Cold opening, failed isolated association, thermal instability or excessive computation.",
+      "conclusion": "Temperature6/6 and association3/3 pass; isolated largest22/18/18, no final cycles. Integrated late closure.9633/.4347/.9433, L7/10/5; G/F0 at short300 horizon. Gate refused.",
+      "missing_proof": "Closed isolated vesicles, persistent insertion, numerical robustness, common G/F throughput and maintenance.",
+      "recipe": "research/BATCH_50_CC1_RECIPES.json",
+      "evidence": "research/BATCH_50_PLAN.md",
+      "results": "research/BATCH_50.md",
+      "health_gate": "Six trials then stop; no automatic long followup."
+    },
+    {
+      "id": "CH1",
+      "parent": "CC1",
+      "status": "four_complete_gate_refused_isolated_closure",
+      "hypothesis": "Longer encounter time allows isolated closure or recovery of the cold-open selected integrated case.",
+      "test": "Three isolated seeds and only integratedseed1, duration1800; laws/stocks/initial positions unchanged.",
+      "cost": "No chemical change, sixfold horizon; two workers/two hours with original deadline retained after IO monitor recovery.",
+      "counterexample": "No final macroscopic cycle, cold-open integration, lost G/F throughput, or heating.",
+      "missing_proof": "First passage not measured; final geometry does not establish continuous retention or homeostasis.",
+      "recipe": "research/BATCH_50_CH1_RECIPES.json",
+      "evidence": "research/BATCH_50_HORIZON_PLAN.md",
+      "results": "research/BATCH_50.md",
+      "health_gate": "Report then stop, no tuning or further automatic campaign.",
+      "conclusion": "Temperature4/4 pass. Integratedseed1 recovered lateclosure.94333, G2/F5/L22. Isolatedlargest30/52/34 but no final cycle. Gate refused, selected recovery not independent robustness."
+    },
+    {
+      "id": "CE1",
+      "parent": "CH1",
+      "status": "passive_final_endpoint_audit_complete",
+      "hypothesis": "At final time unclosed chains may have geometrically separated free ends rather than a rejected admissible closure.",
+      "test": "Read three final isolated checkpoints; own-chain free opposite ports only, no new evolution or threshold tuning.",
+      "cost": "Observer only, five endpoint pairs; frozen analysis and engine sources.",
+      "conclusion": "All five final endpoint pairs outside capture.25: mismatch12.68/12.83,17.70,36.77/22.00. Longest52 also far. Final snapshots do not diagnose past encounters or rupture.",
+      "missing_proof": "Bound-pose curvature/flexibility and encounter/rupture chronology; do not infer absence throughout trajectory.",
+      "recipe": "research/BATCH_50_CE1.json",
+      "evidence": "research/BATCH_50.md",
+      "results": "research/BATCH_50.md"
     }
   ]
 }

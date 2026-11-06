@@ -532,3 +532,7 @@ Pas de même essai réunissant nouveau G et cet usage aval. Le graphe C0B reste
 conditionnel : ces seize G001/F001 ne réalisent pas les trois fonctions de
 synthèse distinctes, et aucun L n'est fabriqué. N1 raffine seulement le temps ;
 aucun gène, outil ou budget particulaire ajouté. Voir BATCH_16_RESULTS.md.
+
+## Candidat CP1 — lot50
+
+Le graphe causal et ses outils/gènes restent inchangés : le potentiel compétitif modifie la mécanique/énergie des ports L, pas les voies fonctionnelles. CC1 utilise302 billes intégrées ou104 billes pour52 dimères isolés préparés depuis le stock. Ce sont des bancs de mécanisme, pas une nouvelle estimation de cellule complète. Aucun gène ou outil de réparation ajouté. Le besoin de fermeture/insertion robuste reste ouvert ; ne pas compter les chaînes isolées comme enceintes ni la température stable comme renouvellement.

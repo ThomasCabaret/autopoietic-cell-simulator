@@ -428,3 +428,7 @@ un tirage accepté, sans prétendre mesurer une cinétique. La production garde
 son PRNG normal. L'automate choisit entre essais sources figées, pas dans un bain.
 Un F complet peut recapturer par ses bouts : mesurer sa séquestration est un
 contre-test, pas un label de protection introduit dans les lois.
+
+## CP1 dynamique — lot50
+
+Un choix de potentiel sans constante supplémentaire. Les ports libres lisent les affinités à coupure spatiale existante ; le gradient inclut les partitions voisines. Le delta de contact touche deux L, celui d’échange trois ; les termes affectés au second rang requièrent des partitions jusqu’au troisième rang. La naissance H/T ajoute un L hypothétique et repondère aussi ses voisins. Aucun parcours de composant, contour, génome, origine ou label observateur dans ces décisions. Le calcul peut scanner les paires pour extraire ce voisinage borné ; une indexation globale ne devient pas une dépendance physique distante. Initialisation des dimères explicitement construite, conservation des atomes, aucune liaison latérale imposée. Contrôles delta local/global, perturbation distante, passivité et reprise exacts. Pas d’équilibre détaillé revendiqué.
