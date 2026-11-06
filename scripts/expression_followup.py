@@ -4,8 +4,8 @@ from pathlib import Path
 from statistics import median
 from datetime import datetime,timezone
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
-from scripts.campaign import prepare as prepare_campaign,export_recipe,validate,status as campaign_status
-from simulator.campaign_io import read,write,lock,busy
+from scripts.campaign import prepare as prepare_campaign,export_recipe,validate,status as campaign_status,read
+from simulator.campaign_io import write,lock,busy
 
 
 def digest(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()

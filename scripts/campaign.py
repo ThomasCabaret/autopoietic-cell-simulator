@@ -4,7 +4,16 @@ from datetime import datetime,timezone
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from simulator.config import resolve
-from simulator.campaign_io import read,write,lock,busy
+from simulator.campaign_io import read as read_record,write,lock,busy
+
+
+def read(path,default=None):
+    """Bounded retry of a Windows sharing conflict, never a task retry."""
+    for attempt in range(7):
+        try:return read_record(path,default)
+        except PermissionError:
+            if os.name!='nt' or attempt==6:raise
+            time.sleep(.01*2**attempt)
 
 
 def digest(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
