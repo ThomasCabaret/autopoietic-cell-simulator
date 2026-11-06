@@ -1,5 +1,5 @@
 param([ValidateSet('Start','Status','Stop','Resume','Review')][string]$Action='Status',
-      [ValidateSet('Membrane','Lipids','Curvature','Tail','Capture','Mixed','Cooperative','Boundary','Compact','Exchange','Wide','Inhibition','Energy','EnergyDt','Protection','Contacts')][string]$Kind='Membrane')
+      [ValidateSet('Membrane','Lipids','Curvature','Tail','Capture','Mixed','Cooperative','Boundary','Compact','Exchange','Wide','Inhibition','Energy','EnergyDt','Protection','Contacts','Competitive','CompetitiveHorizon')][string]$Kind='Membrane')
 $ErrorActionPreference='Stop'
 $projectRoot=Split-Path -Parent $PSScriptRoot
 Set-Location -LiteralPath $projectRoot
@@ -22,6 +22,8 @@ if ($Kind -eq 'Energy') { $driverName='mechanism_followup.py'; $parentName='ener
 if ($Kind -eq 'EnergyDt') { $driverName='mechanism_followup.py'; $parentName='timestep_mechanism_followups'; $kindLabel='EN1'; $modeArgs=@('--study','timestep') }
 if ($Kind -eq 'Protection') { $driverName='mechanism_followup.py'; $parentName='protection_mechanism_followups'; $kindLabel='RP1'; $modeArgs=@('--study','protection') }
 if ($Kind -eq 'Contacts') { $driverName='mechanism_followup.py'; $parentName='contacts_mechanism_followups'; $kindLabel='CF1'; $modeArgs=@('--study','contacts') }
+if ($Kind -eq 'Competitive') { $driverName='mechanism_followup.py'; $parentName='competitive_mechanism_followups'; $kindLabel='CC1'; $modeArgs=@('--study','competitive') }
+if ($Kind -eq 'CompetitiveHorizon') { $driverName='mechanism_followup.py'; $parentName='competitive_horizon_mechanism_followups'; $kindLabel='CH1'; $modeArgs=@('--study','competitive_horizon') }
 if ($Kind -eq 'Tail') { $driverName='lipid_curvature_followup.py'; $parentName='lipid_thermal_tail_followups'; $kindLabel='L4'; $modeArgs=@('--tail') }
 $driverPath=Join-Path $projectRoot "scripts\$driverName"
 if ($Action -eq 'Start') {
@@ -45,6 +47,7 @@ if ($Action -in @('Start','Resume')) {
     $process=Start-Process -FilePath $pythonPath -ArgumentList $arguments -WorkingDirectory $jobPath -WindowStyle Hidden -RedirectStandardOutput (Join-Path $jobPath "supervisor_$stamp.out.log") -RedirectStandardError (Join-Path $jobPath "supervisor_$stamp.err.log") -PassThru
     Write-Output "$kindLabel : $jobPath ; PID $($process.Id)"
 } else {
+    if ($Action -eq 'Review') { $driverPath=Join-Path $jobPath "runtime\scripts\$driverName" }
     & $pythonPath $driverPath $Action.ToLowerInvariant() --job $jobPath @modeArgs
     if ($LASTEXITCODE -ne 0) { throw 'Commande echouee.' }
 }

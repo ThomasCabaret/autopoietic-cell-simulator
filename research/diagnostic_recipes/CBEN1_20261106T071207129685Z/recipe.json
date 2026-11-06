@@ -1,0 +1,14 @@
+{
+  "CP1_descriptor": "research/BATCH_49_CP1.json",
+  "inputs": [
+    {
+      "task": "task0000",
+      "checkpoint_sha256": "422d0ba8e0bef3d57155162c95b134dd3a84ae9f56d0b4cb98fef4fe62393ec9"
+    },
+    {
+      "task": "task0001",
+      "checkpoint_sha256": "c7a4398649997758425bed62485cb48f5abc16661f80ab1f7e72522b80cdc80a"
+    }
+  ],
+  "source_sha256": "e5496e56888edac25e08bf6ef4d2b7430db208626d3305b6a175112eb6f4d4c1"
+}

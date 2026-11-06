@@ -13,7 +13,11 @@ STUDIES=dict(inhibition=dict(tag='PI1',prepare='prepare_product_binding',review=
     protection=dict(tag='RP1',prepare='prepare_pair_protection',review='review_pair_protection',tasks=3,budget=3600,batch=48,
         predecessor='research/BATCH_31_RECIPES.json',predecessor_tasks=12,workers=1),
     contacts=dict(tag='CF1',prepare='prepare_contact_gate',review='review_contact_gate',tasks=6,budget=10800,batch=49,
-        predecessor='research/BATCH_47_EN1_RECIPES.json'))
+        predecessor='research/BATCH_47_EN1_RECIPES.json'),
+    competitive=dict(tag='CC1',prepare='prepare_competitive_panel',review='review_competitive_panel',tasks=6,budget=3600,batch=50,
+        predecessor='research/BATCH_47_EN1_RECIPES.json'),
+    competitive_horizon=dict(tag='CH1',prepare='prepare_competitive_horizon',review='review_competitive_horizon',tasks=4,budget=7200,batch=50,
+        predecessor='research/BATCH_50_CC1_RECIPES.json',predecessor_tasks=6))
 
 
 def latest(study):return Path((ROOT/f'outputs/{study}_mechanism_followups/latest.txt').read_text().strip())
@@ -41,7 +45,9 @@ def prepare(study):
     plan=module.plan();p=ROOT/f'campaigns/{study}_mechanism.json';write(p,plan);folder=prepare_campaign(p,job/'A')
     recipe=ROOT/f'research/campaign_recipes/{info["tag"]}_{stamp}';export_recipe(folder,recipe)
     sources=list((ROOT/'simulator').glob('*.py'))+[ROOT/p for p in ('scripts/campaign.py','scripts/expression_followup.py','scripts/mechanism_followup.py',f'experiments/{info["prepare"]}.py',f'experiments/{info["review"]}.py')]
-    if study in ('energy','timestep','contacts'):sources += [ROOT/p for p in ('experiments/review_boundary_transfer.py','experiments/mixed_calibration.py','experiments/review_renewal.py','experiments/tool_product_flux.py')]
+    if study in ('energy','timestep','contacts','competitive'):sources += [ROOT/p for p in ('experiments/review_boundary_transfer.py','experiments/mixed_calibration.py','experiments/review_renewal.py','experiments/tool_product_flux.py')]
+    if study=='competitive':sources += [ROOT/'experiments/prepare_contact_gate.py',ROOT/'experiments/benchmark_competitive_ports.py']
+    if study=='competitive_horizon':sources += [ROOT/'experiments/review_competitive_panel.py',ROOT/'experiments/mixed_calibration.py']
     if study=='timestep':sources += [ROOT/'experiments/review_energy_exchange.py']
     hashes={}
     for src in sources:
