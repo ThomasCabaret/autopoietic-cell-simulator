@@ -1,5 +1,20 @@
 # Journal de recherche
 
+## 2026-11-06 — lot55, reprise critique Astra et construction OB1
+
+FR1 clos6/6 : fast0/3,slow1/3 ; refus maintenus. Les vingt recommandations
+sont triées dans ASTRA_REVIEW : adoption de principes, nuances et pistes différées.
+Méthode renforcée sur symétries/accessibilité, proxies fonctionnels, maintien
+équipé et horloges de pertes. CURRENT_STATUS donne la vue courte de reprise.
+
+OB1 construit un apport/absorption externe non lié dans Simulation/Langevin :
+IDs stables, remappage des vitesses, bilan par type, calendrier indépendant et
+observation bornée. Six essais80 terminés, crible technique réussi : vrais flux,
+bilan exact, calendrier identique aux deux dt. Pas de transfert P/R ou de cellule.
+Trois préfixes fermés sélectionnés exacts ; catalogue recertifié après détection
+des empreintes périmées. E-01 sous-cas25, maintien0. Aucun calcul actif à clôture,
+aucun nouvel outil, pas de push. Voir BATCH_55 et ses recettes.
+
 ## 2026-10-23 — cadrage et premiers embranchements
 
 Le point de départ peut être construit. L'utilisateur autorise explicitement la

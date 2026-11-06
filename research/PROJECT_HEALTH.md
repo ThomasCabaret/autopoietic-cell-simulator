@@ -1,5 +1,14 @@
 # Santé du projet — actualisation6 novembre2026
 
+Lot55 : progression de construction sans réglage supplémentaire de récupération.
+OB1 lève le verrou technique d'un nombre variable de précurseurs avec bilan
+ouvert exact ; ce n'est pas le transfert P/R ni le maintien de CP1. Les vingt
+recommandations Astra sont triées ; les arguments sur instantané ne sont pas
+transformés en preuves dynamiques. Deux à quatre interventions pour réévaluer
+les décisions de représentation, bilan L et expressivité, sans délai de cellule
+garanti. Si cette tranche ne mène pas à un couplage utile, revoir l'architecture
+plutôt que multiplier les tests. [Vue courante](../CURRENT_STATUS.md).
+
 Lot54 : progrès de compréhension, pas gain de viabilité. Les portes PT1/RF1
 ont révélé des incompatibilités réelles avant transfert : ouverture ponctuelle,
 perte de l'outil malgré gènes et substrat, recyclage strict absent et chaleur.

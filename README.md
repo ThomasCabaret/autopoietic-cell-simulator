@@ -1,5 +1,13 @@
 # Simulateur de chimie locale
 
+**Reprise et état courant** : [CURRENT_STATUS.md](CURRENT_STATUS.md) rassemble le
+candidat, les preuves et les calculs actifs. Lot55 : FR1 terminé et refusé ;
+OB1 réalise source/absorption de précurseurs dans un diagnostic séparé,6/6 contrôles
+réussis. Aucun maintien cellulaire ajouté. [Revue critique de l'audit Astra](research/ASTRA_REVIEW.md).
+La GUI ouvre EG1 via **Démos → Démo intégrée · référence EG1** ; CP1 est le candidat
+de recherche, consultable dans les résultats locaux. Les détails datés ci-dessous
+conservent l'historique des démonstrations.
+
 **État et sous-buts du projet** : [checklist compacte](research/CELL_CHECKLIST_COMPACT.md)
 et [registre détaillé](research/CELL_CHECKLIST.md), avec sous-buts et dépendances.
 `cell_status.bat` affiche le tableau ; source évolutive et paliers expliqués
@@ -19,7 +27,7 @@ de génération dans [docs/metabolism](docs/metabolism/README.md).
 **Interface durable et démos du projet** : exécuter `install_visualizer.bat` une fois,
 puis `visualizer.bat`. Fenêtre Qt, rendu OpenGL par lots, navigation, filtres,
 sélection/suivi, transformations et export PNG. Elle démarre en pause après
-ouverture d'un scénario. Aller dans **Démos → État actuel · bain intégré**
+ouverture d'un scénario. Aller dans **Démos → Démo intégrée · référence EG1**
 pour le prototype compact EG1 sous Langevin, ou choisir
 **Membranes · molécules libres** pour un essai plus rapide. Les références
 anciennes restent rangées séparément. [Catalogue et limites](docs/DEMOS.md).
@@ -39,7 +47,7 @@ Un checkpoint final est un état à inspecter ; son passé n'est pas rejoué.
 
 **Prototype le plus intégré visible** : **Démos → Intégration compacte ·
 échanges stabilisés** montre les trois EG1,302 billes, avec vraie synthèse H/T.
-« État actuel · bain intégré » ouvre la graine0 par convention. Insertion de L
+« Démo intégrée · référence EG1 » ouvre la graine0 par convention. Insertion de L
 fabriqués dans deux graines sur trois, tenue tardive94–95% et température
 proche de la consigne dans les trois ; aucun maintien sous pertes ou flux ouvert.
 CB1 et ses ouvertures restent au menu « défauts connus ». MIN1M et MX2 restent
@@ -50,8 +58,9 @@ enceintes finales30/52/34 depuis dimères isolés, présence tardive>=50% sur2/3
 Les refus CC1/CH1 aux horizons courts restent conservés. Cela ne prouve pas
 la rétention ou le maintien de la cellule. **PT1 et RF1 sont terminés, leurs cribles refusés** : une ouverture finale
 empêche de conclure la rétention ; le recyclage ne maintient pas toujours
-l'outil et n'établit pas le réemploi strict. **FR1 en cours** teste la
-récupération du co-recruteur après coupure,6 essais600,2 travailleurs/1h.
+l'outil et n'établit pas le réemploi strict. **FR1 terminé6/6** : récupération
+fast0/3 et slow1/3, deux portes refusées. OB1 terminé6/6 vérifie le transport ouvert
+de précurseurs sans cellule ni transfert de pertes dans CP1.
 État : `functional_recovery_status.bat`. Aucun changement des lois CP1.
 Les39 presets restent EG1/EN1/CB1 historiques ; les trois résultats CR1 sont
 inspectables dans **Résultats locaux**. CF1 reste en pause scientifique.

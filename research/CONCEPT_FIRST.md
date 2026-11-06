@@ -7,6 +7,31 @@ chimique CELL_ARCHITECTURE et les tests I0–I9 ; il ne les remplace pas.
 
 ## Décider du prochain lot
 
+Reprise lot55 après [revue Astra](ASTRA_REVIEW.md) : consulter d'abord
+[CURRENT_STATUS](../CURRENT_STATUS.md), puis les points nécessaires du registre.
+Les bilans de lots restent historiques ; une recommandation d'audit n'est ni
+une loi adoptée ni une nouvelle obligation de campagne.
+
+Avant une exploration coûteuse, vérifier les contraintes de symétrie, valence
+et matière : des précurseurs indiscernables pour une règle ne deviennent pas
+sélectivement reconnaissables par un balayage de séquences. Identifier ce que
+le prédicat peut réellement distinguer. Un contre-exemple analytique peut
+éliminer une branche ; annoncer son domaine, sans généraliser à tout le réseau.
+
+Relier chaque critère au besoin fonctionnel. Conserver les portes prospectives
+mais distinguer refus fonctionnel, proxy inadéquat et exposition insuffisante.
+Cycle de liaisons, barrière répulsive et rétention mesurée ne sont pas identiques ;
+réemploi d'un monomère et recyclage jusqu'aux précurseurs ne sont pas identiques.
+Un calcul sur géométrie figée ne prouve pas le confinement dynamique.
+
+Le maintien équipé/redondant et le redémarrage depuis zéro outil ont des
+critères distincts. Ne pas ajouter ce dernier à la cible construite ; ne pas
+utiliser la redondance pour masquer l'absence de remplacement. L'expressivité
+par plusieurs assemblages reste un jalon séparé à dé-risquer tôt, sans supposer
+trois enzymes nécessaires au plus petit réseau ni considérer `01` comme une
+preuve de bibliothèque programmable. Une construction indépendante nécessaire,
+comme la source/absorption, peut avancer pendant ce choix conceptuel.
+
 Avant un lot, parcourir le registre entier et ses dépendances. Donner priorité
 à un sous-but nécessaire dont le mécanisme n'est pas même qualitativement fermé,
 surtout s'il pourrait invalider l'architecture. Un réglage quantitatif devient

@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "revision": 25,
+  "revision": 26,
   "reviewed": "2026-11-06",
-  "candidate": "CP1 inchangé, CR1 réussi ; PT1/RF1 complets refusés, diagnostics FA1 ; récupération FR1 en cours séparément",
+  "candidate": "CP1 inchangé ; FR1 clos refusé ; OB1 transport ouvert de précurseurs construit et criblé séparément",
   "purpose": "Registre évolutif des capacités nécessaires à une cellule construite maintenue ; les pourcentages sont des paliers de preuve, pas un taux global de réussite.",
   "out_of_scope": [
     "origine spontanée de la cellule",
@@ -502,7 +502,7 @@
       "mechanism": "Un F construit fabrique P/R composites ; leur expression sur G produit un F dont chaque composite vient de nourriture, puis ses deux sites catalysent à nouveau.",
       "concept_gap": "Production de remplaçants seulement : ancien F non retiré ; maintien sous pertes, énergie et robustesse de population non établis. Tous les autres outils relèvent de T-04.",
       "proof": "coupled",
-      "scope": "MIN1M12/12 clos, porte passée :7/6/2 F entièrement alimentaires dont6/4/2 actifs dans le même bain membranaire ; fermeture85,7/85,6/85,3%. Nogene négatif3/3, split aucun F entier actif. Initial enzymes remain; no losses or open feed. FA1 retrouve une perte puis un retour structural F01 dans RF1/paired_edge/s0, mais pas de remplacement entier depuis atomes recyclés démontré.",
+      "scope": "MIN1M12/12 clos, porte passée :7/6/2 F entièrement alimentaires dont6/4/2 actifs dans le même bain membranaire ; fermeture85,7/85,6/85,3%. Nogene négatif3/3, split aucun F entier actif. Initial enzymes remain; no losses or open feed. FA1 retrouve une perte puis un retour structural F01 dans RF1/paired_edge/s0, mais pas de remplacement entier depuis atomes recyclés démontré. FR1 clos6/6 : fast0/3,slow1/3, deux portes refusées ; stabiliser les monomères ne suffit pas au redémarrage sans F polymère.",
       "references": [
         "research/BATCH_34.md",
         "research/BATCH_34_PLAN.md",
@@ -511,9 +511,10 @@
         "research/BATCH_38.md",
         "research/BATCH_40.md",
         "research/BATCH_41.md",
-        "research/BATCH_54.md"
+        "research/BATCH_54.md",
+        "research/BATCH_55.md"
       ],
-      "next_test": "FR1 distingue récupération de structure et activité ; exiger ensuite une matière entièrement refaite avant pertes en bain CP1.",
+      "next_test": "Maintien équipé et redondant avec remplaçants fonctionnels sous pertes partielles et apport déclaré ; pas de nouveau taux FR1.",
       "essential": true
     },
     {
@@ -659,13 +660,15 @@
       "renewal_needs": [],
       "concept": "draft",
       "mechanism": "Création de précurseurs dans une couche de bord, diffusion puis absorption lors de la sortie.",
-      "concept_gap": "Convention de bord, tables dynamiques/IDs et calibration non implémentés.",
-      "proof": "none",
-      "scope": "Les bains actuels sont finis et à murs mécaniques.",
+      "concept_gap": "Transport non lié construit ; migration des tableaux P/R, composés liés et calibration de la cadence du bord encore à réaliser.",
+      "proof": "subcase",
+      "scope": "OB1 6/6 : sources et absorptions réelles, bilan exact par espèce, mêmes arrivées sous dt.004/.002 ; sans chimie/membrane ni maintien. Reprise exacte et observation passive testées.",
       "references": [
-        "research/OPEN_BOUNDARY.md"
+        "research/OPEN_BOUNDARY.md",
+        "research/BATCH_55.md",
+        "research/BATCH_55_OB1_RECIPES.json"
       ],
-      "next_test": "Boîte sans cellule : flux, bilan matière, retour immédiat au bord et raffinement en dt.",
+      "next_test": "Migrer présence/IDs du bain P/R et définir sorties de matière avant maintien équipé sous flux ; calibrer la cadence du bord au transfert.",
       "essential": true
     },
     {
@@ -786,7 +789,7 @@
       "renewal_needs": [],
       "concept": "draft",
       "mechanism": "Déchets libres peu affins diffusent à travers la frontière puis vers le puits extérieur.",
-      "concept_gap": "Pas de W réel ni de sortie ouverte ; affinités et gradients à choisir.",
+      "concept_gap": "Source/puits de précurseurs OB1 construite ; pas de W réel ni de transfert membranaire/export métabolique.",
       "proof": "none",
       "scope": "Sondes perméables ne prouvent pas l’export d’un déchet métabolique.",
       "references": [
@@ -1014,7 +1017,7 @@
       "mechanism": "Protection locale de liaison par appariements réciproques et lien entre partenaires ; RP1 optionnel, risques de fragments/outils à tester.",
       "concept_gap": "RP1 ne maintient pas la séquence cible F001 mais garde des motifs/flux catalytiques ; protection de chaque information et fonction essentielle non fermée.",
       "proof": "none",
-      "scope": "Protected conserve4/6/4 G001 à1200, mais réincorporation stricte0/0/0 ; quatre copies initiales, pas test de dernier gène ni de récupération sous perturbation. RF1 garde les G01 mais perd tous les motifs F01 dans graine1 à96.99, sans retour avant1200 ; un autre cas récupère à316.89 après perte289.66. Fragilité concrète de récupération.",
+      "scope": "Protected conserve4/6/4 G001 à1200, mais réincorporation stricte0/0/0 ; quatre copies initiales, pas test de dernier gène ni de récupération sous perturbation. RF1 garde les G01 mais perd tous les motifs F01 dans graine1 à96.99, sans retour avant1200 ; un autre cas récupère à316.89 après perte289.66. Fragilité concrète de récupération. FR1 clos6/6 : fast0/3,slow1/3, deux portes refusées ; stabiliser les monomères ne suffit pas au redémarrage sans F polymère.",
       "references": [
         "research/HOMEOSTASIS.md",
         "research/MACROMOLECULE_HOMEOSTASIS.md",
@@ -1023,9 +1026,10 @@
         "research/BATCH_48.md",
         "research/BATCH_49.md",
         "research/BATCH_53.md",
-        "research/BATCH_54.md"
+        "research/BATCH_54.md",
+        "research/BATCH_55.md"
       ],
-      "next_test": "Lire FR1 fast/slow depuis état post-coupure construit ; utiliser exposition GF/ligation/catalyse pour interpréter les censures, sans confondre ce test avec maintien équipé.",
+      "next_test": "Maintien équipé et redondant avec remplaçants fonctionnels sous pertes partielles et apport déclaré ; pas de nouveau taux FR1.",
       "essential": true
     },
     {
@@ -1225,24 +1229,23 @@
   "retired": [],
   "decision_focus": [
     {
-      "reason": "Interpréter FR1 par exposition, reconstruction et activité avant nouveau taux ou transfert des pertes.",
+      "reason": "Fermer représentation/flux/bilan L puis maintien équipé ; ne pas confondre récupération depuis zéro outil et renouvellement.",
       "items": [
-        "H-06",
-        "H-03",
+        "E-01",
+        "W-01",
         "W-02",
-        "T-05"
+        "T-05",
+        "H-06",
+        "M-05"
       ]
     },
     {
-      "reason": "Maintenir ouverts transport/réparation et verrous conceptuels de diversité, information, régulation et flux.",
+      "reason": "Dé-risquer expressivité et information : symétrie PG/PF dans le canal actuel, finition et coexistence encore ouvertes.",
       "items": [
-        "M-03",
-        "M-05",
         "F-02",
         "R-05",
-        "H-04",
-        "E-01",
-        "W-01"
+        "T-04",
+        "H-04"
       ]
     }
   ],
@@ -1371,12 +1374,16 @@
       "revision": 25,
       "date": "2026-11-06",
       "reason": "Lot54 : PT1/RF1 complets refusés ; FA1 reconstruit les journaux et localise les pertes. FR1 teste la récupération de l’outil actuel sans nouveau gène/règle, aucun palier relevé."
+    },
+    {
+      "revision": 26,
+      "date": "2026-11-06",
+      "reason": "Lot55 : recommandations Astra triées, FR1 final refusé ; transport ouvert OB1 et remappage de population construits, crible6/6. E-01 sous-cas25, aucun palier de maintien relevé."
     }
   ],
   "last_batch_progress": {
-    "M-03": "PT1 terminé6/6 : rétention encourageante, porte refusée car ouverture finale réelle dans une graine (51 liens/52 L).",
-    "W-02": "RF1 terminé9/9 : pas de réincorporation stricte, deux protections refusées ; pas adoption dans CP1.",
-    "H-06": "FA1 localise perte à96.99 sans retour ; récupération en27.23 observée ailleurs. FR1 lancé pour tester la survie des monomères.",
-    "T-05": "Scénarios/audit/portes de récupération construits ;6 essais600,2 travailleurs/1h. Aucune preuve anticipée."
+    "E-01": "Source/absorption ouverte OB1 construite et criblée6/6, bilan exact, IDs stables et reprise ; précurseurs seuls.",
+    "H-06": "FR1 complet : deux variantes refusées, retour au maintien équipé/redondant.",
+    "T-05": "Redémarrage FR1 slow1/3 ; aucune adoption de pertes dans CP1 ni nouveau remplaçant démontré."
   }
 }

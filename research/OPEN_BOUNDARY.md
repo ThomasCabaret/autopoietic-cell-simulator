@@ -1,5 +1,27 @@
 # Domaine extérieur alimenté par flux — cible, pas implémentation acquise
 
+## Tranche OB1, lot55
+
+Le hook `open_bath` réalise désormais la source/absorption pour précurseurs
+non liés, via le moteur commun et son Langevin. IDs stables indépendants des
+indices compacts ; calendrier Poisson externe indépendant du mouvement ; mêmes
+arrivées datées lors d'un raffinement de dt. Un apport par longueur/type est
+fixé, jamais calculé depuis les stocks. Positions d'entrée à profondeur fixée,
+vitesses du bain dans les deux sens, absorption à la prochaine actualisation
+observant un centre sorti. Aucun mur réfléchissant. Retard d'injection mesuré.
+
+Les changements de population passent par `(old_count, new_to_old, newborn_velocities)` :
+le moteur remappe les vitesses conservées et invalide force/voisinages ; le hook
+possède positions/types/IDs. Les nouveaux compteurs de matière et échantillons
+sont bornés dans le temps. Un plafond atteint arrête l'essai en erreur. Pas de
+trajectoire à population variable enregistrée par cet observateur.
+
+C'est un prototype de transport, **pas** une alimentation de CP1. Les tableaux
+P/R à deux préfixes, leurs liaisons et leur provenance demandent une migration
+explicite ; exporter des molécules liées exige un contrat supplémentaire.
+Voir [plan55](BATCH_55_PLAN.md), [bilan55](BATCH_55.md). Les paragraphes suivants
+conservent le contrat de cible et l'état historique avant cette tranche.
+
 27 octobre2026, précision utilisateur. Vésicule construite initialement au centre
 d'un domaine fini (carré en2D ; cube si un modèle3D est développé). Des précurseurs
 arrivent au **bord du domaine extérieur**, diffusent normalement vers la cellule ;

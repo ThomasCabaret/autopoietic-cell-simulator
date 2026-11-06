@@ -7,6 +7,16 @@ nombre de billes commode ne justifient pas un résultat négatif de mécanisme.
 
 ## Avant de lancer un calcul utile
 
+Lot55 : calibrer également les pertes. Rapporter le temps d'exposition aux
+ruptures et le remplacement du matériel initial par famille : une survie pendant
+une petite fraction de demi-vie ne teste pas le renouvellement. Les perturbations
+externes préprogrammées peuvent diagnostiquer une récupération sur un horizon
+plus court ; elles restent distinctes des pertes spontanées. Pour les flux,
+apparier le calendrier d'apport indépendamment du PRNG thermique ; rendre compte
+du retard numérique d'injection/absorption et de la convention de bord. Une
+capacité informatique épuisée invalide l'essai ; elle ne plafonne pas une
+concentration chimique. Borner la télémétrie des nouveaux essais longs.
+
 1. **Question et conclusion permise.** Contrôle construit de règle, comparaison
    de débit à durée finie, ou recherche d’un régime durable ? Un contrôle forcé
    ne mesure pas une cinétique spontanée. Un crible opérationnel peut être

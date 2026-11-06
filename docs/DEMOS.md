@@ -1,5 +1,14 @@
 # Démos représentatives accessibles dans la GUI
 
+## Lot55 — références visuelles et candidat de travail
+
+Le raccourci s'appelle **Démo intégrée · référence EG1**. Les39 presets gardent
+leurs lois et leurs sources ; MD2 porte aussi un libellé historique. Le candidat
+CP1 reste consultable dans **Résultats locaux**. Le transport ouvert OB1 est un
+diagnostic sans fenêtre, pas une démo de cellule renouvelée. Catalogue recertifié
+après les contrôles de trajectoire fermée. Voir [CURRENT_STATUS](../CURRENT_STATUS.md).
+Les libellés « état actuel » dans les lots suivants sont historiques.
+
 ## Lot54 — démos physiques conservées
 
 PT1/RF1 terminés refusés et FR1 récupération en cours, uniquement headless.

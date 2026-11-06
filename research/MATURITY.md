@@ -1,5 +1,10 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot55 : E-01 passe0→25 (prototype de précurseurs ouverts seulement) ; aucun
+palier de maintien ou fonction biologique relevé. CP1 inchangé, FR1 refusé6/6.
+Voir [état courant](../CURRENT_STATUS.md), [bilan55](BATCH_55.md) et
+[revue des recommandations](ASTRA_REVIEW.md). Les bilans suivants sont datés.
+
 Lot54 : aucun palier relevé. PT1 conserve des assemblages mais échoue
 sur une ouverture finale non classable ; RF1 ne démontre ni recyclage strict
 utile ni protection robuste de fonction. FA1 retrouve une récupération ponctuelle

@@ -1,5 +1,13 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot55 : consulter [CURRENT_STATUS](../CURRENT_STATUS.md) et la
+[revue Astra](ASTRA_REVIEW.md). FR1 terminé6/6, fast0/3/slow1/3 : refus maintenus,
+pas de nouveau taux. OB1 ouvert sans chimie passe6/6 ; prochain transfert :
+représentation P/R avec IDs/présence et provenance, bilan L, maintien équipé
+redondant sous flux et pertes partielles. L'expressivité reste un choix conceptuel
+à dé-risquer ; aucune nouvelle protéine ni sélectivité EN/EA supposée.
+Les entrées de lots ci-dessous sont historiques, pas des statuts actifs.
+
 Lot54 : **PT1/RF1 terminés, deux cribles refusés**. PT1 graine1 finit
 en chaîne52 ouverte (51 liens), dernier contour valide299.5. RF1 : perte de
 l'outil à96.99 sans retour dans graine1 malgré substrats ; récupération en27.23

@@ -1774,7 +1774,7 @@
       "related": [
         "RF1"
       ],
-      "status": "running_six_case_postcleavage_recovery_screen",
+      "status": "six_complete_both_recovery_gates_refused",
       "hypothesis": "Longer-lived free F composites survive until template translation and restore the existing co-recruiter after loss of its last backbone.",
       "test": "Three paired seeds fast rung_f=.01/slow=.001,600,150 atoms; no F backbone initially, G01 and stock preserved; genetic encounter audit.",
       "cost": "One existing rate value changed in separate variant, no new law/type/port/parameter/gene/tool. Existing loss helper energy unclosed.2 workers/1h.",
@@ -1782,8 +1782,27 @@
       "missing_proof": "Whole-tool atom renewal, persistent active population, generic information, open-feed homeostasis and mixed CP1 transfer.",
       "recipe": "research/BATCH_54_FR1_RECIPES.json",
       "evidence": "research/BATCH_54_PLAN.md",
-      "results": "research/BATCH_54.md",
-      "health_gate": "Each variant fixed2/3 reconstruction then catalysis, G01 retention and thermal/invariant gates; report then stop, no tuning, retry or automatic transfer."
+      "results": "research/BATCH_55.md",
+      "health_gate": "Each variant fixed2/3 reconstruction then catalysis, G01 retention and thermal/invariant gates; report then stop, no tuning, retry or automatic transfer.",
+      "conclusion": "fast0/3 slow1/3 recovery; all invariants, thermal and G survival gates pass. Slow s0/s2 retain F monomers without observed double occupation. No tuning/transfer; return to equipped maintenance."
+    },
+    {
+      "id": "OB1",
+      "parent": null,
+      "related": [
+        "CP1",
+        "FR1"
+      ],
+      "status": "six_complete_transport_construction_screen_passed",
+      "hypothesis": "Shared engine supports variable unbound precursor populations under a fixed external source/sink with exact balances.",
+      "test": "3 seeds x dt.004/.002, boundary interval.02,80 units, same source calendar within pairs; passive bounded census and exact checkpoint tests.",
+      "cost": "No new cell chemical law/atom/tool/gene; separate open transport hook and generic population remapping. External flux, entry depth and source seed declared.",
+      "counterexample": "Missing or reused IDs, momentum reset of survivors, balance drift, source tied to cell demand, invalid capacity clipping, nonexact restart.",
+      "conclusion": "6/6 complete:438-477 births, real exports, exact type balances, central transport and identical source digest per pair. Not a CP1 feed or homeostasis proof.",
+      "missing_proof": "Bonded species export, P/R index migration, fed chemical coupling, lipid excess sink, maintained functional turnover.",
+      "recipe": "research/BATCH_55_OB1_RECIPES.json",
+      "evidence": "research/BATCH_55_RESULTS.json",
+      "results": "research/BATCH_55.md"
     }
   ]
 }

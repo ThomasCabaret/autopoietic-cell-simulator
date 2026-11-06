@@ -1,6 +1,6 @@
 # Checklist détaillée — critères et dépendances
 
-Revue 2026-11-06 · révision25. Source : [cell_checklist.json](cell_checklist.json).
+Revue 2026-11-06 · révision26. Source : [cell_checklist.json](cell_checklist.json).
 [Tableau compact](CELL_CHECKLIST_COMPACT.md) · [Échelle et méthode](CONCEPT_FIRST.md).
 
 Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre acyclique de codage. Les cycles de renouvellement sont intentionnels. Une condition initiale construite peut amorcer un sous-cas sans fermer ces cycles.
@@ -332,13 +332,13 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Dépend de :** [T-03](#T-03), [S-02](#S-02), [S-03](#S-03) · **Pour renouveler :** [R-01](#R-01), [S-01](#S-01), [Q-01](#Q-01)
 
-**Portée des preuves :** MIN1M12/12 clos, porte passée :7/6/2 F entièrement alimentaires dont6/4/2 actifs dans le même bain membranaire ; fermeture85,7/85,6/85,3%. Nogene négatif3/3, split aucun F entier actif. Initial enzymes remain; no losses or open feed. FA1 retrouve une perte puis un retour structural F01 dans RF1/paired_edge/s0, mais pas de remplacement entier depuis atomes recyclés démontré.
+**Portée des preuves :** MIN1M12/12 clos, porte passée :7/6/2 F entièrement alimentaires dont6/4/2 actifs dans le même bain membranaire ; fermeture85,7/85,6/85,3%. Nogene négatif3/3, split aucun F entier actif. Initial enzymes remain; no losses or open feed. FA1 retrouve une perte puis un retour structural F01 dans RF1/paired_edge/s0, mais pas de remplacement entier depuis atomes recyclés démontré. FR1 clos6/6 : fast0/3,slow1/3, deux portes refusées ; stabiliser les monomères ne suffit pas au redémarrage sans F polymère.
 
-**Références :** [research/BATCH_34.md](../research/BATCH_34.md), [research/BATCH_34_PLAN.md](../research/BATCH_34_PLAN.md), [research/BATCH_35.md](../research/BATCH_35.md), [research/BATCH_37.md](../research/BATCH_37.md), [research/BATCH_38.md](../research/BATCH_38.md), [research/BATCH_40.md](../research/BATCH_40.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_54.md](../research/BATCH_54.md)
+**Références :** [research/BATCH_34.md](../research/BATCH_34.md), [research/BATCH_34_PLAN.md](../research/BATCH_34_PLAN.md), [research/BATCH_35.md](../research/BATCH_35.md), [research/BATCH_37.md](../research/BATCH_37.md), [research/BATCH_38.md](../research/BATCH_38.md), [research/BATCH_40.md](../research/BATCH_40.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_54.md](../research/BATCH_54.md), [research/BATCH_55.md](../research/BATCH_55.md)
 
-**Prochain test / décision :** FR1 distingue récupération de structure et activité ; exiger ensuite une matière entièrement refaite avant pertes en bain CP1.
+**Prochain test / décision :** Maintien équipé et redondant avec remplaçants fonctionnels sous pertes partielles et apport déclaré ; pas de nouveau taux FR1.
 
-**Progrès du dernier lot :** Scénarios/audit/portes de récupération construits ;6 essais600,2 travailleurs/1h. Aucune preuve anticipée.
+**Progrès du dernier lot :** Redémarrage FR1 slow1/3 ; aucune adoption de pertes dans CP1 ni nouveau remplaçant démontré.
 
 ## Membrane et insertion
 
@@ -399,8 +399,6 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Prochain test / décision :** Diagnostiquer la tenue/réparation de liaisons L et transférer le transport à la chimie active ; conserver les périodes inconnues.
 
-**Progrès du dernier lot :** PT1 terminé6/6 : rétention encourageante, porte refusée car ouverture finale réelle dans une graine (51 liens/52 L).
-
 <a id="M-04"></a>
 ### M-04 — Insertion depuis dedans et refermeture
 
@@ -444,21 +442,23 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 <a id="E-01"></a>
 ### E-01 — Source et puits au bord extérieur
 
-**Concept : draft décrit · Preuve : 0% (non observé).**
+**Concept : draft décrit · Preuve : 25% (sous-cas étayé).**
 
 **Aboutissement :** Injection et absorption au bord conservatrices, flux réglables et nombres variables sans sauvetage interne.
 
 **Draft local :** Création de précurseurs dans une couche de bord, diffusion puis absorption lors de la sortie.
 
-**Manque / limite :** Convention de bord, tables dynamiques/IDs et calibration non implémentés.
+**Manque / limite :** Transport non lié construit ; migration des tableaux P/R, composés liés et calibration de la cadence du bord encore à réaliser.
 
 **Dépend de :** [F-01](#F-01), [O-02](#O-02) · **Pour renouveler :** —
 
-**Portée des preuves :** Les bains actuels sont finis et à murs mécaniques.
+**Portée des preuves :** OB1 6/6 : sources et absorptions réelles, bilan exact par espèce, mêmes arrivées sous dt.004/.002 ; sans chimie/membrane ni maintien. Reprise exacte et observation passive testées.
 
-**Références :** [research/OPEN_BOUNDARY.md](../research/OPEN_BOUNDARY.md)
+**Références :** [research/OPEN_BOUNDARY.md](../research/OPEN_BOUNDARY.md), [research/BATCH_55.md](../research/BATCH_55.md), [research/BATCH_55_OB1_RECIPES.json](../research/BATCH_55_OB1_RECIPES.json)
 
-**Prochain test / décision :** Boîte sans cellule : flux, bilan matière, retour immédiat au bord et raffinement en dt.
+**Prochain test / décision :** Migrer présence/IDs du bain P/R et définir sorties de matière avant maintien équipé sous flux ; calibrer la cadence du bord au transfert.
+
+**Progrès du dernier lot :** Source/absorption ouverte OB1 construite et criblée6/6, bilan exact, IDs stables et reprise ; précurseurs seuls.
 
 <a id="E-02"></a>
 ### E-02 — Mélange et rencontres de toutes les classes
@@ -549,7 +549,7 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Draft local :** Déchets libres peu affins diffusent à travers la frontière puis vers le puits extérieur.
 
-**Manque / limite :** Pas de W réel ni de sortie ouverte ; affinités et gradients à choisir.
+**Manque / limite :** Source/puits de précurseurs OB1 construite ; pas de W réel ni de transfert membranaire/export métabolique.
 
 **Dépend de :** [E-01](#E-01), [M-03](#M-03), [Q-01](#Q-01) · **Pour renouveler :** —
 
@@ -577,8 +577,6 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 **Références :** [research/MACROMOLECULE_HOMEOSTASIS.md](../research/MACROMOLECULE_HOMEOSTASIS.md), [research/BATCH_31.md](../research/BATCH_31.md), [research/BATCH_47.md](../research/BATCH_47.md), [research/BATCH_48.md](../research/BATCH_48.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_53.md](../research/BATCH_53.md), [research/BATCH_54.md](../research/BATCH_54.md)
 
 **Prochain test / décision :** Lire FR1 sur récupération de fonction, puis tester un outil entier matériellement refait et actif avant transfert des pertes.
-
-**Progrès du dernier lot :** RF1 terminé9/9 : pas de réincorporation stricte, deux protections refusées ; pas adoption dans CP1.
 
 <a id="W-03"></a>
 ### W-03 — Débouché de la matière composite excédentaire
@@ -730,13 +728,13 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Dépend de :** [R-05](#R-05), [W-02](#W-02), [T-04](#T-04) · **Pour renouveler :** —
 
-**Portée des preuves :** Protected conserve4/6/4 G001 à1200, mais réincorporation stricte0/0/0 ; quatre copies initiales, pas test de dernier gène ni de récupération sous perturbation. RF1 garde les G01 mais perd tous les motifs F01 dans graine1 à96.99, sans retour avant1200 ; un autre cas récupère à316.89 après perte289.66. Fragilité concrète de récupération.
+**Portée des preuves :** Protected conserve4/6/4 G001 à1200, mais réincorporation stricte0/0/0 ; quatre copies initiales, pas test de dernier gène ni de récupération sous perturbation. RF1 garde les G01 mais perd tous les motifs F01 dans graine1 à96.99, sans retour avant1200 ; un autre cas récupère à316.89 après perte289.66. Fragilité concrète de récupération. FR1 clos6/6 : fast0/3,slow1/3, deux portes refusées ; stabiliser les monomères ne suffit pas au redémarrage sans F polymère.
 
-**Références :** [research/HOMEOSTASIS.md](../research/HOMEOSTASIS.md), [research/MACROMOLECULE_HOMEOSTASIS.md](../research/MACROMOLECULE_HOMEOSTASIS.md), [research/BATCH_31.md](../research/BATCH_31.md), [research/BATCH_47.md](../research/BATCH_47.md), [research/BATCH_48.md](../research/BATCH_48.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_53.md](../research/BATCH_53.md), [research/BATCH_54.md](../research/BATCH_54.md)
+**Références :** [research/HOMEOSTASIS.md](../research/HOMEOSTASIS.md), [research/MACROMOLECULE_HOMEOSTASIS.md](../research/MACROMOLECULE_HOMEOSTASIS.md), [research/BATCH_31.md](../research/BATCH_31.md), [research/BATCH_47.md](../research/BATCH_47.md), [research/BATCH_48.md](../research/BATCH_48.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_53.md](../research/BATCH_53.md), [research/BATCH_54.md](../research/BATCH_54.md), [research/BATCH_55.md](../research/BATCH_55.md)
 
-**Prochain test / décision :** Lire FR1 fast/slow depuis état post-coupure construit ; utiliser exposition GF/ligation/catalyse pour interpréter les censures, sans confondre ce test avec maintien équipé.
+**Prochain test / décision :** Maintien équipé et redondant avec remplaçants fonctionnels sous pertes partielles et apport déclaré ; pas de nouveau taux FR1.
 
-**Progrès du dernier lot :** FA1 localise perte à96.99 sans retour ; récupération en27.23 observée ailleurs. FR1 lancé pour tester la survie des monomères.
+**Progrès du dernier lot :** FR1 complet : deux variantes refusées, retour au maintien équipé/redondant.
 
 ## Compatibilité et maintien
 
@@ -883,3 +881,4 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 - Révision23 (2026-11-06) : Lot52 : deux CR1 fermés finaux, crible encore incomplet. GUI ouvre les checkpoints locaux sans données Git, reprise exacte et contrôles natifs. Aucun changement de loi ou palier biologique.
 - Révision24 (2026-11-06) : Lot53 : CR1 complet passe la porte fixée ; PT1/RF1 indépendants lancés, mesures et contrôles prospectifs. Aucun changement de loi CP1, nouvel outil ou palier biologique.
 - Révision25 (2026-11-06) : Lot54 : PT1/RF1 complets refusés ; FA1 reconstruit les journaux et localise les pertes. FR1 teste la récupération de l’outil actuel sans nouveau gène/règle, aucun palier relevé.
+- Révision26 (2026-11-06) : Lot55 : recommandations Astra triées, FR1 final refusé ; transport ouvert OB1 et remappage de population construits, crible6/6. E-01 sous-cas25, aucun palier de maintien relevé.

@@ -1,5 +1,11 @@
 # Architectures de cellule : fermeture à concevoir, pas encore réalisée
 
+Lot55 : aucun outil/gène ou budget cellulaire ajouté ; CP1 reste302 billes.
+OB1 a un inventaire extérieur variable de précurseurs seulement et ne remplace
+pas ce budget. FR1 est terminé/refusé, pas adopté. Le bilan L sous apport continu
+reste une décision nécessaire. Voir [CURRENT_STATUS](../CURRENT_STATUS.md).
+Les paragraphes suivants conservent la chronologie, pas des statuts actifs.
+
 Lot54 : aucun gène, outil ou espèce ajouté. Prototype CP1 toujours302
 billes ; FR1 reste un bain P/R séparé150, comparant une durée de vie libre F.
 RF1 révèle un besoin concret de récupération de fonction, pas de fermeture
