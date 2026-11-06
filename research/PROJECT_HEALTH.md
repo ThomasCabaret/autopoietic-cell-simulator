@@ -1,5 +1,12 @@
 # Santé du projet — actualisation6 novembre2026
 
+Réestimation après lot55, sans nouvelle fournée scientifique : **environ25
+fournées restantes, plage18–35**, jusqu'à la préparation du premier test global
+non naïf (pas sa réussite garantie). L'ancienne référence20/15–30 au lot46 a été
+trop optimiste :9 lots techniques,11 avec les audits, ont été réalisés depuis
+sans baisse du budget restant. Découpage et décompte traçable dans
+[FORECAST_20261106](FORECAST_20261106.md). Recalibrer après3–4 véritables fournées.
+
 Lot55 : progression de construction sans réglage supplémentaire de récupération.
 OB1 lève le verrou technique d'un nombre variable de précurseurs avec bilan
 ouvert exact ; ce n'est pas le transfert P/R ni le maintien de CP1. Les vingt
