@@ -1,0 +1,33 @@
+"""Finite-neighborhood potential difference for one lateral-contact replacement.
+
+At most three L change occupancy. The competitive option includes affected
+neighbor partitions through3 spatial hops. No biological aggregate is read.
+"""
+import numpy as np
+from .docking import free_faces,docking_force,bound_port_force
+
+
+def port_delta(pos,links,removed,formed,config,neighbors):
+    n=len(pos)//2;changed=(set(removed[:2]) if removed is not None else set())|(set(formed[:2]) if formed is not None else set())
+    new=[e for e in links if removed is None or tuple(e)!=tuple(removed)]
+    if formed is not None:new.append(tuple(formed))
+    pairs=neighbors.pairs(pos[:n],1.+4*config['dock_width'],'exchange_delta')
+    if config.get('free_port_potential','additive')=='competitive':
+        from .competitive_ports import local_free_delta,partners
+        delta=float(local_free_delta(pos,pairs,free_faces(n,links),free_faces(n,new),partners(n,links),partners(n,new),
+            np.asarray(sorted(changed),dtype=np.int64),1.,config['short_length'],config['dock_energy'],config['dock_width']))
+        def bound(edge):
+            if edge is None:return 0.
+            return bound_port_force(pos,np.asarray([edge],dtype=np.int64),1.,config['short_length'],config['dock_energy'],config['dock_width'])[1]
+        return float(delta+bound(formed)-bound(removed))
+    keep=np.isin(pairs[:,0],list(changed))|np.isin(pairs[:,1],list(changed));pairs=pairs[keep]
+    def free_energy(edges):
+        partners=np.full((n,2),-1,dtype=np.int64)
+        for i,j,a,b in edges:partners[i,a]=j;partners[j,b]=i
+        return docking_force(pos,pairs,free_faces(n,edges),1.,config['short_length'],
+            config['dock_energy'],config['dock_width'],partners)[1]
+    def bound_energy(edge):
+        if edge is None:return 0.
+        return bound_port_force(pos,np.asarray([edge],dtype=np.int64),1.,config['short_length'],
+            config['dock_energy'],config['dock_width'])[1]
+    return float(free_energy(new)-free_energy(links)+bound_energy(formed)-bound_energy(removed))

@@ -216,7 +216,7 @@ class MainWindow(Q.QMainWindow):
         file.addAction(self.action('Sauver un checkpoint',lambda:self.command('checkpoint')))
         file.addAction(self.action('Quitter',self.close))
         self.demo_menu=self.menuBar().addMenu('Démos');self.demo_actions={}
-        self.current_demo_action=self.action('État actuel · bain intégré',lambda checked=False:self.load_demo(self.catalog.data['recommended']))
+        self.current_demo_action=self.action('Démo intégrée · référence EG1',lambda checked=False:self.load_demo(self.catalog.data['recommended']))
         self.demo_menu.addAction(self.current_demo_action);self.demo_menu.addSeparator();archive_menu=None
         for demo in self.catalog.data['demos']:
             variants=[v for v in self.catalog.data['variants'] if v['demo']==demo['id']]

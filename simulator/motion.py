@@ -37,7 +37,8 @@ class InertialMotion:
         pairs=neighbors.pairs(c.pos,float(c.contact.max()),'core')
         force=force_kernel(c.pos,pairs,c.kinds,c.contact,c.springs,c.angles)
         force+=c.extra_forces(neighbors)
-        if c.box is not None:force+=100*(np.maximum(-c.pos,0)-np.maximum(c.pos-c.box,0))
+        wall_box=getattr(c,'wall_box',c.box)
+        if wall_box is not None:force+=100*(np.maximum(-c.pos,0)-np.maximum(c.pos-wall_box,0))
         self.force_evaluations+=1
         return force
 
@@ -64,7 +65,7 @@ class InertialMotion:
         self.force=self.conservative(c,neighbors)
         v+=self.force*(dt/(2*self.mass))
         if self.kind=='dpd':self.thermostat(c,rng,neighbors,dt/2,True)
-        displacement=float(np.linalg.norm(c.pos-old,axis=1).max())
+        displacement=float(np.linalg.norm(c.pos-old,axis=1).max()) if len(c.pos) else 0.
         if not np.isfinite(v).all() or not np.isfinite(c.pos).all() or displacement>1.:
             raise FloatingPointError('Inertial integrator unstable; reduce dt, never clip motion')
         self.max_displacement=max(self.max_displacement,displacement);self.steps+=1
@@ -72,11 +73,19 @@ class InertialMotion:
     def diagnostics(self,c):
         bonds=c.springs
         error=np.abs(np.linalg.norm(c.pos[bonds[:,0].astype(int)]-c.pos[bonds[:,1].astype(int)],axis=1)-bonds[:,3]) if len(bonds) else np.array([0.])
-        return dict(kinetic_temperature=float(self.mass*np.mean(self.velocities**2)),
+        return dict(kinetic_temperature=float(self.mass*np.mean(self.velocities**2)) if len(c.pos) else None,
             momentum=(self.mass*self.velocities.sum(axis=0)).tolist(),
-            max_bead_speed=float(np.linalg.norm(self.velocities,axis=1).max()),
+            max_bead_speed=float(np.linalg.norm(self.velocities,axis=1).max()) if len(c.pos) else 0.,
             max_step_displacement=self.max_displacement,force_evaluations=self.force_evaluations,
             thermostat_pair_visits=self.pair_visits,steps=self.steps,max_bond_extension=float(error.max()))
+
+    def remap(self,old_count,mapping,new_velocities):
+        """Preserve survivor momenta; newborn velocities supplied by boundary law."""
+        born=mapping<0;new_velocities=np.asarray(new_velocities,dtype=float)
+        if len(self.velocities)!=old_count or new_velocities.shape!=(np.count_nonzero(born),2) or not np.isfinite(new_velocities).all():
+            raise ValueError('Invalid population velocities')
+        velocities=np.empty((len(mapping),2));velocities[~born]=self.velocities[mapping[~born]]
+        velocities[born]=new_velocities;self.velocities=velocities;self.force=None
 
     def export(self):
         return dict(velocities=self.velocities.tolist(),force=None if self.force is None else self.force.tolist(),

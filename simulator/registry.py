@@ -9,6 +9,7 @@ from .coupled_bath import CoupledBathChemistry,CoupledBathObserver,DEFAULTS as C
 from .mixing import MixingChemistry,MixingObserver,DEFAULTS as MIXING_DEFAULTS
 from .lipid_synthesis import LipidSynthesisChemistry,LipidSynthesisObserver,DEFAULTS as LIPID_DEFAULTS
 from .mixed_synthesis import MixedSynthesisChemistry,MixedSynthesisObserver,DEFAULTS as MIXED_DEFAULTS
+from .open_bath import OpenBathChemistry,OpenBathObserver,DEFAULTS as OPEN_DEFAULTS
 
 MODELS = {"copy": (CopyChemistry, COPY_DEFAULTS, make_copy_observer),
           "membrane": (MembraneChemistry, MEMBRANE_DEFAULTS, VesicleObserver),
@@ -17,7 +18,8 @@ MODELS = {"copy": (CopyChemistry, COPY_DEFAULTS, make_copy_observer),
           "coupled_bath":(CoupledBathChemistry,COUPLED_DEFAULTS,CoupledBathObserver),
           "mixing":(MixingChemistry,MIXING_DEFAULTS,MixingObserver),
           "lipid_synthesis":(LipidSynthesisChemistry,LIPID_DEFAULTS,LipidSynthesisObserver),
-          "mixed_synthesis":(MixedSynthesisChemistry,MIXED_DEFAULTS,MixedSynthesisObserver)}
+          "mixed_synthesis":(MixedSynthesisChemistry,MIXED_DEFAULTS,MixedSynthesisObserver),
+          "open_bath":(OpenBathChemistry,OPEN_DEFAULTS,OpenBathObserver)}
 
 
 def register(name, hook, defaults, observer):

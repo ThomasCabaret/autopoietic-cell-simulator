@@ -1,0 +1,172 @@
+{
+  "name": "OB1 open precursor transport, fixed source/sink protocol",
+  "workers": 2,
+  "checkpoint_seconds": 30.0,
+  "kinetic_window": 20.0,
+  "record_trajectory": false,
+  "tasks": [
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "open_bath",
+        "name": "OB1_dt0.004_s0",
+        "branch": "OB1",
+        "seed": 0,
+        "duration": 80.0,
+        "chemistry": {
+          "initial_counts": [
+            0,
+            0
+          ],
+          "influx_per_length": [
+            0.1,
+            0.1
+          ],
+          "source_seed": 1701,
+          "max_samples": 512
+        },
+        "engine": {
+          "dt": 0.004,
+          "reaction_every": 5,
+          "sample_every": 50
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "open_bath",
+        "name": "OB1_dt0.002_s0",
+        "branch": "OB1",
+        "seed": 0,
+        "duration": 80.0,
+        "chemistry": {
+          "initial_counts": [
+            0,
+            0
+          ],
+          "influx_per_length": [
+            0.1,
+            0.1
+          ],
+          "source_seed": 1701,
+          "max_samples": 512
+        },
+        "engine": {
+          "dt": 0.002,
+          "reaction_every": 10,
+          "sample_every": 100
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "open_bath",
+        "name": "OB1_dt0.004_s1",
+        "branch": "OB1",
+        "seed": 1,
+        "duration": 80.0,
+        "chemistry": {
+          "initial_counts": [
+            0,
+            0
+          ],
+          "influx_per_length": [
+            0.1,
+            0.1
+          ],
+          "source_seed": 1702,
+          "max_samples": 512
+        },
+        "engine": {
+          "dt": 0.004,
+          "reaction_every": 5,
+          "sample_every": 50
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "open_bath",
+        "name": "OB1_dt0.002_s1",
+        "branch": "OB1",
+        "seed": 1,
+        "duration": 80.0,
+        "chemistry": {
+          "initial_counts": [
+            0,
+            0
+          ],
+          "influx_per_length": [
+            0.1,
+            0.1
+          ],
+          "source_seed": 1702,
+          "max_samples": 512
+        },
+        "engine": {
+          "dt": 0.002,
+          "reaction_every": 10,
+          "sample_every": 100
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "open_bath",
+        "name": "OB1_dt0.004_s2",
+        "branch": "OB1",
+        "seed": 2,
+        "duration": 80.0,
+        "chemistry": {
+          "initial_counts": [
+            0,
+            0
+          ],
+          "influx_per_length": [
+            0.1,
+            0.1
+          ],
+          "source_seed": 1703,
+          "max_samples": 512
+        },
+        "engine": {
+          "dt": 0.004,
+          "reaction_every": 5,
+          "sample_every": 50
+        }
+      }
+    },
+    {
+      "scenario": {
+        "schema_version": 1,
+        "model": "open_bath",
+        "name": "OB1_dt0.002_s2",
+        "branch": "OB1",
+        "seed": 2,
+        "duration": 80.0,
+        "chemistry": {
+          "initial_counts": [
+            0,
+            0
+          ],
+          "influx_per_length": [
+            0.1,
+            0.1
+          ],
+          "source_seed": 1703,
+          "max_samples": 512
+        },
+        "engine": {
+          "dt": 0.002,
+          "reaction_every": 10,
+          "sample_every": 100
+        }
+      }
+    }
+  ],
+  "comparison_policy": "BATCH_55_PLAN: three seeds x dt.004/.002,80 units; boundary interval.02 fixed, same source calendar within pair. No chemistry/cell. Bounded construction screen, not stationary-state or convergence proof."
+}

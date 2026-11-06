@@ -19,7 +19,7 @@ class Simulation:
         self.motion=None
         motion_settings=self.config.get('mechanics',self.chemistry.config)
         if motion_settings.get('motion','brownian')!='brownian':
-            if self.config['model'] not in ('mixing','copy','membrane','membrane_bath','coupled_bath','lipid_synthesis','mixed_synthesis'):raise ValueError('Unsupported inertial hook')
+            if self.config['model'] not in ('mixing','copy','membrane','membrane_bath','coupled_bath','lipid_synthesis','mixed_synthesis','open_bath'):raise ValueError('Unsupported inertial hook')
             from .motion import InertialMotion
             self.motion=InertialMotion(self.chemistry,self.rng,motion_settings)
             self.chemistry.motion_state=self.motion
@@ -45,6 +45,16 @@ class Simulation:
             # Preserve the default argument bit-for-bit; mechanics always uses self.dt.
             reaction_dt=self.dt if self.reaction_every==5 else self.dt*self.reaction_every/5
             events=self.chemistry.react(self.time,reaction_dt,self.neighbors)
+            change=getattr(self.chemistry,'population_change',None)
+            if change is not None:
+                old_count,mapping,new_velocities=change
+                mapping=np.asarray(mapping,dtype=np.int64)
+                if (mapping.shape!=(len(self.chemistry.pos),) or np.any(mapping < -1) or
+                    np.any(mapping>=old_count) or len(np.unique(mapping[mapping>=0]))!=np.count_nonzero(mapping>=0)):
+                    raise ValueError('Invalid population remapping')
+                if self.motion is not None:self.motion.remap(old_count,mapping,new_velocities)
+                self.neighbors.cache.clear()
+                self.chemistry.population_change=None
             if self.motion is not None and self.config['model']!='mixing':
                 # Pairing, release and other unreported state changes also alter forces.
                 # Refresh even when react() returns no backbone-formation event.
@@ -65,7 +75,7 @@ class Simulation:
                 pairs=self.neighbors.pairs(c.pos,float(c.contact.max()),'core')
                 force=force_kernel(c.pos,pairs,c.kinds,c.contact,c.springs,c.angles)
                 force+=c.extra_forces(self.neighbors)
-                c.pos=integrate(c.pos,force,self.rng,self.dt,c.mobility,c.config['temperature'],c.box)
+                c.pos=integrate(c.pos,force,self.rng,self.dt,c.mobility,c.config['temperature'],getattr(c,'wall_box',c.box))
             else:self.motion.step(c,self.rng,self.dt,self.neighbors)
             self.step_index+=1
             self.prepared=False

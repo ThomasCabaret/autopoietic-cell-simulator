@@ -81,6 +81,11 @@ def resolve(raw):
         raise ValueError('temperature must be nonnegative')
     if 'box' in defaults and (len(defaults['box'])!=2 or any(not math.isfinite(x) or x<=1.2 for x in defaults['box'])):
         raise ValueError('box requires two lengths greater than 1.2')
+    if model=='open_bath':
+        from .open_bath import validate
+        validate(defaults)
+        if round(raw['duration']/engine['dt'])%engine['reaction_every']:
+            raise ValueError('Open bath duration must end on a boundary update')
     if model=='copy':
         if defaults.get('capture_curvature','legacy') not in ('legacy','matched'):
             raise ValueError('capture_curvature must be legacy or matched')

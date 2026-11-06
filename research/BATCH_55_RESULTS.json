@@ -1,0 +1,216 @@
+{
+  "batch": 55,
+  "date": "2026-11-06",
+  "OB1": {
+    "report": "outputs\\open_boundary\\campaign_20261106T183138630867Z\\open_boundary_review.json",
+    "report_sha256": "c8847ad44a5c414d2795252595276c72c4ac775a0cc3b4a55ec94c9a22789552",
+    "rows": [
+      {
+        "label": "OB1_dt0.004_s0",
+        "seed": 0,
+        "dt": 0.004,
+        "counts": [
+          22,
+          27
+        ],
+        "injected": [
+          222,
+          238
+        ],
+        "exported": [
+          200,
+          211
+        ],
+        "max_balance_error": 0,
+        "max_population": 63,
+        "source_digest": "4566ebc4daf5804d43c91ed337670eb8e8161d92fc0c901b479fe36c151a712b",
+        "max_injection_lag": 0.019977532906722217,
+        "mean_late_population": 51.691542288557216,
+        "central_half_reached": true,
+        "elapsed_seconds": 1.7969999997876585,
+        "simulated_per_second": 44.518642186673986,
+        "result_sha256": "30568dfdbb3ec5de2a42de445ae178514b07ab6c3a29deb3b92aae32aadbd880"
+      },
+      {
+        "label": "OB1_dt0.002_s0",
+        "seed": 0,
+        "dt": 0.002,
+        "counts": [
+          23,
+          26
+        ],
+        "injected": [
+          222,
+          238
+        ],
+        "exported": [
+          199,
+          212
+        ],
+        "max_balance_error": 0,
+        "max_population": 67,
+        "source_digest": "4566ebc4daf5804d43c91ed337670eb8e8161d92fc0c901b479fe36c151a712b",
+        "max_injection_lag": 0.019977532906722217,
+        "mean_late_population": 54.82587064676617,
+        "central_half_reached": true,
+        "elapsed_seconds": 3.031999999890104,
+        "simulated_per_second": 26.385224275362674,
+        "result_sha256": "006d85f0eb7741eda1e3f972eb643ebb5720ea0d72a844ce9ca022fd02a321ee"
+      },
+      {
+        "label": "OB1_dt0.004_s1",
+        "seed": 1,
+        "dt": 0.004,
+        "counts": [
+          18,
+          29
+        ],
+        "injected": [
+          244,
+          233
+        ],
+        "exported": [
+          226,
+          204
+        ],
+        "max_balance_error": 0,
+        "max_population": 69,
+        "source_digest": "3c6952da3e1f2210f945fb0b3e5fcbd32e40e749a7db979ad20fd12d8a3bf510",
+        "max_injection_lag": 0.019986846191841323,
+        "mean_late_population": 53.0547263681592,
+        "central_half_reached": true,
+        "elapsed_seconds": 1.3120000001508743,
+        "simulated_per_second": 60.975609749085635,
+        "result_sha256": "5a8a79fd18726880ac2b80b67336cf2b5b25698b6930f5f0acd713a2e3288402"
+      },
+      {
+        "label": "OB1_dt0.002_s1",
+        "seed": 1,
+        "dt": 0.002,
+        "counts": [
+          26,
+          28
+        ],
+        "injected": [
+          244,
+          233
+        ],
+        "exported": [
+          218,
+          205
+        ],
+        "max_balance_error": 0,
+        "max_population": 64,
+        "source_digest": "3c6952da3e1f2210f945fb0b3e5fcbd32e40e749a7db979ad20fd12d8a3bf510",
+        "max_injection_lag": 0.019986846191841323,
+        "mean_late_population": 54.169154228855724,
+        "central_half_reached": true,
+        "elapsed_seconds": 1.9689999998081475,
+        "simulated_per_second": 40.629761304111184,
+        "result_sha256": "72a137a398ecbcc9d31f60a91ad76f55acc3fd822aa952e347c4f58c850dab4d"
+      },
+      {
+        "label": "OB1_dt0.004_s2",
+        "seed": 2,
+        "dt": 0.004,
+        "counts": [
+          31,
+          19
+        ],
+        "injected": [
+          225,
+          213
+        ],
+        "exported": [
+          194,
+          194
+        ],
+        "max_balance_error": 0,
+        "max_population": 62,
+        "source_digest": "37002c47a55013413598e51f4c5aaaedf6014c1c00fd9f2e16897634a86ae8d7",
+        "max_injection_lag": 0.0199954837369134,
+        "mean_late_population": 51.0547263681592,
+        "central_half_reached": true,
+        "elapsed_seconds": 1.2350000001024455,
+        "simulated_per_second": 64.77732792984928,
+        "result_sha256": "23c1600d2bc12b65cf1df8200cf22dfd027185cd46de061aba6882c5fbb83c69"
+      },
+      {
+        "label": "OB1_dt0.002_s2",
+        "seed": 2,
+        "dt": 0.002,
+        "counts": [
+          30,
+          28
+        ],
+        "injected": [
+          225,
+          213
+        ],
+        "exported": [
+          195,
+          185
+        ],
+        "max_balance_error": 0,
+        "max_population": 68,
+        "source_digest": "37002c47a55013413598e51f4c5aaaedf6014c1c00fd9f2e16897634a86ae8d7",
+        "max_injection_lag": 0.0199954837369134,
+        "mean_late_population": 58.48756218905473,
+        "central_half_reached": true,
+        "elapsed_seconds": 2.3129999998491257,
+        "simulated_per_second": 34.587116301434634,
+        "result_sha256": "b687783519c7cf110eb7df0355c2f3e0d8135912946c81d3e68a29f4386c2742"
+      }
+    ],
+    "counts": {
+      "pending": 0,
+      "running": 0,
+      "complete": 6,
+      "failed": 0,
+      "paused": 0,
+      "interrupted": 0
+    },
+    "conditions": {
+      "exact_balance": true,
+      "real_exchange": true,
+      "central_transport": true,
+      "application_lag": true,
+      "matched_source": true
+    },
+    "screen_passed": true,
+    "scope": "Finite80 transport only. dt pairs share source but not thermal paths. Population differences are stochastic, not a convergence estimate. No membrane/G/F/L, chemistry, homeostasis or loss-helper transfer."
+  },
+  "closed_reference": {
+    "report": "outputs\\diagnostics\\OB1_reference_20261106T183404017269Z\\report.json",
+    "report_sha256": "e3c7aea64ad3d2a403139eb1623b814b67b856f2a2363b0015d53b8cfd85ebad",
+    "rows": [
+      {
+        "name": "FR1_fast_s0",
+        "model": "copy",
+        "time": 5.0,
+        "physical_state_rng_exact": true
+      },
+      {
+        "name": "CH1_assembly_s0",
+        "model": "lipid_synthesis",
+        "time": 5.0,
+        "physical_state_rng_exact": true
+      },
+      {
+        "name": "CH1_integrated_s1",
+        "model": "mixed_synthesis",
+        "time": 5.0,
+        "physical_state_rng_exact": true
+      }
+    ],
+    "scope": "Selected closed-bath five-unit prefixes, not renewed long-run chemical validation."
+  },
+  "FR1": {
+    "complete": 6,
+    "failed": 0,
+    "fast_recovery": 0,
+    "slow_recovery": 1,
+    "screen_passed": false,
+    "report_sha256": "178721433e553bd0daa199658162bb6502bf4ba7e399e2c8993a7da4479e56ce"
+  }
+}

@@ -49,7 +49,7 @@ def current_origins():
 def current_descriptions():
     common=dict(conditions='Langevin, masse 1, frottement 0,1 ; température 0,08, dt 0,002 ; contacts liés/libres cohérents MD2. Paramètres identiques à la recette étudiée, sans réglage de la vue.',
         evidence='research/BATCH_25_RESULTS.md',archive=False)
-    return [dict(common,id='current_cell',title='Cellule construite · état actuel',level='Candidat MD2 · bain le plus intégré',
+    return [dict(common,id='current_cell',title='Cellule construite · référence MD2',level='Référence historique MD2',
         summary='Membrane, gènes, outils et précurseurs dans un même bain sous Langevin.',
         question='Voir la tenue de la membrane et les vrais transferts de matière ; les nouvelles chaînes fonctionnelles restent le prochain verrou.',
         prepared='219 molécules L en anneau et 24 libres internes ; 16 G001 et 16 F001 complets préparés, 48 monomères F et précurseurs P/R. Total : 2 118 billes.',
@@ -287,7 +287,7 @@ def build():
     from visualizer.demos import simulator_hashes
     archived=descriptions()
     for info in archived:info['archive']=True
-    catalog=dict(version=1,date='2026-11-05',recommended='current_energy_s0',simulator_sha256=simulator_hashes(),
+    catalog=dict(version=1,date='2026-11-06',recommended='current_energy_s0',simulator_sha256=simulator_hashes(),
         policy='Live simulations from preserved initial inputs. Selected illustrative seeds, not a robustness claim. No trajectories/checkpoints bundled.',
         demos=[energy_description(),refinement_description(),compact_description(),membrane_renewal_description(),mixed_description()]+current_descriptions()+[renewal_description()]+archived,variants=variants)
     (ROOT/'demonstrators/catalog.json').write_text(json.dumps(catalog,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
