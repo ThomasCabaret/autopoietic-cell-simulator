@@ -1,5 +1,13 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot51 : aucun palier biologique augmenté. Courbure préférée vérifiée,
+temps collectif nu52≈1890 et instantanés motivent CR1 à8000. Observateur
+passif construit/testé, pas de nouvelle fonction cellulaire ni loi modifiée.
+M-01 reste50 historique séparé ; M-04 conserve75 EG1 limité ; Q-01/C-02
+restent25, maintien0. CR1 en cours, aucune conclusion anticipée. Même
+initialisation/loi ne rend pas ces suivis indépendants. GUI39 historique.
+Voir [BATCH_51](BATCH_51.md).
+
 Lot50 : aucun palier biologique relevé. CP1 dynamique associe les molécules
 isolées et reste thermiquement correct. CH1 démontre une récupération
 sélectionnée de frontière (94,33%, G2/F5/L22), mais aucune vésicule isolée finale

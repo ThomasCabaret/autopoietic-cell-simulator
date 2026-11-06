@@ -1655,6 +1655,37 @@
       "recipe": "research/BATCH_50_CE1.json",
       "evidence": "research/BATCH_50.md",
       "results": "research/BATCH_50.md"
+    },
+    {
+      "id": "BC1",
+      "parent": "CE1",
+      "status": "analytic_and_passive_snapshot_diagnosis_complete",
+      "hypothesis": "A valid but soft local curvature and slow collective modes can prevent a final closed shape without a sign error or global controller.",
+      "test": "Exact two-dimer translation reduction,257-angle energy oracle, finite-difference open-backbone modes12/22/34/52 and four final CH1 snapshots.",
+      "cost": "Observer/analysis only, no law/type/state/port/rate/gene/tool. Four bounded snapshots, two generated figures.",
+      "counterexample": "Wrong sign/minimum/gradient, unstable local modes or source/config mismatch.",
+      "conclusion": "Preferred angle-.12292 and kappa2.35532; harmonic angular sd.1843. Bare52 mode1890 versus CH1 horizon1800. Explains insufficient time separation, not closure kinetics or causal proof.",
+      "missing_proof": "Nonlinear reactive relaxation, encounter/closure histories and durable final vesicles.",
+      "recipe": "research/BATCH_51_BC1.json",
+      "evidence": "research/BATCH_51_PLAN.md",
+      "results": "research/BATCH_51.md"
+    },
+    {
+      "id": "CR1",
+      "parent": "CH1",
+      "related": [
+        "BC1"
+      ],
+      "status": "same_law_selected_horizons_launched",
+      "hypothesis": "An8000 horizon with sampled geometry can distinguish rare encounters, transient cycles and persistent closure under unchanged CP1 laws.",
+      "test": "Three same isolated initial states, same physical parameters, optional passive geometry every5 and one first-witness capture.",
+      "cost": "No chemical primitive; bounded2001 observations/one104-bead capture per trial, two workers/three hours.",
+      "counterexample": "No persistent final macro cycles, excessive temperature, truncated observation or invalid ports.",
+      "missing_proof": "Exact first passage, retention, integrated robustness, fed/loss renewal and homeostasis.",
+      "recipe": "research/BATCH_51_CR1_RECIPES.json",
+      "evidence": "research/BATCH_51_RELAXATION_PLAN.md",
+      "results": "research/BATCH_51.md",
+      "health_gate": "Report then stop; no retry, physical tuning or automatic horizon increase."
     }
   ]
 }

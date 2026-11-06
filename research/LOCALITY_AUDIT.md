@@ -1,5 +1,16 @@
 # Fidélité à l'objectif : localité et risques de pilotage
 
+Lot51 : zéro changement de loi, type, état, port, taux ou outil. La réduction
+de quatre billes et la Hessienne d'un squelette complet sont des analyses
+externes : ni angle préféré calculé, ni nombre51 par tour, ni vecteur propre
+dans les forces ou réactions. `LipidGeometryAudit` lit des composants, cycles
+et aires globalement mais ne les transmet jamais au hook. Échantillonnage
+borné, une capture au premier témoin ; pas de PRNG/cache de voisins touché.
+CR1 change horizon et observation, pas les règles physiques CP1/CH1. Le crible
+automatique ne fait que classer les résultats/arrêter le lot, sans régler une
+réaction ni une condition de simulation. Les helpers/cycles externes et leurs
+limites énergétiques des candidats antérieurs restent déclarés.
+
 Lot49 CF1 : ajout/retrait de contact = deux L/quatre billes et interactions
 incidentelles à coupure existante ; barrière PR du seul segment modifié. Delta
 et facteur thermique réutilisés, un choix de gate, zéro taux/type/port/gène/outil.

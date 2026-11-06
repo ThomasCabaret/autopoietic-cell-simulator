@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "revision": 20,
+  "revision": 21,
   "reviewed": "2026-11-06",
-  "candidate": "CP1 dynamique : CC1/CH1 clos, association mais fermeture isolée refusée ; récupération intégrée sélectionnée ; EG1 visible",
+  "candidate": "CP1 inchangé ; BC1 courbure/modes vérifiés ; CR1 trois horizons sélectionnés en cours ; EG1 visible",
   "purpose": "Registre évolutif des capacités nécessaires à une cellule construite maintenue ; les pourcentages sont des paliers de preuve, pas un taux global de réussite.",
   "out_of_scope": [
     "origine spontanée de la cellule",
@@ -528,13 +528,14 @@
       "mechanism": "Ports latéraux orientés et géométrie locale liée/libre cohérente.",
       "concept_gap": "Auto-assemblage depuis L libres démontré séparément ; un grand contour issu de H/T fabriqués et sa stabilité commune restent à établir.",
       "proof": "separate",
-      "scope": "V8 MD2 s’assemble à partir de dimères isolés sur trois graines, bain séparé. CP1 court CC1 : association seulement, aucune enceinte finale ; ne remplace pas la preuve historique. CH1 à1800 : chaînes30/52/34, pas de cycle final.",
+      "scope": "V8 MD2 s’assemble à partir de dimères isolés sur trois graines, bain séparé. CP1 court CC1 : association seulement, aucune enceinte finale ; ne remplace pas la preuve historique. CH1 à1800 : chaînes30/52/34, pas de cycle final. BC1 : forme locale vérifiée ; CR1 en cours, pas nouvelle vésicule finale démontrée.",
       "references": [
         "research/BATCH_25_RESULTS.md",
         "research/BATCH_43.md",
-        "research/BATCH_50.md"
+        "research/BATCH_50.md",
+        "research/BATCH_51.md"
       ],
-      "next_test": "Auditer courbure et souplesse des motifs liés, puis diagnostic local des rencontres/ruptures si motivé ; CE1 final seul ne fournit pas leur histoire.",
+      "next_test": "Lire CR1 : cycles simples/aires finaux et occupation6000–8000, bouts observés ; pas de nouveau taux/horizon sans interprétation.",
       "essential": true
     },
     {
@@ -675,12 +676,13 @@
       "mechanism": "Langevin inertiel local, forces transmises entre voisins liés, index spatial partagé.",
       "concept_gap": "Les rencontres de la future bibliothèque et le coût d’un renouvellement complet restent inconnus.",
       "proof": "coupled",
-      "scope": "Langevin transféré à MD2, benchmarks de mélange séparés.",
+      "scope": "Langevin transféré à MD2, benchmarks de mélange séparés. Bonne diffusion des petits composants ne valide pas les modes collectifs52 ; BC1 nu≈1890.",
       "references": [
         "research/BATCH_22.md",
-        "research/BATCH_25_RESULTS.md"
+        "research/BATCH_25_RESULTS.md",
+        "research/BATCH_51.md"
       ],
-      "next_test": "Mesurer contacts utiles par classe et durée, pas seulement dispersion spatiale.",
+      "next_test": "Interpréter CR1 avec les limites de la linéarisation et la formation tardive des longues chaînes.",
       "essential": true
     },
     {
@@ -1075,7 +1077,8 @@
         "research/BATCH_47.md",
         "research/BATCH_48.md",
         "research/BATCH_49.md",
-        "research/BATCH_50.md"
+        "research/BATCH_50.md",
+        "research/BATCH_51.md"
       ],
       "next_test": "Ne pas choisir un dt favorable : résoudre la concurrence des ports avant refaire un contrôle aux deux pas.",
       "essential": true
@@ -1158,7 +1161,8 @@
         "research/KINETICS_AND_PERFORMANCE.md",
         "research/BATCH_44.md",
         "research/BATCH_49.md",
-        "research/BATCH_50.md"
+        "research/BATCH_50.md",
+        "research/BATCH_51.md"
       ],
       "next_test": "CF1 a un coût démesuré avec~4M refus par préfixe ; CP1 doit résoudre la cohérence et être mesuré avant cohorte.",
       "essential": true
@@ -1195,7 +1199,8 @@
         "research/BATCH_47.md",
         "research/BATCH_48.md",
         "research/BATCH_49.md",
-        "research/BATCH_50.md"
+        "research/BATCH_50.md",
+        "research/BATCH_51.md"
       ],
       "next_test": "Conserver préfixes pausés et sources ; tester le futur delta CP1 contre potentiel complet à voisinage borné, aucun feedback d’observation.",
       "essential": true
@@ -1204,16 +1209,16 @@
   "retired": [],
   "decision_focus": [
     {
-      "reason": "Diagnostiquer courbure/flexibilité et rencontres/ruptures sous CP1 avant autre horizon ou constante.",
+      "reason": "Lire CR1 calibré sur les modes nus : géométrie persistante, rencontres ou instabilité, avant toute nouvelle variante.",
       "items": [
         "M-01",
         "M-04",
-        "Q-01",
+        "E-02",
         "C-02"
       ]
     },
     {
-      "reason": "Gaps diversité, information riche, protection/régulation et flux/export inchangés.",
+      "reason": "Diversité, information et protection/régulation/flux restent des maillons conceptuels, pas des détails garantis.",
       "items": [
         "F-02",
         "R-05",
@@ -1324,14 +1329,18 @@
       "revision": 20,
       "date": "2026-11-06",
       "reason": "Lot50 : CP1 intégré/optimisé, CC1 clos6/6 refusé fermeture intégrée ; CH1 clos4/4 récupération intégrée sélectionnée mais aucune enceinte isolée finale. CE1 passif précise les distances finales ; aucun palier biologique augmenté."
+    },
+    {
+      "revision": 21,
+      "date": "2026-11-06",
+      "reason": "Lot51 BC1 courbure/modes quantifiés, observateur passif borné construit ; CR1 trois mêmes isolés8000 lancé, lois inchangées. Aucun palier biologique augmenté."
     }
   ],
   "last_batch_progress": {
-    "M-01": "CH1 isolés1800 : chaînes30/52/34 sans cycle final ; CE1 extrémités hors capture. Preuve historique séparée inchangée.",
-    "M-04": "CH1 intégré1 récupère94,33% tardif, G2/F5/L22 ; suivi sélectionné, pas robustesse/insertion/renouvellement démontrés.",
-    "Q-01": "Gradient compétitif et delta3rangs y compris naissance H/T cohérents ; températures correctes6/6 à300, pas thermodynamique globale.",
-    "C-02": "Température CH1 correcte4/4 et récupération intégrée sélectionnée ; aucune convergence dt ou validation générale CP1.",
-    "O-01": "Premier coût15–16× refusé puis force1,81–1,85×, delta1,48/.97× sur snapshots sélectionnés, source/échec conservés.",
-    "O-02": "Préfixes7 historiques/2compétitifs exacts,39 démos natives ; surveillance IO récupérée sans modifier les lois figées."
+    "M-01": "BC1 : courbure locale correcte et souple, arcs/spirale observés ; CR1 calibré8000 lancé sans changer les lois.",
+    "E-02": "Modes collectifs distingués de diffusion : temps nu52≈1890, pas temps de fermeture du bain mesuré.",
+    "C-02": "Aucune loi physique changée ; nouvelle observation passive, deux préfixes compétitifs exacts.",
+    "O-01": "Linéarisation locale et squelette quantifient l’échelle collective ; pas gain de vitesse ou renouvellement démontré.",
+    "O-02": "Observateur géométrique borné, capture unique et reprise exacte ;287 tests et catalogue39 recertifié."
   }
 }

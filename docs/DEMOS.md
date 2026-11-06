@@ -1,5 +1,13 @@
 # Démos représentatives accessibles dans la GUI
 
+## Lot51 — catalogue recertifié, diagnostic visible dans le bilan
+
+39 scènes historiques toujours inchangées physiquement, catalogue recertifié
+après ajout de l'observateur optionnel des campagnes. Aucun résultat CR1
+anticipé ou nouveau candidat promu. Les [instantanés CH1](../research/BATCH_51_GEOMETRY.png)
+et le [profil local](../research/BATCH_51_PROFILE.png) permettent de voir les
+arcs/spirale et la souplesse qui motivent CR1. [Bilan](../research/BATCH_51.md).
+
 ## Lot50 —39 choix conservés, CP1 encore en évaluation
 
 Les39 scènes natives ont été recertifiées. Les champs `free_port_potential=additive`

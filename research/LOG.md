@@ -1616,3 +1616,20 @@ CH1 terminé4/4 avant clôture : température correcte partout, intégré1 récu
 conservée. CE1 passif lit cinq paires d'extrémités toutes hors capture.25,
 y compris chaîne52 : prochaine question géométrie/courbure et occasions,
 pas une nouvelle durée à l'aveugle. Aucun calcul actif à cette clôture.
+
+## 2026-11-06 — lot51, courbure et temps collectifs avant réglage
+
+BC1 dérive le potentiel lié après translation : angle−.12292, kappa2.35532,
+sd harmonique.1843 et coût droit.222T ; erreur oracle2.7e-15. Quatre états
+finaux CH1 montrent arcs/spirale ; pas leur histoire. Squelette nu ouvert,
+trois modes rigides et temps lents20/39/348/1890 pour12/22/34/52. CH1 à1800
+ne suffit pas à exclure relaxation lente, sans annuler son refus ou prédire
+fermeture. Premier BC1 gardé ; remplacement de np.cross2D déprécié par
+déterminant explicite et ajout des modes dans nouvelle recette.
+Observateur géométrique optionnel construit dans le gestionnaire partagé,
+passivité/reprise/capture bornée vérifiées ; défaut sans observer préservé.
+CR1 trois mêmes isolés8000 lancé après plan figé,2 travailleurs/3h, checkpoints30s,
+rapport puis arrêt. Aucune loi physique ou outil ajouté.287 tests passent,
+deux préfixes compétitifs exacts,39 scènes historiques recertifiées. Registre21/43,
+aucun palier biologique augmenté ; maintien0. Sources, figures et recettes
+versionnées ; résultats/checkpoints/trajectoires restent locaux.

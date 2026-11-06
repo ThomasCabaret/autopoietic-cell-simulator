@@ -1,5 +1,20 @@
 # Santé du projet — actualisation6 novembre2026
 
+Lot51,6 novembre2026 : sain pour poursuivre la recherche, sans garantie de
+convergence complète. Le jalon diagnostic fixé au lot50 est atteint : forme
+locale et modes collectifs quantifiés, pas de nouvelle règle ou outil ajouté.
+Le nombre51 par tour est dérivé des ports, jamais une cible dans la dynamique.
+Un horizon8000 est justifié par le mode nu1890 mais ne garantit ni équilibre
+du bain ni fermeture ; CR1 borné doit maintenant départager le mécanisme.
+Le coût de calcul différé est séparé des interventions de conception. Prochain
+jalon : lecture CR1, au plus une variante mécanique justifiée si nécessaire ;
+si aucun mécanisme explicatif exploitable, revoir la représentation. Pas de
+nouvel horizon à l'aveugle ou milliers de réglages. Diversité des fonctions,
+information riche, protection/régulation et flux/export empêchent de déclarer
+la faisabilité entière résolue. Aucun blocage de principe établi, aucune
+estimation globale relevée. Les globalités observées ne pilotent aucune réaction.
+Voir [BATCH_51](BATCH_51.md).
+
 6 novembre2026, lot50 : deux jalons CP1 examinés. Intégration/gradient/delta
 et coût local atteints ; la récupération sélectionnée de frontière passe,
 mais l'assemblage fermé isolé échoue au critère final. Ce n'est plus un blocage

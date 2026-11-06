@@ -160,8 +160,14 @@ def main():
         'campaigns/competitive_mechanism.json','campaigns/competitive_horizon_mechanism.json',
         'competitive_panel_status.bat','stop_competitive_panel.bat','resume_competitive_panel.bat',
         'competitive_horizon_status.bat','stop_competitive_horizon.bat','resume_competitive_horizon.bat'))
+    files.update(ROOT/p for p in ('research/BATCH_51_PLAN.md','research/BATCH_51_RELAXATION_PLAN.md','research/BATCH_51.md',
+        'research/BATCH_51_BC1.json','research/BATCH_51_CR1_RECIPES.json','research/BATCH_51_RESULTS.json',
+        'research/BATCH_51_GEOMETRY.png','research/BATCH_51_PROFILE.png',
+        'experiments/audit_bound_curvature.py','experiments/prepare_competitive_relaxation.py','experiments/review_competitive_relaxation.py',
+        'campaigns/competitive_relaxation_mechanism.json','competitive_relaxation_status.bat',
+        'stop_competitive_relaxation.bat','resume_competitive_relaxation.bat'))
     files.update(p for p in (ROOT/'research/diagnostic_recipes').rglob('*')
-        if p.suffix=='.py' or p.name in ('recipe.json','engine_sources.json'))
+        if p.suffix=='.py' or p.name in ('recipe.json','engine_sources.json','evidence.json'))
     files.update(ROOT/p for p in ('research/BATCH_44_PLAN.md','research/BATCH_44.md','research/BATCH_44_RECIPES.json',
         'research/BATCH_44_PILOT.json','experiments/audit_boundary_access.py','experiments/prepare_compact_transfer.py',
         'experiments/pilot_compact_transfer.py','experiments/review_compact_transfer.py',

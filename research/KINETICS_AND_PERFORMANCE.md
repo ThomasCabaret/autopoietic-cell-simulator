@@ -1,5 +1,17 @@
 # Cinétique, campagnes différées et coût du moteur
 
+Précision lot51 : calibrer aussi les modes collectifs quand les monomères
+s'assemblent en longues chaînes. Diffusion du centre de masse et mélange de
+petites molécules ne bornent pas une relaxation de courbure. Un profil local,
+une linéarisation sur petite structure contrôlée ou un petit essai mécanique
+peuvent donner une échelle ; distinguer ce modèle simplifié du bain réactif.
+Une analyse globale des modes est autorisée pour préparer l'expérience, jamais
+pour corriger la forme dans la dynamique. Comparer l'horizon au temps depuis
+l'assemblage, pas seulement au début du bain. Un premier cycle échantillonné
+n'est pas le premier passage continu ; déclarer cadence, troncature et cycles
+potentiellement manqués. BC1 motive CR1 sans transformer son horizon8000 en
+garantie d'équilibre ou de fermeture. Voir BATCH_51 et son plan.
+
 Précision lot45 : pour une transition de lien qui change la mécanique,
 une loupe peut comparer les potentiels juste avant/après à positions fixes et
 la géométrie des faces libérées. Distinguer cette variation du bilan thermique

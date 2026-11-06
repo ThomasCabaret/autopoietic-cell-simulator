@@ -1,5 +1,17 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot51 : **BC1 clos**. Courbure locale correcte et souple : theta−.12292rad,
+kappa2.35532, sd thermique harmonique.1843. Modes du squelette nu :52 L≈1890,
+donc CH1 à1800 ne sépare pas confortablement cette échelle collective. Ce
+n'est ni un temps de fermeture prédit ni une annulation du refus CH1.
+**CR1 lancé**, mêmes trois initialisations isolées, mêmes lois/paramètres,
+horizon8000,2 travailleurs/3h, observateur passif borné et rapport puis arrêt.
+Lire `competitive_relaxation_status.bat`. Interpréter cycles finaux/durée
+observée, bouts et températures ; pas d'allongement automatique ni refroidissement.
+Si refus, une variante mécaniste justifiée au plus avant réexamen, pas grille.
+GUI39 historique recertifiée, pas de promotion CP1. Diversité, information,
+protection/régulation et flux/export restent des gaps. Voir [BATCH_51](BATCH_51.md).
+
 Lot50 : **CP1 dynamique intégré**, forces/deltas/naissances cohérents,
 coût force optimisé15–16×→1,81–1,85×. **CC1 clos6/6**, porte refusée :
 température6/6, association3/3, mais intégré1 ouvert à froid. **CH1 clos4/4** :

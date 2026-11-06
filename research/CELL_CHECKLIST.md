@@ -1,6 +1,6 @@
 # Checklist détaillée — critères et dépendances
 
-Revue 2026-11-06 · révision20. Source : [cell_checklist.json](cell_checklist.json).
+Revue 2026-11-06 · révision21. Source : [cell_checklist.json](cell_checklist.json).
 [Tableau compact](CELL_CHECKLIST_COMPACT.md) · [Échelle et méthode](CONCEPT_FIRST.md).
 
 Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre acyclique de codage. Les cycles de renouvellement sont intentionnels. Une condition initiale construite peut amorcer un sous-cas sans fermer ces cycles.
@@ -353,13 +353,13 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Dépend de :** [F-01](#F-01), [S-04](#S-04) · **Pour renouveler :** —
 
-**Portée des preuves :** V8 MD2 s’assemble à partir de dimères isolés sur trois graines, bain séparé. CP1 court CC1 : association seulement, aucune enceinte finale ; ne remplace pas la preuve historique. CH1 à1800 : chaînes30/52/34, pas de cycle final.
+**Portée des preuves :** V8 MD2 s’assemble à partir de dimères isolés sur trois graines, bain séparé. CP1 court CC1 : association seulement, aucune enceinte finale ; ne remplace pas la preuve historique. CH1 à1800 : chaînes30/52/34, pas de cycle final. BC1 : forme locale vérifiée ; CR1 en cours, pas nouvelle vésicule finale démontrée.
 
-**Références :** [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/BATCH_43.md](../research/BATCH_43.md), [research/BATCH_50.md](../research/BATCH_50.md)
+**Références :** [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/BATCH_43.md](../research/BATCH_43.md), [research/BATCH_50.md](../research/BATCH_50.md), [research/BATCH_51.md](../research/BATCH_51.md)
 
-**Prochain test / décision :** Auditer courbure et souplesse des motifs liés, puis diagnostic local des rencontres/ruptures si motivé ; CE1 final seul ne fournit pas leur histoire.
+**Prochain test / décision :** Lire CR1 : cycles simples/aires finaux et occupation6000–8000, bouts observés ; pas de nouveau taux/horizon sans interprétation.
 
-**Progrès du dernier lot :** CH1 isolés1800 : chaînes30/52/34 sans cycle final ; CE1 extrémités hors capture. Preuve historique séparée inchangée.
+**Progrès du dernier lot :** BC1 : courbure locale correcte et souple, arcs/spirale observés ; CR1 calibré8000 lancé sans changer les lois.
 
 <a id="M-02"></a>
 ### M-02 — Frontière dimensionnée pour le contenu
@@ -418,8 +418,6 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Prochain test / décision :** Après diagnostic de fermeture isolée, réévaluer insertion et compatibilité de la chimie commune, sans supposer réparation démontrée.
 
-**Progrès du dernier lot :** CH1 intégré1 récupère94,33% tardif, G2/F5/L22 ; suivi sélectionné, pas robustesse/insertion/renouvellement démontrés.
-
 <a id="M-05"></a>
 ### M-05 — Réparation et remplacement de frontière
 
@@ -473,11 +471,13 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Dépend de :** [F-01](#F-01), [C-02](#C-02) · **Pour renouveler :** —
 
-**Portée des preuves :** Langevin transféré à MD2, benchmarks de mélange séparés.
+**Portée des preuves :** Langevin transféré à MD2, benchmarks de mélange séparés. Bonne diffusion des petits composants ne valide pas les modes collectifs52 ; BC1 nu≈1890.
 
-**Références :** [research/BATCH_22.md](../research/BATCH_22.md), [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md)
+**Références :** [research/BATCH_22.md](../research/BATCH_22.md), [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/BATCH_51.md](../research/BATCH_51.md)
 
-**Prochain test / décision :** Mesurer contacts utiles par classe et durée, pas seulement dispersion spatiale.
+**Prochain test / décision :** Interpréter CR1 avec les limites de la linéarisation et la formation tardive des longues chaînes.
+
+**Progrès du dernier lot :** Modes collectifs distingués de diffusion : temps nu52≈1890, pas temps de fermeture du bain mesuré.
 
 <a id="E-03"></a>
 ### E-03 — Alimentation accessible et encombrement
@@ -518,8 +518,6 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 **Références :** [research/CELL_ARCHITECTURE.md](../research/CELL_ARCHITECTURE.md), [research/LOCALITY_AUDIT.md](../research/LOCALITY_AUDIT.md), [research/BATCH_36.md](../research/BATCH_36.md), [research/BATCH_37.md](../research/BATCH_37.md), [research/BATCH_38.md](../research/BATCH_38.md), [research/BATCH_39.md](../research/BATCH_39.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md), [research/BATCH_45.md](../research/BATCH_45.md), [research/BATCH_46.md](../research/BATCH_46.md), [research/BATCH_47.md](../research/BATCH_47.md), [research/BATCH_48.md](../research/BATCH_48.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_50.md](../research/BATCH_50.md)
 
 **Prochain test / décision :** CP1 dynamique et delta de réaction à voisinage borné ; contrôler coût et apports avant nouveau calcul long.
-
-**Progrès du dernier lot :** Gradient compétitif et delta3rangs y compris naissance H/T cohérents ; températures correctes6/6 à300, pas thermodynamique globale.
 
 <a id="Q-02"></a>
 ### Q-02 — Retour local et disponibilité après cycle
@@ -772,11 +770,11 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** Préfixes/reprises exacts et domaines séparés étudiés ; EN1 refuse les critères sous dt/2, aléa vs biais non départagés.
 
-**Références :** [research/KINETICS_AND_PERFORMANCE.md](../research/KINETICS_AND_PERFORMANCE.md), [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/BATCH_40.md](../research/BATCH_40.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md), [research/BATCH_43.md](../research/BATCH_43.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_45.md](../research/BATCH_45.md), [research/BATCH_47.md](../research/BATCH_47.md), [research/BATCH_48.md](../research/BATCH_48.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_50.md](../research/BATCH_50.md)
+**Références :** [research/KINETICS_AND_PERFORMANCE.md](../research/KINETICS_AND_PERFORMANCE.md), [research/BATCH_25_RESULTS.md](../research/BATCH_25_RESULTS.md), [research/BATCH_40.md](../research/BATCH_40.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md), [research/BATCH_43.md](../research/BATCH_43.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_45.md](../research/BATCH_45.md), [research/BATCH_47.md](../research/BATCH_47.md), [research/BATCH_48.md](../research/BATCH_48.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_50.md](../research/BATCH_50.md), [research/BATCH_51.md](../research/BATCH_51.md)
 
 **Prochain test / décision :** Ne pas choisir un dt favorable : résoudre la concurrence des ports avant refaire un contrôle aux deux pas.
 
-**Progrès du dernier lot :** Température CH1 correcte4/4 et récupération intégrée sélectionnée ; aucune convergence dt ou validation générale CP1.
+**Progrès du dernier lot :** Aucune loi physique changée ; nouvelle observation passive, deux préfixes compétitifs exacts.
 
 <a id="C-03"></a>
 ### C-03 — Fermeture fonctionnelle et matérielle complète
@@ -833,11 +831,11 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** Benchmarks et scènes2118 billes, pas renouvellement cellulaire chronométré.
 
-**Références :** [research/KINETICS_AND_PERFORMANCE.md](../research/KINETICS_AND_PERFORMANCE.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_50.md](../research/BATCH_50.md)
+**Références :** [research/KINETICS_AND_PERFORMANCE.md](../research/KINETICS_AND_PERFORMANCE.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_50.md](../research/BATCH_50.md), [research/BATCH_51.md](../research/BATCH_51.md)
 
 **Prochain test / décision :** CF1 a un coût démesuré avec~4M refus par préfixe ; CP1 doit résoudre la cohérence et être mesuré avant cohorte.
 
-**Progrès du dernier lot :** Premier coût15–16× refusé puis force1,81–1,85×, delta1,48/.97× sur snapshots sélectionnés, source/échec conservés.
+**Progrès du dernier lot :** Linéarisation locale et squelette quantifient l’échelle collective ; pas gain de vitesse ou renouvellement démontré.
 
 <a id="O-02"></a>
 ### O-02 — Observation passive, reproductibilité et inspection
@@ -854,11 +852,11 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Portée des preuves :** Fonction logicielle validée pour les références présentes, pas pour toutes les futures chimies.
 
-**Références :** [research/BATCH_26.md](../research/BATCH_26.md), [research/BATCH_27.md](../research/BATCH_27.md), [research/BATCH_31.md](../research/BATCH_31.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_33.md](../research/BATCH_33.md), [research/BATCH_35.md](../research/BATCH_35.md), [research/BATCH_36.md](../research/BATCH_36.md), [research/BATCH_38.md](../research/BATCH_38.md), [research/BATCH_39.md](../research/BATCH_39.md), [research/BATCH_40.md](../research/BATCH_40.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md), [research/BATCH_43.md](../research/BATCH_43.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_45.md](../research/BATCH_45.md), [research/BATCH_46.md](../research/BATCH_46.md), [research/BATCH_47.md](../research/BATCH_47.md), [research/BATCH_48.md](../research/BATCH_48.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_50.md](../research/BATCH_50.md)
+**Références :** [research/BATCH_26.md](../research/BATCH_26.md), [research/BATCH_27.md](../research/BATCH_27.md), [research/BATCH_31.md](../research/BATCH_31.md), [research/BATCH_32.md](../research/BATCH_32.md), [research/BATCH_33.md](../research/BATCH_33.md), [research/BATCH_35.md](../research/BATCH_35.md), [research/BATCH_36.md](../research/BATCH_36.md), [research/BATCH_38.md](../research/BATCH_38.md), [research/BATCH_39.md](../research/BATCH_39.md), [research/BATCH_40.md](../research/BATCH_40.md), [research/BATCH_41.md](../research/BATCH_41.md), [research/BATCH_42.md](../research/BATCH_42.md), [research/BATCH_43.md](../research/BATCH_43.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_45.md](../research/BATCH_45.md), [research/BATCH_46.md](../research/BATCH_46.md), [research/BATCH_47.md](../research/BATCH_47.md), [research/BATCH_48.md](../research/BATCH_48.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_50.md](../research/BATCH_50.md), [research/BATCH_51.md](../research/BATCH_51.md)
 
 **Prochain test / décision :** Conserver préfixes pausés et sources ; tester le futur delta CP1 contre potentiel complet à voisinage borné, aucun feedback d’observation.
 
-**Progrès du dernier lot :** Préfixes7 historiques/2compétitifs exacts,39 démos natives ; surveillance IO récupérée sans modifier les lois figées.
+**Progrès du dernier lot :** Observateur géométrique borné, capture unique et reprise exacte ;287 tests et catalogue39 recertifié.
 
 ## Évolution conservée
 
@@ -882,3 +880,4 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 - Révision18 (2026-11-05) : EN1 complet refuse, limites explicites et3 démos ajoutées. Chronologie distingue chauffe et échange tardif ; EL1 source figée lancé. RP1 garde local alternatif construit/contrôlé, trois essais séparés lancés. Aucun palier biologique augmenté.
 - Révision19 (2026-11-05) : EL1 et RP1 clos. CF1 gate local construit/pilote passe/cohorte lancée puis pause scientifique anticipée : frustration des ports additifs, aucun essai complet. CP1 alternatif statique validé ; FS1 distingue F001 et motifs catalytiques. Aucun palier biologique augmenté.
 - Révision20 (2026-11-06) : Lot50 : CP1 intégré/optimisé, CC1 clos6/6 refusé fermeture intégrée ; CH1 clos4/4 récupération intégrée sélectionnée mais aucune enceinte isolée finale. CE1 passif précise les distances finales ; aucun palier biologique augmenté.
+- Révision21 (2026-11-06) : Lot51 BC1 courbure/modes quantifiés, observateur passif borné construit ; CR1 trois mêmes isolés8000 lancé, lois inchangées. Aucun palier biologique augmenté.

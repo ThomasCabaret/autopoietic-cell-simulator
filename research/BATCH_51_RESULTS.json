@@ -1,0 +1,94 @@
+{
+  "batch": 51,
+  "date": "2026-11-06",
+  "BC1": {
+    "descriptor": "research/BATCH_51_BC1.json",
+    "local_profile": {
+      "preferred_angle": -0.12292191176553185,
+      "ideal_turn_count": 51.1152585973808,
+      "bending_curvature": 2.3553207238861478,
+      "harmonic_angular_sd": 0.1842977218469666,
+      "straight_excess_over_T": 0.22214767497157895,
+      "engine_energy_max_error": 2.6645352591003757e-15
+    },
+    "bare_modes": [
+      {
+        "units": 12,
+        "rigid_zero_modes": 3,
+        "minimum_eigenvalue": -2.1854337498264834e-11,
+        "softest_eigenvalue": 0.026118258067651594,
+        "slowest_amplitude_envelope_time": 20.0,
+        "force_at_reference": 1.626326808782381e-13,
+        "scope": "Small perturbation of ideal open axial/bound backbone only. No nonlinear bath relaxation or closure-time prediction."
+      },
+      {
+        "units": 22,
+        "rigid_zero_modes": 3,
+        "minimum_eigenvalue": -1.6415878812890076e-12,
+        "softest_eigenvalue": 0.0019007996045608537,
+        "slowest_amplitude_envelope_time": 39.182757586763515,
+        "force_at_reference": 3.4504434219517954e-13,
+        "scope": "Small perturbation of ideal open axial/bound backbone only. No nonlinear bath relaxation or closure-time prediction."
+      },
+      {
+        "units": 34,
+        "rigid_zero_modes": 3,
+        "minimum_eigenvalue": -1.1631754097431134e-13,
+        "softest_eigenvalue": 0.0002790099386154412,
+        "slowest_amplitude_envelope_time": 348.11441380806343,
+        "force_at_reference": 5.918833040061942e-13,
+        "scope": "Small perturbation of ideal open axial/bound backbone only. No nonlinear bath relaxation or closure-time prediction."
+      },
+      {
+        "units": 52,
+        "rigid_zero_modes": 3,
+        "minimum_eigenvalue": -3.6582632599714565e-14,
+        "softest_eigenvalue": 5.262585188011244e-05,
+        "slowest_amplitude_envelope_time": 1890.1535824830726,
+        "force_at_reference": 6.565420862340072e-13,
+        "scope": "Small perturbation of ideal open axial/bound backbone only. No nonlinear bath relaxation or closure-time prediction."
+      }
+    ],
+    "scope": "Four selected final snapshots and exact pair reduction with fixed axial length. Not a chain free energy, time history, closure rate or causal attribution."
+  },
+  "CR1": {
+    "descriptor": "research/BATCH_51_CR1_RECIPES.json",
+    "status": "launched, consult competitive_relaxation_status.bat",
+    "tasks": 3,
+    "horizon": 8000,
+    "workers": 2,
+    "max_wall_seconds": 10800,
+    "mode_evidence_archived": "research/diagnostic_recipes/BC1_20261106T104543402497Z/evidence.json",
+    "mode_evidence_sha256": "e14dbe92bb54c92c872a9cc34381cefb2e9a489ba4c6fbf9efbc06c95c896cce"
+  },
+  "verification": {
+    "full_suite": {
+      "tests": 287,
+      "passed": true,
+      "elapsed_seconds": 142.485,
+      "log": "outputs/batch51_full_tests.log",
+      "sha256": "16083925c4174f2c3db098df8e0e076d502c661b308d4230a792632ec4698ac4"
+    },
+    "targeted_tests": 18,
+    "competitive_prefix": {
+      "cases": 2,
+      "exact": true,
+      "path": "C:\\CodeProjects\\autopoietic_cell_simulation\\outputs\\diagnostics\\CT1_reference_20261106T105051233886Z\\report.json",
+      "sha256": "b48dae3e66120e4af2666ad14f8da90c049724c681159c4e646daacd0edca86a"
+    },
+    "catalogue": {
+      "count": 39,
+      "recertified": true,
+      "scope": "Existing presets and software tests, not a new full-horizon chemical validation"
+    },
+    "register_design_checks": {
+      "tests": 14,
+      "passed": true
+    }
+  },
+  "maturity": "No biological proof stage raised; fixed-law diagnostic and passive measurement, CR1 not yet concluded.",
+  "figures": {
+    "research/BATCH_51_GEOMETRY.png": "5c98ea30c84bd38ec3e38ac70dd4e8e6611b4b36fe3ab84d975bc3be8cef4817",
+    "research/BATCH_51_PROFILE.png": "aa50483d5738f5d85dea337094107bc47b7658fd2fa78574d7ef054f0dc6608d"
+  }
+}
