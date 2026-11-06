@@ -23,7 +23,9 @@ STUDIES=dict(inhibition=dict(tag='PI1',prepare='prepare_product_binding',review=
     selective_transport=dict(tag='PT1',prepare='prepare_selective_transport',review='review_selective_transport',tasks=6,budget=7200,batch=53,workers=1,
         predecessor='research/BATCH_50_CH1_RECIPES.json',predecessor_tasks=4),
     functional_recycling=dict(tag='RF1',prepare='prepare_functional_recycling',review='review_functional_recycling',tasks=9,budget=7200,batch=53,workers=1,
-        predecessor='research/BATCH_48_RP1_RECIPES.json',predecessor_tasks=3))
+        predecessor='research/BATCH_48_RP1_RECIPES.json',predecessor_tasks=3),
+    functional_recovery=dict(tag='FR1',prepare='prepare_functional_recovery',review='review_functional_recovery',tasks=6,budget=3600,batch=54,workers=2,
+        predecessor='research/BATCH_53_RF1_RECIPES.json',predecessor_tasks=9))
 
 
 def latest(study):return Path((ROOT/f'outputs/{study}_mechanism_followups/latest.txt').read_text().strip())
@@ -54,7 +56,8 @@ def prepare(study):
     if study in ('energy','timestep','contacts','competitive'):sources += [ROOT/p for p in ('experiments/review_boundary_transfer.py','experiments/mixed_calibration.py','experiments/review_renewal.py','experiments/tool_product_flux.py')]
     if study=='competitive':sources += [ROOT/'experiments/prepare_contact_gate.py',ROOT/'experiments/benchmark_competitive_ports.py']
     if study in ('competitive_horizon','competitive_relaxation'):sources += [ROOT/'experiments/review_competitive_panel.py',ROOT/'experiments/mixed_calibration.py']
-    if study in ('selective_transport','functional_recycling'):sources += [ROOT/'experiments/independent_assay_results.py']
+    if study in ('selective_transport','functional_recycling','functional_recovery'):sources += [ROOT/'experiments/independent_assay_results.py']
+    if study=='functional_recovery':sources += [ROOT/'experiments/prepare_functional_recycling.py']
     if study=='selective_transport':sources += [ROOT/'experiments/mixed_calibration.py']
     if study=='timestep':sources += [ROOT/'experiments/review_energy_exchange.py']
     hashes={}
