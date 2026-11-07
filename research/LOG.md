@@ -1,5 +1,14 @@
 # Journal de recherche
 
+## 2026-11-07 — lot56, noyau commun C++ et CUDA
+
+CFN1. Les forces élémentaires deviennent sélectionnables par scénario.
+L'accumulation par bille utilise un ordre commun en C++ et CUDA. La copie
+accède directement aux liaisons d'un port pendant le tick. Les préfixes CPU
+archivés sélectionnés restent exacts. La RTX 4060 Laptop exécute le noyau
+et le préfixe hybride. Le benchmark sépare transferts, noyau résident et pas
+complet. Voir [le bilan et les mesures](BATCH_56.md).
+
 ## 2026-11-06 — lot55, reprise critique Astra et construction OB1
 
 FR1 clos6/6 : fast0/3,slow1/3 ; refus maintenus. Les vingt recommandations

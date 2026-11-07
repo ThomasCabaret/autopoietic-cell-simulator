@@ -78,6 +78,15 @@ machine. Une notification n'existe que si elle a été configurée explicitement
 
 ## Profilage indicatif actuel et accélération
 
+Orientation lot56. Concevoir les données d'interaction pour des parcours
+locaux et une exécution par lots. Le CPU et le GPU peuvent choisir chacun leur
+recherche de voisins derrière les mêmes règles de simulation. Prioriser les
+améliorations transférables, comme l'accès direct aux liaisons d'un port et la
+séparation de l'accumulation des forces. Garder la référence CPU et vérifier
+forces, ordre des événements et reprise à chaque transfert. Comparer les
+temps du noyau résident, du pas complet et d'une campagne réelle séparément.
+Le premier noyau commun C++/CUDA et ses mesures figurent dans [le lot56](BATCH_56.md).
+
 `experiments/profile_simulator.py` reproduit un profil court sans observateur,
 5000 pas après10 pas d'échauffement. Les premières mesures locales conservées
 dans `outputs/performance/` donnent membrane534 :5,73s instrumentées, dont

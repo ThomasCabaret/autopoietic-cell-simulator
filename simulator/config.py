@@ -55,9 +55,11 @@ def resolve(raw):
             raise ValueError('Bound port geometry requires face docking')
     engine = {"dt": .005 if model=="copy" else .002, "spatial":"tree", "skin":.25,
               "sample_every":100 if model=="copy" else 200, "reaction_every":5}
-    if set(raw.get("engine",{}))-set(engine):
+    if set(raw.get("engine",{}))-set(engine)-{'force_backend'}:
         raise ValueError("Unknown engine setting")
     engine.update(raw.get("engine",{}))
+    if engine.get('force_backend', 'numba') not in ('numba', 'cpp', 'cuda'):
+        raise ValueError('force_backend must be numba, cpp or cuda')
     raw.update(chemistry=defaults,engine=engine)
     raw.setdefault("seed",0)
     raw.setdefault("duration",180. if model=="copy" else 100.)

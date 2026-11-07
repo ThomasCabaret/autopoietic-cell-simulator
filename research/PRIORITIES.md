@@ -1,5 +1,11 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot56. La piste CUDA est ouverte à la demande utilisateur. CFN1 a un noyau
+commun C++/CUDA pour les forces élémentaires. Priorité technique au voisinage,
+à l'intégration et aux forces spécifiques sur états résidents. Mesurer le pas
+complet et le débit multi-bains face à la référence CPU. La convergence
+biologique se juge toujours sur les mêmes critères. [Bilan](BATCH_56.md)
+
 Lot55 : consulter [CURRENT_STATUS](../CURRENT_STATUS.md) et la
 [revue Astra](ASTRA_REVIEW.md). FR1 terminé6/6, fast0/3/slow1/3 : refus maintenus,
 pas de nouveau taux. OB1 ouvert sans chimie passe6/6 ; prochain transfert :

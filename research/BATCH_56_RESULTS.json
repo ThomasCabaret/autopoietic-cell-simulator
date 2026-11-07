@@ -1,0 +1,123 @@
+{
+  "case": "CH1_integrated_s1",
+  "recipe": "research/campaign_recipes/CH1_20261106T073608844143Z/manifest.json",
+  "particles": 302,
+  "recipe_sha256": "315eee3513f5d98007a9905f77d813653a9b157ee2d8741ca78f348635164214",
+  "driver_sha256": "77c4cfb36985c35a022e36ff2431dcf25ddcdd476798a5561d32de1e0b246bc8",
+  "pair_terms": 317,
+  "spring_terms": 72,
+  "angle_terms": 10,
+  "platform": "Windows-11-10.0.26200-SP0",
+  "cupy": "13.3.0",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "runtime": 12050,
+  "snapshot_force_calls": [
+    {
+      "backend": "force_kernel",
+      "microseconds": 2.8019996049503484,
+      "max_force_error": 0.0
+    },
+    {
+      "backend": "cpp_forces",
+      "microseconds": 97.90633339434862,
+      "max_force_error": 0.0
+    },
+    {
+      "backend": "cuda_forces",
+      "microseconds": 747.2116670881709,
+      "max_force_error": 0.0
+    }
+  ],
+  "resident_repeated_snapshot": [
+    {
+      "batch": 1,
+      "microseconds": 46.922999899834394,
+      "particles_per_call": 302
+    },
+    {
+      "batch": 32,
+      "microseconds": 108.37000018606584,
+      "particles_per_call": 9664
+    },
+    {
+      "batch": 100,
+      "microseconds": 178.10733329194287,
+      "particles_per_call": 30200
+    }
+  ],
+  "hybrid_prefix": [
+    {
+      "backend": "numba",
+      "seconds": 0.7190171000547707,
+      "timed_steps": 500,
+      "max_position_error": 0.0,
+      "exact_restart": true
+    },
+    {
+      "backend": "cpp",
+      "seconds": 0.6440298000816256,
+      "timed_steps": 500,
+      "max_position_error": 0.0,
+      "exact_restart": true
+    },
+    {
+      "backend": "cuda",
+      "seconds": 0.936263799900189,
+      "timed_steps": 500,
+      "max_position_error": 0.0,
+      "exact_restart": true
+    }
+  ],
+  "source_sha256": {
+    "simulator/__init__.py": "bf5a7a5cafdf7076cbc3cc9d8992895e4a8c217621ea024645a061a3531281a9",
+    "simulator/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "simulator/assembly.py": "4bd703a271102d5ca6a7ae3c6d0109ae158617fef8136b4f8ba5d5456d092034",
+    "simulator/boundary_audit.py": "7d516eb25d60c2e890bfc76073603e579cb1759683b6c961b8e162bb08c119e2",
+    "simulator/campaign_io.py": "d9824e1fb0e0651ef36091159d108313fd510b727b41e1b5b187b670b6db1322",
+    "simulator/campaign_worker.py": "a6776b6e5a7706db75be2980d83d948cc9f456d27c016c113a0abcde68c54986",
+    "simulator/catalysis.py": "bf0f4c35e7c96dde717a29645ce39c628fa2f3a907441f2b706db550c637c4a2",
+    "simulator/checkpoint.py": "c02a0847a625dcbfae5a590034b1d22f8b641da4a333b2dc707f5a16a8672afc",
+    "simulator/cli.py": "6d4fe8a83203279642859986f367115e1a83ab52941df3449ccee17ba4b7850d",
+    "simulator/competitive_ports.py": "dc7fdcea482d9e71de036bbb800748492f63e464848475066275452b68a3efd8",
+    "simulator/config.py": "a5876534579c6f77fd8c49cb0f681b05651eaa7845ccc2dfd4718b4d45eb49d0",
+    "simulator/contact_exchange.py": "945c4521c1126f18238d3ba962e8429cdbbdf94a1ae54b5aa8cf014f9a93fa3c",
+    "simulator/copy.py": "8a8bed3a44927aef6fda46a00e845ac7bec3043c48436b94e01601c9603c2b7e",
+    "simulator/coupled_bath.py": "4f4bff5d3b598e771a954b5bec88d73607e3dceedb16cfac0d39f8b1b7bb4ba8",
+    "simulator/docking.py": "7f3247b8b54a8130c1e64002acd2bc9b137e0201def6f2964422b122eb5877e4",
+    "simulator/dual_faces.py": "dc7c31049fc5e6c7c1b97b194418de52fe32a19d5ab5cc1909c5c63c929929fa",
+    "simulator/engine.py": "273406c2627ca0753ac79df134a7837c10dd24272489ac460e570852e4320033",
+    "simulator/exchange_energy.py": "601c815c3a8f86362a0ed6d76c2ff538af46cf41f814af04e9d1a42f3531d7f6",
+    "simulator/genetic_audit.py": "48a90fa8737f938c305ed926b245235a903afe342cc1a434446ad01de8165abf",
+    "simulator/initial.py": "ecc0cdce037a2a38af2a9885ad323bce7f5752331f85a908f9643c34abe4c3b0",
+    "simulator/kinetics.py": "746b1566ac206a32428b6cf3e68760eea25ae29c7765e15046c5cc420d5806e3",
+    "simulator/ligation_loupe.py": "d5220f81ad2c4904ec7c1be84e8da8dae89df5dbed1675d20366c45f523e515d",
+    "simulator/linked_lipids.py": "28d18d700bd3a00e5fbcab09745644e1c37de7826b1922bffb7174d6f8d51866",
+    "simulator/lipid_geometry_audit.py": "27e555cc3c64a853c6ea58d83c411b8f91d78792a47284cdc17c7def44feec1b",
+    "simulator/lipid_synthesis.py": "56f20f8eddcf50eae3ed14ce907e4d67cc3f61742ed720061675a8f5d69a98f3",
+    "simulator/membrane.py": "69e276f95493232176656132035cf2954b87c018387597944effd4594b5ddfb7",
+    "simulator/membrane_bath.py": "b900a91d99a6c393716f32569616dc7c9c472488fc2e180f1478d8c14d5138b9",
+    "simulator/mixed_boundary.py": "a1361a5cbe72da18356d48e839372b50abfaac7841908bfc92f931df35192b47",
+    "simulator/mixed_synthesis.py": "963ddfad842b40ed3ca3fd3829350b550badfa69853d9219566cf996182b9f5c",
+    "simulator/mixing.py": "322649722f90941232cba4a50090791d60a6f6e0832b945774a1df2ef1fb4a32",
+    "simulator/motion.py": "42cc6dc25d2c4e9cc3c567fb3104db800ff29c9b4cd7f2dac466366f1b256b8c",
+    "simulator/native_forces.py": "c7e3e8d2d8c7ea678a7ecc9b97e66e3416c839803c7cb9fe8834626d075cf683",
+    "simulator/observations.py": "33289e1f3c888fad9b31c05ed7b0805fd117268193ed046da7b17f12cf4be4cf",
+    "simulator/open_bath.py": "c23d65455328a52d51fb8b8a58dc3ce1997180bf3775fb09728ec283c95fc324",
+    "simulator/physics.py": "d8364c7fb784db08e2f9fe0b3f549abb69246e402c681b06293d85058a7aa464",
+    "simulator/plots.py": "96b1f61f29c551c39e4b84af5914c78ef4dea97b82d7cac734698c6526b51383",
+    "simulator/polymer_population.py": "c9591228698f42072f32db994c801a899d370f365385200e9ea6de200b66f29c",
+    "simulator/precursors.py": "bf766ba8480e6e3180d85b5c481311a926570571e81510cbdfeccee97507594e",
+    "simulator/recycling_observations.py": "80fb0687c09b3079c1911590ed149b286f82ea53fe6d0ba320e66f8e11b98a81",
+    "simulator/reference.py": "506702f444a2eec26d7dfd75f454ced82b048dfba55df0c751a9b2e3d7188362",
+    "simulator/registry.py": "dc11f029de0d80006fdcda3cf855ac4a7fc9e4a4ffa4494ad671f202f374286b",
+    "simulator/runner.py": "e71cda264ee7a780034a0db96b13ffe5fa49c405f002dca376ca36c8e96d77a9",
+    "simulator/spatial.py": "e0f831e3ac3adcf624721244a83ec23dd7b5a11b0137015ee39ddd367e27649f",
+    "simulator/substrates.py": "705561e0093da0513d3221947ba01b726e7789ffdca4ed9e3c64595c3899859d",
+    "simulator/transition_energy.py": "ff02ce91c9e6c485ecb472b0ca2c1d8fb0f78a35766b137e0a9ac5dcec7a771a",
+    "simulator/turnover.py": "b0d6016d42eaa855c362a21ebe498e820ecdeb4589edfcbf40c23395027421d1",
+    "simulator/viewer.py": "85ae7d0e9fb13dcbf70a64232635c00d7a6f871809a864fe2b643a630f2632c3"
+  },
+  "scope": "Core forces only. Resident batches repeat one snapshot, not integrated trajectories. Hybrid engine retains CPU neighbor search, additional forces, integration and reactions.",
+  "local_report": "outputs/performance/CFN1_20261107T095359335572Z/report.json",
+  "local_report_sha256": "f237fa9fe656a6f0fdd134812a4574e0b81e0a8bf5df149aeeabf95ae090af7c"
+}

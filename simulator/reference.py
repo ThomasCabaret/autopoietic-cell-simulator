@@ -61,6 +61,10 @@ def opposite_force(pos, rungs, pairs, stiffness=8.):
 def local_port_free(i, j, positions, edges, capacity=2):
     """Two opposite ports, inspecting directly bonded neighbors only."""
     neighbors = [b if a == i else a for a, b in edges if a == i or b == i]
+    return port_free_with_neighbors(i, j, positions, neighbors, capacity)
+
+
+def port_free_with_neighbors(i, j, positions, neighbors, capacity):
     if len(neighbors) >= capacity:
         return False
     d = positions[j] - positions[i]

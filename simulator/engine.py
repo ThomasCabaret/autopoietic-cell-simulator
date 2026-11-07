@@ -15,13 +15,18 @@ class Simulation:
         self.chemistry = MODELS[self.config['model']][0](self.config['chemistry'],self.rng)
         self.dt = self.config['engine']['dt']
         self.reaction_every = self.config['engine']['reaction_every']
+        backend = self.config['engine'].get('force_backend', 'numba')
+        self.force_kernel = force_kernel
+        if backend != 'numba':
+            from .native_forces import select_force_kernel
+            self.force_kernel = select_force_kernel(backend)
         self.neighbors = Neighborhood(self.config['engine']['spatial'],self.config['engine']['skin'])
         self.motion=None
         motion_settings=self.config.get('mechanics',self.chemistry.config)
         if motion_settings.get('motion','brownian')!='brownian':
             if self.config['model'] not in ('mixing','copy','membrane','membrane_bath','coupled_bath','lipid_synthesis','mixed_synthesis','open_bath'):raise ValueError('Unsupported inertial hook')
             from .motion import InertialMotion
-            self.motion=InertialMotion(self.chemistry,self.rng,motion_settings)
+            self.motion=InertialMotion(self.chemistry,self.rng,motion_settings,self.force_kernel)
             self.chemistry.motion_state=self.motion
         self.step_index = 0
         self.prepared = False
@@ -73,7 +78,7 @@ class Simulation:
         for _ in range(min(steps,max(0,self.target_step-self.step_index))):
             if self.motion is None:
                 pairs=self.neighbors.pairs(c.pos,float(c.contact.max()),'core')
-                force=force_kernel(c.pos,pairs,c.kinds,c.contact,c.springs,c.angles)
+                force=self.force_kernel(c.pos,pairs,c.kinds,c.contact,c.springs,c.angles)
                 force+=c.extra_forces(self.neighbors)
                 c.pos=integrate(c.pos,force,self.rng,self.dt,c.mobility,c.config['temperature'],getattr(c,'wall_box',c.box))
             else:self.motion.step(c,self.rng,self.dt,self.neighbors)

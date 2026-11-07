@@ -1803,6 +1803,18 @@
       "recipe": "research/BATCH_55_OB1_RECIPES.json",
       "evidence": "research/BATCH_55_RESULTS.json",
       "results": "research/BATCH_55.md"
+    },
+    {
+      "id": "CFN1",
+      "parent": "CP1",
+      "status": "native_force_prefix_verified_hybrid_slowdown",
+      "hypothesis": "One local force expression can run on native CPU and CUDA with ordered per-particle accumulation.",
+      "test": "Warm snapshot comparison, 1/32/100 resident repeats, short integrated prefix with checkpoint replay.",
+      "conclusion": "Matching forces and short trajectories. CPU/GPU transfer dominates isolated hybrid call. Long runs and resident coupled chemistry remain to validate.",
+      "cost": "Implementation-only access pattern and backend selection. No chemical primitive or numerical parameter added.",
+      "recipe": "research/BATCH_56_PLAN.md",
+      "evidence": "research/BATCH_56_RESULTS.json",
+      "results": "research/BATCH_56.md"
     }
   ]
 }

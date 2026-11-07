@@ -13,6 +13,8 @@ def main():
     p.add_argument('--seed',type=int)
     p.add_argument('--duration',type=float)
     p.add_argument('--spatial',choices=['tree','brute'])
+    p.add_argument('--force-backend', choices=['numba', 'cpp', 'cuda'],
+                   help='backend for core contacts, springs and angles')
     p.add_argument('--output',type=Path,default=Path('outputs'))
     p.add_argument('--no-trajectory',action='store_true')
     p.add_argument('--resume',type=Path)
@@ -30,12 +32,13 @@ def main():
     if not args.config and not args.resume:
         p.error('provide --config or --resume')
     config=load(args.config) if args.config else None
-    if args.resume and any(v is not None for v in (args.seed,args.duration,args.spatial)):
+    if args.resume and any(v is not None for v in (args.seed,args.duration,args.spatial,args.force_backend)):
         p.error('resume preserves its complete configuration; overrides are not accepted')
     if config:
         if args.seed is not None: config['seed']=args.seed
         if args.duration is not None: config['duration']=args.duration
         if args.spatial is not None: config['engine']['spatial']=args.spatial
+        if args.force_backend is not None: config['engine']['force_backend']=args.force_backend
     if args.gui:
         from .viewer import live_view
         live_view(config,args.output,not args.no_trajectory,args.resume)

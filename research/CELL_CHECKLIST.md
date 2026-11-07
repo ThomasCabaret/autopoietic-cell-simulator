@@ -1,6 +1,6 @@
 # Checklist détaillée — critères et dépendances
 
-Revue 2026-11-06 · révision26. Source : [cell_checklist.json](cell_checklist.json).
+Revue 2026-11-07 · révision27. Source : [cell_checklist.json](cell_checklist.json).
 [Tableau compact](CELL_CHECKLIST_COMPACT.md) · [Échelle et méthode](CONCEPT_FIRST.md).
 
 Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre acyclique de codage. Les cycles de renouvellement sont intentionnels. Une condition initiale construite peut amorcer un sous-cas sans fermer ces cycles.
@@ -338,8 +338,6 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Prochain test / décision :** Maintien équipé et redondant avec remplaçants fonctionnels sous pertes partielles et apport déclaré ; pas de nouveau taux FR1.
 
-**Progrès du dernier lot :** Redémarrage FR1 slow1/3 ; aucune adoption de pertes dans CP1 ni nouveau remplaçant démontré.
-
 ## Membrane et insertion
 
 <a id="M-01"></a>
@@ -457,8 +455,6 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 **Références :** [research/OPEN_BOUNDARY.md](../research/OPEN_BOUNDARY.md), [research/BATCH_55.md](../research/BATCH_55.md), [research/BATCH_55_OB1_RECIPES.json](../research/BATCH_55_OB1_RECIPES.json)
 
 **Prochain test / décision :** Migrer présence/IDs du bain P/R et définir sorties de matière avant maintien équipé sous flux ; calibrer la cadence du bord au transfert.
-
-**Progrès du dernier lot :** Source/absorption ouverte OB1 construite et criblée6/6, bilan exact, IDs stables et reprise ; précurseurs seuls.
 
 <a id="E-02"></a>
 ### E-02 — Mélange et rencontres de toutes les classes
@@ -734,8 +730,6 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Prochain test / décision :** Maintien équipé et redondant avec remplaçants fonctionnels sous pertes partielles et apport déclaré ; pas de nouveau taux FR1.
 
-**Progrès du dernier lot :** FR1 complet : deux variantes refusées, retour au maintien équipé/redondant.
-
 ## Compatibilité et maintien
 
 <a id="C-01"></a>
@@ -829,11 +823,13 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Dépend de :** [E-02](#E-02), [C-02](#C-02) · **Pour renouveler :** —
 
-**Portée des preuves :** Benchmarks et scènes2118 billes, pas renouvellement cellulaire chronométré.
+**Portée des preuves :** CFN1 compare le noyau local C++/CUDA et un préfixe CP1 de 302 billes. La simulation hybride copie les données à chaque évaluation. Le banc résident répète un instantané.
 
-**Références :** [research/KINETICS_AND_PERFORMANCE.md](../research/KINETICS_AND_PERFORMANCE.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_50.md](../research/BATCH_50.md), [research/BATCH_51.md](../research/BATCH_51.md)
+**Références :** [research/KINETICS_AND_PERFORMANCE.md](../research/KINETICS_AND_PERFORMANCE.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_50.md](../research/BATCH_50.md), [research/BATCH_51.md](../research/BATCH_51.md), [research/BATCH_56.md](../research/BATCH_56.md)
 
-**Prochain test / décision :** CF1 a un coût démesuré avec~4M refus par préfixe ; CP1 doit résoudre la cohérence et être mesuré avant cohorte.
+**Prochain test / décision :** Déplacer le voisinage et l’intégration vers des données résidentes. Mesurer le pas complet avec les forces supplémentaires et comparer le débit multi-bains au CPU.
+
+**Progrès du dernier lot :** Trois chemins de forces sélectionnables. Préfixe CP1 et reprises exacts. Mesures résidentes et hybrides séparées.
 
 <a id="O-02"></a>
 ### O-02 — Observation passive, reproductibilité et inspection
@@ -882,3 +878,4 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 - Révision24 (2026-11-06) : Lot53 : CR1 complet passe la porte fixée ; PT1/RF1 indépendants lancés, mesures et contrôles prospectifs. Aucun changement de loi CP1, nouvel outil ou palier biologique.
 - Révision25 (2026-11-06) : Lot54 : PT1/RF1 complets refusés ; FA1 reconstruit les journaux et localise les pertes. FR1 teste la récupération de l’outil actuel sans nouveau gène/règle, aucun palier relevé.
 - Révision26 (2026-11-06) : Lot55 : recommandations Astra triées, FR1 final refusé ; transport ouvert OB1 et remappage de population construits, crible6/6. E-01 sous-cas25, aucun palier de maintien relevé.
+- Révision27 (2026-11-07) : Lot56 CFN1 : forces de base C++ et CUDA et reprise vérifiées sur un préfixe. Aucun palier biologique augmenté.

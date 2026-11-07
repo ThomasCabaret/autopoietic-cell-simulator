@@ -1,5 +1,10 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot56. CFN1 valide une tranche logicielle C++/CUDA sur les forces de base.
+La mesure du pas hybride à 302 billes donne un coût supérieur au CPU.
+La résidence GPU de l'état physico-chimique reste à construire. Le registre
+conserve les paliers biologiques du lot55. [Bilan CFN1](BATCH_56.md)
+
 Lot55 : E-01 passe0→25 (prototype de précurseurs ouverts seulement) ; aucun
 palier de maintien ou fonction biologique relevé. CP1 inchangé, FR1 refusé6/6.
 Voir [état courant](../CURRENT_STATUS.md), [bilan55](BATCH_55.md) et

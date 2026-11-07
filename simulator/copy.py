@@ -1,6 +1,6 @@
 """Local chemistry hook factored from the archived research prototype."""
 import numpy as np
-from .reference import degree, normals, local_port_free, port_attraction, add_force
+from .reference import normals, port_free_with_neighbors, port_attraction, add_force
 from .physics import orientation_kernel
 from .substrates import Substrates
 from .dual_faces import react as dual_react,reflected_force
@@ -101,7 +101,11 @@ class CopyChemistry:
         period = self.period
         release_time = self.release_time
         interval = dt * 5
-        deg = degree(n, edges)
+        bonded = [[] for _ in range(n)]
+        for a, b in edges:
+            bonded[a].append(b)
+            bonded[b].append(a)
+        deg = np.fromiter(map(len, bonded), dtype=int, count=n)
         active=rungs[:,1]>=0
         nrm = np.zeros((n,2))
         nrm[active]=normals(pos,rungs[active])
@@ -147,8 +151,7 @@ class CopyChemistry:
             if config.get("product_cooperativity", False):
                 support, incoming = (i, j) if deg[i] > 0 else (j, i)
                 if end_contact:support,incoming=g,f
-                linked_neighbors = [b if a == support else a for a, b in edges if a == support or b == support]
-                bound_kinds = [families[pairing[q]] for q in linked_neighbors if pairing[q] >= 0]
+                bound_kinds = [families[pairing[q]] for q in bonded[support] if pairing[q] >= 0]
                 if any(kind != families[incoming] for kind in bound_kinds):
                     continue
             rate = 35. if not gate or deg[i] or deg[j] else .1
@@ -172,10 +175,14 @@ class CopyChemistry:
                 continue
             if abs(np.dot(nrm[a], d)) > .5 * distance or abs(np.dot(nrm[b], d)) > .5 * distance:
                 continue
-            if not local_port_free(a, b, pos, edges, capacities[a]) or not local_port_free(b, a, pos, edges, capacities[b]):
+            if not port_free_with_neighbors(a, b, pos, bonded[a], capacities[a]):
+                continue
+            if not port_free_with_neighbors(b, a, pos, bonded[b], capacities[b]):
                 continue
             if rng.random() < -np.expm1(-config.get("ligation_rate", 12.) * interval):
                 edges.add(pair)
+                bonded[a].append(b)
+                bonded[b].append(a)
                 events.append({"source": (i, j), "formed": pair})
         if self.turnover is not None:self.turnover.formed(self,time,assembly_start,events)
         return self._finish(dt,neighbors,events)

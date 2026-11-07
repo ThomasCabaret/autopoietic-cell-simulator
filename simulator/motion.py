@@ -27,15 +27,16 @@ def pair_ou(pos,vel,pairs,noise,dt,mass,gamma,temperature,cutoff,reverse=False):
 
 
 class InertialMotion:
-    def __init__(self,c,rng,settings=None):
+    def __init__(self,c,rng,settings=None,base_forces=force_kernel):
         cfg=c.config if settings is None else settings;self.kind=cfg['motion'];self.mass=cfg['mass']
         self.gamma=cfg['damping'];self.cutoff=cfg['dpd_cutoff']
         self.velocities=rng.normal(size=c.pos.shape)*np.sqrt(c.config['temperature']/self.mass)
         self.force=None;self.steps=0;self.force_evaluations=0;self.pair_visits=0;self.max_displacement=0.
+        self.base_forces=base_forces
 
     def conservative(self,c,neighbors):
         pairs=neighbors.pairs(c.pos,float(c.contact.max()),'core')
-        force=force_kernel(c.pos,pairs,c.kinds,c.contact,c.springs,c.angles)
+        force=self.base_forces(c.pos,pairs,c.kinds,c.contact,c.springs,c.angles)
         force+=c.extra_forces(neighbors)
         wall_box=getattr(c,'wall_box',c.box)
         if wall_box is not None:force+=100*(np.maximum(-c.pos,0)-np.maximum(c.pos-wall_box,0))

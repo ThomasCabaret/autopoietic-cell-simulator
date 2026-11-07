@@ -1,4 +1,12 @@
-# Santé du projet — actualisation6 novembre2026
+# Santé du projet — actualisation du 7 novembre 2026
+
+Lot56. Le passage des forces élémentaires par CUDA est vérifié sur un préfixe
+CP1, avec reprise exacte sur la machine de test. Le pas hybride est plus lent
+sur 302 billes. Le travail sur la résidence des données et le voisinage doit
+donc précéder un investissement dans le portage de la chimie entière. Réévaluer
+le débit sur une simulation avec forces supplémentaires et plusieurs tailles
+de bain. Le lot technique n'ajoute aucune preuve de maintien cellulaire.
+[Bilan du lot56](BATCH_56.md)
 
 Réestimation après lot55, sans nouvelle fournée scientifique : **environ25
 fournées restantes, plage18–35**, jusqu'à la préparation du premier test global

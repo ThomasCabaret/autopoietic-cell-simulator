@@ -1,5 +1,10 @@
 # Simulateur de chimie locale
 
+Le noyau de forces peut être sélectionné au lancement avec
+`--force-backend numba|cpp|cuda`. Le mode CUDA de cette première tranche
+exécute les forces de base sur le GPU. Les modalités et les mesures sont
+décrites dans [le guide CPU et CUDA](docs/COMPUTE_BACKENDS.md).
+
 **Reprise et état courant** : [CURRENT_STATUS.md](CURRENT_STATUS.md) rassemble le
 candidat, les preuves et les calculs actifs. Lot55 : FR1 terminé et refusé ;
 OB1 réalise source/absorption de précurseurs dans un diagnostic séparé,6/6 contrôles

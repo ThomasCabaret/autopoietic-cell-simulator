@@ -215,9 +215,11 @@ Pour les grands essais, `--no-trajectory` supprime l'enregistrement des matrices
 denses d'adjacence ; la cadence d'observation reste configurable.
 
 Les états et noyaux numériques sont séparés de Python graphique et des hooks.
-Cette frontière permet d'étudier ensuite un backend GPU. Le moteur actuel est
-**CPU seulement** ; capture stochastique, ordre des événements et mécanique devront
-être revalidés si un backend GPU est réellement ajouté.
+Le moteur propose trois chemins pour les contacts, ressorts et angles de base.
+Numba est la référence CPU par défaut. C++ et CUDA partagent le même code local.
+Le voisinage, les forces supplémentaires, l'intégrateur et les réactions
+s'exécutent sur CPU dans cette première tranche. Le mode CUDA est donc hybride.
+Voir [sélection et validation des backends](docs/COMPUTE_BACKENDS.md).
 
 ## Reprise et preuves
 
