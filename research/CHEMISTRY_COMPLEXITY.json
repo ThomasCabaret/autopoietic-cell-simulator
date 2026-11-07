@@ -871,7 +871,7 @@
     "simulator/competitive_ports.py": "dc7fdcea482d9e71de036bbb800748492f63e464848475066275452b68a3efd8",
     "simulator/mixed_boundary.py": "a1361a5cbe72da18356d48e839372b50abfaac7841908bfc92f931df35192b47",
     "simulator/contact_exchange.py": "945c4521c1126f18238d3ba962e8429cdbbdf94a1ae54b5aa8cf014f9a93fa3c",
-    "simulator/config.py": "46fbf42a02dfac52732b94c04fd677046f2bbe3179b5f317b57eb89540ac6e0b",
+    "simulator/config.py": "42b809bf5ff4c04d57885f70fb31a2960e25fd337e9fe92143a1afc9e5e61cbb",
     "simulator/motion.py": "42cc6dc25d2c4e9cc3c567fb3104db800ff29c9b4cd7f2dac466366f1b256b8c",
     "simulator/transition_energy.py": "1f210f78e5b6330be7d9a8a48e58ead829baeeaa7874c6e2ad27db303666f781",
     "simulator/exchange_energy.py": "601c815c3a8f86362a0ed6d76c2ff538af46cf41f814af04e9d1a42f3531d7f6"

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 29,
+  "revision": 30,
   "reviewed": "2026-11-07",
   "candidate": "CP1 avec référence CPU, forces CFN1 et mécanique résidente validée hors bain CP1 complet",
   "purpose": "Registre évolutif des capacités nécessaires à une cellule construite maintenue ; les pourcentages sont des paliers de preuve, pas un taux global de réussite.",
@@ -1174,7 +1174,7 @@
       "mechanism": "Moteur partagé, arbres spatiaux, profilage et mesures par objectif utile plutôt que vitesse brute.",
       "concept_gap": "Taille réelle des outils et temps de renouvellement complet inconnus ; pas de promesse inférieure à dix heures.",
       "proof": "subcase",
-      "scope": "CFN1 valide le préfixe hybride CP1. CRM1 et CRC1 valident le résident en bain inerte et en copie réactive restreinte. CP1 résident reste à construire.",
+      "scope": "CFN1 valide le préfixe hybride CP1. Le résident prend en charge le bain inerte et la copie avec capture P/R. CCB1 valide capture et barrière CP1 par instantané.",
       "references": [
         "research/KINETICS_AND_PERFORMANCE.md",
         "research/BATCH_44.md",
@@ -1184,9 +1184,10 @@
         "research/BATCH_56.md",
         "research/BATCH_57.md",
         "research/BATCH_58.md",
+        "research/BATCH_59.md",
         "research/CUDA_COMPLETION.md"
       ],
-      "next_test": "Porter les forces spécifiques de CP1, mesurer le pas complet puis déterminer quelles phases des réactions CPU doivent être portées.",
+      "next_test": "Porter les ports lipidiques et brancher les forces CP1, puis profiler le pas complet et les ticks CPU.",
       "essential": true
     },
     {
@@ -1398,9 +1399,14 @@
       "revision": 29,
       "date": "2026-11-07",
       "reason": "Lot58 CRC1 : première copie réactive en CUDA résident, avec reprise et changements de topologie vérifiés. Aucun palier biologique augmenté."
+    },
+    {
+      "revision": 30,
+      "date": "2026-11-07",
+      "reason": "Lot59 CCB1 : capture résidente en copie catalysée et deux forces CP1 vérifiées par instantané. Aucun palier biologique augmenté."
     }
   ],
   "last_batch_progress": {
-    "O-01": "Copie réactive restreinte transférée, profil CP1 établi et critères de clôture CPU/CUDA écrits."
+    "O-01": "Capture catalysée intégrée en copie, capture coopérative et barrière CP1 vérifiées par instantané."
   }
 }

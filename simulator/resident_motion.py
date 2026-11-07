@@ -5,6 +5,7 @@ import numpy as np
 
 from .motion import InertialMotion
 from .native_forces import SOURCE as FORCE_SOURCE, pack_terms
+from .resident_fields import SOURCE as FIELD_SOURCE, CaptureField, SegmentField
 
 
 SOURCE = r"""
@@ -76,8 +77,8 @@ ENTRY void kick(const double* pos, double* vel, double* force, const double* old
                 const Index* offsets, const Index* refs, const Index* pairs,
                 const Index* kinds, const double* contact, const double* springs,
                 const double* angles, Index spring_count, Index kind_count,
-                const Index* alignments, bool reactive, double box_x, double box_y,
-                bool advance) {
+                const Index* alignments, bool reactive, const double* capture,
+                bool has_capture, double box_x, double box_y, bool advance) {
     int i = blockIdx.x*blockDim.x+threadIdx.x;
     if (i >= n) return;
     Vec total = {0., 0.};
@@ -103,6 +104,10 @@ ENTRY void kick(const double* pos, double* vel, double* force, const double* old
                            angles, 0, spring_count, kind_count, 80., total);
     if (reactive) {
         Vec term = orientation(pos, alignments+4*i, i);
+        if (has_capture) {
+            term.x += capture[2*i];
+            term.y += capture[2*i+1];
+        }
         total.x += term.x;
         total.y += term.y;
     }
@@ -124,13 +129,42 @@ ENTRY void kick(const double* pos, double* vel, double* force, const double* old
 def _kernels(device):
     import cupy as cp
 
-    module = cp.RawModule(code=FORCE_SOURCE + SOURCE, options=('--std=c++11', '--fmad=false'))
-    return tuple(module.get_function(name) for name in
-                 ('drift', 'clear_cells', 'bin_particles', 'order_cells', 'kick'))
+    module = cp.RawModule(code=FORCE_SOURCE + SOURCE + FIELD_SOURCE,
+                          options=('--std=c++11', '--fmad=false'))
+    names = ('drift', 'clear_cells', 'bin_particles', 'order_cells', 'kick', 'capture_field',
+             'clear_segment_measure', 'measure_segments', 'segment_field')
+    return tuple(module.get_function(name) for name in names)
 
 
 def _grid(size):
     return ((size + 127) // 128,)
+
+
+def _bin_particles(kernels, pos, n, cells, grid):
+    clear, bin_particles, order = kernels
+    heads, links, width, nx, ny = grid
+    clear(_grid(cells), (128,), (heads, cells))
+    bin_particles(_grid(n), (128,), (pos, heads, links, n, width, nx, ny))
+    order(_grid(cells), (128,), (heads, links, cells))
+
+
+def mixed_field_snapshot(chemistry):
+    """Evaluate the two ported force families on a frozen mixed snapshot."""
+    import cupy as cp
+
+    n = np.int32(len(chemistry.pos))
+    width = np.float64(chemistry.contact.max())
+    nx, ny = (np.int32(np.ceil(length/width)) for length in chemistry.box)
+    cells = np.int32(int(nx)*int(ny))
+    pos = cp.asarray(chemistry.pos)
+    grid = (cp.empty(cells, dtype=cp.int32), cp.empty(n, dtype=cp.int32), width, nx, ny)
+    kernels = _kernels(cp.cuda.Device().id)
+    _bin_particles(kernels[1:4], pos, n, cells, grid)
+    capture = CaptureField(cp, chemistry, chemistry.capture)
+    segment = SegmentField(cp, chemistry)
+    capture.launch(kernels[5], pos, n, grid)
+    segment.launch(kernels[6:], pos, n, grid)
+    return np.stack((capture.output.get(), segment.output.get()))
 
 
 class ResidentLangevinMotion(InertialMotion):
@@ -185,6 +219,7 @@ class ResidentLangevinMotion(InertialMotion):
         self.terms = None
         self.alignment_state = None
         self.alignments = cp.empty((count if self.reactive else 0, 4), dtype=cp.int64)
+        self.capture = None
         self._update_topology(c)
         self.box = tuple(map(np.float64, c.box))
         pos, velocities, force = self.device
@@ -215,6 +250,12 @@ class ResidentLangevinMotion(InertialMotion):
             self.topology = tuple(array.copy() for array in topology)
         if not self.reactive:
             return
+        catalyst = None if c.assembly is None else c.assembly.catalyst
+        if catalyst is not None:
+            if self.capture is None:
+                self.capture = CaptureField(self.cp, c, catalyst)
+            else:
+                self.capture.update(c, catalyst)
         state = (c.rungs, c.pairing)
         if self.alignment_state is not None and all(
             np.array_equal(old, new) for old, new in zip(self.alignment_state, state)
@@ -231,17 +272,19 @@ class ResidentLangevinMotion(InertialMotion):
 
     def _force(self, advance):
         pos, vel, force = self.device
-        _, clear, bin_particles, order, kick = self.kernels
+        kick = self.kernels[4]
+        grid = self.heads, self.next, self.width, self.nx, self.ny
         if self.width:
-            clear(_grid(self.cells), (128,), (self.heads, self.cells))
-            bin_particles(_grid(self.count), (128,), (
-                pos, self.heads, self.next, self.count, self.width, self.nx, self.ny))
-            order(_grid(self.cells), (128,), (self.heads, self.next, self.cells))
+            _bin_particles(self.kernels[1:4], pos, self.count, self.cells, grid)
+        if self.capture is not None:
+            self.capture.launch(self.kernels[5], pos, self.count, grid)
         kick(_grid(self.count), (128,), (
             pos, vel, force, self.old, self.displacement, self.count, self.half_kick,
             self.heads, self.next, self.width, self.nx, self.ny, *self.terms,
             np.int64(len(self.terms[5])), np.int64(len(self.terms[4])),
-            self.alignments, np.bool_(self.reactive), *self.box, np.bool_(advance)))
+            self.alignments, np.bool_(self.reactive),
+            self.old if self.capture is None else self.capture.output,
+            np.bool_(self.capture is not None), *self.box, np.bool_(advance)))
 
     def _launch_steps(self, steps):
         drift = self.kernels[0]

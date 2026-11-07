@@ -1838,6 +1838,17 @@
       "cost": "One backend implementation of an existing orientation law, one host state transfer per block. No additional chemical primitive.",
       "recipe": "experiments/benchmark_reactive_motion.py",
       "results": "research/BATCH_58.md"
+    },
+    {
+      "id": "CCB1",
+      "parent": "CRC1",
+      "status": "capture_resident_and_cp1_capture_barrier_force_parity",
+      "hypothesis": "Resident grid and tick-local topology suffice to recover capture and segment forces.",
+      "test": "Four frozen-state comparisons on CH1, stretched segment control, catalytic copy and binding transition.",
+      "conclusion": "Capture integrated into resident copy. CP1 segment and cooperative capture verified on snapshots; lipid ports and integration are outstanding.",
+      "cost": "No new chemical primitive or parameter. Local bead descriptors and segment incidence only.",
+      "recipe": "experiments/verify_resident_fields.py",
+      "results": "research/BATCH_59.md"
     }
   ]
 }

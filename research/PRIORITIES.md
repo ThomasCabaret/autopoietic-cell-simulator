@@ -1,5 +1,10 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot59. Capture résidente en copie catalysée. Capture coopérative et
+barrière CP1 comparées au CPU. Prochaine tranche sur les ports lipidiques
+libres, compétitifs et liés, puis intégration dans le pas CP1 et profil.
+[Bilan](BATCH_59.md)
+
 Lot58. Interface CUDA validée sur la copie réactive restreinte, topologie
 actualisée aux ticks. Priorité à la capture libre, aux ports lipidiques et
 à la barrière de CP1, puis au profil des réactions sur le pas complet.

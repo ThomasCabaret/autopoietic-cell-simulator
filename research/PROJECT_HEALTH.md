@@ -1,5 +1,10 @@
 # Santé du projet — actualisation du 7 novembre 2026
 
+Lot59. La capture et la barrière retrouvent les forces CPU, y compris
+quand le rayon de recherche doit couvrir un segment long. Le coût de ce
+cas et celui des ports compétitifs restent à évaluer dans le pas complet.
+Aucune accélération CP1 globale mesurée. [Bilan](BATCH_59.md)
+
 Lot58. Le transfert à une première chimie réactive confirme la faisabilité
 de conserver le calendrier des ticks et la reprise. Les réactions CP1
 occupent environ la moitié du profil court. Un gain sur la seule mécanique

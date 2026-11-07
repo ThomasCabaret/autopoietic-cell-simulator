@@ -1,3 +1,4 @@
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -105,3 +106,55 @@ class ResidentMotionTests(unittest.TestCase):
         self.assertEqual(gpu.motion.export(), resumed.motion.export())
         self.assertEqual(gpu.chemistry.export(), resumed.chemistry.export())
         self.assertEqual(gpu.rng.bit_generator.state, resumed.rng.bit_generator.state)
+
+    def test_catalytic_copy_refreshes_capture_on_binding(self):
+        root = Path(__file__).resolve().parents[1]
+        path = root/'research/campaign_recipes/FR1_20261106T135511017624Z/manifest.json'
+        cfg = json.loads(path.read_text(encoding='utf-8'))['tasks'][0]['scenario']
+        cfg['chemistry'].update(food_binding_rate=1e6, rung_formation_rate=0.,
+                                rung_catalytic_rate=0.)
+        simulations = []
+        for backend in ('numba', 'cuda-resident'):
+            cfg['engine']['force_backend'] = backend
+            sim = Simulation(cfg)
+            c = sim.chemistry
+            cap = c.assembly.catalyst
+            owners = np.flatnonzero(cap.owners >= 0)
+            owner = owners[np.argmax(cap.activity[cap.owners[owners]])]
+            site = cap.owners[owner]
+            ligand = np.flatnonzero(cap.categories == c.bits[site])[0]
+            c.pos[ligand] = c.pos[owner] + [.15, 0.]
+            simulations.append((sim, site, ligand))
+        for sim, site, ligand in simulations:
+            # Run mechanics with the free field before the next real reaction.
+            sim.prepared = True
+            sim.advance(5)
+            self.assertEqual(sim.chemistry.assembly.catalyst.site_bound[site], ligand)
+            sim.advance(22)
+        cpu, gpu = (row[0] for row in simulations)
+        self.assertEqual(cpu.chemistry.export(), gpu.chemistry.export())
+        self.assertEqual(cpu.rng.bit_generator.state, gpu.rng.bit_generator.state)
+        np.testing.assert_allclose(cpu.chemistry.pos, gpu.chemistry.pos, rtol=0, atol=1e-11)
+        np.testing.assert_allclose(cpu.motion.velocities, gpu.motion.velocities, rtol=0, atol=1e-11)
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder)/'capture.npz'
+            checkpoint.save(path, gpu)
+            resumed, _ = checkpoint.load(path)
+        gpu.advance(23)
+        resumed.advance(23)
+        np.testing.assert_array_equal(gpu.chemistry.pos, resumed.chemistry.pos)
+        self.assertEqual(gpu.motion.export(), resumed.motion.export())
+        self.assertEqual(gpu.chemistry.export(), resumed.chemistry.export())
+
+    def test_mixed_fields_find_probes_along_a_stretched_segment(self):
+        from experiments.verify_resident_fields import compare, cp1_config
+
+        sim = Simulation(cp1_config())
+        sim.prepare()
+        c = sim.chemistry
+        a, b, _, _ = c.lipids.links[0]
+        probe = c.host.rungs[c.host.rungs[:, 1] >= 0][0, 0]
+        c.pos[[a, b, probe]] = [[2., 2.], [14., 2.], [8., 2.25]]
+        result = compare(c)
+        self.assertGreater(result['max_force'][0], 0.)
+        self.assertGreater(result['max_force'][1], 0.)

@@ -1,5 +1,9 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot59. O-01 reste sous-cas. Deux familles de forces CP1 passent la
+comparaison par instantané et la capture est validée en copie catalysée
+résidente. Aucun palier biologique relevé. [Bilan CCB1](BATCH_59.md)
+
 Lot58. La copie Langevin restreinte valide les mises à jour de topologie
 et la reprise CUDA. O-01 reste au palier sous-cas. Aucun palier biologique
 ne change. [Bilan CRC1](BATCH_58.md)

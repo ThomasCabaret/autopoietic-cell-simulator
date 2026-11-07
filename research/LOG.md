@@ -1,5 +1,11 @@
 # Journal de recherche
 
+## 2026-11-07 — lot59, capture et barrière CUDA
+
+CCB1. Deux forces portées sur la grille et validées sur des états CP1.
+La capture est branchée en copie catalysée. La barrière est vérifiée
+sur segment étiré et reste à brancher au pas CP1. [Bilan](BATCH_59.md)
+
 ## 2026-11-07 — lot58, transfert réactif du chemin CUDA résident
 
 CRC1 teste l'orientation et les liaisons dynamiques en copie Langevin.

@@ -4,10 +4,10 @@ La référence de réception est CP1 en bain réactif, puis le scénario ouvert
 de travail lorsqu'il est défini. Les anciens modes restent accessibles sur
 CPU. Les limites de compatibilité sont visibles à la sélection du backend.
 
-| Chantier | État au lot58 | Critère de clôture |
+| Chantier | État au lot59 | Critère de clôture |
 | --- | --- | --- |
 | Voisinage, contacts, ressorts, angles et Langevin | Résidents en bain inerte et en copie réactive restreinte. | Mesurer sur CP1 et à des densités représentatives. Contrôler le coût des cellules chargées et des recalculs spatiaux. |
-| Forces propres à CP1 | Orientation d'une paire de rungs sur GPU. | Porter capture libre et compétition locale, ports lipidiques libres et liés, barrière segment–particule. Réutiliser les structures de termes et la grille. |
+| Forces propres à CP1 | Orientation et capture en copie catalysée. Capture coopérative et barrière segment–particule concordantes sur instantanés CP1. | Porter les ports lipidiques libres, compétitifs et liés, puis brancher et vérifier toutes ces forces sur la trajectoire CP1 résidente. |
 | Topologie dynamique et transferts | Copie avec mise à jour sur changement, une lecture d'état par bloc et cadence de réaction conservée. | Appliquer au bain CP1 sans reconstruire les voisins sur CPU à chaque pas. Mesurer les synchronisations et réallocations, puis l'ajout/retrait de particules dans le scénario ouvert. |
 | Réactions et conflits | CPU, ordre et tirages conservés. Les ticks occupent environ la moitié du profil court CP1. | Mesurer séparément énumération, géométrie, énergie et résolution des conflits. Porter les phases régulières qui dominent encore. Justifier par des mesures les phases qui restent sur CPU. |
 | CPU et GPU de production | CPU Numba de référence, noyau C++ optionnel, CUDA hybride et CUDA résident partiel. | Optimiser les parcours et allocations dominants côté CPU et GPU. Exécuter les mêmes recettes depuis les entrées ordinaires. |
