@@ -11,7 +11,7 @@ L'ouverture d'un scénario JSON dans la GUI utilise la sélection du scénario.
 | `numba` | Mode CPU de référence par défaut avec les dépendances ordinaires du projet |
 | `cpp` | Noyau C++ partagé compilé au premier lancement avec `g++`. Définir `AUTOPOIETIC_CXX` pour choisir un compilateur compatible avec les options GNU. |
 | `cuda` | Le même noyau compilé au premier lancement avec CuPy et NVRTC. La machine de validation utilise CuPy 13.3 et CUDA 12.5. |
-| `cuda-resident` | Voisinage, forces et intégration sur CUDA pour les scénarios `mixing` en Langevin. Mêmes dépendances que `cuda`. |
+| `cuda-resident` | Voisinage, forces et intégration sur CUDA en Langevin pour `mixing` et pour `copy` sans nourriture, double face ni catalyse de rungs. Mêmes dépendances que `cuda`. |
 
 Avec CUDA 12.x et un environnement Python qui requiert CuPy, suivre
 [l'installation CuPy 13.3](https://docs.cupy.dev/en/v13.3.0/install.html).
@@ -45,6 +45,9 @@ des blocs de 25 pas via un graphe CUDA. Les tirages Langevin proviennent du
 même générateur CPU, par blocs. L'état est disponible côté CPU aux observations
 et au retour de `Simulation.advance`, y compris pour écrire un checkpoint.
 Les cadences courtes multiplient les synchronisations.
+Sur le modèle de copie pris en charge, les blocs sont bornés par les ticks de
+réaction. Le CPU reçoit la géométrie et applique la chimie, puis le GPU
+recalcule les forces avec la topologie et les appariements actualisés.
 
 ```powershell
 python -m experiments.benchmark_resident_motion --cpp
@@ -54,3 +57,6 @@ Le benchmark compare le pas complet du bain inerte avec un observateur
 léger, sur des dimères à densité initiale comparable. Les chiffres ne
 s'appliquent qu'à cette charge. CP1 reste accessible en CPU et via le mode
 `cuda` hybride. [Bilan CRM1](../research/BATCH_57.md)
+
+[Bilan du transfert réactif](../research/BATCH_58.md) et
+[critères de fin de portage](../research/CUDA_COMPLETION.md).

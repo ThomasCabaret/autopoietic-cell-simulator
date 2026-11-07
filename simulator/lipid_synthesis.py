@@ -126,6 +126,7 @@ class LipidSynthesisChemistry:
 
     def form_lipids(self,time,interval,neighbors):
         pairs=self.lipid_candidates(neighbors).copy();self.rng.shuffle(pairs)
+        fixed_pairs=None
         for a,b in pairs:
             a,b=int(a),int(b)
             if self.capture.categories[a]==1 and self.capture.categories[b]==0:a,b=b,a
@@ -138,8 +139,10 @@ class LipidSynthesisChemistry:
             rate=self.config['rung_catalytic_rate'] if catalyzed else self.config['rung_formation_rate']
             factor=1.;delta=None
             if self.config['formation_gate']=='metropolis':
-                from .transition_energy import formation_energy,thermal_factor
-                terms=formation_energy(self,a,b,neighbors);delta=sum(terms.values());factor=thermal_factor(delta,self.config['temperature'])
+                from .transition_energy import formation_energy,formation_pairs,thermal_factor
+                if fixed_pairs is None:
+                    fixed_pairs=formation_pairs(self,neighbors)
+                terms=formation_energy(self,a,b,neighbors,fixed_pairs);delta=sum(terms.values());factor=thermal_factor(delta,self.config['temperature'])
                 stats=self.transition_stats['catalytic' if catalyzed else 'background']
                 stats['proposals']+=1;stats['contact_time']+=interval;stats['weighted_time']+=interval*factor
                 stats['positive_delta']+=int(delta>0);stats['sum_positive_delta']+=max(delta,0.)

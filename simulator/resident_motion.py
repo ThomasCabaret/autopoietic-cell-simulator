@@ -1,4 +1,4 @@
-"""CUDA-resident Langevin mechanics for the nonreactive mixing model."""
+"""CUDA-resident Langevin mechanics with topology supplied at reaction ticks."""
 from functools import lru_cache
 
 import numpy as np
@@ -57,13 +57,27 @@ ENTRY void order_cells(int* heads, int* next, int cells) {
     heads[cell] = sorted;
 }
 
+LOCAL Vec orientation(const double* pos, const Index* ends, Index particle) {
+    if (ends[0] < 0) return {0., 0.};
+    Vec u = between(pos, ends[0], ends[1]);
+    Vec v = between(pos, ends[2], ends[3]);
+    double lu = at_least(sqrt(dot(u,u)), 1e-8);
+    double lv = at_least(sqrt(dot(v,v)), 1e-8);
+    u = {u.x/lu, u.y/lu};
+    v = {v.x/lv, v.y/lv};
+    double cosine = dot(u, v);
+    double scale = (particle == ends[0] ? 8. : -8.)/lu;
+    return {scale*(v.x-cosine*u.x), scale*(v.y-cosine*u.y)};
+}
+
 ENTRY void kick(const double* pos, double* vel, double* force, const double* old,
                 double* displacement, int n, double half_kick,
                 const int* heads, const int* next, double width, int nx, int ny,
                 const Index* offsets, const Index* refs, const Index* pairs,
                 const Index* kinds, const double* contact, const double* springs,
                 const double* angles, Index spring_count, Index kind_count,
-                double box_x, double box_y, bool advance) {
+                const Index* alignments, bool reactive, double box_x, double box_y,
+                bool advance) {
     int i = blockIdx.x*blockDim.x+threadIdx.x;
     if (i >= n) return;
     Vec total = {0., 0.};
@@ -87,6 +101,11 @@ ENTRY void kick(const double* pos, double* vel, double* force, const double* old
     }
     total = particle_force(i, pos, offsets, refs, pairs, kinds, contact, springs,
                            angles, 0, spring_count, kind_count, 80., total);
+    if (reactive) {
+        Vec term = orientation(pos, alignments+4*i, i);
+        total.x += term.x;
+        total.y += term.y;
+    }
     force[2*i] = total.x + 100*(fmax(-px, 0.) - fmax(px-box_x, 0.));
     force[2*i+1] = total.y + 100*(fmax(-py, 0.) - fmax(py-box_y, 0.));
     if (!advance) return;
@@ -114,12 +133,10 @@ def _grid(size):
     return ((size + 127) // 128,)
 
 
-class ResidentMixingMotion(InertialMotion):
+class ResidentLangevinMotion(InertialMotion):
     """Keep geometry, topology and intermediate forces on the GPU between steps."""
 
-    block_steps = 25
-
-    def __init__(self, chemistry, rng, settings):
+    def __init__(self, chemistry, rng, settings, reactive, reaction_every):
         super().__init__(chemistry, rng, settings)
         try:
             import cupy as cp
@@ -127,6 +144,8 @@ class ResidentMixingMotion(InertialMotion):
             raise RuntimeError('Resident CUDA mechanics require CuPy and a CUDA runtime') from exc
         self.cp = cp
         self.stream = cp.cuda.Stream(non_blocking=True)
+        self.reactive = reactive
+        self.block_steps = min(25, reaction_every) if reactive else 25
         self.device = None
         self.graph = None
 
@@ -152,21 +171,63 @@ class ResidentMixingMotion(InertialMotion):
         self.heads = cp.empty(self.cells, dtype=cp.int32)
         self.next = cp.empty(count, dtype=cp.int32)
         self.old = cp.empty_like(c.pos, dtype=cp.float64)
-        self.displacement = cp.zeros(count, dtype=cp.float64)
+        # A single contiguous download publishes the state and its stability check.
+        self.state = cp.empty((7, count), dtype=cp.float64)
+        self.device = tuple(self.state[:6].reshape(3, count, 2))
+        self.displacement = self.state[6]
         self.noise = cp.empty((self.block_steps, count, 2), dtype=cp.float64)
         self.half_dt = np.float64(dt/2)
         self.half_kick = np.float64(dt/(2*self.mass))
         self.decay = np.float64(np.exp(-self.gamma*dt))
         self.sigma = np.float64(np.sqrt(
             c.config['temperature']/self.mass*(1-self.decay*self.decay)))
-        self.terms = tuple(cp.asarray(term) for term in pack_terms(
-            count, [], c.kinds, c.contact, c.springs, c.angles))
+        self.topology = None
+        self.terms = None
+        self.alignment_state = None
+        self.alignments = cp.empty((count if self.reactive else 0, 4), dtype=cp.int64)
+        self._update_topology(c)
         self.box = tuple(map(np.float64, c.box))
-        self.device = (cp.asarray(c.pos), cp.asarray(self.velocities),
-                       cp.empty_like(self.old) if self.force is None else cp.asarray(self.force))
-        if self.force is None:
-            self._force(False)
-            self.force_evaluations += 1
+        pos, velocities, force = self.device
+        pos.set(c.pos)
+        velocities.set(self.velocities)
+        if self.force is not None:
+            force.set(self.force)
+
+    def _update_topology(self, c):
+        topology = (c.springs, c.angles)
+        if self.topology is None or any(
+            not np.array_equal(old, new) for old, new in zip(self.topology, topology)
+        ):
+            packed = pack_terms(len(c.pos), [], c.kinds, c.contact, *topology)
+            if self.terms is None:
+                self.terms = tuple(self.cp.asarray(term) for term in packed)
+            else:
+                buffers = list(self.terms)
+                for index in (0, 1, 5, 6):
+                    source, destination = packed[index], buffers[index]
+                    if source.shape == destination.shape:
+                        destination.set(source)
+                    else:
+                        # Captured CUDA graphs hold raw pointers and scalar counts.
+                        self.graph = None
+                        buffers[index] = self.cp.asarray(source)
+                self.terms = tuple(buffers)
+            self.topology = tuple(array.copy() for array in topology)
+        if not self.reactive:
+            return
+        state = (c.rungs, c.pairing)
+        if self.alignment_state is not None and all(
+            np.array_equal(old, new) for old, new in zip(self.alignment_state, state)
+        ):
+            return
+        aligned = np.full((len(c.pos), 4), -1, dtype=np.int64)
+        sites = np.flatnonzero(c.pairing >= 0)
+        if len(sites):
+            ends = c.rungs[sites]
+            aligned[ends[:, 0]] = aligned[ends[:, 1]] = np.column_stack(
+                (ends, c.rungs[c.pairing[sites]]))
+        self.alignments.set(aligned)
+        self.alignment_state = tuple(array.copy() for array in state)
 
     def _force(self, advance):
         pos, vel, force = self.device
@@ -179,7 +240,8 @@ class ResidentMixingMotion(InertialMotion):
         kick(_grid(self.count), (128,), (
             pos, vel, force, self.old, self.displacement, self.count, self.half_kick,
             self.heads, self.next, self.width, self.nx, self.ny, *self.terms,
-            np.int64(len(self.terms[5])), np.int64(len(self.terms[4])), *self.box, np.bool_(advance)))
+            np.int64(len(self.terms[5])), np.int64(len(self.terms[4])),
+            self.alignments, np.bool_(self.reactive), *self.box, np.bool_(advance)))
 
     def _launch_steps(self, steps):
         drift = self.kernels[0]
@@ -197,6 +259,11 @@ class ResidentMixingMotion(InertialMotion):
         with self.stream:
             if self.device is None:
                 self._upload(c, dt)
+            elif self.force is None:
+                self._update_topology(c)
+            if self.force is None:
+                self._force(False)
+                self.force_evaluations += 1
             self.displacement.fill(0.)
             for offset in range(0, steps, self.block_steps):
                 count = min(self.block_steps, steps-offset)
@@ -210,7 +277,8 @@ class ResidentMixingMotion(InertialMotion):
                     self.graph.launch(self.stream)
                 else:
                     self._launch_steps(count)
-            displacement = float(self.displacement.get().max())
+            host = self.state.get()
+            displacement = float(host[6].max())
             if displacement > 1.:
                 # The scheduler has not advanced. Keep its last valid checkpoint.
                 rng.bit_generator.state = rng_state
@@ -218,7 +286,7 @@ class ResidentMixingMotion(InertialMotion):
                 self.graph = None
                 self.device = None
                 raise FloatingPointError('Inertial integrator unstable; reduce dt, never clip motion')
-            c.pos, self.velocities, self.force = (array.get() for array in self.device)
+            c.pos, self.velocities, self.force = host[:6].reshape(3, len(c.pos), 2)
         self.max_displacement = max(self.max_displacement, displacement)
         self.steps += steps
         self.force_evaluations += steps

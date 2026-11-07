@@ -1,5 +1,12 @@
 # Journal de recherche
 
+## 2026-11-07 — lot58, transfert réactif du chemin CUDA résident
+
+CRC1 teste l'orientation et les liaisons dynamiques en copie Langevin.
+Reprise exacte et concordance courte avec le CPU. Réduction des recherches
+géométriques répétées des propositions H/T en CP1, sans gain global CPU
+établi. [Bilan](BATCH_58.md) et [critères de clôture](CUDA_COMPLETION.md).
+
 ## 2026-11-07 — lot57, mécanique Langevin résidente
 
 CRM1. Le diagnostic de mélange exécute le voisinage, les forces et le pas

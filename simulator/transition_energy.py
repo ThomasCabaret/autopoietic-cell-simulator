@@ -10,10 +10,22 @@ import numpy as np
 from .docking import docking_force,free_faces
 
 
-def formation_energy(c,h,t,neighbors):
+def formation_pairs(c, neighbors):
+    """Geometric candidates shared by H/T proposals at fixed positions."""
+    return (neighbors.pairs(c.pos, float(c.contact.max()), 'HT:delta_core'),
+            neighbors.pairs(c.pos, 3*c.config['food_ligand_width'], 'HT:delta_capture'))
+
+
+def _incident(pairs, ids, count):
+    touched = np.zeros(count, dtype=bool)
+    touched[list(ids)] = True
+    return pairs[touched[pairs[:, 0]] | touched[pairs[:, 1]]]
+
+
+def formation_energy(c,h,t,neighbors,fixed_pairs=None):
     cfg=c.config;pos=c.pos;cap=c.capture;changed={h,t}
-    pairs=neighbors.pairs(pos,float(c.contact.max()),'HT:delta_core')
-    pairs=pairs[np.isin(pairs[:,0],[h,t])|np.isin(pairs[:,1],[h,t])]
+    core_pairs,capture_pairs=formation_pairs(c,neighbors) if fixed_pairs is None else fixed_pairs
+    pairs=_incident(core_pairs,changed,len(pos))
     core=0.
     for a,b in pairs:
         ka,kb=int(c.kinds[a]),int(c.kinds[b]);newa=3 if a in changed else ka;newb=3 if b in changed else kb
@@ -23,9 +35,8 @@ def formation_energy(c,h,t,neighbors):
     released={int(cap.atom_bound[a]) for a in changed if cap.atom_bound[a]>=0}
     springs=-sum(.5*cap.stiffness*float(np.sum((pos[c.rungs[s,1]]-pos[cap.site_bound[s]])**2)) for s in released)
     affected=cap.affected_sites(c,released) if hasattr(cap,'affected_sites') else released
-    touched=list(changed|{int(c.rungs[s,1]) for s in affected if c.rungs[s,1]>=0})
-    pairs=neighbors.pairs(pos,3*cfg['food_ligand_width'],'HT:delta_capture')
-    pairs=pairs[np.isin(pairs[:,0],touched)|np.isin(pairs[:,1],touched)]
+    touched=changed|{int(c.rungs[s,1]) for s in affected if c.rungs[s,1]>=0}
+    pairs=_incident(capture_pairs,touched,len(pos))
     attraction=0.
     for a,b in pairs:
         for site,atom in ((int(a),int(b)),(int(b),int(a))):

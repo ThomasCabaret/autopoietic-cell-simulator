@@ -1,5 +1,11 @@
 # Santé du projet — actualisation du 7 novembre 2026
 
+Lot58. Le transfert à une première chimie réactive confirme la faisabilité
+de conserver le calendrier des ticks et la reprise. Les réactions CP1
+occupent environ la moitié du profil court. Un gain sur la seule mécanique
+ne clôt donc pas ce chantier. Les forces propres et la préparation des
+réactions restent les risques de débit. [Critères de clôture](CUDA_COMPLETION.md)
+
 Lot57. Gain de débit de la mécanique résidente mesuré à trois tailles de bain
 inerte. Le transfert à CP1 dépend du coût des forces propres et du nombre de
 synchronisations aux ticks chimiques. Exiger une mesure appariée du pas CP1

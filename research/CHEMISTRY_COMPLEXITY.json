@@ -862,7 +862,7 @@
     "simulator/assembly.py": "4bd703a271102d5ca6a7ae3c6d0109ae158617fef8136b4f8ba5d5456d092034",
     "simulator/mixed_synthesis.py": "963ddfad842b40ed3ca3fd3829350b550badfa69853d9219566cf996182b9f5c",
     "simulator/linked_lipids.py": "28d18d700bd3a00e5fbcab09745644e1c37de7826b1922bffb7174d6f8d51866",
-    "simulator/lipid_synthesis.py": "56f20f8eddcf50eae3ed14ce907e4d67cc3f61742ed720061675a8f5d69a98f3",
+    "simulator/lipid_synthesis.py": "01a1ca9e775f59552f5d9a301b0c68fa4d2adbfff00c15e6201f154f5e64daad",
     "simulator/copy.py": "8a8bed3a44927aef6fda46a00e845ac7bec3043c48436b94e01601c9603c2b7e",
     "simulator/precursors.py": "bf766ba8480e6e3180d85b5c481311a926570571e81510cbdfeccee97507594e",
     "simulator/docking.py": "7f3247b8b54a8130c1e64002acd2bc9b137e0201def6f2964422b122eb5877e4",
@@ -871,9 +871,9 @@
     "simulator/competitive_ports.py": "dc7fdcea482d9e71de036bbb800748492f63e464848475066275452b68a3efd8",
     "simulator/mixed_boundary.py": "a1361a5cbe72da18356d48e839372b50abfaac7841908bfc92f931df35192b47",
     "simulator/contact_exchange.py": "945c4521c1126f18238d3ba962e8429cdbbdf94a1ae54b5aa8cf014f9a93fa3c",
-    "simulator/config.py": "758fe5c175df3805eb917612684a26c7bd20e8b158e18f401e0bdf040f0062b5",
+    "simulator/config.py": "46fbf42a02dfac52732b94c04fd677046f2bbe3179b5f317b57eb89540ac6e0b",
     "simulator/motion.py": "42cc6dc25d2c4e9cc3c567fb3104db800ff29c9b4cd7f2dac466366f1b256b8c",
-    "simulator/transition_energy.py": "ff02ce91c9e6c485ecb472b0ca2c1d8fb0f78a35766b137e0a9ac5dcec7a771a",
+    "simulator/transition_energy.py": "1f210f78e5b6330be7d9a8a48e58ead829baeeaa7874c6e2ad27db303666f781",
     "simulator/exchange_energy.py": "601c815c3a8f86362a0ed6d76c2ff538af46cf41f814af04e9d1a42f3531d7f6"
   },
   "factorization": {

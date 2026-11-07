@@ -13,10 +13,10 @@ class ResidentSelectionTests(unittest.TestCase):
     def test_reject_unsupported_motion_and_reactive_models(self):
         config = scenario(14, 100, 'cuda-resident')
         config['chemistry']['motion'] = 'dpd'
-        with self.assertRaisesRegex(ValueError, 'only Langevin mixing'):
+        with self.assertRaisesRegex(ValueError, 'requires Langevin mixing'):
             Simulation(config)
         config.update(model='copy', chemistry={})
-        with self.assertRaisesRegex(ValueError, 'only Langevin mixing'):
+        with self.assertRaisesRegex(ValueError, 'requires Langevin mixing'):
             Simulation(config)
 
 
@@ -76,3 +76,32 @@ class ResidentMotionTests(unittest.TestCase):
         self.assertEqual(sim.motion.force_evaluations, 0)
         self.assertEqual(sim.rng.bit_generator.state, rng_state)
         np.testing.assert_array_equal(sim.chemistry.pos, initial)
+
+    def test_reactive_copy_tracks_topology_and_resumes_exactly(self):
+        from simulator.config import load
+
+        root = Path(__file__).resolve().parents[1]
+        cfg = load(root/'demonstrators/configs/demo_binary_copy_langevin.json')
+        cpu = Simulation(cfg)
+        cfg['engine']['force_backend'] = 'cuda-resident'
+        gpu = Simulation(cfg)
+        start_edges = gpu.chemistry.edges.copy()
+        cpu.advance(1000)
+        gpu.advance(507)
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder)/'copy.npz'
+            checkpoint.save(path, gpu)
+            resumed, _ = checkpoint.load(path)
+        gpu.advance(493)
+        resumed.advance(493)
+        self.assertNotEqual(start_edges, gpu.chemistry.edges)
+        self.assertTrue(np.any(gpu.chemistry.pairing >= 0))
+        self.assertEqual(cpu.chemistry.export(), gpu.chemistry.export())
+        self.assertEqual(cpu.rng.bit_generator.state, gpu.rng.bit_generator.state)
+        self.assertEqual(cpu.motion.force_evaluations, gpu.motion.force_evaluations)
+        np.testing.assert_allclose(cpu.chemistry.pos, gpu.chemistry.pos, rtol=0, atol=1e-10)
+        np.testing.assert_allclose(cpu.motion.velocities, gpu.motion.velocities, rtol=0, atol=1e-10)
+        np.testing.assert_array_equal(gpu.chemistry.pos, resumed.chemistry.pos)
+        self.assertEqual(gpu.motion.export(), resumed.motion.export())
+        self.assertEqual(gpu.chemistry.export(), resumed.chemistry.export())
+        self.assertEqual(gpu.rng.bit_generator.state, resumed.rng.bit_generator.state)

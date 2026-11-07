@@ -1,5 +1,10 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot58. Interface CUDA validée sur la copie réactive restreinte, topologie
+actualisée aux ticks. Priorité à la capture libre, aux ports lipidiques et
+à la barrière de CP1, puis au profil des réactions sur le pas complet.
+[Critères de clôture](CUDA_COMPLETION.md)
+
 Lot57. CRM1 déplace le voisinage et l'intégration Langevin en CUDA pour le bain
 inerte. Prochaine mesure décisive sur un préfixe CP1 avec forces propres et
 topologie qui change aux ticks de réaction. Quantifier le coût des échanges

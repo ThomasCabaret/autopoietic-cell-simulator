@@ -28,9 +28,12 @@ class Simulation:
             if self.config['model'] not in ('mixing','copy','membrane','membrane_bath','coupled_bath','lipid_synthesis','mixed_synthesis','open_bath'):raise ValueError('Unsupported inertial hook')
             from .motion import InertialMotion
             if backend == 'cuda-resident':
-                from .resident_motion import ResidentMixingMotion
-                self.motion = ResidentMixingMotion(self.chemistry, self.rng, motion_settings)
-                self.resident_react = self.chemistry.react
+                from .resident_motion import ResidentLangevinMotion
+                reactive = self.config['model'] == 'copy'
+                self.motion = ResidentLangevinMotion(
+                    self.chemistry, self.rng, motion_settings, reactive, self.reaction_every)
+                if not reactive:
+                    self.resident_react = self.chemistry.react
             else:
                 self.motion=InertialMotion(self.chemistry,self.rng,motion_settings,self.force_kernel)
             self.chemistry.motion_state=self.motion
@@ -81,7 +84,7 @@ class Simulation:
             raise ValueError('steps must be a nonnegative integer')
         self.prepare()
         c=self.chemistry
-        if self.resident_react is not None:
+        if self.config['engine'].get('force_backend') == 'cuda-resident':
             end = min(self.step_index+steps, self.target_step)
             while self.step_index < end:
                 block = min(end-self.step_index, 250)
@@ -89,7 +92,7 @@ class Simulation:
                     cadence = self.config['engine']['sample_every']
                     block = min(block, cadence-self.step_index%cadence)
                 if c.react != self.resident_react:
-                    # Preserve a wrapped reaction hook's cadence and current positions.
+                    # Expose current positions at real or wrapped reaction ticks.
                     block = min(block, self.reaction_every-self.step_index%self.reaction_every)
                 self.motion.advance_block(c, self.rng, self.dt, block)
                 self.step_index += block

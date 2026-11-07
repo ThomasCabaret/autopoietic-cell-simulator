@@ -1,5 +1,9 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot58. La copie Langevin restreinte valide les mises à jour de topologie
+et la reprise CUDA. O-01 reste au palier sous-cas. Aucun palier biologique
+ne change. [Bilan CRC1](BATCH_58.md)
+
 Lot57. Le chemin CUDA résident est vérifié pour le bain inerte sous Langevin,
 y compris le checkpoint. O-01 reste au palier sous-cas. Les paliers de la
 chimie et du maintien restent ceux du lot55. [Bilan CRM1](BATCH_57.md)

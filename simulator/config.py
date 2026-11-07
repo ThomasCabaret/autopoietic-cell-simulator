@@ -61,8 +61,17 @@ def resolve(raw):
     backend = engine.get('force_backend', 'numba')
     if backend not in ('numba', 'cpp', 'cuda', 'cuda-resident'):
         raise ValueError('force_backend must be numba, cpp, cuda or cuda-resident')
-    if backend == 'cuda-resident' and (model != 'mixing' or defaults['motion'] != 'langevin'):
-        raise ValueError('cuda-resident currently supports only Langevin mixing')
+    if backend == 'cuda-resident':
+        if model == 'mixing':
+            supported = defaults['motion'] == 'langevin'
+        elif model == 'copy':
+            supported = ('mechanics' in raw and not any(defaults[key] for key in
+                         ('food_pairs', 'dual_faces', 'rung_catalysis')))
+        else:
+            supported = False
+        if not supported:
+            raise ValueError('cuda-resident requires Langevin mixing or copy without '
+                             'food, dual faces or rung catalysis')
     raw.update(chemistry=defaults,engine=engine)
     raw.setdefault("seed",0)
     raw.setdefault("duration",180. if model=="copy" else 100.)

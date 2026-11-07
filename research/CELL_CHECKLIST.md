@@ -1,6 +1,6 @@
 # Checklist détaillée — critères et dépendances
 
-Revue 2026-11-07 · révision28. Source : [cell_checklist.json](cell_checklist.json).
+Revue 2026-11-07 · révision29. Source : [cell_checklist.json](cell_checklist.json).
 [Tableau compact](CELL_CHECKLIST_COMPACT.md) · [Échelle et méthode](CONCEPT_FIRST.md).
 
 Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre acyclique de codage. Les cycles de renouvellement sont intentionnels. Une condition initiale construite peut amorcer un sous-cas sans fermer ces cycles.
@@ -823,13 +823,13 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Dépend de :** [E-02](#E-02), [C-02](#C-02) · **Pour renouveler :** —
 
-**Portée des preuves :** CFN1 valide le préfixe hybride CP1 de 302 billes. CRM1 accélère les pas complets du bain inerte Langevin de 1,65× à 4,59× face à Numba selon la taille.
+**Portée des preuves :** CFN1 valide le préfixe hybride CP1. CRM1 et CRC1 valident le résident en bain inerte et en copie réactive restreinte. CP1 résident reste à construire.
 
-**Références :** [research/KINETICS_AND_PERFORMANCE.md](../research/KINETICS_AND_PERFORMANCE.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_50.md](../research/BATCH_50.md), [research/BATCH_51.md](../research/BATCH_51.md), [research/BATCH_56.md](../research/BATCH_56.md), [research/BATCH_57.md](../research/BATCH_57.md)
+**Références :** [research/KINETICS_AND_PERFORMANCE.md](../research/KINETICS_AND_PERFORMANCE.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_50.md](../research/BATCH_50.md), [research/BATCH_51.md](../research/BATCH_51.md), [research/BATCH_56.md](../research/BATCH_56.md), [research/BATCH_57.md](../research/BATCH_57.md), [research/BATCH_58.md](../research/BATCH_58.md), [research/CUDA_COMPLETION.md](../research/CUDA_COMPLETION.md)
 
-**Prochain test / décision :** Mesurer un préfixe CP1 avec les forces supplémentaires et les synchronisations aux ticks, puis comparer le débit multi-bains au CPU.
+**Prochain test / décision :** Porter les forces spécifiques de CP1, mesurer le pas complet puis déterminer quelles phases des réactions CPU doivent être portées.
 
-**Progrès du dernier lot :** Voisinage et pas Langevin résidents, reprise exacte et facteur de débit mesuré sur trois tailles de bain inerte.
+**Progrès du dernier lot :** Copie réactive restreinte transférée, profil CP1 établi et critères de clôture CPU/CUDA écrits.
 
 <a id="O-02"></a>
 ### O-02 — Observation passive, reproductibilité et inspection
@@ -880,3 +880,4 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 - Révision26 (2026-11-06) : Lot55 : recommandations Astra triées, FR1 final refusé ; transport ouvert OB1 et remappage de population construits, crible6/6. E-01 sous-cas25, aucun palier de maintien relevé.
 - Révision27 (2026-11-07) : Lot56 CFN1 : forces de base C++ et CUDA et reprise vérifiées sur un préfixe. Aucun palier biologique augmenté.
 - Révision28 (2026-11-07) : Lot57 CRM1 : pas CUDA résident, concordance et reprise vérifiées pour le bain inerte Langevin. Aucun palier biologique augmenté.
+- Révision29 (2026-11-07) : Lot58 CRC1 : première copie réactive en CUDA résident, avec reprise et changements de topologie vérifiés. Aucun palier biologique augmenté.

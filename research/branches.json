@@ -1827,6 +1827,17 @@
       "recipe": "experiments/benchmark_resident_motion.py",
       "evidence": "research/BATCH_57_RESULTS.json",
       "results": "research/BATCH_57.md"
+    },
+    {
+      "id": "CRC1",
+      "parent": "CRM1",
+      "status": "reactive_copy_prefix_and_checkpoint_verified",
+      "hypothesis": "Resident Langevin mechanics can retain its allocations while CPU reactions update local topology at their original cadence.",
+      "test": "LT2 binary copy CPU/CUDA prefix, exact CUDA checkpoint replay, CP1 before/after CPU profiling on archived CH1.",
+      "conclusion": "Dynamic orientation and topology work for the restricted copy model. CP1 force families and the reaction hot path are outstanding.",
+      "cost": "One backend implementation of an existing orientation law, one host state transfer per block. No additional chemical primitive.",
+      "recipe": "experiments/benchmark_reactive_motion.py",
+      "results": "research/BATCH_58.md"
     }
   ]
 }
