@@ -1,5 +1,9 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot65. O-01 reste sous-cas. Force saturée concordante CPU/CUDA, énergie
+des ports de créations calculée par lots, dynamique courte distincte.
+La loi CP1 reste la référence. [Bilan SPF1](BATCH_65.md)
+
 Lot64. O-01 reste sous-cas. Capture coopérative sur GPU en mécanique
 CH1 avec les autres réactions gelées. Aucun palier biologique relevé.
 [Bilan RCC1](BATCH_64.md)

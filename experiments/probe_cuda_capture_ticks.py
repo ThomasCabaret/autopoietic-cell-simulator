@@ -77,7 +77,7 @@ class CaptureTickMotion(ResidentLangevinMotion):
             super()._update_topology(c)
 
     def _react_device(self):
-        release, propose, commit, refresh = self.kernels[13:]
+        release, propose, commit, refresh = self.kernels[13:17]
         sites, ligands, activity = self.capture.buffers
         radius, interval, on_rate, off_rate = self.params
         blocks = _grid(self.count)

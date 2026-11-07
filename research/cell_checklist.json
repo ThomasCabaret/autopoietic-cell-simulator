@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 35,
+  "revision": 36,
   "reviewed": "2026-11-07",
   "candidate": "CP1 avec référence CPU et mécanique CUDA résidente vérifiée sur un préfixe",
   "purpose": "Registre évolutif des capacités nécessaires à une cellule construite maintenue ; les pourcentages sont des paliers de preuve, pas un taux global de réussite.",
@@ -1174,7 +1174,7 @@
       "mechanism": "Moteur partagé, arbres spatiaux, profilage et mesures par objectif utile plutôt que vitesse brute.",
       "concept_gap": "Taille réelle des outils et temps de renouvellement complet inconnus ; pas de promesse inférieure à dix heures.",
       "proof": "subcase",
-      "scope": "SCP1 mesure 1,13–1,64× sur CP1 complet à 2 118 billes. RCT1 et RCC1 valident des ticks autonomes de capture indépendante et coopérative dans des pilotes isolés.",
+      "scope": "RCC1 valide la capture autonome en pilote. SPF1 calcule par lots GPU la contribution des ports aux créations sous une variante opt-in, avec cinétique distincte.",
       "references": [
         "research/KINETICS_AND_PERFORMANCE.md",
         "research/BATCH_44.md",
@@ -1190,9 +1190,10 @@
         "research/BATCH_62.md",
         "research/BATCH_63.md",
         "research/BATCH_64.md",
+        "research/BATCH_65.md",
         "research/CUDA_COMPLETION.md"
       ],
-      "next_test": "Évaluer les deltas H/T par lots sur GPU et valider l'arbitrage avec dépendances de lecture avant d'élargir à CP1.",
+      "next_test": "Comparer la saturation et le delta compétitif incrémental, puis tester l'arbitrage partagé des créations.",
       "essential": true
     },
     {
@@ -1434,9 +1435,14 @@
       "revision": 35,
       "date": "2026-11-07",
       "reason": "Lot64 RCC1 : capture coopérative et conflits de voisinage validés sur GPU dans le pilote. Aucun palier biologique augmenté."
+    },
+    {
+      "revision": 36,
+      "date": "2026-11-07",
+      "reason": "Lot65 SPF1 : loi par face opt-in, énergie des ports par lots GPU et crible de cinétique. Aucun palier biologique augmenté."
     }
   ],
   "last_batch_progress": {
-    "O-01": "Capture coopérative arbitrée sur GPU, avec contrôle des voisins et benchmark CH1 actif à taille cible."
+    "O-01": "Forces mutualisées, contribution énergétique des ports calculée par lots GPU, choix de loi encore ouvert."
   }
 }

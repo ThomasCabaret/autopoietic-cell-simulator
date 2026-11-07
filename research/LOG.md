@@ -1,5 +1,12 @@
 # Journal de recherche
 
+## 2026-11-07 — lot65, saturation par face
+
+SPF1. Cas binaire conservé, géométrie et score réutilisés. Énergies
+des créations évaluées par lots GPU et comparées au CPU. Le crible CR1
+court assemble des lipides mais forme moins de liens. Variante opt-in.
+[Bilan](BATCH_65.md)
+
 ## 2026-11-07 — lot64, capture coopérative résidente
 
 RCC1. Arbitrage de deux liaisons sur des ligands distincts, avec contrôle

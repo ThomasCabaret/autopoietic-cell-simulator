@@ -169,7 +169,7 @@ def resolve(raw):
     elif model in ('lipid_synthesis','mixed_synthesis'):
         if defaults['contact_exchange_gate'] not in ('none','metropolis'):raise ValueError('Invalid contact exchange gate')
         if defaults['contact_update_gate'] not in ('none','metropolis'):raise ValueError('Invalid contact update gate')
-        if defaults['free_port_potential'] not in ('additive','competitive'):raise ValueError('Invalid free port potential')
+        if defaults['free_port_potential'] not in ('additive','competitive','saturated'):raise ValueError('Invalid free port potential')
         molecules=defaults['initial_lipids']
         if not isinstance(molecules,list) or type(defaults['food_units']) is not int or len(molecules)>defaults['food_units']:raise ValueError('Invalid prepared lipid stock')
         for molecule in molecules:

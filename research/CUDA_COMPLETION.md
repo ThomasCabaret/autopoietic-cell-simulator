@@ -4,12 +4,12 @@ La référence de réception est CP1 en bain réactif, puis le scénario ouvert
 de travail lorsqu'il est défini. Les anciens modes restent accessibles sur
 CPU. Les limites de compatibilité sont visibles à la sélection du backend.
 
-| Chantier | État au lot64 | Critère de clôture |
+| Chantier | État au lot65 | Critère de clôture |
 | --- | --- | --- |
 | Voisinage, contacts, ressorts, angles et Langevin | Résidents en bain inerte, en copie réactive et dans CP1. | Mesurer à des densités représentatives. Contrôler le coût des cellules chargées et des recalculs spatiaux. |
 | Forces propres à CP1 | Orientation, capture, barrière et ports libres, compétitifs et liés dans le pas résident. | Vérifier le débit et la stabilité aux densités et tailles représentatives. |
 | Topologie dynamique et transferts | Mise à jour en copie, après naissance lipidique CP1 et avec entrées/sorties du banc ouvert. | Mesurer les synchronisations et réallocations à plusieurs tailles et flux, puis valider le scénario ouvert intégré. |
-| Réactions et conflits | CP1 reste hybride. Capture indépendante et coopérative sur CUDA dans un pilote avec mécanique CH1. | Porter les deltas H/T et les transitions P/R, copie et faces. Vérifier les dépendances d'énergie et valider les effets de l'ordre d'arbitrage. |
+| Réactions et conflits | Capture autonome en pilote. La variante saturée réduit la portée de lecture et calcule le terme de ports H/T par lots CUDA. | Choisir la loi sur preuve fonctionnelle et débit, intégrer l'arbitrage H/T, puis porter P/R, copie et faces. |
 | CPU et GPU de production | CPU Numba, noyau C++ optionnel, CUDA hybride et premier CP1 résident utilisable en CLI. | Optimiser les parcours et allocations dominants côté CPU et GPU. Exécuter les mêmes recettes depuis les entrées ordinaires. |
 | Équivalence et mesure finale | Préfixes appariés et première mesure avec observateur à 302, 1 000 et 2 118 billes. Gain de 1,13× à 1,64× à 2 118. | Expliquer la dispersion, mesurer plusieurs graines et horizons prédéfinis, puis publier le débit complet. |
 

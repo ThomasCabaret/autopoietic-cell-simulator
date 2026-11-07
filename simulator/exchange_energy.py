@@ -12,10 +12,12 @@ def port_delta(pos,links,removed,formed,config,neighbors):
     new=[e for e in links if removed is None or tuple(e)!=tuple(removed)]
     if formed is not None:new.append(tuple(formed))
     pairs=neighbors.pairs(pos[:n],1.+4*config['dock_width'],'exchange_delta')
-    if config.get('free_port_potential','additive')=='competitive':
+    potential=config.get('free_port_potential','additive')
+    if potential in ('competitive','saturated'):
         from .competitive_ports import local_free_delta,partners
         delta=float(local_free_delta(pos,pairs,free_faces(n,links),free_faces(n,new),partners(n,links),partners(n,new),
-            np.asarray(sorted(changed),dtype=np.int64),1.,config['short_length'],config['dock_energy'],config['dock_width']))
+            np.asarray(sorted(changed),dtype=np.int64),1.,config['short_length'],config['dock_energy'],config['dock_width'],
+            potential=='saturated'))
         def bound(edge):
             if edge is None:return 0.
             return bound_port_force(pos,np.asarray([edge],dtype=np.int64),1.,config['short_length'],config['dock_energy'],config['dock_width'])[1]

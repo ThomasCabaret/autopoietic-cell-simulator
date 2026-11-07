@@ -35,7 +35,7 @@ def formation_pairs(c, neighbors):
         (float(c.contact.max()), 'HT:delta_core'),
         (3*c.config['food_ligand_width'], 'HT:delta_capture')))
     ports = None
-    if c.config.get('free_port_potential', 'additive') == 'competitive':
+    if c.config.get('free_port_potential') in ('competitive','saturated'):
         from .competitive_ports import birth_port_base
         ports = birth_port_base(c, neighbors)
     return core, capture, ports
@@ -82,7 +82,7 @@ def formation_energy(c,h,t,neighbors,fixed_pairs=None):
     # only their actual free local faces. Competitive partitions of existing
     # pairs must also change; the additive branch has no such reweighting.
     ports=0.
-    if cfg.get('free_port_potential','additive')=='competitive':
+    if cfg.get('free_port_potential') in ('competitive','saturated'):
         from .competitive_ports import birth_port_delta
         ports=birth_port_delta(c,h,t,neighbors,port_base)
     elif c.lipids.rungs:

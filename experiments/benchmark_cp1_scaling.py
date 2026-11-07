@@ -74,15 +74,18 @@ def main():
     parser.add_argument('--particles', type=int, nargs='+', default=[302, 1000, 2118])
     parser.add_argument('--steps', type=int, default=500)
     parser.add_argument('--repeats', type=int, default=3)
+    parser.add_argument('--port-potential', choices=['competitive', 'saturated'], default='competitive')
     args = parser.parse_args()
     if args.steps < 1 or args.repeats < 1 or any(n < 302 or n%2 for n in args.particles):
         parser.error('require positive windows/repeats and even particle counts >= 302')
     for count in args.particles:
         config = cp1_config() if count == 302 else scaled_cp1(count)
+        config['chemistry']['free_port_potential'] = args.port_potential
         cpu = measure(config, 'numba', args.steps, args.repeats)
         cuda = measure(config, 'cuda-resident', args.steps, args.repeats)
         assert cpu['particles'] == cuda['particles'] == count
-        print(json.dumps(dict(steps=args.steps, seed=config['seed'], cpu=cpu, cuda=cuda,
+        print(json.dumps(dict(steps=args.steps, seed=config['seed'],
+                              port_potential=args.port_potential, cpu=cpu, cuda=cuda,
                               speedup=cpu['wall_s']/cuda['wall_s'],
                               reaction_floor_bound=cpu['wall_s']/cuda['reactions_s'])), flush=True)
 

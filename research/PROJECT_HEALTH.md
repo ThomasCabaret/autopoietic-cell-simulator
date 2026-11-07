@@ -1,5 +1,10 @@
 # Santé du projet — actualisation du 7 novembre 2026
 
+Lot65. Le potentiel par face diminue le rayon des lectures de réaction
+et le coût du calcul isolé. Le débit CUDA complet ne s'améliore pas
+dans le crible court et la cinétique d'association diffère. Garder
+les deux branches avant de figer l'architecture. [Bilan](BATCH_65.md)
+
 Lot64. La capture coopérative conserve ses invariants dans le pilote.
 Le risque porte désormais sur la formation à énergie compétitive et
 les cinétiques sous contention. Estimation de cinq à huit lots pour

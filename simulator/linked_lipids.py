@@ -31,6 +31,9 @@ class LinkedLipids:
         if config.get('free_port_potential','additive')=='competitive':
             from .competitive_ports import competitive_force
             kernel=competitive_force
+        elif config.get('free_port_potential')=='saturated':
+            from .competitive_ports import saturated_force
+            kernel=saturated_force
         force,energy=kernel(packed,pairs,free_faces(n,links),1.,config['short_length'],
             config['dock_energy'],config['dock_width'],partners)
         bound,value=bound_port_force(packed,np.asarray(links,dtype=np.int64).reshape(-1,4),1.,

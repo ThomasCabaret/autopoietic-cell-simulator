@@ -172,7 +172,7 @@ class ResidentMotionTests(unittest.TestCase):
         c.pos[heads] = [[6., 6.], [7., 6.15], [7.1, 5.85], [5.2, 5.9]]
         c.pos[list(c.lipids.rungs.values())] = c.pos[heads]+[0., .65]
         fields = []
-        for potential in ('additive', 'competitive'):
+        for potential in ('additive', 'competitive', 'saturated'):
             c.config['free_port_potential'] = potential
             expected = c.lipids.forces(c.pos, c.config, Neighborhood('brute'))[0]
             actual = mixed_field_snapshot(c)[2]
@@ -180,6 +180,7 @@ class ResidentMotionTests(unittest.TestCase):
             np.testing.assert_allclose(actual.sum(axis=0), 0., atol=1e-12)
             fields.append(expected)
         self.assertGreater(np.max(np.abs(fields[0]-fields[1])), .1)
+        self.assertGreater(np.max(np.abs(fields[0]-fields[2])), .1)
 
     def test_mixed_simulation_tracks_new_lipid_and_resumes(self):
         from experiments.verify_resident_fields import cp1_config

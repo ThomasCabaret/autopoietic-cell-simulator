@@ -145,7 +145,8 @@ def _kernels(device):
     names = ('drift', 'clear_cells', 'bin_particles', 'order_cells', 'kick', 'capture_field',
              'clear_segment_measure', 'measure_segments', 'segment_field',
              'lipid_geometry', 'lipid_scores', 'lipid_derivatives', 'lipid_force',
-             'release_capture', 'propose_capture', 'commit_capture', 'refresh_capture_groups')
+             'release_capture', 'propose_capture', 'commit_capture', 'refresh_capture_groups',
+             'lipid_birth_energy')
     return tuple(module.get_function(name) for name in names)
 
 
@@ -161,10 +162,7 @@ def _bin_particles(kernels, pos, n, cells, grid):
     order(_grid(cells), (128,), (heads, links, cells))
 
 
-def mixed_field_snapshot(chemistry):
-    """Evaluate the ported mixed force families on a frozen snapshot."""
-    import cupy as cp
-
+def _snapshot_grid(cp, chemistry):
     n = np.int32(len(chemistry.pos))
     width = np.float64(chemistry.contact.max())
     nx, ny = (np.int32(np.ceil(length/width)) for length in chemistry.box)
@@ -173,6 +171,14 @@ def mixed_field_snapshot(chemistry):
     grid = (cp.empty(cells, dtype=cp.int32), cp.empty(n, dtype=cp.int32), width, nx, ny)
     kernels = _kernels(cp.cuda.Device().id)
     _bin_particles(kernels[1:4], pos, n, cells, grid)
+    return pos, n, grid, kernels
+
+
+def mixed_field_snapshot(chemistry):
+    """Evaluate the ported mixed force families on a frozen snapshot."""
+    import cupy as cp
+
+    pos, n, grid, kernels = _snapshot_grid(cp, chemistry)
     capture = CaptureField(cp, chemistry, chemistry.capture)
     segment = SegmentField(cp, chemistry)
     ports = LipidPorts(cp, chemistry)
@@ -180,6 +186,19 @@ def mixed_field_snapshot(chemistry):
     segment.launch(kernels[6:9], pos, n, grid)
     ports.launch(kernels[9:13], pos, n, grid)
     return np.stack((capture.output.get(), segment.output.get(), ports.output.get()))
+
+
+def saturated_birth_snapshot(chemistry, trials):
+    """Compute the port-energy contribution for independent trial births."""
+    import cupy as cp
+
+    pos, n, grid, kernels = _snapshot_grid(cp, chemistry)
+    ports = LipidPorts(cp, chemistry)
+    ports.launch(kernels[9:13], pos, n, grid)
+    candidates = cp.asarray(trials, dtype=cp.int64)
+    output = cp.empty(len(candidates), dtype=cp.float64)
+    ports.birth_deltas(kernels[17], pos, candidates, grid, output)
+    return output.get()
 
 
 class ResidentLangevinMotion(InertialMotion):

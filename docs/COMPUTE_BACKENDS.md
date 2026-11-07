@@ -81,3 +81,9 @@ conserve les réactions CPU. [Périmètre et mesures](../research/BATCH_63.md)
 L'option `--mixed` du pilote prend CH1 avec capture coopérative et
 mécanique complète. Les autres transitions restent gelées.
 [Périmètre et mesures coopératives](../research/BATCH_64.md)
+
+La variante opt-in `free_port_potential: saturated` réduit la portée du
+calcul des ports. Les forces passent par le même backend résident.
+Le pilote `python -m experiments.compare_lipid_saturation` compare
+l'énergie de naissance par lots et le début de l'assemblage.
+[Résultats et limites](../research/BATCH_65.md)

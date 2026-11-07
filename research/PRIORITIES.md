@@ -1,5 +1,9 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot65. Comparer la cinétique saturée et l'énergie compétitive
+incrémentale. L'arbitrage partagé des créations reste le prochain
+verrou de débit. [Bilan](BATCH_65.md)
+
 Lot64. Capture coopérative avec contrôle explicite des sites adjacents.
 Prochaine porte sur l'énergie H/T et les lectures concurrentes d'un
 voisinage de ports. [Bilan](BATCH_64.md)

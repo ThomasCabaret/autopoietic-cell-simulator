@@ -1,6 +1,6 @@
 # Checklist détaillée — critères et dépendances
 
-Revue 2026-11-07 · révision35. Source : [cell_checklist.json](cell_checklist.json).
+Revue 2026-11-07 · révision36. Source : [cell_checklist.json](cell_checklist.json).
 [Tableau compact](CELL_CHECKLIST_COMPACT.md) · [Échelle et méthode](CONCEPT_FIRST.md).
 
 Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre acyclique de codage. Les cycles de renouvellement sont intentionnels. Une condition initiale construite peut amorcer un sous-cas sans fermer ces cycles.
@@ -823,13 +823,13 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Dépend de :** [E-02](#E-02), [C-02](#C-02) · **Pour renouveler :** —
 
-**Portée des preuves :** SCP1 mesure 1,13–1,64× sur CP1 complet à 2 118 billes. RCT1 et RCC1 valident des ticks autonomes de capture indépendante et coopérative dans des pilotes isolés.
+**Portée des preuves :** RCC1 valide la capture autonome en pilote. SPF1 calcule par lots GPU la contribution des ports aux créations sous une variante opt-in, avec cinétique distincte.
 
-**Références :** [research/KINETICS_AND_PERFORMANCE.md](../research/KINETICS_AND_PERFORMANCE.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_50.md](../research/BATCH_50.md), [research/BATCH_51.md](../research/BATCH_51.md), [research/BATCH_56.md](../research/BATCH_56.md), [research/BATCH_57.md](../research/BATCH_57.md), [research/BATCH_58.md](../research/BATCH_58.md), [research/BATCH_59.md](../research/BATCH_59.md), [research/BATCH_60.md](../research/BATCH_60.md), [research/BATCH_61.md](../research/BATCH_61.md), [research/BATCH_62.md](../research/BATCH_62.md), [research/BATCH_63.md](../research/BATCH_63.md), [research/BATCH_64.md](../research/BATCH_64.md), [research/CUDA_COMPLETION.md](../research/CUDA_COMPLETION.md)
+**Références :** [research/KINETICS_AND_PERFORMANCE.md](../research/KINETICS_AND_PERFORMANCE.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_50.md](../research/BATCH_50.md), [research/BATCH_51.md](../research/BATCH_51.md), [research/BATCH_56.md](../research/BATCH_56.md), [research/BATCH_57.md](../research/BATCH_57.md), [research/BATCH_58.md](../research/BATCH_58.md), [research/BATCH_59.md](../research/BATCH_59.md), [research/BATCH_60.md](../research/BATCH_60.md), [research/BATCH_61.md](../research/BATCH_61.md), [research/BATCH_62.md](../research/BATCH_62.md), [research/BATCH_63.md](../research/BATCH_63.md), [research/BATCH_64.md](../research/BATCH_64.md), [research/BATCH_65.md](../research/BATCH_65.md), [research/CUDA_COMPLETION.md](../research/CUDA_COMPLETION.md)
 
-**Prochain test / décision :** Évaluer les deltas H/T par lots sur GPU et valider l'arbitrage avec dépendances de lecture avant d'élargir à CP1.
+**Prochain test / décision :** Comparer la saturation et le delta compétitif incrémental, puis tester l'arbitrage partagé des créations.
 
-**Progrès du dernier lot :** Capture coopérative arbitrée sur GPU, avec contrôle des voisins et benchmark CH1 actif à taille cible.
+**Progrès du dernier lot :** Forces mutualisées, contribution énergétique des ports calculée par lots GPU, choix de loi encore ouvert.
 
 <a id="O-02"></a>
 ### O-02 — Observation passive, reproductibilité et inspection
@@ -887,3 +887,4 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 - Révision33 (2026-11-07) : Lot62 SCP1 : débit réactif mesuré jusqu'à 2 118 billes et réemploi exact de géométrie H/T. Aucun palier biologique augmenté.
 - Révision34 (2026-11-07) : Lot63 RCT1 : première capture arbitrée sur GPU et mesure active à 2 118 billes. Aucun palier biologique augmenté.
 - Révision35 (2026-11-07) : Lot64 RCC1 : capture coopérative et conflits de voisinage validés sur GPU dans le pilote. Aucun palier biologique augmenté.
+- Révision36 (2026-11-07) : Lot65 SPF1 : loi par face opt-in, énergie des ports par lots GPU et crible de cinétique. Aucun palier biologique augmenté.

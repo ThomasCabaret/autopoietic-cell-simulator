@@ -9,13 +9,7 @@ struct PortGeometry {
 };
 static_assert(sizeof(PortGeometry) == 11*sizeof(double), "Port geometry layout");
 
-ENTRY void lipid_geometry(const double* pos, int n, const Index* topology,
-                          double short_length, PortGeometry* geometry, double* output) {
-    int i = blockIdx.x*blockDim.x+threadIdx.x;
-    if (i >= n) return;
-    output[2*i] = output[2*i+1] = 0.;
-    Index tail = topology[3*i];
-    if (tail < 0) return;
+LOCAL PortGeometry make_port_geometry(const double* pos, Index i, Index tail, double short_length) {
     Vec d = between(pos,i,tail);
     double r = at_least(sqrt(dot(d,d)),1e-8);
     PortGeometry g;
@@ -28,7 +22,16 @@ ENTRY void lipid_geometry(const double* pos, int n, const Index* topology,
         g.tail[face] = {pos[2*tail]+s*short_length/2*tangent.x,
                         pos[2*tail+1]+s*short_length/2*tangent.y};
     }
-    geometry[i] = g;
+    return g;
+}
+
+ENTRY void lipid_geometry(const double* pos, int n, const Index* topology,
+                          double short_length, PortGeometry* geometry, double* output) {
+    int i = blockIdx.x*blockDim.x+threadIdx.x;
+    if (i >= n) return;
+    output[2*i] = output[2*i+1] = 0.;
+    Index tail = topology[3*i];
+    if (tail >= 0) geometry[i] = make_port_geometry(pos,i,tail,short_length);
 }
 
 LOCAL void port_delta(const PortGeometry& own, const PortGeometry& other, int face,
@@ -54,11 +57,21 @@ LOCAL void project_port(const PortGeometry& own, int face, Vec h, Vec t, double 
 }
 
 // Competitive passes collect S, then sum(p/D²), then apply the derivative.
+// Saturated ports collect products and zero counts in the first pass.
 // Additive ports run just the final pass with multiplier one.
+LOCAL double port_without(double product, double zeros, double factor) {
+    if (factor == 0.) return zeros == 1. ? product : 0.;
+    return zeros == 0. ? product/factor : 0.;
+}
+
+LOCAL double port_score(double e, double z, double cutoff) {
+    return (e-cutoff*(9.-z))/(1-9*cutoff);
+}
+
 template<int stage>
 LOCAL void lipid_ports(const double* pos, int i, const Index* topology,
                        const PortGeometry* geometry, double short_length, double epsilon,
-                       double width, bool competitive, const int* heads, const int* next,
+                       double width, int mode, const int* heads, const int* next,
                        double cell, int nx, int ny, double* scores, double* derivatives,
                        double* output) {
     Index tail = topology[3*i];
@@ -68,6 +81,7 @@ LOCAL void lipid_ports(const double* pos, int i, const Index* topology,
     double reach = 1+4*width, x = pos[2*i], y = pos[2*i+1];
     double cutoff = exp(-8.), denominator = 2*width*width;
     double sums[2] = {0.,0.};
+    double products[2] = {1.,1.}, zeros[2] = {0.,0.};
     Vec f_head = {0.,0.}, f_tail = {0.,0.};
     if (partners[0] < 0 || partners[1] < 0) {
         int left = cell_axis(x-reach,cell,nx), right = cell_axis(x+reach,cell,nx);
@@ -86,8 +100,8 @@ LOCAL void lipid_ports(const double* pos, int i, const Index* topology,
                         double z = (dot(h,h)+dot(t,t))/denominator;
                         if (z >= 8.) continue;
                         double e = exp(-z), multiplier = 1.;
-                        if (competitive) {
-                            double p = (e-cutoff*(9.-z))/(1-9*cutoff);
+                        if (mode == 1) {
+                            double p = port_score(e,z,cutoff);
                             if (stage == 0) {
                                 sums[face] += p;
                                 continue;
@@ -98,6 +112,15 @@ LOCAL void lipid_ports(const double* pos, int i, const Index* topology,
                                 continue;
                             }
                             multiplier = 1/d-derivatives[a]-derivatives[b]+2*p/(d*d);
+                        } else if (mode == 2) {
+                            double factor = 1-port_score(e,z,cutoff);
+                            if (stage == 0) {
+                                if (factor == 0.) ++zeros[face];
+                                else products[face] *= factor;
+                                continue;
+                            }
+                            multiplier = .5*(port_without(scores[a],derivatives[a],factor)+
+                                              port_without(scores[b],derivatives[b],factor));
                         }
                         double scale = epsilon/(width*width)*(e-cutoff)*multiplier;
                         project_port(own,face,h,t,scale,short_length,f_head,f_tail);
@@ -107,6 +130,11 @@ LOCAL void lipid_ports(const double* pos, int i, const Index* topology,
         }
     }
     if (stage < 2) {
+        if (mode == 2) {
+            scores[2*i] = products[0]; scores[2*i+1] = products[1];
+            derivatives[2*i] = zeros[0]; derivatives[2*i+1] = zeros[1];
+            return;
+        }
         double* target = stage == 0 ? scores : derivatives;
         target[2*i] = sums[0];
         target[2*i+1] = sums[1];
@@ -130,16 +158,54 @@ LOCAL void lipid_ports(const double* pos, int i, const Index* topology,
 #define PORT_PASS(name, stage) \
 ENTRY void name(const double* pos, int n, const Index* topology, \
                 const PortGeometry* geometry, double short_length, double epsilon, \
-                double width, bool competitive, const int* heads, const int* next, \
+                double width, int mode, const int* heads, const int* next, \
                 double cell, int nx, int ny, double* scores, double* derivatives, double* out) { \
     int i = blockIdx.x*blockDim.x+threadIdx.x; \
     if (i < n) lipid_ports<stage>(pos,i,topology,geometry,short_length,epsilon,width, \
-                                   competitive,heads,next,cell,nx,ny,scores,derivatives,out); \
+                                   mode,heads,next,cell,nx,ny,scores,derivatives,out); \
 }
 
 PORT_PASS(lipid_scores, 0)
 PORT_PASS(lipid_derivatives, 1)
 PORT_PASS(lipid_force, 2)
+
+ENTRY void lipid_birth_energy(const double* pos, const Index* trials, int count,
+                              const Index* topology, const PortGeometry* geometry,
+                              const double* products, const double* zeros,
+                              double short_length, double epsilon, double width,
+                              const int* heads, const int* next, double cell, int nx, int ny,
+                              double* output) {
+    int candidate = blockIdx.x*blockDim.x+threadIdx.x;
+    if (candidate >= count) return;
+    Index h = trials[2*candidate], t = trials[2*candidate+1];
+    PortGeometry trial = make_port_geometry(pos,h,t,short_length);
+    double reach = 1+4*width, x = pos[2*h], y = pos[2*h+1];
+    int left = cell_axis(x-reach,cell,nx), right = cell_axis(x+reach,cell,nx);
+    int bottom = cell_axis(y-reach,cell,ny), top = cell_axis(y+reach,cell,ny);
+    double cutoff = exp(-8.), denom = 2*width*width;
+    double new_products[2] = {1.,1.}, delta = 0.;
+    for (int row = bottom; row <= top; ++row) {
+        for (int col = left; col <= right; ++col) {
+            for (int i = heads[row*nx+col]; i >= 0; i = next[i]) {
+                if (topology[3*i] < 0) continue;
+                Vec d = between(pos,h,i);
+                if (dot(d,d) >= reach*reach) continue;
+                for (int a = 0; a < 2; ++a) {
+                    if (topology[3*i+1+a] >= 0) continue;
+                    Vec dh,dt;
+                    port_delta(geometry[i],trial,a,dh,dt);
+                    double z = (dot(dh,dh)+dot(dt,dt))/denom;
+                    if (z >= 8.) continue;
+                    double p = port_score(exp(-z),z,cutoff);
+                    if (zeros[2*i+a] == 0.) delta += products[2*i+a]*p;
+                    new_products[1-a] *= 1-p;
+                }
+            }
+        }
+    }
+    output[candidate] = -.5*epsilon*(1-9*cutoff)*
+        (delta+(1-new_products[0])+(1-new_products[1]));
+}
 """
 
 
@@ -158,7 +224,7 @@ class LipidPorts:
         cfg = chemistry.config
         self.params = tuple(map(np.float64, (
             cfg['short_length'], cfg['dock_energy'], cfg['dock_width'])))
-        self.competitive = np.bool_(cfg['free_port_potential'] == 'competitive')
+        self.mode = np.int32(('additive', 'competitive', 'saturated').index(cfg['free_port_potential']))
         self.topology = port_topology(chemistry)
         self.buffer = cp.asarray(self.topology)
         self.geometry = cp.empty((len(chemistry.pos), 11), dtype=cp.float64)
@@ -177,9 +243,19 @@ class LipidPorts:
         blocks = ((int(n)+127)//128,)
         geometry(blocks, (128,), (pos, n, self.buffer, self.params[0],
                                   self.geometry, self.output))
-        args = (pos, n, self.buffer, self.geometry, *self.params, self.competitive,
+        args = (pos, n, self.buffer, self.geometry, *self.params, self.mode,
                 *grid, self.scores, self.derivatives, self.output)
-        if self.competitive:
+        if self.mode:
             scores(blocks, (128,), args)
+        if self.mode == 1:
             derivatives(blocks, (128,), args)
         force(blocks, (128,), args)
+
+    def birth_deltas(self, kernel, pos, trials, grid, output):
+        if self.mode != 2:
+            raise ValueError('Batched birth deltas require saturated ports')
+        count = len(trials)
+        if count:
+            kernel(((count+127)//128,), (128,), (
+                pos, trials, np.int32(count), self.buffer, self.geometry,
+                self.scores, self.derivatives, *self.params, *grid, output))

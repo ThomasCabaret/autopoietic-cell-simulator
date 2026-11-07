@@ -1904,6 +1904,17 @@
       "cost": "Two mask refreshes and local adjacency checks. No new chemical primitive or production rule.",
       "recipe": "experiments/probe_cuda_capture_ticks.py",
       "results": "research/BATCH_64.md"
+    },
+    {
+      "id": "SPF1",
+      "parent": "RCC1",
+      "status": "opt_in_face_saturation_and_batched_birth_energy_screened",
+      "hypothesis": "Per-face saturation preserves the isolated contact but reduces reaction energy read dependencies.",
+      "test": "Binary and gradient tests, CPU/GPU and total-energy comparisons, frozen H/T batch, two short paired free-lipid assembly prefixes.",
+      "conclusion": "The smaller read footprint works; early association differs and the first hybrid throughput check has no measured gain. Keep opt-in.",
+      "cost": "One alternative potential reduction, no added primitive, helper, parameter or default rule change.",
+      "recipe": "experiments/compare_lipid_saturation.py",
+      "results": "research/BATCH_65.md"
     }
   ]
 }

@@ -2,7 +2,7 @@ import copy,tempfile,unittest
 from pathlib import Path
 from types import SimpleNamespace
 import numpy as np
-from simulator.competitive_ports import competitive_force,local_free_delta,partners,birth_port_delta
+from simulator.competitive_ports import competitive_force,saturated_force,local_free_delta,partners,birth_port_delta
 from simulator.docking import free_faces,bound_port_force
 from simulator.exchange_energy import port_delta
 from simulator.spatial import Neighborhood
@@ -23,6 +23,34 @@ def free_energy(pos,links,width=.6):
 
 
 class CompetitiveIntegrationTests(unittest.TestCase):
+    def test_saturated_ports_match_binary_and_gradient_in_a_crowded_motif(self):
+        heads=np.array([[0.,0.],[1.,.03],[1.05,.15],[.1,.7]])
+        pos=np.vstack((heads,heads+[.03,-.65]))
+        args=(np.array([[0,1]],dtype=np.int64),free_faces(4,[]),1.,.92,4.,.6)
+        a,e=competitive_force(pos,*args);b,f=saturated_force(pos,*args)
+        np.testing.assert_allclose(a,b,atol=1e-14);self.assertAlmostEqual(e,f,places=14)
+        pairs=Neighborhood('brute',0.).pairs(heads,3.4)
+        args=(pairs,free_faces(4,[]),1.,.92,4.,.6)
+        force,_=saturated_force(pos,*args)
+        for i,j in np.ndindex(pos.shape):
+            upper=pos.copy();lower=pos.copy()
+            upper[i,j]+=1e-6;lower[i,j]-=1e-6
+            gradient=(saturated_force(upper,*args)[1]-saturated_force(lower,*args)[1])/2e-6
+            self.assertAlmostEqual(force[i,j],-gradient,places=7)
+
+    def test_saturated_birth_and_exchange_match_full_energy(self):
+        c=context();c.config.update(free_port_potential='saturated')
+        heads,ids,links=c.lipids.layout()
+        removed,formed=(0,1,1,0),(0,2,1,0)
+        before=c.lipids.forces(c.pos,c.config,Neighborhood('brute',0.))[1]
+        delta=port_delta(c.pos[ids],links,removed,formed,c.config,Neighborhood('brute',0.))
+        c.lipids.links=[(heads[0],heads[2],1,0)]
+        after=c.lipids.forces(c.pos,c.config,Neighborhood('brute',0.))[1]
+        self.assertAlmostEqual(delta,after-before,places=12)
+        delta=birth_port_delta(c,0,3,Neighborhood('brute',0.))
+        c.lipids.bind(0,3)
+        self.assertAlmostEqual(delta,c.lipids.forces(c.pos,c.config,Neighborhood('brute',0.))[1]-after,places=12)
+
     def test_engine_kernel_matches_preserved_static_prototype(self):
         heads=np.array([[0.,0.],[1.,.03],[1.05,.15],[.1,.7]]);pos=np.vstack((heads,heads+[.03,-.65]))
         pairs=Neighborhood('brute',0.).pairs(heads,3.4);args=(pos,pairs,free_faces(4,[]),1.,.92,4.,.6)
