@@ -95,13 +95,30 @@ def partners(n,links):
     return result
 
 
-def birth_port_delta(c,h,t,neighbors):
-    """Adding two free ports also changes competition in existing pairs."""
+def birth_port_base(c,neighbors):
+    """Prepared lipid geometry shared until the next accepted birth."""
     from .docking import free_faces
-    heads,_,links=c.lipids.layout();n=len(heads);cfg=c.config
-    pos=c.pos[heads+[h]+[c.lipids.rungs[q] for q in heads]+[t]]
+    heads,ids,links=c.lipids.layout();n=len(heads);cfg=c.config
+    packed=c.pos[ids]
     before=np.vstack((free_faces(n,links),np.array([[False,False]])));after=before.copy();after[n]=True
     bound=partners(n+1,links)
-    pairs=neighbors.pairs(pos[:n+1],1.+4*cfg['dock_width'],'HT:competitive_delta')
+    reach=1.+4*cfg['dock_width']
+    existing=neighbors.pairs(packed[:n],reach,'HT:competitive_lipid_heads')
+    return packed,before,after,bound,existing,reach
+
+
+def birth_port_delta(c,h,t,neighbors,base=None):
+    """Adding two free ports also changes competition in existing pairs."""
+    cfg=c.config
+    packed,before,after,bound,existing,reach=(
+        birth_port_base(c,neighbors) if base is None else base)
+    n=len(packed)//2
+    pos=np.vstack((packed[:n],c.pos[h],packed[n:],c.pos[t]))
+    # The trial head changes at each proposal. Reuse the existing head pairs
+    # and merge the trial edges in the same lexicographic order.
+    distance2=np.sum((pos[:n]-pos[n])**2,axis=1)
+    near=np.flatnonzero(distance2<reach**2)
+    trial=np.column_stack((near,np.full(len(near),n,dtype=np.int64)))
+    pairs=np.insert(existing,np.searchsorted(existing[:,0],near,side='right'),trial,axis=0)
     return float(local_free_delta(pos,pairs,before,after,bound,bound,np.array([n],dtype=np.int64),
         1.,cfg['short_length'],cfg['dock_energy'],cfg['dock_width']))

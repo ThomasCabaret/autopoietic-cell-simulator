@@ -1,5 +1,8 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot62. O-01 reste sous-cas. Débit réactif mesuré à la taille historique de
+la cellule, sur CP1 agrandi. Aucun palier biologique relevé. [Bilan](BATCH_62.md)
+
 Lot61. O-01 reste sous-cas. Ticks appariés exacts et banc de transport
 ouvert résident avec bilan exact. Les paliers biologiques sont inchangés.
 [Bilan RFC1](BATCH_61.md)

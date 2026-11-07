@@ -1,5 +1,11 @@
 # Santé du projet — actualisation du 7 novembre 2026
 
+Lot62. Quatre lots techniques centraux, plage 3–5, pour la réception
+CPU/CUDA à taille utile. Le crible à 2 118 billes indique 1,13–1,64× et
+identifie les réactions et le coût hors réactions comme deux leviers
+nécessaires à une forte accélération. Une cible imposée de 10×
+demanderait une autre estimation. [Bilan](BATCH_62.md)
+
 Lot61. La compilation des parcours de faces accélère les deux modes
 sans divergence dans le différentiel. Le banc ouvert passe sur CUDA.
 Les risques restants de débit sont le calcul d'énergie des réactions,

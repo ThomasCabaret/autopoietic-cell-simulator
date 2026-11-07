@@ -1871,6 +1871,17 @@
       "cost": "No added law or primitive. CPU proposal traversal and device topology invalidation at remap.",
       "recipe": "experiments/verify_face_proposals.py",
       "results": "research/BATCH_61.md"
+    },
+    {
+      "id": "SCP1",
+      "parent": "RFC1",
+      "status": "reactive_scaling_measured_and_birth_energy_path_optimized",
+      "hypothesis": "Increasing the reactive bath to 2118 beads can amortize CUDA costs; repeated H/T proposal geometry may be shared exactly.",
+      "test": "Matched CH1 mechanics at 302/1000/2118 beads, isolated repetition at 2118, frozen CPU prefix with three births.",
+      "conclusion": "Matched CPU state is exact and both modes can benefit. CUDA measures 1.13–1.64x at 2118 beads; CPU reactions and block latency both limit larger gains.",
+      "cost": "No new chemical rule; ordered geometry indices and per-tick preparation cache.",
+      "recipe": "experiments/benchmark_cp1_scaling.py",
+      "results": "research/BATCH_62.md"
     }
   ]
 }

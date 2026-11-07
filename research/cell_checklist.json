@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 32,
+  "revision": 33,
   "reviewed": "2026-11-07",
   "candidate": "CP1 avec référence CPU et mécanique CUDA résidente vérifiée sur un préfixe",
   "purpose": "Registre évolutif des capacités nécessaires à une cellule construite maintenue ; les pourcentages sont des paliers de preuve, pas un taux global de réussite.",
@@ -1174,7 +1174,7 @@
       "mechanism": "Moteur partagé, arbres spatiaux, profilage et mesures par objectif utile plutôt que vitesse brute.",
       "concept_gap": "Taille réelle des outils et temps de renouvellement complet inconnus ; pas de promesse inférieure à dix heures.",
       "proof": "subcase",
-      "scope": "CPR1 valide la mécanique CP1 résidente. RFC1 accélère les ticks de faces et valide le remappage CUDA du banc ouvert. Les réactions CPU dominent le profil court.",
+      "scope": "CPR1 valide la mécanique CP1 résidente et RFC1 le banc ouvert. SCP1 mesure le pas réactif à 302, 1 000 et 2 118 billes, avec 1,13–1,64× à la taille cible.",
       "references": [
         "research/KINETICS_AND_PERFORMANCE.md",
         "research/BATCH_44.md",
@@ -1187,9 +1187,10 @@
         "research/BATCH_59.md",
         "research/BATCH_60.md",
         "research/BATCH_61.md",
+        "research/BATCH_62.md",
         "research/CUDA_COMPLETION.md"
       ],
-      "next_test": "Décomposer le coût de la formation H/T, mesurer le pas complet à plusieurs tailles et le remappage sous flux variable.",
+      "next_test": "Évaluer les deltas H/T par lots, séparer attente et transferts CUDA et répéter le débit à plusieurs graines.",
       "essential": true
     },
     {
@@ -1416,9 +1417,14 @@
       "revision": 32,
       "date": "2026-11-07",
       "reason": "Lot61 RFC1 : parcours CPU des faces accélérés et banc ouvert CUDA validé. Aucun palier biologique augmenté."
+    },
+    {
+      "revision": 33,
+      "date": "2026-11-07",
+      "reason": "Lot62 SCP1 : débit réactif mesuré jusqu'à 2 118 billes et réemploi exact de géométrie H/T. Aucun palier biologique augmenté."
     }
   ],
   "last_batch_progress": {
-    "O-01": "Ticks des faces accélérés et portage CUDA du banc ouvert avec remappage et reprise exacte."
+    "O-01": "Débit réactif mesuré à la taille de 2 118 billes et deltas H/T accélérés à état CPU exact."
   }
 }

@@ -1,5 +1,9 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot62. À 2 118 billes, un facteur 10 ne peut venir du seul gain de
+mécanique. Priorité aux deltas H/T par lots et à l'instrumentation du
+coût par bloc. Puis réception à plusieurs graines. [Bilan](BATCH_62.md)
+
 Lot61. Les faces coûtent environ 3,5× moins dans le profil. Priorité à
 l'énergie des propositions H/T et aux mesures appariées à plusieurs tailles,
 avec flux variable pour chiffrer le remappage. [Bilan](BATCH_61.md)

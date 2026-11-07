@@ -150,6 +150,7 @@ class LipidSynthesisChemistry:
                 stats['min_delta']=delta if stats['min_delta'] is None else min(stats['min_delta'],delta)
             if self.rng.random()>=-np.expm1(-rate*factor*interval):continue
             self.lipids.bind(a,b);self.capture.categories[a]=self.capture.categories[b]=-1
+            fixed_pairs=None  # The next proposal sees the newly exposed faces.
             self.capture.release(a);self.capture.release(b)
             self.births.append(dict(time=float(time),head=a,tail=b,catalyzed=bool(catalyzed),sites=list(sites)))
             if delta is not None:

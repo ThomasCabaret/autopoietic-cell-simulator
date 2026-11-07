@@ -1,5 +1,13 @@
 # Journal de recherche
 
+## 2026-11-07 — lot62, débit CP1 à plusieurs tailles
+
+SCP1. Même chimie, trois tailles dont 2 118 billes. Deltas H/T accélérés
+par incidence et partage de la géométrie des ports. Préfixe CPU exact
+avec trois naissances. Le gain CUDA à taille cible dépend de l'attente
+hors réactions et reste compris entre 1,13× et 1,64× dans les deux
+mesures. [Bilan](BATCH_62.md)
+
 ## 2026-11-07 — lot61, parcours des faces et bain ouvert CUDA
 
 RFC1 compile les propositions CPU et partage la géométrie dans le tick.

@@ -67,3 +67,8 @@ et les ports lipidiques. Les décisions de réaction restent sur CPU.
 Le banc `open_bath` conserve son calendrier de source et d'absorption CPU.
 Il remappe les particules à chaque entrée/sortie et remet à jour les buffers
 CUDA. [Vérification et profil du lot61](../research/BATCH_61.md)
+
+Le benchmark réactif à la taille cible se lance avec
+`python -m experiments.benchmark_cp1_scaling`. Il rapporte séparément le
+temps du hook de réaction et le temps complet avec observateur.
+[Résultats CP1 à 302, 1 000 et 2 118 billes](../research/BATCH_62.md)
