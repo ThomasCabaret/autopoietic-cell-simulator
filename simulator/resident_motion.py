@@ -145,7 +145,7 @@ def _kernels(device):
     names = ('drift', 'clear_cells', 'bin_particles', 'order_cells', 'kick', 'capture_field',
              'clear_segment_measure', 'measure_segments', 'segment_field',
              'lipid_geometry', 'lipid_scores', 'lipid_derivatives', 'lipid_force',
-             'release_capture', 'propose_capture', 'commit_capture')
+             'release_capture', 'propose_capture', 'commit_capture', 'refresh_capture_groups')
     return tuple(module.get_function(name) for name in names)
 
 

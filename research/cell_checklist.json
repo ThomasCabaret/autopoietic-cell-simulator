@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 34,
+  "revision": 35,
   "reviewed": "2026-11-07",
   "candidate": "CP1 avec référence CPU et mécanique CUDA résidente vérifiée sur un préfixe",
   "purpose": "Registre évolutif des capacités nécessaires à une cellule construite maintenue ; les pourcentages sont des paliers de preuve, pas un taux global de réussite.",
@@ -1174,7 +1174,7 @@
       "mechanism": "Moteur partagé, arbres spatiaux, profilage et mesures par objectif utile plutôt que vitesse brute.",
       "concept_gap": "Taille réelle des outils et temps de renouvellement complet inconnus ; pas de promesse inférieure à dix heures.",
       "proof": "subcase",
-      "scope": "SCP1 mesure 1,13–1,64× sur CP1 complet à 2 118 billes. RCT1 valide des ticks de capture indépendante sur GPU avec un gain 9,93–11,40× dans ce sous-cas.",
+      "scope": "SCP1 mesure 1,13–1,64× sur CP1 complet à 2 118 billes. RCT1 et RCC1 valident des ticks autonomes de capture indépendante et coopérative dans des pilotes isolés.",
       "references": [
         "research/KINETICS_AND_PERFORMANCE.md",
         "research/BATCH_44.md",
@@ -1189,6 +1189,7 @@
         "research/BATCH_61.md",
         "research/BATCH_62.md",
         "research/BATCH_63.md",
+        "research/BATCH_64.md",
         "research/CUDA_COMPLETION.md"
       ],
       "next_test": "Évaluer les deltas H/T par lots sur GPU et valider l'arbitrage avec dépendances de lecture avant d'élargir à CP1.",
@@ -1428,9 +1429,14 @@
       "revision": 34,
       "date": "2026-11-07",
       "reason": "Lot63 RCT1 : première capture arbitrée sur GPU et mesure active à 2 118 billes. Aucun palier biologique augmenté."
+    },
+    {
+      "revision": 35,
+      "date": "2026-11-07",
+      "reason": "Lot64 RCC1 : capture coopérative et conflits de voisinage validés sur GPU dans le pilote. Aucun palier biologique augmenté."
     }
   ],
   "last_batch_progress": {
-    "O-01": "Capture indépendante arbitrée sur GPU sur plusieurs ticks, benchmark actif à la taille cible."
+    "O-01": "Capture coopérative arbitrée sur GPU, avec contrôle des voisins et benchmark CH1 actif à taille cible."
   }
 }

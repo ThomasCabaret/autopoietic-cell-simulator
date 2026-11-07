@@ -1,5 +1,11 @@
 # Journal de recherche
 
+## 2026-11-07 — lot64, capture coopérative résidente
+
+RCC1. Arbitrage de deux liaisons sur des ligands distincts, avec contrôle
+des incompatibilités entre sites liés. Tranche CH1 à mécanique complète
+et autres réactions gelées. [Bilan](BATCH_64.md)
+
 ## 2026-11-07 — lot63, capture indépendante avec arbitrage GPU
 
 RCT1. Capture, libération et mouvement sans arbitrage hôte par tick.

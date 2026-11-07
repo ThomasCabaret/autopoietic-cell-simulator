@@ -1,5 +1,9 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot64. Capture coopérative avec contrôle explicite des sites adjacents.
+Prochaine porte sur l'énergie H/T et les lectures concurrentes d'un
+voisinage de ports. [Bilan](BATCH_64.md)
+
 Lot63. Le chemin de capture démontre les ticks autonomes. Priorité
 aux propositions H/T, dont l'acceptation peut modifier les énergies
 de propositions voisines, puis aux autres transitions. [Bilan](BATCH_63.md)

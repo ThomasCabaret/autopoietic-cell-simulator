@@ -77,3 +77,7 @@ Le pilote expérimental `python -m experiments.probe_cuda_capture_ticks --active
 exécute plusieurs ticks de capture P/R indépendante sur le GPU avec la
 mécanique. Les autres réactions sont gelées. Le backend CP1 ordinaire
 conserve les réactions CPU. [Périmètre et mesures](../research/BATCH_63.md)
+
+L'option `--mixed` du pilote prend CH1 avec capture coopérative et
+mécanique complète. Les autres transitions restent gelées.
+[Périmètre et mesures coopératives](../research/BATCH_64.md)

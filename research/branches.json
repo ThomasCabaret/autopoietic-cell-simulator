@@ -1893,6 +1893,17 @@
       "cost": "Experimental scheduler order and RNG, no added chemical primitive or change to production CP1.",
       "recipe": "experiments/probe_cuda_capture_ticks.py",
       "results": "research/BATCH_63.md"
+    },
+    {
+      "id": "RCC1",
+      "parent": "RCT1",
+      "status": "resident_cooperative_capture_arbitration_verified_on_slice",
+      "hypothesis": "Read-only reservations and local dependency checks preserve neighbor constraints during concurrent capture.",
+      "test": "Adjacent compatible and incompatible proposals, two active CH1 target-size seeds, reference CPU and hybrid comparisons.",
+      "conclusion": "The isolated cooperative slice runs on the resident path with full CH1 mechanics. H/T energy, all other transitions and kinetic parity under contention remain open.",
+      "cost": "Two mask refreshes and local adjacency checks. No new chemical primitive or production rule.",
+      "recipe": "experiments/probe_cuda_capture_ticks.py",
+      "results": "research/BATCH_64.md"
     }
   ]
 }

@@ -271,3 +271,35 @@ class ResidentMotionTests(unittest.TestCase):
             sims.append(sim)
         np.testing.assert_array_equal(sims[0].motion.partner.get(), sims[1].motion.partner.get())
         np.testing.assert_array_equal(sims[0].chemistry.pos, sims[1].chemistry.pos)
+
+    def test_device_cooperative_capture_checks_neighboring_claims(self):
+        from experiments.probe_cuda_capture_ticks import capture_scenario, capture_sim, occupancy
+
+        config = capture_scenario(302, seed=1, mixed=True)
+        config['chemistry'].update(food_activation=False, food_binding_rate=1e6,
+                                   food_unbinding_rate=0., temperature=0.)
+        for second_group, expected in ((0, 2), (1, 1)):
+            with self.subTest(second_group=second_group):
+                sim = capture_sim(config, True)
+                c = sim.chemistry
+                cap = c.capture
+                a, b = next((a, b) for a, b in sorted(c.edges)
+                            if c.host.families[a] == c.host.families[b] == 1
+                            and c.bits[a] != c.bits[b])
+                atoms = c.rungs[[a, b], 1]
+                ligands = [np.flatnonzero((cap.categories == c.bits[site]) &
+                                          (cap.material_group == group))[0]
+                           for site, group in ((a, 0), (b, second_group))]
+                cap.categories[:] = -1
+                cap.categories[ligands] = c.bits[[a, b]]
+                c.pos[ligands] = c.pos[atoms]+[.12, .07]
+                sim.advance(25)
+                self.assertEqual(occupancy(sim, True), expected)
+                np.testing.assert_array_equal(sim.motion.counts.get(), [expected, 0])
+                partner = sim.motion.partner.get()
+                masks = sim.motion.capture.buffers[0].get()
+                for site, atom in zip((a, b), atoms):
+                    cap.site_bound[site] = partner[atom]
+                for site, atom, ligand in zip((a, b), atoms, ligands):
+                    actual = bool(masks[atom, 1] & (1 << cap.material_group[ligand]))
+                    self.assertEqual(actual, cap.binding_allowed(c, site, ligand))

@@ -1,5 +1,10 @@
 # Santé du projet — actualisation du 7 novembre 2026
 
+Lot64. La capture coopérative conserve ses invariants dans le pilote.
+Le risque porte désormais sur la formation à énergie compétitive et
+les cinétiques sous contention. Estimation de cinq à huit lots pour
+la réception d'un CP1 entièrement résident. [Bilan](BATCH_64.md)
+
 Lot63. La capture indépendante confirme le potentiel d'un état et
 d'un arbitrage résidents. Le risque restant porte sur les dépendances
 des transitions compétitives et sur leur fidélité cinétique. Le gain

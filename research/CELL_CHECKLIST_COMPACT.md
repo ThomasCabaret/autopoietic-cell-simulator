@@ -1,6 +1,6 @@
 # Checklist compacte — cellule construite maintenue
 
-Révision 34 · revue 2026-11-07 · 43 sous-buts · CP1 avec référence CPU et mécanique CUDA résidente vérifiée sur un préfixe
+Révision 35 · revue 2026-11-07 · 43 sous-buts · CP1 avec référence CPU et mécanique CUDA résidente vérifiée sur un préfixe
 
 **Pourcentages = paliers de preuve**, pas effort accompli ni probabilité de réussite. Les plages indiquent min–max des sous-buts ; aucune moyenne globale.
 0% non observé ·25% sous-cas ·50% séparé ·75% couplage partiel ·100% critère satisfait sur son domaine.
@@ -20,7 +20,7 @@ Concept : « à fermer » signale au moins un maillon essentiel manquant ; un dr
 | Homéostasie des petites espèces | 2 | drafts décrits | 0% | — | — |
 | Homéostasie des polymères | 4 | à fermer | 0% | H-03, H-04, H-05, H-06 | — |
 | Compatibilité et maintien | 4 | à fermer | 0–25% | C-01, C-03, C-04 | — |
-| Calcul et observabilité | 2 | drafts décrits | 25–100% | — | O-01 : Capture indépendante arbitrée sur GPU sur plusieurs ticks, benchmark actif à la taille cible. |
+| Calcul et observabilité | 2 | drafts décrits | 25–100% | — | O-01 : Capture coopérative arbitrée sur GPU, avec contrôle des voisins et benchmark CH1 actif à taille cible. |
 
 **Trous conceptuels prioritaires au présent bilan :**
 
