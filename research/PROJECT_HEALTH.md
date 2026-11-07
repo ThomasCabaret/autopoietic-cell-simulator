@@ -1,5 +1,10 @@
 # Santé du projet — actualisation du 7 novembre 2026
 
+Lot60. Un premier CP1 résident complet côté forces passe un préfixe
+apparié. Le gain de débit reste modeste sur 302 billes, avec les ticks
+CPU dominants. Cibler leurs parcours réguliers et mesurer aux tailles
+utiles avant de décider jusqu'où porter l'arbitrage. [Bilan](BATCH_60.md)
+
 Lot59. La capture et la barrière retrouvent les forces CPU, y compris
 quand le rayon de recherche doit couvrir un segment long. Le coût de ce
 cas et celui des ports compétitifs restent à évaluer dans le pas complet.

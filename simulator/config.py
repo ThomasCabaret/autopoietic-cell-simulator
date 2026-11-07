@@ -67,11 +67,13 @@ def resolve(raw):
         elif model == 'copy':
             supported = ('mechanics' in raw and not any(defaults[key] for key in
                          ('food_pairs', 'dual_faces')))
+        elif model == 'mixed_synthesis':
+            supported = 'mechanics' in raw
         else:
             supported = False
         if not supported:
-            raise ValueError('cuda-resident requires Langevin mixing or copy without '
-                             'food or dual faces')
+            raise ValueError('cuda-resident requires Langevin mixing, mixed_synthesis or '
+                             'copy without food or dual faces')
     raw.update(chemistry=defaults,engine=engine)
     raw.setdefault("seed",0)
     raw.setdefault("duration",180. if model=="copy" else 100.)

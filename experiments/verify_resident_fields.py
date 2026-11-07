@@ -1,4 +1,4 @@
-"""Validate CUDA mixed-force snapshots against their CPU reference kernels."""
+"""Validate CUDA mixed-force snapshots and the short CH1 reactive trajectory."""
 import json
 from pathlib import Path
 
@@ -21,7 +21,8 @@ def cp1_config():
 
 def compare(c):
     neighbors = Neighborhood('tree')
-    expected = np.stack((c.capture.forces(c, neighbors), segment_forces(c, neighbors)))
+    expected = np.stack((c.capture.forces(c, neighbors), segment_forces(c, neighbors),
+                         c.lipids.forces(c.pos, c.config, neighbors)[0]))
     actual = mixed_field_snapshot(c)
     np.testing.assert_allclose(actual, expected, atol=1e-11, rtol=1e-12)
     return dict(max_force=np.abs(expected).max(axis=(1, 2)).tolist(),
@@ -29,12 +30,23 @@ def compare(c):
 
 
 def main():
-    sim = Simulation(cp1_config())
-    sim.prepare()
-    print(json.dumps(dict(step=0, **compare(sim.chemistry))))
-    for steps in (250, 1000, 2500):
-        sim.advance(steps)
-        print(json.dumps(dict(step=sim.step_index, **compare(sim.chemistry))))
+    config = cp1_config()
+    cpu = Simulation(config)
+    config['engine']['force_backend'] = 'cuda-resident'
+    gpu = Simulation(config)
+    for steps in (0, 250, 1000, 2500):
+        cpu.advance(steps)
+        gpu.advance(steps)
+        checks = dict(step=cpu.step_index, **compare(cpu.chemistry))
+        for key, a, b in (
+            ('position', cpu.chemistry.pos, gpu.chemistry.pos),
+            ('velocity', cpu.motion.velocities, gpu.motion.velocities),
+        ):
+            np.testing.assert_allclose(a, b, atol=1e-10, rtol=0)
+            checks[key+'_error'] = float(np.abs(a-b).max())
+        assert cpu.chemistry.bonds() == gpu.chemistry.bonds()
+        assert cpu.rng.bit_generator.state == gpu.rng.bit_generator.state
+        print(json.dumps(checks))
 
 
 if __name__ == '__main__':

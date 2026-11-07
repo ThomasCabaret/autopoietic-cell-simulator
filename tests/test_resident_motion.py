@@ -158,3 +158,55 @@ class ResidentMotionTests(unittest.TestCase):
         result = compare(c)
         self.assertGreater(result['max_force'][0], 0.)
         self.assertGreater(result['max_force'][1], 0.)
+
+    def test_lipid_ports_keep_real_competition_and_bound_forces(self):
+        from experiments.verify_resident_fields import cp1_config
+        from simulator.resident_motion import mixed_field_snapshot
+        from simulator.spatial import Neighborhood
+
+        c = Simulation(cp1_config()).chemistry
+        a, b, d, e = sorted(c.lipids.rungs)[:4]
+        heads = [a, b, d, e]
+        c.lipids.rungs = {i: c.lipids.rungs[i] for i in heads}
+        c.lipids.links = [(a, e, 1, 0)]
+        c.pos[heads] = [[6., 6.], [7., 6.15], [7.1, 5.85], [5.2, 5.9]]
+        c.pos[list(c.lipids.rungs.values())] = c.pos[heads]+[0., .65]
+        fields = []
+        for potential in ('additive', 'competitive'):
+            c.config['free_port_potential'] = potential
+            expected = c.lipids.forces(c.pos, c.config, Neighborhood('brute'))[0]
+            actual = mixed_field_snapshot(c)[2]
+            np.testing.assert_allclose(actual, expected, atol=1e-12, rtol=1e-12)
+            np.testing.assert_allclose(actual.sum(axis=0), 0., atol=1e-12)
+            fields.append(expected)
+        self.assertGreater(np.max(np.abs(fields[0]-fields[1])), .1)
+
+    def test_mixed_simulation_tracks_new_lipid_and_resumes(self):
+        from experiments.verify_resident_fields import cp1_config
+
+        cfg = cp1_config()
+        cfg['chemistry'].update(rung_formation_rate=1e6, formation_gate='none')
+        simulations = []
+        for backend in ('numba', 'cuda-resident'):
+            cfg['engine']['force_backend'] = backend
+            sim = Simulation(cfg)
+            c = sim.chemistry
+            ids = [np.flatnonzero(c.ligand_types == kind)[0] for kind in (0, 1)]
+            c.pos[ids] = [[17., 17.], [17.4, 17.]]
+            sim.prepared = True
+            sim.advance(27)
+            self.assertEqual(c.lipids.rungs[ids[0]], ids[1])
+            simulations.append(sim)
+        cpu, gpu = simulations
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder)/'mixed.npz'
+            checkpoint.save(path, gpu)
+            resumed, _ = checkpoint.load(path)
+        for sim in (cpu, gpu, resumed):
+            sim.advance(73)
+        self.assertEqual(cpu.chemistry.bonds(), gpu.chemistry.bonds())
+        self.assertEqual(cpu.rng.bit_generator.state, gpu.rng.bit_generator.state)
+        np.testing.assert_allclose(cpu.chemistry.pos, gpu.chemistry.pos, atol=1e-11, rtol=0)
+        np.testing.assert_array_equal(gpu.chemistry.pos, resumed.chemistry.pos)
+        self.assertEqual(gpu.motion.export(), resumed.motion.export())
+        self.assertEqual(gpu.chemistry.export(), resumed.chemistry.export())

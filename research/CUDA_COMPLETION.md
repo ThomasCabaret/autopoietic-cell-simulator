@@ -4,14 +4,14 @@ La référence de réception est CP1 en bain réactif, puis le scénario ouvert
 de travail lorsqu'il est défini. Les anciens modes restent accessibles sur
 CPU. Les limites de compatibilité sont visibles à la sélection du backend.
 
-| Chantier | État au lot59 | Critère de clôture |
+| Chantier | État au lot60 | Critère de clôture |
 | --- | --- | --- |
-| Voisinage, contacts, ressorts, angles et Langevin | Résidents en bain inerte et en copie réactive restreinte. | Mesurer sur CP1 et à des densités représentatives. Contrôler le coût des cellules chargées et des recalculs spatiaux. |
-| Forces propres à CP1 | Orientation et capture en copie catalysée. Capture coopérative et barrière segment–particule concordantes sur instantanés CP1. | Porter les ports lipidiques libres, compétitifs et liés, puis brancher et vérifier toutes ces forces sur la trajectoire CP1 résidente. |
-| Topologie dynamique et transferts | Copie avec mise à jour sur changement, une lecture d'état par bloc et cadence de réaction conservée. | Appliquer au bain CP1 sans reconstruire les voisins sur CPU à chaque pas. Mesurer les synchronisations et réallocations, puis l'ajout/retrait de particules dans le scénario ouvert. |
-| Réactions et conflits | CPU, ordre et tirages conservés. Les ticks occupent environ la moitié du profil court CP1. | Mesurer séparément énumération, géométrie, énergie et résolution des conflits. Porter les phases régulières qui dominent encore. Justifier par des mesures les phases qui restent sur CPU. |
-| CPU et GPU de production | CPU Numba de référence, noyau C++ optionnel, CUDA hybride et CUDA résident partiel. | Optimiser les parcours et allocations dominants côté CPU et GPU. Exécuter les mêmes recettes depuis les entrées ordinaires. |
-| Équivalence et mesure finale | Concordance courte et reprise exacte dans le mode résident sur deux modèles bornés. | Reprise, bilan matière, comparaison des événements à court horizon, puis enveloppes de résultats sur plusieurs graines et horizons prédéfinis. Mesure de bout en bout avec observateur et coût du démarrage déclaré. |
+| Voisinage, contacts, ressorts, angles et Langevin | Résidents en bain inerte, en copie réactive et dans CP1. | Mesurer à des densités représentatives. Contrôler le coût des cellules chargées et des recalculs spatiaux. |
+| Forces propres à CP1 | Orientation, capture, barrière et ports libres, compétitifs et liés dans le pas résident. | Vérifier le débit et la stabilité aux densités et tailles représentatives. |
+| Topologie dynamique et transferts | Mise à jour aux ticks validée en copie et après naissance lipidique en CP1. | Mesurer les synchronisations, réallocations et l'ajout/retrait de particules dans le scénario ouvert. |
+| Réactions et conflits | CPU, ordre et tirages conservés. Les ticks occupent 72 % du profil court CP1 résident. | Mesurer séparément énumération, géométrie, énergie et résolution des conflits. Porter les phases régulières qui dominent encore. Justifier par des mesures les phases qui restent sur CPU. |
+| CPU et GPU de production | CPU Numba, noyau C++ optionnel, CUDA hybride et premier CP1 résident utilisable en CLI. | Optimiser les parcours et allocations dominants côté CPU et GPU. Exécuter les mêmes recettes depuis les entrées ordinaires. |
+| Équivalence et mesure finale | Préfixe CP1 apparié et reprise exacte du contrôle de naissance. | Bilan matière et enveloppes de résultats sur plusieurs graines et horizons prédéfinis. Mesure de bout en bout avec observateur et coût du démarrage déclaré. |
 
 Une étape importante peut rester sur CPU si le profil inclut son coût
 et ses transferts, et si la variante GPU n'améliore pas le débit ou rompt

@@ -183,17 +183,34 @@ class SegmentField:
 
     def __init__(self, cp, chemistry):
         cfg = chemistry.config
-        self.segments = tuple(cp.asarray(row) for row in segment_descriptors(chemistry))
+        self.cp = cp
+        self.descriptors = segment_descriptors(chemistry)
+        self.segments = tuple(cp.asarray(row) for row in self.descriptors)
         self.segment_params = tuple(map(np.float64, (
             cfg['bound_barrier_radius'], cfg['bound_barrier_stiffness'])))
         self.longest2 = cp.empty(1, dtype=cp.uint64)
-        self.output = cp.empty_like(chemistry.pos, dtype=cp.float64)
+        self.output = cp.zeros_like(chemistry.pos, dtype=cp.float64)
+
+    def update(self, chemistry):
+        descriptors = segment_descriptors(chemistry)
+        buffers = list(self.segments)
+        resized = False
+        for index, (old, new) in enumerate(zip(self.descriptors, descriptors)):
+            if old.shape != new.shape:
+                buffers[index] = self.cp.asarray(new)
+                resized = True
+            elif not np.array_equal(old, new):
+                buffers[index].set(new)
+        self.segments = tuple(buffers)
+        self.descriptors = descriptors
+        if resized and not len(descriptors[0]):
+            self.output.fill(0.)
+        return resized
 
     def launch(self, kernels, pos, n, grid):
         clear, measure, segment = kernels
         count = len(self.segments[0])
         if not count or self.segment_params[0] <= 0:
-            self.output.fill(0.)
             return
         clear((1,), (1,), (self.longest2,))
         measure(((count+127)//128,), (128,), (pos, self.segments[0],

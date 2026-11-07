@@ -1,5 +1,9 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot60. La mécanique CP1 résidente est intégrée, avec preuve de préfixe
+et reprise sur naissance contrôlée. O-01 reste sous-cas, le débit des
+réactions et le cas ouvert restent à vérifier. [Bilan CPR1](BATCH_60.md)
+
 Lot59. O-01 reste sous-cas. Deux familles de forces CP1 passent la
 comparaison par instantané et la capture est validée en copie catalysée
 résidente. Aucun palier biologique relevé. [Bilan CCB1](BATCH_59.md)

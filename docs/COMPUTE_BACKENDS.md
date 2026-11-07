@@ -11,7 +11,7 @@ L'ouverture d'un scénario JSON dans la GUI utilise la sélection du scénario.
 | `numba` | Mode CPU de référence par défaut avec les dépendances ordinaires du projet |
 | `cpp` | Noyau C++ partagé compilé au premier lancement avec `g++`. Définir `AUTOPOIETIC_CXX` pour choisir un compilateur compatible avec les options GNU. |
 | `cuda` | Le même noyau compilé au premier lancement avec CuPy et NVRTC. La machine de validation utilise CuPy 13.3 et CUDA 12.5. |
-| `cuda-resident` | Voisinage, forces et intégration sur CUDA en Langevin pour `mixing` et pour `copy` sans substrats `food_pairs` ni double face. La capture catalytique des précurseurs P/R est prise en charge. Mêmes dépendances que `cuda`. |
+| `cuda-resident` | Voisinage, forces et intégration sur CUDA en Langevin pour `mixing`, `copy` sans substrats `food_pairs` ni double face, et `mixed_synthesis`. Mêmes dépendances que `cuda`. |
 
 Avec CUDA 12.x et un environnement Python qui requiert CuPy, suivre
 [l'installation CuPy 13.3](https://docs.cupy.dev/en/v13.3.0/install.html).
@@ -45,7 +45,7 @@ des blocs de 25 pas via un graphe CUDA. Les tirages Langevin proviennent du
 même générateur CPU, par blocs. L'état est disponible côté CPU aux observations
 et au retour de `Simulation.advance`, y compris pour écrire un checkpoint.
 Les cadences courtes multiplient les synchronisations.
-Sur le modèle de copie pris en charge, les blocs sont bornés par les ticks de
+Sur les modèles réactifs pris en charge, les blocs sont bornés par les ticks de
 réaction. Le CPU reçoit la géométrie et applique la chimie, puis le GPU
 recalcule les forces avec la topologie et les appariements actualisés.
 
@@ -55,10 +55,11 @@ python -m experiments.benchmark_resident_motion --cpp
 
 Le benchmark compare le pas complet du bain inerte avec un observateur
 léger, sur des dimères à densité initiale comparable. Les chiffres ne
-s'appliquent qu'à cette charge. CP1 reste accessible en CPU et via le mode
-`cuda` hybride. [Bilan CRM1](../research/BATCH_57.md)
+s'appliquent qu'à cette charge. CP1 fonctionne également en CPU, en CUDA
+hybride et en CUDA résident. [Bilan CRM1](../research/BATCH_57.md)
 
 [Bilan du transfert réactif](../research/BATCH_58.md) et
 [critères de fin de portage](../research/CUDA_COMPLETION.md).
-La capture coopérative et la barrière de CP1 sont vérifiées sur instantanés.
-[Bilan des forces](../research/BATCH_59.md)
+Sur CP1, la mécanique résidente inclut la capture coopérative, la barrière
+et les ports lipidiques. Les décisions de réaction restent sur CPU.
+[Vérification et profil CP1](../research/BATCH_60.md)

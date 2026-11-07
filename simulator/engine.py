@@ -29,10 +29,10 @@ class Simulation:
             from .motion import InertialMotion
             if backend == 'cuda-resident':
                 from .resident_motion import ResidentLangevinMotion
-                reactive = self.config['model'] == 'copy'
+                model = self.config['model']
                 self.motion = ResidentLangevinMotion(
-                    self.chemistry, self.rng, motion_settings, reactive, self.reaction_every)
-                if not reactive:
+                    self.chemistry, self.rng, motion_settings, model, self.reaction_every)
+                if model == 'mixing':
                     self.resident_react = self.chemistry.react
             else:
                 self.motion=InertialMotion(self.chemistry,self.rng,motion_settings,self.force_kernel)

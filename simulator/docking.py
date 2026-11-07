@@ -25,6 +25,18 @@ def port_geometry(pos,n,long,short):
     return head,tail,tangent,lengths
 
 
+@njit(cache=True, nogil=True, inline='always')
+def project_port_force(force, unit, tail, face, fx, fy, gx, gy, tangent, length, long, short):
+    """Apply the Jacobian of the port geometry to one pair of endpoint forces."""
+    s=2*face-1
+    vx=s*(long/2*fy+short/2*gy);vy=-s*(long/2*fx+short/2*gx)
+    nx,ny=tangent[1],-tangent[0]
+    dot=vx*nx+vy*ny
+    cx,cy=(vx-dot*nx)/length,(vy-dot*ny)/length
+    force[unit,0]+=fx-cx;force[unit,1]+=fy-cy
+    force[tail,0]+=gx+cx;force[tail,1]+=gy+cy
+
+
 @njit(cache=True, nogil=True)
 def docking_force(pos,pairs,free,long,short,epsilon,width,partners=None):
     n=len(pos)//2
@@ -47,16 +59,8 @@ def docking_force(pos,pairs,free,long,short,epsilon,width,partners=None):
             fhx,fhy,ftx,fty=scale*hx,scale*hy,scale*tx,scale*ty
             for unit,face,sign in ((i,a,1.),(j,b,-1.)):
                 fx,fy,gx,gy=sign*fhx,sign*fhy,sign*ftx,sign*fty
-                s=2*face-1
-                # t = R normalize(T-H); distribute its exact Jacobian to H/T.
-                vx=s*(long/2*fy+short/2*gy)
-                vy=-s*(long/2*fx+short/2*gx)
-                nx,ny=tangent[unit,1],-tangent[unit,0]
-                dot=vx*nx+vy*ny
-                cx=(vx-dot*nx)/lengths[unit]
-                cy=(vy-dot*ny)/lengths[unit]
-                force[unit,0]+=fx-cx; force[unit,1]+=fy-cy
-                force[n+unit,0]+=gx+cx; force[n+unit,1]+=gy+cy
+                project_port_force(force,unit,n+unit,face,fx,fy,gx,gy,
+                                   tangent[unit],lengths[unit],long,short)
     return force,energy
 
 
@@ -87,13 +91,8 @@ def bound_port_force(pos,links,long,short,epsilon,width):
         for unit,face,sign in ((i,a,1.),(j,b,-1.)):
             fx,fy=sign*stiffness*hx,sign*stiffness*hy
             gx,gy=sign*stiffness*tx,sign*stiffness*ty
-            s=2*face-1
-            vx=s*(long/2*fy+short/2*gy);vy=-s*(long/2*fx+short/2*gx)
-            nx,ny=tangent[unit,1],-tangent[unit,0]
-            dot=vx*nx+vy*ny
-            cx,cy=(vx-dot*nx)/lengths[unit],(vy-dot*ny)/lengths[unit]
-            force[unit,0]+=fx-cx;force[unit,1]+=fy-cy
-            force[n+unit,0]+=gx+cx;force[n+unit,1]+=gy+cy
+            project_port_force(force,unit,n+unit,face,fx,fy,gx,gy,
+                               tangent[unit],lengths[unit],long,short)
     return force,energy
 
 

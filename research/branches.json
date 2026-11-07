@@ -1849,6 +1849,17 @@
       "cost": "No new chemical primitive or parameter. Local bead descriptors and segment incidence only.",
       "recipe": "experiments/verify_resident_fields.py",
       "results": "research/BATCH_59.md"
+    },
+    {
+      "id": "CPR1",
+      "parent": "CCB1",
+      "status": "cp1_resident_mechanics_short_prefix_verified",
+      "hypothesis": "Shared lipid geometry and force projection can preserve the additive, bound and competitive laws on the resident path.",
+      "test": "Matched CH1 snapshot and reactive prefix, competitive control, forced lipid birth and exact resident restart.",
+      "conclusion": "Full CP1 mechanics resides on the GPU. CPU reaction ticks now dominate the short profile.",
+      "cost": "No chemical primitive or parameter added. Two face-local reductions for the existing competitive derivative.",
+      "recipe": "experiments/verify_resident_fields.py",
+      "results": "research/BATCH_60.md"
     }
   ]
 }

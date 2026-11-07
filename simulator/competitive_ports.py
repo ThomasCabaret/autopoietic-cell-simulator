@@ -9,7 +9,7 @@ The force derivative includes the competition terms, not just pair reweighting.
 """
 import numpy as np
 from numba import njit
-from .docking import port_geometry
+from .docking import port_geometry, project_port_force
 
 
 @njit(cache=True,nogil=True)
@@ -53,11 +53,9 @@ def competitive_force(pos,pairs,free,long,short,epsilon,width,partners=None):
         x=(hx*hx+hy*hy+tx*tx+ty*ty)/(2*width*width)
         scale=epsilon/(width*width)*(np.exp(-x)-cutoff)*multiplier[k]
         for unit,face,sign in ((i,a,1.),(j,b,-1.)):
-            fx,fy,gx,gy=sign*scale*hx,sign*scale*hy,sign*scale*tx,sign*scale*ty;s=2*face-1
-            vx=s*(long/2*fy+short/2*gy);vy=-s*(long/2*fx+short/2*gx)
-            nx,ny=tangent[unit,1],-tangent[unit,0];dot=vx*nx+vy*ny
-            cx,cy=(vx-dot*nx)/lengths[unit],(vy-dot*ny)/lengths[unit]
-            force[unit,0]+=fx-cx;force[unit,1]+=fy-cy;force[n+unit,0]+=gx+cx;force[n+unit,1]+=gy+cy
+            fx,fy,gx,gy=sign*scale*hx,sign*scale*hy,sign*scale*tx,sign*scale*ty
+            project_port_force(force,unit,n+unit,face,fx,fy,gx,gy,
+                               tangent[unit],lengths[unit],long,short)
     return force,energy
 
 

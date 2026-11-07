@@ -1,5 +1,10 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot60. CP1 calcule toutes ses forces en CUDA résident. Le profil place
+72 % du coût aux ticks de réaction. Priorité à la géométrie et à
+l'énumération des faces, en gardant l'ordre d'arbitrage. Puis mesurer
+la taille, la cadence et le scénario ouvert. [Bilan](BATCH_60.md)
+
 Lot59. Capture résidente en copie catalysée. Capture coopérative et
 barrière CP1 comparées au CPU. Prochaine tranche sur les ports lipidiques
 libres, compétitifs et liés, puis intégration dans le pas CP1 et profil.

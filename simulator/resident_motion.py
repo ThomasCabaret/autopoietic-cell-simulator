@@ -6,6 +6,7 @@ import numpy as np
 from .motion import InertialMotion
 from .native_forces import SOURCE as FORCE_SOURCE, pack_terms
 from .resident_fields import SOURCE as FIELD_SOURCE, CaptureField, SegmentField
+from .resident_ports import SOURCE as PORT_SOURCE, LipidPorts
 
 
 SOURCE = r"""
@@ -78,7 +79,8 @@ ENTRY void kick(const double* pos, double* vel, double* force, const double* old
                 const Index* kinds, const double* contact, const double* springs,
                 const double* angles, Index spring_count, Index kind_count,
                 const Index* alignments, bool reactive, const double* capture,
-                bool has_capture, double box_x, double box_y, bool advance) {
+                bool has_capture, const double* ports, const double* barrier,
+                bool mixed, double box_x, double box_y, bool advance) {
     int i = blockIdx.x*blockDim.x+threadIdx.x;
     if (i >= n) return;
     Vec total = {0., 0.};
@@ -108,6 +110,10 @@ ENTRY void kick(const double* pos, double* vel, double* force, const double* old
             term.x += capture[2*i];
             term.y += capture[2*i+1];
         }
+        if (mixed) {
+            term.x += ports[2*i]; term.y += ports[2*i+1];
+            term.x += barrier[2*i]; term.y += barrier[2*i+1];
+        }
         total.x += term.x;
         total.y += term.y;
     }
@@ -129,10 +135,11 @@ ENTRY void kick(const double* pos, double* vel, double* force, const double* old
 def _kernels(device):
     import cupy as cp
 
-    module = cp.RawModule(code=FORCE_SOURCE + SOURCE + FIELD_SOURCE,
+    module = cp.RawModule(code=FORCE_SOURCE + SOURCE + FIELD_SOURCE + PORT_SOURCE,
                           options=('--std=c++11', '--fmad=false'))
     names = ('drift', 'clear_cells', 'bin_particles', 'order_cells', 'kick', 'capture_field',
-             'clear_segment_measure', 'measure_segments', 'segment_field')
+             'clear_segment_measure', 'measure_segments', 'segment_field',
+             'lipid_geometry', 'lipid_scores', 'lipid_derivatives', 'lipid_force')
     return tuple(module.get_function(name) for name in names)
 
 
@@ -149,7 +156,7 @@ def _bin_particles(kernels, pos, n, cells, grid):
 
 
 def mixed_field_snapshot(chemistry):
-    """Evaluate the two ported force families on a frozen mixed snapshot."""
+    """Evaluate the ported mixed force families on a frozen snapshot."""
     import cupy as cp
 
     n = np.int32(len(chemistry.pos))
@@ -162,15 +169,17 @@ def mixed_field_snapshot(chemistry):
     _bin_particles(kernels[1:4], pos, n, cells, grid)
     capture = CaptureField(cp, chemistry, chemistry.capture)
     segment = SegmentField(cp, chemistry)
+    ports = LipidPorts(cp, chemistry)
     capture.launch(kernels[5], pos, n, grid)
-    segment.launch(kernels[6:], pos, n, grid)
-    return np.stack((capture.output.get(), segment.output.get()))
+    segment.launch(kernels[6:9], pos, n, grid)
+    ports.launch(kernels[9:], pos, n, grid)
+    return np.stack((capture.output.get(), segment.output.get(), ports.output.get()))
 
 
 class ResidentLangevinMotion(InertialMotion):
     """Keep geometry, topology and intermediate forces on the GPU between steps."""
 
-    def __init__(self, chemistry, rng, settings, reactive, reaction_every):
+    def __init__(self, chemistry, rng, settings, model, reaction_every):
         super().__init__(chemistry, rng, settings)
         try:
             import cupy as cp
@@ -178,8 +187,9 @@ class ResidentLangevinMotion(InertialMotion):
             raise RuntimeError('Resident CUDA mechanics require CuPy and a CUDA runtime') from exc
         self.cp = cp
         self.stream = cp.cuda.Stream(non_blocking=True)
-        self.reactive = reactive
-        self.block_steps = min(25, reaction_every) if reactive else 25
+        self.reactive = model != 'mixing'
+        self.mixed = model == 'mixed_synthesis'
+        self.block_steps = min(25, reaction_every) if self.reactive else 25
         self.device = None
         self.graph = None
 
@@ -220,6 +230,9 @@ class ResidentLangevinMotion(InertialMotion):
         self.alignment_state = None
         self.alignments = cp.empty((count if self.reactive else 0, 4), dtype=cp.int64)
         self.capture = None
+        self.ports = LipidPorts(cp, c) if self.mixed else None
+        self.barrier = SegmentField(cp, c) if self.mixed else None
+        self.kind_state = c.kinds.copy()
         self._update_topology(c)
         self.box = tuple(map(np.float64, c.box))
         pos, velocities, force = self.device
@@ -250,7 +263,16 @@ class ResidentLangevinMotion(InertialMotion):
             self.topology = tuple(array.copy() for array in topology)
         if not self.reactive:
             return
-        catalyst = None if c.assembly is None else c.assembly.catalyst
+        if self.mixed:
+            if not np.array_equal(c.kinds, self.kind_state):
+                self.terms[3].set(c.kinds)
+                self.kind_state = c.kinds.copy()
+            self.ports.update(c)
+            if self.barrier.update(c):
+                self.graph = None
+            catalyst = c.capture
+        else:
+            catalyst = None if c.assembly is None else c.assembly.catalyst
         if catalyst is not None:
             if self.capture is None:
                 self.capture = CaptureField(self.cp, c, catalyst)
@@ -278,13 +300,19 @@ class ResidentLangevinMotion(InertialMotion):
             _bin_particles(self.kernels[1:4], pos, self.count, self.cells, grid)
         if self.capture is not None:
             self.capture.launch(self.kernels[5], pos, self.count, grid)
+        if self.mixed:
+            self.barrier.launch(self.kernels[6:9], pos, self.count, grid)
+            self.ports.launch(self.kernels[9:], pos, self.count, grid)
         kick(_grid(self.count), (128,), (
             pos, vel, force, self.old, self.displacement, self.count, self.half_kick,
             self.heads, self.next, self.width, self.nx, self.ny, *self.terms,
             np.int64(len(self.terms[5])), np.int64(len(self.terms[4])),
             self.alignments, np.bool_(self.reactive),
             self.old if self.capture is None else self.capture.output,
-            np.bool_(self.capture is not None), *self.box, np.bool_(advance)))
+            np.bool_(self.capture is not None),
+            self.old if self.ports is None else self.ports.output,
+            self.old if self.barrier is None else self.barrier.output,
+            np.bool_(self.mixed), *self.box, np.bool_(advance)))
 
     def _launch_steps(self, steps):
         drift = self.kernels[0]
@@ -330,6 +358,8 @@ class ResidentLangevinMotion(InertialMotion):
                 self.device = None
                 raise FloatingPointError('Inertial integrator unstable; reduce dt, never clip motion')
             c.pos, self.velocities, self.force = host[:6].reshape(3, len(c.pos), 2)
+            if self.mixed:
+                c._views()
         self.max_displacement = max(self.max_displacement, displacement)
         self.steps += steps
         self.force_evaluations += steps

@@ -1,5 +1,12 @@
 # Journal de recherche
 
+## 2026-11-07 — lot60, ports mutualisés et mécanique CP1 résidente
+
+CPR1. Géométrie et projection partagées entre trois variantes de ports.
+Préfixe CP1 concordant, reprise exacte sur une naissance contrôlée.
+Le profil du pas complet place désormais le goulot aux ticks de
+réaction, en particulier aux faces lipidiques. [Bilan](BATCH_60.md)
+
 ## 2026-11-07 — lot59, capture et barrière CUDA
 
 CCB1. Deux forces portées sur la grille et validées sur des états CP1.
