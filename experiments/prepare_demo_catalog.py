@@ -259,9 +259,47 @@ def refinement_description():
         evidence='research/BATCH_48.md')
 
 
+def competitive_origins():
+    entries=[]
+    for key,demo,run,label,beads in (
+        ('competitive_cell','competitive_cell','CH1_20261106T073608844143Z','CH1_integrated_s1',302),
+        ('competitive_membrane','competitive_membrane','CR1_20261106T105709120898Z','CR1_assembly_s1',104),
+    ):
+        source=f'research/campaign_recipes/{run}/manifest.json'
+        data=json.loads((ROOT/source).read_text(encoding='utf-8'))
+        task=next(t for t in data['tasks'] if t['label']==label)
+        entries.append((key,demo,'Graine 1 · recette de recherche',task['scenario'],source,task['id'],beads))
+    return entries
+
+
+def competitive_descriptions():
+    return [
+        dict(id='competitive_cell',title='Chimie actuelle · bain intégré CP1',archive=False,
+             level='Candidat de recherche · intégration partielle',
+             summary='Gènes, outils, précurseurs et membrane dans le même bain sous la loi compétitive de référence.',
+             question='Observer le couplage entre capture, copie, synthèse des lipides et membrane.',
+             prepared='302 billes. Frontière de 52 lipides et premiers gènes et outils déjà construits.',
+             conditions='Recette CH1 graine 1. Langevin, CPU de référence, loi compétitive.',
+             observe='Les transformations et la tenue de la frontière peuvent être suivies séparément.',
+             limits='Stocks finis, sans alimentation continue ni maintien cellulaire démontré.',
+             look='La scène démarre en pause à t = 0. Lancer, puis filtrer les espèces et suivre les liaisons.',
+             evidence='research/BATCH_50.md'),
+        dict(id='competitive_membrane',title='Chimie actuelle · membrane depuis lipides libres',archive=False,
+             level='Sous-système membrane · CR1',
+             summary='52 lipides isolés sous la même loi compétitive que le bain intégré CP1.',
+             question='Les molécules libres forment-elles un contour fermé ?',
+             prepared='104 billes en dimères H/T isolés, sans liaison latérale initiale.',
+             conditions='Recette CR1 graine 1. Langevin et CPU de référence.',
+             observe='La graine 1 a donné un cycle final de 52 lipides au terme du calcul long.',
+             limits='Assemblage lent. Sous-système sans synthèse alimentaire ni génétique.',
+             look='Pour voir immédiatement le résultat enregistré, ouvrir la graine 1 dans Résultats locaux.',
+             evidence='research/BATCH_53.md'),
+    ]
+
+
 def build():
     variants=[]
-    for key,demo,title,cfg,origin,task,beads in current_origins()+renewal_origins()+membrane_renewal_origins()+mixed_origins()+compact_origins()+energy_origins()+refinement_origins():
+    for key,demo,title,cfg,origin,task,beads in competitive_origins()+current_origins()+renewal_origins()+membrane_renewal_origins()+mixed_origins()+compact_origins()+energy_origins()+refinement_origins():
         cfg=resolve(cfg);path=f'demonstrators/configs/demo_{key}.json'
         (ROOT/path).write_text(json.dumps(cfg,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
         variants.append(dict(id=key,demo=demo,title=title,seed=cfg['seed'],config=path,beads=beads,
@@ -287,9 +325,9 @@ def build():
     from visualizer.demos import simulator_hashes
     archived=descriptions()
     for info in archived:info['archive']=True
-    catalog=dict(version=1,date='2026-11-06',recommended='current_energy_s0',simulator_sha256=simulator_hashes(),
+    catalog=dict(version=1,date='2026-11-07',recommended='current_energy_s0',simulator_sha256=simulator_hashes(),
         policy='Live simulations from preserved initial inputs. Selected illustrative seeds, not a robustness claim. No trajectories/checkpoints bundled.',
-        demos=[energy_description(),refinement_description(),compact_description(),membrane_renewal_description(),mixed_description()]+current_descriptions()+[renewal_description()]+archived,variants=variants)
+        demos=competitive_descriptions()+[energy_description(),refinement_description(),compact_description(),membrane_renewal_description(),mixed_description()]+current_descriptions()+[renewal_description()]+archived,variants=variants)
     (ROOT/'demonstrators/catalog.json').write_text(json.dumps(catalog,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
 
 
@@ -360,6 +398,20 @@ def verify():
         if key.startswith('current_energy'):assert cfg['chemistry']['contact_exchange_gate']=='metropolis'
         if key.startswith('current_fine'):assert cfg['engine']['dt']==.001 and cfg['engine']['reaction_every']==10
         rows.append(dict(id=key,beads=beads,source_dynamics_identical=True,current=True))
+    for key,_,_,original,source,task,beads in competitive_origins():
+        variant,info,cfg=catalog.get(key)
+        assert signature(cfg)==signature(original)
+        assert hashlib.sha256((ROOT/source).read_bytes()).hexdigest()==variant['source_sha256']
+        sim=Simulation(cfg)
+        assert len(sim.chemistry.pos)==beads and sim.motion is not None and not info['archive']
+        assert cfg['chemistry']['free_port_potential']=='competitive'
+        assert len(sim.chemistry.lipids.rungs)==52
+        assert bool(sim.chemistry.lipids.links)==(key=='competitive_cell')
+        rows.append(dict(id=key,beads=beads,source_dynamics_identical=True,current=True))
+    for key in catalog.variants:
+        _,_,cfg=catalog.get(key)
+        assert cfg['engine'].get('force_backend','numba')=='numba'
+        assert cfg['chemistry'].get('free_port_potential')!='saturated'
     return rows
 
 

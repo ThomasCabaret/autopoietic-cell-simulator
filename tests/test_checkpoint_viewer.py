@@ -4,7 +4,7 @@ import numpy as np
 from simulator.engine import Simulation
 from simulator.runner import make_observer
 from simulator import checkpoint
-from visualizer.checkpoints import snapshot_checkpoint
+from visualizer.checkpoints import MembraneInspectionSource,snapshot_checkpoint
 from visualizer.worker import ProcessSource
 from visualizer.local_runs import available
 
@@ -17,6 +17,26 @@ def prepared(path):
 
 
 class CheckpointViewerTests(unittest.TestCase):
+    def test_curated_historical_membrane_opens_without_advancing(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp);path=root/'old_membrane.npz'
+            cfg=dict(schema_version=1,model='lipid_synthesis',seed=2,duration=.08,
+                chemistry=dict(food_units=2,tool_count=0,initial_lipids=[
+                    dict(head=[2,2],tail=[2,1.35]),dict(head=[3,2],tail=[3,1.35])]),
+                engine=dict(dt=.005,sample_every=5))
+            sim=Simulation(cfg);sim.chemistry.lipids.links=[(0,1,1,0)]
+            checkpoint.save(path,sim,source_manifest={'simulator/engine.py':'old'})
+            original=path.read_bytes()
+            with self.assertRaisesRegex(ValueError,'moteur différente'):
+                snapshot_checkpoint(path,root/'view',sim.config)
+            imported=snapshot_checkpoint(path,root/'view',sim.config,inspection=True)
+            source=MembraneInspectionSource(imported);packet,=source.poll()
+            self.assertTrue(packet['paused']);self.assertTrue(packet['frame'].done)
+            np.testing.assert_array_equal(packet['frame'].positions,sim.chemistry.pos.astype('f4'))
+            self.assertIn(('Liaisons latérales',1),packet['observations']['rows'])
+            source.command('step');self.assertEqual(source.poll(),[])
+            self.assertEqual(path.read_bytes(),original)
+
     def test_import_preserves_original_and_refuses_incompatible_source_or_task(self):
         with tempfile.TemporaryDirectory() as temp:
             root=Path(temp);path=root/'original.npz';sim,_=prepared(path);original=path.read_bytes()

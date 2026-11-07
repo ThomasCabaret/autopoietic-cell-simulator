@@ -1,5 +1,15 @@
 # Journal de recherche
 
+## 2026-11-07 — point d’arrêt après le lot 65
+
+Les recettes CH1 `20261106T073608844143Z` et CR1 `20261106T105709120898Z`,
+graine 1, rejoignent le catalogue comme scènes en direct. Les 39 scènes
+antérieures gardent leurs paramètres. Les états CR1 locaux sont inspectables
+en lecture seule avec une copie immuable du fichier. La reprise d’une
+simulation reste soumise à la compatibilité du moteur. Les 41 configurations
+sont sur CPU, sans variante lipidique saturée. Aucun changement des lois ni
+des paliers de preuve. Campagnes en pause. [État de reprise](../CURRENT_STATUS.md)
+
 ## 2026-11-07 — lot65, saturation par face
 
 SPF1. Cas binaire conservé, géométrie et score réutilisés. Énergies

@@ -1,27 +1,21 @@
 # Interface de visualisation durable — GUI1 et catalogue GUI2
 
-Actualisation lot53 : les trois checkpoints CR1 locaux sont terminés
-(cycles30/52/34). Choisir **Résultats locaux → CP1 · graine1 · terminé**
-pour l'enceinte52. Inspection en pause, pas relecture du passé ; aucune donnée
-brute embarquée. Les39 presets physiques restent inchangés.
+Le catalogue propose 41 scénarios CPU. Les deux scènes **Chimie actuelle**
+ouvrent le bain intégré CP1 et l’expérience de membrane depuis lipides libres.
+La référence historique EG1 reste accessible séparément. [Catalogue](DEMOS.md)
 
-6 novembre2026, lot52 : **Fichier → Ouvrir un checkpoint local…** et menu
-**Résultats locaux** disponibles. Ce menu propose les checkpoints CR1 présents
-sur cette machine ; choisir **CP1 · graine1 · terminé** pour inspecter l'enceinte
-de52 molécules calculée à8000. Il faut avoir les résultats locaux ; aucune
-donnée expérimentale n'est embarquée dans le dépôt. Les39 scénarios de démo
-restent accessibles séparément, depuis leur état initial.
+**Résultats locaux** permet d’inspecter les trois états finaux CR1 présents
+sur cette machine, même calculés avec l’ancienne version du moteur. L’entrée
+**Membrane assemblée · CP1 · graine 1 · terminé** montre le cycle de 52 lipides
+à t = 8 000. La géométrie et les liaisons sont affichées en lecture seule, avec
+zoom, filtres et sélection. Les données restent locales.
 
-Un checkpoint est copié à l'import dans `outputs/visualizer/imports/`, vérifié
-contre les sources du moteur courant et ouvert en pause. Zoom, filtres et
-suivi fonctionnent immédiatement. **Recommencer** revient à cette copie,
-même si la campagne remplace ensuite son fichier d'origine. Un état final
-ne possède pas de passé animé dans ce client : Jouer devient disponible pour
-les checkpoints qui n'ont pas encore atteint leur horizon. Les auditeurs
-auxiliaires des campagnes ne sont pas automatiquement poursuivis par cette
-session visuelle ; le moteur et l'observateur principal reprennent exactement.
-Le fichier source est préservé, chaque session a ses propres sorties et sa
-provenance. Une ancienne version de moteur est refusée sans migration silencieuse.
+**Fichier → Ouvrir un checkpoint local…** ouvre un état compatible avec les
+sources actuelles du moteur. Un checkpoint est copié à l’import dans
+`outputs/visualizer/imports/`. **Recommencer** revient à cette copie et préserve
+l’original. Un état courant partiel peut être continué en simulation, avec
+reprise du moteur et de l’observateur principal. Les audits auxiliaires de
+campagne et les trajectoires antérieures restent dans les sorties originales.
 
 État du29 octobre2026 : **visualisation essentielle et menu de démos disponibles**.
 Ce lot construit l'outil final d'exploration et de préparation de captures.
@@ -32,9 +26,9 @@ Les anciens démonstrateurs Pygame restent disponibles et inchangés.
 ## Lancer
 
 Installer une fois avec `install_visualizer.bat`, puis ouvrir `visualizer.bat`.
-Choisir **Démos → Bain intégré actuel → Graine2 · transfert observé** pour
-commencer. Les états sont recalculés en pause, sans film préenregistré ; cliquer
-Jouer puis ralentir si nécessaire. [Catalogue et limites](DEMOS.md).
+Choisir **Démos → Chimie actuelle · bain intégré CP1** pour commencer.
+La scène démarre en pause. Cliquer sur **Jouer** puis régler la vitesse
+de lecture si nécessaire. [Catalogue et limites](DEMOS.md)
 On peut aussi choisir un scénario JSON via **Ouvrir**.
 On peut ouvrir un scénario existant directement :
 

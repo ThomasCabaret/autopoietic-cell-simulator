@@ -1,5 +1,10 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Point d’arrêt après le lot 65. Les campagnes et les développements sont en
+pause. La référence reste CH1 compétitive sur CPU. Le catalogue propose CH1
+et CR1 en direct et les trois états CR1 locaux en lecture seule. Les paliers
+scientifiques restent ceux du lot 65. [État de reprise](../CURRENT_STATUS.md)
+
 Lot65. Comparer la cinétique saturée et l'énergie compétitive
 incrémentale. L'arbitrage partagé des créations reste le prochain
 verrou de débit. [Bilan](BATCH_65.md)

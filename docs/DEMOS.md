@@ -1,5 +1,23 @@
 # Démos représentatives accessibles dans la GUI
 
+## Point d’arrêt du 7 novembre 2026
+
+Lancer `visualizer.bat`. Le menu **Démos** propose 41 configurations CPU, dont
+deux scènes sous la chimie compétitive actuelle et Langevin.
+
+| Entrée | Ce que montre la scène |
+| --- | --- |
+| **Chimie actuelle · bain intégré CP1** | La recette CH1, graine 1, avec enceinte préparée et synthèses dans un même bain. Le maintien et la récupération après perturbation restent ouverts. |
+| **Chimie actuelle · membrane depuis lipides libres** | La recette CR1, graine 1, avec 52 dimères isolés. L’expérience complète dure 8 000 unités de temps simulé. |
+| **Démo intégrée · référence EG1** | Une scène historique avec synthèse H/T et insertion observée sur deux graines sur trois. Le contrôle au pas fin EN1 reste affiché. |
+| **Résultats locaux → Membrane assemblée · CP1 · graine 1 · terminé** | La géométrie finale déjà calculée à t = 8 000, avec un cycle de 52 lipides. Lecture seule, fichier de campagne local requis. |
+
+Les entrées en direct s’ouvrent en pause. Les résultats locaux restent dans
+`outputs/`. Les anciennes scènes et les limites de chaque expérience sont
+conservées. [État de reprise](../CURRENT_STATUS.md)
+
+Les sections suivantes conservent l’historique des lots et de leurs libellés.
+
 ## Lot55 — références visuelles et candidat de travail
 
 Le raccourci s'appelle **Démo intégrée · référence EG1**. Les39 presets gardent

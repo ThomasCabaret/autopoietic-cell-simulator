@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "date": "2026-11-06",
+  "date": "2026-11-07",
   "recommended": "current_energy_s0",
   "simulator_sha256": {
     "simulator/__init__.py": "bf5a7a5cafdf7076cbc3cc9d8992895e4a8c217621ea024645a061a3531281a9",
@@ -58,6 +58,34 @@
   },
   "policy": "Live simulations from preserved initial inputs. Selected illustrative seeds, not a robustness claim. No trajectories/checkpoints bundled.",
   "demos": [
+    {
+      "id": "competitive_cell",
+      "title": "Chimie actuelle · bain intégré CP1",
+      "archive": false,
+      "level": "Candidat de recherche · intégration partielle",
+      "summary": "Gènes, outils, précurseurs et membrane dans le même bain sous la loi compétitive de référence.",
+      "question": "Observer le couplage entre capture, copie, synthèse des lipides et membrane.",
+      "prepared": "302 billes. Frontière de 52 lipides et premiers gènes et outils déjà construits.",
+      "conditions": "Recette CH1 graine 1. Langevin, CPU de référence, loi compétitive.",
+      "observe": "Les transformations et la tenue de la frontière peuvent être suivies séparément.",
+      "limits": "Stocks finis, sans alimentation continue ni maintien cellulaire démontré.",
+      "look": "La scène démarre en pause à t = 0. Lancer, puis filtrer les espèces et suivre les liaisons.",
+      "evidence": "research/BATCH_50.md"
+    },
+    {
+      "id": "competitive_membrane",
+      "title": "Chimie actuelle · membrane depuis lipides libres",
+      "archive": false,
+      "level": "Sous-système membrane · CR1",
+      "summary": "52 lipides isolés sous la même loi compétitive que le bain intégré CP1.",
+      "question": "Les molécules libres forment-elles un contour fermé ?",
+      "prepared": "104 billes en dimères H/T isolés, sans liaison latérale initiale.",
+      "conditions": "Recette CR1 graine 1. Langevin et CPU de référence.",
+      "observe": "La graine 1 a donné un cycle final de 52 lipides au terme du calcul long.",
+      "limits": "Assemblage lent. Sous-système sans synthèse alimentaire ni génétique.",
+      "look": "Pour voir immédiatement le résultat enregistré, ouvrir la graine 1 dans Résultats locaux.",
+      "evidence": "research/BATCH_53.md"
+    },
     {
       "id": "current_energy",
       "title": "Intégration compacte · échanges stabilisés",
@@ -242,6 +270,34 @@
     }
   ],
   "variants": [
+    {
+      "id": "competitive_cell",
+      "demo": "competitive_cell",
+      "title": "Graine 1 · recette de recherche",
+      "seed": 1,
+      "config": "demonstrators/configs/demo_competitive_cell.json",
+      "beads": 302,
+      "source": "research/campaign_recipes/CH1_20261106T073608844143Z/manifest.json",
+      "source_task": "task0003",
+      "source_sha256": "315eee3513f5d98007a9905f77d813653a9b157ee2d8741ca78f348635164214",
+      "dynamics_sha256": "f3da6260e723f460b1957c2494c661dfd8eb27ee81f9940cbccf8c43cff455d6",
+      "view_speed": 0.0,
+      "motion": "langevin"
+    },
+    {
+      "id": "competitive_membrane",
+      "demo": "competitive_membrane",
+      "title": "Graine 1 · recette de recherche",
+      "seed": 1,
+      "config": "demonstrators/configs/demo_competitive_membrane.json",
+      "beads": 104,
+      "source": "research/campaign_recipes/CR1_20261106T105709120898Z/manifest.json",
+      "source_task": "task0001",
+      "source_sha256": "b7a702759a855e8ac13dc793b5b65452d9f0afba7c55461863906951567df091",
+      "dynamics_sha256": "a1257b9d49c13704a850de52c9e4b094c9d29cbac483e4f64f412258573fd10f",
+      "view_speed": 0.0,
+      "motion": "langevin"
+    },
     {
       "id": "current_cell_s2",
       "demo": "current_cell",

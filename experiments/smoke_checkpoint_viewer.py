@@ -44,9 +44,15 @@ def main():
         local=[];window.refresh_local_runs()
         for row in available():
             if row['status']!='complete':continue
+            original_sha=hashlib.sha256(Path(row['checkpoint']).read_bytes()).hexdigest()
             window.local_actions[row['label']].trigger();wait(lambda:window.packet is not None)
             assert window.packet['paused'];assert window.packet['frame'].done
             assert len(window.packet['frame'].positions)==104
+            assert not window.play.isEnabled() and not window.step_action.isEnabled()
+            assert not window.save_checkpoint_action.isEnabled()
+            assert window.checkpoint_import['inspection']
+            assert window.checkpoint_import['sha256']==original_sha
+            assert hashlib.sha256(Path(row['checkpoint']).read_bytes()).hexdigest()==original_sha
             window.save_image(out/(row['label']+'.png'));window.grab().save(str(out/(row['label']+'_interface.png')))
             local.append(dict(label=row['label'],step=window.packet['frame'].step,beads=104))
         result=dict(paused_saved_step=True,restart_from_immutable_import=True,continuation_exact=True,

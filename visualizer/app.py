@@ -57,7 +57,7 @@ class Viewport(QtOpenGLWidgets.QOpenGLWidget):
         self.renderer=None;self.ctx=None;self.press=None;self.last=None;self.dragged=False
         self.fbo=None;self.last_fbo=None;self.render_count=0;self.paint_ms=0.
         self.setMinimumSize(400,350);self.setMouseTracking(True)
-        self.empty=Q.QLabel('CHIMIE LOCALE\n\nMenu Démos → Bain intégré actuel\n\nou ouvrir votre propre scénario JSON',self)
+        self.empty=Q.QLabel('CHIMIE LOCALE\n\nMenu Démos → Chimie actuelle · bain intégré CP1\n\nou ouvrir votre propre scénario JSON',self)
         self.empty.setAlignment(QtCore.Qt.AlignCenter)
         self.empty.setStyleSheet('color:#91abc6;background:transparent;font-size:18px;')
 
@@ -150,7 +150,7 @@ class MainWindow(Q.QMainWindow):
         self.toolbar=Q.QToolBar();self.toolbar.setMovable(False);self.addToolBar(self.toolbar)
         self.toolbar.addAction(self.action('Ouvrir…',self.open_file))
         self.play=self.action('▶ Jouer',self.toggle_pause);self.toolbar.addAction(self.play)
-        self.toolbar.addAction(self.action('Un pas',self.single_step))
+        self.step_action=self.action('Un pas',self.single_step);self.toolbar.addAction(self.step_action)
         self.toolbar.addAction(self.action('Recommencer',self.restart))
         self.toolbar.addSeparator();self.toolbar.addAction(self.action('Vue globale',self.fit))
         self.toolbar.addAction(self.action('Plein écran',self.fullscreen))
@@ -213,7 +213,8 @@ class MainWindow(Q.QMainWindow):
         self.open_checkpoint_action=self.action('Ouvrir un checkpoint local…',self.open_checkpoint)
         file.addAction(self.open_checkpoint_action)
         file.addAction(self.action('Exporter une image…',self.save_image))
-        file.addAction(self.action('Sauver un checkpoint',lambda:self.command('checkpoint')))
+        self.save_checkpoint_action=self.action('Sauver un checkpoint',lambda:self.command('checkpoint'))
+        file.addAction(self.save_checkpoint_action)
         file.addAction(self.action('Quitter',self.close))
         self.demo_menu=self.menuBar().addMenu('Démos');self.demo_actions={}
         self.current_demo_action=self.action('Démo intégrée · référence EG1',lambda checked=False:self.load_demo(self.catalog.data['recommended']))
@@ -264,26 +265,32 @@ class MainWindow(Q.QMainWindow):
         if not rows:self.local_menu.addAction('Aucun checkpoint CR1 local disponible').setEnabled(False)
         for row in rows:
             state='terminé' if row['status']=='complete' else 'instantané partiel'
-            action=self.action(f"CP1 · graine {row['config']['seed']} · {state}",lambda checked=False,item=row:self.load_checkpoint(item['checkpoint'],item['config'],item['note']))
-            action.setToolTip('Ouvre une copie du dernier état calculé, en pause. Aucun déroulé du passé.');self.local_menu.addAction(action)
+            action=self.action(f"Membrane assemblée · CP1 · graine {row['config']['seed']} · {state}",
+                lambda checked=False,item=row:self.load_checkpoint(item['checkpoint'],item['config'],item['note'],inspection=True))
+            action.setToolTip('Inspection en lecture seule du dernier état calculé.');self.local_menu.addAction(action)
             self.local_actions[row['label']]=action
 
-    def load_checkpoint(self,path,expected_config=None,presentation=None):
+    def load_checkpoint(self,path,expected_config=None,presentation=None,inspection=False):
         from .checkpoints import snapshot_checkpoint
         try:
-            imported=snapshot_checkpoint(path,self.output,expected_config)
+            imported=snapshot_checkpoint(path,self.output,expected_config,inspection)
             if presentation:imported['presentation']=presentation
             self.load_config(imported['config'],checkpoint_import=imported)
         except Exception as exc:self.show_error(str(exc))
 
     def load_config(self,config,demo=None,checkpoint_import=None):
+        from .checkpoints import MembraneInspectionSource
+        inspection=bool(checkpoint_import and checkpoint_import.get('inspection'))
+        frozen=MembraneInspectionSource(checkpoint_import) if inspection else None
         if self.source and not self.source.close():self.statusBar().showMessage('Ancien processus arrêté de force : vérifier ses sorties.')
         self.config=config;self.active_demo=demo;self.checkpoint_import=checkpoint_import;self.session_written=False;self.packet=None;self.viewport.frame=None;self.viewport.opacity=[];self.viewport.flashes.clear();self.viewport.selection=Selection()
         for name in ('assembly','focus','partners'):setattr(self.viewport.selection,name,getattr(self,'check_'+name).isChecked())
-        self.viewport.empty.setText('Initialisation du moteur…');self.viewport.empty.show()
+        loading='Chargement du résultat local…' if inspection else 'Initialisation du moteur…'
+        self.viewport.empty.setText(loading);self.viewport.empty.show()
         self.events.clear();self.layer_labels=();self.title.setText(config['name']);self.description.setText(config.get('description',''))
         self.context.setText(f"Graine {config['seed']} · {config['model']}\ndt = {config['engine']['dt']:g} · lois inchangées par la vue")
-        self.source=ProcessSource(config,self.output,None if checkpoint_import is None else checkpoint_import['snapshot'])
+        self.source=frozen or ProcessSource(config,self.output,None if checkpoint_import is None else checkpoint_import['snapshot'])
+        self.step_action.setEnabled(not inspection);self.save_checkpoint_action.setEnabled(not inspection)
         if demo:
             info=demo['info'];variant=demo['variant']
             self.title.setText(info['title']);self.description.setText(info['summary'])
@@ -304,10 +311,12 @@ class MainWindow(Q.QMainWindow):
             self.context.setText(f"{config['model']} · graine {config['seed']}\nCopie locale ; Recommencer revient à cet état.")
             self.demo_heading.setText('Résultat local · checkpoint');self.demo_level.setText(f"État à t = {checkpoint_import['time']:g}")
             self.demo_evidence.setText('Source : '+checkpoint_import['source']+'\nHistorique non rejoué. Cette session ne prolonge pas les audits de campagne.')
+            if inspection:
+                self.context.setText(f"Graine {config['seed']} · Résultat historique en lecture seule")
             self.speed.setCurrentIndex(self.speed.findData(0.))
         self.source.command('speed',self.speed.currentData())
-        self.statusBar().showMessage('Initialisation du moteur… La simulation démarrera en pause.')
-        self.clear_selection();self.play.setEnabled(True);self.play.setText('▶ Jouer')
+        self.statusBar().showMessage(loading)
+        self.clear_selection();self.play.setEnabled(not inspection);self.play.setText('Lecture seule' if inspection else '▶ Jouer')
 
     def command(self,action,value=None):
         if self.source:self.source.command(action,value)
@@ -373,7 +382,8 @@ class MainWindow(Q.QMainWindow):
                     self.session_written=True
                 if self.layer_labels!=f.labels:self.build_layers(f)
                 self.play.setEnabled(not f.done)
-                self.play.setText('Terminée' if f.done else ('▶ Jouer' if packet['paused'] else 'Ⅱ Pause'))
+                inspection=self.checkpoint_import and self.checkpoint_import.get('inspection')
+                self.play.setText('Lecture seule' if inspection else ('Terminée' if f.done else ('▶ Jouer' if packet['paused'] else 'Ⅱ Pause')))
                 self.time_label.setText(f'   t = {f.time:.3f} / {packet["config"]["duration"]:g}   ·   {len(f.positions):,} billes')
                 for event in packet['events'][-100:]:
                     text={'bond_created':'+ liaison','bond_broken':'− liaison','state_changed':'↻ état'}[event.kind]
@@ -390,7 +400,9 @@ class MainWindow(Q.QMainWindow):
             self.fps=(self.viewport.render_count-self.last_render_count)/(now-self.last_fps)
             self.last_render_count=self.viewport.render_count;self.last_fps=now
         if self.packet and now-self.last_ui>.25:
-            p=self.packet;f=p['frame'];state='Terminée' if f.done else ('Pause' if p['paused'] else 'En cours')
+            p=self.packet;f=p['frame']
+            inspection=self.checkpoint_import and self.checkpoint_import.get('inspection')
+            state='Lecture seule' if inspection else ('Terminée' if f.done else ('Pause' if p['paused'] else 'En cours'))
             self.statusBar().showMessage(f"{state}   ·   {p['rate']*p['config']['engine']['dt']:.3g} u/s   ·   {p['rate']:,.0f} pas/s   ·   {self.fps:.0f} images/s   ·   "
                 f"rendu {self.viewport.paint_ms:.1f} ms   ·   événements non transmis : {p['dropped']}")
             self.inspect();self.check_follow.setChecked(self.viewport.selection.follow);self.last_ui=now

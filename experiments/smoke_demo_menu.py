@@ -35,13 +35,13 @@ def main():
             assert (Path(packet['path'])/'demo.json').exists()
             assert packet['observations']['time']==0.
             rows.append(dict(id=key,beads=len(f.positions),seed=packet['config']['seed'],paused_initial_state=True))
-            if key in ('integrated_s2','integrated_s2_langevin','current_cell_s2','current_free_s2','current_probes_s2','current_renewal_s0','current_membrane_renewal_s0','current_mixed_s0','current_compact_s0','current_energy_s0','current_fine_s2'):
+            if key in ('competitive_cell','competitive_membrane','integrated_s2','integrated_s2_langevin','current_cell_s2','current_free_s2','current_probes_s2','current_renewal_s0','current_membrane_renewal_s0','current_mixed_s0','current_compact_s0','current_energy_s0','current_fine_s2'):
                 initial=f.positions.copy();window.single_step();wait(lambda:window.packet['frame'].step==1)
                 assert window.packet['paused'];window.toggle_pause()
                 wait(lambda:window.packet['frame'].time>=.1)
                 window.command('pause',True);wait(lambda:window.packet['paused'])
                 assert window.packet['observations']['rows']
-                if key.startswith('current_'):
+                if key.startswith(('current_', 'competitive_')):
                     from simulator.engine import Simulation
                     headless=Simulation(window.packet['config']);headless.advance(window.packet['frame'].step)
                     np.testing.assert_array_equal(headless.chemistry.pos.astype(np.float32),window.packet['frame'].positions)

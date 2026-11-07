@@ -1,17 +1,12 @@
 # Simulateur de chimie locale
 
-Le noyau de forces peut être sélectionné au lancement avec
-`--force-backend numba|cpp|cuda`. Le mode CUDA de cette première tranche
-exécute les forces de base sur le GPU. Les modalités et les mesures sont
-décrites dans [le guide CPU et CUDA](docs/COMPUTE_BACKENDS.md).
+Le CPU (`numba`) est le mode de référence. Les options `cpp`, `cuda` et
+`cuda-resident` sont explicites. Dans le bain CP1, la mécanique résidente tourne
+sur GPU et les décisions de réaction restent sur CPU. [Guide CPU et CUDA](docs/COMPUTE_BACKENDS.md)
 
-**Reprise et état courant** : [CURRENT_STATUS.md](CURRENT_STATUS.md) rassemble le
-candidat, les preuves et les calculs actifs. Lot55 : FR1 terminé et refusé ;
-OB1 réalise source/absorption de précurseurs dans un diagnostic séparé,6/6 contrôles
-réussis. Aucun maintien cellulaire ajouté. [Revue critique de l'audit Astra](research/ASTRA_REVIEW.md).
-La GUI ouvre EG1 via **Démos → Démo intégrée · référence EG1** ; CP1 est le candidat
-de recherche, consultable dans les résultats locaux. Les détails datés ci-dessous
-conservent l'historique des démonstrations.
+**Point d’arrêt du 7 novembre 2026**. La recherche et les campagnes sont en pause.
+Le candidat CP1, le statut du portage et les résultats disponibles sont résumés
+dans [CURRENT_STATUS.md](CURRENT_STATUS.md).
 
 **État et sous-buts du projet** : [checklist compacte](research/CELL_CHECKLIST_COMPACT.md)
 et [registre détaillé](research/CELL_CHECKLIST.md), avec sous-buts et dépendances.
@@ -32,10 +27,11 @@ de génération dans [docs/metabolism](docs/metabolism/README.md).
 **Interface durable et démos du projet** : exécuter `install_visualizer.bat` une fois,
 puis `visualizer.bat`. Fenêtre Qt, rendu OpenGL par lots, navigation, filtres,
 sélection/suivi, transformations et export PNG. Elle démarre en pause après
-ouverture d'un scénario. Aller dans **Démos → Démo intégrée · référence EG1**
-pour le prototype compact EG1 sous Langevin, ou choisir
-**Membranes · molécules libres** pour un essai plus rapide. Les références
-anciennes restent rangées séparément. [Catalogue et limites](docs/DEMOS.md).
+ouverture d'un scénario. Choisir **Démos → Chimie actuelle · bain intégré CP1**
+pour le candidat en cours, **Chimie actuelle · membrane depuis lipides libres**
+pour rejouer l’expérience d’assemblage depuis son état initial, ou
+**Démo intégrée · référence EG1** pour le prototype historique d’insertion.
+[Catalogue et limites](docs/DEMOS.md)
 Le bain MIN1M construit produit des catalyseurs entièrement refaits et actifs
 avec membrane sur trois graines. Les enzymes initiales restent présentes et
 les lipides sont préparés : le maintien sous pertes reste à établir.
@@ -44,19 +40,19 @@ seront spécifiés plus tard. [Guide de la GUI](docs/VISUALIZER.md).
 Les lanceurs Pygame historiques ci-dessous sont conservés.
 
 Pour voir les résultats CP1 calculés sur cette machine :
-**Résultats locaux → CP1 · graine1 · terminé**. Ce checkpoint montre l'enceinte
-de52 molécules à8000 ; ouverture en pause, zoom/filtres/suivi disponibles.
-Le menu charge les fichiers locaux, sans données embarquées dans Git.
-Un checkpoint final est un état à inspecter ; son passé n'est pas rejoué.
-**Fichier → Ouvrir un checkpoint local…** accepte aussi les états compatibles.
+**Résultats locaux → Membrane assemblée · CP1 · graine 1 · terminé** montre
+l’enceinte de 52 lipides à t = 8 000 en lecture seule, avec zoom, filtres et sélection.
+Le menu utilise les fichiers de campagne locaux ignorés par Git.
+**Fichier → Ouvrir un checkpoint local…** permet la reprise d’un état
+calculé avec la version courante du moteur.
 
-**Prototype le plus intégré visible** : **Démos → Intégration compacte ·
+**Référence historique d’insertion**. **Démos → Intégration compacte ·
 échanges stabilisés** montre les trois EG1,302 billes, avec vraie synthèse H/T.
 « Démo intégrée · référence EG1 » ouvre la graine0 par convention. Insertion de L
 fabriqués dans deux graines sur trois, tenue tardive94–95% et température
 proche de la consigne dans les trois ; aucun maintien sous pertes ou flux ouvert.
 CB1 et ses ouvertures restent au menu « défauts connus ». MIN1M et MX2 restent
-accessibles séparément,39 démos au total. EN1 est visible dans « contrôle au pas fin ».
+accessibles séparément. EN1 est visible dans « contrôle au pas fin ».
 
 Recherche : **CR1 terminé3/3, crible fixé réussi** sous les lois CP1 :
 enceintes finales30/52/34 depuis dimères isolés, présence tardive>=50% sur2/3.
@@ -67,8 +63,7 @@ l'outil et n'établit pas le réemploi strict. **FR1 terminé6/6** : récupérat
 fast0/3 et slow1/3, deux portes refusées. OB1 terminé6/6 vérifie le transport ouvert
 de précurseurs sans cellule ni transfert de pertes dans CP1.
 État : `functional_recovery_status.bat`. Aucun changement des lois CP1.
-Les39 presets restent EG1/EN1/CB1 historiques ; les trois résultats CR1 sont
-inspectables dans **Résultats locaux**. CF1 reste en pause scientifique.
+Le catalogue propose 41 configurations au total. CF1 reste en pause scientifique.
 [Lot54](research/BATCH_54.md) · [Checklist](research/CELL_CHECKLIST_COMPACT.md) ·
 [Calibration](research/CAMPAIGN_CALIBRATION.md).
 
