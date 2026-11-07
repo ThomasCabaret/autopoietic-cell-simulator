@@ -1,5 +1,12 @@
 # Journal de recherche
 
+## 2026-11-07 — lot57, mécanique Langevin résidente
+
+CRM1. Le diagnostic de mélange exécute le voisinage, les forces et le pas
+Langevin en CUDA. La référence CPU et le noyau hybride restent sélectionnables.
+Contrôles du mur, des contacts, de la reprise et du rejet d'une instabilité.
+Mesures appariées du pas complet sur trois tailles. [Bilan et limites](BATCH_57.md)
+
 ## 2026-11-07 — lot56, noyau commun C++ et CUDA
 
 CFN1. Les forces élémentaires deviennent sélectionnables par scénario.

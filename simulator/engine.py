@@ -17,16 +17,22 @@ class Simulation:
         self.reaction_every = self.config['engine']['reaction_every']
         backend = self.config['engine'].get('force_backend', 'numba')
         self.force_kernel = force_kernel
-        if backend != 'numba':
+        if backend in ('cpp', 'cuda'):
             from .native_forces import select_force_kernel
             self.force_kernel = select_force_kernel(backend)
         self.neighbors = Neighborhood(self.config['engine']['spatial'],self.config['engine']['skin'])
         self.motion=None
+        self.resident_react = None
         motion_settings=self.config.get('mechanics',self.chemistry.config)
         if motion_settings.get('motion','brownian')!='brownian':
             if self.config['model'] not in ('mixing','copy','membrane','membrane_bath','coupled_bath','lipid_synthesis','mixed_synthesis','open_bath'):raise ValueError('Unsupported inertial hook')
             from .motion import InertialMotion
-            self.motion=InertialMotion(self.chemistry,self.rng,motion_settings,self.force_kernel)
+            if backend == 'cuda-resident':
+                from .resident_motion import ResidentMixingMotion
+                self.motion = ResidentMixingMotion(self.chemistry, self.rng, motion_settings)
+                self.resident_react = self.chemistry.react
+            else:
+                self.motion=InertialMotion(self.chemistry,self.rng,motion_settings,self.force_kernel)
             self.chemistry.motion_state=self.motion
         self.step_index = 0
         self.prepared = False
@@ -75,6 +81,21 @@ class Simulation:
             raise ValueError('steps must be a nonnegative integer')
         self.prepare()
         c=self.chemistry
+        if self.resident_react is not None:
+            end = min(self.step_index+steps, self.target_step)
+            while self.step_index < end:
+                block = min(end-self.step_index, 250)
+                if self.listeners:
+                    cadence = self.config['engine']['sample_every']
+                    block = min(block, cadence-self.step_index%cadence)
+                if c.react != self.resident_react:
+                    # Preserve a wrapped reaction hook's cadence and current positions.
+                    block = min(block, self.reaction_every-self.step_index%self.reaction_every)
+                self.motion.advance_block(c, self.rng, self.dt, block)
+                self.step_index += block
+                self.prepared = False
+                self.prepare()
+            return
         for _ in range(min(steps,max(0,self.target_step-self.step_index))):
             if self.motion is None:
                 pairs=self.neighbors.pairs(c.pos,float(c.contact.max()),'core')

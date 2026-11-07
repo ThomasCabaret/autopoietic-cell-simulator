@@ -1,4 +1,4 @@
-# État courant — 7 novembre 2026, lot56
+# État courant — 7 novembre 2026, lot57
 
 Source courte de reprise. [Checklist](research/CELL_CHECKLIST_COMPACT.md),
 [priorités](research/PRIORITIES.md), [décisions sur l'audit](research/ASTRA_REVIEW.md).
@@ -12,7 +12,7 @@ Source courte de reprise. [Checklist](research/CELL_CHECKLIST_COMPACT.md),
 | Recyclage RF1 | 9/9 terminés, deux protections refusées ; aucun réemploi strict incorporé, outil parfois perdu |
 | Récupération FR1 | 6/6 terminés,0 erreur ; fast0/3, slow1/3 ; deux portes refusées. Pas de relance de taux |
 | Transport ouvert OB1 | 6/6 terminés, bilan exact et vrais flux ; précurseurs seuls sous Langevin, hors CP1 |
-| Calcul C++ et CUDA CFN1 | Forces de base sélectionnables, préfixe CP1 et reprise vérifiés sur la RTX 4060 Laptop. Chemin CUDA hybride, premier lot technique. |
+| Calcul C++ et CUDA | CFN1 hybride vérifié sur un préfixe CP1. CRM1 résident accélère le bain de mélange Langevin sur la RTX 4060 Laptop. |
 | Calculs actifs à cette clôture | Aucun ; CF1 conserve sa pause scientifique |
 | Maintien intégré | Non démontré ; flux CP1, pertes compatibles, bilan L, information et diversité des outils restent ouverts |
 
@@ -23,9 +23,9 @@ Les vingt recommandations ne déclenchent pas vingt campagnes.
 Prochaines décisions :
 
 Le chantier demandé vise un calcul CUDA résident et une référence CPU
-maintenue. La prochaine tranche technique doit rapprocher voisinage et
-forces supplémentaires des données résidentes. Les décisions biologiques
-ci-dessous restent nécessaires au premier test intégré. [Bilan du lot56](research/BATCH_56.md)
+maintenue. Le prochain jalon technique est le transfert vers un préfixe
+réactif avec mesure des synchronisations. Les décisions biologiques
+ci-dessous restent nécessaires au premier test intégré. [Bilan du lot57](research/BATCH_57.md)
 
 1. Fermer le bilan ouvert minimal du co-recruteur équipé, en choisissant la
    représentation d'atomes actifs/IDs et les sorties de matières, dont L.

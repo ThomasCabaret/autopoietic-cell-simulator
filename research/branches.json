@@ -1815,6 +1815,18 @@
       "recipe": "research/BATCH_56_PLAN.md",
       "evidence": "research/BATCH_56_RESULTS.json",
       "results": "research/BATCH_56.md"
+    },
+    {
+      "id": "CRM1",
+      "parent": "CFN1",
+      "status": "resident_inert_mechanics_verified_and_faster",
+      "hypothesis": "Moving the neighbor grid and full Langevin step to resident CUDA amortizes host transfers.",
+      "test": "Matched CPU and CUDA mixing runs at 302, 3000 and 12000 beads; sample cadence 25; exact same-backend restart and short cross-backend numerical parity.",
+      "conclusion": "Full inert bath step measured at 1.65x, 4.59x and 3.59x versus Numba. Reactive mechanics remains to port.",
+      "cost": "Implementation-only grid and scheduling. No added chemical primitive, helper or forcing.",
+      "recipe": "experiments/benchmark_resident_motion.py",
+      "evidence": "research/BATCH_57_RESULTS.json",
+      "results": "research/BATCH_57.md"
     }
   ]
 }

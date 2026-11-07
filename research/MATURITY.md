@@ -1,5 +1,9 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot57. Le chemin CUDA résident est vérifié pour le bain inerte sous Langevin,
+y compris le checkpoint. O-01 reste au palier sous-cas. Les paliers de la
+chimie et du maintien restent ceux du lot55. [Bilan CRM1](BATCH_57.md)
+
 Lot56. CFN1 valide une tranche logicielle C++/CUDA sur les forces de base.
 La mesure du pas hybride à 302 billes donne un coût supérieur au CPU.
 La résidence GPU de l'état physico-chimique reste à construire. Le registre

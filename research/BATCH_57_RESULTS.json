@@ -1,0 +1,163 @@
+{
+  "recipe": "python -m experiments.benchmark_resident_motion --cpp",
+  "scope": "Langevin mixing; same light observer and sample cadence; full advances after warmup",
+  "machine": {
+    "cpu": "Intel Core i7-13700H",
+    "cuda": "12.5",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "cupy": "13.3.0",
+    "os": "Windows-11-10.0.26200-SP0",
+    "steps": 500,
+    "repeats": 3,
+    "dt": 0.002,
+    "sample_every": 25,
+    "seed": 43
+  },
+  "rows": [
+    {
+      "particles": 302,
+      "timings": {
+        "numba": {
+          "setup_s": 0.033562200143933296,
+          "first_25_steps_s": 0.375208199955523,
+          "warm_repeats_s": [
+            0.044395099859684706,
+            0.049237499944865704,
+            0.04456720012240112
+          ],
+          "warm_median_s": 0.04456720012240112,
+          "warm_steps_per_s": 11219.013055044523
+        },
+        "cpp": {
+          "setup_s": 0.03852450009435415,
+          "first_25_steps_s": 0.018031399929895997,
+          "warm_repeats_s": [
+            0.08466619998216629,
+            0.11902109999209642,
+            0.11362689989618957
+          ],
+          "warm_median_s": 0.11362689989618957,
+          "warm_steps_per_s": 4400.366466539208
+        },
+        "cuda-resident": {
+          "setup_s": 0.18243739986792207,
+          "first_25_steps_s": 0.06233830004930496,
+          "warm_repeats_s": [
+            0.025733300019055605,
+            0.02704929979518056,
+            0.027901400113478303
+          ],
+          "warm_median_s": 0.02704929979518056,
+          "warm_steps_per_s": 18484.76684372755
+        }
+      },
+      "first_block_max_error": {
+        "position": 0.0,
+        "velocity": 0.0
+      },
+      "speedup": {
+        "numba": 1.647628606280661,
+        "cpp": 4.200733503513269
+      }
+    },
+    {
+      "particles": 3000,
+      "timings": {
+        "numba": {
+          "setup_s": 0.47709619998931885,
+          "first_25_steps_s": 0.025388300186023116,
+          "warm_repeats_s": [
+            0.3215606000740081,
+            0.34298080019652843,
+            0.23145560012198985
+          ],
+          "warm_median_s": 0.3215606000740081,
+          "warm_steps_per_s": 1554.9168644570373
+        },
+        "cpp": {
+          "setup_s": 0.38831400009803474,
+          "first_25_steps_s": 0.02712199999950826,
+          "warm_repeats_s": [
+            0.4623961001634598,
+            0.4479750001337379,
+            0.3335654998663813
+          ],
+          "warm_median_s": 0.4479750001337379,
+          "warm_steps_per_s": 1116.1337124855866
+        },
+        "cuda-resident": {
+          "setup_s": 0.44195470004342496,
+          "first_25_steps_s": 0.00478079984895885,
+          "warm_repeats_s": [
+            0.07004210003651679,
+            0.06882310006767511,
+            0.08498289994895458
+          ],
+          "warm_median_s": 0.07004210003651679,
+          "warm_steps_per_s": 7138.563802903148
+        }
+      },
+      "first_block_max_error": {
+        "position": 0.0,
+        "velocity": 2.220446049250313e-16
+      },
+      "speedup": {
+        "numba": 4.590961720256259,
+        "cpp": 6.395796241120469
+      }
+    },
+    {
+      "particles": 12000,
+      "timings": {
+        "numba": {
+          "setup_s": 6.5416863998398185,
+          "first_25_steps_s": 0.057869100011885166,
+          "warm_repeats_s": [
+            1.857279600109905,
+            1.2907264998648316,
+            1.3044631001539528
+          ],
+          "warm_median_s": 1.3044631001539528,
+          "warm_steps_per_s": 383.29945855960966
+        },
+        "cpp": {
+          "setup_s": 6.217155999969691,
+          "first_25_steps_s": 0.06757389986887574,
+          "warm_repeats_s": [
+            1.4702121000736952,
+            1.5567272999323905,
+            1.4145448000635952
+          ],
+          "warm_median_s": 1.4702121000736952,
+          "warm_steps_per_s": 340.08698471121085
+        },
+        "cuda-resident": {
+          "setup_s": 6.172184500144795,
+          "first_25_steps_s": 0.03508239984512329,
+          "warm_repeats_s": [
+            0.5200179000385106,
+            0.3502871999517083,
+            0.3636663998477161
+          ],
+          "warm_median_s": 0.3636663998477161,
+          "warm_steps_per_s": 1374.8864349562486
+        }
+      },
+      "first_block_max_error": {
+        "position": 0.0,
+        "velocity": 2.220446049250313e-16
+      },
+      "speedup": {
+        "numba": 3.586977242605288,
+        "cpp": 4.042749345799725
+      }
+    }
+  ],
+  "source_sha256": {
+    "simulator/resident_motion.py": "d51c174b3fd079d06a46339d74dd14855c0c1d0c84fce0b64191ca5c8dd2f3e4",
+    "simulator/native_forces.py": "4d3630d2eb2cff7a685562e60e149f36f1f514d5b4bf5d2226dc50829a2df1ac",
+    "simulator/engine.py": "2d345ab362f3091b10e702cec7e79bf21436688c576322042ac2c1ccbbec234a",
+    "simulator/config.py": "758fe5c175df3805eb917612684a26c7bd20e8b158e18f401e0bdf040f0062b5",
+    "experiments/benchmark_resident_motion.py": "96653c9e910c9570a1217e14611a0819e7fe52a0c90953390b7d0bd20a67565b"
+  }
+}

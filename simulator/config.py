@@ -58,8 +58,11 @@ def resolve(raw):
     if set(raw.get("engine",{}))-set(engine)-{'force_backend'}:
         raise ValueError("Unknown engine setting")
     engine.update(raw.get("engine",{}))
-    if engine.get('force_backend', 'numba') not in ('numba', 'cpp', 'cuda'):
-        raise ValueError('force_backend must be numba, cpp or cuda')
+    backend = engine.get('force_backend', 'numba')
+    if backend not in ('numba', 'cpp', 'cuda', 'cuda-resident'):
+        raise ValueError('force_backend must be numba, cpp, cuda or cuda-resident')
+    if backend == 'cuda-resident' and (model != 'mixing' or defaults['motion'] != 'langevin'):
+        raise ValueError('cuda-resident currently supports only Langevin mixing')
     raw.update(chemistry=defaults,engine=engine)
     raw.setdefault("seed",0)
     raw.setdefault("duration",180. if model=="copy" else 100.)

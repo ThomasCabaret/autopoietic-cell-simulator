@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "revision": 27,
+  "revision": 28,
   "reviewed": "2026-11-07",
-  "candidate": "CP1 avec référence CPU et tranche de forces C++/CUDA CFN1",
+  "candidate": "CP1 avec référence CPU, forces CFN1 et mécanique résidente CRM1 en bain inerte",
   "purpose": "Registre évolutif des capacités nécessaires à une cellule construite maintenue ; les pourcentages sont des paliers de preuve, pas un taux global de réussite.",
   "out_of_scope": [
     "origine spontanée de la cellule",
@@ -1174,16 +1174,17 @@
       "mechanism": "Moteur partagé, arbres spatiaux, profilage et mesures par objectif utile plutôt que vitesse brute.",
       "concept_gap": "Taille réelle des outils et temps de renouvellement complet inconnus ; pas de promesse inférieure à dix heures.",
       "proof": "subcase",
-      "scope": "CFN1 compare le noyau local C++/CUDA et un préfixe CP1 de 302 billes. La simulation hybride copie les données à chaque évaluation. Le banc résident répète un instantané.",
+      "scope": "CFN1 valide le préfixe hybride CP1 de 302 billes. CRM1 accélère les pas complets du bain inerte Langevin de 1,65× à 4,59× face à Numba selon la taille.",
       "references": [
         "research/KINETICS_AND_PERFORMANCE.md",
         "research/BATCH_44.md",
         "research/BATCH_49.md",
         "research/BATCH_50.md",
         "research/BATCH_51.md",
-        "research/BATCH_56.md"
+        "research/BATCH_56.md",
+        "research/BATCH_57.md"
       ],
-      "next_test": "Déplacer le voisinage et l’intégration vers des données résidentes. Mesurer le pas complet avec les forces supplémentaires et comparer le débit multi-bains au CPU.",
+      "next_test": "Mesurer un préfixe CP1 avec les forces supplémentaires et les synchronisations aux ticks, puis comparer le débit multi-bains au CPU.",
       "essential": true
     },
     {
@@ -1385,9 +1386,14 @@
       "revision": 27,
       "date": "2026-11-07",
       "reason": "Lot56 CFN1 : forces de base C++ et CUDA et reprise vérifiées sur un préfixe. Aucun palier biologique augmenté."
+    },
+    {
+      "revision": 28,
+      "date": "2026-11-07",
+      "reason": "Lot57 CRM1 : pas CUDA résident, concordance et reprise vérifiées pour le bain inerte Langevin. Aucun palier biologique augmenté."
     }
   ],
   "last_batch_progress": {
-    "O-01": "Trois chemins de forces sélectionnables. Préfixe CP1 et reprises exacts. Mesures résidentes et hybrides séparées."
+    "O-01": "Voisinage et pas Langevin résidents, reprise exacte et facteur de débit mesuré sur trois tailles de bain inerte."
   }
 }

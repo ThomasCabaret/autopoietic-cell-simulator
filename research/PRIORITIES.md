@@ -1,5 +1,10 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot57. CRM1 déplace le voisinage et l'intégration Langevin en CUDA pour le bain
+inerte. Prochaine mesure décisive sur un préfixe CP1 avec forces propres et
+topologie qui change aux ticks de réaction. Quantifier le coût des échanges
+et de la cadence réelle avant de porter les réactions. [Bilan](BATCH_57.md)
+
 Lot56. La piste CUDA est ouverte à la demande utilisateur. CFN1 a un noyau
 commun C++/CUDA pour les forces élémentaires. Priorité technique au voisinage,
 à l'intégration et aux forces spécifiques sur états résidents. Mesurer le pas

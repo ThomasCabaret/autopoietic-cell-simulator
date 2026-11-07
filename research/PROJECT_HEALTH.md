@@ -1,5 +1,11 @@
 # Santé du projet — actualisation du 7 novembre 2026
 
+Lot57. Gain de débit de la mécanique résidente mesuré à trois tailles de bain
+inerte. Le transfert à CP1 dépend du coût des forces propres et du nombre de
+synchronisations aux ticks chimiques. Exiger une mesure appariée du pas CP1
+avant de modifier l'estimation d'effort ou d'investir dans un portage des
+réactions. [Bilan du lot57](BATCH_57.md)
+
 Lot56. Le passage des forces élémentaires par CUDA est vérifié sur un préfixe
 CP1, avec reprise exacte sur la machine de test. Le pas hybride est plus lent
 sur 302 billes. Le travail sur la résidence des données et le voisinage doit

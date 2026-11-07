@@ -49,6 +49,13 @@ LOCAL double at_least(double value, double lower) {
     return value < lower ? lower : value;
 }
 
+LOCAL Vec contact_force(Vec d, double radius, double core_k, double sign) {
+    double r = sqrt(dot(d, d));
+    double overlap = at_least(radius-r, 0.0);
+    double scale = core_k*overlap / at_least(r, 1e-8);
+    return {sign*(scale*d.x), sign*(scale*d.y)};
+}
+
 LOCAL Vec angle_force(const double* pos, const double* angle, int role) {
     Index i = Index(angle[0]), j = Index(angle[1]), k = Index(angle[2]);
     Vec u = between(pos, j, i), v = between(pos, j, k);
@@ -69,21 +76,18 @@ LOCAL Vec particle_force(
     Index i, const double* pos, const Index* offsets, const Index* refs,
     const Index* pairs, const Index* kinds, const double* contact,
     const double* springs, const double* angles,
-    Index pair_count, Index spring_count, Index kind_count, double core_k
+    Index pair_count, Index spring_count, Index kind_count, double core_k,
+    Vec force = {0.0, 0.0}
 ) {
-    Vec force = {0.0, 0.0};
     for (Index q = offsets[i]; q < offsets[i+1]; ++q) {
         Index term = refs[q]/3;
         int role = int(refs[q]%3);
         Vec contribution;
         if (term < pair_count) {
             Index a = pairs[2*term], b = pairs[2*term+1];
-            Vec d = between(pos, a, b);
-            double r = sqrt(dot(d, d));
-            double overlap = at_least(contact[kinds[a]*kind_count+kinds[b]]-r, 0.0);
-            double scale = core_k*overlap / at_least(r, 1e-8);
-            double sign = role == 0 ? -1.0 : 1.0;
-            contribution = {sign*(scale*d.x), sign*(scale*d.y)};
+            contribution = contact_force(between(pos, a, b),
+                                         contact[kinds[a]*kind_count+kinds[b]],
+                                         core_k, role == 0 ? -1.0 : 1.0);
         } else if (term < pair_count+spring_count) {
             const double* spring = springs+4*(term-pair_count);
             Vec d = between(pos, Index(spring[0]), Index(spring[1]));

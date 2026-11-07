@@ -13,8 +13,8 @@ def main():
     p.add_argument('--seed',type=int)
     p.add_argument('--duration',type=float)
     p.add_argument('--spatial',choices=['tree','brute'])
-    p.add_argument('--force-backend', choices=['numba', 'cpp', 'cuda'],
-                   help='backend for core contacts, springs and angles')
+    p.add_argument('--force-backend', choices=['numba', 'cpp', 'cuda', 'cuda-resident'],
+                   help='backend for mechanics (cuda-resident requires Langevin mixing)')
     p.add_argument('--output',type=Path,default=Path('outputs'))
     p.add_argument('--no-trajectory',action='store_true')
     p.add_argument('--resume',type=Path)

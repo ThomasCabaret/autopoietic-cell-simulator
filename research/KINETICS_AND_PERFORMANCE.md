@@ -1,5 +1,12 @@
 # Cinétique, campagnes différées et coût du moteur
 
+Précision lot57. Pour une comparaison de backends, fixer le pas, les tirages
+de référence, la cadence des observateurs, le bain et l'horizon. Rapporter
+séparément initialisation, premier bloc, débit établi et taille du système.
+Mesurer les transferts et synchronisations dans le chemin réellement utilisé.
+Un gain sur un bain inerte renseigne la mécanique. Refaire la mesure avec
+forces et réactions avant d'en déduire un débit cellulaire. [CRM1](BATCH_57.md)
+
 Précision lot51 : calibrer aussi les modes collectifs quand les monomères
 s'assemblent en longues chaînes. Diffusion du centre de masse et mélange de
 petites molécules ne bornent pas une relaxation de courbure. Un profil local,
