@@ -1,6 +1,6 @@
 # Checklist détaillée — critères et dépendances
 
-Revue 2026-11-07 · révision33. Source : [cell_checklist.json](cell_checklist.json).
+Revue 2026-11-07 · révision34. Source : [cell_checklist.json](cell_checklist.json).
 [Tableau compact](CELL_CHECKLIST_COMPACT.md) · [Échelle et méthode](CONCEPT_FIRST.md).
 
 Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre acyclique de codage. Les cycles de renouvellement sont intentionnels. Une condition initiale construite peut amorcer un sous-cas sans fermer ces cycles.
@@ -823,13 +823,13 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Dépend de :** [E-02](#E-02), [C-02](#C-02) · **Pour renouveler :** —
 
-**Portée des preuves :** CPR1 valide la mécanique CP1 résidente et RFC1 le banc ouvert. SCP1 mesure le pas réactif à 302, 1 000 et 2 118 billes, avec 1,13–1,64× à la taille cible.
+**Portée des preuves :** SCP1 mesure 1,13–1,64× sur CP1 complet à 2 118 billes. RCT1 valide des ticks de capture indépendante sur GPU avec un gain 9,93–11,40× dans ce sous-cas.
 
-**Références :** [research/KINETICS_AND_PERFORMANCE.md](../research/KINETICS_AND_PERFORMANCE.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_50.md](../research/BATCH_50.md), [research/BATCH_51.md](../research/BATCH_51.md), [research/BATCH_56.md](../research/BATCH_56.md), [research/BATCH_57.md](../research/BATCH_57.md), [research/BATCH_58.md](../research/BATCH_58.md), [research/BATCH_59.md](../research/BATCH_59.md), [research/BATCH_60.md](../research/BATCH_60.md), [research/BATCH_61.md](../research/BATCH_61.md), [research/BATCH_62.md](../research/BATCH_62.md), [research/CUDA_COMPLETION.md](../research/CUDA_COMPLETION.md)
+**Références :** [research/KINETICS_AND_PERFORMANCE.md](../research/KINETICS_AND_PERFORMANCE.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_50.md](../research/BATCH_50.md), [research/BATCH_51.md](../research/BATCH_51.md), [research/BATCH_56.md](../research/BATCH_56.md), [research/BATCH_57.md](../research/BATCH_57.md), [research/BATCH_58.md](../research/BATCH_58.md), [research/BATCH_59.md](../research/BATCH_59.md), [research/BATCH_60.md](../research/BATCH_60.md), [research/BATCH_61.md](../research/BATCH_61.md), [research/BATCH_62.md](../research/BATCH_62.md), [research/BATCH_63.md](../research/BATCH_63.md), [research/CUDA_COMPLETION.md](../research/CUDA_COMPLETION.md)
 
-**Prochain test / décision :** Évaluer les deltas H/T par lots, séparer attente et transferts CUDA et répéter le débit à plusieurs graines.
+**Prochain test / décision :** Évaluer les deltas H/T par lots sur GPU et valider l'arbitrage avec dépendances de lecture avant d'élargir à CP1.
 
-**Progrès du dernier lot :** Débit réactif mesuré à la taille de 2 118 billes et deltas H/T accélérés à état CPU exact.
+**Progrès du dernier lot :** Capture indépendante arbitrée sur GPU sur plusieurs ticks, benchmark actif à la taille cible.
 
 <a id="O-02"></a>
 ### O-02 — Observation passive, reproductibilité et inspection
@@ -885,3 +885,4 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 - Révision31 (2026-11-07) : Lot60 CPR1 : premier CP1 à mécanique CUDA résidente complète et réactions CPU. Aucun palier biologique augmenté.
 - Révision32 (2026-11-07) : Lot61 RFC1 : parcours CPU des faces accélérés et banc ouvert CUDA validé. Aucun palier biologique augmenté.
 - Révision33 (2026-11-07) : Lot62 SCP1 : débit réactif mesuré jusqu'à 2 118 billes et réemploi exact de géométrie H/T. Aucun palier biologique augmenté.
+- Révision34 (2026-11-07) : Lot63 RCT1 : première capture arbitrée sur GPU et mesure active à 2 118 billes. Aucun palier biologique augmenté.

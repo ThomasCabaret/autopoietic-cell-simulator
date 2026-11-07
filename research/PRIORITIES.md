@@ -1,5 +1,9 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot63. Le chemin de capture démontre les ticks autonomes. Priorité
+aux propositions H/T, dont l'acceptation peut modifier les énergies
+de propositions voisines, puis aux autres transitions. [Bilan](BATCH_63.md)
+
 Lot62. À 2 118 billes, un facteur 10 ne peut venir du seul gain de
 mécanique. Priorité aux deltas H/T par lots et à l'instrumentation du
 coût par bloc. Puis réception à plusieurs graines. [Bilan](BATCH_62.md)

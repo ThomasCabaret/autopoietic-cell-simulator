@@ -1,5 +1,12 @@
 # Journal de recherche
 
+## 2026-11-07 — lot63, capture indépendante avec arbitrage GPU
+
+RCT1. Capture, libération et mouvement sans arbitrage hôte par tick.
+Contrôle actif à 2 118 billes sur deux graines. Gain 9,93–11,40×
+face au CPU sur cette tranche. Le conflit contrôlé reste exclusif et
+rejouable. CP1 complet garde ses réactions CPU. [Bilan](BATCH_63.md)
+
 ## 2026-11-07 — lot62, débit CP1 à plusieurs tailles
 
 SCP1. Même chimie, trois tailles dont 2 118 billes. Deltas H/T accélérés

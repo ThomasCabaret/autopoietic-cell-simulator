@@ -240,3 +240,34 @@ class ResidentMotionTests(unittest.TestCase):
                 np.testing.assert_array_equal(gpu.chemistry.pos, resumed.chemistry.pos)
                 self.assertEqual(gpu.chemistry.export(), resumed.chemistry.export())
                 self.assertEqual(gpu.motion.export(), resumed.motion.export())
+
+    def test_device_capture_resolves_one_ligand_between_two_sites(self):
+        from experiments.probe_cuda_capture_ticks import capture_scenario, capture_sim, occupancy
+
+        config = capture_scenario(150)
+        config['chemistry'].update(food_activation=False, food_binding_rate=1e6,
+                                   food_unbinding_rate=0., temperature=0.)
+        sims = []
+        for steps in ((50,), (25, 25)):
+            sim = capture_sim(config, True)
+            c = sim.chemistry
+            cap = c.assembly.catalyst
+            owners = np.flatnonzero(cap.owners >= 0)
+            bit = c.bits[cap.owners[owners[0]]]
+            sites = owners[c.bits[cap.owners[owners]] == bit][:2]
+            ligand = np.flatnonzero(cap.categories == bit)[0]
+            cap.categories[:] = -1
+            cap.categories[ligand] = bit
+            for site, target in zip(sites, ([1., 1.], [1.35, 1.])):
+                translation = target-c.pos[site]
+                c.pos[c.rungs[cap.owners[site]]] += translation
+            c.pos[ligand] = [1.175, 1.]
+            for count in steps:
+                sim.advance(count)
+            self.assertEqual(occupancy(sim, True), 1)
+            self.assertIn(sim.motion.partner.get()[ligand], sites)
+            np.testing.assert_array_equal(sim.motion.counts.get(), [1, 0])
+            np.testing.assert_array_equal(sim.motion.tick.get(), [10])
+            sims.append(sim)
+        np.testing.assert_array_equal(sims[0].motion.partner.get(), sims[1].motion.partner.get())
+        np.testing.assert_array_equal(sims[0].chemistry.pos, sims[1].chemistry.pos)

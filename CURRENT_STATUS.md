@@ -1,4 +1,4 @@
-# État courant — 7 novembre 2026, lot62
+# État courant — 7 novembre 2026, lot63
 
 Source courte de reprise. [Checklist](research/CELL_CHECKLIST_COMPACT.md),
 [priorités](research/PRIORITIES.md), [décisions sur l'audit](research/ASTRA_REVIEW.md).
@@ -12,7 +12,7 @@ Source courte de reprise. [Checklist](research/CELL_CHECKLIST_COMPACT.md),
 | Recyclage RF1 | 9/9 terminés, deux protections refusées ; aucun réemploi strict incorporé, outil parfois perdu |
 | Récupération FR1 | 6/6 terminés,0 erreur ; fast0/3, slow1/3 ; deux portes refusées. Pas de relance de taux |
 | Transport ouvert OB1 | 6/6 terminés, bilan exact et vrais flux ; précurseurs seuls sous Langevin, hors CP1 |
-| Calcul C++ et CUDA | CP1 à mécanique résidente. Première mesure à la taille de 2 118 billes, 1,13–1,64× sur CP1 agrandi. Deltas H/T optimisés sur CPU. [Critères de clôture](research/CUDA_COMPLETION.md) |
+| Calcul C++ et CUDA | CP1 complet encore hybride. La capture indépendante tourne sur GPU avec arbitrage et mouvement. Contrôle actif à 2 118 billes, 9,93–11,40× face au CPU sur cette tranche. [Critères de clôture](research/CUDA_COMPLETION.md) |
 | Calculs actifs à cette clôture | Aucun ; CF1 conserve sa pause scientifique |
 | Maintien intégré | Non démontré ; flux CP1, pertes compatibles, bilan L, information et diversité des outils restent ouverts |
 
@@ -23,10 +23,9 @@ Les vingt recommandations ne déclenchent pas vingt campagnes.
 Prochaines décisions :
 
 Le chantier demandé vise un calcul CUDA résident et une référence CPU
-maintenue. Le prochain jalon porte sur les deltas H/T par lots et sur
-l'origine des variations d'attente à 2 118 billes. Les décisions
-biologiques ci-dessous restent nécessaires au premier test intégré.
-[Bilan du lot62](research/BATCH_62.md)
+maintenue. Le prochain jalon porte sur les deltas H/T par lots et les
+conflits liés à l'énergie compétitive. Les décisions biologiques ci-dessous
+restent nécessaires au premier test intégré. [Bilan du lot63](research/BATCH_63.md)
 
 1. Fermer le bilan ouvert minimal du co-recruteur équipé, en choisissant la
    représentation d'atomes actifs/IDs et les sorties de matières, dont L.

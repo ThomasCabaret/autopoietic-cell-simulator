@@ -1882,6 +1882,17 @@
       "cost": "No new chemical rule; ordered geometry indices and per-tick preparation cache.",
       "recipe": "experiments/benchmark_cp1_scaling.py",
       "results": "research/BATCH_62.md"
+    },
+    {
+      "id": "RCT1",
+      "parent": "SCP1",
+      "status": "resident_capture_arbitration_verified_on_isolated_slice",
+      "hypothesis": "Resident local proposals and ligand reservations remove host arbitration from independent capture ticks.",
+      "test": "Active capture slice at 150 and 2118 beads, two target-size seeds, contended-ligand and exact graph partition controls.",
+      "conclusion": "Active slice achieves 9.93–11.40x versus CPU at 2118 beads. Full CP1 and statistical parity under contention are outstanding.",
+      "cost": "Experimental scheduler order and RNG, no added chemical primitive or change to production CP1.",
+      "recipe": "experiments/probe_cuda_capture_ticks.py",
+      "results": "research/BATCH_63.md"
     }
   ]
 }

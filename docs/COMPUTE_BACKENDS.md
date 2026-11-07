@@ -72,3 +72,8 @@ Le benchmark réactif à la taille cible se lance avec
 `python -m experiments.benchmark_cp1_scaling`. Il rapporte séparément le
 temps du hook de réaction et le temps complet avec observateur.
 [Résultats CP1 à 302, 1 000 et 2 118 billes](../research/BATCH_62.md)
+
+Le pilote expérimental `python -m experiments.probe_cuda_capture_ticks --active-control`
+exécute plusieurs ticks de capture P/R indépendante sur le GPU avec la
+mécanique. Les autres réactions sont gelées. Le backend CP1 ordinaire
+conserve les réactions CPU. [Périmètre et mesures](../research/BATCH_63.md)

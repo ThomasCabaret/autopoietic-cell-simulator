@@ -1,5 +1,10 @@
 # Santé du projet — actualisation du 7 novembre 2026
 
+Lot63. La capture indépendante confirme le potentiel d'un état et
+d'un arbitrage résidents. Le risque restant porte sur les dépendances
+des transitions compétitives et sur leur fidélité cinétique. Le gain
+de la tranche ne prédit pas celui de CP1. [Bilan](BATCH_63.md)
+
 Lot62. Quatre lots techniques centraux, plage 3–5, pour la réception
 CPU/CUDA à taille utile. Le crible à 2 118 billes indique 1,13–1,64× et
 identifie les réactions et le coût hors réactions comme deux leviers

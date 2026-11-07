@@ -7,6 +7,7 @@ from .motion import InertialMotion
 from .native_forces import SOURCE as FORCE_SOURCE, pack_terms
 from .resident_fields import SOURCE as FIELD_SOURCE, CaptureField, SegmentField
 from .resident_ports import SOURCE as PORT_SOURCE, LipidPorts
+from .resident_capture_ticks import SOURCE as TICK_SOURCE
 
 
 SOURCE = r"""
@@ -139,11 +140,12 @@ ENTRY void kick(const double* pos, double* vel, double* force, const double* old
 def _kernels(device):
     import cupy as cp
 
-    module = cp.RawModule(code=FORCE_SOURCE + SOURCE + FIELD_SOURCE + PORT_SOURCE,
+    module = cp.RawModule(code=FORCE_SOURCE + SOURCE + FIELD_SOURCE + PORT_SOURCE + TICK_SOURCE,
                           options=('--std=c++11', '--fmad=false'))
     names = ('drift', 'clear_cells', 'bin_particles', 'order_cells', 'kick', 'capture_field',
              'clear_segment_measure', 'measure_segments', 'segment_field',
-             'lipid_geometry', 'lipid_scores', 'lipid_derivatives', 'lipid_force')
+             'lipid_geometry', 'lipid_scores', 'lipid_derivatives', 'lipid_force',
+             'release_capture', 'propose_capture', 'commit_capture')
     return tuple(module.get_function(name) for name in names)
 
 
@@ -176,7 +178,7 @@ def mixed_field_snapshot(chemistry):
     ports = LipidPorts(cp, chemistry)
     capture.launch(kernels[5], pos, n, grid)
     segment.launch(kernels[6:9], pos, n, grid)
-    ports.launch(kernels[9:], pos, n, grid)
+    ports.launch(kernels[9:13], pos, n, grid)
     return np.stack((capture.output.get(), segment.output.get(), ports.output.get()))
 
 
@@ -306,17 +308,17 @@ class ResidentLangevinMotion(InertialMotion):
         self.alignments.set(aligned)
         self.alignment_state = tuple(array.copy() for array in state)
 
-    def _force(self, advance):
+    def _force(self, advance, rebuild=True):
         pos, vel, force = self.device
         kick = self.kernels[4]
         grid = self.heads, self.next, self.width, self.nx, self.ny
-        if self.width:
+        if self.width and rebuild:
             _bin_particles(self.kernels[1:4], pos, self.count, self.cells, grid)
         if self.capture is not None:
             self.capture.launch(self.kernels[5], pos, self.count, grid)
         if self.mixed:
             self.barrier.launch(self.kernels[6:9], pos, self.count, grid)
-            self.ports.launch(self.kernels[9:], pos, self.count, grid)
+            self.ports.launch(self.kernels[9:13], pos, self.count, grid)
         kick(_grid(self.count), (128,), (
             pos, vel, force, self.old, self.displacement, self.count, self.half_kick,
             self.heads, self.next, self.width, self.nx, self.ny, *self.terms,
@@ -328,7 +330,7 @@ class ResidentLangevinMotion(InertialMotion):
             self.old if self.barrier is None else self.barrier.output,
             np.bool_(self.mixed), self.wall, *self.box, np.bool_(advance)))
 
-    def _launch_steps(self, steps):
+    def _launch_steps(self, steps, tick=None, tick_every=1):
         drift = self.kernels[0]
         pos, vel, force = self.device
         for step in range(steps):
@@ -336,6 +338,9 @@ class ResidentLangevinMotion(InertialMotion):
                 pos, vel, force, self.old, self.noise, np.int32(step*2*self.count),
                 self.count, self.half_dt, self.half_kick, self.decay, self.sigma))
             self._force(True)
+            if tick is not None and (step+1)%tick_every == 0:
+                tick()
+                self._force(False, rebuild=False)
 
     def advance_block(self, c, rng, dt, steps):
         """Advance a bounded block; expose a consistent host state on return."""

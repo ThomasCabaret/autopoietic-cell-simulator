@@ -1,5 +1,9 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot63. O-01 reste sous-cas. Une première réaction s'exécute entièrement
+sur GPU dans une tranche isolée, avec mécanique active. Aucun palier
+biologique relevé. [Bilan RCT1](BATCH_63.md)
+
 Lot62. O-01 reste sous-cas. Débit réactif mesuré à la taille historique de
 la cellule, sur CP1 agrandi. Aucun palier biologique relevé. [Bilan](BATCH_62.md)
 

@@ -19,19 +19,26 @@ LOCAL Vec capture_pair(const double* pos, int i, int j, const Index* sites,
 
 ENTRY void capture_field(const double* pos, int n, const Index* sites,
                          const Index* ligands, const double* activity,
-                         double energy, double sigma, const int* heads,
+                         double energy, double sigma, const Index* partner, bool live,
+                         double spring, const int* heads,
                          const int* next, double cell, int nx, int ny, double* out) {
     int i = blockIdx.x*blockDim.x+threadIdx.x;
     if (i >= n) return;
     Vec total = {0., 0.};
-    if (energy != 0. && (sites[2*i] >= 0 || ligands[2*i] >= 0)) {
+    Index bound = live ? partner[i] : -1;
+    if (bound >= 0) {
+        Vec d = between(pos,i,bound);
+        double length = sqrt(dot(d,d));
+        double scale = spring*length/at_least(length,1e-8);
+        total = {scale*d.x,scale*d.y};
+    } else if (energy != 0. && (sites[2*i] >= 0 || ligands[2*i] >= 0)) {
         double r = 3*sigma, x = pos[2*i], y = pos[2*i+1];
         int left = cell_axis(x-r,cell,nx), right = cell_axis(x+r,cell,nx);
         int bottom = cell_axis(y-r,cell,ny), top = cell_axis(y+r,cell,ny);
         for (int row = bottom; row <= top; ++row) {
             for (int col = left; col <= right; ++col) {
                 for (int j = heads[row*nx+col]; j >= 0; j = next[j]) {
-                    if (i == j) continue;
+                    if (i == j || (live && partner[j] >= 0)) continue;
                     Vec a = capture_pair(pos,i,j,sites,ligands,activity,energy,sigma*sigma,r*r);
                     Vec b = capture_pair(pos,j,i,sites,ligands,activity,energy,sigma*sigma,r*r);
                     total.x += a.x-b.x;
@@ -120,7 +127,7 @@ ENTRY void segment_field(const double* pos, int n, const Index* edges,
 """
 
 
-def capture_descriptors(c, cap):
+def capture_descriptors(c, cap, live=False):
     """Freeze local eligibility for the interval between two reaction ticks."""
     n = len(c.pos)
     sites = np.full((n, 2), -1, dtype=np.int64)
@@ -128,12 +135,12 @@ def capture_descriptors(c, cap):
     activity = np.zeros(n)
     atoms = np.flatnonzero(cap.owners >= 0)
     owners = cap.owners[atoms]
-    free = (c.pairing[owners] < 0) & (cap.site_bound[owners] < 0)
+    free = (c.pairing[owners] < 0) & (live | (cap.site_bound[owners] < 0))
     atoms, owners = atoms[free], owners[free]
     sites[atoms, 0] = c.bits[owners]
     sites[atoms, 1] = 3
     activity[atoms] = cap.activity[owners]
-    free_ligands = (cap.categories >= 0) & (cap.atom_bound < 0)
+    free_ligands = (cap.categories >= 0) & (live | (cap.atom_bound < 0))
     ligands[free_ligands, 0] = cap.categories[free_ligands]
     ligands[free_ligands, 1] = 1
     if c.config.get('capture_cooperativity', False):
@@ -158,16 +165,18 @@ def segment_descriptors(c):
 class CaptureField:
     """Keep device buffer addresses stable across reaction ticks."""
 
-    def __init__(self, cp, chemistry, capture):
+    def __init__(self, cp, chemistry, capture, partner=None):
         cfg = chemistry.config
-        self.descriptors = capture_descriptors(chemistry, capture)
+        self.descriptors = capture_descriptors(chemistry, capture, live=partner is not None)
         self.buffers = tuple(cp.asarray(row) for row in self.descriptors)
         self.params = tuple(map(np.float64, (
             cfg['food_ligand_energy'], cfg['food_ligand_width'])))
+        self.occupancy = (self.buffers[0] if partner is None else partner,
+                          np.bool_(partner is not None), np.float64(capture.stiffness))
         self.output = cp.empty_like(chemistry.pos, dtype=cp.float64)
 
     def update(self, chemistry, capture):
-        descriptors = capture_descriptors(chemistry, capture)
+        descriptors = capture_descriptors(chemistry, capture, live=self.occupancy[1])
         for old, new, buffer in zip(self.descriptors, descriptors, self.buffers):
             if not np.array_equal(old, new):
                 buffer.set(new)
@@ -175,7 +184,7 @@ class CaptureField:
 
     def launch(self, kernel, pos, n, grid):
         kernel(((int(n)+127)//128,), (128,), (
-            pos, n, *self.buffers, *self.params, *grid, self.output))
+            pos, n, *self.buffers, *self.params, *self.occupancy, *grid, self.output))
 
 
 class SegmentField:
