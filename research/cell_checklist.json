@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 31,
+  "revision": 32,
   "reviewed": "2026-11-07",
   "candidate": "CP1 avec référence CPU et mécanique CUDA résidente vérifiée sur un préfixe",
   "purpose": "Registre évolutif des capacités nécessaires à une cellule construite maintenue ; les pourcentages sont des paliers de preuve, pas un taux global de réussite.",
@@ -1174,7 +1174,7 @@
       "mechanism": "Moteur partagé, arbres spatiaux, profilage et mesures par objectif utile plutôt que vitesse brute.",
       "concept_gap": "Taille réelle des outils et temps de renouvellement complet inconnus ; pas de promesse inférieure à dix heures.",
       "proof": "subcase",
-      "scope": "CPR1 valide la mécanique CP1 résidente sur un préfixe apparié et la reprise sur naissance contrôlée. Les réactions CPU dominent le profil court.",
+      "scope": "CPR1 valide la mécanique CP1 résidente. RFC1 accélère les ticks de faces et valide le remappage CUDA du banc ouvert. Les réactions CPU dominent le profil court.",
       "references": [
         "research/KINETICS_AND_PERFORMANCE.md",
         "research/BATCH_44.md",
@@ -1186,9 +1186,10 @@
         "research/BATCH_58.md",
         "research/BATCH_59.md",
         "research/BATCH_60.md",
+        "research/BATCH_61.md",
         "research/CUDA_COMPLETION.md"
       ],
-      "next_test": "Décomposer le coût des ticks lipidiques, accélérer leurs phases régulières et mesurer le pas complet à plusieurs tailles.",
+      "next_test": "Décomposer le coût de la formation H/T, mesurer le pas complet à plusieurs tailles et le remappage sous flux variable.",
       "essential": true
     },
     {
@@ -1410,9 +1411,14 @@
       "revision": 31,
       "date": "2026-11-07",
       "reason": "Lot60 CPR1 : premier CP1 à mécanique CUDA résidente complète et réactions CPU. Aucun palier biologique augmenté."
+    },
+    {
+      "revision": 32,
+      "date": "2026-11-07",
+      "reason": "Lot61 RFC1 : parcours CPU des faces accélérés et banc ouvert CUDA validé. Aucun palier biologique augmenté."
     }
   ],
   "last_batch_progress": {
-    "O-01": "Mécanique CP1 résidente intégrée, reprise exacte sur naissance contrôlée et goulot réactionnel localisé."
+    "O-01": "Ticks des faces accélérés et portage CUDA du banc ouvert avec remappage et reprise exacte."
   }
 }

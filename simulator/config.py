@@ -69,10 +69,12 @@ def resolve(raw):
                          ('food_pairs', 'dual_faces')))
         elif model == 'mixed_synthesis':
             supported = 'mechanics' in raw
+        elif model == 'open_bath':
+            supported = defaults['motion'] == 'langevin'
         else:
             supported = False
         if not supported:
-            raise ValueError('cuda-resident requires Langevin mixing, mixed_synthesis or '
+            raise ValueError('cuda-resident requires Langevin mixing, open_bath, mixed_synthesis or '
                              'copy without food or dual faces')
     raw.update(chemistry=defaults,engine=engine)
     raw.setdefault("seed",0)

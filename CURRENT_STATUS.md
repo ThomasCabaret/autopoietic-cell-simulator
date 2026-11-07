@@ -1,4 +1,4 @@
-# État courant — 7 novembre 2026, lot60
+# État courant — 7 novembre 2026, lot61
 
 Source courte de reprise. [Checklist](research/CELL_CHECKLIST_COMPACT.md),
 [priorités](research/PRIORITIES.md), [décisions sur l'audit](research/ASTRA_REVIEW.md).
@@ -12,7 +12,7 @@ Source courte de reprise. [Checklist](research/CELL_CHECKLIST_COMPACT.md),
 | Recyclage RF1 | 9/9 terminés, deux protections refusées ; aucun réemploi strict incorporé, outil parfois perdu |
 | Récupération FR1 | 6/6 terminés,0 erreur ; fast0/3, slow1/3 ; deux portes refusées. Pas de relance de taux |
 | Transport ouvert OB1 | 6/6 terminés, bilan exact et vrais flux ; précurseurs seuls sous Langevin, hors CP1 |
-| Calcul C++ et CUDA | Premier CP1 Langevin avec mécanique CUDA résidente complète et réactions CPU. Préfixe et reprise vérifiés. [Critères de clôture](research/CUDA_COMPLETION.md) |
+| Calcul C++ et CUDA | CP1 à mécanique résidente, ticks de faces accélérés côté CPU et banc ouvert CUDA avec remappage validé. [Critères de clôture](research/CUDA_COMPLETION.md) |
 | Calculs actifs à cette clôture | Aucun ; CF1 conserve sa pause scientifique |
 | Maintien intégré | Non démontré ; flux CP1, pertes compatibles, bilan L, information et diversité des outils restent ouverts |
 
@@ -23,9 +23,10 @@ Les vingt recommandations ne déclenchent pas vingt campagnes.
 Prochaines décisions :
 
 Le chantier demandé vise un calcul CUDA résident et une référence CPU
-maintenue. Le prochain jalon porte sur le coût des ticks, d'abord la
-préparation et les échanges de faces lipidiques. Les décisions biologiques
-ci-dessous restent nécessaires au premier test intégré. [Bilan du lot60](research/BATCH_60.md)
+maintenue. Le prochain jalon porte sur la formation H/T et les mesures
+à plusieurs tailles, avec coût du remappage en bain ouvert. Les décisions
+biologiques ci-dessous restent nécessaires au premier test intégré.
+[Bilan du lot61](research/BATCH_61.md)
 
 1. Fermer le bilan ouvert minimal du co-recruteur équipé, en choisissant la
    représentation d'atomes actifs/IDs et les sorties de matières, dont L.

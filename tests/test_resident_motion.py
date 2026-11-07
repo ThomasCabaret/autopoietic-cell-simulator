@@ -210,3 +210,33 @@ class ResidentMotionTests(unittest.TestCase):
         np.testing.assert_array_equal(gpu.chemistry.pos, resumed.chemistry.pos)
         self.assertEqual(gpu.motion.export(), resumed.motion.export())
         self.assertEqual(gpu.chemistry.export(), resumed.chemistry.export())
+
+    def test_open_resident_bath_remaps_births_and_losses(self):
+        from tests.test_open_bath import scenario as open_scenario
+
+        for radius in (0., .25):
+            with self.subTest(core_radius=radius):
+                config = open_scenario()
+                config['chemistry'].update(initial_counts=[0, 0], core_radius=radius)
+                cpu = Simulation(config)
+                config['engine']['force_backend'] = 'cuda-resident'
+                gpu = Simulation(config)
+                gpu.advance(1)
+                self.assertEqual(gpu.chemistry.pos.shape, (0, 2))
+                with tempfile.TemporaryDirectory() as folder:
+                    path = Path(folder)/'empty.npz'
+                    checkpoint.save(path, gpu)
+                    resumed, _ = checkpoint.load(path)
+                self.assertEqual(resumed.motion.velocities.shape, (0, 2))
+                for sim in (cpu, gpu, resumed):
+                    sim.advance(sim.target_step)
+                self.assertGreater(gpu.chemistry.injected.sum(), 0)
+                self.assertGreater(gpu.chemistry.exported.sum(), 0)
+                self.assertEqual(gpu.chemistry.census(gpu.time)['balance_error'], [0, 0])
+                self.assertEqual(cpu.chemistry.export(), gpu.chemistry.export())
+                self.assertEqual(cpu.rng.bit_generator.state, gpu.rng.bit_generator.state)
+                self.assertEqual(cpu.motion.force_evaluations, gpu.motion.force_evaluations)
+                np.testing.assert_allclose(cpu.chemistry.pos, gpu.chemistry.pos, atol=1e-11, rtol=0)
+                np.testing.assert_array_equal(gpu.chemistry.pos, resumed.chemistry.pos)
+                self.assertEqual(gpu.chemistry.export(), resumed.chemistry.export())
+                self.assertEqual(gpu.motion.export(), resumed.motion.export())

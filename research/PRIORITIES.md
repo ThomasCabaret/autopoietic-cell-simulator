@@ -1,5 +1,9 @@
 # Priorités actuelles — I0 : mécanismes et diversité des outils
 
+Lot61. Les faces coûtent environ 3,5× moins dans le profil. Priorité à
+l'énergie des propositions H/T et aux mesures appariées à plusieurs tailles,
+avec flux variable pour chiffrer le remappage. [Bilan](BATCH_61.md)
+
 Lot60. CP1 calcule toutes ses forces en CUDA résident. Le profil place
 72 % du coût aux ticks de réaction. Priorité à la géométrie et à
 l'énumération des faces, en gardant l'ordre d'arbitrage. Puis mesurer

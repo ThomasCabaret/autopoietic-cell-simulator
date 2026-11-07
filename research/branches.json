@@ -1860,6 +1860,17 @@
       "cost": "No chemical primitive or parameter added. Two face-local reductions for the existing competitive derivative.",
       "recipe": "experiments/verify_resident_fields.py",
       "results": "research/BATCH_60.md"
+    },
+    {
+      "id": "RFC1",
+      "parent": "CPR1",
+      "status": "face_tick_parity_and_open_resident_transport_verified",
+      "hypothesis": "Compiled face proposal scans can retain the serial RNG and arbitration contract; open boundary ticks can refresh device state after population changes.",
+      "test": "Exact differential fingerprint over 720 gated and ungated face ticks; short CP1 profile; open bath parity with and without steric core and empty checkpoint replay.",
+      "conclusion": "Face traversal is cheaper on the shared CPU path. The open transport diagnostic runs on resident CUDA. CP1 reaction energy and variable-size throughput remain to optimize and measure.",
+      "cost": "No added law or primitive. CPU proposal traversal and device topology invalidation at remap.",
+      "recipe": "experiments/verify_face_proposals.py",
+      "results": "research/BATCH_61.md"
     }
   ]
 }

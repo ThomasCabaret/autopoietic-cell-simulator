@@ -5,6 +5,7 @@ size, chain identity or component query is used by this interaction.
 """
 import numpy as np
 from numba import njit
+from .face_proposals import formation_proposals, stretched_pairs
 
 
 @njit(cache=True, nogil=True)
@@ -96,10 +97,10 @@ def bound_port_force(pos,links,long,short,epsilon,width):
     return force,energy
 
 
-def update_faces(pos,links,config,rng,neighbors,interval,extra_energy=None,stats=None):
+def update_faces(pos,links,config,rng,neighbors,interval,extra_energy=None,stats=None,geometry=None):
     n=len(pos)//2
     long,short=1.,config['short_length']
-    head,tail,_,_=port_geometry(pos,n,long,short)
+    head,tail=port_geometry(pos,n,long,short)[:2] if geometry is None else geometry
     gated=config.get('contact_update_gate','none')=='metropolis'
     if gated and config.get('bound_barrier_radius',0.)>0 and extra_energy is None:
         raise ValueError('Energy-gated contacts require the bound-segment energy callback')
@@ -117,29 +118,25 @@ def update_faces(pos,links,config,rng,neighbors,interval,extra_energy=None,stats
             s['min_delta']=delta if s['min_delta'] is None else min(s['min_delta'],delta)
         return accepted
     kept=[]; broken=0;current=list(links) if gated else None
-    for i,j,a,b in sorted(links):
-        stretch=max(abs(np.linalg.norm(pos[j]-pos[i])-long),
-                    abs(np.linalg.norm(pos[n+j]-pos[n+i])-short))
-        proposed=stretch>config['break_extension'] or rng.random() < -np.expm1(-config['bond_off_rate']*interval)
+    off_probability=-np.expm1(-config['bond_off_rate']*interval)
+    ordered=sorted(links)
+    endpoints=np.asarray(ordered,dtype=np.int64).reshape(-1,4)[:,:2]
+    stretched=stretched_pairs(pos,endpoints,short,config['break_extension'])
+    for (i,j,a,b),stretched_link in zip(ordered,stretched):
+        proposed=stretched_link or rng.random() < off_probability
         if proposed and (not gated or accept(current,(i,j,a,b),None,'breaking')):
             broken+=1
             if gated:current.remove((i,j,a,b))
         else: kept.append((i,j,a,b))
-    free=free_faces(n,kept)
-    existing={tuple(sorted((i,j))) for i,j,_,_ in kept}
     candidates=neighbors.pairs(pos[:n],long+4*config['dock_width'],'face_capture').copy()
     rng.shuffle(candidates)
     if config['bonding']:
-        for i,j in candidates:
-            i,j=int(i),int(j)
-            if (i,j) in existing: continue
-            for a in rng.permutation(2):
-                a=int(a); b=1-a
-                if not free[i,a] or not free[j,b]: continue
-                q=np.sum((head[j,b]-head[i,a])**2)+np.sum((tail[j,b]-tail[i,a])**2)
-                if q<config['dock_capture']**2 and rng.random() < -np.expm1(-config['dock_rate']*interval):
-                    if gated and not accept(kept,None,(i,j,a,b),'formation'):continue
-                    kept.append((i,j,a,b)); existing.add((i,j))
-                    free[i,a]=free[j,b]=False
-                    break
+        partners=np.full((n,2),-1,dtype=np.int64)
+        for i,j,a,b in kept:partners[i,a]=j;partners[j,b]=i
+        probability=-np.expm1(-config['dock_rate']*interval)
+        for i,j,a,b in formation_proposals(candidates,head,tail,partners,rng,
+                                             config['dock_capture']**2,probability):
+            if gated and not accept(kept,None,(i,j,a,b),'formation'):continue
+            kept.append((i,j,a,b))
+            partners[i,a]=j;partners[j,b]=i
     return sorted(kept),broken

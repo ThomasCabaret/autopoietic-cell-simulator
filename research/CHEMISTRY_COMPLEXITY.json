@@ -861,20 +861,21 @@
   "source_sha256": {
     "simulator/assembly.py": "4bd703a271102d5ca6a7ae3c6d0109ae158617fef8136b4f8ba5d5456d092034",
     "simulator/mixed_synthesis.py": "963ddfad842b40ed3ca3fd3829350b550badfa69853d9219566cf996182b9f5c",
-    "simulator/linked_lipids.py": "28d18d700bd3a00e5fbcab09745644e1c37de7826b1922bffb7174d6f8d51866",
+    "simulator/linked_lipids.py": "b7a5d6706295512429a3f2c8ba8ba3565cae87749a2ed7380f06f80f9c4d445d",
     "simulator/lipid_synthesis.py": "01a1ca9e775f59552f5d9a301b0c68fa4d2adbfff00c15e6201f154f5e64daad",
     "simulator/copy.py": "8a8bed3a44927aef6fda46a00e845ac7bec3043c48436b94e01601c9603c2b7e",
     "simulator/precursors.py": "bf766ba8480e6e3180d85b5c481311a926570571e81510cbdfeccee97507594e",
-    "simulator/docking.py": "4046d776ad540a107e190f0b5488e112b0fa9b8c994711b835999269b9499ac2",
+    "simulator/docking.py": "f862a32ece9c466b81f11b5fa5618bc1d2014b56e6d61ba7e5d500e8aa44b839",
     "simulator/reference.py": "506702f444a2eec26d7dfd75f454ced82b048dfba55df0c751a9b2e3d7188362",
     "simulator/physics.py": "d8364c7fb784db08e2f9fe0b3f549abb69246e402c681b06293d85058a7aa464",
     "simulator/competitive_ports.py": "b24a2523aca4494c176d96b5080776477a96ba6e6f59f3e50c7fa8c297be222a",
     "simulator/mixed_boundary.py": "a1361a5cbe72da18356d48e839372b50abfaac7841908bfc92f931df35192b47",
-    "simulator/contact_exchange.py": "945c4521c1126f18238d3ba962e8429cdbbdf94a1ae54b5aa8cf014f9a93fa3c",
-    "simulator/config.py": "f93624b26ce9972ed18337f152887b00598ef0ccf0e85bdc0b2c5513b7f78b99",
-    "simulator/motion.py": "42cc6dc25d2c4e9cc3c567fb3104db800ff29c9b4cd7f2dac466366f1b256b8c",
+    "simulator/contact_exchange.py": "2fe7bbad63a7e95a1f5dae08e8b7004e9589f6153d78d8069f92358c4e3ba168",
+    "simulator/config.py": "40dcc76d43f35a2ba81eda08632ac85a7d271a8686c0e9d5f59a13304813d4ba",
+    "simulator/motion.py": "8d4f291ae84c057717f4c2e8393d14c5a3b2033e93f52b3e9c5b011581627dee",
     "simulator/transition_energy.py": "1f210f78e5b6330be7d9a8a48e58ead829baeeaa7874c6e2ad27db303666f781",
-    "simulator/exchange_energy.py": "601c815c3a8f86362a0ed6d76c2ff538af46cf41f814af04e9d1a42f3531d7f6"
+    "simulator/exchange_energy.py": "601c815c3a8f86362a0ed6d76c2ff538af46cf41f814af04e9d1a42f3531d7f6",
+    "simulator/face_proposals.py": "98c4f7c0c7b25175cad25ea374d8dde76e16b553dd828f1b5e1866644eabcfcf"
   },
   "factorization": {
     "material_kinds": [

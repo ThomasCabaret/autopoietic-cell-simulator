@@ -1,5 +1,9 @@
 # Maturité — reconstruction complète locale, maintien intégré non démontré
 
+Lot61. O-01 reste sous-cas. Ticks appariés exacts et banc de transport
+ouvert résident avec bilan exact. Les paliers biologiques sont inchangés.
+[Bilan RFC1](BATCH_61.md)
+
 Lot60. La mécanique CP1 résidente est intégrée, avec preuve de préfixe
 et reprise sur naissance contrôlée. O-01 reste sous-cas, le débit des
 réactions et le cas ouvert restent à vérifier. [Bilan CPR1](BATCH_60.md)

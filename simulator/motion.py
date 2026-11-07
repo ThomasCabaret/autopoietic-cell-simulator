@@ -94,8 +94,8 @@ class InertialMotion:
             max_displacement=self.max_displacement)
 
     def restore(self,state):
-        self.velocities=np.array(state['velocities'],dtype=float)
-        self.force=None if state['force'] is None else np.array(state['force'],dtype=float)
+        self.velocities=np.array(state['velocities'],dtype=float).reshape(-1,2)
+        self.force=None if state['force'] is None else np.array(state['force'],dtype=float).reshape(-1,2)
         self.steps=state['steps'];self.force_evaluations=state['force_evaluations']
         self.pair_visits=state['pair_visits'];self.max_displacement=state['max_displacement']
 

@@ -1,6 +1,6 @@
 # Checklist détaillée — critères et dépendances
 
-Revue 2026-11-07 · révision31. Source : [cell_checklist.json](cell_checklist.json).
+Revue 2026-11-07 · révision32. Source : [cell_checklist.json](cell_checklist.json).
 [Tableau compact](CELL_CHECKLIST_COMPACT.md) · [Échelle et méthode](CONCEPT_FIRST.md).
 
 Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre acyclique de codage. Les cycles de renouvellement sont intentionnels. Une condition initiale construite peut amorcer un sous-cas sans fermer ces cycles.
@@ -823,13 +823,13 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 
 **Dépend de :** [E-02](#E-02), [C-02](#C-02) · **Pour renouveler :** —
 
-**Portée des preuves :** CPR1 valide la mécanique CP1 résidente sur un préfixe apparié et la reprise sur naissance contrôlée. Les réactions CPU dominent le profil court.
+**Portée des preuves :** CPR1 valide la mécanique CP1 résidente. RFC1 accélère les ticks de faces et valide le remappage CUDA du banc ouvert. Les réactions CPU dominent le profil court.
 
-**Références :** [research/KINETICS_AND_PERFORMANCE.md](../research/KINETICS_AND_PERFORMANCE.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_50.md](../research/BATCH_50.md), [research/BATCH_51.md](../research/BATCH_51.md), [research/BATCH_56.md](../research/BATCH_56.md), [research/BATCH_57.md](../research/BATCH_57.md), [research/BATCH_58.md](../research/BATCH_58.md), [research/BATCH_59.md](../research/BATCH_59.md), [research/BATCH_60.md](../research/BATCH_60.md), [research/CUDA_COMPLETION.md](../research/CUDA_COMPLETION.md)
+**Références :** [research/KINETICS_AND_PERFORMANCE.md](../research/KINETICS_AND_PERFORMANCE.md), [research/BATCH_44.md](../research/BATCH_44.md), [research/BATCH_49.md](../research/BATCH_49.md), [research/BATCH_50.md](../research/BATCH_50.md), [research/BATCH_51.md](../research/BATCH_51.md), [research/BATCH_56.md](../research/BATCH_56.md), [research/BATCH_57.md](../research/BATCH_57.md), [research/BATCH_58.md](../research/BATCH_58.md), [research/BATCH_59.md](../research/BATCH_59.md), [research/BATCH_60.md](../research/BATCH_60.md), [research/BATCH_61.md](../research/BATCH_61.md), [research/CUDA_COMPLETION.md](../research/CUDA_COMPLETION.md)
 
-**Prochain test / décision :** Décomposer le coût des ticks lipidiques, accélérer leurs phases régulières et mesurer le pas complet à plusieurs tailles.
+**Prochain test / décision :** Décomposer le coût de la formation H/T, mesurer le pas complet à plusieurs tailles et le remappage sous flux variable.
 
-**Progrès du dernier lot :** Mécanique CP1 résidente intégrée, reprise exacte sur naissance contrôlée et goulot réactionnel localisé.
+**Progrès du dernier lot :** Ticks des faces accélérés et portage CUDA du banc ouvert avec remappage et reprise exacte.
 
 <a id="O-02"></a>
 ### O-02 — Observation passive, reproductibilité et inspection
@@ -883,3 +883,4 @@ Les dépendances ci-dessous sont les capacités requises à terme, pas un ordre 
 - Révision29 (2026-11-07) : Lot58 CRC1 : première copie réactive en CUDA résident, avec reprise et changements de topologie vérifiés. Aucun palier biologique augmenté.
 - Révision30 (2026-11-07) : Lot59 CCB1 : capture résidente en copie catalysée et deux forces CP1 vérifiées par instantané. Aucun palier biologique augmenté.
 - Révision31 (2026-11-07) : Lot60 CPR1 : premier CP1 à mécanique CUDA résidente complète et réactions CPU. Aucun palier biologique augmenté.
+- Révision32 (2026-11-07) : Lot61 RFC1 : parcours CPU des faces accélérés et banc ouvert CUDA validé. Aucun palier biologique augmenté.

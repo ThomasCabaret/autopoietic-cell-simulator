@@ -1,7 +1,7 @@
 """MD2 ports on actual H--T bonds, with no prescribed tail or aggregate lookup."""
 import copy
 import numpy as np
-from .docking import free_faces,docking_force,bound_port_force,update_faces
+from .docking import free_faces,docking_force,bound_port_force,update_faces,port_geometry
 from .contact_exchange import exchange_faces
 
 
@@ -42,19 +42,21 @@ class LinkedLipids:
     def react(self,pos,config,rng,neighbors,interval,extra_energy=None):
         heads,ids,links=self.layout()
         if not heads:return []
+        packed=pos[ids]
+        geometry=port_geometry(packed,len(heads),1.,config['short_length'])[:2]
         callback=None if extra_energy is None else lambda old,new:extra_energy(
             None if old is None else (heads[old[0]],heads[old[1]]),
             None if new is None else (heads[new[0]],heads[new[1]]))
         if config.get('contact_update_gate','none')=='metropolis':
             if self.contact_stats is None:
                 self.contact_stats={k:dict(proposals=0,accepted=0,rejected=0,positive_delta=0,sum_factor=0.,sum_accepted_delta=0.,min_delta=None,max_delta=None) for k in ('formation','breaking')}
-            links,broken=update_faces(pos[ids],links,config,rng,neighbors,interval,callback,self.contact_stats)
-        else:links,broken=update_faces(pos[ids],links,config,rng,neighbors,interval)
+            links,broken=update_faces(packed,links,config,rng,neighbors,interval,callback,self.contact_stats,geometry)
+        else:links,broken=update_faces(packed,links,config,rng,neighbors,interval,geometry=geometry)
         if config.get('contact_exchange_gate','none')=='metropolis':
             if self.exchange_stats is None:
                 self.exchange_stats=dict(proposals=0,accepted=0,rejected=0,positive_delta=0,sum_positive_delta=0.,sum_factor=0.,min_delta=None,max_delta=None)
-            links,events=exchange_faces(pos[ids],links,config,rng,neighbors,interval,callback,self.exchange_stats)
-        else:links,events=exchange_faces(pos[ids],links,config,rng,neighbors,interval)
+            links,events=exchange_faces(packed,links,config,rng,neighbors,interval,callback,self.exchange_stats,geometry)
+        else:links,events=exchange_faces(packed,links,config,rng,neighbors,interval,geometry=geometry)
         self.links=[(heads[i],heads[j],a,b) for i,j,a,b in links];self.broken_contacts+=broken
         return [dict(removed=[heads[e['removed'][0]],heads[e['removed'][1]],*e['removed'][2:]],
             formed=[heads[e['formed'][0]],heads[e['formed'][1]],*e['formed'][2:]],port_mismatch=e['port_mismatch'],

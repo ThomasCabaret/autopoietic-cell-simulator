@@ -1,5 +1,11 @@
 # Santé du projet — actualisation du 7 novembre 2026
 
+Lot61. La compilation des parcours de faces accélère les deux modes
+sans divergence dans le différentiel. Le banc ouvert passe sur CUDA.
+Les risques restants de débit sont le calcul d'énergie des réactions,
+les transferts et la reconstruction des buffers sous flux élevé.
+[Bilan](BATCH_61.md)
+
 Lot60. Un premier CP1 résident complet côté forces passe un préfixe
 apparié. Le gain de débit reste modeste sur 302 billes, avec les ticks
 CPU dominants. Cibler leurs parcours réguliers et mesurer aux tailles

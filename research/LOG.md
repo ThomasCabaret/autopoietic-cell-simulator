@@ -1,5 +1,12 @@
 # Journal de recherche
 
+## 2026-11-07 — lot61, parcours des faces et bain ouvert CUDA
+
+RFC1 compile les propositions CPU et partage la géométrie dans le tick.
+Les 720 ticks appariés conservent une empreinte exacte. Le chemin résident
+accepte le banc ouvert avec remappage, bilan matière et reprise vérifiés.
+[Bilan](BATCH_61.md)
+
 ## 2026-11-07 — lot60, ports mutualisés et mécanique CP1 résidente
 
 CPR1. Géométrie et projection partagées entre trois variantes de ports.

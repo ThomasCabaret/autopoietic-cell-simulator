@@ -80,7 +80,7 @@ ENTRY void kick(const double* pos, double* vel, double* force, const double* old
                 const double* angles, Index spring_count, Index kind_count,
                 const Index* alignments, bool reactive, const double* capture,
                 bool has_capture, const double* ports, const double* barrier,
-                bool mixed, double box_x, double box_y, bool advance) {
+                bool mixed, bool wall, double box_x, double box_y, bool advance) {
     int i = blockIdx.x*blockDim.x+threadIdx.x;
     if (i >= n) return;
     Vec total = {0., 0.};
@@ -117,8 +117,12 @@ ENTRY void kick(const double* pos, double* vel, double* force, const double* old
         total.x += term.x;
         total.y += term.y;
     }
-    force[2*i] = total.x + 100*(fmax(-px, 0.) - fmax(px-box_x, 0.));
-    force[2*i+1] = total.y + 100*(fmax(-py, 0.) - fmax(py-box_y, 0.));
+    if (wall) {
+        total.x += 100*(fmax(-px, 0.) - fmax(px-box_x, 0.));
+        total.y += 100*(fmax(-py, 0.) - fmax(py-box_y, 0.));
+    }
+    force[2*i] = total.x;
+    force[2*i+1] = total.y;
     if (!advance) return;
     vel[2*i] += force[2*i]*half_kick;
     vel[2*i+1] += force[2*i+1]*half_kick;
@@ -188,6 +192,7 @@ class ResidentLangevinMotion(InertialMotion):
         self.cp = cp
         self.stream = cp.cuda.Stream(non_blocking=True)
         self.reactive = model != 'mixing'
+        self.align = model in ('copy', 'mixed_synthesis')
         self.mixed = model == 'mixed_synthesis'
         self.block_steps = min(25, reaction_every) if self.reactive else 25
         self.device = None
@@ -195,6 +200,13 @@ class ResidentLangevinMotion(InertialMotion):
 
     def restore(self, state):
         super().restore(state)
+        self.graph = None
+        self.device = None
+
+    def remap(self, old_count, mapping, new_velocities):
+        super().remap(old_count, mapping, new_velocities)
+        # Population remapping owns host indices, momenta and newborn state.
+        # Captured kernels carry the old array shapes and addresses.
         self.graph = None
         self.device = None
 
@@ -228,13 +240,15 @@ class ResidentLangevinMotion(InertialMotion):
         self.topology = None
         self.terms = None
         self.alignment_state = None
-        self.alignments = cp.empty((count if self.reactive else 0, 4), dtype=cp.int64)
+        self.alignments = cp.empty((count if self.align else 0, 4), dtype=cp.int64)
         self.capture = None
         self.ports = LipidPorts(cp, c) if self.mixed else None
         self.barrier = SegmentField(cp, c) if self.mixed else None
         self.kind_state = c.kinds.copy()
         self._update_topology(c)
-        self.box = tuple(map(np.float64, c.box))
+        wall_box = getattr(c, 'wall_box', c.box)
+        self.wall = np.bool_(wall_box is not None)
+        self.box = tuple(map(np.float64, c.box if wall_box is None else wall_box))
         pos, velocities, force = self.device
         pos.set(c.pos)
         velocities.set(self.velocities)
@@ -261,7 +275,7 @@ class ResidentLangevinMotion(InertialMotion):
                         buffers[index] = self.cp.asarray(source)
                 self.terms = tuple(buffers)
             self.topology = tuple(array.copy() for array in topology)
-        if not self.reactive:
+        if not self.align:
             return
         if self.mixed:
             if not np.array_equal(c.kinds, self.kind_state):
@@ -307,12 +321,12 @@ class ResidentLangevinMotion(InertialMotion):
             pos, vel, force, self.old, self.displacement, self.count, self.half_kick,
             self.heads, self.next, self.width, self.nx, self.ny, *self.terms,
             np.int64(len(self.terms[5])), np.int64(len(self.terms[4])),
-            self.alignments, np.bool_(self.reactive),
+            self.alignments, np.bool_(self.align),
             self.old if self.capture is None else self.capture.output,
             np.bool_(self.capture is not None),
             self.old if self.ports is None else self.ports.output,
             self.old if self.barrier is None else self.barrier.output,
-            np.bool_(self.mixed), *self.box, np.bool_(advance)))
+            np.bool_(self.mixed), self.wall, *self.box, np.bool_(advance)))
 
     def _launch_steps(self, steps):
         drift = self.kernels[0]
@@ -325,6 +339,11 @@ class ResidentLangevinMotion(InertialMotion):
 
     def advance_block(self, c, rng, dt, steps):
         """Advance a bounded block; expose a consistent host state on return."""
+        if not len(c.pos):
+            self.force_evaluations += steps + int(self.force is None)
+            self.force = np.empty_like(c.pos)
+            self.steps += steps
+            return
         rng_state = rng.bit_generator.state
         evaluations = self.force_evaluations
         with self.stream:
